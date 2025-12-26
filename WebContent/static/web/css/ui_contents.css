@@ -3049,7 +3049,7 @@ ul.com-list-box01 .btn-box .btn button{height:40px;font-size:14px;border-radius:
 .service-desk-main .sd-top-banner .btn-link:after {
   content: "";
   position: absolute;
-  inset: -3px;                 /* 테두리 두께 */
+  inset: -2px;                 /* 테두리 두께 */
   border-radius: inherit;
   /* background: conic-gradient(
     from var(--angle),
