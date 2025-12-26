@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객조회</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>고객조회</h1>
+            </div>
+            <div class="popup-contents no_btn"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+                        <div class="form_box">
+                            <p class="h_tit">고객명<em>*<span>필수</span></em></p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" class="" placeholder="" title="고객명 입력">
+                            </div>
+                            <p class="h_tit">생년월일</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" class="" id="" placeholder="생년월일" title="생년월일 입력">
+                                </span>
+                                <span class="dash">-</span>
+                                <span class="form pt12">
+                                    *******
+                                </span>
+                            </div>
+                            <p class="h_tit">사업자번호</p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" class="" placeholder="" title="사업자번호 입력">
+                            </div>
+                            <p class="h_tit">전화번호</p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" class="" placeholder="" title="전화번호 입력">
+                            </div>
+                            <!-- 조회 버튼//-->
+                            <div class="btn_box pt16">
+                                <span class="btn"><button id="">조회</button></span>
+                            </div>
+                            <!-- //조회 버튼-->
+                        </div>
+                    </div>
+                    <div class="bg_bottom">
+                        <div class="scroll_table">
+                            <table class="dataType" style="min-width: 550px;">
+                                <caption>
+                                    고객조회 - 고객명, 생년월일, 사업자번호, 전화번호 등으로 나타낸 표
+                                </caption>
+                                <colgroup>
+                                    <col width="12%">
+                                    <col width="20%">
+                                    <col width="23%">
+                                    <col width="23%">
+                                    <col width="23%">
+                                    </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">고객명</th>
+                                        <th scope="col">생년월일</th>
+                                        <th scope="col">사업자번호</th>
+                                        <th scope="col">전화번호</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="radiobox">
+                                                <input type="radio" name="r01" value="" id="r01" class="rchk" aria-hidden="true" title="선택 체크">
+                                                <label for="r01" class="rchk-label pl28" role="radio" aria-checked="false"></label>
+                                            </div>
+                                        </td>
+                                        <td>김길동</td>
+                                        <td>1990-10-25</td>
+                                        <td>123-45-67890</td>
+                                        <td>010-1234-5678</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5" class="noData"><p>조회결과가 없습니다.</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- paging 시작 -->
+                        <div class="paging" id="paging">
+                            <a href="#" class="first">맨처음페이지</a><a href="#" class="prev">이전페이지</a><a href="#" class="current">1</a><a href="#" class="">2</a><a href="#" class="next">다음페이지</a><a href="#" class="end">맨마지막페이지</a>
+                        </div>
+                        <!-- paging 끝 -->
+                        <!-- 버튼 시작//-->
+                        <div class="btn_box pb0 mt30">
+                            <span class="btn"><button id="">선택</button></span>
+                        </div>
+                        <!-- //버튼 끝-->
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,665 @@
+ <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>차량조회 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+    <script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-full-1"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>차량조회</h1>
+            </div>
+            <div class="popup-contents flex-col-btm"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <div class="flex-item-top">
+                    <div class="item-cnt">
+                        
+                        <!-- Start : 차량조회 -->
+                        <table class="data-tbl">
+                            <colgroup>
+                                <col width="50%">
+                                <col width="50%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">조회일자</p>
+                                            <div class="calendar">
+                                                <input type="tel" value="2024-05-15" class="w-86">
+                                                <span class="dash">-</span>
+                                                <input type="tel" value="2024-05-25" class="w-86"><img src="/static/admin/img/new_common/ico_cal.png">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">차량번호</p>
+                                            <input type="tel" placeholder="" value="">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- //End : 차량조회 -->
+                        
+                        <!-- Start : 버튼 -->
+                        <div class="btn mb60">
+                            <a href="#">조회</a>
+                            <a href="#" class="line a-r">초기화</a>
+                        </div>
+                        <!-- //End : 버튼 -->
+
+                        <div class="flexItemWide mb40">
+                            <div class="flexItemWide-inbox">
+                                
+                                <!-- Start : 차량조회내역 -->
+                                <h2 class="mt-60">차량조회내역</h2>
+                                <div class="x-scrollBox pt20">
+                                    <table class="bbs-table tbl-hover" style="min-width: 1800px;"><!-- 행이 hover인 경우 : tbl-hover 추가 -->
+                                        <colgroup>
+                                            <col width="80px">
+                                            <col width="102px">
+                                            <col width="102px">
+                                            <col width="102px">
+                                            <col width="240px">
+                                            <col width="76px">
+                                            <col width="76px">
+                                            <col width="76px">
+                                            <col width="76px">
+                                            <col width="76px">
+                                            <col width="144px">
+                                            <col width="130px">
+                                            <col width="102px">
+                                            <col width="102px">
+                                            <col width="102px">
+                                            <col width="102px">
+                                            <col width="102px">
+                                            <col width="102px">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">
+                                                    <div class="checkbox single">
+                                                        <input type="checkbox" checked="checked">
+                                                        <label></label>
+                                                    </div>
+                                                </th>
+                                                <th scope="col">조회구분</th>
+                                                <th scope="col">조회일자</th>
+                                                <th scope="col">차량번호</th>
+                                                <th scope="col">차명</th>
+                                                <th scope="col">연식</th>
+                                                <th scope="col">유종</th>
+                                                <th scope="col">인승</th>
+                                                <th scope="col">차종</th>
+                                                <th scope="col">용도</th>
+                                                <th scope="col">차대번호</th>
+                                                <th scope="col">최초등록일</th>
+                                                <th scope="col">압류건수</th>
+                                                <th scope="col">저당건수</th>
+                                                <th scope="col">전손이력</th>
+                                                <th scope="col">도난이력</th>
+                                                <th scope="col">침수이력</th>
+                                                <th scope="col">내차피해</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="checkbox single">
+                                                        <input type="checkbox">
+                                                        <label></label>
+                                                    </div>
+                                                </td>
+                                                <td>차량원부조회</td>
+                                                <td>2024-06-10</td>
+                                                <td>33누3972</td>
+                                                <td>올란도 2.0</td>
+                                                <td>2022</td>
+                                                <td>LPG</td>
+                                                <td>7</td>
+                                                <td>중형</td>
+                                                <td></td>
+                                                <td>KNAJP812BFK202</td>
+                                                <td>2015-03-02</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr class="bor-line">
+                                                <td colspan="18" class="nodata"><span>조회 결과가 없습니다.</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- //End : 차량조회내역 -->
+    
+                                <p class="info-green">※ 등록을 원하시는 항목의 체크박스를 선택 후 '등록' 버튼을 눌러주시고 차량조회 내역이 없을 경우 '차량원부조회', '차량시세조회(쿠콘)', '중고차 사고이력 조회'를 개별적으로 조회해주세요.</p>
+    
+                                <!-- Start : 버튼 -->
+                                <div class="btn">
+                                    <a href="#">선택차량 등록</a>
+                                </div>
+                                <!-- //End : 버튼 -->
+    
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="flex-item-btm">
+
+                    <div class="tab-box small-tab">
+                        <ul class="no-sticky">
+                            <li class="active"><a href="javascript:;" rel="tab-1">차량원부조회</a></li>
+                            <li><a href="javascript:;" rel="tab-2">차량시세조회</a></li>
+                            <li><a href="javascript:;" rel="tab-3">중고차 사고이력 조회</a></li>
+                            <li><a href="javascript:;" rel="tab-4">차량시세조회(쿠콘)</a></li>
+                        </ul>
+                        
+                        <div class="tab-list">
+                            <div id="tab-1">
+                                <div class="manycont-box">   
+                                    <!-- Start : 차량원부조회 -->
+                                    <table class="data-tbl">
+                                        <colgroup>
+                                            <col width="100%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="com-inp">
+                                                        <p class="tit">차량번호</p>
+                                                        <input type="tel" placeholder="" value="45거8932">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- //End : 차량원부조회 -->
+
+                                    <!-- Start : 버튼 -->
+                                    <div class="btn">
+                                        <a href="#">조회</a>
+                                    </div>
+                                    <!-- //End : 버튼 -->
+
+                                    <!-- Start : 차량원부 내용 -->
+                                    <table class="bbs-table-view1 mt24">
+                                        <colgroup>
+                                            <col width="160px">
+                                            <col width="%">
+                                            <col width="160px">
+                                            <col width="%">
+                                            <col width="160px">
+                                            <col width="%">
+                                            <col width="160px">
+                                            <col width="%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>차명</th>
+                                                <td>올란도 2.0</td>
+                                                <th>연식</th>
+                                                <td>2022</td>
+                                                <th>유종</th>
+                                                <td>LPG</td>
+                                                <th>인승</th>
+                                                <td>7</td>
+                                            </tr>
+                                            <tr>
+                                                <th>차종</th>
+                                                <td>중형</td>
+                                                <th>용도</th>
+                                                <td></td>
+                                                <th>차대번호</th>
+                                                <td>KLYA75ADHK6</td>
+                                                <th>최초등록일</th>
+                                                <td>2016-12-29</td>
+                                            </tr>
+                                            <tr>
+                                                <th>최종등록일</th>
+                                                <td>2016-12-29</td>
+                                                <th>압류건수</th>
+                                                <td>0</td>
+                                                <th>저당건수</th>
+                                                <td>0</td>
+                                                <th>주민(법인)번호</th>
+                                                <td>830217-1******</td>
+                                            </tr>
+                                            <tr>
+                                                <th>최종소유자</th>
+                                                <td>허**</td>
+                                                <th>검사유효 시작일자</th>
+                                                <td>2024-12-28</td>
+                                                <th>검사유효 종료일자</th>
+                                                <td>2024-12-28</td>
+                                                <th>주행거리</th>
+                                                <td>106966</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- //End : 차량원부 내용 -->
+
+                                    <!-- Start : 차량원부 내용 -->
+                                    <table class="bbs-table mt40">
+                                        <colgroup>
+                                            <col width="70px">
+                                            <col width="202px">
+                                            <col width="202px">
+                                            <col width="202px">
+                                            <col width="202px">
+                                            <col width="%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">순번</th>
+                                                <th scope="col">구분</th>
+                                                <th scope="col">등록(설정)일자</th>
+                                                <th scope="col">내용</th>
+                                                <th scope="col">저당권자명</th>
+                                                <th scope="col">을부번호</th>
+                                                <th scope="col">설정금액</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bor-line">
+                                                <td colspan="7" class="nodata"><span>조회 결과가 없습니다.</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- //End : 차량원부 내용 -->
+                                </div>
+                            </div>
+                            
+                            <div id="tab-2">
+                                <div class="manycont-box">
+                                    <!-- Start : 차량시세조회(쿠콘) -->
+                                    <table class="data-tbl">
+                                        <colgroup>
+                                            <col width="50%">
+                                            <col width="50%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="com-inp">
+                                                        <p class="tit">차량번호</p>
+                                                        <input type="tel" placeholder="" value="45거8932">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="com-inp">
+                                                        <p class="tit">고객명(소유자)</p>
+                                                        <input type="text" placeholder="" value="홍길동">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- //End : 차량시세조회(쿠콘) -->
+                                    
+                                    <!-- Start : 버튼 -->
+                                    <div class="btn">
+                                        <a href="#">조회</a>
+                                    </div>
+                                    <!-- //End : 버튼 -->
+                                    
+                                    <!-- Start : 차량시세조회(쿠콘) 내용 -->
+                                    <table class="bbs-table-view1 mt24">
+                                        <colgroup>
+                                            <col width="160px">
+                                            <col width="%">
+                                            <col width="160px">
+                                            <col width="%">
+                                            <col width="160px">
+                                            <col width="%">
+                                            <col width="160px">
+                                            <col width="%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>나이스 DNR 시세</th>
+                                                <td>9,000,000원</td>
+                                                <th>차량가격2</th>
+                                                <td>8,700,000원</td>
+                                                <th>조회차량 고유코드</th>
+                                                <td></td>
+                                                <th>신차등급키</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>주행거리</th>
+                                                <td></td>
+                                                <th>차대번호</th>
+                                                <td>KLYA75ADHK6</td>
+                                                <th>최초등록일</th>
+                                                <td>2016-12-29</td>
+                                                <th>연식</th>
+                                                <td>2017</td>
+                                            </tr>
+                                            <tr>
+                                                <th>국산/외산</th>
+                                                <td>국산</td>
+                                                <th>제조사</th>
+                                                <td>쉐보레(대우)</td>
+                                                <th>세부모델</th>
+                                                <td>올란도</td>
+                                                <th>신차등급</th>
+                                                <td>LPGi LT 세이프티펙</td>
+                                            </tr>
+                                            <tr>
+                                                <th>차종</th>
+                                                <td>RV</td>
+                                                <th>용도</th>
+                                                <td>일반</td>
+                                                <th>배기량</th>
+                                                <td>1,988</td>
+                                                <th>연료</th>
+                                                <td>LPG</td>
+                                            </tr>
+                                            <tr>
+                                                <th>변속기</th>
+                                                <td>오토</td>
+                                                <th>신차가격</th>
+                                                <td>25,710,000원</td>
+                                                <th>승차인원</th>
+                                                <td colspan="3">7</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- //End : 차량시세조회(쿠콘) 내용 -->
+                                </div>
+                            </div>
+                            
+                            <div id="tab-3">
+                                <div class="manycont-box">
+                                    <!-- Start : 중고차 사고이력 조회 -->
+                                    <table class="data-tbl">
+                                        <colgroup>
+                                            <col width="%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="com-inp">
+                                                        <p class="tit">차량번호</p>
+                                                        <input type="tel" placeholder="" value="45거8932">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- //End : 중고차 사고이력 조회 -->
+                                    
+                                    <!-- Start : 버튼 -->
+                                    <div class="btn">
+                                        <a href="#">조회</a>
+                                    </div>
+                                    <!-- //End : 버튼 -->
+
+                                    <!-- Start : 중고차 사고이력 조회 내용 -->
+                                    <table class="bbs-table-view1 mt24">
+                                        <colgroup>
+                                            <col width="160px">
+                                            <col width="%">
+                                            <col width="160px">
+                                            <col width="%">
+                                            <col width="160px">
+                                            <col width="%">
+                                            <col width="160px">
+                                            <col width="%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>최초등록일</th>
+                                                <td>2016-12-29</td>
+                                                <th>색상</th>
+                                                <td></td>
+                                                <th>연식</th>
+                                                <td></td>
+                                                <th>차명</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>차량세부모델</th>
+                                                <td></td>
+                                                <th>사용연료</th>
+                                                <td></td>
+                                                <th>배기량</th>
+                                                <td></td>
+                                                <th>전손이력</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>도난이력</th>
+                                                <td></td>
+                                                <th>침수이력</th>
+                                                <td></td>
+                                                <th>내차피해횟수</th>
+                                                <td></td>
+                                                <th>대여용도 사용이력</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>영업용도 사용이력</th>
+                                                <td></td>
+                                                <th>관용용도 사용이력</th>
+                                                <td></td>
+                                                <th>내차피해 보험금</th>
+                                                <td></td>
+                                                <th>미확정여부</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>미확정건수</th>
+                                                <td>0회</td>
+                                                <th>미확정금액</th>
+                                                <td></td>
+                                                <th>총내차피해 금액</th>
+                                                <td></td>
+                                                <th>주행거리 정보유무</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>주행거리 수집일</th>
+                                                <td></td>
+                                                <th>주행거리 제공처</th>
+                                                <td></td>
+                                                <th>주행거리</th>
+                                                <td colspan="3"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- //End : 중고차 사고이력 조회 내용 -->
+
+                                    <!-- Start : 자동차소유/소유자 변경이력조회 -->
+                                    <h2 class="mt40">자동차소유/소유자 변경이력조회</h2>
+                                    <table class="bbs-table">
+                                        <colgroup>
+                                            <col width="70px">
+                                            <col width="300px">
+                                            <col width="300px">
+                                            <col width="300px">
+                                            <col width="%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">순번</th>
+                                                <th scope="col">변경등록일</th>
+                                                <th scope="col">변경</th>
+                                                <th scope="col">차량번호</th>
+                                                <th scope="col">차량용도</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bor-line">
+                                                <td colspan="5" class="nodata"><span>조회 결과가 없습니다.</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- //End : 자동차소유/소유자 변경이력조회 -->
+
+                                    <!-- Start : 보험처리상세이력 -->
+                                    <h2>보험처리상세이력</h2>
+                                    <table class="bbs-table">
+                                        <colgroup>
+                                            <col colspan="10">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">보험처리구분</th>
+                                                <th scope="col">사고일자</th>
+                                                <th scope="col">보험금</th>
+                                                <th scope="col">부품</th>
+                                                <th scope="col">공임</th>
+                                                <th scope="col">도장</th>
+                                                <th scope="col">미확정 보험금</th>
+                                                <th scope="col">사고유형</th>
+                                                <th scope="col">수리견적비</th>
+                                                <th scope="col">폐차</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bor-line">
+                                                <td colspan="10" class="nodata"><span>조회 결과가 없습니다.</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- //End : 보험처리상세이력 -->
+                                </div>
+                            </div>
+
+                            <div id="tab-4">
+                                <div class="manycont-box">
+                                    <!-- Start : 차량시세조회(쿠콘) -->
+                                    <table class="data-tbl">
+                                        <colgroup>
+                                            <col width="50%">
+                                            <col width="50%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="com-inp">
+                                                        <p class="tit">차량번호</p>
+                                                        <input type="tel" placeholder="" value="45거8932">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="com-inp">
+                                                        <p class="tit">고객명(소유자)</p>
+                                                        <input type="text" placeholder="" value="홍길동">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- //End : 차량시세조회(쿠콘) -->
+                                    
+                                    <!-- Start : 버튼 -->
+                                    <div class="btn">
+                                        <a href="#">조회</a>
+                                    </div>
+                                    <!-- //End : 버튼 -->
+                                    
+                                    <!-- Start : 차량시세조회(쿠콘) 내용 -->
+                                    <table class="bbs-table-view1 mt24">
+                                        <colgroup>
+                                            <col width="160px">
+                                            <col width="%">
+                                            <col width="160px">
+                                            <col width="%">
+                                            <col width="160px">
+                                            <col width="%">
+                                            <col width="160px">
+                                            <col width="%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>차량가격2</th>
+                                                <td>8,700,000원</td>
+                                                <th>조회차량 고유코드</th>
+                                                <td></td>
+                                                <th>신차등급키</th>
+                                                <td></td>
+                                                <th>주행거리</th>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th>차대번호</th>
+                                                <td>KLYA75ADHK6</td>
+                                                <th>최초등록일</th>
+                                                <td>2016-12-29</td>
+                                                <th>연식</th>
+                                                <td>2017</td>
+                                                <th>국산/외산</th>
+                                                <td>국산</td>
+                                            </tr>
+                                            <tr>
+                                                <th>제조사</th>
+                                                <td>쉐보레(대우)</td>
+                                                <th>세부모델</th>
+                                                <td>올란도</td>
+                                                <th>신차등급</th>
+                                                <td>LPGi LT 세이프티펙</td>
+                                                <th>차종</th>
+                                                <td>RV</td>
+                                            </tr>
+                                            <tr>
+                                                <th>용도</th>
+                                                <td>일반</td>
+                                                <th>배기량</th>
+                                                <td>1,988</td>
+                                                <th>연료</th>
+                                                <td>LPG</td>
+                                                <th>변속기</th>
+                                                <td>오토</td>
+                                            </tr>
+                                            <tr>
+                                                <th>신차가격</th>
+                                                <td>25,710,000원</td>
+                                                <th>승차인원</th>
+                                                <td colspan="5">7</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- //End : 차량시세조회(쿠콘) 내용 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

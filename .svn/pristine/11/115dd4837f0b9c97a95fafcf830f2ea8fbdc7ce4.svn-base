@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<deco> 
+    <fileData filename="ico_play.png" filepath="/src/main/webapp/static/web/img/main" ischanged="0" lastversion="1" tstversion="1" realversion="1" dotversion="0" itemid="000000931543" ecmMd5sum="c01ada955d6f8410d47cbc69d41e14ac" ecmTstmd5sum="" lastChangedDate="1636538112000" editor="김탁균:16424" lastUser="김탁균:16424" filestatus="운영중:0" islock="1" isAuthority="1" rsrccd="A2" rsrccdcodename="static" rsrcinfo="0100000000110000000000010000010000000000100000001000000001000000000" jobcd="HP" jobname="홈페이지" syscd="00102" sysmsg="홈페이지" srid="R202111-0046"/> 
+</deco>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>잔여기간별 중도해지손해배상금률 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <!--20250724 잔여기간별 중도해지손해배상금률만 popup-727 중첩클래스 넣고 popup-text에 w500 중첩클래스 줌-->
+    <div class="popup popup-01 popup-calc popup-640 popup-727"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text w500">
+                <h1>잔여기간별 중도해지손해배상금률</h1>
+            </div>
+            <div class="popup-contents pad-btm"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+                <div class="tbl-scroll">
+                    <table class="tbl-type" style="min-width: 570px;">
+                        <colgroup>
+                        <col width="15%">
+                        <col width="12%">
+                        <col width="12%">
+                        <col width="12%">
+                        <col width="12%">
+                        <col width="12%">
+                        <col width="12%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="diagonal-split">
+                                    <span class="top-right">계약기간</span>
+                                    <span class="bottom-right">잔여기간</span>
+                                </th>
+                                <th>12개월</th>
+                                <th>24개월</th>
+                                <th>36개월</th>
+                                <th>48개월</th>
+                                <th>60개월</th>
+                                <th>72개월</th>
+                            </tr>
+                            <tr>
+                                <td>12개월 이하</td>
+                                <td>50%<br>(일별차등)</td>
+                                <td>45%<br>(일별차등)</td>
+                                <td>40%<br>(일별차등)</td>
+                                <td>35%<br>(일별차등)</td>
+                                <td>30%<br>(일별차등)</td>
+                                <td>30%<br>(일별차등)</td>
+                            </tr>
+                            <tr>
+                                <td>12개월 초과<br>~ 24개월 이하</td>
+                                <td></td>
+                                <td>50%</td>
+                                <td>45%</td>
+                                <td>40%</td>
+                                <td>35%</td>
+                                <td>30%</td>
+                            </tr>
+                            <tr>
+                                <td>24개월 초과<br>~36개월 이하</td>
+                                <td></td>
+                                <td></td>
+                                <td>50%</td>
+                                <td>45%</td>
+                                <td>40%</td>
+                                <td>35%</td>
+                            </tr>
+                            <tr>
+                                <td>36개월 초과<br>~48개월 이하</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>50%</td>
+                                <td>45%</td>
+                                <td>40%</td>
+                            </tr>                          
+                            <tr>
+                                <td>48개월 초과<br>~60개월 이하</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>50%</td>
+                                <td>45%</td>
+                            </tr>                          
+                            <tr>
+                                <td>60개월 초과<br>~72개월 이하</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>50%</td>
+                            </tr>                          
+                        </thead>
+                        <!-- <tbody>
+                            <tr>
+                                <td colspan="7" class="none"><span>내용이 없습니다</span></td>  내용이 없는 경우 none 클래스 추가
+                            </tr>
+                        </tbody> -->
+                    </table>
+                </div>
+                <!-- //End : content -->
+            </div>
+            <!-- Start : 버튼 -->
+            <div class="fixed-btn-area">
+                <div class="btn-box">
+                    <span class="btn"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                </div>
+            </div>
+            <!-- //End : 버튼 -->
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

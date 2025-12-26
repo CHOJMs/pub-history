@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/chatbot.css">
+
+
+<!--<link rel="stylesheet" href="/static/web/css/form.css">-->
+
+<title>본인인증 | iM캐피탈</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contaier">
+
+            <!-- centents 영역 -->
+            <div class="contents cont-type01">
+
+                <div class="tit-info">
+                    본인인증을<br>진행해 주세요.
+                </div>
+
+                <div class="form-box">
+                    <ul class="form-list">
+                        <li>
+                            <p class="h-tit">고객명</p>
+                            <div class="text-data">
+                                <span class="form">
+                                    <input type="text" class="" id="" placeholder="고객명 입력" value="" title="고객명 입력">
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="h-tit">주민등록번호</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="tel" id="" placeholder="생년월일 6자리 입력" title="주민등록번호 앞 6자리 입력">
+                                </span>
+                                <span class="dash"></span>
+                                <span class="form">
+                                    <input type="tel" id="" placeholder="뒤 7자리 입력" title="주민등록번호 뒤 7자리 입력">
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="h-tit">인증방법</p>
+                            <div class="text_data radio-type1">
+                                <div>
+                                    <input type="radio" name="r01" id="r01" checked="checked">
+                                    <label for="r01" class="ico-phone"><span>휴대폰</span></label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="r01" id="r02">
+                                    <label for="r02" class="ico-kakao"><span>카카오페이</span></label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="h-tit">휴대폰번호</p>
+                            <div class="text_data">
+                                <div class="selectbox wsize120">
+                                    <select class="select" title="통신사 선택">
+                                        <option>LG U+ 알뜰폰</option>
+                                    </select>
+                                </div>
+                                <span class="dash"></span>
+                                <span class="form wid45">
+                                    <input type="tel" id="" placeholder="" value="010-1234-5678" title="휴대폰번호 입력">
+                                </span>
+                            </div>
+                            <!-- Start : 전체동의 -->
+                            <div class="agree-box">
+                                <div class="agree-total-box">
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="ch011" name="ch011" class="chk">
+                                        <label for="ch011" class="label">전체 동의</label>
+                                    </div>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="ch012" name="ch011" class="chk chk_1">
+                                    <label for="ch012" class="label">개인정보 수집·이용·제공 동의</label>
+                                    <a href="#" class="arrow"></a>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="ch013" name="ch011" class="chk chk_1">
+                                    <label for="ch013" class="label">고유식별정보 처리 동의</label>
+                                    <a href="#" class="arrow"></a>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="ch014" name="ch011" class="chk chk_1">
+                                    <label for="ch014" class="label">고유식별정보 처리 동의</label>
+                                    <a href="#" class="arrow"></a>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="ch015" name="ch011" class="chk chk_1">
+                                    <label for="ch015" class="label">고유식별정보 처리 동의</label>
+                                    <a href="#" class="arrow"></a>
+                                </div>
+                            </div>
+                            <!-- //End : 전체동의 -->
+                        </li>
+                        <li>
+                            <p class="h-tit">인증번호</p>
+                            <div class="text_data auth_t">
+                                <span class="form">
+                                    <input type="tel" id="" placeholder="6자리 입력" title="인증번호 6자리 입력">
+                                    <span class="time">02:59</span>
+                                </span>
+                                <div class="btn_cont">
+                                    <button id="">재요청</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+            </div>
+            <!-- Start : 버튼 -->
+            <div class="btn-area fixed-btn-area">
+                <div class="btn-box">
+                    <span class="btn gray"><button id="">다음</button></span><!-- [D] 버튼 활성화인 경우 : 클래스 gray 삭제 -->
+                </div>
+            </div>
+            <!-- //End : 버튼 -->
+            <!-- //centents 영역 -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+    </div>
+</body>
+</html>

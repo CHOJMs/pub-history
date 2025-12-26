@@ -1,0 +1,607 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 관리자 로그인 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-10</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>로그인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/login.html">login.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-10</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>비밀번호 변경</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/common/비밀번호변경.html">비밀번호변경.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-10</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/common/본인인증.html">본인인증.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-10</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>휴대폰 본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/common/휴대폰본인인증.html">휴대폰본인인증.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-06-14</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>QR코드 스캔안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/common/QR코드스캔안내.html">QR코드스캔안내.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-06-14</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>QR코드 스캔안내 - 기존디자인 적용 샘플</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/common/QR코드스캔안내-1.html">QR코드스캔안내-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-07-19</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>카카오페이인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/common/카카오페이인증.html">카카오페이인증.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-07-19</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>달력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/DGB-DSR-DATERANGE.html">DGB-DSR-DATERANGE.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ DSR상담관리 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-16</td>
+                        <td>2024-07-11</td>
+                        <td>page</td>
+                        <td>대출접수 현황 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/DGB-DSR-100-001.html">DGB-DSR-100-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-07-11 : 한도조회 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2023-05-17</td>
+                        <td>2025-06-12</td>
+                        <td>page</td>
+                        <td>대출접수 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/DGB-DSR-100-002.html">DGB-DSR-100-002.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-08-11 : &lt;br&gt; 추가, etc 위치 수정</li>
+                                <li>2024-06-17 : 문의하기 버튼 추가</li>
+                                <li>2024-06-28 : '신청서류 제출정보' 우측에 버튼 추가</li>
+                                <li>2024-07-11 : '알림톡 관리'로 버튼 명칭 수정</li>
+                                <li>2024-07-22 : 재직/사업정보 타이틀 우측에'사업자 정보 업데이트' 버튼 추가</li>
+                                <li>2024-08-27 : 차량조건 우측에 '차량조회' 버튼 추가</li>
+                                <li>2024-10-18 : 재직/사업정보 우측에 '소득구분별 통합한도' 버튼 추가</li>
+                                <li>2025-05-16 : 차량사진 버튼 및 주행거리 추가</li>
+                                <li>2025-06-12 : 차량조건에 지분율,출처구분,적재용량,차량카테고리 항목 추가</li>
+                            </ul>
+                        </td>
+                        <td>Agent관리자 기능 추가</td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2024-08-27</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>차량조회 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/차량조회_팝업.html">차량조회_팝업.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-06-12 : 차량원부조회에 지분율, 출처구분 항목 추가</li>
+                            </ul>
+                        </td>
+                        <td>Agent관리자 기능 추가</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-19</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>외국인접수 현황 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/DGB-DSR-100-003.html">DGB-DSR-100-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-19</td>
+                        <td>2023-08-11</td>
+                        <td>page</td>
+                        <td>외국인접수 관리</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/DGB-DSR-100-004.html">DGB-DSR-100-004.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-08-11 : 클래스 sel-2 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-06-01</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신용조회 건 수 현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/DGB-DSR-100-005.html">DGB-DSR-100-005.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-06-01</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신용조회 건 수 현황 - 기존디자인 적용 샘플</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/DGB-DSR-100-005-1.html">DGB-DSR-100-005-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-06-17</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>접수문의현황</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/접수문의현황.html">접수문의현황.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-06-17</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>접수문의상세</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/접수문의상세.html">접수문의상세.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ DSR 팝업 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-16</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>차량사진 조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/차량사진조회.html">차량사진조회.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-19</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>통합메세지관리 SMS</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/통합메세지관리SMS.html">통합메세지관리SMS.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-23</td>
+                        <td>2024-07-16</td>
+                        <td>pop</td>
+                        <td>부동산 시세조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/부동산시세조회.html">부동산시세조회.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-07-16 : 전체 내용 변경</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-23</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>사업자번호 조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/사업자번호조회.html">사업자번호조회.html</a></td>
+                        <td></td>
+                        <td>라디오버튼 삭제</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>에이전트 소속 직원 조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/에이전트소속직원조회.html">에이전트소속직원조회.html</a></td>
+                        <td></td>
+                        <td>라디오버튼 삭제</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>고객조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/고객조회.html">고객조회.html</a></td>
+                        <td></td>
+                        <td>라디오버튼 삭제</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>주소조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/주소조회.html">주소조회.html</a></td>
+                        <td></td>
+                        <td>라디오버튼 삭제</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>차량모델명 조회 및 중고차 시세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/차량모델명조회및중고차시세.html">차량모델명조회및중고차시세.html</a></td>
+                        <td></td>
+                        <td>라디오버튼 삭제</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>대출 모집인을 통한 대출 모집 경로 확인서</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/대출모집인을통한대출모집경로확인서.html">대출모집인을통한대출모집경로확인서.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>대출상담사 확인설명서</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/대출상담사확인설명서.html">대출상담사확인설명서.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/본인인증.html">본인인증.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-07-19</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>권유자조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/권유자조회.html">권유자조회.html</a></td>
+                        <td></td>
+                        <td>라디오버튼 삭제</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-07-20</td>
+                        <td>2023-08-08</td>
+                        <td>pop</td>
+                        <td>메모등록조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/메모등록조회.html">메모등록조회.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-07-21</td>
+                        <td>2023-08-08</td>
+                        <td>pop</td>
+                        <td>한도재산출</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/한도재산출.html">한도재산출.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-07-21</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>첨부파일관리</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/첨부파일관리.html">첨부파일관리.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-9-11</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>첨부파일관리</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/첨부파일관리-1.html">첨부파일관리-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-07-21</td>
+                        <td>2023-08-08</td>
+                        <td>pop</td>
+                        <td>표준산업분류</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/표준산업분류.html">표준산업분류.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-07-21</td>
+                        <td>2023-08-08</td>
+                        <td>pop</td>
+                        <td>소득산출</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/소득산출.html">소득산출.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-07-24</td>
+                        <td>2024-07-22</td>
+                        <td>pop</td>
+                        <td>온라인서류 제출내역</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/온라인서류제출내역.html">온라인서류제출내역.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-07-22 : 탭 추가(주민등록초본, 사업자등록, 부과세과세표준)</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-04</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>직위조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/직위조회.html">직위조회.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-04</td>
+                        <td>2023-08-08</td>
+                        <td>pop</td>
+                        <td>시뮬레이션</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/시뮬레이션.html">시뮬레이션.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-04</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>차량원부조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/차량원부조회.html">차량원부조회.html</a></td>
+                        <td></td>
+                        <td>개발확인결과 미사용</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-04</td>
+                        <td>2023-08-08</td>
+                        <td>pop</td>
+                        <td>신용정보동의</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/신용정보동의.html">신용정보동의.html</a></td>
+                        <td></td>
+                        <td>개발확인결과 미사용</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>소득구분별 통합한도 조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/dsr/소득구분별통합한도조회.html">소득구분별통합한도조회.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

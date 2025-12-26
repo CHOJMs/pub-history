@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차량 앞면 사진 추가 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc popup-640"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>차량 사진 등록 가이드</h1>
+            </div>
+            <div class="popup-contents pad-btm bg-gray"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content -->
+                <div class="photo-guide-box">
+                    <p class="tit">앞면 사진</p>
+                    <p class="tit2">차량 번호판이 잘 보이도록 <strong class="font-green">정면</strong>으로 찍어주세요</p>
+                    <div class="ex-img">
+                        <img src="/static/web/img/ui_common/img_photo2_ex.png">
+                        <img src="/static/web/img/ui_common/img_photo2_ex02.png">
+                    </div>
+
+                    <p class="tit mt40">뒷면 사진</p>
+                    <p class="tit2">차량 번호판이 잘 보이도록 <strong class="font-green">정면</strong>으로 찍어주세요</p>
+                    <div class="ex-img">
+                        <img src="/static/web/img/ui_common/img_photo3_ex.png">
+                        <img src="/static/web/img/ui_common/img_photo3_ex02.png">
+                    </div>
+                </div>
+                <!-- //End : content -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

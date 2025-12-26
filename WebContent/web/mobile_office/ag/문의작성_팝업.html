@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의하기 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>문의하기</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+
+						<div class="form_box">
+                            <div class="h_tit">
+                                <input type="checkbox" name="" value="" id="ch01" class="chk" checked>
+                                <label for="ch01" class="label"><span>상담번호</span></label>
+                            </div>
+                            <div class="text_data">
+								<span class="form">
+									<input type="text" class="disabled" disabled="disabled" title="상담번호 입력"  placeholder="상담번호 입력">
+								</span>
+								<div class="btn_cont">
+									<button id="">검색</button>
+								</div>
+							</div>
+                            <p class="h_tit">접수상태</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="접수상태 선택" class="disabled" disabled="disabled">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="h_tit">진행상태</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="진행상태 선택" class="disabled" disabled="disabled">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="h_tit">제목</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" name="" title="제목 입력">
+                                </span>
+                            </div>
+                            <p class="h_tit">내용</p>
+                            <span class="textarea_box">
+                                <textarea id="" placeholder="" title="내용 입력" style="height:100px;"></textarea>
+                            </span>
+                            <div class="flex-btn mt32">
+                                <p class="h_tit">파일첨부</p>
+                                <span class="btn btn-blk">
+                                    <a href="#" type="button" data-filer-name="files1_productFile" data-uploaded-file-count="0">파일첨부</a><input type="hidden" name="jfiler-list-files1_productFile" value="[{&quot;file&quot;:&quot;0:/uiSlider.JPG&quot;}]">
+                                </span>
+                            </div>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" class="disabled" disabled="disabled" placeholder="" title="">
+                                </span>					
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn gray"><button id="">취소</button></span>
+                        <span class="btn"><button id="">등록</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

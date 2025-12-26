@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동차세 납부방법안내 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;" >팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+    <div class="popup-layer" id="addrPopup">
+        <div class="popup popup-01 popup-half popup-590"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+            <div class="inner">
+                <div class="popup-text">
+                    <h1>24년 자동차세 납부 방법안내 (1월)</h1>
+                </div>
+                <div class="popup-contents flex-col pad-small">
+                    <!-- Start : content -->
+
+                    <div class="popup-cnt">
+                        <div class="grp-cont">
+                            <h2 class="head-tit">납부방법</h2>
+                            <div class="step-list-box type02">
+                                <ul>
+                                    <li>
+                                        <span>1</span>
+                                        <div>연 2회 고지분에 대해 iM캐피탈에서 우선 납부 후 고객님께 청구하는 방법
+                                            <ul class="list-dot type01 mt12">
+                                                <li>1월~6월 고지분 : 7월 또는 8월 리스료에 합산청구</li>
+                                                <li>7월~12월 고지분 : 다음년도 1월 또는 2월 리스료에 합산청구</li>
+                                                <li>연도 중간에 실행된 계약이나 승계시 일할 계산</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <span>2</span>
+                                        <div>구청에 연납 신청하여 직접 납부하는 방법
+                                            <ul class="list-dot type01 mt12">
+                                                <li>세액 할인 효과와 함께 당사에서 별도로 청구되는 금액 없음</li>
+                                                <li>신청기간 : 1월 / 3월 / 6월 / 9월 (해당월의 16일부터 가능)</li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="grp-cont">
+                            <h2 class="head-tit">연납조회</h2>
+                            <div class="box-gray type01">
+                                <p class="f-info-txt">iM캐피탈 홈페이지 접속 > 마이> <br class="device-mobile">이용중인 상품(오토리스) > 차량관리 > 자동차세</p>
+                            </div>
+                        </div>
+                        <p class="txt2 mt8">* 본인인증 필수</p>
+                    </div>
+
+                    <!-- //End : content -->
+
+                    <!-- Start : 버튼 -->
+                    <div class="fixed-btn-area">
+                        <div class="btn-box">
+                            <span class="btn"><button type="button" id="">자동차세 연납 안내 바로가기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        </div>
+                    </div>
+                    <!-- //End : 버튼 -->
+                </div>
+            </div>
+            <div class="popup-close pc-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+        </div>
+    </div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

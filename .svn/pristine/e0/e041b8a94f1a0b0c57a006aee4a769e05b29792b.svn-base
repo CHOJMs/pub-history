@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/jquery.paroller.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="scroll">
+            <a href="./index.html">
+                <figure><img src="./assets/images/app_img_07.png" alt=""></figure>
+            </a>
+
+            <div class="rellax-scroll">
+                <figure><a href="javascript:;"><img src="./assets/images/app_scroll_img.png" alt=""></a></figure>
+                <a href="./index.html" class="card-stack">
+                    <ul>
+                        <li><img src="./assets/images/object_01.png" alt=""></li>
+                        <li><img src="./assets/images/object_02.png" alt=""></li>
+                        <li><img src="./assets/images/object_03.png" alt=""></li>
+                        <li><img src="./assets/images/object_04.png" alt=""></li>
+                        <li><img src="./assets/images/object_05.png" alt=""></li>
+                        <li><img src="./assets/images/object_06.png" alt=""></li>
+                    </ul>
+                </a>
+                <figure><img src="./assets/images/app_scroll_car.png" alt=""></figure>
+            </div>
+
+            <div>
+                <figure><a href="javascript:;"><img src="./assets/images/action_bar.png" alt="" style="max-width: 108%; transform: translate(-4%, 10%);"></a></figure>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('html, body').scroll(function(){
+            $('.rellax-scroll').css({'top':'60%'});
+        });
+
+        $('.rellax-scroll > figure > a').click(function(){
+            $(this).addClass('hide');
+            $('.card-stack + figure').addClass('hide');
+            $('.card-stack').slideDown('slow');
+        })
+    </script>
+    
+</body>
+</html>

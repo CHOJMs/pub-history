@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>차량원부조회 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+
+    <script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-full"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>차량원부조회</h1>
+            </div>
+            <div class="popup-contents flex-col-btm"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <div class="flex-item-top">
+                    <div class="item-cnt">
+                        <table class="data-tbl">
+                            <colgroup>
+                                <col width="33.33%">
+                                <col width="33.33%">
+                                <col width="33.33%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">차량번호</p>
+                                            <input type="tel" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">차명</p>
+                                            <input type="text" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">차명</p>
+                                            <input type="text" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">유종</p>
+                                            <input type="text" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">인승</p>
+                                            <input type="text" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">차종</p>
+                                            <input type="text" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">용도</p>
+                                            <input type="text" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">차대번호</p>
+                                            <input type="tel" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">최초등록일</p>
+                                            <input type="tel" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">최종등록일</p>
+                                            <input type="tel" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">압류건수</p>
+                                            <input type="tel" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">저당건수</p>
+                                            <input type="tel" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">주민(법인)<br>등록번호</p>
+                                            <input type="tel" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">최종소유자</p>
+                                            <input type="text" placeholder="" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="flex-item-btm">
+                    <div class="y-scrollBox" style="max-height: 230px;">
+                        <table class="bbs-table">
+                            <colgroup>
+                                <col width="60px">
+                                <col width="120px">
+                                <col width="130px">
+                                <col width="%">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="130px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">구분</th>
+                                    <th scope="col">등록(설정)일자</th>
+                                    <th scope="col">내용</th>
+                                    <th scope="col">저당권자염</th>
+                                    <th scope="col">울부번호</th>
+                                    <th scope="col">설정금액</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td>1980-12-12</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td>1980-12-12</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td>1980-12-12</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td>1980-12-12</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="bor-line">
+                                    <td colspan="7" class="nodata"><span>정보가 없습니다.</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Start : 버튼 -->
+                    <div class="btn">
+                        <a href="#">확인</a>
+                    </div>
+                    <!-- //End : 버튼 -->
+                </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

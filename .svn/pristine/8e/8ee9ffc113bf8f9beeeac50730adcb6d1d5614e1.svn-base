@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:15%">
+                    <col style="width:8%">
+                    <col style="width:13%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 내차사기 ▣</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 내차팔기 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 마이 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>마이 홈</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/마이홈.html">마이홈.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>마이 홈 (로그인 전, 데이터 없는 경우)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/마이홈2.html">마이홈2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-00</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>내 차량 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/내차량선택.html">내차량선택.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>차량관리 > 계약관리</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-001_1.html">DBM-MY-200-001_1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>차량관리 > 차량관리</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-001_2.html">DBM-MY-200-001_2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>차량관리 > 보험관리</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-001_3.html">DBM-MY-200-001_3.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

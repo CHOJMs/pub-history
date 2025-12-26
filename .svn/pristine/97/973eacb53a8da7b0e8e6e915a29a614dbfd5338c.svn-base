@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>개인정보처리방침 | iM캐피탈</title>
+
+</head>
+<body>
+    <div class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
+        <!-- Start : skip_navigation -->
+        <div id="tab_skip">
+            <a href="#common_body">
+                <span>본문 바로가기</span>
+            </a>
+        </div>
+        <!-- //End : skip_navigation -->
+
+        <!----------- Start : 모바일 메뉴 ----------->
+        <header id="header" class="sub"> <!-- main -->
+            <div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+            <div class="mobile-btn">
+                <ul>
+                    <li class="back"><a href="#none"><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+                    <li class="home"><a href="#none"><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+                </ul>
+            </div>
+
+            <nav class="header-inner">
+                <div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+
+                <div class="mobile-menu">
+                    <!-- <p tabindex="0"><a href="">본인인증</a></p>-->
+                    <p tabindex="0">홍길동님 반갑습니다.</p>
+                    <ul>
+                        <li><a href="">공지사항</a></li>
+                        <li><a href="">인증센터</a></li>
+                        <li class="setting"><a href="">설정</a></li>
+                    </ul>
+                    <div class="mobile-logout"><a href="">로그아웃</a></div>
+                </div>
+
+                <div class="left left-pc">
+					<ul>
+						<li><a href="">회사소개</a>
+							<ul>
+                                <li class="dep2"><a href="">기업정보</a>
+                                   <ul>
+                                        <li><a href="">회사개요</a></li>
+                                        <li><a href="">CEO 인사말</a></li>
+                                        <li><a href="">영업점 안내</a></li>
+                                        <li><a href="">조직도</a></li>
+                                        <li><a href="">그룹경영이념</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">투자정보</a>
+                                    <ul>
+                                        <li><a href="">경영공시</a></li>
+                                        <li><a href="">결산공고</a></li>
+                                        <li><a href="">재무정보</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">윤리경영</a>
+                                    <ul>
+                                        <li><a href="">윤리경영비전</a></li>
+                                        <li><a href="">윤리경영헌장</a></li>
+                                        <li><a href="">윤리강령</a></li>
+                                        <li><a href="">윤리경영 Q&A</a></li>
+                                    </ul>
+                                    </li>
+                                <li><a href="#none" class="ico_openwindow" onclick="goPage('/career/hrSystem/hrSystem01.do', '_blank'); return false;" title="인재채용 새창이동">인재채용</a></li>
+                            </ul>
+						</li>
+						<li><a href="">고객센터</a>
+							<div class="flex-list">
+								<div>
+									<p class="mt0">상담ㆍ문의</p>
+									<ul>
+										<li><a href="">상담문의/민원접수</a></li>
+										<li><a href="">자주하는 질문 FAQ</a></li>
+									</ul>
+								</div>
+								<div>
+									<p>이용안내</p>
+									<ul>
+										<li><a href="">약관 및 규정</a></li>
+                                        <li class="dep2"><a href="">본인인증안내</a>
+											<ul>
+												<li><a href="">카카오페이</a></li>
+												<li><a href="">금융인증서</a></li>
+												<li><a href="">모바일 웹 공동인증서</a></li>
+												<li><a href="">공동인증서 내보내기<br>(PC → 모바일앱)</a></li>
+												<li><a href="">공동인증서 가져오기<br>(모바일앱 → PC)</a></li>
+											</ul>
+										</li>
+                                        <li><a href="">공지사항</a></li>
+                                        <li><a href="">고객확인의무 안내</a></li>
+                                        <li><a href="">대출인 모집 지급<br>수수료 현황</a></li>
+                                        <li><a href="">금리조회</a></li>
+										<li class="dep2"><a href="">고객정보관리</a>
+											<ul>
+												<li><a href="">고객(신용)정보 수집,<br>이용 및 제공 관련<br> 고객 권리 안내문</a></li>
+												<li><a href="">계열사간 고객정보<br>제공 내역 조회</a></li>
+                                                <li><a href="">개인정보 열람신청</a></li>
+												<li><a href="">개인(신용)정보<br>이용 및 제공내역</a></li>
+												<li><a href="">마케팅목적제공 현황</a></li>
+												<li><a href="">신용정보조회 동의</a></li>
+												<li><a href="">위탁업체 현황</a></li>
+                                                <li><a href="">개인신용평가 결과에<br>대한 설명 및 이의제기<br>신청</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+                        <li><a href="">금융소비자보호</a>
+							<ul>
+                                <li><a href="">금융소비자보호체계</a></li>
+                                <li><a href="">금융소비자보호공시</a></li>
+                                <li><a href="">금융소비자 참고판례</a></li>
+                                <li><a href="">금융소비자 유익정보</a></li>
+                                <li><a href="">금융감독원금융정보</a></li>
+                                <li><a href="">금융소비자권리</a></li>
+                                <li><a href="">적합성적정성원칙확인서</a></li>
+                            </ul>
+						</li>
+                        <li><a href="">클린센터</a></li>
+					</ul>
+				</div>
+
+				<div class="right">
+					<ul>
+						<li class=""><a href="javascript:;">개인금융</a>
+							<ul>
+								<li class="tit"><h2>개인금융</h2></li>
+								<li><a href="">상품소개</a></li>
+								<li><a href="">즉시대출</a></li>
+								<li><a href="">한도조회</a></li>
+								<li><a href="">전자약정</a></li>
+								<li class="dep2"><a href="">온라인서류제출</a>
+									<ul>
+										<li><a href="">소득 서류제출</a></li>
+										<li><a href="">신분증 제출</a></li>
+										<li><a href="">FIND 서류제출</a></li>
+									</ul>
+								</li>
+								<li><a href="">대출계산기</a></li>
+                                <li class="dep2"><a href="">인증서안내</a>
+									<ul>
+										<li><a href="">공동인증서 내보내기<br>(PC → 모바일웹)</a></li>
+										<li><a href="">공동인증서 가져오기<br>(모바일웹 → PC)</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">자동차금융</a>
+							<ul>
+								<li class="tit"><h2>자동차금융</h2></li>
+                                <li><a href="">상품소개</a></li>
+								<li><a href="">신차오토론</a></li>
+								<li><a href="">오토리스</a></li>
+								<li><a href="">중고차오토론</a></li>
+								<li><a href="">장기렌터카</a></li>
+								<li><a href="">전자약정</a></li>
+								<li class="dep2"><a href="">온라인서류제출</a>
+									<ul>
+										<li><a href="">소득 서류제출</a></li>
+										<li><a href="">FIND 서류제출</a></li>
+									</ul>
+								</li>
+                                <li><a href="">내차승계</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">스탁론</a>
+							<ul>
+								<li class="tit"><h2>스탁론</h2></li>
+                                <li><a href="">상품소개</a></li>
+								<li><a href="">대출신청</a></li>
+								<li><a href="">한도변경</a></li>
+								<li><a href="">추가대출</a></li>
+                                <li><a href="">대출상환</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">금융센터</a>
+							<ul>
+								<li class="tit"><h2>금융센터</h2></li>
+								<li><a href="">리스금융</a></li>
+								<li><a href="">할부금융</a></li>
+								<li><a href="">기업금융</a></li>
+								<li><a href="">신기술금융</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">마이</a>
+							<ul>
+								<li class="tit"><h2>마이</h2></li>
+								<li><a href="">신청/이용내역</a></li>
+								<li><a href="">고객정보 변경</a></li>
+								<li><a href="">서류변경</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+                <div class="left left-mob">
+					<ul>
+						<li>
+							<a href="">회사소개</a>
+							<ul>
+								<li class="tit"><h2>회사소개</h2></li>
+                                <li class="dep2"><a href="">기업정보</a>
+                                    <ul>
+                                        <li><a href="">회사개요</a></li>
+                                        <li><a href="">CEO 인사말</a></li>
+                                        <li><a href="">영업점 안내</a></li>
+                                        <li><a href="">조직도</a></li>
+                                        <li><a href="">그룹경영이념</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">투자정보</a>
+                                    <ul>
+                                        <li><a href="">경영공시</a></li>
+                                        <li><a href="">결산공고</a></li>
+                                        <li><a href="">재무정보</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">윤리경영</a>
+                                    <ul>
+                                        <li><a href="">윤리경영비전</a></li>
+                                        <li><a href="">윤리경영헌장</a></li>
+                                        <li><a href="">윤리강령</a></li>
+                                        <li><a href="">윤리경영 Q&A</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none" class="ico_openwindow" onclick="goPage('/career/hrSystem/hrSystem01.do', '_blank'); return false;" title="인재채용 새창이동">인재채용</a></li>
+							</ul>
+						</li>
+						<li><a href="">고객센터</a>
+							<div class="flex-list">
+								<div>
+									<h2 class="tit">고객센터</h2>
+                                    <p>상담ㆍ문의</p>
+									<ul>
+										<li><a href="">상담문의/민원접수</a></li>
+										<li><a href="">자주하는 질문</a></li>
+									</ul>
+								</div>
+								<div>
+									<p>이용안내</p>
+									<ul>
+										<li><a href="">약관 및 규정</a></li>
+                                        <li class="dep2"><a href="">본인인증안내</a>
+											<ul>
+												<li><a href="">카카오페이</a></li>
+												<li><a href="">금융인증서</a></li>
+												<li><a href="">모바일 웹 공동인증서</a></li>
+												<li><a href="">공동인증서 내보내기<br>(PC → 모바일앱)</a></li>
+												<li><a href="">공동인증서 가져오기<br>(모바일앱 → PC)</a></li>
+											</ul>
+										</li>
+                                        <li><a href="">공지사항</a></li>
+										<li><a href="">고객확인의무 안내</a></li>
+										<li><a href="">대출인모집 지급수수료<br>현황</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+                        <li>
+							<a href="">금융소비자보호</a>
+							<ul>
+								<li class="tit"><h2>금융소비자보호</h2></li>
+                                <li><a href="">금융소비자보호체계</a></li>
+                                <li><a href="">금융소비자보호공시</a></li>
+                                <li><a href="">금융소비자 참고판례</a></li>
+                                <li><a href="">금융소비자 유익정보</a></li>
+                                <li><a href="">금융감독원금융정보</a></li>
+                                <li><a href="">금융소비자권리</a></li>
+                                <li><a href="">적합성적정성원칙확인서</a></li>
+							</ul>
+						</li>
+                        <li><a href="">클린센터</a></li>
+					</ul>
+					<div class="mobile-btn-wrap">
+						<div class="btn-half">
+							<a href="">한도조회</a>
+							<a href="">대출계산기</a>
+						</div>
+						<div class="btn-full"><a href="">iM캐피탈 APP 경험하기<span>다운로드</span></a></div>
+						<div class="btn-full_app"><a href="">쉽고 편리한 간편인증 등록하기<span>등록하기</span></a></div><!--앱일 경우 노츨-->
+
+						<!-- <div class="btn-full btn-color"><a href="">쉽고 편리한 간편인증</a></div> -->
+					</div>
+				</div>
+            </nav>
+        </header>
+        <!----------- //End : 모바일 메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-contents">
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <h1>개인정보처리방침</h1>
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <div class="pro-box">
+                        <div class="policy-cont type01">
+                            <div class="poli-select-box">
+                                <a href="#" id="" class="ico-select">2023-09-21</a>
+                            </div>
+                            <p class="poli-tl">주식회사 디지비캐피탈(이하 “회사”라 합니다)은 『개인정보보호법』, 『신용정보의 이용 및 보에 관한 법률』, 『정보통신망 이용촉진 및 정보보호 등에 관한 법률』 등 관련 법령을 준수하고 고객의 개인정보 및 권익을 보호하고 개인정보와 관련한 고충을 원할하게 처리할 수 있도록 다음과 같은 처리 방침을 두고 있습니다.</p>
+                            <div class="labeling-box">
+                                <p class="lab-tit">주요 개인정보 처리 표시(라벨링)</p>
+                                <ul class="labeling-list">
+                                    <li>
+                                        <img src="/static/web/img/ui_common/ico_policy16.png" alt="일반개인정보 수집 이미지">
+                                        <div>
+                                            <p>일반개인정보 수집</p>
+                                            성명, 주소, 연락처, 이메일 등
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="/static/web/img/ui_common/ico_policy17.png" alt="고유식별정보 수집 이미지">
+                                        <div>
+                                            <p>고유식별정보 수집</p>
+                                            주민등록번호, 운전면허번호,<br> 여권번호, 외국인등록번호
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="/static/web/img/ui_common/ico_policy02.png" alt="개인정보 보유기간 이미지">
+                                        <div>
+                                            <p>개인정보 보유기간</p>
+                                            금융거래종료일부터 5년<br>(단, 다른 관련 법령에 해당하는 경우<br>해당 법령사의 보존기간까지 보관 등)
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="/static/web/img/ui_common/ico_policy01.png" alt="개인정보 처리 목적 이미지">
+                                        <div>
+                                            <p>개인정보 처리 목적</p>
+                                            회원관리, 계약 체결 및 이행, 상담,<br>정산, 마케팅, 광고, 통계 및 분석, <br>민원처리, 법령상 의무이행 등
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="/static/web/img/ui_common/ico_policy03.png" alt="개인정보의 제3자 제공 이미지">
+                                        <div>
+                                            <p>개인정보의 제3자 제공</p>
+                                            세부 현황은 개인정보 제3자 제공<br>현황에서 확인 가능
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="/static/web/img/ui_common/ico_policy04.png" alt="개인정보의 위탁 이미지">
+                                        <div>
+                                            <p>개인정보의 위탁</p>
+                                            세부 현황은 개인정보<br>업무위탁 현황에서 확인 가능
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="/static/web/img/ui_common/ico_policy18.png" alt="고충처리부서 이미지">
+                                        <div>
+                                            <p>고충처리부서</p>
+                                            개인정보보호 관련 부서
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="/static/web/img/ui_common/ico_policy08.png" alt="가명정보 처리 이미지">
+                                        <div>
+                                            <p>가명정보 처리</p>
+                                            세부현황은 가명정보 처리<br>사항에서 확인 가능
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="/static/web/img/ui_common/ico_policy15.png" alt="개인정보 처리방침 변경 이미지">
+                                        <div>
+                                            <p>개인정보 처리방침 변경</p>
+                                            변경된 내용을 지속적 공개
+                                        </div>
+                                    </li>
+                                    <li class="none">
+                                        <div><p></p></div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p class="poli-tl01">iM캐피탈의 개인정보 처리방침은 다음과 같은 내용으로 구성되어 있습니다.</p>
+                            <ul class="poli-blue-list">
+                                <li><a href="#a1">제1조 개인정보의 처리목적</a></li>
+                                <li><a href="#a2">제2조 개인정보의 처리 및 보유기간</a></li>
+                                <li><a href="#a3">제3조 개인정보의 제3자 제공에 관한 사항</a></li>
+                                <li><a href="#a4">제4조 개인정보처리의 위탁에 관한 사항</a></li>
+                                <li><a href="#a5">제5조 정보주체의 권리 · 의무 및 행사방법에 관한 사항</a></li>
+                                <li><a href="#a6">제6조 만14세 미만 아동의 개인정보처리에 관한 사항</a></li>
+                                <li><a href="#a7">제7조 처리하는 개인정보의 항목</a></li>
+                                <li><a href="#a8">제8조 가명정보의 처리에 관한 사항</a></li>
+                                <li><a href="#a9">제9조 개인정보의 파기에 관한 사항</a></li>
+                                <li><a href="#a10">제10조 개인정보의 안전성 확보조치에 관한 사항</a></li>
+                                <li><a href="#a11">제11조 개인정보 자동 수집 장치의 설치 · 운영 및 거부에 관한 사항</a></li>
+                                <li><a href="#a12">제12조 행태정보의 수집 · 이용 · 제공 및 거부 등에 관한 사항</a></li>
+                                <li><a href="#a13">제13조 권익침해 구제 방법</a></li>
+                                <li><a href="#a14">제14조 개인정보보호 책임자</a></li>
+                                <li><a href="#a15">제15조 개인정보 처리방침의 변경에 관한 사항</a></li>
+                            </ul>
+
+                        </div>
+                        <div id="a1" class="policy-cont">
+                            <p class="poli-tit">제1조 개인정보의 처리목적<img src="/static/web/img/ui_common/ico_policy01.png" alt=""></p>
+                            <p class="poli-txt">회사는 다음과 같은 목적을 위하여 필요한 최소한의 개인정보만을 처리하고 있습니다.</p>
+                            <ol class="poli-list" >
+                                <li>① 금융거래관계의 설정 또는 유지 여부의 판단</li>
+                                <li>② 금융사고 조사, 분쟁해결, 민원처리</li>
+                                <li>③ 신용정보의 집중관리 및 활용 등을 위해 신용정보집중기관에 제공</li>
+                                <li>④ 신용도 평가, 실명확인 등을 위해 신용조회 회사에 제공</li>
+                                <li>⑤ 거래 목적 달성을 위해 제휴기관, 업무처리위탁업체 및 보증인에게 제공</li>
+                                <li>⑥ 새로운 서비스, 신상품이나 이벤트 정보 안내</li>
+                                <li>⑦ 기타 법령상 의무이행 및 업무목적 달성을 위한 처리</li>
+                            </ol>
+                            <p></p>
+                        </div>
+                        <div id="a2" class="policy-cont">
+                            <p class="poli-tit">제2조 개인정보의 처리 및 보유기간<img src="/static/web/img/ui_common/ico_policy02.png" alt=""></p>
+                            <p class="poli-txt">회사는 정보주체로부터 개인정보를 수집시에 동의 받은 개인정보 보유 · 이용기간 내에서 개인정보를 처리 · 보유합니다. 단, 관계법령의 규정에 의하여 보존할 필요가 있는 경우 회사는 관계법령에서 정한 일정한 기간 동안 개인 정보를 보유합니다.</p>
+                            <ol class="poli-list">
+                                <li>① 회사는 법규상의 의무 이행을 위하여 신용정보의 이용 및 법률에 따라 금융상거래 종료일로부터 최대 5년 동안 또는 금융소비자보호법에 따라 계약일로부터 최대10년동안 개인정보를 보존합니다.</li>
+                                <li>② 회사는 다음의 정보에 대해서 명시한 기간 동안 보존합니다.
+                                    <ul>
+                                        <li>(1) 계약 또는 청약철회 등에 관한 기록 : 5년 (보존이유: 전자상거래 등에서의 소비자 보호에 관한 법률)</li>
+                                        <li>(2) 대금결제 및 재화 등의 공급에 관한 기록 : 5년 (보존이유: 전자상거래 등에서의 소비자 보호에 관한 법률)</li>
+                                        <li>(3) 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년 (보존이유: 전자상거래 등에서의 소비자 보호에 관한 법률)</li>
+                                        <li>(4) 기타 고객의 동의를 받은 경우 : 동의를 받은 기간까지</li>
+                                        <li>(5) 기타 타 법령에 따라 보존을 하여야 하는 경우, 해당 법령에 명시한 기간까지 보존합니다.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                        <div id="a3" class="policy-cont">
+                            <p class="poli-tit">제3조 개인정보의 제3자 제공에 관한 사항<img src="/static/web/img/ui_common/ico_policy03.png" alt=""></p>
+                            <p class="poli-txt">회사는 정보주체의 개인정보를 「개인정보의 처리 목적」에서 명시한 범위 내에서만 처리하며, 정보주체의 동의, 법률의 특별한 규정 등 「개인정보보호법」 제17조 및 제18조에 해당하는 경우에만 최소한의 개인정보를 제3자에게 제공하고 그 이외에는 정보주체의 개인정보를 제3자에게 제공하지 않습니다. 「개인정보보호법」 제18조 또는 기타 법률의 특별한 규정에 의거하여 개인정보를 목적 외의 용도로 이용하거나 제3자에게 제공할 수 있는 경우는 다음과 같습니다.</p>
+                            <ol class="poli-list">
+                                <li>① 사전에 개인정보를 목적 외의 용도로 제공하는 것에 대한 동의를 받은 경우</li>
+                                <li>② 통계처리, 학술연구, 시장조사 등을 위하여 필요한 경우로서 특정한 개인을 식별할 수 없는 형태로 개인정보를 제공하는 경우</li>
+                                <li>③ 법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우</li>
+                                <li>④ 정보주체 또는 그 법정대리인이 의사표시를 할 수 없는 상태에 있거나 주소불명 등으로 사전에 동의를 받을 수 없는 경우로서 명백히 정보주체 또는 제3자의 급박한 생명, 신체, 재산의 이익을 위하여 필요하다고 인정되는 경우</li>
+                                <li>⑤ 회사가 법령상 의무를 준수하기 위하여 불가피하게 수집한 개인정보를 그 수집 목적 범위 내에서 제공하는 경우</li>
+                            </ol>
+                            <p class="poli-info-txt">[홈페이지 별도게시 : ‘고객센터 &rarr; 고객정보관리 &rarr; 위탁업체 및 제3자 제공 현황’]</p>
+                        </div>
+                        <div id="a4" class="policy-cont">
+                            <p class="poli-tit">제4조 개인정보처리의 위탁에 관한 사항<img src="/static/web/img/ui_common/ico_policy04.png" alt=""></p>
+                            <p class="poli-txt">회사는 더 나은 서비스 및 업무목적 달성을 위해서 정보주체의 개인정보 처리를 외부전문기관에 위탁할 수 있습니다.</p>
+                            <ol class="poli-list">
+                                <li>① 개인정보 처리를 위탁하는 경우 위탁하는 업무의 내용과 수탁자를 정보주체가 언제든지 쉽게 확인할 수 있도록 회사의 인터넷 홈페이지에 지속적으로 공개합니다. 위탁하는 업무의 내용이나 수탁자가 변경되는 경우에도 홈페이지를 통하여 정보주체에게 알려드립니다.</li>
+                                <li>② 회사는 위탁계약 체결 시 위탁업무의 목적 및 범위 이외에도 다음 사항들을 계약서 등 문서에 명시하고, 수탁자가 개인정보를 안전하게 처리하는지를 감독하여 정보주체의 권익을 보호합니다.
+                                    <ul>
+                                        <li>(1) 위탁업무의 목적 및 범위</li>
+                                        <li>(2) 위탁업무 수행 목적 외 개인정보의 처리 금지에 관한 사항</li>
+                                        <li>(3) 재위탁 제한에 관한 사항</li>
+                                        <li>(4) 개인정보의 기술적 · 관리적 보호조치에 관한 사항</li>
+                                        <li>(5) 개인정보에 대한 접근 권한 등 안전성 확보 조치에 관한 사항</li>
+                                        <li>(6) 위탁업무와 관련하여 보유하고 있는 개인정보의 관리 현황 점검 등 감독에 관한 사항</li>
+                                        <li>(7) 수탁자가 준비하여야 할 의무를 위반한 경우의 손해배상 등에 관한 사항</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p class="poli-info-txt">[홈페이지 별도게시 : ‘고객센터 &rarr; 고객정보관리 &rarr; 위탁업체 및 제3자 제공 현황’]</p>
+                        </div>
+                        <div id="a5" class="policy-cont">
+                            <p class="poli-tit">제5조 정보주체와 법정대리인의 권리•의무 및 행사방법에 관한 사항<img src="/static/web/img/ui_common/ico_policy05.png" alt=""></p>
+                            <ol class="poli-list">
+                                <li>① 정보주체 본인 및 법정대리인(정보주체가 만14세 미만인 경우)은 회사에 언제든지 개인정보 열람 · 정정 · 삭제 · 처리정지 요구 등 의 권리를 행사할 수 있습니다.
+                                    <ul>
+                                        <li><p>(1) 개인정보 열람요구</p>
+                                            <ul class="font-gray">
+                                                <li>가. 정보주체는 개인정보 열람요구서를 회사에 제출하는 등의 방법으로 열람을 요구할 수 있습니다.</li>
+                                                <li>나. 회사는 10일 이내에 정보주체가 해당 개인정보를 열람할 수 있도록 하여야 합니다. 이 경우 해당 기간 내에 열람 할 수 없는 정당한 사유가 있을 때에는 정보주체에게 그 사유를 알리고 열람을 연기할 수 있으며, 그 사유가 소멸한 경우에 정당한 사유가 없는 한 사유가 소멸한 날부터 10일 이내에 열람하도록 하여야 합니다.</li>
+                                                <li>다. 회사는 다음 어느 하나에 해당하는 경우에는 정보주체에게 그 사유를 알리고 열람을 제한 하거나 거절할 수 있습니다.<br>
+                                                    - 법률에 따라 열람이 금지되거나 제한되는 경우<br>
+                                                    - 다른 사람의 생명, 신체를 해할 우려가 있거나 다른 사람의 재산과 그 밖의 이익을 부당하게 침해할 우려가 있는 경우</li>
+                                            </ul>
+                                        </li>
+                                        <li><p>(2) 개인정보의 정정•삭제</p>
+                                            <ul class="font-gray">
+                                                <li>가. 자신의 개인정보를 열람한 정보주체는 사실과 다르거나 확인할 수 없는 개인정보에 대하여 회사에 그 개인 정보의 정정 또는 삭제를 요구할 수 있습니다. 다만, 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.</li>
+                                                <li>나. 회사는 정보주체로부터 개인정보의 정정 또는 삭제를 요구 받았을 때에는 개인정보의 정정 또는 삭제에 관하여 다른 법령에 특별한 절차가 규정되어 있는 경우를 제외하고 10일 이내에 그 개인정보를 조사하여 정보주체의 요구에 따라 정정•삭제 등 필요한 조치를 한 후 그 결과를 정보주체께 알려드립니다. 회사는 이러한 조사에 필요한 경우 해당 정보주체에게 정정•삭제 요구사항의 확인에 필요한 증거자료를 제출하게 할 수 있습니다.</li>
+                                                <li>다. 회사는 다음의 어느 하나에 해당하는 경우에는 정보주체의 요구를 받은 날로부터 10일 이내에 그 사유를 알리고 요구를 제한하거나 거절할 수 있습니다.<br>
+                                                    - 법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우<br>
+                                                    - 다른 사람의 생명•신체를 해할 우려가 있거나 다른 사람의 재산과 그 밖의 이익을 부당하게 침해할 우려가 있는 경우</li>
+                                            </ul>
+                                        </li>
+                                        <li><p>(3) 개인정보의 처리정지 요구</p>
+                                            <ul class="font-gray">
+                                                <li>가. 정보주체는 회사에 대하여 개인정보보호 법령에서 정하는 바에 따라 개인정보 처리정지 요구서를 회사에 제출하는 등 의 방법으로 자신의 개인정보 처리의 정지를 요구할 수 있습니다.</li>
+                                                <li>나. 회사는 이러한 요구를 받았을 때에는 10일 이내에 정보주체의 요구에 따라 개인정보 처리의 전부를 정지하거나 일부를 정지하고 있습니다. 다만, 다음의 어느 하나에 해당하는 경우에는 정보주체의 처리정지 요구를 거절할 수 있습니다.<br>
+                                                    - 법률에 특별한 규정이 있거나 법률상 의무를 준수하기 위하여 불가피한 경우<br>
+                                                    - 다른 사람의 생명•신체를 해할 우려가 있거나 다른 사람의 재산과 그 밖의 이익을 부당하게 침해할 우려가 있는 경우<br>
+                                                    - 개인정보를 처리하지 아니하면 정보주체와 약정한 서비스를 제공하지 못하는 등 계약의 이행이 곤란한 경우로서 정보 주체가 그 계약의 해지 의사를 명확하게 밝히지 아니한 경우</li>
+                                                <li>다. 회사가 정보주체의 처리정지 요구를 거절하였을 때에는 10일 이내에 정보 주체에게 그 사유를 알리고 있습니다.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>② 권리행사의 방법 및 절차
+                                    <ul>
+                                        <li>(1) 정보주체는 개인정보 열람, 정정•삭제 및 처리정지 등의 요구(이하 “열람 등의 요구”라 한다)를 대리인에게 하게 할 수 있습니다. 다만, 이 경우에 회사는 정보주체의 위임장과 인감증명서 또는 주민등록증, 운전면허증, 여권 등의 신분증명서 사본을 제출 받아 해당 요구를 하는 자가 정보주체의 위임을 받은 정당한 대리인 임을 확인하고 있습니다.</li>
+                                        <li>(2) 만 14세 미만 아동의 경우 법정대리인을 통해 그 아동의 개인정보 열람 등의 요구를 할 수 있습니다.</li>
+                                        <li>(3) 회사는 열람 등의 요구를 하는 고객에게 개인정보의 열람 또는 정정, 삭제에 소요되는 실비의 범위 안에서 수수료와 우송료(사본의 우송을 청구하는 경우에 한한다)를 청구할 수 있습니다. 다만, 열람 등의 요구가 회사의 귀책사유로 인한 경우에는 청구하지 않는다.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p class="poli-info-txt"></p>
+                        </div>
+                        <div id="a6" class="policy-cont">
+                            <p class="poli-tit">제6조 만14세 미만 아동의 개인정보처리에 관한 사항<img src="/static/web/img/ui_common/ico_policy06.png" alt=""></p>
+                            <p class="poli-txt">회사는 만14세미만 아동의 개인정보를 수집할 때 법정대리인의 동의를 얻어 해당 서비스 수행에 필요한 최소한의 개인정보를 수집합니다. 또한 관계 법령 등에 따른 방식으로 동의여부를 확인합니다.</p>
+                            <ol class="poli-list">
+                                <li>① 동의 내용을 게재한 인터넷사이트에 법정대리인이 동의 여부를 표시하도록 하고, 법정대리인의 휴대전화 본인인증 등을 통하여 본인 여부를 확인하는 방법</li>
+                                <li>② 동의 내용이 적힌 서면을 법정대리인에게 직접 발급하거나, 우편 또는 팩스를 통하여 전달하고 법정대리인이 동의 내용에 대하여 서명날인 후 제출하도록 하는 방법</li>
+                                <li>③ 그 밖에 위와 준하는 방법으로 법정대리인에게 동의 내용을 알리고 동의의 의사표시를 확인하는 방법</li>
+                            </ol>
+                        </div>
+                        <div id="a7" class="policy-cont">
+                            <p class="poli-tit">제7조 처리하는 개인정보의 항목<img src="/static/web/img/ui_common/ico_policy07.png" alt=""></p>
+                            <p class="poli-txt">회사는 다음 각 항의 개인정보를 처리하고 있습니다. </p>
+                            <ol class="poli-list">
+                                <li>① 필수적 개인정보 항목</li>
+                            </ol>
+                            <table class="tbl-poli">
+                                <caption>필수적개인정보항목(고유식별정보, 일반개인정보, 신용거래정보, 신용도판단정보, 신용능력정보, 공공정보, 해당서비스를신청또는이용시필요정보) 제공에 대한 테이블</caption>
+                                <colgroup>
+                                    <col width="156px">
+                                    <col width="%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">고유식별정보</th>
+                                        <td>주민등록번호, 운전면허번호, 여권번호, 외국인등록번호</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">일반개인정보</th>
+                                        <td>성명, 영문명, 연락처(휴대폰, 자택, 직장), 주소(자택, 직장), 이메일, 직장명, 부서, 직위, 성별, 국적, 음성 data, CI 값, 차량번호, 차대번호,증권계좌번호, 사업자번호, 신분증(발급일, 기관, 사진), 기타 (금융)거래 관계 및 서비스의 설정 · 유지 · 이행 · 관리 · 개선 등과 관련하여 본인이 제공한 정보</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">신용거래정보</th>
+                                        <td>여신성거래정보, 보험거래정보, 금융투자상품정보, 그 외 금융거래정보, 상거래정보</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">신용도판단정보</th>
+                                        <td>신용질서 문란정보, 연체정보</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">신용능력정보</th>
+                                        <td>직업정보, 소득정보, 재산정보, 채무정보, 납세실적 정보</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">공공정보</th>
+                                        <td>인적정보, 체납정보, 채무조정정보, 개인신용평점, 공적장부정보, 공공요금 납부정보, 주민등록 관련 정보</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">해당 서비스를<br> 신청 또는 이용시<br> 필요 정보</th>
+                                        <td>
+                                            <ul class="list-dot">
+                                                <li>자동납부서비스 : 성명, 생년월일, 휴대폰번호, 주소, 예금주명, 은행명, 계좌번호</li>
+                                                <li>마이데이터 서비스 : 성명, 생년월일, 휴대전화번호, CI, 자산입력정보, 이메일, 여신성 거래정보, 보험거래정보, 금융투자상품정보, 그 외 금융거래정보, 상거래정보, 기타 계약 및 서비스의 체결·유지·이행·관리·개선 등과 관련하여 본인이 제공하거나 생성된 정보, 소득정보, 재산정보, 채무정보, 납세실적 정보, 개인신용평점</li>
+                                                <li>공공마이데이터 : 주민등록번호, 운전면허번호, 여권번호, 외국인등록번호, 성명, 생년월일, 성별, 연락처(전화번호, 이메일), 내외국인구분, CI값</li>
+                                                <li>대출이동서비스 : 주민등록번호, 성명, 전화번호 등 연락처, 접속일시, IP주소 등 전자금융거래법령에 따른 수집정보, 대출이동서비스 이용을 위하여 조회한 타기관 (금융)거래정보<span class="sup">주)</span></li>
+                                            </ul>
+                                            <p class="poli-info-txt">주) 대출정보(대출식별번호, 대출약정금액, 상환예상금액, 보유금융회사 등)를 포함한 거래설정·내역정보 및 대출이동서비스의 설정·유지·이행·관리를 위한 상담을 통해 생성되는 정보</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <ol class="poli-list">
+                                <li>② 선택적 개인정보 항목</li>
+                            </ol>
+                            <table class="tbl-poli">
+                                <caption>선택적개인정보항목(금융상품안내및이용권유를위한수집이용, 부수서비스안내를위한수집이용, 계열사고객소개동의, 신약및서비스의체결·유지·이행·관리·개선 관련본인이제공한정보) 제공에 대한 테이블</caption>
+                                <colgroup>
+                                    <col width="156px">
+                                    <col width="%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">금융상품 안내 및<br> 이용권유를 위한<br> 수집·이용</th>
+                                        <td>
+                                            <ul class="list-dot">
+                                                <li>일반개인정보: 성명, 휴대폰연락처, 주소(자택, 직장), 이메일, 직장명, 직종, 생년월일, 성별</li>
+                                                <li>신용거래정보: 여신성거래정보</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">부수서비스 안내를<br> 위한 수집·이용</th>
+                                        <td>
+                                            <ul class="list-dot">
+                                                <li>일반개인정보: 성명, 휴대폰연락처, 주소(자택, 직장), 이메일, 직장명, 직종, 생년월일, 성별</li>
+                                                <li>신용거래정보: 여신성거래정보</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">계열사 고객<br> 소개 동의</th>
+                                        <td>
+                                            <ul class="list-dot">
+                                                <li>일반개인정보: 성명, 휴대폰연락처, 주소(자택, 직장), 이메일, 직장명, 직종, 생년월일, 성별</li>
+                                                <li>신용거래정보: 여신성거래정보</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">계약 및 서비스의<br> 체결·유지·이행·<br>관리·개선 관련<br> 본인이 제공한<br> 정보</th>
+                                        <td>계약 및 서비스의 체결·유지·이행·관리·개선 관련 본인이 제공한 정보</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <ol class="poli-list">
+                                <li>③ 온라인 거래 관련 목적 수집 항목
+                                    <ul>
+                                        <li>(1) 서비스 이용과정이나 사업 처리 과정에서 수집될 수 있는 항목
+                                            <ul class="list-dash1 font-gray">
+                                                <li>- 접속에 이용된 이용자의 브라우저 종류 및 OS, IPWNTH, 쿠키, MAC주소, HDD시리얼, UUID, ANDROID ID, 서비스 이용기록, 방문기록, 불량 이용기록, 이동통신 단말장치 내에 저장되어 있는 정보주)정보<span class="sup">주)</span><br>
+                                                    <span class="font14">주) 이통통신 단말장치 내에 저장되어 있는 정보에 대한 접근은 앱 설치 시 해당 정보에 접근한다는 것을 고지 · 승인 후 수집</span></li>
+                                            </ul>
+                                        </li>
+                                        <li>(2) 신용질서문란행위 조사(악성 APP 탐지를 통한 회사 APP 이용 고객의 보이스피싱 등 피해 예방)를 위한 항목
+                                            <ul class="list-dash1 font-gray">
+                                                <li>- 악성 APP탐지정보, 탐지된 악성 APP에 대한 진단정보</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>④ 수집방법
+                                    <ul>
+                                        <li>(1) 개인(신용)정보의 수집 · 이용 및 제공 · 활용 동의서 또는 이용약관의 내용에 대해 서면이나 [동의하지 않는다] 또는 [동의한다] 버튼을 클릭할 수 있는 절차를 마련하여 [동의한다] 버튼을 클릭하면 개인(신용)정보 수집에 동의한 것으로 봅니다.</li>
+                                        <li>(2) 회사는 아래의 방법으로 개인정보를 수집합니다.
+                                            <ul class="list-dash1 font-gray">
+                                                <li>- 홈페이지, 서면양식, 팩스, 전화, 상담게시판, 이메일</li>
+                                                <li>- 생성정보 수집 툴을 통한 수집</li>
+                                                <li>- 행정기관, 신용정보집중기관 및 신용정보회사 등 제3자로부터의 수집</li>
+                                                <li>- 협력회사로부터의 제공</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                        <div id="a8" class="policy-cont">
+                            <p class="poli-tit">제8조 가명정보의 처리에 관한 사항<img src="/static/web/img/ui_common/ico_policy08.png" alt=""></p>
+                            <ol class="poli-list">
+                                <li>① 가명정보 처리의 목적<br>
+                                    개인정보보호법 제28조의2에 의해 통계작성(상업적 목적 포함), 과학적 연구(산업적 연구 포함), 공익적 기록보존 목적 등을 위하여 개인정보를 가명처리 할 수 있습니다. 회사가 처리하는 ‘가명정보 처리현황’에서 확인할 수 있습니다.</li>
+                                <li>② 가명처리하는 개인정보의 항목<br>
+                                    회사가 처리하는 가명정보의 종류 및 항목, 이용목적은 ‘가명정보 처리현황’에서 확인할 수 있습니다.</li>
+                                <li>③ 가명정보 처리 및 보유기간<br>
+                                    가명정보는 가명처리 계획 수립 시 정한 목적을 달성하는 기간(시점)까지만 보유 및 이용됩니다. 회사가 처리하는 가명정보의 처리 및 보유기간은 ‘가명정보 처리현황’에서 확인할 수 있습니다.</li>
+                                <li>④ 가명정보의 제3자 제공에 관한 사항<br>
+                                    가명정보의 제3자 제공에 관한 사항은 ‘가명정보 처리현황’에서 확인할 수 있습니다.</li>
+                                <li>⑤ 가명정보의 안전성 및 확보조치에 관한 사항
+                                    <ul class="list-dash1">
+                                        <li>- 기술적 조치: 가명정보에 대한 접근권한 관리, 접근통제, 재식별 방지, 보안프로그램 설치</li>
+                                        <li>- 물리적 조치: 자료보관실 등의 접근통제, 별도 물리적 DB서버 보관 등</li>
+                                        <li>- 관리적 조치: 내부관리계획 수립 · 시행, 직원 교육 등</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p class="poli-info-txt">[가명정보 처리현황 위치: 홈페이지내 ‘고객센터 &rarr; 고객정보관리 &rarr; 가명정보 처리현황’]</p>
+                        </div>
+                        <div id="a9" class="policy-cont">
+                            <p class="poli-tit">제9조 개인정보의 파기에 관한 사항<img src="/static/web/img/ui_common/ico_policy09.png" alt=""></p>
+                            <p class="poli-txt"></p>
+                            <ol class="poli-list">
+                                <li>① 회사는 개인정보의 처리 목적이 달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 서류보관장소) 개인정보의 처리 및 보유기간에 따라 일정 기간 보관된 후 파기되며, 보존 이외의 다른목적으로 이용되거나 제공되지 않습니다. 다만, 다른 법령에 따라 보존하여야 하는 경우에는 그러하지 아니합니다. </li>
+                                <li>② 전자적 파일 형태인 경우 복원이 불가능한 방법으로 영구 삭제하며, 그 외의 기록물, 인쇄물, 서면, 기타 기록매체인 경우에는 파쇄, 소각 등의 방법으로 파기합니다.</li>
+                            </ol>
+                        </div>
+                        <div id="a10" class="policy-cont">
+                            <p class="poli-tit">제10조 개인정보의 안전성 확보조치에 관한 사항<img src="/static/web/img/ui_common/ico_policy10.png" alt=""></p>
+                            <p class="poli-txt">회사는 고객의 개인정보를 처리함에 있어 개인정보가 분실, 도난, 누출, 변조 또는 훼손되지 않도록 다음과 같은 안정성 확보 조치를 강구하고 있습니다.</p>
+                            <ol class="poli-list">
+                                <li>① 개인정보보호 책임자 지정, 개인정보 취급자에 대한 교육에 관한 사항 등 개인정보 내부관리계획을 수립하여 시행하고 있습니다.</li>
+                                <li>② 고객의 개인정보는 비밀번호에 의해 보호되며, 파일 및 전송 데이터를 암호화 하거나 파일 잠금기능(Lock)을 사용하여 중요한 데이터는 별도의 보안기능을 통해 보호되고 있습니다.</li>
+                                <li>③ 회사는 백신프로그램을 이용하여 컴퓨터바이러스에 의한 피해를 방지하기 위한 조치를 취하고 있습니다. 백신프로그램은 주기적으로 업데이트되며 갑작스런 바이러스가 출현 할 경우 백신이 나오는 즉시 이를 제공함으로써 개인정보가 침해되는 것을 방지하고 있습니다.</li>
+                                <li>④ 해킹 등에 의해 고객의 개인정보가 유출되는 것을 방지하기 위해 외부로부터의 침입을 차단하는 장치를 이용하고 있으며, 각 서버마다 침입방지시스템을 설치하여 24시간 침입을 감시하고 있습니다.</li>
+                                <li>⑤ 또한 회사는 전임직원이 개인정보보호에 대한 의식을 제고하기 위해 개인정보 보호와 관련한 교육에 힘쓰고 있습니다.</li>
+                            </ol>
+                        </div>
+                        <div id="a11" class="policy-cont">
+                            <p class="poli-tit">제11조 개인정보 자동 수집 장치의 설치·운영 및 거부에 관한 사항<img src="/static/web/img/ui_common/ico_policy11.png" alt=""></p>
+                            <ol class="poli-list">
+                                <li>① 쿠키(cookie) 정의<br>
+                                    회사는 이용자의 편의를 위하여 '쿠키(cookie)'를 운영합니다. 쿠키(cookie)란 웹사이트가 이용자의 브라우저(인터넷 익스플로러, 크롬 등)로 전송하는 소량의 정보이며 이용자의 기기(PC, 모바일) 내에 저장되기도 합니다.</li>
+                                <li>② 쿠키의 사용목적<br>
+                                    회사는 쿠키를 이용하여 이용자의 웹사이트 방문 및 이용형태, 이벤트 참여 정도 등을 파악하여 최적화된 정보를 제공하기 위해 사용되며, 이 경우 개인을 식별할 수 없는 비식별정보만 이용됩니다.</li>
+                                <li>③ 쿠키의 설치·운영 및 거부<br>
+                                    이용자는 웹 브라우저의 설정을 통해 쿠키의 사용을 거부할 수 있습니다.<br>
+                                    쿠키의 사용을 거부할 경우 일부 서비스의 이용에 어려움이 있을 수 있습니다.<br>
+                                    <span class="font-blue">* 설정방법 안내</span>
+                                    <ul class="list-dash1">
+                                        <li>- 인터넷 익스플로러 : 상단의 도구 &gt; 인터넷 옵션 &gt; 개인정보</li>
+                                        <li>- Microsoft Edge : [도구 모음 사용자 지정] 메뉴에서 [설정]선택 &gt; [개인 정보, 검색 및 서비스] 항목 [추적방지]</li>
+                                        <li>- Chrome : [맞춤설정 및 제어] 메뉴에서 [설정]선택 &gt; [개인 정보 보호 및 보안] 항목 [쿠키 및 기타 사이트 데이터]</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                        <div id="a12" class="policy-cont">
+                            <p class="poli-tit">제12조 행태정보의 수집 · 이용 · 제공 및 거부 등에 관한 사항<img src="/static/web/img/ui_common/ico_policy12.png" alt=""></p>
+                            <p class="poli-txt">회사는 맞춤형 상품 · 서비스개발 및 고객분석 등을 위해 최소한의 행태정보를 수집 · 이용하고 있습니다.</p>
+                            <ol class="poli-list">
+                                <li>① 행태정보 정의<br>
+                                    앱 사용이력, 구매 및 검색 이력 등 고객의 관심, 성향 등을 파악하고 분석할 수 있는 온라인 상의 이용자 활동 정보 입니다.</li>
+                                <li>② 수집하는 행태정보의 항목<br>
+                                    웹/앱 서비스 방문기록, 검색·클릭 등 사용이력, 광고식별자</li>
+                                <li>③ 수집 방법
+                                    <ul>
+                                        <li>(1) 웹/앱 서비스 내에서 행해지는 이용자의 주요 행동에 대해 생성정보 수집 툴을 통해 자동수집</li>
+                                        <li>(2) Google에서 제공하는 웹로그 분석 도구인 Google Analytics를 이용하여 이용자의 방문 웹 페이지, 방문 빈도 등의 정보를 활용하며 이 경우 이용자 개인을 식별할 수 없도록 비식별화 처리된 익명의 사용자 정보를 이용</li>
+                                    </ul>
+                                </li>
+                                <li>④ 수집 목적<br>
+                                    상품 · 서비스 개발 및 통계, 고객분석 등 이용자 분석, 이용자 행태정보 기간 맞춤형 광고 제공</li>
+                                <li>⑤ 보유·이용기간 및 이후 정보처리 방법<br>
+                                    수집일로부터 14개월간 보유·이용되며, 이용기간 종료 시 지체없이 삭제 또는 비식별화 조치</li>
+                                <li>⑥ 동의를 거부할 수 있는 권리 및 방법<br>
+                                    이용자는 단말기 설정 및 웹브라우저의 쿠키 설정 변경을 하여 서비스 이용을 거부할 수 있습니다.
+                                    <ul>
+                                        <li>(1) 스마트폰 차단/허용 방법
+                                            <ul class="list-dash1">
+                                                <li>- 안드로이드폰 : 구글설정 → 개인정보보호 → 광고 → 광고맞춤설정 선택해제</li>
+                                                <li>- 아이폰: 아이폰설정 → 개인정보보호 및 보안 → 추적 → 앱이 추적을 요청하도록 허용 끔<br>
+                                                    (※ iOS17 기준이며, 버전에 따라 방법이 다소 상이할 수 있습니다.)</li>
+                                            </ul>
+                                        </li>
+                                        <li>(2) Google Analytics 차단 브라우저 부가기능 설치 (https://tools.google.com/dlpage/gaoptout)</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                        <div id="a13" class="policy-cont">
+                            <p class="poli-tit">제13조 개인정보보호 책임자<img src="/static/web/img/ui_common/ico_policy13.png" alt=""></p>
+                            <p class="poli-txt">회사는 고객의 개인정보를 보호하기 위해 개인정보보호 책임자를 두고 있으며, 개인정보와 관련한 문의사항이 있으시면 아래의 개인정보보호 담당자 또는 개인정보보호 책임자에게 연락하여 주시기 바랍니다.</p>
+                            <table class="tbl-poli">
+                                <caption>개인정보보호책임항목(개인정보보호 책임자, 개인정보보호 담당자) 제공에 대한 테이블</caption>
+                                <colgroup>
+                                    <col width="156px">
+                                    <col width="40%">
+                                    <col width="40%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">구분</th>
+                                        <td>개인정보보호 책임자</td>
+                                        <td>개인정보보호 담당자</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">소속</th>
+                                        <td>전략기획본부</td>
+                                        <td>IT기획부</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">성명</th>
+                                        <td>윤정권</td>
+                                        <td>한명구</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">전화번호</th>
+                                        <td colspan="2" class="a-c">고객상담센터 1566-0050</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">e-Mail</th>
+                                        <td colspan="2" class="a-c">dgbc.cs@dgbfn.com</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="a14" class="policy-cont">
+                            <p class="poli-tit">제14조 권익침해 구제방법<img src="/static/web/img/ui_common/ico_policy14.png" alt=""></p>
+                            <p class="poli-txt">고객은 개인정보침해로 인한 구제를 받기 위하여 개인정보분쟁조정위원회, 한국인터넷진흥원 개인정보침해신고센터 등에 분쟁해결이나 상담 등을 신청할 수 있습니다. 이 밖에 기타 개인정보침해의 신고, 상담에 대하여는 아래의 기관에 문의하시기 바랍니다. </p>
+                            <ol class="poli-list">
+                                <li>① 개인정보분쟁조정위원회<br>
+                                    - 홈페이지 : <a href="http://www.kopico.go.kr" target="_blank" title="개인정보분쟁조정위원회 홈페이지 새창이동">www.kopico.go.kr</a><br>
+                                    - 전화 : (국번없이) 1833-6972
+                                </li>
+                                <li>② 개인정보 침해신고센터 (한국인터넷진흥원 운영)<br>
+                                    - 홈페이지 : <a href="http://privacy.kisa.or.kr" target="_blank" title="개인정보 침해신고센터 홈페이지 새창이동">privacy.kisa.or.kr</a><br>
+                                    - 전화 : (국번없이) 118
+                                </li>
+                                <li>③ 대검찰청<br>
+                                    - 홈페이지 : <a href="http://www.spo.go.kr" target="_blank" title="대검찰청 홈페이지 새창이동">www.spo.go.kr</a><br>
+                                    - 전화 : (국번없이) 1301
+                                </li>
+                                <li>④ 경찰청<br>
+                                    - 홈페이지 : <a href="http://ecrm.cyber.go.kr" target="_blank" title="경찰청홈페이지 새창이동">ecrm.cyber.go.kr</a><br>
+                                    - 전화 : (국번없이) 182
+                                </li>
+                            </ol>
+                        </div>
+                        <div id="a15" class="policy-cont">
+                            <p class="poli-tit">제15조 개인정보 처리방침의 변경에 관한 사항<img src="/static/web/img/ui_common/ico_policy15.png" alt=""></p>
+                            <p class="poli-txt">본 『개인정보 처리방침』은 2023-12-00 부터 적용되며, 내용 추가, 삭제 및 수정이 있을 시에는 홈페이지의 ‘고객센터->약관 및 규정->개인정보 처리방침’ 에서 확인하실 수 있습니다.</p>
+                        </div>
+                        <div class="policy-btn">
+                            <a href="#">개정사항 비교표보기</a>
+                        </div>
+                        <script type="text/javascript">
+                            $(document).ready(function(){
+                                $('.poli-blue-list li a').on('click', function() {
+                                    $('html, body').animate({scrollTop: $(this.hash).offset().top - 80}, 600);
+                                return false;
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <footer class="footerwrap">
+        <!-- Mobile_footer -->
+        <div class="mo_footer">
+            <p class="chatbot-btn"><a href="#" target="_blank" title="카카오 새창이동">챗봇</a></p>
+            <div class="footer-inner">
+                <div class="right">
+                    <figure><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+                    <div>
+                        <p>고객센터 : <a href="tel:1566-0050"><strong>1566-0050</strong></a></p>
+                        <span>(평일 오전 9시 ~ 오후6시)</span>
+
+                            <div class="mark-list">
+                                <p class="mark">
+                                    <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=10913" target="_blank" title="웹어워드코리아 평가내역 새창이동">
+                                        <img src="/static/web/img/common/wa2_mb.png" alt="웹어워드코리아 2021 금융분야 최우수상 수상인증마크">
+                                    </a>
+                                </p>
+                                <p class="mark">
+                                    <a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="한국웹접근성인증평가원 새창이동">
+                                        <img src="/static/web/img/common/wa_mb.png?v=20211116001" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)">
+                                    </a>
+                                </p>
+                            </div>
+                    </div>
+                </div>
+                <div class="left">
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a href="#none" class="policy" onclick="goPage('/customer/termsList.do?termId=terms14');">개인정보처리방침</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do');">이용약관</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/customerInfoStep01.do');">고객정보 제공내역 조회</a></li>
+                        </ul>
+                        <ul>
+                            <li>서울특별시 중구 남대문로 125, 8층 (다동), iM금융센터</li>
+                            <li>사업자등록번호 : 220-87-87408</li>
+                        </ul>
+                        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Mobile_footer -->
+
+        <!-- PC_footer -->
+        <div class="pc_footer">
+
+            <p class="home-btn"><a href="#none" class="pc-chatbot-btn" target="_blank" title="챗봇 새창이동">챗봇</a><a href="#none" onclick="goPage('/main.do');">홈</a></p>
+            <div class="footer-inner">
+                <div class="left">
+                    <figure><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do?termId=terms14');" class="policy">개인정보처리방침</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do');">이용약관</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/customerInfoStep01.do');">고객정보 제공내역 조회</a></li>
+                        </ul>
+
+                        <ul>
+                            <li>서울특별시 중구 남대문로 125, 8층(iM금융센터)</li>
+                            <li>사업자등록번호 : 220-87-87408</li>
+                        </ul>
+
+                        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="footer-familysite">
+                        <button>패밀리사이트</button>
+                        <ul>
+                            <li><a href="http://www.dgbfg.co.kr" title="DGB금융지주 사이트 새창열림" target="_blank">DGB금융지주</a></li>
+                            <li><a href="https://www.dgb.co.kr" title="iM뱅크 사이트 새창열림" target="_blank">iM뱅크</a></li>
+                            <li><a href="https://www.hi-ib.com" title="iM증권 사이트 새창열림" target="_blank">iM증권</a></li>
+                            <li><a href="https://www.dgbfnlife.com" title="iM라이프 사이트 새창열림" target="_blank">iM라이프</a></li>
+                            <li><a href="http://www.hi-asset.com" title="iM에셋자산운용 사이트 새창열림" target="_blank">iM에셋자산운용</a></li>
+                            <li><a href="https://www.dgbupay.com" title="iM유페이 사이트 새창열림" target="_blank">iM유페이</a></li>
+                            <li><a href="http://www.dgbds.co.kr" title="iM데이터시스템 사이트 새창열림" target="_blank">iM데이터시스템</a></li>
+                            <li><a href="http://www.dgbci.co.kr" title="iM신용정보 사이트 새창열림" target="_blank">iM신용정보</a></li>
+                            <li><a href="https://www.hi-investment.com" title="iM투자파트너스 사이트 새창열림" target="_blank">iM투자파트너스</a></li>
+                            <li><a href="https://intro.newsystock.com" title="뉴지스탁 사이트 새창열림" target="_blank">뉴지스탁</a></li>
+                            <li><a href="http://www.dgbscf.or.kr" title="DGB사회공헌재단 사이트 새창열림" target="_blank">DGB사회공헌재단</a></li>
+                        </ul>
+                    </div>
+                    <div class="mark-wrap">
+                        <a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="한국웹접근성인증평가원 새창이동">
+                            <img src="/static/web/img/common/wa_pc2.png" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)">
+                        </a>
+                        <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=10913" target="_blank" title="웹어워드코리아 평가내역 새창이동">
+                            <img src="/static/web/img/common/wa2_pc2.png" alt="웹어워드코리아 2021 금융분야 최우수상 수상인증마크">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //PC_footer -->
+    </footer>
+    <!---------- //End : footer ---------->
+
+    <!-- //Start : 퍼블확인용 -->
+    <script>
+        $(document).ready(function(){
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="stylesheet" href="/static/carverse/css/style.css">
+<link rel="stylesheet" href="/static/carverse/css/carverse.css">
+
+<!-- common js -->
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+
+<title>상품선택 | iM캐피탈 카버스</title>
+
+</head>
+<body>
+
+    <!----------- Start : header 메뉴 ----------->
+    <header class="header" id="header">
+        <div class="inner_wrap">
+            <div class="inner_pc">
+                <a href="#none" onclick="goPage('/carverse/main.do');">
+                    <h1 class="logo"><span>CARVERSE</span></h1>
+                </a>
+                <ul class="gnb">
+                    <li>
+                        <a href="#none">견적</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/estimate/vecalc/brand.do');">견적내기</a></li>
+                            <li><a href="#none" onclick="goPage('/carverse/estimate/delCar.do');">즉시출고</a></li>
+                            <li><a href="#none" onclick="goPage('/carverse/estimate/recentEstimate.do');">최근견적</a></li>
+                            <li><a href="#none" onclick="goPage('/carverse/mypage/customRecommend.do');">나만의 맞춤추천</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none">중고차</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/autorental/limitInq/limitInqAuthUrl.do');">한도조회</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none" onclick="goPage('/carverse/autorental/contract.do');">전자약정</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/autorental/contract.do');">전자약정</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none">커뮤니티</a>
+                        <ul class="depth2">
+                            <li><a href="#none">동호회</a></li>
+                            <li><a href="#none">공지사항</a></li>
+                            <li><a href="#none">자주묻는질문</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none" onclick="goPage('/carverse/mydgb/myList.do');">마이페이지</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/mydgb/myList.do');">마이페이지</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 소스추가_11월29일 메인페이지 헤더 -->
+            <div class="inner_mo">
+                <a href="#none" class="logo" onclick="goPage('/carverse/main.do');">
+                    <span class="txt_hidden">메인페이지가기</span>
+                </a>
+                <!--// 모바일타이틀 개발소스 추가 영역 -->
+                <span class="util">
+                    <a href="#none" class="mo_header_direct_go" onclick="goPage('/carverse/mydgb/myList.do');"><span>마이페이지 바로가기</span></a>
+                    <button type="button" class="btn_menu"><span>전체메뉴 보기</span></button>
+                </span>
+            </div>
+
+            <!-- 클래스추가_11월29일 상세페이지는 type_detail 추가 -->
+            <div class="inner_mo type_detail" style="display: none;">
+                <a href="javascript:history.back();" class="btn_back"><span>뒤로가기</span></a>
+                <!-- 모바일타이틀 개발소스 추가 영역 -->
+                <h2 class="mo_tit">$모바일 타이틀$</h2>
+                <!--// 모바일타이틀 개발소스 추가 영역 -->
+                <span class="util">
+                    <a href="#none" class="mo_header_direct_go" onclick="goPage('/carverse/mydgb/myList.do');"><span>마이페이지 바로가기</span></a>
+                    <button type="button" class="btn_menu"><span>전체메뉴 보기</span></button>
+                </span>
+            </div>
+        </div>
+        <!-- // inner_wrap -->
+    </header>
+    <!----------- //End : header 메뉴 ----------->
+
+    <div class="wrap">
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-process">
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="process-wrap">
+                    <div class="pro-box">
+                        <div class="tit-info font32">이용하실 상품을<br>선택해주세요</div>
+
+                        <!-- Start : 상품선택 -->
+                        <ul class="com-list-box">
+                            <li class="active">
+                                <div class="in-box">
+                                    <div class="chk-tit">
+                                        <span>상품명</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="ch01" name="ch01" checked="checked" class="chk">
+                                            <label for="ch01" class="label"></label>
+                                        </div>
+                                    </div>
+                                    <ul class="list-2">
+                                        <li>
+                                            <span class="p-tit">상품번호</span>
+                                            <span class="p-txt">1</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">신청일</span>
+                                            <span class="p-txt">2021-09-27</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">차량모델</span>
+                                            <span class="p-txt">더 뉴 G70 가솔린 3.3 터보
+                                                <p class="s-txt">
+                                                    2024형 가솔린 3.8 2WD 익스클루시브<br>
+                                                    (7인승) 세부모델 최대두줄두줄두줄두줄두줄
+                                                </p>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">차량가격</span>
+                                            <span class="p-txt">999,999,999원</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">월 렌트료</span>
+                                            <span class="p-txt">400,000원</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">의무사용기간</span>
+                                            <span class="p-txt">60개월</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="in-box">
+                                    <div class="chk-tit">
+                                        <span>상품명</span>
+                                        <div class="checkbox">
+                                            <input type="checkbox" id="ch02" name="ch02" class="chk">
+                                            <label for="ch02" class="label"></label>
+                                        </div>
+                                    </div>
+                                    <ul class="list-2">
+                                        <li>
+                                            <span class="p-tit">신청일</span>
+                                            <span class="p-txt">2021-09-27</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">차량모델</span>
+                                            <span class="p-txt">더 뉴 G70 가솔린 3.3 터보</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">차량가격</span>
+                                            <span class="p-txt">49,500,000원</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">취득원가</span>
+                                            <span class="p-txt">49,500,000원</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- //End : 상품선택 -->
+
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">다음</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+
+    </div>
+</body>
+</html>
+

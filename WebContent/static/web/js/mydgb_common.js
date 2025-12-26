@@ -1,0 +1,101 @@
+/**
+ * MY DGB 세션 관리
+ */
+$(document).ready(function(){
+
+    // 세션 만료 시 인증 페이지로 이동
+    $(document).ajaxError(function( event, jqXHR, settings, thrownError ) {
+
+		if(jqXHR.status == 401) { // 401 Unauthorized
+			alert('본인인증 후 일정 시간 동안 사이트를 이용하지 않으셨습니다.\n고객님의 개인정보보호를 위해 자동 로그아웃 되었습니다.\n다시한번 본인인증 해주세요.');
+			location.href = "/my/authStep.do";
+			return;
+		}
+
+    });
+});
+
+/**
+ * 중도상환 페이지로 이동
+ */
+function fnGotoPaymentWithdraw(lonNo, loanBlnc) {
+
+	var frm = document.frm;
+	post_to_form("/my/paymentWithdraw.do", frm);
+}
+
+/**
+ * 결제계좌변경 페이지로 이동
+ */
+function fnGotoChangeAccount() {
+
+	// 결제계좌 변경 가능 여부 체크 후 페이지 이동
+	fnCheckPossibleAccountChange( function(data) {
+		post_to_form("/my/changeAccount.do", document.frm);
+	});
+
+}
+
+/**
+ * 해당 여신의 결제계좌 변경 가능 여부 확인
+ */
+function fnCheckPossibleAccountChange(succCallback) {
+
+	// 해당 페이지(신청상세)에 해당하는 여신 정보 설정
+	var lonNo = $("#lonNo").val();
+	var custNm = $('#custNm').val();
+
+	// 변경가능 여부 확인
+	$.ajax({
+		url : "/my/accountChangeAjax.do",
+		data :{
+			chgReqYn: "N",
+			lonNo: lonNo,
+			custNm: custNm
+		},
+		type : 'POST',
+		dataType : 'json',
+		success : function(data) {
+
+			if (data.result == "0000") {
+				succCallback(data);
+			} else {
+
+				var alertMsg = "처리 중 오류가 발생했습니다.";
+				if (data.result == "0007") {
+					alertMsg = "결제일 기준 5영업일 이내 및 결제일 당일 계좌 변경은 불가합니다.\n당월대금 정상 납부 후 다음 결제일의 5영업일 전까지 변경해주세요.\n추가문의는 당사 대표번호 1566-0050(업무시간 : 평일 9시~18시)으로 연락 부탁드립니다.";
+					if(data.settDd) alertMsg += "\n\n* 결제일 : 매월 " + data.settDd + "일";
+				} else if (data.result == "0008") {
+					alertMsg = "연체중일 경우 결제계좌 변경은 불가합니다.\n연체금 납부 후 다음 결제일의 5영업일 전까지 변경해주세요.\n추가문의는 당사 대표번호 1566-0050(업무시간 : 평일 9시~18시)으로 연락 부탁드립니다.";
+				} else if (data.result == "0009") {
+					alertMsg = "결제 계좌 변경 진행 중입니다.\n\n* 결제계좌 변경은 최대 3영업일이 소요됩니다.";
+				} else if (data.result == "0010") {
+					alertMsg = "계좌 변경 한 달 이내 재변경은 불가능합니다.\n한 달 이후에 변경해주세요.";
+					if(data.rmrkCntn) alertMsg += "\n\n* 변경가능일 : " + data.rmrkCntn;
+				}
+				alert(alertMsg);
+
+			}
+		},
+		error : function() {
+			alert("처리 중 오류가 발생했습니다.");
+		}
+	});
+}
+
+/**
+ * 결제일변경 페이지로 이동
+ */
+function fnGotoChangePaymentDate() {
+
+	var frm = document.frm;
+	post_to_form("/my/changePaymentDate.do", frm);
+}
+
+/**
+ * 청구금액결제 페이지로 이동
+ */
+function gotoWithdrawDemand() {
+	var frm   = document.frm;
+	post_to_form("/my/paymentDemand.do?bill", frm);
+}

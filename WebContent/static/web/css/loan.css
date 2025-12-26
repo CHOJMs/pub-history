@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+.b-blue { border: 1px solid blue; }
+.b-red { border: 1px solid red; }
+.divider { width: 100%; height: .8rem; margin-top: -.8rem; margin-bottom: 3.2rem; background-color: #ebecee; }
+.corp_box { letter-spacing: -0.05em;}
+.corp_box li { padding-bottom: 3.2rem; word-wrap: break-word;}
+.corp_box li:last-child { padding-bottom: 0;}
+.corp_box li .c_title { font-size: 15px; color: #222426; margin-bottom: .9rem;}
+.corp_box li .c_title em { color: #1297ef; }
+.corp_box li .col { font-size: 14px; line-height: 1.43; margin-bottom: .4rem; text-align: left; display: flex; flex-direction: flex-start;}
+.corp_box li .col:last-child { color: red;}
+.corp_box li .col_name { width: 6.4rem; color: #999; }
+.corp_box li .col_desc { margin-left: 0.8rem; color: #707478; }
+/* 웹 접근성 대응. 향후 운영시 아래 라인 주석 처리. 20221025 이종범 */
+.corp_box .c_list:hover {cursor:pointer; background-color:#f7f7f7; }
+.corp_box .c_list a { display: block; }
+
+.d-none { display: none; }
+/* .btn-search {  */
+/*     position: absolute; width: 1.6rem; height: 1.7rem; right:0; */
+/*     top: 50%; transform: translateY(-50%);  */
+/*     background: url('../img/ic_search.png') no-repeat center center; */
+/* } */
+/* .btn-clear { */
+/*     position: absolute; width: 2.0rem; height: 2.0rem; right: calc(1.6rem + 1.6rem); */
+/*     top: 50%; transform: translateY(-50%); */
+/*     background: url('../img/ic_delete.png') no-repeat center center; */
+/* } */
+
+/* .btn-search { */
+/*     position: absolute; width: 3.5rem; height: 2.5rem; right:0.5rem; */
+/*     top: 50%; transform: translateY(-50%); */
+/*     background: #ebecee; */
+/* } */
+.btn-search {
+    padding:0.5rem 0;
+    width:6rem;
+    cursor:pointer;
+    border-radius:.4rem;
+    letter-spacing: -0.08rem;
+    background:#ebecee;
+    border:none;
+    color:rgb(34, 36, 38);
+    font-size:1.6rem;
+    font-weight: 500;
+    text-align: center;
+    margin-left: 5px;
+}
+.btn-clear {
+    position: absolute; width: 2.0rem; height: 2.0rem; right: calc(1.6rem);
+    top: 50%; transform: translateY(-50%);
+    background: url('../img/ic_delete.png') no-repeat center center;
+}
+
+@media only screen and (max-width:1024px) {
+    .btn_cont { margin-top: -.8rem; }
+}

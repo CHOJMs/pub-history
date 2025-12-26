@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 상세 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/carverse/css/style.css">
+    <link rel="stylesheet" href="/static/carverse/css/carverse.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc popup-notice"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>공지사항</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+                <div class="notice_admin">
+
+                    <div class="tit_area">
+		                <h3 class="body4_b">iM캐피탈 카버스 홈페이지 오픈 안내</h3>
+		                <p class="date">2023-12-28</p>
+		            </div>
+                    <div class="board_cont">
+                        <div class="cont_area">
+		                    <p>나만의 The Driving Life! 그리고 최고를 위한 완벽한 선택!<br>카버스 홈페이지가 오픈하였습니다.</p>
+		                    <p>온라인에서 PC와 모바일로 견적부터 상담신청, 그리고 계약까지 쉽고 빠르게 내 차를 만나보실 수 있습니다.<br>
+								맞춤형 차량 검색부터 대기 없는 즉시출고 차량까지 고객님을 위한 최고의 서비스를 이용하실 수 있습니다.<br>
+								<br>
+							</p>
+		                    <ul>
+		                        <li>
+									1. 견적프로그램<br>
+									1) 고객님이 원하시는 차량을 검색하시고, 쉽고 빠른 견적진행을 도와드립니다.<br>
+									2) 가격대별 인기 차량을 통해 고객님의 차량선택을 손쉽게 제공해드립니다.<br>
+									3) 즉시 출고 차량을 통해 대기없이 바로 내차를 만나보실 수 있습니다.
+								</li>
+								<li>
+									2. 상담신청<br>
+									1) 고객님께서 원하시는 차량의 견적을 진행하시고, 상담신청을 진행하실 수 있습니다.<br>
+	  								2) 상담신청을 완료하시면, 저희 상담원이 친절하고 빠르게 안내해드립니다.
+								</li>
+								<li>
+									3) 계약(전자약정)<br>
+									1) 카버스 홈페이지를 통해 온라인으로 빠르고 쉽게 전자약정을 진행하실 수 있습니다.
+								</li>
+		                    </ul>
+		                    <br>
+							<p>
+								늘 고객님과 최상의 서비스로 함께하는 카버스가 되겠습니다.<br>감사합니다.
+							</p>
+		                </div>
+                    </div>
+
+                    <!--<div class="noti_file_box">
+                        <ul>
+                            <li><a href="#">붙임1. 2차 당첨자 명단.pdf</a></li>
+                            <li><a href="#">붙임1. 2차 당첨자 명단.pdf</a></li>
+                            <li><a href="#">붙임1. 2차 당첨자 명단.pdf</a></li>
+                        </ul>
+                    </div>
+                    <p class="inquiry">문의 : 고객만족부 (1566-0050)</p>-->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/carverse/img/common2/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

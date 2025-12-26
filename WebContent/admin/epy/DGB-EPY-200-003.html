@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>채용 공고 현황 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#" class="on">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#">공고 등록</a></li>
+                        <li><a href="#" class="on">채용 공고 현황</a></li>
+                        <li><a href="#">인재 DB 관리</a></li>
+                        <li><a href="#">FAQ 관리</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <h2>공고 상세 보기</h2>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <h3>공고 제목</h3>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="100%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">공고 제목</p>
+                                        <input type="text" placeholder="채용 공고 제목을 입력하세요" value="[iM캐피탈] 영업지원 경력직 공개채용(상시채용)">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="group_box">
+                        <h3 class="mt80">채용내용01</h3>
+                        <p class="line-top"></p>
+                        <p class="s-tit">- 채용내용</p>
+                        <table class="data-tbl">
+                            <colgroup>
+                                <col width="50%">
+                                <col width="50%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit ver-top">모집분야</p>
+                                            <textarea>영업지원</textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit ver-top">지원자격</p>
+                                            <textarea>학력무관</textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="com-inp">
+                                            <p class="tit ver-top">담당업무</p>
+                                            <textarea>고객상담 및 접수건 품의/실행/사후관리</textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">모집구분</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="" selected>경력</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">근무지역</p>
+                                            <input type="text" placeholder="입력" value="서울">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">모집인원</p>
+                                            <div class="inp-area sel-2">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="" selected>직접입력</option>
+                                                        <option value="">0명</option>
+                                                        <option value="">00명</option>
+                                                        <option value="">000명</option>
+                                                    </select>
+                                                </div>
+                                                <div class="inp-txt-right">
+                                                    <input type="tel" placeholder="" value="12" class="a-r">
+                                                    <span>명</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">고용형태</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="" selected>정규직</option>
+                                                        <option value="">계약직</option>
+                                                        <option value="">파견직</option>
+                                                        <option value="">인턴</option>
+                                                        <option value="">기타</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p class="s-tit">- 전형절차 (관리자용)</p>
+                        <ul class="step-box">
+                            <li>
+                                <div class="inp-area">
+                                    <div class="selectbox">
+                                        <select class="select">
+                                            <option value="">선택</option>
+                                            <option value="" selected>서류전형</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inp-area">
+                                    <div class="selectbox">
+                                        <select class="select">
+                                            <option value="">선택</option>
+                                            <option value="" selected>실무면접</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inp-area">
+                                    <div class="selectbox">
+                                        <select class="select">
+                                            <option value="">선택</option>
+                                            <option value="" selected>임원면접</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inp-area">
+                                    <div class="selectbox">
+                                        <select class="select">
+                                            <option value="">선택</option>
+                                            <option value="" selected>채용검진</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inp-area">
+                                    <div class="selectbox">
+                                        <select class="select">
+                                            <option value="">선택</option>
+                                            <option value="" selected>최종합격</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="line-bott01"></p>
+                    </div>
+
+                    <div class="group_box">
+                        <h3 class="mt80">채용내용 02</h3>
+                        <p class="line-top"></p>
+                        <p class="s-tit">- 채용내용</p>
+                        <table class="data-tbl">
+                            <colgroup>
+                                <col width="50%">
+                                <col width="50%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit ver-top">모집분야</p>
+                                            <textarea placeholder="EX) 전문학사 이상&#13;EX) 관련 업무경력 3년 이상"></textarea>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit ver-top">지원자격</p>
+                                            <textarea placeholder="EX) 전문학사 이상&#13;EX) 관련 업무경력 3년 이상"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="com-inp">
+                                            <p class="tit ver-top">담당업무</p>
+                                            <textarea placeholder="EX) 일반리스/할부9건설 미 공작기계)&#13;EX) 기업금융(팩토리, 기업대출)"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">모집구분</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="">신입</option>
+                                                        <option value="">경력</option>
+                                                        <option value="">신입/경력</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">근무지역</p>
+                                            <input type="text" placeholder="ex) 서울(본사)" value="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">모집인원</p>
+                                            <div class="inp-area sel-2">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="">직접입력</option>
+                                                        <option value="">0명</option>
+                                                        <option value="">00명</option>
+                                                        <option value="">000명</option>
+                                                    </select>
+                                                </div>
+                                                <div class="inp-txt-right">
+                                                    <input type="tel" placeholder="" value="12" class="a-r">
+                                                    <span>명</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">고용형태</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="">정규직</option>
+                                                        <option value="">계약직</option>
+                                                        <option value="">파견직</option>
+                                                        <option value="">인턴</option>
+                                                        <option value="">기타</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p class="s-tit">- 전형절차 (관리자용)</p>
+                        <ul class="step-box">
+                            <li>
+                                <div class="inp-area">
+                                    <div class="selectbox">
+                                        <select class="select">
+                                            <option value="">선택</option>
+                                            <option value="" selected>서류전형</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inp-area">
+                                    <div class="selectbox">
+                                        <select class="select">
+                                            <option value="">선택</option>
+                                            <option value="" selected>실무면접</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inp-area">
+                                    <div class="selectbox">
+                                        <select class="select">
+                                            <option value="">선택</option>
+                                            <option value="" selected>임원면접</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inp-area">
+                                    <div class="selectbox">
+                                        <select class="select">
+                                            <option value="">선택</option>
+                                            <option value="" selected>채용검진</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="inp-area">
+                                    <div class="selectbox">
+                                        <select class="select">
+                                            <option value="">선택</option>
+                                            <option value="" selected>최종합격</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="line-bott01"></p>
+                    </div>
+
+                    <h3>전형절차 (지원자노출용)</h3>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="100%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit ver-top">전형절차</p>
+                                        <textarea>서류전형 > 면접전형 > 채용검진 > 최종합격</textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>전형일정</h3>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="100%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit ver-top">전형일정</p>
+                                        <textarea>본 공고는 상시채용으로 당사의 T/O 발생 시 접수된 입사지원서 확인 후 적격여부(서류검토)에 판단하여 적격자에게 연락 예정</textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>지원서 접수</h3>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="28%">
+                            <col width="22%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <div class="radio-tab radio-tab-box">
+                                            <div class="com-inp">
+                                                <input type="radio" id="r01" name="r01" checked="checked">
+                                                <label for="r01">정시</label>
+                                            </div>
+                                            <div class="com-inp">
+                                                <input type="radio" id="r02" name="r01">
+                                                <label for="r02">수시</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">접수기간</p>
+                                        <div class="calendar">
+                                            <input type="tel" value="2022-11-15" class="w-86">
+                                            <span class="dash">-</span>
+                                            <input type="tel" value="2022-12-15" class="w-86"><img src="/static/admin/img/new_common/ico_cal.png">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>기타사항</h3>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="100%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit ver-top">기타사항</p>
+                                        <textarea>- 본 공고는 상시채용으로 당사의 T/O 발생 시 접수된 입사지원서 확인 후 적격여부(서류검토) 판단하여 서류전형 합격자에게 연락 예정입니다.
+- 기타 문의사항은 hrrecruit@dgbfn.com 메일로 연락 바랍니다.
+                                        </textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>노출 여부</h3>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="28%">
+                            <col width="22%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <div class="radio-tab radio-tab-box">
+                                            <div class="com-inp">
+                                                <input type="radio" id="r021" name="r021" checked="checked">
+                                                <label for="r021">노출</label>
+                                            </div>
+                                            <div class="com-inp">
+                                                <input type="radio" id="r021-1" name="r021">
+                                                <label for="r021-1">비노출</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="line-bott"></p>
+
+                    <!-- Start : 버튼 -->
+                    <div class="btn-area">
+                        <a href="#" class="gray">취소</a>
+                        <a href="#">수정</a>
+                    </div>
+                    <!-- //End : 버튼 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

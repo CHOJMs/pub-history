@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>대출상환 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+            
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+				
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>					
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">오토 재고금융</a>
+							<ul>
+								<li><a href="">재고금융 신청</a></li>
+								<li><a href="">재고금융 현황</a></li>
+                                <li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+						<li class=""><a href="">중고차 제휴</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">한도조회 신청</a></li>
+                                <li><a href="">한도조회 신청(유선녹취)</a></li>
+                                <li><a href="">한도조회 상담이력</a></li>
+								<li><a href="">자동차 시세확인</a></li>
+								<li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+				<h2 class="tl">대출상환</h2>
+                <div class="box_form scoll mob_nobtn">
+					<h3 class="txt">대출상환(전액상환)</h3>
+					<div class="box_viewType">
+						<dl>
+							<dt>고객명</dt>
+							<dd>홍길동(길동모터스)</dd>
+							<dt>실행번호</dt>
+							<dd>000000000000</dd>
+							<dt>대출금액(원)</dt>
+							<dd>11,600,000</dd>
+							<dt>대출잔액(원)</dt>
+							<dd>11,600,000</dd>
+						</dl>
+					</div>
+
+					<div class="box_writeType">
+						<dl style="border-top: none;">
+							<dt>상환일자</dt>
+							<dd class="row">
+								<div class="text_data">
+									<span class="form">
+									  <input type="tel" id="" placeholder="1981-01-25" title="상환일자 입력">
+									  <button id="" class="calender">달력보기</button>
+									</span>					
+								</div>
+							</dd>
+						</dl>
+					</div>
+					<ul class="list_bull mt24">
+						<li>상환일자를 지정 후 상환금액 조회 버튼을 클릭하여 상환신청을 진행해 주세요.</li>
+						<li>상환금액과 가상계좌를 확인하신 후 [상환신청] 버튼을 클릭하고 입금하셔야 정상 처리됩니다.</li>
+						<li>결제일 전날 가상계좌로 중도상환시 자동이체 계좌에서 원래 예정 납입금액이 출금됩니다.</li>
+						<li>이중출금된 금액은 자동이체 결제일 다음날 자동이ㅐ체계좌로 다시 입금됩니다.</li>
+					</ul>
+
+					<p class="call_phone1 mb14"><span class="tit">고객센터 </span> <span class="phone">1566-0050</span> (평일 오전 9시 ~ 오후 6시)</p>
+					<!-- 버튼 시작 -->
+					<div class="btn_box">
+						<span class="btn"><a href="#">상환금액 조회</a></span>
+					</div>
+					<!-- 버튼 끝 -->
+
+					<div class="box_viewType mt24">
+						<dl>
+							<dt>상환일자</dt>
+							<dd>20210501</dd>
+							<dt>원금(원)</dt>
+							<dd>25,000,000</dd>
+							<dt>이자(원)</dt>
+							<dd>1,001,00</dd>
+							<dt>경과이자(원)</dt>
+							<dd>0</dd>
+							<dt>연체이자(원)</dt>
+							<dd>0</dd>
+							<dt>상환금액 합계(원)</dt>
+							<dd>26,001,00</dd>
+							<dt>상환 후 대출잔액(원)</dt>
+							<dd>0원</dd>
+							<dt>입금가상계좌</dt>
+							<dd>대구은행 9100046443081</dd>
+						</dl>
+					</div>
+
+					<!-- 버튼 시작 -->
+					<div class="btn_box mt40">
+						<span class="btn"><a href="#">대출상환(전액상환) 신청</a></span>
+					</div>
+					<!-- 버튼 끝 -->
+
+				</div>
+                <!-- 내용 끝 -->
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+</body>
+</html>

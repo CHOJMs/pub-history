@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 채용 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-26</td>
+                        <td>2023-08-08</td>
+                        <td>page</td>
+                        <td>공고 등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/epy/DGB-EPY-100-001.html">DGB-EPY-100-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-25</td>
+                        <td>2023-08-08</td>
+                        <td>page</td>
+                        <td>채용 공고 현황 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/epy/DGB-EPY-200-001.html">DGB-EPY-200-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-25</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>채용 공고 현황 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/epy/DGB-EPY-200-002.html">DGB-EPY-200-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-25</td>
+                        <td>2023-08-08</td>
+                        <td>page</td>
+                        <td>채용 공고 현황 - 수정</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/epy/DGB-EPY-200-003.html">DGB-EPY-200-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-08</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>전형결과 안내 등록(수정) - 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/epy/전형결과안내등록.html">전형결과안내등록.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-26</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>인재 DB 관리 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/epy/DGB-EPY-300-001.html">DGB-EPY-300-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-03</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>인재 DB 관리 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/epy/DGB-EPY-300-002.html">DGB-EPY-300-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-03</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>지원서보기</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/epy/지원서보기.html">지원서보기.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-25</td>
+                        <td>2023-08-08</td>
+                        <td>page</td>
+                        <td>FAQ 관리 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/epy/DGB-EPY-400-001.html">DGB-EPY-400-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-25</td>
+                        <td>2023-08-08</td>
+                        <td>page</td>
+                        <td>FAQ 관리 - 수정</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/epy/DGB-EPY-400-002.html">DGB-EPY-400-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-25</td>
+                        <td>2023-08-08</td>
+                        <td>page</td>
+                        <td>FAQ 관리 - 등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/epy/DGB-EPY-400-003.html">DGB-EPY-400-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-07-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>FAQ 관리 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/epy/DGB-EPY-400-004.html">DGB-EPY-400-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

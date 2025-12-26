@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<deco> 
+    <fileData filename="fina.css" filepath="/src/main/webapp/static/web/css" ischanged="0" lastversion="10" tstversion="9" realversion="4" dotversion="1" itemid="000000930464" ecmMd5sum="bcbafa77464168d65d0d458bc17543f6" ecmTstmd5sum="" lastChangedDate="1681806424000" editor="김탁균:16424" lastUser="김탁균:16424" filestatus="체크인완료:B" islock="1" isAuthority="1" rsrccd="A2" rsrccdcodename="static" rsrcinfo="0100000000110000000000010000010000000000100000001000000001000000000" jobcd="HP" jobname="홈페이지" syscd="00102" sysmsg="홈페이지" srid="R202302-0090"/> 
+</deco>

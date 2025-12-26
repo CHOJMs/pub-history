@@ -1,0 +1,225 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		// 뒤로가기 버튼으로 들어올때 값 사라짐 방지
+		if($('#BOARD_ID').val() == "")
+			$('#BOARD_ID').val("BOARD_ID");
+		if($('#PGE_NO').val() == "")
+			$('#PGE_NO').val("iPageNo");
+		if($('#menuNo').val() == "")
+			$('#menuNo').val("3");
+		if($('#subMenuNo').val() == "")
+			$('#subMenuNo').val("SUB_MENU");
+		if($('#INSERT_KEY').val() == "")
+			$('#INSERT_KEY').val("0");
+	});
+
+//window.alert($.fn.jquery);
+	// 조회
+	function goSearch(pageNum){
+
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardListSelect";
+		f.PGE_NO.value = pageNum;
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+
+	//파일다운로드
+	function download(fileName){
+		var path = "upload";
+
+		window.location.href = "/view/common/inc/FILE_DOWNLOAD.jsp?file_name="+fileName+"&file_path="+path;
+	}
+
+
+	//상세보기
+	function notsDtlSubmit(bid, ref){
+// 		var f = document.frm;
+
+// 		f.METHOD.value = "AdminBoardDetail";
+// 		f.B_ID.value   = bid;
+// 		f.REF_ID.value = ref;
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+		
+		location.href = "/admin/board/dgbNoticeBoardMngDtl.jsp"
+	}
+
+	function goWrite(){
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardWrite";
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+
+	}
+
+
+
+</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="1"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="container bg_none">
+
+			<div class="content-wrap">
+				<h3>오토론 관리</h3>
+				<div class="contents">
+					<div class="form-type bbs-top mb10">
+						
+						<!-- //검색 시작 -->
+						<div class="srh-wrap">
+							<span>
+								<select name="" id="">
+									<option value="" selected>날짜</option>
+								</select>
+							</span>
+							<span>
+								<select name="" id="">
+									<option value="1">접수일자</option>
+								</select>
+								<input type="text" name="" id="" value="2010-01-01" style="text-align:center;" maxlength="10">
+								<a href="#" class="btnCalendar"><img src="/static/admin/img/common/ico_cal.gif" alt="날짜 선택" /></a>
+								<input type="text" name="" id="" value="2010-02-01" style="text-align:center;" maxlength="10">
+								<a href="#" class="btnCalendar"><img src="/static/admin/img/common/ico_cal.gif" alt="날짜 선택" /></a>
+							</span>
+							<span>
+								<label for="">진행단계</label>
+								<select name="" id="">
+									<option value="">전체</option>
+									<option value="" selected>접수등록</option>
+								</select>
+							</span>
+							<span>
+								<label for="">심사결과</label>
+								<select  name="" id="" >
+									<option value="">전체</option>
+								</select>
+							</span>
+							<input type="button" value="조회" class="btn h42 neg">
+						</div>
+						<!-- 검색 끝// -->
+						
+					</div>
+					
+					<table class="bbs-table">
+						<caption>
+							번호, 접수일자, 신청일자, 실행일자, 접수방법, 진행단계, 심사결과, 상담등록, 고객명, 차종, 신청금액, 기간, 선납, 금리, 캐시백, 상품종류
+ 등으로 나타낸 테이블
+						</caption>
+						<colgroup>
+							<col style="width:60px;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+						</colgroup>
+						<thead>
+							<tr>		
+								<th scope="col">번호</th>
+								<th scope="col">접수일자</th>
+								<th scope="col">신청일자</th>
+								<th scope="col">실행일자</th>
+								<th scope="col">접수방법</th>
+								<th scope="col">진행단계</th>
+								<th scope="col">심사결과</th>
+								<th scope="col">상담등록</th>
+								<th scope="col">고객명</th>
+								<th scope="col">차종</th>
+								<th scope="col">신청금액</th>
+								<th scope="col">기간</th>
+								<th scope="col">선납</th>
+								<th scope="col">금리</th>
+								<th scope="col">캐시백</th>
+								<th scope="col">상품종류</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td><a href="#" class="blue">000005</a></td>								
+									<td>20170316 15:18</td>
+									<td>20170310</td>
+									<td>20170321</td>
+									<td>홈페이지(공인인증)</td>
+									<td>심사완료</td>
+									<td>승인</td>
+									<td></td>
+									<td>최세근</td>
+									<td>K7</td>
+									<td>10,000,000</td>
+									<td>36</td>
+									<td>5%</td>
+									<td>4%</td>
+									<td>없음</td>
+									<td>온라인오토론(국산/일반/SAVE)</td>
+								</tr>
+								<tr>
+									<td  colspan='16'>등록된 내용이 없습니다.</td>
+								</tr>
+						</tbody>
+					</table>
+					
+					<div class="paging" id="paging">
+						<a href="#none" class="navi first" onClick="">맨처음</a>
+						<a href="#none" class="navi prev" onClick="" >이전</a>
+						<a href="#none" class="current">1</a>
+						<a href="#none">2</a>
+						<a href="#none">3</a>
+						<a href="#none">4</a>
+						<a href="#none">5</a>
+						<a href="#none" class="navi next">다음</a>						
+						<a href="#none" class="navi end">맨끝으로</a>
+					</div>	
+					
+				</div><!--// contents -->
+			</div><!--// content-wrap -->
+		</div><!--// container -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+
+<!-- 에러 레이어 -->
+<span id='errorLayer' class="layerpop" style="position:absolute; left:300px; top:200px; z-index:3; display:none;"></span>
+
+
+</body>
+</html>

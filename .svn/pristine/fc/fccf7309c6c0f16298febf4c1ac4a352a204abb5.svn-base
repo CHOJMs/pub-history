@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/static/web/css/common.css">
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <title>iM캐피탈</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- Start : 컨텐츠 영역 -->
+        <div class="contents">
+            <div class="survey_wrap">
+                <div class="survey_cont">
+                    <img src="../../static/web/img/img_sur_complete.png" alt="iM캐피탈 고객만족도 조사">
+                    <p class="sur_tx01">응답해 주셔서 감사합니다.</p>
+                    <p class="sur_tx02">고객님의 소중한 의견으로<br>더 좋은 iM캐피탈이 되도록 노력하겠습니다.</p>
+                    <div class="fixed-btn-area">
+                        <div class="call-phone">
+                            <span class="c-info">이용문의</span><span class="c-tel">1566-0050<span class="c-text">(평일 오전 9시~오후 6시)</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //End : 컨텐츠 영역 -->
+    </div>
+</body>
+</html>

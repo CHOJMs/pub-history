@@ -1,0 +1,240 @@
+@charset "UTF-8";
+
+.wrap { height: auto;}
+img {max-width: 100%;}
+
+/* gnb */
+.mobile-btn ul li.back, .mobile-btn ul li.home {display: none;}
+.mobile-btn ul li.alram {display: block;}
+
+
+/* 팝업 - 차량 실사촬영 */
+.text-color-box {height: 60px; display: flex; justify-content: center; align-items: center; border-radius: 8px; text-align: center; background: rgba(242, 248, 251, 1);}
+.text-color-box p {font-family: 'KOHO', 'Noto Sans KR'; font-size: 18px; font-weight: bold; letter-spacing: -0.09em;}
+
+.tab-box {margin-top: 16px;}
+.tab-box ul {display: flex;}
+.tab-box ul li {flex: 1;}
+.tab-box ul li + li {margin-left: 15px;}
+.tab-box ul li a {display: inline-flex; justify-content: center; align-items: center; width: 100%; height: 56px; font-size: 16px; font-weight: 500; color: rgba(34, 36, 38, 1); text-align: center; border-radius: 8px; background: rgba(235, 236, 238, 1);}
+.tab-box ul li.active a {color: #fff; background: rgba(18, 151, 239, 1) url(../../img/mobile_office/ico_check.svg) 10% center / 16px no-repeat;}
+
+.photo-wrap {padding-bottom: 16px;} /* 하단 여백 + 버튼 영역 */
+.photo-wrap h2 {font-size: 18px;}
+.photo-wrap > div > p {font-size: 16px; font-weight: bold; color: rgba(34, 36, 38, 1);}
+.photo-wrap > div ul {margin-top: 16px; display: flex;}
+.photo-wrap > div ul li {flex: 1;}
+.photo-wrap > div ul li + li {margin-left: 15px;}
+.photo-wrap > div ul li figure {margin: 0; padding-bottom: 75%; display: flex; justify-content: center; align-items: center; position: relative; width: 100%; height: 0; background: #fff;}
+.photo-wrap > div ul li figure > img {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); max-width: calc(100% - 13.8%);}
+.photo-wrap > .photo-back ul li:nth-of-type(1) > figure > img {max-width: calc(100% - 27.6%);}
+.photo-wrap > .photo-back ul li figure {padding-bottom: 75%;}
+.photo-wrap > div ul li figure span {position: absolute; left: 50%; top: 50%; width: 40%; transform: translate(-50%, -50%);}
+.photo-wrap > div div {margin-top: 10px;}
+.photo-wrap > div div p {font-size: 13px; font-weight: 500; color: rgba(34, 36, 38, 1); letter-spacing: -0.065em;}
+.photo-wrap > div div span {font-size: 12px; font-weight: 400; color: rgba(112, 116, 120, 1); letter-spacing: -0.065em;}
+
+.photo-front {margin-top: 24px;}
+.photo-back {padding-top: 24px; margin-top: 24px; border-top: 1px solid rgba(221, 221, 221, 1);}
+
+.btn_wrap .reg-btn button {background: rgba(235, 236, 238, 1); border: 1px solid rgba(235, 236, 238, 1); color: rgba(153, 153, 153, 1);}
+.btn_wrap .reg-btn.active button {background: rgba(34, 36, 38, 1); border: 1px solid rgba(34, 36, 38, 1);}
+
+
+
+/* 2023-11-20 휴대폰본인인증 */
+.agree-box .agree-total-box {background: rgb(241 , 245, 250); border-radius: 1.6rem; padding: 0 32px; margin-bottom: 1.2rem;}
+.agree-box .agree-total-box .checkbox {margin: 0; }
+.agree-box .agree-total-box label {font-size: 1.8rem !important; font-weight: 500 !important; color: rgb(34, 36, 38) !important; padding: 20px 0 20px 32px; height: initial !important;}
+.agree-box .agree-total-box .checkbox .chk+.label:after, .agree-box .agree-total-box .checkbox .chk {top:20px;}
+.agree-box .agree-total-box + .checkbox {padding-top: 1.2rem;}
+.agree-box .agree-total-box .checkbox a.arrow {top: 20px;}
+.agree-box .checkbox {position: relative; margin-bottom: 1.6rem; margin-left: 3.2rem; margin-right: 3.2rem;}
+.agree-box .checkbox label {font-size: 1.6rem; color: rgb(112, 116, 120); font-weight: 400; width: calc(100% - 30px);}
+.agree-box .checkbox label em {color: #f75248; margin-left: 4px; font-size: 1.6rem; display: inline-flex;}
+.agree-box .checkbox label em span {font-size: 0;}
+.agree-box .checkbox a.arrow {font-size: 0; position: absolute; right: 0; width: 2.4rem; height: 2.4rem;}
+.agree-box .checkbox a.arrow::before {content: ''; display: block; width: 2.4rem; height: 2.4rem; background: url('../img/ui_common/ico_arrow.png') no-repeat right center; background-size:2.4rem auto; position: absolute; right: 0; top: 0px;}
+.agree-box .agree-total-box .checkbox .wa-arrow {top: 50%; transform: translateY(-50%);}
+.agree-box .checkbox .wa-arrow {position: absolute; right: 0; width: 24px; height: 24px;}
+.agree-box .checkbox .wa-arrow img.agr-pc {width: 24px; height: 24px; display: block;}
+.agree-box .checkbox .wa-arrow img.agr-mob {display: none;}
+.agree-box .checkbox ul {margin-top: 1.2rem; margin-left: 3rem;}
+.agree-box .checkbox ul li {table-layout: fixed; display: flex; justify-content: space-between; flex-flow: row wrap;}
+.agree-box .checkbox ul li .checkbox {width: 50%; margin-left: 0rem; margin-bottom: .6rem; margin-right: 0;}
+.agree-box .checkbox ul li .checkbox:last-child {margin-bottom: 0;}
+.popup-half .agree-box .agree-total-box {border-radius: 1.6rem;}
+.agree-box .checkbox ul li .checkbox .chk.chk_1+.label{color: rgb(92, 103, 115); font-size: 1.4rem;}
+
+
+.agree-box .list-dot {margin-left: 3.2rem;}
+.agree-box .checkbox .chk:checked+.label:after {border: 0.1rem solid #1571eb; background: url(../img/ico_check_on.png) no-repeat center center #1571eb; background-size: 13px 9px;}
+.agree-box .checkbox .chk+.label:after{position:absolute; top:0; left:0; width:2.4rem; height:2.4rem; margin-top:0rem; transition: .3s; background:url('../../img/ui_common/ico_check_off.png') no-repeat center center; border:none; background-size:24px 24px;; content: ''}
+.agree-box .checkbox .chk:checked+.label:after{margin-top:0; background: url('../../img/ui_common/ico_check_on.png') no-repeat center center; border:none; border-radius: 50%; background-size:24px 24px;}
+.agree-box .checkbox .chk.chk_1+.label:after{border:none; background:url('../../img/ui_common/ico_check1_off.png') no-repeat center center; background-color: transparent; background-size: 24px 24px;}
+.agree-box .checkbox .chk.chk_1:checked+.label:after{border:none; background: url('../../img/ui_common/ico_check1_on.png') no-repeat center center; background-color: transparent;; background-size:24px 24px;}
+.agree-box .checkbox:last-child {margin-bottom: 0;}
+.agree-box .checkbox a.arrow:focus {outline: 1px dotted #222426;}
+
+/* 2023-07-20 휴대폰본인인증 */
+.popup .agree-box + .h-tit {margin-top: 32px; margin-bottom: 8px; font-size: 15px; color: rgb(34,36,38);}
+.time-box {position: relative; width: 100%;}
+.time-box .btn-cont {position: absolute; right: 0; top: 3px; display: flex; align-items: center;}
+.time-box .btn-cont button {height: 32px; color: rgb(21, 113, 235); font-size: 14px; line-height: 30px; padding: 0 12px; font-weight: 500; border-radius: 4px; border: 1px solid rgb(21, 113, 235);}
+.time-box input[type="tel"] {border-bottom: 1px solid #bcc3ce; border-left: 0; border-top: 0; border-right: 0; border-radius: 0;}
+.inp-data .time {color: rgb(0, 168, 139); font-size: 16px; margin-right: 12px;}
+
+
+/* 
+------------------------------------------------
+************** 2024 리뉴얼 *****************
+------------------------------------------------
+*/
+/* 로그인 */
+/* .wrap.login {background: linear-gradient(205deg, #244b4d 100%, #081c31 -1%); min-height: 100%;} */
+.wrap.login {background:linear-gradient(205deg, #244b4d 25%, #081c31 96%); min-height: 100%;}
+
+@media only screen and (max-width: 1280px){
+
+    /* gnb */
+    #header.login .logo {font-size: 0; width: 100%;}
+    #header.sub h1.logo {display: block;}
+
+    .mobile-btn { right: 78px; left: initial; top: 18px;}
+    .mobile-btn ul li.alram a { display: block; position: relative;}
+    .mobile-btn ul li.back a { display: none;}
+
+    .wrap.bg_2 { min-height: calc(100% - 117px); background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(226, 244, 255, 1));}
+    .wrap.bg_1 { min-height: calc(100% - 117px); background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(228, 255, 249, 1));}
+    .main_wrap { min-height: calc(100% - 64px);}
+    .main_wrap .contents { padding: 24px 20px 98px; display: block !important;}
+
+    /* 로그인 */
+    .main_wrap p.txt { font-size: 3rem; font-weight: 700; letter-spacing: -0.09rem; transition: all 0.3s;}
+    .main_wrap p.txt span {font-size: 2rem;}
+    .login_box::before { display: block; content: ""; width: 100%; height: 705px; background:url('../../img/mobile_office/main_img1.png') no-repeat center 50%  / 984px auto; transition: all 0.3s;}
+    .login_box .login {margin-top: 2rem;}
+    .login_box .login .text_data { margin-top: 0rem;}
+    .login_box .login .text_data + .text_data {margin-top: -1px;}
+    .login_box .login .btn_box { }
+    .login_box .login .btn_box .btn a {border-radius: .4rem; margin-top: 1.6rem;}
+    input[type="text"], input[type="password"] { padding-left: 24px !important; color: rgb(153, 153, 153) !important; border: 1px solid rgb(235, 236, 238) !important; border-radius: 1px !important; height: 56px !important;}
+    input::-moz-placeholder,
+    input::-ms-input-placeholder,
+    input::-webkit-input-placeholder,
+    input::-moz-placeholder { color: rgb(153, 153, 153) !important; }
+
+    /* idpw */
+    .idpw { display: flex; justify-content: space-between; margin-top: 16px;}
+    .idpw li:nth-of-type(1) {font-size: 13px; color: rgb(34, 36, 38);}
+    .idpw li > .checkbox > .chk+.label { height: 15px; padding-left: 19px; font-size: 13px; line-height: 16px;}
+    .idpw li > .checkbox > .chk+.label:after { border-radius: 2px; width: 15px; height: 15px; background-size: 7px auto;}
+    .idpw li > .checkbox > .chk:checked+.label:after { background: url('../../img/ico_check01_on.png') no-repeat center center #fff; background-size: 7px auto;}
+    .idpw li + li a { font-size: 13px; color: rgb(112, 116, 120);}
+
+    /* 메인 */
+    .tag1 { width: 130px; height: 26px; line-height: 26px; padding-left: 10px; margin-bottom: 12px; font-size: 13px; color: #fff; background:url('../../img/mobile_office/bg_tag1.png') no-repeat 0 0  / 130px auto;}
+    .tag2 { width: 68.7px; height: 26px; line-height: 26px; padding-left: 10px; margin-bottom: 12px; font-size: 13px; color: #fff; background:url('../../img/mobile_office/bg_tag2.png') no-repeat 0 0  / 68.7px auto;}
+    .name {font-size: 30px; letter-spacing: -0.9px; margin-bottom: 24px;}
+    .name span {font-weight: 700;}
+    .main_box.img1::before { display: block; content: ""; width: 100%; height: 705px; background:url('../../img/mobile_office/main_img2.png') no-repeat center 50%  / 984px auto;}
+    .main_box.img2::before { display: block; content: ""; width: 100%; height: 705px; background:url('../../img/mobile_office/main_img3.png') no-repeat center 50%  / 984px auto;}
+    .main_box ul { display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 2.4rem;}
+    .main_box li { position: relative; width: 100%; margin-top: 16px; background: #fff; border-radius: 8px; box-shadow: 0 -0.05rem 1rem rgb(0 0 0 / 10%);}
+    .main_box li:first-child {margin-top: 0;}
+    .main_box li a::after {display: block; content: ""; width: 32px; height: 32px; position: absolute; right: 24px; top: calc(50% - 17px); background:url('../../img/mobile_office/ico_btn.png') no-repeat right 50%  / 32px auto;}
+    .main_box li a {display: block; padding: 20px 24px;}
+    .main_box li a p.tit { font-size: 16px; font-weight: 700; color: rgb(34, 36, 38); margin-bottom: 4px;}
+    .main_box li a p.txt { font-size: 14px; font-weight: 400; padding: 0; margin: 0;}
+
+
+    #footer {padding: 24px 20px; font-size: 12px; color: rgba(188, 192, 197, 1); background: rgba(34, 36, 38, 1);}
+    #footer .footer-logo {padding: 0; margin: 0; margin-bottom: 10px; line-height: 1;}
+    #footer address {font-style: normal;}
+    #footer p {margin-top: 2px;}
+    .footer-logo {width: 120px;}
+
+    /* 
+    ------------------------------------------------
+    ************** 2024 리뉴얼 *****************
+    ------------------------------------------------
+    */
+    .main-zone {}
+    .main-zone .contents {padding: 1.6rem 2rem 4rem;}
+
+    /* 로그인 */
+    .login-zone .contents {padding: 16.4rem 3rem 0;}/* 11.6rem */
+    .logo-wrap {margin-bottom: 5rem; text-align: center; }
+    .logo-target {height: 3.6rem}
+    .logo-target img {display: block; width: auto; max-height: 100%; margin: 0 auto;}
+    .logo-basic {height: 1.5rem; margin-top: 1.2rem;}
+    .logo-basic img {display: block; width: auto; max-height: 100%; margin: 0 auto;}
+    .login-area {display: flex; flex-direction: column;}
+    .login-area::before {content: ""; display: inline-block; overflow: hidden; aspect-ratio: 315/147; width: 31.5rem; margin: 0 auto; background: url('../../img/mobile_office/img_login@2x.png') no-repeat 0 0;background-size: cover;}
+    .login-area .login .text_data { margin-top: 0rem; border-radius: 0.8rem 0.8rem 0 0; overflow: hidden;}
+    .login-area .login .text_data + .text_data {border-radius: 0 0 0.8rem 0.8rem;}
+    .login-area .login .btn_box .btn a {border-radius: .4rem; margin-top: 1.6rem;}
+    .login-area .login .text_data { margin-top: 0rem; border-radius: 0.8rem 0.8rem 0 0;}
+    .login-area .login .text_data + .text_data {border-radius: 0 0 0.8rem 0.8rem; border-top: 0.1rem solid rgb(217 217 217);}
+    .login-area input[type="text"], 
+    .login-area input[type="password"] {background-color: transparent; font-size: 1.6rem; letter-spacing: -0.016rem; padding-left: 2.4rem !important; color: rgb(34 36 38) !important; height: 56px !important; border: none !important;}
+    .login-area input::-webkit-input-placeholder,
+    .login-area input::placeholder {color: rgb(163 163 163) !important;}
+    .login-area .btn_box .btn a {color: #fff; background: linear-gradient(103deg, #43c17d 10%, #12d3a6 95%); border: none; padding: 1.8rem 0; font-size: 1.8rem; letter-spacing: -0.018rem;}
+
+    /* idpw */
+    .login-area .login-idpw-list { display: flex; justify-content: space-between; margin: 1.8rem 0 2.6rem;}
+    .login-area .login-idpw-list .pw-change {font-size: 1.4rem; color: #fff; letter-spacing: -0.014rem;}
+    .login-area .login-chk {overflow:hidden; position:absolute; border:0; background:#fff; margin:0 0 0 0rem; width:1px; height:1px; margin-left: -1px; clip: rect(0,0,0,0);}
+    .login-area .login-chk + .label{display:inline-block; position:relative; padding-left: 2.6rem; font-size: 1.4rem; border: none; letter-spacing: -0.014rem; color: #fff; cursor:pointer;}
+    .login-area .login-chk +.label:after {content: ""; position: absolute; top:0; left:0; width:2rem; height:2rem; margin-top:0rem; transition: .3s; background:url('../../img/mobile_office/login_chk_off.svg') no-repeat 0 0; background-size: cover; }
+    .login-area .login-chk:checked +.label:after {margin-top:0; background: url('../../img/mobile_office/login_chk_on.svg') no-repeat 0 0;}
+    
+}
+
+@media only screen and (max-width: 1024px){
+
+    /* 아이폰 - 노치 */
+    body.ios #header h1 {padding-top: var(--ios); height: calc(var(--ios) + 50px);}
+
+    /* gnb */
+    .mobile-btn { right: 68px; left: initial; top: 10px;}
+    .main_wrap .contents { padding: 66px 20px 37px; display: block !important;}
+
+    /* 로그인 */
+    .main_wrap p.txt { font-size: 1.8rem;}
+    .login_box::before { height: 240px; background-size: 335px auto;}
+
+    /* 메인 */
+    .name {font-size: 18px; margin-bottom: 24px;}
+    .main_box.img1::before { height: 240px; background-size: 335px auto;}
+    .main_box.img2::before { height: 240px; background-size: 335px auto;}
+
+    .rent_gnb .mobile-btn{ left: initial;}
+
+    /* 아이폰 - 노치 */
+    body.ios #header::after { height: 0;}
+
+}
+
+
+
+@media only screen and (min-width:360px){
+
+    .wrap { min-height: calc(100% - 35px);}
+
+}
+
+@media only screen and (min-width:414px){
+
+    .wrap { min-height: calc(100% - 117px);}
+
+}
+
+@media only screen and (max-width:359px){
+
+    .wrap { min-height: calc(100% - -46px);}
+    .login_box::before {background-size: 95% auto;}
+    .login_box .login { margin-top: 0;}
+
+}

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>게시판 | iM캐피탈 관리자</title>
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#" class="on">AG영업관리</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#">대시보드</a></li>
+                        <li><a href="#">견적내기</a></li>
+                        <li><a href="#">진행현황</a></li>    
+                        <li><a href="#">발주현황</a></li>
+                        <li><a href="#">즉시출고/선구매</a></li>     
+                        <li><a href="#">월별수수료</a></li>
+                        <li><a href="#" class="on">게시판</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <div class="flex-wrap"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h2>게시판</h2>
+                        <div class="btn">
+                            <a href="#" class="ico-re">초기화</a><a href="#" class="blue">조회</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <!-- Start : 게시판 -->
+                    <table class="data-tbl mb72">
+                        <colgroup>
+                            <col width="23%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">에이전트</p>
+                                        <div class="inp-area disabled"><!-- [D] 비활성화: disabled 클래스 추가 -->
+                                            <div class="selchk-box">
+                                                <div class="selchk-selected">A에이전트</div>
+                                                <div class="selchk-option">
+                                                    <ul class="selchk-list">
+                                                        <li class="selchk-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="chk_1">
+                                                                <label>전체</label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="selchk-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="chk_1">
+                                                                <label>A에이전트</label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="selchk-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="chk_1">
+                                                                <label>B에이전트</label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="selchk-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="chk_1">
+                                                                <label>C에이전트</label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="selchk-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="chk_1">
+                                                                <label>D에이전트</label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="selchk-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="chk_1">
+                                                                <label>F에이전트</label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    
+                                                    <div class="btn-group">
+                                                        <div class="btn">
+                                                            <a href="javascript:;" class="black close">닫기</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">상담번호</p>
+                                        <input type="text" placeholder="상담번호 입력" value="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">등록일</p>
+                                        <div class="calendar">
+                                            <input type="tel" value="2024-05-15" class="w-86">
+                                            <span class="dash">-</span>
+                                            <input type="tel" value="2024-05-25" class="w-86"><img src="/static/admin/img/new_common/ico_cal.png">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">진행상태</p>
+                                        <div class="inp-area">
+                                        <div class="selectbox">
+                                            <select class="select">
+                                                <option value="">선택</option>
+                                            </select>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                <div class="com-inp">
+                                    <p class="tit">조회 선택</p>
+                                    <div class="inp-area">
+                                    <div class="selectbox">
+                                        <select class="select">
+                                            <option value="" selected>제목</option>
+                                            <option value="">내용</option>
+                                        </select>
+                                    </div>
+                                    </div>
+                                </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">검색어</p>
+                                        <input type="text" placeholder="검색어 입력" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 게시판 -->
+
+                    <div class="flex-s-tit mt64"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <span class="num">총 <em>45</em>건</span>
+                    </div>
+
+                    <!-- Start : 리스트 -->
+                    <table class="bbs-table mt16">
+                        <colgroup>
+                            <col width="80px">
+                            <col width="100px">
+                            <col width="200px">
+                            <col width="100px">
+                            <col width="%">
+                            <col width="100px">
+                            <col width="150px">
+                            <col width="100px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">번호</th>
+                                <th scope="col">작성자</th>
+                                <th scope="col">상담번호</th>
+                                <th scope="col">진행상태</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">문의상태</th>
+                                <th scope="col">등록일</th>
+                                <th scope="col">첨부</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10</td>
+                                <td>A에이전트</td>
+                                <td>20240712005669</td>
+                                <td>상담진행</td>
+                                <td class="a_l">
+                                    <div class="ellipsis">
+                                        <a href="#">신규견적 재발송 부분문의 드립니다 신규견적 재발송 부분문의 드립니다</a>
+                                    </div>
+                                </td>
+                                <td>요청</td>
+                                <td>2024-07-11</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>관리자</td>
+                                <td></td>
+                                <td></td>
+                                <td class="a_l">
+                                    <div class="ellipsis">
+                                        <a href="#">[전체공지] 사업자별 서류제출 목록 안내드립니다.</a>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td>2024-07-11</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" class="nodata"><span>정보가 없습니다.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 리스트 -->
+                    <!-- Start : 페이징 -->
+                    <div class="paging-box">
+                        <a href="#none" class="first">맨처음</a>
+                        <a href="#none" class="prev">이전</a>
+                        <a href="#none" class="current">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none" class="next">다음</a>
+                        <a href="#none" class="end">맨마지막</a>
+                    </div>
+                    <!-- //End : 페이징 -->            
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+<script>
+$(function() {
+    // 셀렉트체크박스 다중선택용
+    $(".selchk-selected").on('click', function(event) {
+        
+        // disabled 비활성화 클래스를 가진 부모가 있으면 클릭 이벤트를 중지
+        if ($(this).closest('.inp-area').hasClass('disabled')) {
+            return; 
+        }
+
+        if($(this).hasClass("active")) {
+            $(this).removeClass('active');
+            $(this).closest('.selchk-box').removeClass('active');
+        } else {
+            $('.selchk-box').removeClass('active');
+            $(".selchk-selected").removeClass('active');
+            
+            $(this).closest('.selchk-box').addClass('active');
+            $(this).addClass('active');
+        }
+        
+        // 셀렉트박스 활성화되어있을 경우 닫기
+        $('.select-arrow-active').trigger(click);
+        
+        // 이벤트 전파 방지 (버블링 방지)
+        event.stopPropagation();
+    });
+
+    // 셀렉트박스 클릭했을때 셀렉트체크박스 닫힘
+    $('.select-selected').on('click', function(event) {
+        $(".selchk-box").removeClass("active");
+        $(".selchk-selected").removeClass("active");
+
+        // 이벤트 전파 방지 (버블링 방지)
+        event.stopPropagation();
+    });
+
+    // 닫기버튼 눌렀을때
+    $(".selchk-box .close").on('click', function() {
+        $(this).closest('.selchk-box').removeClass('active');
+        $(this).closest('.selchk-selected').removeClass('active');
+        return false;
+    });
+
+    // 바깥영역 클릭했을때 닫힘
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.selchk-box').length) {
+            $(".selchk-box").removeClass("active");
+            $(".selchk-selected").removeClass("active");
+        }
+    });
+
+    function updateHighlight() {
+        // 하나라도 체크된 체크박스가 있으면 클래스 추가
+        $('.selchk-box').each(function() {
+            if ($(this).find('.selchk-option .selchk-list .selchk-item input[type="checkbox"]:checked').length > 0) {
+                $(this).find('.selchk-selected').addClass('color');
+            } else {
+                $(this).find('.selchk-selected').removeClass('color');
+            }
+        });
+    }
+
+    // 체크박스 상태 변경 시 클래스 업데이트
+    $('.selchk-list .selchk-item input[type="checkbox"]').change(function() {
+        updateHighlight();
+    });
+
+    // 페이지 로드 시 체크박스 상태에 따라 클래스 업데이트
+    updateHighlight();
+});
+</script>
+</body>
+</html>
+

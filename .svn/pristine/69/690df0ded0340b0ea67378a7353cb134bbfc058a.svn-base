@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:140px">
+                    <col>
+                    <col style="width:250px">
+                    <col style="width:100px">
+                    <col style="width:250px">
+                    <col style="width:120px">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 고객센터 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>자주하는질문(FAQ)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-002.html">MW-900-002.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>금융약관</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-003.html">MW-900-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>카카오페이 인증 이용 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/common/PW-1003-001.html">PW-1003-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>금융인증서 이용 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/common/PW-1003-002.html">PW-1003-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>모바일 웹 공동인증서 이용 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/common/PW-1003-003.html">PW-1003-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공동인증서 내보내기 (PC → 모바일 앱)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/common/PW-1003-004.html">PW-1003-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공동인증서 가져오기 (모바일 앱 → PC)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/common/PW-1003-005.html">PW-1003-005.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공지사항</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-001.html">MW-900-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공지사항 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-001-1.html">MW-900-001-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>고객확인의무 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-004.html">MW-900-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>대출모집인 지급수수료 현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-007.html">MW-900-007.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>금리조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/common/조달금리.html">조달금리.html</a></td>
+                        <td></td>
+                        <td>caption 수정, 전문가심사(P22)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>개인(신용)정보 수집·이용 및 제공 관련 고객 권리 안내문</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-014.html">MW-900-014.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>계열사간 고객정보 제공내역 조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-015.html">MW-900-015.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>개인정보 열람신청</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-017.html">MW-900-017.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>개인정보 열람신청 정보입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-018.html">MW-900-018.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td></td>
+                        <td>2023-10-19</td>
+                        <td>page</td>
+                        <td>개인정보 열람신청 약관동의</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-019.html">MW-900-019.html</a></td>
+                        <td></td>
+                        <td>이미지alt 수정, 전문가심사(P23, P24)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>개인(신용)정보 이용 및 제공 내역</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-020.html">MW-900-020.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>마케팅 목적 이용 제공 현황 조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-021.html">MW-900-021.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>마케팅 목적 이용 제공 현황 조회결과</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-022.html">MW-900-022.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신용정보조회 동의</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/auto/DGB-250-002.html">DGB-250-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>위탁업체현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-006.html">MW-900-006.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>개인신용평가 결과에 대한 설명 및 이의제기 신청</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/customer/MW-900-008.html">MW-900-008.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+<script type="text/javascript">
+
+	function goList(){
+// 		var f = document.actionForm;
+// 		f.METHOD.value = "AdminBoardListSelect";
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+
+		location.href = "/admin/board/dgbNoticeBoardMngList.jsp"
+	}
+
+
+	function goMod(){
+// 		var f = document.actionForm;
+// 		f.METHOD.value = "AdminBoardModPage";
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+		location.href = "/admin/board/dgbNoticeBoardMngMod.jsp"
+	}
+
+	function goDel(){
+		var f = document.actionForm;
+		f.METHOD.value = "AdminBoardDel";
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+
+	//파일다운로드
+	function download(fileName){
+
+		var path = "upload";
+		window.location.href = "/view/common/inc/FILE_DOWNLOAD.jsp?file_name="+fileName+"&file_path="+path;
+	}
+
+</script> 
+</head>
+<body>
+
+<form name="actionForm">
+	  <input type="hidden" name="METHOD" />
+	  <input type="hidden" name="INIpluginData">
+	  <input type="hidden" name="LOGIN_SVC"  value="N"/>
+	  <input type="hidden" name="PGE_NO"  value="iPageNo "/>
+	  <input type="hidden" name="TITLE_SELECT"  value="TITLE_SELECT "/>
+
+	  <input type="hidden" name="OPEN_FLAG_SELECT"  value="OPEN_FLAG_SELECT "/>
+	  <input type="hidden" name="DEL_FLAG_SELECT"  value="DEL_FLAG_SELECT "/>
+
+	  <input type="hidden" name="BOARD_ID" id="BOARD_ID" value="BOARD_ID " />
+	  <input type="hidden" name="B_ID" id="B_ID" value="B_ID " />
+	  <input type='hidden' name="menuNo"	value="3" />
+	  <input type='hidden' name="subMenuNo"	value="SUB_MENU " />
+	  <input type='hidden' name="INSERT_KEY"	value="1" />
+</form>
+
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="4"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="container">
+			<div class="local-menu">
+				<jsp:include page="/admin/inc/leftMenu.jsp" flush="false"> 
+					<jsp:param name="menuNo" value="4"/>
+					<jsp:param name="subMenuNo" value="SUB_MENU "/>
+				</jsp:include>
+			</div> <!--// leftarea -->
+			
+			
+			<!--컨텐츠내용 시작-->
+			<div class="content-wrap">
+				<h3>채용 공고 현황</h3>
+				<div class="contents">
+					
+					<table class="bbs-table">
+						<colgroup>
+							<col style="width:60px;">
+							<col style="width:100px;">
+							<col style="width:80px;">
+							<col style="width:70px;">
+							<col style="width:230px;">
+							<col style="width:130px;">
+							<col style="width:130px;">
+							<col style="width:80px;">
+							<col style="width:80px;">
+							<col style="width:80px;">
+						</colgroup>
+						<thead>
+							<tr>		
+								<th scope="col">번호</th>
+								<th scope="col">등록일</th>
+								<th scope="col">채용구분<br>(수시/정시)</th>
+								<th scope="col">모집구분</th>
+								<th scope="col">채용공고명</th>
+								<th scope="col">접수시작일</th>
+								<th scope="col">접수마감일</th>
+								<th scope="col">고용형태</th>
+								<th scope="col">상태</th>
+								<th scope="col">전체 지원자</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td>1</td>					
+									<td>2010-11-11</td>
+									<td>수시</td>	
+									<td>경력/신입</td>	
+									<td class="a_l">iM캐피탈 인턴(체험형) 공개채용</td>
+									<td>2021-05-26 23:59</td>
+									<td>2021-05-26 23:59</td>
+									<td>정규직</td>
+									<td>진행중</td>
+									<td>10명</td>
+								</tr>
+						</tbody>
+					</table>
+
+					<div class="tit_area mt50">
+						<h4 class="dl_tb_tit">공고 제목</h4>
+					</div>
+					<p>
+						iM캐피탈에서 기업/리스금융(건설/공작) 부문에 역량 있는 인재를 모집합니다.
+					</p>
+
+					<div class="tit_area mt50">
+						<h4 class="dl_tb_tit">채용 내용</h4>
+					</div>
+					<table class="bbs-table mb15">
+						<colgroup>
+							<col style="width:160px;">
+							<col style="width:70px;">
+							<col style="width:200px;">
+							<col style="width:200px;">
+							<col style="width:80px;">
+							<col style="width:80px;">
+							<col style="width:80px;">
+						</colgroup>
+						<thead>
+							<tr>		
+								<th scope="col">모집 분야</th>
+								<th scope="col">모집구분</th>
+								<th scope="col">지원자격</th>
+								<th scope="col">담당업무</th>
+								<th scope="col">근무지역</th>
+								<th scope="col">모집인원</th>
+								<th scope="col">고용형태</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td>기업/리스 금융(건설/공작)</td>					
+									<td>경력</td>
+									<td class="a_l">
+										<ul>
+											<li>ㆍ일반리스/할부(건설 및 공작기계)</li>
+											<li>ㆍ기업금융(팩토링, 기업대출)</li>
+										</ul>
+									</td>
+									<td class="a_l">
+										<ul>
+											<li>ㆍ일반리스/할부(건설 및 공작기계)</li>
+											<li>ㆍ기업금융(팩토링, 기업대출)</li>
+										</ul>
+									</td>	
+									<td>서울(본사)</td>										
+									<td>0명</td>
+									<td>정규직</td>
+								</tr>
+						</tbody>
+					</table>
+
+					<div class="tit_area mt50">
+						<h4 class="dl_tb_tit">전형절차(관리자용)</h4>
+					</div>
+					<div class="step_box">
+						<ul>
+							<li><span>서류전형</span></li>
+							<li><span class="on">실무면접</span></li>
+							<li><span>임원면접</span></li>
+							<li><span>채용검진</span></li>
+							<li><span>최종합격</span></li>
+						</ul>
+					</div>
+
+					<div class="tit_area mt50">
+						<h4 class="dl_tb_tit">전형절차(지원자노출용)</h4>
+					</div>
+					<div class="step_box">
+						<ul>
+							<li><span>서류전형</span></li>
+							<li><span class="on">실무면접</span></li>
+							<li><span>임원면접</span></li>
+							<li><span>채용검진</span></li>
+							<li><span>최종합격</span></li>
+						</ul>
+					</div>
+
+					<div class="tit_area mt50">
+						<h4 class="dl_tb_tit">전형 일정</h4>
+					</div>
+					<ul class="list_dot">
+						<li>ㆍ서류전형 합격 발표 : 6/3(목), 개발통지</li>
+						<li>ㆍ실무면접 : 6/7(월) ~ 6/9(수) 중 예정</li>
+						<li>ㆍ임원면접 : 6/16(수) ~ 6/18(금) 중 예정</li>
+					</ul>
+
+					<div class="tit_area mt50">
+						<h4 class="dl_tb_tit">지원서 접수</h4>
+					</div>
+					<p>접수기간 : 2021. 05. 20(목) ∼ 2021. 05. 26(수) 24:00</p>
+
+					<div class="tit_area mt50">
+						<h4 class="dl_tb_tit">기타사항</h4>
+					</div>
+					<ul class="list_dot">
+						<li>ㆍ각 전형별 결과는 전형결과확인 메뉴에서 확인 가능합니다.</li>
+						<li>ㆍ지원서 기재사항에 대한 모든 증빙서류를 제출해주셔야 하며, 증빙이 없으면 인정되지 않습니다.</li>
+						<li>ㆍ지원서 기재사항과 증빙서류 내용이 다를 경우에는 합격이 취소됩니다.</li>
+					</ul>
+
+					<div class="tit_area mt50">
+						<h4 class="dl_tb_tit">노출 여부</h4>
+					</div>
+					<p>노출</p>
+
+					<!--//버튼시작-->
+					<p class="btn-align-center">
+						<a href="#" class="btn h42" onclick="srchAdminList();">공고 수정</a>
+						<a href="#" class="btn h42 neg" onclick="srchAdminList();">공고 삭제</a>
+					</p>
+					<!--버튼끝//-->
+					
+				</div><!--// contents -->
+			</div>
+			<!--컨텐츠내용 끝-->
+			<!--// content-wrap -->
+		</div><!--// container -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+</body>
+</html>

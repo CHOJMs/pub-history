@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인(신용) 정보의 선택적 동의서 | iM캐피탈 카버스</title>
+
+    <link rel="stylesheet" href="/static/carverse/css/style.css">
+    <link rel="stylesheet" href="/static/carverse/css/carverse.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>개인(신용) 정보의 선택적 동의서</h1>
+            </div>
+            <div class="popup-contents flex-col">
+                <!-- Start : content //-->
+
+                <!-- Start : 전체동의 -->
+                <div class="agree-box">
+                    <div class="agree-total-box">
+                        <div class="checkbox">
+                            <input type="checkbox" id="ch01" name="ch01" class="chk">
+                            <label for="ch01" class="label">(선택) 개인(신용) 정보의 선택적 동의서</label>
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="ch021" name="ch021" class="chk chk_1">
+                        <label for="ch021" class="label">금융상품안내를 위한 수집.이용</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="ch022" name="ch021" class="chk chk_1">
+                        <label for="ch022" class="label">금융상품 이외의 부수서비스 안내를 위한 수집. 이용</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="ch023" name="ch021" class="chk chk_1">
+                        <label for="ch023" class="label">전자적 전송매체를 통한 광고성 정보수신 동의</label>
+                        <ul>
+                            <li>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="ch0211" name="ch0211" class="chk chk_1" title="문자">
+                                    <label for="ch0211" class="label">문자</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="" name="ch0211" class="chk chk_1" title="이메일" disabled="">
+                                    <label for="" class="label disabled">이메일</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="" name="ch0211" class="chk chk_1">
+                                    <label for="" class="label">전화</label>
+                                </div>
+                                <div class="checkbox">
+                                    <input type="checkbox" id="" name="ch0211" class="chk chk_1" title="DM(우편)" disabled="">
+                                    <label for="" class="label disabled">DM(우편)</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="ch024" name="ch021" class="chk chk_1">
+                        <label for="ch024" class="label">DGB금융그룹 내 자회사 제공 동의</label>
+                    </div>
+                </div>
+                <!-- //End : 전체동의 -->
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">확인하고 동의하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/carverse/img/common2/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

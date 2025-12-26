@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>소득산출 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+
+    <script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-full"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>소득산출</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <!-- 2023-08-09 : <div class="popup-cnt"> 삭제 -->
+                <h2>기본정보</h2>
+                <table class="bbs-table-view1">
+                    <colgroup>
+                        <col width="150px">
+                        <col width="%">
+                        <col width="150px">
+                        <col width="%">
+                        <col width="150px">
+                        <col width="%">
+                    </colgroup>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>고객번호</th>
+                            <td>1057294502</td>
+                            <th>고객명</th>
+                            <td>일하자</td>
+                            <th>상담/신청번호</th>
+                            <td>23070004441000</td>
+                        </tr>
+                        <tr>
+                            <th>고객소득구분</th>
+                            <td>급여소득자</td>
+                            <th>업종</th>
+                            <td colspan="3">대기업/중소기업/공공기관</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- 2023-08-08 수정 -->
+                <div class="flex-wrap mt40"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                    <h2>산출내역</h2>
+                    <p class="s-txt1">조회건수 <span>1건</span></p>
+                </div>
+                <!-- 2023-08-08 수정 -->
+                <div class="x-scrollBox">
+                    <table class="bbs-table" style="min-width: 2500px;">
+                        <colgroup>
+                            <col width="70px">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                            <col width="%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">선택</th>
+                                <th scope="col">소득증빙구분</th>
+                                <th scope="col">분류</th>
+                                <th scope="col">평균월수입</th>
+                                <th scope="col">환산연소득</th>
+                                <th scope="col">DSR인정비율</th>
+                                <th scope="col">DSR소득인정Cap</th>
+                                <th scope="col">DSR인정연소득</th>
+                                <th scope="col">기준년도</th>
+                                <th scope="col">기준요율</th>
+                                <th scope="col">증빙(납입)개월</th>
+                                <th scope="col">증빙(납입)금액</th>
+                                <th scope="col">소득중빙불가여부</th>
+                                <th scope="col">고객번호</th>
+                                <th scope="col">고객명</th>
+                                <th scope="col">여신거래관리번호</th>
+                                <th scope="col">표준산업분류</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="radiobox single">
+                                        <input type="radio" id="r01" name="r01" checked="checked">
+                                        <label for="r01"></label>
+                                    </div>
+                                </td>
+                                <td>직접입력</td>
+                                <td>직접입력</td>
+                                <td>8,333,333</td>
+                                <td>100,000,000</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2023</td>
+                                <td>100</td>
+                                <td>12</td>
+                                <td>100,000,000</td>
+                                <td>N</td>
+                                <td>1057294502</td>
+                                <td>일하자</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="flex-wrap mt40"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                    <h2>소득산출</h2>
+                    <div class="btn">
+                        <a href="#">NICE추정소득등록</a><a href="#" class="line">초기화</a><a href="#">산출</a><a href="#" class="black">저장</a>
+                    </div>
+                </div>
+                <table class="data-tbl">
+                    <colgroup>
+                        <col width="50%">
+                        <col width="50%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">기준년도</p>
+                                    <div class="inp-area">
+                                        <div class="selectbox">
+                                            <select class="select">
+                                                <option value="">선택</option>
+                                                <option value="">2023년</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">소득증빙구분</p>
+                                    <div class="inp-area">
+                                        <div class="selectbox">
+                                            <select class="select">
+                                                <option value="">선택</option>
+                                                <option value="">소득금액증명원</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">기준요율</p>
+                                    <div class="inp-txt-right">
+                                        <input type="tel" placeholder="" value="0">
+                                        <span>원</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">증빙(납입)개월</p>
+                                    <div class="inp-txt-right">
+                                        <input type="tel" placeholder="" value="12" class="a-r1">
+                                        <span>개월</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">증빙(납입)금액</p>
+                                    <div class="inp-txt-right">
+                                        <input type="tel" placeholder="" value="0">
+                                        <span>원</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">평균 월소득</p>
+                                    <div class="inp-txt-right">
+                                        <input type="tel" placeholder="" value="0" class="disabled" disabled>
+                                        <span>원</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">환산 연소득</p>
+                                    <div class="inp-txt-right">
+                                        <input type="tel" placeholder="" value="0" class="disabled" disabled>
+                                        <span>원</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">DSR 인정비율</p>
+                                    <div class="inp-txt-right">
+                                        <input type="tel" placeholder="" value="0" class="disabled" disabled>
+                                        <span>%</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">DSR 소득인정 Cap</p>
+                                    <div class="inp-txt-right">
+                                        <input type="tel" placeholder="" value="0" class="disabled" disabled>
+                                        <span>원</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">DSR 인정 연소득</p>
+                                    <div class="inp-txt-right">
+                                        <input type="tel" placeholder="" value="0" class="disabled" disabled>
+                                        <span>원</span>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">증빙불가자 제외</p>
+                                    <div class="cnt-box">
+                                        <div class="inp-radio">
+                                            <div class="checkbox single">
+                                                <input type="checkbox" checked="checked">
+                                                <label></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

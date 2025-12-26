@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>외부 제보하기 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc popup-640"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>외부 제보하기</h1>
+            </div>
+            <div class="popup-contents pb120"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <h2 class="pop-tit">제보자 정보</h2>
+                <!-- Start : 동의 -->
+                <div class="agree-box">
+                    <div class="agree-total-box mb8">
+                        <div class="checkbox">
+                            <input type="checkbox" id="ch01" name="ch01" class="chk" checked="">
+                            <label for="ch01" class="label">개인(신용)정보 수집·이용 필수 동의서</label>
+                            <a href="#" class="wa-arrow"><img src="/static/web/img/ui_common/ico_arrow_mob.png" alt="동의서 보기" class="agr-mob"><img src="/static/web/img/ui_common/ico_arrow.png" alt="동의서 보기" class="agr-pc"></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- //End : 동의 -->
+
+                <!-- Start : 폼 -->
+                <div class="form-iem">
+                    <div class="com-inp">
+                        <label for="i01">성명</label>
+                        <input type="text" id="i01" placeholder="입력하세요" value="">
+                    </div>
+                    <div class="com-inp">
+                        <label for="i02">연락처</label>
+                        <input type="tel" id="i02" placeholder="입력하세요" value="">
+                    </div>
+                    <div class="com-inp">
+                        <label for="i03">이메일</label>
+                        <input type="text" id="i03" placeholder="입력하세요" value="">
+                    </div>
+                </div>
+                <!-- //End : 폼 -->
+
+                <h2 class="pop-tit">제보 내용</h2>
+                <!-- Start : 폼 -->
+                <div class="form-iem mt16">
+                    <div class="com-inp">
+                        <div class="label">제보구분</div>
+                        <a href="#" id="" class="ico-select alink">
+                            <span class="placeholder">선택하세요</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                        </a>
+                    </div>
+                    <div class="com-inp">
+                        <label for="i04">제목</label>
+                        <input type="text" id="i04" placeholder="입력하세요" value="">
+                    </div>
+                    <div class="com-inp">
+                        <label for="i05" class="label-textarea">내용<p>2,000자</p></label>
+                        <textarea name="" id="i05" placeholder="테스트 직접입력 내용입니다"></textarea>
+                    </div>
+                </div>
+                <!-- //End : 폼 -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">제보하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+
+                <!-- //End : content -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

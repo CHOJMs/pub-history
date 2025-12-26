@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:140px">
+                    <col>
+                    <col style="width:250px">
+                    <col style="width:100px">
+                    <col style="width:250px">
+                    <col style="width:120px">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 담보대출관리 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="update">
+                        <td></td>
+                        <td>2023-08-18</td>
+                        <td>2024-07-11</td>
+                        <td>page</td>
+                        <td>담보대출 접수현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/DGB-L-100-001.html">DGB-L-100-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-06-24 : '전입세대열람', '전자등기상태' 셀렉트 및 테이블 항목 추가</li>
+                                <li>2024-06-24 : '조회영역' dsr 페이지와 동일하게 디자인 맞춤</li>
+                                <li>2024-07-11 : 한도조회 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2023-08-18</td>
+                        <td>2024-10-18</td>
+                        <td>page</td>
+                        <td>담보대출 접수관리</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/DGB-L-200-001.html">DGB-L-200-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-06-17 : 문의하기 버튼 추가</li>
+                                <li>2024-06-24 : '전입세대열람', '전입세대열람 완료일' 항목 추가</li>
+                                <li>2024-06-28 : '재직/사업정보' 우측에 버튼 추가</li>
+                                <li>2024-07-11 : '알림톡관리' 버튼 추가</li>
+                                <li>2024-10-18 : '알림톡관리' 버튼 클래스 변경</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>담보대출 접수관리 - 신규접수</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/DGB-L-200-002.html">DGB-L-200-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2023-08-18</td>
+                        <td>2024-06-24</td>
+                        <td>page</td>
+                        <td>담보대출 만기현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/DGB-L-300-001.html">DGB-L-300-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-06-24 : '배치CSS결과', '만기연장URL발송' 셀렉트 및 테이블 항목 추가</li>
+                                <li>2024-06-24 : '조회영역' dsr 페이지와 동일하게 디자인 맞춤</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2023-08-18</td>
+                        <td>2024-06-24</td>
+                        <td>page</td>
+                        <td>담보대출 실행현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/DGB-L-400-001.html">DGB-L-400-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-06-24 : '조회영역' dsr 페이지와 동일하게 디자인 맞춤</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2023-08-21</td>
+                        <td>2024-06-24</td>
+                        <td>page</td>
+                        <td>부동산 권리변동 현황 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/DGB-L-500-001.html">DGB-L-500-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-06-24 : '조회영역' dsr 페이지와 동일하게 디자인 맞춤</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-21</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>부동산 권리변동 현황 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/DGB-L-500-002.html">DGB-L-500-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2024-06-17</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>접수문의 현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/접수문의현황.html">접수문의현황.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-06-17</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>접수문의 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/접수문의상세.html">접수문의상세.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 담보대출관리 팝업 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-18</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>CSS 결과</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/CSS결과.html">CSS결과.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-21</td>
+                        <td>2024-07-22</td>
+                        <td>pop</td>
+                        <td>마이데이터</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/마이데이터.html">마이데이터.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-07-22 : 주민등록초본 탭 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>권유자조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/권유자조회.html">권유자조회.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>미리보기</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/미리보기.html">미리보기.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-01-08</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>Fraud 체크리스트</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/loan/DGB-L-900-001.html">DGB-L-900-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

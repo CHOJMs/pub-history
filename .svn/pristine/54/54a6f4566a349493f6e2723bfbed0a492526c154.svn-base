@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 중고차제휴 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td></td>
+                        <td>2024-07-03</td>
+                        <td>2024-07-09</td>
+                        <td>pop_full</td>
+                        <td>차량시세 확인하기</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mobile_office/auto/MOA-200-002-1.html">MOA-200-002-1.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-07-09 : 전체스크롤로 변경</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-07-03</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>에이전트 실적 현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mobile_office/auto/MOA-210-001.html">MOA-210-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-07-03</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>할부협약매매상사 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mobile_office/auto/MOA-220-001.html">MOA-220-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-19</td>
+                        <td>2023-06-28</td>
+                        <td>page</td>
+                        <td>중고 승용 한도조회 신청</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mobile_office/auto/MOA-200-001.html">MOA-200-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-04-24 : placeholder, 타이틀명 수정, 차량번호 우측문구추가</li>
+                                <li>2023-06-15 : 구매차량, 선택차종, 가격 입력폼 삭제</li>
+                                <li>2023-06-28 : 구매차량, 선택차종, 가격 입력폼 복구</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-19</td>
+                        <td>2023-04-24</td>
+                        <td>pop_full</td>
+                        <td>구매차량 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mobile_office/auto/MOA-200-002.html">MOA-200-002.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-04-24 : placeholder, 검색결과 문구 수정</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-19</td>
+                        <td>2023-04-24</td>
+                        <td>page</td>
+                        <td>중고 승용 한도조회 신청(유선녹취)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mobile_office/auto/MOA-200-006.html">MOA-200-006.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-04-24 : placeholder, 차량번호 우측문구추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-19</td>
+                        <td>2023-04-24</td>
+                        <td>page</td>
+                        <td>중고 승용 한도조회 상담이력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mobile_office/auto/MOA-200-007.html">MOA-200-007.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-04-24 : placeholder, 버튼명 수정</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-19</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중고 승용 한도 재상담</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mobile_office/auto/MOA-200-003.html">MOA-200-003.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-04-24 : disabled, 차량번호 우측문구추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-19</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>딜러 검색/입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mobile_office/auto/MOA-200-004.html">MOA-200-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-19</td>
+                        <td>2024-06-18</td>
+                        <td>pop_full</td>
+                        <td>중고차론 한도조회 상세내역</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mobile_office/auto/MOA-200-007-1.html">MOA-200-007-1.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-06-18 : 조회결과 하단 체크박스 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-19</td>
+                        <td>2023-06-28</td>
+                        <td>pop_full</td>
+                        <td>상사 검색/입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mobile_office/auto/MOA-200-005.html">MOA-200-005.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-06-28 : 사전승인계좌 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-06-15</td>
+                        <td>2024-07-03</td>
+                        <td>page</td>
+                        <td>사고이력조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mobile_office/auto/사고이력조회.html">사고이력조회.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-07-03 : 차량 시세확인 버튼 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10"><div class="line">◀ Historty - 2022 ▶</div></th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>매매상사 제휴약정</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/mobile_office/auto/MO-100-002.html">MO-100-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중고차론 한도조회 신청</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/mobile_office/auto/MOA-200-001.html">MOA-200-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중고차론 한도조회 신청</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/mobile_office/auto/MOA-200-003.html">MOA-200-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중고차론 한도조회 신청(유선녹취)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/mobile_office/auto/MOA-200-006.html">MOA-200-006.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중고차론 한도조회 상담이력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/mobile_office/auto/MOA-200-007.html">MOA-200-007.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>중고차론 한도조회 상세내역</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/mobile_office/auto/MOA-200-008.html">MOA-200-008.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 오토 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>재고금융 신청 - 차량번호 입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-401-001.html">MF-401-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>재고금융 신청 - 정보입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-401-002.html">MF-401-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>NICE 시세조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-401-003.html">MF-401-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>재고금융 현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-401-101.html">MF-401-101.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>재고현황 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-401-102.html">MF-401-102.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>대출상환</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-401-103.html">MF-401-103.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>대출상환완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-401-104.html">MF-401-104.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>재고금융 현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-401-201.html">MF-401-201.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신청현황 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-401-202.html">MF-401-202.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>차량정보 확인 - 자동차 원부조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-401-301.html">MF-401-301.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>차량정보 확인 - 사고이력 조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-401-302.html">MF-401-302.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">[ 오토금융 - 직원용 ]</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>재고금융 현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-402-001.html">MF-402-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>재고금융 현황 - 미실사</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-402-002.html">MF-402-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>재고금융 현황 - 전체</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-402-003.html">MF-402-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>실사촬영</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-402-004.html">MF-402-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>신규 딜러/모집인 등록 안내(SMS) 발송</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-402-005.html">MF-402-005.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <!-- <tr class="s-tit">
+                        <th colspan="10">[ 오토금융 - 중고차제휴 ]</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중고차론 한도조회 신청</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-403-001.html">MF-403-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중고차론 한도조회 신청 - 상품정보 입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-403-002.html">MF-403-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>딜러 검색/입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-403-003.html">MF-403-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중고차론 한도조회신청(유선녹취)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-403-004.html">MF-403-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중고차론 한도조회 상담이력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-403-005.html">MF-403-005.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>중고차론 한도조회 상세내역</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-403-006.html">MF-403-006.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>구매차량 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-403-007.html">MF-403-007.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신규딜러등록 - 약관동의</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-404-001.html">MF-404-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </!->
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신규딜러등록 - 본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-404-002.html">MF-404-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신규딜러등록 - 본인인증 방법</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-404-003.html">MF-404-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신규딜러등록 - 정보입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-404-004.html">MF-404-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>회사 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-404-005.html">MF-404-005.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신규딜러등록 - 필수서류 제출</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-404-006.html">MF-404-006.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신규딜러등록 - 신분증 촬영</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-404-007.html">MF-404-007.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신규딜러등록 - 신분증 촬영(등록)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-404-008.html">MF-404-008.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신규딜러등록 - 약관 동의</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-404-009.html">MF-404-009.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신규딜러등록 - 신청 완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2021_html/mobile_office/auto/MF-404-010.html">MF-404-010.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

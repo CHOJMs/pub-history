@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 약관관리 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-16</td>
+                        <td>2023-08-08</td>
+                        <td>page</td>
+                        <td>약관 및 동의서 문서 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/doc/DGB-D-100-001.html">DGB-D-100-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-16</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>약관 및 동의서 문서 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/doc/DGB-D-100-002.html">DGB-D-100-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-16</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>약관 및 동의서 문서 - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/doc/DGB-D-100-003.html">DGB-D-100-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 홈페이지 약관팝업 샘플 (홈페이지, 관리자 같은 팝업 사용으로 홈페이지쪽 ui_agree_popup.css 포함) ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>이용약관</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/doc/이용약관.html">이용약관.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>04.여신거래약정서(D20-S80-F33-205)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/doc/04.여신거래약정서(D20-S80-F33-205).html">04.여신거래약정서(D20-S80-F33-205).html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>17_1.신용정보 활용체제(D99-S80-F41-cmpr-266)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/doc/17_1.신용정보 활용체제(D99-S80-F41-cmpr-266).html">17_1.신용정보 활용체제(D99-S80-F41-cmpr-266).html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

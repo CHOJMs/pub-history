@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>대출접수 현황 목록 | iM캐피탈 관리자</title>
+<style>
+    #myinput{
+        user-select: none;
+    }
+</style>
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#" class="on">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#" class="on">대출접수 현황</a></li>
+                        <li><a href="#">대출접수 관리</a></li>
+                        <li><a href="#">외국인접수 현황</a></li>
+                        <li><a href="#">외국인접수 관리</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+                <!-- 240711 수정 -->
+                <div class="head-tit">
+                    <div class="flex-wrap"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h2>대출접수 현황</h2>
+                        <div class="ly-btn-wrap"><!-- [D]버튼에 대한 레이어팝업이 있는 경우 : ly-btn-wrap 추가 -->
+                            <div class="ly-btn">
+                                <div class="btn">
+                                    <a href="#" class="black">한도조회</a>
+                                </div>
+                                <div class="ly-btn-box">
+                                    <div class="top-area">
+                                        <p>한도조회 발송</p>
+                                        <div class="btn">
+                                            <a href="#" class="blue">발송</a>
+                                        </div>
+                                    </div>
+                                    <div class="bottom-area">
+                                        <div class="com-inp">
+                                            <p class="tit">직원명</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="com-inp">
+                                            <p class="tit">휴대폰번호</p>
+                                            <input type="tel" placeholder="띄어쓰기 없이 입력" value="">
+                                        </div>
+                                        <p class="ly-s-txt">신규 고객의 한도조회 시 휴대폰번호 입력 후 발송해주세요.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //240711 수정 -->
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>조회정보</h3>
+                        <div class="btn">
+                            <a href="javascript:;" class="ico-re">초기화</a><a href="javascript:;" class="blue" onclick="addrPopupAll();return false;">조회</a>
+                        </div>
+                    </div>
+                    <!-- Start : 조회정보 -->
+                    <table class="data-tbl mb64">
+                        <colgroup>
+                            <col width="23%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">권유자</p>
+                                        <input type="text" placeholder="입력" value="" class="disabled" disabled="disabled">
+                                        <div class="c-btn">
+                                            <a href="#">조회</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">접수구분</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select" id="select-1">
+                                                    <option value="">선택</option>
+                                                    <option value="CODE-01">상담사</option>
+                                                    <option value="CODE-02">agent</option>
+                                                    <option value="CODE-03">직원</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">접수상태</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">미대상</option>
+                                                    <option value="">대기</option>
+                                                    <option value="">접수</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">접수기간</p>
+                                        <div class="calendar">
+                                            <input type="tel" value="2022-06-30" class="w-86">
+                                            <span class="dash">-</span>
+                                            <input type="tel" value="2022-12-15" class="w-86"><img src="/static/admin/img/new_common/ico_cal.png">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">진행상태</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">상담</option>
+                                                    <option value="">신청</option>
+                                                    <option value="">승인</option>
+                                                    <option value="">약정</option>
+                                                    <option value="">실행</option>
+                                                    <option value="">심사</option>
+                                                    <option value="">미취급</option>
+                                                    <option value="">가등록</option>
+                                                    <option value="">거절</option>
+                                                    <option value="">철회</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">진행상태<br>상세</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">진행상태 상세</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">고객명</p>
+                                        <input type="text" placeholder="띄어쓰기 없이 입력" value="" id="myinput">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">휴대폰번호</p>
+                                        <input type="tel" placeholder="‘-‘제외하고 입력" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">상품</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value=""><대출>연계_직장인론</option>
+                                                    <option value=""><대출>연계_중금리론</option>
+                                                    <option value=""><대출>연계_중고차론</option>
+                                                    <option value=""><대출>간편론</option>
+                                                    <option value=""><대출>직장인론</option>
+                                                    <option value=""><대출>소호_아파트론</option>
+                                                    <option value=""><대출>아파트론1</option>
+                                                    <option value=""><대출>중고차론1</option>
+                                                    <option value=""><대출>매입자산HL</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--20250820 필드 추가시작-->
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">자동대출<br>여부</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">Y</option>
+                                                    <option value="">N</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">모집인<br>인증여부</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">Y</option>
+                                                    <option value="">N</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <!--//20250820 필드 추가끝-->
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 조회정보 -->
+
+                    <!-- Start : 리스트 -->
+                    <div class="x-scrollBox">
+                        <table class="bbs-table" style="min-width: 2800px;">
+                            <colgroup>
+                                <col width="70px">
+                                <!-- <col width="130px"> 현업 전보미 주임님 요청사항 (20230913) -->
+                                <col width="160px">
+                                <col width="130px">
+                                <col width="110px">
+                                <col width="110px">
+                                <col width="110px">
+                                <!-- <col width="110px"> 현업 전보미 주임님 요청사항 (20230913) -->
+                                <col width="110px">
+                                <col width="110px">
+                                <col width="200px">
+                                <col width="150px">
+                                <col width="110px">
+                                <col width="110px">
+                                <col width="110px">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="180px">
+                                <!-- <col width="130px"> 현업 전보미 주임님 요청사항 (20230913) -->
+                                <!-- <col width="110px"> 현업 전보미 주임님 요청사항 (20230913) -->
+                                <!-- <col width="140px"> 현업 전보미 주임님 요청사항 (20230913) -->
+                                <!--20250820 <col width="160px"> 추가-->
+                                <col width="160px">                                
+                                <col width="160px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <!-- <th scope="col">접수구분</th> 			현업 전보미 주임님 요청사항 (20230913) -->
+                                    <th scope="col">상담번호</th>
+                                    <th scope="col">접수일자</th>
+                                    <th scope="col">접수상태</th>
+                                    <th scope="col">진행상태</th>
+                                    <th scope="col">진행상세</th>
+                                    <!-- <th scope="col">담당자상태</th> 		현업 전보미 주임님 요청사항 (20230913) -->
+                                    <th scope="col">고객명</th>
+                                    <th scope="col">생년월일</th>
+                                    <th scope="col">상품명</th>
+                                    <th scope="col">신청금액</th>
+                                    <th scope="col">판정</th>
+                                    <th scope="col">한도</th>
+                                    <th scope="col">금리</th>
+                                    <th scope="col">대출일자</th>
+                                    <th scope="col">대출금액</th>
+                                    <th scope="col">모집법인</th>
+                                    <!-- <th scope="col">최종메모</th> 			현업 전보미 주임님 요청사항 (20230913) -->
+                                    <!-- <th scope="col">권유자</th> 			현업 전보미 주임님 요청사항 (20230913) -->
+                                    <!-- <th scope="col">최종수정일(금융사)</th> 현업 전보미 주임님 요청사항 (20230913) -->
+                                    <!--20250820 <th scope="col">상담사</th> 추가-->
+                                    <th scope="col">상담사</th>
+                                    <th scope="col">송금정보</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <!-- <td>Agent섭외</td> -->
+                                    <td>23080002221000</td>
+                                    <td>2023-08-18</td>
+                                    <td>대기</td>
+                                    <td>거절</td>
+                                    <td>본인거절</td>
+                                    <!-- <td></td> -->
+                                    <td>서은형</td>
+                                    <td>951030</td>
+                                    <td></td>
+                                    <td>100,000,000</td>
+                                    <td></td>
+                                    <td>0</td>
+                                    <td>%</td>
+                                    <td></td>
+                                    <td>0</td>
+<!--                                     <td>(주)인사이트글로벌</td>
+                                    <td></td>
+                                    <td></td> -->
+                                    <td>2023-08-21</td>
+                                    <!--20250820 <td>홍길동</td> 추가-->
+                                    <td>홍길동</td>
+                                    <td class="tooltip">TEST...<span class="tooltip-contents">INFO</span></td>
+                                </tr>
+                                <tr>
+                                    <!-- 20250820 colspan 17-> 18로 변경 -->
+                                    <td colspan="18" class="nodata"><span>정보가 없습니다.</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //End : 리스트 -->
+                    <!-- Start : 페이징 -->
+                    <div class="paging-box">
+                        <a href="#none" class="first">맨처음</a>
+                        <a href="#none" class="prev">이전</a>
+                        <a href="#none" class="current">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none" class="next">다음</a>
+                        <a href="#none" class="end">맨마지막</a>
+                    </div>
+                    <!-- //End : 페이징 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>차량모델명 조회 및 중고차 시세</h1>
+            </div>
+            <div class="popup-contents flex-col-btm"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <div class="flex-item-top">
+                    <div class="item-cnt">
+                        <table class="data-tbl">
+                            <colgroup>
+                                <col width="100%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">대표차량명</p>
+                                            <input type="text" placeholder="차량명을 입력하세요. Ex)스파" value="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">연식</p>
+                                            <input type="tel" placeholder="연식을 입력하세요. Ex)1988" value="">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Start : 버튼 -->
+                        <div class="btn">
+                            <a href="#">조회</a><a href="#" class="line a-r">초기화</a><!-- 오른쪽정렬 버튼인 경우 : a-r 추가-->
+                        </div>
+                        <!-- //End : 버튼 -->
+                    </div>
+                </div>
+                <div class="flex-item-btm">
+                    <div class="x-scrollBox">
+                        <table class="bbs-table" style="min-width: 700px;">
+                            <colgroup>
+                                <col width="70px">
+                                <col width="120px">
+                                <col width="160px">
+                                <col width="160px">
+                                <col width="180px">
+                                <col width="90px">
+                                <col width="120px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="checkbox single">
+                                            <input type="checkbox" checked="checked">
+                                            <label></label>
+                                        </div>
+                                    </th>
+                                    <th scope="col">국산/수입</th>
+                                    <th scope="col">차종</th>
+                                    <th scope="col">차명</th>
+                                    <th scope="col">모델명</th>
+                                    <th scope="col">연식</th>
+                                    <th scope="col">시세</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox single">
+                                            <input type="checkbox" checked="checked">
+                                            <label></label>
+                                        </div>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="bor-line">
+                                    <td colspan="7" class="nodata"><span>정보가 없습니다.</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Start : 버튼 -->
+                    <div class="btn">
+                        <a href="#" onclick="gogo();return false;">선택</a>
+                    </div>
+                    <!-- //End : 버튼 -->
+                </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+
+
+<script>
+const input=document.getElementById("myinput")
+input.addEventListener('mousedown', (e)=>{
+    if(e.detail===2){
+        e.preventDefault()
+    }
+})
+input.addEventListener('dragstart', (e)=>{
+    e.preventDefault()
+})
+// document.addEventListener('selectstart', function(e) { e.preventDefault(); }); 
+// element.addEventListener('mousedown', function(e) { e.preventDefault(); }); 
+// element.addEventListener('dragstart', function(e) { e.preventDefault(); });
+$(document).ready(function(){
+	//$('#select-1 option[value=CODE-01]').parent().trigger('change');
+
+//	$('#select-1 option[value='+ code +']').parent().trigger('change');
+
+
+
+});
+
+function gogo() {
+	//$('#select-1 option[value=CODE-01]')
+	//$('#select-1 option[value=CODE-01]').attr('selected', true).parent().trigger('change');
+
+	uiCommon.setCustomSelectBox('select-1', 'CODE-05');
+
+	uiCommon.closePopup("addrPopup");
+}
+/*
+function gogo(v) {
+    v = 'CODE-01';
+
+    var idx = 0;
+	$('#select-1 option').each(function(){
+        console.log(v);
+        if(v === $(this).val()) {
+            idx = $(this).index();
+			var $t = $(this).parent().siblings('.select-items.select-hide').children().eq(idx);
+			$t.trigger('click');
+            return;
+        }
+	});
+	uiCommon.closePopup("addrPopup");
+}
+ */
+function addrPopupAll() {
+    uiCommon.openPopup("addrPopup");
+}
+</script>
+</body>
+</html>
+

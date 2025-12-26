@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공동인증서 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>공동인증서</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+                <div class="pro-box">
+                    <div class="cont-tab1">
+                        <ul>
+                            <li class=""><a href="#;" role="tab" aria-controls="tab-1">공동인증서 복사<br class="mob">(PC → 스마트폰)</a></li>
+                            <li class="active"><a href="#;" role="tab" aria-controls="tab-2">공동인증서 복사<br class="mob">(스마트폰 → PC)</a></li>
+                        </ul>
+                        <div class="cont-tab1-list">
+                            <!-- Start : pc -> 스마트폰 인증서 복사 -->
+                            <div id="tab-1" class="">
+                                <div class="certi-wrap">
+                                    <div class="certi-img"></div>
+                                    <div class="certi-bottom">
+                                        <ul class="num-box03 mt0">
+                                            <li><p class="step-tit"><span>1</span>iM캐피탈 앱 실행 후 인증센터 &gt; '공동인증서 복사(PC → 스마트폰)' 메뉴 클릭</p></li>
+                                            <li><p class="step-tit"><span>2</span>스마트폰에 성생된 인증번호 확인</p></li>
+                                            <li><p class="step-tit"><span>3</span>하단 '공동인증서 복사(PC → 스마트폰)' 버튼 클릭 &gt; 인증서 선택 후 비밀번호 입력</p></li>
+                                            <li><p class="step-tit"><span>4</span>스마트폰의 인증번호 입력 후 확인</p></li>
+                                            <li><p class="step-tit"><span>5</span>스마트폰 하단 확인 버튼 클릭</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ul class="list-dot02">
+                                    <li>공동인증서 가져오기 기능을 위해서는 공동인증서가 저장된 PC가 준비되어야 합니다.</li>
+                                </ul>
+                                <!-- Start : 공동인증서 복사 버튼 -->
+                                <div class="fixed-btn-area">
+                                    <div class="btn-box mgt-type02">
+                                        <span class="btn w-320"><button type="button">공동인증서 복사(PC → 스마트폰)</button></span>
+                                    </div>
+                                </div>
+                                <!-- //End : 공동인증서 복사 버튼 -->
+                            </div>
+                            <!-- //End : pc -> 스마트폰 인증서 복사 -->
+
+                            <!-- Start : 스마트폰 -> pc 인증서 복사 -->
+                            <div id="tab-2" class="active">
+                                <div class="certi-wrap">
+                                    <div class="certi-img"></div>
+                                    <div class="certi-bottom">
+                                        <ul class="num-box03 mt0">
+                                            <li><p class="step-tit"><span>1</span>하단 '공동인증서 복사(스마트폰 → PC)' 버튼 클릭</p></li>
+                                            <li><p class="step-tit"><span>2</span>PC 화면의 인증번호 확인</p></li>
+                                            <li><p class="step-tit"><span>3</span>iM캐피탈 앱 실행 후 인증센터 &gt; '공동인증서 복사(스마트폰 → PC)' 메뉴 클릭</p></li>
+                                            <li><p class="step-tit"><span>4</span>복사할 인증서 선택 후 비밀번호 입력</p></li>
+                                            <li><p class="step-tit"><span>5</span>PC에서 생성된 인증번호 입력 후 확인</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <ul class="list-dot02">
+                                    <li>iM캐피탈 앱에 공동인증서가 저장되어 있어야 합니다.</li>
+                                </ul>
+                                <!-- Start : 공동인증서 복사 버튼 -->
+                                <div class="fixed-btn-area">
+                                    <div class="btn-box mgt-type02">
+                                        <span class="btn w-320"><button type="button">공동인증서 복사(스마트폰 → PC)</button></span>
+                                    </div>
+                                </div>
+                                <!-- //End : 공동인증서 복사 버튼 -->
+                            </div>
+                            <!-- //End : 스마트폰 -> pc 인증서 복사 -->
+                        </div>
+                    </div>
+                </div>
+                <!-- //End : content -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function(){
+        $(window).on("resize", function() {
+            footerHide();
+        });
+        footerHide();
+        function footerHide() {
+            var screenWidth = $(window).width();
+            if (screenWidth < 1024) {
+                // 화면 너비가 1024px보다 작을 때 실행할 코드
+                $("footer").hide();
+                $("body").show();
+            }else{
+                $("body").hide();
+            }
+        }
+    });
+</script>
+</body>
+</html>

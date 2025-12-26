@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신분증 촬영 안내 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn js-open-popup" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half popup-mob-id"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>신분증 촬영 안내</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- Start : content //-->
+
+                <!-- Start : 설명글 -->
+                <div class="step-id-box">
+                    <ul>
+                        <li>
+                            <span>1</span>
+                            <div>휴대폰의 카메라를 이용하여 하단의 QR코드를 스캔하세요.
+                                <p class="qr-box"><img src="/static/web/img/ui_common/img_id_qr.png" alt="닫기"></p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>2</span>
+                            <div>신분증 촬영이 가능한 화면으로 이동합니다.</div>
+                        </li>
+                        <li>
+                            <span>3</span>
+                            <div>신분증을 촬영하여 인증 후 '촬영 완료' 버튼을 눌러주세요.</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //End : 설명글 -->
+
+                <!-- 240424 추가 -->
+                <div class="info-step-box">
+                    <ul>
+                        <li><span>1.</span>휴대폰의 카메라를 이용하여 하단의 QR코드를 스캔하세요. 휴대폰의 카메라를 이용하여 하단의 QR코드를 스캔하세요.</li>
+                        <li><span>2.</span>휴대폰의 카메라를 이용하여 하단의 QR코드를 스캔하세요.</li>
+                        <li><span>3.</span>휴대폰의 카메라를 이용하여 하단의 QR코드를 스캔하세요.</li>
+                    </ul>
+                </div>                
+                <!-- //240424 추가 -->
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">촬영 완료</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

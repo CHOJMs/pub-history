@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+<link rel="stylesheet" href="/static/web/js/lib/swiper-bundle.min.css">
+<link rel="stylesheet" href="/static/web/js/lib/slick.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+<script src="/static/web/js/lib/swiper-bundle.min.js"></script>
+
+<script src="/static/web/js/slick.js"></script>
+<script src="/static/web/js/lib/slick.min.js"></script>
+
+
+<title>설정 | iM캐피탈</title>
+
+<script>
+$(document).ready(function(){
+    $('header').load('/web/renewal/header_sub_inc.html');
+    $('footer').load('/web/renewal/footer_inc.html');
+}); 
+</script>
+</head>
+<body>
+    <header></header>
+    <div id="top" class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-contents">
+            <div class="navi-box"><span>마이</span></div><!-- 기획논의 예정-->
+                
+            <!-- Start : centents -->
+            <div class="contents">
+                <h1>설정</h1><!-- 모바일에서 왼쪽에 위치하는 타이틀인 경우 : left 클래스 추가 -->
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+                    <div class="pro-box">
+                        <!-- Start : 간편 로그인 설정 -->
+                        <h2 class="setup-tit">간편 로그인 설정</h2>
+                        <ul class="setup-list">
+                            <li class="toggle">
+                                자동 로그인 설정
+                                <div class="toggle-box">
+                                    <input type="checkbox" id="chk1" checked="">
+                                    <label for="chk1"></label>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#;">간편 로그인 등록</a>
+                                <ul class="dep">
+                                    <li><a href="#;">간편비밀번호<span class="state on">ON</span></a></li>
+                                    <li><a href="#;">Face ID<span class="state">OFF</span></a></li>
+                                    <li><a href="#;">지문<span class="state">OFF</span></a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#;">간편 로그인 삭제</a></li>
+                        </ul>
+                        <!-- //End : 간편 로그인 설정 -->
+                    </div>
+
+                    <div class="pro-box division-box">
+                        <!-- Start : 본인인증 안내 및 설정 -->
+                        <h2 class="setup-tit">본인인증 안내 및 설정</h2>
+                        <ul class="setup-list">
+                            <li><a href="#;">카카오 인증</a></li>
+                            <li><a href="#;">금융인증서</a></li>
+                            <li><a href="#;">공동인증서 관리</a></li>
+                            <li><a href="#;">공동인증서 가져오기(PC → 스마트폰)</a></li>
+                            <li><a href="#;">공동인증서 내보내기(스마트폰 → PC)</a></li>
+                        </ul>
+                        <!-- //End : 본인인증 안내 및 설정 -->
+                    </div>
+
+                    <div class="pro-box division-box">
+                        <!-- Start : 알림 설정 -->
+                        <h2 class="setup-tit">알림 설정</h2>
+                        <ul class="setup-list">
+                            <li class="toggle">
+                                마케팅 수신 동의 여부
+                                <div class="toggle-box">
+                                    <input type="checkbox" id="chk2">
+                                    <label for="chk2"></label>
+                                </div>
+                            </li>
+                            <li class="toggle">
+                                보이는ARS 동의 여부
+                                <div class="toggle-box">
+                                    <input type="checkbox" id="chk3">
+                                    <label for="chk3"></label>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- //End : 알림 설정 -->
+                    </div>
+
+                    <div class="pro-box division-box">
+                        <!-- Start : 기타 -->
+                        <h2 class="setup-tit">기타</h2>
+                        <ul class="setup-list">
+                            <li><a href="#;">개인정보처리방침</a></li>
+                            <li><a href="#;">약관 및 규정</a></li>
+                            <li><a href="#;">계열사간 고객정보 제공내역 조회</a></li>
+                        </ul>
+                        <!-- //End : 기타 -->
+                    </div>
+                </div>
+                <div class="setup-info-box">
+                    <p class="tx">앱 버전 <span>2.0.3</span></p>
+                    <p class="tx2">최신 버전입니다</p>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+    </div>
+
+    <!-- Start : Top 버튼 -->
+    <div class="btn-top-area">
+        <button>페이지 상단으로 이동</button>
+    </div>
+    <!-- //End : Top 버튼 -->
+
+    <!---------- Start : footer ---------->
+    <footer></footer>
+    <!---------- //End : footer ---------->
+
+    <script type="text/javascript">
+        function addrPopupAll() {
+            uiCommon.openPopup("addrPopup");
+        }
+    </script>
+
+    <!---------- Start : 셀렉트박스 선택용 팝업 ---------->
+    <div class="dim dim-02"></div>
+    <div class="popup-layer" id="addrPopup">
+        <div class="popup popup-01 popup-half popup-select"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+            <div class="inner">
+                <div class="popup-text">
+                    <h1>이용상품 선택</h1>
+                </div>
+                <div class="popup-contents">
+                    <!-- content 시작 //-->
+                    <ul>
+                        <li class="active"><!-- [D]활성화 시 클래스 추가 : active -->
+                            <a href="#">오토리스 123가 5678</a>
+                        </li>
+                        <li>
+                            <a href="#">오토리스 123가 5678</a>
+                        </li>
+                    </ul>
+                    <!-- //content 끝 -->
+                </div>
+            </div>
+            <!--<div class="popup-close"><a href="javascript:;">닫기</a></div>-->
+        </div>
+    </div>
+    <!---------- //End : 셀렉트박스 선택용 팝업 ---------->
+
+    <script>
+        $(document).ready(function(){
+            $(window).on("resize", function() {
+                footerHide();
+            });
+            footerHide();
+            function footerHide() {
+                var screenWidth = $(window).width();
+                if (screenWidth < 1024) {
+                    // 화면 너비가 1024px보다 작을 때 실행할 코드
+                    $("footer").hide();
+                    $("body").show();
+                }else{
+                    $("body").hide();
+                }
+            }
+
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

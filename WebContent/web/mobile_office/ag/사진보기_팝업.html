@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진보기 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <link type="text/css" rel="stylesheet" href="/static/web/js/lib/swiper-bundle.min.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+    <script  src="/static/web/js/lib/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-full view-autoPhoto"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h2>사진 보기</h2>
+            </div>
+            <div class="popup-contents no-scroll"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+                <div class="flex-item-top">
+                    <div class="item-cnt">
+                        <div class="swiper autoPhoto-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="autoPhoto-cover">
+                                        <img src="/static/web/img/mobile_office/noimg_photo.png"><!-- [D] 에러이미지 -->
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="autoPhoto-cover">
+                                        <img src="/static/web/img/mobile_office/car_sample_01.png">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="autoPhoto-cover">
+                                        <img src="/static/web/img/mobile_office/car_sample_02.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="autoPhoto-cover">
+                                        <img src="/static/web/img/mobile_office/car_sample_03.png">
+                                    </div>    
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //End : content -->
+            </div>
+            <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+        </div>
+    </div>
+</div>
+<script>
+    //swiper함수
+    $(function() {
+        let swiper = new Swiper(".autoPhoto-swiper", {
+            slidesPerView: 'auto',
+            speed: 500,
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+            }
+        });
+    })
+    </script>
+</body>
+</html>

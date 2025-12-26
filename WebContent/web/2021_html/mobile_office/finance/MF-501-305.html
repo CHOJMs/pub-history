@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재무정보 조회</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>재무정보 조회</h1>
+            </div>
+            <div class="popup-contents no_btn"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+                        
+                        <div class="box_viewType mb30">
+                            <dl>
+                                <dt>고객번호</dt>
+                                <dd>1901-028000-0-000</dd>
+                                <dt>주민사업자번호</dt>
+                                <dd>000000-0****00</dd>
+                                <dt>고객명</dt>
+                                <dd>홍길동</dd>
+                            </dl>
+                        </div>
+
+                        <h2 class="pb16">재무정보</h2>
+                        <div class="scroll_table">
+                            <table class="dataType">
+                                <caption>재무정보 - 회계기준월, 자산총액, 부채총액, 차입총액, 자기자본금액, 자본금, 매출총액, 순이익금액, 부채비율(%), 금융비용부담율(%) 등으로 나타낸 표</caption>
+                                <colgroup>
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">회계기준월</th>
+                                        <th scope="col">자산총액</th>
+                                        <th scope="col">부채총액</th>
+                                        <th scope="col">차입총액</th>
+                                        <th scope="col">자기자본금액</th>
+                                        <th scope="col">자본금</th>
+                                        <th scope="col">매출총액</th>
+                                        <th scope="col">순이익금액</th>
+                                        <th scope="col">부채비율(%)</th>
+                                        <th scope="col">금융비용부담율(%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>201912</td>
+                                        <td class="a_r">20,000</td>
+                                        <td class="a_r">0</td>
+                                        <td class="a_r">0</td>
+                                        <td class="a_r">0</td>
+                                        <td class="a_r">0</td>
+                                        <td class="a_r">0</td>
+                                        <td class="a_r">0</td>
+                                        <td>0.00</td>
+                                        <td>0.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>                    
+                </div>
+                <!--// content 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

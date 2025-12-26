@@ -1,0 +1,197 @@
+$(document).ready(function() {
+
+	// 이용 권유방법 동의 항목 활성화/비활성화 설정
+	checkEnabledChkPrvaChcCollUzAgr();
+
+	// 개인(신용)정보 동의(전문) 클릭 이벤트 설정 - 클릭 시 클릭 여부 기록
+	$("#btnViewPrvaAgrF40").click(function(){ //확인 필요
+		$(this).data("viewed", "Y");
+
+		//uiCommon.openPopup("crdtAgreementAllPopup");
+		var txtTermsViewId = $(this).data("txt-id");
+        var pdfTermsViewId = $(this).data("pdf-id");
+		if(txtTermsViewId){
+	        txtTermsView(txtTermsViewId);
+		}else if(pdfTermsViewId){
+		    pdfView(pdfTermsViewId);
+		    setTimeout(()=>{$("#prvaAgr-allY").click();},200);
+		}
+
+//		console.log("txtTermsViewId - "+txtTermsViewId);
+
+		var bChecked = $("#prvaAgr-allY").prop("checked");
+//		if(bChecked) {
+//			$("#prvaAgr-allY-popup").parents("span").addClass("gray");
+//		} else {
+//			$("#prvaAgr-allY-popup").parents("span").removeClass("gray");
+//		}
+	});
+
+	// 전체동의 클릭 이벤트 설정
+	$("#prvaAgr-allY").click(function(e) { //확인 필요
+
+		// 개인(신용)정보 동의 (전문)을 클릭했는지 체크
+		var pdfViewCloseCallbackFunc = function() {$("#prvaAgr-allY").click();}
+
+		// 웹접근성 적용. popup 노출 안되게
+		//console.log('GlobalJSConfig.isApplyWA : ' + GlobalJSConfig.isApplyWA);
+		if (!GlobalJSConfig.isApplyWA && !isCheckablePrvaAgr(pdfViewCloseCallbackFunc)) {
+			e.preventDefault();
+			return false;
+		}
+
+		var bChecked = $(this).prop("checked");
+		$("input:checkbox[data-agr-id^=prvaAgr]").prop("checked", bChecked).trigger("change");
+
+	});
+
+	// 개인(신용)정보 동의 세부 항목 체크박스 click 이벤트 설정
+	$("button[id^=btn-prvaAgr]").click(function(e) {
+		var agrId = $(this).attr("id").split("-")[1];
+
+		if(!$("#"+agrId+"-All").prop("checked")) {
+			// 개인(신용) 선택적 동의의 경우 전체 선택 제외
+			if(agrId != 'prvaAgr02') {
+				$("#"+agrId+"-All").prop("checked", true).trigger("change");
+			}
+
+			if(ableNextButton()) {
+				$("#btnNext").parents("span").removeClass("gray");
+			} else {
+				$("#btnNext").parents("span").addClass("gray");
+			}
+		}
+		uiCommon.closePopup(agrId+"SubPopup");
+
+		//웹접근성 추가. 동의항목에는 a tag id='openPopup-prva**' 형태임
+		//$("#openPopup-" + agrId).focus();
+
+	});
+
+	// 팝업 확인하고 동의하기 버튼 click 이벤트 설정
+	$("input:checkbox[data-agr-id^=prvaAgr]").click(function(e) {
+		if (!isCheckablePrvaAgr()) { e.preventDefault(); return false; }  // 개인(신용)정보 동의 (전문)을 클릭했는지 체크
+	});
+
+	//동의서 보기 클릭
+	$("a[data-id^=subPopup]").click(function(e) {
+		if(!isCheckablePrvaAgr()) return;
+
+		var id = $(this).data("id").split("-")[1];
+		uiCommon.openPopup(id+"SubPopup");
+	});
+
+	// 개인(신용)정보 동의 세부 항목 체크박스 change 이벤트 설정
+	$("input:checkbox[data-agr-id^=prvaAgr]").change(function(e) {
+
+		var agrId = $(this).data("agrId");
+		var bChecked = $(this).prop("checked");
+
+//		console.log(agrId + ", " + bChecked);
+
+		if(agrId.split("-").length == 2 && agrId.split("-")[1] == "All") {
+			$("input:checkbox[data-agr-id^=" + agrId.split("-")[0] +"]").prop("checked", bChecked);
+		} else {
+			$("input:checkbox[data-agr-id^=" + agrId +"]").prop("checked", bChecked);
+		}
+
+		// 내용보기 버튼이 있을 경우 하위 항목 열기
+		var btnView = $(this).closest("li").find(".q a");
+		if (btnView.length > 0) {
+//			btnView.click();
+		}
+
+		var agrIdArr = agrId.split("-");
+		if (agrIdArr.length == 2) {
+			var $groupElements = $("input:checkbox[data-agr-id^=" + agrIdArr[0] + "-]")
+										.filter(function(index){ return (($(this).data("agrId").split("-").length == 2) && ($(this).data("agrId").split("-")[1] != "All")) });
+			var bChecked = ($groupElements.length == $groupElements.filter(":checked").length) ? true : false;
+
+			$("input:checkbox[data-agr-id=" + agrIdArr[0] + "]").prop("checked", bChecked);
+			$("input:checkbox[data-agr-id=" + agrIdArr[0] + "-All]").prop("checked", bChecked);
+
+		} else if (agrIdArr.length == 3) {
+			if (agrId.indexOf("prvaAgr02-03-0") > -1) {
+				// 마케팅유형대상 선택 시
+				var _g = $("input:checkbox[data-agr-id^=prvaAgr02-03-0]");
+				$("input:checkbox[data-agr-id=prvaAgr02-03]").prop("checked", _g.filter(":checked").length > 0);
+			}
+
+            if (agrId.indexOf("prvaAgr12-01-0") > -1) {
+                // 이벤트 마케팅유형대상 선택 시
+                var _g = $("input:checkbox[data-agr-id^=prvaAgr12-01-0]");
+                $("input:checkbox[data-agr-id=prvaAgr12-01]").prop("checked", _g.filter(":checked").length > 0);
+            }
+		}
+
+		checkEnabledChkPrvaChcCollUzAgr();
+		prvaAgrAllCheck();
+
+		if(ableNextButton()) {
+			$("#btnNext").parents("span").removeClass("gray");
+		} else {
+			$("#btnNext").parents("span").addClass("gray");
+		}
+
+	});
+
+	/**
+	 * 개인(신용)정보 동의 (전문)을 링크 클릭 여부를 확인
+	 * - 약관 내용(전문)을 확인 하지 않았을 경우 약관 팝업 노출
+	 */
+	function isCheckablePrvaAgr(pdfViewCloseCallbackFunc) {
+		if ($("#btnViewPrvaAgrF40").data("viewed") !== "Y") {
+//			alert("개인(신용)정보의 필수적 ∙ 선택적 동의 (전문) 내용을 먼저 확인 후 진행해 주시기 바랍니다.");
+//			$("#btnViewPrvaAgrF40").focus();
+
+			// 약관  팝업 노출
+			$("#btnViewPrvaAgrF40").click();
+
+			if (pdfViewCloseCallbackFunc && $.isFunction(pdfViewCloseCallbackFunc)) {
+				// 약관  팝업 닫기 클릭 시 전체 동의 이벤트 적용 (1회성)
+//				$("#crdtAgreementAllPopup").find(".popup-close a").one("click", function() {
+//					pdfViewCloseCallbackFunc();
+//				});
+			}
+			return false;
+		}
+		return true;
+	}
+
+});
+
+/**
+ * 이용 권유방법 동의 항목 활성화/비활성화
+ * - 금융상품안내와 부수서비스 안내 중에 한 가지 이상 체크 시 활성화
+ */
+function checkEnabledChkPrvaChcCollUzAgr() {
+	var bChecked = $("#prvaAgr02-finProdMrknUseAgr, #prvaAgr02-finProdExcpMrknAgr").filter(":checked").length > 0;
+	if (bChecked) {
+		$("input:checkbox[data-agr-id^=prvaAgr02-03]").prop("disabled", false).next("label").removeClass("disabled");
+	} else {
+		$("input:checkbox[data-agr-id^=prvaAgr02-03]").prop({"checked":false, "disabled":true}).next("label").addClass("disabled");
+	}
+}
+
+/**
+ * 전체동의 체크박스 체크 처리
+ */
+function prvaAgrAllCheck() {
+	var $prvaAgrElements = $("input:checkbox[data-agr-id^=prvaAgr]:not([data-no-chk])");
+	var bChecked = ($prvaAgrElements.length == $prvaAgrElements.filter(":checked").length) ? true : false;
+	$("#prvaAgr-allY").prop("checked", bChecked);
+}
+/**
+ *  선택된 이용채널 코드값 얻기
+ *
+ * @returns 콤마(,)를 구분자로 나열된 이용채널 코드 값들
+ */
+function getMrknPtrnTrgtCodes(agrId){
+	var mrknPtrnTrgtCodes = []; // 마케팅수신방법. 2개이상일경우 ,로 조립하여 전송 ( CA401:SMS발송, CA402:TM발송, CA403:이메일발송, CA404:DM발송 )
+	if(agrId){
+	    $(`input:checkbox[data-agr-id^=${agrId}-]`).filter(":checked").each(function(i, ele) { mrknPtrnTrgtCodes.push($(ele).val()); })
+	}else {
+	    $("input:checkbox[data-agr-id^=prvaAgr02-03-0]").filter(":checked").each(function(i, ele) { mrknPtrnTrgtCodes.push($(ele).val()); })
+	}
+	return mrknPtrnTrgtCodes.join(",");
+}

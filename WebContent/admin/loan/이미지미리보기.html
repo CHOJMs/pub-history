@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>PDF다운 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+    <script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<style>
+/* 퍼블 화면확인용!!! (샘플화면과 개발화면 차이나는 부분)  */
+.popup-text .download {line-height: 0;}
+</style>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-full popup-calc popup-pdf"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+				<h1>미리보기
+                    <a href="javascript:;" class="download">
+                        <img src="/static/admin/img/new_common/ico_pdf_download.png" alt="pdf 다운로드">
+                    </a>
+                </h1>
+			</div>
+            <div class="popup-contents flex-col" style="height: calc(100% - 86.3906px);"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                
+                <!-- Start : PDF 아이프레임영역(화면확인용) -->
+                <div style="position: relative; overflow: auto; width: 100%; height: 100%;">
+                    <iframe src="/admin/common/pdf_iframe.html" style="border: none; width: 100%; height: 100%;"></iframe>
+                </div>
+                <!-- //End : PDF 아이프레임영역(화면확인용) -->
+
+                <!-- //End : content -->
+                <!--20250822 버튼 추가 시작-->
+                <div class="btn-area w160">
+                    <a href="#" class="gray">취소</a><a href="#">저장</a><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                </div>
+                <!--//20250822 버튼 추가 끝-->
+            </div>            
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

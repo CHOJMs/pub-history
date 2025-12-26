@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 카버스 플랫폼 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="nav">
+        <h1>[ iM캐피탈 카버스 플랫폼 ] </h1>
+        <div class="top-area">
+            <ul>
+                <li class="tit">메뉴</li>
+                <li><a class="on" href="/carverse/pub_html/history_1.html" target="main">상담신청</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <iframe src="history_1.html" width="100%" frameborder="0" name="main" scrolling="yes"></iframe>
+        </div>
+    </div>
+
+    <script>
+
+    	$(function(){
+
+    		$('.top-area ul li a').on('click', function(e){
+
+    			if ( $(this).hasClass('index') ){
+
+    			}else{
+    				e.preventDefault();
+    				var target = $(this).attr('href')
+    				$('.dashboard').hide()
+    				$('#page-wrapper iframe').show().attr('src',target)
+    			}
+
+    			$(this).addClass('on')
+    			$(this).parent().siblings().find('a').removeClass('on')
+    		})
+    	})
+
+    </script>
+</body>
+</html>

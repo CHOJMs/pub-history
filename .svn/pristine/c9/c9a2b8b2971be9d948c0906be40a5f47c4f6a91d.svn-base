@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page contentType="text/html; charset=euc-kr" language="java" %>
+<title>DGB 캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script language="javascript">
+
+$(document).ready(function(){
+	
+});
+
+</script>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="2"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="contents">
+			<h2>상품매칭</h2>
+			<br>
+			<table class="data-table">
+				<colgroup>
+					<col style="width:auto; border-right:1px solid #ccc;  border-left:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col" colspan="2" class="bg1">홈페이지(고객)</th>
+						<th scope="col" class="bg1">관리자페이지</th>
+						<th scope="col" colspan="2" class="bg1">상품명</th>
+						<th scope="col" colspan="5" class="bg2">금리
+						</th>
+					</tr>
+					<tr>
+						<th scope="col" class="bg3">차량</th>
+						<th scope="col" class="bg3">선납금</th>
+						<th scope="col" class="bg3">특판 선택</th>
+						<th scope="col" class="bg3">홈페이지</th>
+						<th scope="col" class="bg3">계정계</th>
+						<th scope="col" class="bg4">12개월</th>
+						<th scope="col" class="bg4">24개월</th>
+						<th scope="col" class="bg4">36개월</th>
+						<th scope="col" class="bg4">48개월</th>
+						<th scope="col" class="bg4">60개월</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="7">국산차</td>
+						<td>-</td>
+						<td>-</td>
+						<td>온라인오토론(국산)</td>
+						<td>국산_승용_온라인(기본)</td>
+						<td colspan="5">5.7%</td>
+					</tr>
+					<tr>
+						<td>10~30%</td>
+						<td>-</td>
+						<td>온라인오토론(국산/SAVE)</td>
+						<td>국산_승용_온라인(선납)</td>
+						<td colspan="5">"하단 금리 테이블 참조"</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>특판(기본)</td>
+						<td>온라인오토론(특판/기본)</td>
+						<td>국산_승용_온라인(특판기본)</td>
+						<td colspan="3">3.9%</td>
+						<td>4.4%</td>
+						<td>4.5%</td>
+					</tr>
+					<tr>
+						<td>10%</td>
+						<td>특판(123)</td>
+						<td>온라인오토론(특판/123%)</td>
+						<td>국산_승용_온라인(특판123)</td>
+						<td colspan="5">4.9%</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>특판(4.9%)</td>
+						<td>온라인오토론(특판/4.9%)</td>
+						<td>국산_승용_온라인(특판4.9%)</td>
+						<td colspan="5">3.9%</td>
+					</tr>
+					<tr>
+						<td>10%</td>
+						<td>특판(3.9%)</td>
+						<td>온라인오토론(특판/3.9%)</td>
+						<td>국산_승용_온라인(특판3.9%)</td>
+						<td colspan="2">0.0%</td>
+						<td>1.9%</td>
+						<td>2.9%</td>
+						<td>3.9%</td>
+					</tr>
+					<tr>
+						<td>-</td>
+						<td>특판(프로모션)</td>
+						<td>온라인오토론(특판/프로모션)</td>
+						<td>국산_승용_온라인(특판프로모션)</td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td rowspan="2" class="bg4">수입차</td>
+						<td class="bg4">-</td>
+						<td class="bg4">-</td>
+						<td class="bg4">온라인오토론(수입)</td>
+						<td class="bg4">수입_승용_온라인(기본)</td>
+						<td colspan="5">5.9%</td>
+					</tr>
+					<tr>
+						<td class="bg4">10~30%</td>
+						<td class="bg4">-</td>
+						<td class="bg4">온라인오토론(수입/SAVE)</td>
+						<td class="bg4">수입_승용_온라인(선납)</td>
+						<td colspan="5">"하단 금리 테이블 참조"</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<br>
+			<h3>&bull; 장기선납금(SAVE) 상품 금리</h3>
+			<br>
+			<table class="data-table">
+				<colgroup>
+					<col style="width:auto; border-right:1px solid #ccc;  border-left:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+					<col style="width:auto; border-right:1px solid #ccc;">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col" rowspan="2" class="bg1">상품명</th>
+						<th scope="col" rowspan="2" class="bg1">장기선납금</th>
+						<th scope="col" colspan="5" class="bg1">금리</th>
+					</tr>
+					<tr>
+						<th scope="col" class="bg4">12개월</th>
+						<th scope="col" class="bg4">24개월</th>
+						<th scope="col" class="bg4">36개월</th>
+						<th scope="col" class="bg4">48개월</th>
+						<th scope="col" class="bg4">60개월</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td rowspan="4">온라인오토론(국산/SAVE)</td>
+						<td>10%</td>
+						<td colspan="5">4.9%</td>
+					</tr>
+					<tr>
+						<td>15%</td>
+						<td colspan="5">4.5%</td>
+					</tr>
+					<tr>
+						<td>20%</td>
+						<td colspan="5">4.1%</td>
+					</tr>
+					<tr>
+						<td>30%</td>
+						<td colspan="5">3.5%</td>
+					</tr>
+					<tr class="bg3">
+						<td rowspan="4">온라인오토론(수입/SAVE)</td>
+						<td>10%</td>
+						<td colspan="5">5.1%</td>
+					</tr>
+					<tr class="bg3">
+						<td>15%</td>
+						<td colspan="5">4.7%</td>
+					</tr>
+					<tr class="bg3">
+						<td>20%</td>
+						<td colspan="5">4.3%</td>
+					</tr>
+					<tr class="bg3">
+						<td>30%</td>
+						<td colspan="5">3.7%</td>
+					</tr>
+				</tbody>
+			</table>
+		</div><!--// contents -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+</body>
+</html>

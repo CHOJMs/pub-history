@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 오토승계 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>진행현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/진행현황.html">진행현황.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>승계상담 상세(리스)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/승계상담_상세(리스).html">승계상담_상세(리스).html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>승계상담 상세(렌탈)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/승계상담_상세(렌탈).html">승계상담_상세(렌탈).html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>승계신청 상세(리스)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/승계신청_상세(리스).html">승계신청_상세(리스).html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>승계신청 상세(렌탈)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/승계신청_상세(렌탈).html">승계신청_상세(렌탈).html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>메모등록조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/메모등록조회.html">메모등록조회.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-28</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>담당자 변경</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/담당자변경.html">담당자변경.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>실행현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/실행현황.html">실행현황.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-28</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>메모관리</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/메모관리.html">메모관리.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>만기안내 대상</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/만기안내대상.html">만기안내대상.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

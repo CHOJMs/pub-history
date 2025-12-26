@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+
+<!-- SecureFrame End-->
+
+<%
+	boolean checkBoardNotice = true; //true, false
+	boolean checkBoardQna = true;
+	boolean checkBoardRecruit = true; // 채용
+
+%>
+
+<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.ui.datepicker.js"></script>
+<script type="text/javascript">
+
+var _water_t = "*주)웹접근성 준수를 위하여 이미지를 올릴 경우에는 에디터를 사용하지 마시고 본문이미지 업로드 기능을 사용하세요.";
+	
+	$(document).ready(function(){
+		doWaterMark('ATTACH_FILE_TXT', _water_t);
+
+		// calendar
+		$(".btnCalendar").click(function(){
+			$('.calendar').datepicker({
+				changeYear: true,
+				onSelect: function(dateText, inst) { 
+					$(this).closest('.calendar').hide();
+					if($(this).attr('id') == 'REG_'){
+						$('#REG_DATE').val(dateText);
+					}
+					if($(this).attr('id') == 'FROM_'){
+						$('#FROM_DATE').val(dateText);
+					}
+					if($(this).attr('id') == 'TO_'){
+						$('#TO_DATE').val(dateText);
+					}
+
+					$('.btnCalendar[href="#'+$(this).attr('id')+'"]').focus();
+				}
+			});
+			$('.calendar').not($(this).attr("href")).hide();
+			calendarPosReset($(this));
+			$($(this).attr("href")).toggle();
+			return false;
+		});
+	});
+
+
+//달력
+function calendarPosReset(a){
+	if(a.length > 0){
+		var l = a.position().left-180;
+		var t = a.position().top+22;
+		a.parentsUntil('dl').each(function(){
+			if($(this).css('position')=='absolute', $(this).css('position')=='relative'){
+				l += $(this).position().left;
+				t += $(this).position().top;
+			}
+		});
+		$(a.attr("href")).css({"left":l,"top":t});
+	}
+}
+
+
+function doWaterMark(_name, _txt){
+	var _val = '';
+	if($('[name='+_name+']').val() != ''){
+		_val = $('[name='+_name+']').val();
+	}else{
+		_val = _txt;
+		$('[name='+_name+']').css('color','Silver');
+	}
+	$('[name='+_name+']').val(_val).focus(function(){
+		if(this.value == _txt){
+			$(this).val('');
+			$(this).css('color','');
+		}
+	}).blur(function(){
+		if($(this).val() == ''){
+			$(this).val(_txt);
+			$(this).css('color','Silver');
+		}
+	});
+}
+
+	function goInsert(boardId){
+		if(boardId == "0"){
+			goInsertQna();
+		}else{
+			goInsertFile();
+		}
+	}
+
+
+	function goInsertQna(){
+
+		var frm  = document.frm;
+
+		/* 유효성 검사 */
+		if (!fInputBoxCheck(frm.TITLE, "", "제목을 입력하세요.")) return;
+
+		/* 웹에디터 내용 유효성 검사 */
+		// if (!fInputBoxCheck(frm.CONTENTS, "", "내용을 입력하세요.")) return;
+
+		var content = CKEDITOR.instances.CONTENTS.getData();
+		frm.CONTENTS.value = content;
+
+		frm.METHOD.value = "AdminBoardInsert";
+		frm.action = "/admin/AdminBoardAction.do";
+		EncForm(frm);
+		frm.submit();
+
+	}
+
+
+	function goInsertFile(){
+		var frm  = document.frm;
+		var sFrm = document.sendMultiptForm;
+
+		/* 유효성 검사 */
+		if (!fInputBoxCheck(frm.TITLE, "", "제목을 입력하세요.")) return;
+
+		/* 웹에디터 내용 유효성 검사 */
+//		if (!fInputBoxCheck(frm.CONTENTS, "", "내용을 입력하세요.")) return;
+//		var content = FCKeditorAPI.GetInstance("CONTENTS").GetHTML(true);
+
+//		frm.CONTENTS.value = content;
+
+
+		if($("#REG_DATE").val() == ''){
+			alert("등록일을 확인해 주시기 바랍니다.");
+			return false;			
+		} else {
+			$("#REG_DATE").val($("#REG_DATE").val().replaceAll("-",""));
+		}
+
+		//채용		
+		if($("#BOARD_ID").val() == '3'){
+			if($("#FROM_DATE").val() == ''){
+				alert("채용 시작일을 확인해 주시기 바랍니다.");
+				return false;			
+			}
+
+			if($("#TO_DATE").val() == ''){
+				alert("채용 종료일을 확인해 주시기 바랍니다.");
+				return false;			
+			}
+			$("#FROM_DATE").val($("#FROM_DATE").val().replaceAll("-",""));
+			$("#TO_DATE").val($("#TO_DATE").val().replaceAll("-",""));
+		}
+
+
+		var content = CKEDITOR.instances.CONTENTS.getData();
+		frm.CONTENTS.value = content;
+
+
+		var sfileList = sFrm.ATTACH_FILE.value;
+
+		if(sfileList != "")
+		{
+			if(sfileList.lastIndexOf(".")== -1)
+			{
+				alert("등록할수 없는 파일형식입니다.");
+				return;
+			}
+		}
+
+		var fileList = sfileList.substring(sfileList.lastIndexOf("\\")+1, sfileList.length);
+		sfileList    = sfileList.substring(sfileList.lastIndexOf(".")+1,  sfileList.length);
+
+		if(sfileList == "" || sfileList == "jpg" || sfileList == "JPG" || sfileList == "JPEG" || sfileList == "gif" || sfileList == "GIF" || sfileList == "png" || sfileList == "PNG"){
+
+		}else{
+			alert("이미지 파일만 가능합니다.");
+			return;
+		}
+
+		//한글입력체크
+		if(ChkHan(fileList) == true)
+		{
+			alert("이미지명을 영문이나 숫자로 바꿔주세요.");
+			return;
+		}
+		if($('[name=ATTACH_FILE_TXT]').val() == _water_t){
+			$('[name=ATTACH_FILE_TXT]').val('');
+		}
+
+		/* 폼데이타 암호화 전송 */
+		frm.METHOD.value = "AdminBoardInsert";
+		sFrm.action = "/admin/AdminBoardAction.do";
+
+		if(EncForm2(frm , sFrm) ){
+			today = new Date();
+			sFrm.submit();
+		}else{
+			alert( "보안상 문제가 발생하여 전송이 취소 되었습니다." );
+		}
+	}	
+
+	//업로드 파일 한글 체크
+	function ChkHan(strValue)
+	{
+		for(i=0; i < strValue.length; i++)
+		{
+			var a = strValue.charCodeAt(i);
+
+			if(a > 128)
+			{
+				return true;
+			}
+		}
+	}
+
+	/*
+	 * field - 체크 필드
+	 * def   - 체크 값
+	 * msg   - alert 메세지
+	*/
+	function fInputBoxCheck(field, def, msg)
+	{
+		if(trim(field.value) == def)
+		{
+			alert(msg);
+			field.focus();
+			return false;
+		}
+
+		return true;
+	}
+
+
+	// 문자열 양쪽의 공백문자 제거
+	function trim(str)
+	{
+		if(!str){
+			return "";
+		}
+	   var start = 0;
+	   var end = str.length-1;
+	   var i;
+	   for (i=0; i<str.length; i++) {
+		if (str.charAt(i) != ' ') {
+		 start = i;
+		 break;
+		}
+	   }
+	   for (i=str.length-1; i>=0; i--) {
+		if (str.charAt(i) != ' ') {
+		 end = i;
+		 break;
+		}
+	   }
+	   if( str.charAt(0) == ' ' && start == 0 && end == str.length-1)
+		return "";
+	   return str.substring(start,end+1);
+	}
+
+
+
+	function goList(){
+		var f = document.actionForm;
+		f.METHOD.value = "AdminBoardListSelect";
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+
+	function updateFile(file){
+		var frm = document.frm;
+
+		frm.UPDATE_FILES.value = frm.UPDATE_FILES.value +"|"+ file;
+	}
+
+
+		//문자열에서 str1을 str2치환
+	String.prototype.replaceAll = function (str1,str2){
+		var str    = this;    
+		var result   = str.replace(eval("/\\"+str1+"/g"),str2);
+		return result;
+		
+	}
+
+</script>
+</head>
+
+
+<body>
+
+<form name="actionForm">
+	  <input type="hidden" name="METHOD" />
+	  <input type="hidden" name="INIpluginData">
+	  <input type="hidden" name="LOGIN_SVC"  value="N"/>
+	  <input type="hidden" name="PGE_NO"  value=""/>
+	  <input type="hidden" name="TITLE_SELECT"  value=""/>
+	  <input type="hidden" name="OPEN_FLAG_SELECT"  value=""/>
+	  <input type="hidden" name="DEL_FLAG_SELECT"  value=""/>
+	  <input type="hidden" name="BOARD_ID" id="BOARD_ID" value="0"/>
+	  <input type='hidden' name="menuNo"	value="3" />
+	  <input type='hidden' name="subMenuNo"	value="" />
+
+</form>
+
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="3"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="container">
+			<div class="local-menu">
+				<jsp:include page="/admin/inc/leftMenu.jsp" flush="false"> 
+					<jsp:param name="menuNo" value="3"/>
+					<jsp:param name="subMenuNo" value="2"/>
+				</jsp:include>
+			</div> <!--// leftarea -->
+			<div class="content-wrap">
+				<h3>서식 문서</h3>
+				<div class="contents">
+					<div class="form-type bbs-form">
+						<table class="bbs-table-view">
+							<caption>
+								<p class="blind">서식 문서 분류, 서비스, 서식 파일, 등록 파일, 제&middot;개정 이력관리여부, 제&middot;개정일의 정보를 입력하는 제&middot;개정 이력입니다</p>
+							</caption>
+							<colgroup>
+								<col style="width:200px;">
+								<col style="width:auto;">
+							</colgroup>
+							<tbody>
+								<tr>								
+									<th scope="row">서식 문서 분류<em></em></th>
+									<td>약관</td>
+								</tr>
+								<tr>								
+									<th scope="row">서비스<em></em></th>
+									<td>오토론</td>
+								</tr>
+								<tr>								
+									<th scope="row">서식 파일<em></em></th>
+									<td>여신거래 기본약관</td>
+								</tr>
+								<tr>								
+									<th scope="row">등록 파일<em></em></th>
+									<td>
+										<div id="divFile1">
+											<input type="file" name="ATTACH_FILE" id="ATTACH_FILE" value="여신거래 기본약관_20180216_1.1" style="width:300px;" title="본문 이미지 파일 찾기">
+										</div>
+									</td>
+								</tr>
+								<tr>								
+									<th scope="row">제&middot;개정 이력 관리 여부<em></em></th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio1" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio1" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>								
+									<th scope="row">제&middot;개정일<em></em></th>
+									<td><input type="text" name="" id="" value="2010-01-01" style="text-align:center;" maxlength="10">
+										<a href="#" class="btnCalendar"><img src="/static/admin/img/common/ico_cal.gif" alt="날짜 선택" /></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="btn-align-center">
+							<a href="#none" class="btn h42" onClick="javascript:goUpdate();">저장</a>
+							<a href="#none" class="btn h42 neg" onClick="javascript:goSearch();">취소</a>
+						</p>
+					</div>
+					
+				</div><!--// contents -->
+			</div><!--// content-wrap -->
+		</div><!--// container -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+
+
+<script language="javascript" src="/static/admin/js/nProtect.js"></script>
+
+</body>
+</html>

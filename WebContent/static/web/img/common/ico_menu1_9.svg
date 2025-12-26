@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #f1f4f3;
+        opacity: 0;
+      }
+
+      .cls-3 {
+        fill: #b9c6da;
+      }
+
+      .cls-4 {
+        fill: #445063;
+        fill-rule: evenodd;
+        opacity: 0.996;
+      }
+
+      .cls-5 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-6 {
+        fill: #8e9fb7;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="사각형_5547" data-name="사각형 5547" class="cls-1" width="24" height="4" transform="translate(0 16)"/>
+    </clipPath>
+  </defs>
+  <g id="ic_신분증_촬영" data-name="ic_신분증 촬영" transform="translate(-36 -222)">
+    <path id="패스_9472" data-name="패스 9472" class="cls-2" d="M20.174,0h-.348C8.877,0,0,3.833,0,19.826v.348C0,36.037,8.877,40,19.826,40h.348C31.124,40,40,36.167,40,20.174v-.348C40,3.7,31.124,0,20.174,0" transform="translate(36 222)"/>
+    <g id="ic" transform="translate(44 232)">
+      <rect id="사각형_5548" data-name="사각형 5548" class="cls-3" width="24" height="20" rx="4"/>
+      <g id="그룹_9324" data-name="그룹 9324" transform="translate(4.064 6.69)">
+        <path id="패스_9357" data-name="패스 9357" class="cls-4" d="M377,500a2,2,0,1,0,2,2,2,2,0,0,0-2-2" transform="translate(-374.065 -502.69)"/>
+        <path id="패스_9358" data-name="패스 9358" class="cls-4" d="M253.385,1125c-1.869,0-3.385,1.094-3.385,2.444v.889c0,.368.413.667.923.667h6.154c.51,0,.923-.3.923-.667v-.889c0-1.35-1.515-2.444-3.385-2.444Z" transform="translate(-251.064 -1122.69)"/>
+      </g>
+      <g id="마스크_그룹_156" data-name="마스크 그룹 156" class="cls-5">
+        <rect id="사각형_4749" data-name="사각형 4749" class="cls-6" width="24" height="20" rx="4"/>
+      </g>
+      <rect id="사각형_5539" data-name="사각형 5539" class="cls-1" width="8" height="2" rx="1" transform="translate(13 6)"/>
+      <rect id="사각형_5540" data-name="사각형 5540" class="cls-1" width="8" height="2" rx="1" transform="translate(13 10)"/>
+    </g>
+  </g>
+</svg>

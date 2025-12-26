@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>신용정보동의 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+
+    <script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-full"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>신용정보동의</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <div class="flex-item-top">
+                    <div class="item-cnt">
+                        <table class="data-tbl">
+                            <colgroup>
+                                <col width="25%">
+                                <col width="25%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">고객번호<em>*</em></p>
+                                            <input type="tel" placeholder="입력하세요" value="1057294502" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">고객명<em>*</em></p>
+                                            <input type="text" placeholder="입력하세요" value="" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="com-inp">
+                                            <p class="tit">기준일자</p>
+                                            <div class="calendar range-input">
+                                                <input type="tel" value="2023-07-21~2022-08-25" id="date-range1" class=""><img src="/static/admin/img/new_common/ico_cal.png">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Start : 버튼 -->
+                        <div class="btn">
+                            <a href="#">조회</a>
+                        </div>
+                        <!-- //End : 버튼 -->
+                    </div>
+                </div>
+                <div class="cont-box1">
+                    <!-- 2023-08-08 수정 -->
+                    <div class="flex-wrap">
+                        <h2>개인신용정보 제공 및 활용 동의내역</h2>
+                        <p class="s-txt1">조회건수 <span>1건</span></p>
+                    </div>
+                    <!-- 2023-08-08 수정 -->
+                    <div class="x-scrollBox">
+                        <table class="bbs-table" style="min-width: 1800px;">
+                            <colgroup>
+                                <col width="70px">
+                                <col width="70px">
+                                <col width="120px">
+                                <col width="150px">
+                                <col width="180px">
+                                <col width="110px">
+                                <col width="130px">
+                                <col width="110px">
+                                <col width="270px">
+                                <col width="270px">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="170px">
+                                <col width="130px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">선택</th>
+                                    <th scope="col">순번</th>
+                                    <th scope="col">고객명</th>
+                                    <th scope="col">주민등록번호</th>
+                                    <th scope="col">신용정보제공일련번호</th>
+                                    <th scope="col">동의매체</th>
+                                    <th scope="col">동의일자</th>
+                                    <th scope="col">동의여부</th>
+                                    <th scope="col">(선택)금융상품마케팅 사용동의여부</th>
+                                    <th scope="col">(선택)금융상품외 마케팅 사용동의여부</th>
+                                    <th scope="col">이용권유방법</th>
+                                    <th scope="col">전화</th>
+                                    <th scope="col">문자</th>
+                                    <th scope="col">서면</th>
+                                    <th scope="col">이메일</th>
+                                    <th scope="col">특이사항</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="radiobox single">
+                                            <input type="radio" id="r01" name="r01" checked="checked">
+                                            <label for="r01"></label>
+                                        </div>
+                                    </td>
+                                    <td>1</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>2023-06-30</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>02-234-6789</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="16" class="nodata"><span>정보가 없습니다.</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="cont-box1">
+                    <div class="flex-wrap"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h2>개인신용정보 제공 및 활용 동의 관리</h2>
+                        <div class="btn">
+                            <a href="#">신규</a><a href="#">등록</a>
+                        </div>
+                        <table class="data-tbl">
+                            <colgroup>
+                                <col width="25%">
+                                <col width="25%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">고객명</p>
+                                            <p class="com-txt">홍길동</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">주민등록번호</p>
+                                            <p class="com-txt">홍길동</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">제공동의매체</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">온라인접수방식</p>
+                                            <div class="inp-area disabled">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">조회동의일자</p>
+                                            <div class="calendar">
+                                                <input type="tel" value="2022-08-25" id="" class=""><img src="/static/admin/img/new_common/ico_cal.png">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">신용조회사유</p>
+                                            <div class="inp-area disabled">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">필수적 수집·이용<br> 동의여부<em>*</em></p>
+                                            <div class="cnt-box">
+                                                <div class="inp-radio">
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r01" name="r01" checked="checked">
+                                                        <label for="r01">동의</label>
+                                                    </div>
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r02" name="r01">
+                                                        <label for="r02">거부</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">필수적 조회<br> 동의여부<em>*</em></p>
+                                            <div class="cnt-box">
+                                                <div class="inp-radio">
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r021" name="r021" checked="checked">
+                                                        <label for="r021">동의</label>
+                                                    </div>
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r021-1" name="r021">
+                                                        <label for="r021-1">거부</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">필수적 제공<br> 동의여부<em>*</em></p>
+                                            <div class="cnt-box">
+                                                <div class="inp-radio">
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r031" name="r031" checked="checked">
+                                                        <label for="r031">동의</label>
+                                                    </div>
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r031-1" name="r031">
+                                                        <label for="r031-1">거부</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">(선택) 제공<br> 동의여부</p>
+                                            <div class="cnt-box">
+                                                <div class="inp-radio">
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r041" name="r041" checked="checked">
+                                                        <label for="r041">동의</label>
+                                                    </div>
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r041-1" name="r041">
+                                                        <label for="r041-1">거부</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">(선택) 금융상품<br>관련 마케팅 사용<br> 동의여부</p>
+                                            <div class="cnt-box">
+                                                <div class="inp-radio">
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r051" name="r051" checked="checked">
+                                                        <label for="r051">동의</label>
+                                                    </div>
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r051-1" name="r051">
+                                                        <label for="r051-1">거부</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">(선택) 금융상품 외<br> 마케팅 사용<br>동의여부</p>
+                                            <div class="cnt-box">
+                                                <div class="inp-radio">
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r061" name="r061" checked="checked">
+                                                        <label for="r061">동의</label>
+                                                    </div>
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r061-1" name="r061">
+                                                        <label for="r061-1">거부</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="com-inp">
+                                            <p class="tit">간편서류 등록<br>동의여부</p>
+                                            <div class="cnt-box">
+                                                <div class="inp-radio">
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r071" name="r071" checked="checked">
+                                                        <label for="r071">동의</label>
+                                                    </div>
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r071-1" name="r071">
+                                                        <label for="r071-1">거부</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="com-inp">
+                                            <p class="tit">이용권유방법</p>
+                                            <ul class="chk-box">
+                                                <li>
+                                                    <div class="inp-chk">
+                                                        <div class="radiobox">
+                                                            <input type="radio" id="r081" name="r081" checked="checked">
+                                                            <label for="r081">전부 동의</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="inp-chk">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox">
+                                                            <label>전화</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" checked="checked">
+                                                            <label>문자</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <input type="checkbox">
+                                                            <label>서명</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                            <input type="checkbox">
+                                                            <label>이메일</label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="inp-chk">
+                                                        <div class="radiobox">
+                                                            <input type="radio" id="r081-1" name="r081">
+                                                            <label for="r081-1">거부</label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="com-inp">
+                                            <p class="tit">특이사항</p>
+                                            <input type="text" placeholder="" value="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="com-inp">
+                                            <p class="tit">첨부파일</p>
+                                            <div class="cnt-box">
+                                                <ul class="file-sel">
+                                                    <li>
+                                                        <span>선택된 파일 없음</span>
+                                                        <div class="filebox">
+                                                            <label for="file">파일 선택</label>
+                                                            <input type="file" id="file" class="btn-file">
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+
+<title>대출정보입력 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap" style="background-size: 20% auto;"><!--bg이미지 진행 width값-->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header>
+			<div class="gnb">
+				<!--// 모바일용 GNB 메뉴 -->
+				<p class="menu_icon">
+                    <a href="#" class="mobile_back_btn" title="뒤로가기"></a>
+                    <a href="#" class="mobile_menu_btn" title="모바일 메뉴"></a>
+                </p>
+				<!-- 모바일용 GNB 메뉴// -->
+
+				<!-- //웹용 GNB 메뉴 -->
+				<div id="nav">
+					<div id="blind"></div>
+					<div class="pc_menu">
+						<ul>
+							<li class="menu1">
+								<a href="#" class="on"><span>회사소개</span></a>
+							</li>
+							<li class="menu2">
+								<a href="#"><span>고객센터</span></a>
+							</li>
+							<li class="menu3">
+								<a href="#"><span>개인금융</span></a>
+							</li>
+							<li class="menu4">
+								<a href="#"><span>자동차금융</span></a>
+							</li>
+							<li class="menu5">
+								<a href="#"><span>스탁론</span></a>
+							</li>
+							<li class="menu6">
+								<a href="#"><span class="Koho700">마이</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 웹용 GNB 메뉴// -->
+			</div>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_process">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+                <div class="process_wrap">
+					<div class="pro_box">
+
+						<div class="pro_txt_box">
+							<div class="tit_info">대출을 위한 정보를<br/>입력해주세요.
+								<p class="txt_num"><span>1</span>/ 7</p>
+							</div>
+						</div>
+
+						<div class="white_box">
+							<ul class="list_1">
+								<li>
+									<span class="tit">대출종류</span>
+									<span>주식매입자금대출</span>
+								</li>
+								<li>
+									<span class="tit">대출상품</span>
+									<span>키움증권 | 키워드림론(이머니)</span>
+								</li>
+							</ul>
+						</div>
+
+						<ul class="list_bull mt24">
+							<li>대출신청 시 개인신상정보 및 직장정보를 정확하게 입력해 주셔야 합니다.</li>
+							<li>입력하신 개인 개인신상정보는 한국신용정보의 개인신용정보시스템, 기존거래내역 조회등을 통해 확인을 거치므로, 향후 허위로 작성되었음이 판명될 시에는, 대출약정 해지 또는 연장신청 시 제약을 받으실 수 있습니다.</li>
+						</ul>
+
+						<h3>대출한도금액</h3>
+						<div class="app-input-box">
+							<input type="text" title="대출한도금액 입력">
+							<span>만원</span>
+						</div>
+
+						<h3>대출신청금액</h3>
+						<div class="app-input-box">
+							<input type="text" title="대출신청금액 입력">
+							<span>만원</span>
+						</div>
+						<span class="small-text">사백만원</span>
+
+						<!--대출기본정보//-->
+						<h2>대출기본정보</h2>
+						<p class="h_tit">고객명<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" name="" id="" class="" placeholder="" title="고객명 입력">
+							</span>
+						</div>
+
+						<p class="h_tit">주민등록번호<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" class="" id="" placeholder="생년월일" title="주민등록번호 앞 6자리 입력">
+							</span>
+							<span class="dash">-</span>
+							<span class="form">
+								<input type="text" class="" id="" placeholder="뒷자리 7자리" title="주민등록번호 뒤 7자리 입력">
+							</span>
+						</div>
+
+						<p class="h_tit">증권계좌번호<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" name="" id="" class="" placeholder="" title="증권계좌번호 입력">
+							</span>
+						</div>
+
+						<p class="h_tit">월간근로소득<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<span class="form app_text">
+								<input type="tel" id="" placeholder="0" title="월간근로소득 입력">
+								<span class="txt">만원</span>
+							</span>
+						</div>
+						<p class="icon_bullet">대출한도는 향후 증액이 가능합니다.</p>
+
+						<p class="h_tit">우편물 수령장소<em>*<span>필수</span></em></p>
+						<div class="radiobox">
+							<ul class="inline_rchk">
+								<li>
+									<input type="radio" name="r01" value="" id="r01" checked="checked" class="rchk" aria-hidden="true" title="자택 체크">
+									<label for="r01" class="rchk-label" role="radio" aria-checked="false"><span>자택</span></label>
+								</li>
+								<li>
+									<input type="radio" name="r01" value="" id="r011" class="rchk" aria-hidden="true" title="직장 체크">
+									<label for="r011" class="rchk-label" role="radio" aria-checked="false"><span>직장</span></label>
+								</li>
+							</ul>
+						</div>
+						<!--//대출기본정보-->
+
+						<!--자택정보//-->
+						<h2>자택정보</h2>
+						<p class="h_tit">휴대폰번호<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" name="" id="" placeholder="'-'제외하고 입력" title="휴대폰번호 입력">
+							</span>
+						</div>
+
+						<p class="h_tit">이메일<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" name="" id="" placeholder="" title="이메일주소 입력">
+							</span>
+						</div>
+
+						<p class="h_tit">자택주소<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" id="" placeholder="" title="주소입력 입력">
+							</span>
+							<div class="btn_cont">
+								<button id="">우편번호 검색</button>
+							</div>
+						</div>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" id="" placeholder="" title="상세주소 입력">
+							</span>
+						</div>
+
+						<p class="h_tit">자택연락처<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" id="" placeholder="'-'제외하고 입력" title="자택연락처 입력">
+							</span>
+						</div>
+						<!--//자택정보-->
+
+						<!--직장정보//-->
+						<h2>직장정보</h2>
+						<p class="h_tit">직장명<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" name="" id="" placeholder="" title="직장명 입력">
+							</span>
+						</div>
+
+						<p class="h_tit">직장(사업장)주소<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" id="" placeholder="" title="직장(사업장)주소 입력">
+							</span>
+							<div class="btn_cont">
+								<button id="">우편번호 검색</button>
+							</div>
+						</div>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" class="" id="" placeholder="" title="상세주소 입력">
+							</span>
+						</div>
+
+						<p class="h_tit">직장(사업장)연락처<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" class="" id="" placeholder="'-'제외하고 입력" title="직장(사업장)연락처 입력">
+							</span>
+						</div>
+						<!--//직장정보-->
+
+						<!--고객 확인//-->
+						<h2>고객 확인</h2>
+						<p class="h_tit">목적</p>
+						<p class="txt">주식매입</p>
+
+						<p class="h_tit">상환자금의 원천</p>
+						<p class="txt">투자수익금 등</p>
+
+						<p class="h_tit">실소유자 확인</p>
+						<div class="radiobox">
+							<ul class="inline_rchk">
+								<li>
+									<input type="radio" name="r011" value="" id="r011" checked="checked" class="rchk" aria-hidden="true" title="예 체크">
+									<label for="r011" class="rchk-label" role="radio" aria-checked="true"><span>예</span></label>
+								</li>
+								<li>
+									<input type="radio" name="r011" value="" id="r012" class="rchk" aria-hidden="true" title="아니오 체크">
+									<label for="r012" class="rchk-label" role="radio" aria-checked="false"><span>아니오</span></label>
+								</li>
+							</ul>
+						</div>
+						<!--//고객 확인-->
+
+						<!--전자서명정보 확인//-->
+						<h2>전자서명정보 확인<em>*<span>필수</span></em></h2>
+						<p class="txt">전자서명정보 확인 버튼을 누르시고 고객님께서 신청하신 내용을 반드시 확인해 주세요</p>
+						<div class="btn_box">
+							<span class="btn btn_line btn_ch"><a href="#">전자서명정보 확인</a></span><!--확인완료시 classp"btn_ch" -->
+						</div>
+						<!--//전자서명정보 확인-->
+
+
+
+					</div>
+                </div>
+                <!-- 내용 끝 -->
+
+                <!-- 버튼 시작 -->
+                <div class="btn_fixed">
+                    <div class="btn_box">
+                        <span class="btn_step btn_pre">
+							<button id="">이전</button>
+						</span>
+                        <span class="btn_step bnt_next btn_finish disabled"><!-- 활성버튼: class="black" / 비활성버튼: class="disabled" / 기본버튼: class="black" 삭제 / 완료 전단계 class="finish" -->
+							<p class="txt_num"><span>1</span>/ 7</p>
+							<button id="">대출 신청하기</button>
+						</span>
+                    </div>
+                </div>
+             <!-- 버튼 끝 -->
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+</body>
+</html>

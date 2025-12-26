@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계좌등록 유의사항</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text mb10">
+                <h1>계좌등록 유의사항</h1>
+                <p>자동이체계좌 등록 중 오류가 발생하는 경우 등록된 핸드폰번호로 문자 발송됩니다.3영업일 뒤 결과 확인되며, 재변경하지 않을 경우 연체 발생할 수 있습니다.</p>
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+
+                <div class="pop_cont">
+
+                    <p class="h_tit">오류발생 CASE</p>
+                    <p class="txt">농협코드 상이 / 평생계좌 / 타인명의 / 사업자번호 상이 등</p>
+
+                    <p class="h_tit">농협 계좌번호 코드 구분</p>
+                    <table class="dataType">
+                        <caption>농협 계좌번호 코드 - 구분, 농협은행 (농협중앙회) 등으로 나타낸 표</caption>
+                        <colgroup>
+                            <col width="30%">
+                            <col width="70%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">구분</th>
+                                <th scope="col">농협은행 (농협중앙회)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">구)계좌번호</td>
+                                <td title="a_l">OOO - <span class="font_blue">01</span> - OOOOOO</td>
+                            </tr>
+                            <tr>
+                                <td title="a_l">OOO - <span class="font_blue">02</span> - OOOOOO</td>
+                            </tr>
+                            <tr>
+                                <td title="a_l">OOO - <span class="font_blue">03</span> - OOOOOO</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">신)계좌번호</td>
+                                <td title="a_l"><span class="font_blue">301</span> - OOOO - OOOO - OO</td>
+                            </tr>
+                            <tr>
+                                <td title="a_l"><span class="font_blue">302</span> - OOOO - OOOO - OO</td>
+                            </tr>
+                            <tr>
+                                <td title="a_l"><span class="font_blue">303</span> - OOOO - OOOO - OO</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="dataType">
+                        <caption>농협 계좌번호 코드 - 구분, 단위농협 (지역농협, 농협회원조합) 등으로 나타낸 표</caption>
+                        <colgroup>
+                            <col width="30%">
+                            <col width="70%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">구분</th>
+                                <th scope="col">단위농협 (지역농협, 농협회원조합)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">구)계좌번호</td>
+                                <td title="a_l">OOOOO - <span class="font_blue">51</span> - OOOOOO</td>
+                            </tr>
+                            <tr>
+                                <td title="a_l">OOOOO - <span class="font_blue">52</span> - OOOOOO</td>
+                            </tr>
+                            <tr>
+                                <td title="a_l">OOOOO - <span class="font_blue">53</span> - OOOOOO</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">신)계좌번호</td>
+                                <td title="a_l"><span class="font_blue">351</span> - OOOO - OOOO - OO</td>
+                            </tr>
+                            <tr>
+                                <td title="a_l"><span class="font_blue">352</span> - OOOO - OOOO - OO</td>
+                            </tr>
+                            <tr>
+                                <td title="a_l"><span class="font_blue">353</span> - OOOO - OOOO - OO</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

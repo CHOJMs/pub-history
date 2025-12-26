@@ -1,0 +1,97 @@
+/**
+*
+* MyDGB 리마케팅 알림 팝업
+*
+*/
+$.fn.fnReMrknAlert = function(popupId, params, callback) {
+	var $layer = null;
+
+	return this.each(function(i, item) {
+		if (document.cookie.indexOf(popupId+"-"+params.custNo+"=true") == -1) { // 쿠키가 존재하지 않는다면
+			appendLayer("/mydgb/reMrknAlertPopup.do");
+		} else {
+			console.log("MyDGB 리마케팅 알림 팝업 쿠키 존재");
+		}
+	});
+
+	/**
+	 * 레이어 팝업 본문(body) 추가
+	 */
+	function appendLayer(url) {
+		$.get(url, function(result) {
+			$.each($.parseHTML(result), function(i, ele) {
+				if ($(ele).hasClass('popup-layer')) {
+					if($(ele).prop("id") == popupId){
+						$layer = $($(ele)[0].outerHTML);
+					}
+				}
+			});
+
+			if($('#sessionAlarmLayerPopup').length){
+				// 본문(세션팝업) 위에 레이어 팝업 추가
+				$('#sessionAlarmLayerPopup').before($layer);
+			}else{
+				// 본문(body)에 레이어 팝업 추가
+				$('body').append($layer);
+			}
+
+			if(params.reMrknLimitAmt != null && params.reMrknLimitAmt != "" && (typeof params.reMrknLimitAmt != 'undefined')) {
+				$layer.find("#reMrknLimitAmt").text("최대 "+$util.formatCommas($.trim( $util.dispWonToMWon(params.reMrknLimitAmt) ))+"만원");
+			}
+			if(params.reMrknIntr != null && params.reMrknIntr != "" && (typeof params.reMrknIntr != 'undefined')) {
+				$layer.find("#reMrknIntr").text(params.reMrknIntr+"%");
+			}
+
+			// 팝업 호출
+			uiCommon.openPopup(popupId);
+
+			//dim off
+            uiCommon.dimdFn("off");
+
+            //custom_dim
+	   		$("#" + $layer[0].id).prepend("<div class='custom_dim' style='z-index: 9990; opacity: 1;visibility: visible;position: fixed;left: 0;top: 0; width: 100%;height: 100%;background: rgba(0, 0, 0, 0.2);transition: all 0.3s;'></div>");
+
+	   		//커스텀 dim 클릭 이벤트
+			$("#"+popupId).find(".custom_dim").click(function(e) {
+				uiCommon.closePopup(popupId);
+				// 레이어 요소 제거
+				$layer.remove();
+			});
+
+			// 신청하기 버튼 클릭 이벤트
+			$layer.find("#btnPropReMrkn").click(function(){
+				uiCommon.closePopup(popupId);
+		    	// 레이어 요소 제거
+				$layer.remove();
+				callback("propReMrkn");
+		    });
+
+			// 오늘하루 보지 않기 체크 이벤트
+			$layer.find("#chkReMrkn").click(function() {
+				setReMrknCookie00(popupId+"-"+params.custNo);
+
+				uiCommon.closePopup(popupId);
+		    	// 레이어 요소 제거
+				$layer.remove();
+		    });
+
+			// 닫기 버튼 클릭 이벤트
+			$layer.find("#btnCloseReMrkn").click(function(){
+				uiCommon.closePopup(popupId);
+		    	// 레이어 요소 제거
+				$layer.remove();
+		    });
+
+		});
+	}
+
+	// Set 쿠키 00시
+    function setReMrknCookie00(name) {
+        var now = new Date();
+        var midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+        var expires = midnight.toGMTString();
+
+        document.cookie = name + "=true; expires=" + expires + "; path=/";
+    }
+
+}

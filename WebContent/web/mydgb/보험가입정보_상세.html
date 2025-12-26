@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보험가입 조건 상세 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc popup-640"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>보험가입 조건 상세</h1>
+            </div>
+            <div class="popup-contents pad-btm bg-gray"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+                <div class="terms-pop">
+                    <div class="in-box type01">
+                        <div class="in-cnt none-bar">
+                            <p class="tl">기본정보</p>
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">보험회사</span>
+                                    <span class="p-txt">삼성화재</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">보험기간</span>
+                                    <span class="p-txt">2024-05-19 ~ 2025-08-09</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차량번호</span>
+                                    <span class="p-txt">123가 5678</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차명</span>
+                                    <span class="p-txt">K5 20.0</span>
+                                </li>
+                            </ul>
+                            <p class="dott-line"></p>
+                            <p class="tl">담보내용</p>
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">대인배상</span>
+                                    <span class="p-txt">1억</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">대물배상</span>
+                                    <span class="p-txt">1억</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">자기신체사고</span>
+                                    <span class="p-txt">1억</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">무보험 차량상해</span>
+                                    <span class="p-txt">1억</span>
+                                </li>
+                            </ul>
+                            <p class="dott-line"></p>
+                            <p class="tl">특약정보</p>
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">임직원특약</span>
+                                    <span class="p-txt">미가입</span>
+                                </li>
+                            </ul>
+                            <p class="dott-line"></p>
+                            <p class="tl">추가운전자</p>
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">추가운전자</span>
+                                    <span class="p-txt">홍길동</span>
+                                </li>
+                            </ul>
+                            <div class="btn mob-col">
+                                <a href="#">보험가입 조건 변경</a><a href="#">보험가입 증명서 신청</a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-dot02">
+                        <li>신용상태 개선이 금리 산정에 영향을 주지 않는 경우 금리인하요구가 거절될 수 있습니다.</li>
+                        <li>신용상태 개선이 발생한 경우 신청횟수, 신청시점에 관계없이 금리인하요구 가능합니다.</li>
+                    </ul>
+                </div>
+                <!-- //End : content --> 
+            </div>
+            
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

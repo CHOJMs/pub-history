@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-display: swap;
+  src: local("Pretendard Bold"), url(/static/carverse/font/Pretendard-Bold.woff2) format("woff2"), url(/static/carverse/font/Pretendard-Bold.woff) format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-display: swap;
+  src: local("Pretendard SemiBold"), url(/static/carverse/font/Pretendard-SemiBold.woff2) format("woff2"), url(/static/carverse/font/Pretendard-SemiBold.woff) format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"), url(/static/carverse/font/Pretendard-Medium.woff2) format("woff2"), url(/static/carverse/font/Pretendard-Medium.woff) format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"), url(/static/carverse/font/Pretendard-Regular.woff2) format("woff2"), url(/static/carverse/font/Pretendard-Regular.woff) format("woff");
+}
+
+/*# sourceMappingURL=fonts.css.map */

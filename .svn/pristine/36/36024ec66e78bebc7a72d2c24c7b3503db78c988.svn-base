@@ -1,0 +1,323 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/new_tab.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery-1.12.4.min.js"></script>
+
+<script type="text/javascript">
+
+	function goList(){
+// 		var f = document.actionForm;
+// 		f.METHOD.value = "AdminBoardListSelect";
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+
+		location.href = "/admin/board/dgbNoticeBoardMngList.jsp"
+	}
+
+
+	function goMod(){
+// 		var f = document.actionForm;
+// 		f.METHOD.value = "AdminBoardModPage";
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+		location.href = "/admin/board/dgbNoticeBoardMngMod.jsp"
+	}
+
+	function goDel(){
+		var f = document.actionForm;
+		f.METHOD.value = "AdminBoardDel";
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+
+	//파일다운로드
+	function download(fileName){
+
+		var path = "upload";
+		window.location.href = "/view/common/inc/FILE_DOWNLOAD.jsp?file_name="+fileName+"&file_path="+path;
+	}
+
+</script> 
+
+<script type="text/javascript" >
+	$(function(){
+		var tab1 = new tabpane(2,'tab','tabpage','_on.gif','.gif','active');
+	})
+	</script>
+
+</head>
+<body>
+
+<form name="actionForm">
+	  <input type="hidden" name="METHOD" />
+	  <input type="hidden" name="INIpluginData">
+	  <input type="hidden" name="LOGIN_SVC"  value="N"/>
+	  <input type="hidden" name="PGE_NO"  value="iPageNo "/>
+	  <input type="hidden" name="TITLE_SELECT"  value="TITLE_SELECT "/>
+
+	  <input type="hidden" name="OPEN_FLAG_SELECT"  value="OPEN_FLAG_SELECT "/>
+	  <input type="hidden" name="DEL_FLAG_SELECT"  value="DEL_FLAG_SELECT "/>
+
+	  <input type="hidden" name="BOARD_ID" id="BOARD_ID" value="BOARD_ID " />
+	  <input type="hidden" name="B_ID" id="B_ID" value="B_ID " />
+	  <input type='hidden' name="menuNo"	value="3" />
+	  <input type='hidden' name="subMenuNo"	value="SUB_MENU " />
+	  <input type='hidden' name="INSERT_KEY"	value="1" />
+</form>
+
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="4"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="container">
+			<div class="local-menu">
+				<jsp:include page="/admin/inc/leftMenu.jsp" flush="false"> 
+					<jsp:param name="menuNo" value="4"/>
+					<jsp:param name="subMenuNo" value="SUB_MENU "/>
+				</jsp:include>
+			</div> <!--// leftarea -->
+			
+			
+			<!--컨텐츠내용 시작-->
+			<div class="content-wrap">
+				<h3>인재 DB 관리</h3>
+				<div class="contents">
+					
+					<!-- tab -->
+					<div class="tab_2deps_box">
+						<ul class="tabwrap">
+							<li><a href="#" id="tab1">인재DB 지원자</a></li>
+							<li><a href="#" id="tab2">공고별 지원자</a></li>
+						</ul>
+					</div>
+					<!-- //tab -->
+
+					<!-- tab1// -->
+					<div id="tabpage1" class="form-type border_top_none">
+						<div class="form-type bbs-top">	
+							<!-- //검색 시작 -->
+							<div class="searchWrap">
+								<select name="" id="">
+									<option value="">채용구분</option>
+								</select>
+								<select name="" id="">
+									<option value="">모집구분</option>
+								</select>
+								<select name="" id="">
+									<option value="">고용형태</option>
+								</select>
+								<select name="" id="">
+									<option value="">상태</option>
+								</select>
+								<div class="search_wrap">
+									<span class="form">
+										<input type="tel" id="" value="1981-01-25">
+										<a href="#" class="btnCalendar"><img src="/static/admin/img/common/ico_cal.gif" alt="날짜 선택"></a>
+									</span>
+									<span class="dash">-</span>
+									<span class="form">
+										<input type="tel" id="" value="1981-01-25">
+										<a href="#" class="btnCalendar"><img src="/static/admin/img/common/ico_cal.gif" alt="날짜 선택"></a>
+									</span>
+									<input type="text" name="" id="" maxlength="" value="" style="width:250px;">
+									<input type="button" value="조회" class="btn h42 neg">
+								</div>
+							</div>
+							<!-- 검색 끝// -->
+						</div>
+	
+						<div class="form_box mb15 mt20">
+							<select id="" style="width:110px;">
+								<option value="">전체</option>
+								<option value="">합격</option>
+								<option value="">불합격</option>
+							</select>
+							<select id="" style="width:110px;">
+								<option value="">50</option>
+								<option value="">100</option>
+								<option value="">150</option>
+								<option value="">200</option>
+								<option value="">250</option>
+								<option value="">300</option>
+							</select>
+						</div>
+						<table class="bbs-table mb15">
+							<colgroup>
+								<col style="width:60px;">
+								<col style="width:60px;">
+								<col style="width:%;">
+								<col style="width:180px;">
+								<col style="width:80px;">
+								<col style="width:80px;">
+								<col style="width:120px;">
+								<col style="width:100px;">
+								<col style="width:150px;">
+								<col style="width:100px;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col">
+										<div class="rd_area3">
+											<input type="checkbox" id="ch1" name="">																				
+										</div>
+									</th>
+									<th scope="col">번호</th>
+									<th scope="col">공고명</th>
+									<th scope="col">지원분야</th>
+									<th scope="col">성별</th>
+									<th scope="col">나이</th>
+									<th scope="col">최종전형단계</th>
+									<th scope="col">경력</th>						
+									<th scope="col">지원일<br>(최종제출일)</th>
+									<th scope="col">상태</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+										<td>
+											<div class="rd_area3">
+												<input type="checkbox" id="ch1" name="">																				
+											</div>
+										</td>
+										<td>1</td>	
+										<td class="a_l">iM캐피탈 기업/리스금융(건설/공작) 정규직 공개 채용</td>				
+										<td>건설/공작</td>
+										<td>남</td>	
+										<td>35세</td>
+										<td>서류</td>
+										<td>경력</td>
+										<td>2021-05-26 23:59</td>
+										<td>최종제출</td>
+									</tr>
+							</tbody>
+						</table>
+						
+						<!--페이징 //-->
+						<div class="paging" id="paging">
+							<a href="#none" class="navi first" onClick="">맨처음</a>
+							<a href="#none" class="navi prev" onClick="" >이전</a>
+							<a href="#none" class="current">1</a>
+							<a href="#none">2</a>
+							<a href="#none">3</a>
+							<a href="#none">4</a>
+							<a href="#none">5</a>
+							<a href="#none">6</a>
+							<a href="#none">7</a>
+							<a href="#none">8</a>
+							<a href="#none">9</a>
+							<a href="#none">10</a>
+							<a href="#none" class="navi next">다음</a>						
+							<a href="#none" class="navi end">맨끝으로</a>
+						</div>
+						<!--// 페이징-->
+	
+						<p class="right_btn fl_none">
+							<a href="#" class="btn h42" onclick="srchAdminList();">이력서 저장(엑셀)</a>
+						</p>
+					</div>
+					<!-- //tab1 -->
+
+					<!-- tab2// -->
+					<div id="tabpage2" class="form-type border_top_none">
+						<div class="form-type bbs-top">	
+							<!-- //검색 시작 -->
+							<div class="searchWrap a_r">
+								<div class="search_wrap">
+									<input type="text" name="" id="" maxlength="" value="" style="width:250px;">
+									<input type="button" value="조회" class="btn h42 neg">
+								</div>
+							</div>
+							<!-- 검색 끝// -->
+						</div>
+						<table class="bbs-table mb15">
+							<colgroup>
+								<col style="width:6%;">
+								<col style="width:10%;">
+								<col style="width:8%;">
+								<col style="width:8%;">
+								<col style="width:8%;">
+								<col style="width:20%;">
+								<col style="width:20%;">
+								<col style="width:12%;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col">번호</th>
+									<th scope="col">이름</th>
+									<th scope="col">성별</th>
+									<th scope="col">나이</th>
+									<th scope="col">경력</th>
+									<th scope="col" colspan="2">학력</th>		
+									<th scope="col">지원일</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+										<td>1</td>	
+										<td>이름</td>
+										<td>남</td>	
+										<td>35세</td>
+										<td>경력</td>
+										<td>대구대학교</td>
+										<td>컴퓨터공학과</td>
+										<td>2021-07-06</td>
+									</tr>
+							</tbody>
+						</table>
+						
+						<!--페이징 //-->
+						<div class="paging" id="paging">
+							<a href="#none" class="navi first" onClick="">맨처음</a>
+							<a href="#none" class="navi prev" onClick="" >이전</a>
+							<a href="#none" class="current">1</a>
+							<a href="#none">2</a>
+							<a href="#none">3</a>
+							<a href="#none">4</a>
+							<a href="#none">5</a>
+							<a href="#none">6</a>
+							<a href="#none">7</a>
+							<a href="#none">8</a>
+							<a href="#none">9</a>
+							<a href="#none">10</a>
+							<a href="#none" class="navi next">다음</a>						
+							<a href="#none" class="navi end">맨끝으로</a>
+						</div>
+						<!--// 페이징-->
+					</div>
+					<!-- //tab2 -->		
+					
+					
+				</div><!--// contents -->
+			</div>
+			<!--컨텐츠내용 끝-->
+			<!--// content-wrap -->
+		</div><!--// container -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+</body>
+</html>

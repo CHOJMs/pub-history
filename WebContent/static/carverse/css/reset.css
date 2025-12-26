@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* 기준폰트 */
+/* Reset */
+*, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; } 
+
+button { border: 0; border-radius: 0; background: transparent; cursor: pointer; } 
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration { display: none; } 
+
+input[type=text], input[type=password], input[type=date], input[type=number], input[type=email], input[type=search], input[type=tel], input[type=time] { -webkit-appearance: none; } 
+
+input:checked[type=checkbox] { -webkit-appearance: checkbox; } 
+
+button, input[type=button], input[type=submit], input[type=reset], input[type=file] { -webkit-appearance: button; border-radius: 0; } 
+
+a { text-decoration: none; } 
+
+table { border-collapse: collapse; table-layout: fixed; border-spacing: 0; width: 100%; } 
+
+address, em { font-style: normal; } 
+
+ul, ol { list-style-type: none; } 
+
+caption { position: absolute; display: block; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); } 
+
+strong { font-weight: 600; } 
+
+.blind { position: absolute; display: block; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); } 
+
+a, input, button, select, label {-webkit-tap-highlight-color: transparent;} 
+
+summary::-webkit-details-marker { display: none;}
+summary { list-style-type: none; }

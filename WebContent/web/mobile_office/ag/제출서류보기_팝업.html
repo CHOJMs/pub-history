@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제출서류 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+
+<a href="javascript:;" class="popup-btn js-open-popup" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc popup-pdf"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small /56 -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>타이틀 두줄일 시 가이드입니다. 타이틀 두줄일 시 가이드입니다. 타이틀 두줄일 시 가이드입니다.</h1>
+                <div class="pdf-down"><a href="#"><img src="/static/web/img/ui_common/ico_pdf_download.png" alt="pdf다운받기"></a></div>
+            </div>
+            <div class="popup-contents flex-col">
+                <!-- Start : content //-->
+
+                <!-- Start : PDF 아이프레임영역(화면확인용) -->
+                <div class="pdf_view">
+                    <iframe src="pdf_iframe.html" style="border: none; width: 100%; height: 100%;"></iframe>
+                </div>
+                <!-- //End : PDF 아이프레임영역(화면확인용) -->
+
+                <!-- //End : content -->
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-none">
+                    <div class="btn-box w400">
+                        <span class="btn"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

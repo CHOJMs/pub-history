@@ -1,0 +1,390 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		// 뒤로가기 버튼으로 들어올때 값 사라짐 방지
+		if($('#BOARD_ID').val() == "")
+			$('#BOARD_ID').val("BOARD_ID");
+		if($('#PGE_NO').val() == "")
+			$('#PGE_NO').val("iPageNo");
+		if($('#menuNo').val() == "")
+			$('#menuNo').val("3");
+		if($('#subMenuNo').val() == "")
+			$('#subMenuNo').val("SUB_MENU");
+		if($('#INSERT_KEY').val() == "")
+			$('#INSERT_KEY').val("0");
+	});
+
+//window.alert($.fn.jquery);
+	// 조회
+	function goSearch(pageNum){
+
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardListSelect";
+		f.PGE_NO.value = pageNum;
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+
+	//파일다운로드
+	function download(fileName){
+		var path = "upload";
+
+		window.location.href = "/view/common/inc/FILE_DOWNLOAD.jsp?file_name="+fileName+"&file_path="+path;
+	}
+
+
+	//상세보기
+	function notsDtlSubmit(bid, ref){
+// 		var f = document.frm;
+
+// 		f.METHOD.value = "AdminBoardDetail";
+// 		f.B_ID.value   = bid;
+// 		f.REF_ID.value = ref;
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+		
+		location.href = "/admin/board/dgbNoticeBoardMngDtl.jsp"
+	}
+
+	function goWrite(){
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardWrite";
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+
+	}
+
+
+
+</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="1"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="container bg_none">
+
+			<div class="content-wrap">
+				<h3>오토론 관리 <span class="tl">- 약정신청 내용</span></h3>
+				<div class="contents">
+					
+					<div class="form-type bbs-form">
+						
+						<!-- 고객정보// -->
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">고객정보</h4>
+							<p class="btn-align-right mt-45 mb10">
+								<a href="#" class="btn h42 neg">목록</a>
+								<a href="#" class="btn h42 red">수정</a>
+								<a href="#" class="btn h42 red">대출접수</a>
+							</p>
+						</div>
+						<table class="bbs-table-view">
+							<caption>
+								고객명, 생년월일, 휴대전화번호, 직장/사업자명, 직장/사업자 연락처 , 직장/사업자 주소, 실거주지 주소의 정보를 입력하는 고객정보입니다
+							</caption>
+							<colgroup>
+								<col style="width:200px;">
+								<col style="width:37%;">
+								<col style="width:200px;">
+								<col style="width:37%;">
+							</colgroup>
+							<tbody>
+								<tr>								
+									<th scope="row">고객명</th>
+									<td colspan="3">박여신</td>
+								</tr>
+								<tr>								
+									<th scope="row">생년월일</th>
+									<td>19841201</td>
+									<th scope="row">휴대전화번호</th>
+									<td>010-1234-5678</td>
+								</tr>
+								<tr>								
+									<th scope="row">직장 / 사업자명</th>
+									<td>iM캐피탈</td>
+									<th scope="row">직장 / 사업자 연락처</th>
+									<td>02-1234-5678</td>
+								</tr>
+								<tr>								
+									<th scope="row">직장 / 사업자 주소</th>
+									<td colspan="3">서울시 강남구 도곡동 18  SEI타워</td>
+								</tr>
+								<tr>								
+									<th scope="row">실거주지 주소</th>
+									<td colspan="3">서울시 강남구 도곡동 18  SEI타워</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //고객정보 -->
+						
+					
+						<!-- 차량정보// -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">차량정보</h4>
+						</div>
+						<table class="bbs-table-view">
+							<caption>
+								차종, 차량가격, 의 정보를 입력하는 차량정보입니다
+							</caption>
+							<colgroup>
+								<col style="width:200px;">
+								<col style="width:88%;">
+							</colgroup>
+							<tbody>
+								<tr>								
+									<th scope="row">차종</th>
+									<td>[현대] 제네시스 G80 CVS 고급형  2WD</td>
+								</tr>
+								<tr>								
+									<th scope="row">차량가격</th>
+									<td>20,000,000</td>
+								</tr>
+								<tr>								
+									<th scope="row">차량 등록 명의</th>
+									<td>박여신</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //차량정보 -->
+						
+						<!-- 대출정보// -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">대출정보</h4>
+						</div>
+						<table class="bbs-table-view">
+							<caption>
+								신청일시, 선택상품, 신청금액, 장기선납금(SAVE), 대출기간, 대출금리, 월 납부금의 정보를 입력하는 대출정보입니다
+							</caption>
+							<colgroup>
+								<col style="width:200px;">
+								<col style="width:37%;">
+								<col style="width:200px;">
+								<col style="width:37%;">
+							</colgroup>
+							<tbody>
+								<tr>								
+									<th scope="row">신청일시</th>
+									<td><input type="text" name="" id="" maxlength="" value="20170321" style="width:100%;" title="신청일시 입력"></td>
+									<th scope="row">선택상품</th>
+									<td><input type="text" name="" id="" maxlength="" value="국산승용_온라인_일반" style="width:100%;" title="선택상품 입력"></td>
+								</tr>
+								<tr>								
+									<th scope="row">신청금액</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="3,000,000" style="width:95%;" class="input_right" title="신청금액 입력"><span>원</span>
+										</div>
+									</td>
+									<th scope="row">장기선납금(SAVE)</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="0" style="width:95%;" class="input_right" title="장기선납금 입력"><span>원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>								
+									<th scope="row">대출기간</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="36" style="width:95%;" class="input_right" title="대출기간 입력"><span>개월</span>
+										</div>
+									</td>
+									<th scope="row">대출금리</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="3.89" style="width:95%;" class="input_right" title="대출금리 입력"><span>%</span>
+										</div>
+									</td>
+								</tr>
+								<tr>								
+									<th scope="row">월 납부금</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="91,384" style="width:95%;" class="input_right" title="월 납부금 입력"><span>원</span>
+										</div>
+									</td>
+									<th scope="row"></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="mt20">※ 첫 회차 납부금은 실행일자에 따라 증감 될 수 있습니다.</p>
+						<!-- //대출정보 -->
+						
+						<!-- 계좌 청구 정보 // -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">계좌 청구 정보</h4>
+						</div>
+						<table class="bbs-table-view">
+							<caption>
+								결제일자, 자동이체계좌, 청구지 주소의 정보를 입력하는 계좌청구정보입니다
+							</caption>
+							<colgroup>
+								<col style="width:200px;">
+								<col style="width:37%;">
+								<col style="width:200px;">
+								<col style="width:37%;">
+							</colgroup>
+							<tbody>
+								<tr>								
+									<th scope="row">결제일자</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="30" style="width:95%;" class="input_right" title="결제일자 입력"><span>일</span>
+										</div>
+									</td>
+									<th scope="row">자동이체 계좌</th>
+									<td><input type="text" name="" id="" maxlength="" value="신한은행 111-111-111111" style="width:100%;" title="자동이체계좌 입력"></td>
+								</tr>
+								<tr>								
+									<th scope="row">청구지 주소</th>
+									<td colspan="3"><input type="text" name="" id="" maxlength="" value="서울시 강남구 도곡동 18 SEI 타워" style="width:100%;" title="청구지주소 입력"></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // 계좌 청구 정보 -->
+						
+						<!-- 저당 설정 정보 // -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">저당 설정 정보</h4>
+						</div>
+						<table class="bbs-table-view">
+							<caption>
+								설정금액, 설정순위, 설정비용의 정보를 입력하는 저당설정정보입니다
+							</caption>
+							<colgroup>
+								<col style="width:200px;">
+								<col style="width:37%;">
+								<col style="width:200px;">
+								<col style="width:37%;">
+							</colgroup>
+							<tbody>
+								<tr>								
+									<th scope="row">설정금액</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="1,000,000" style="width:95%;" class="input_right" title="설정금액 입력"><span>원</span>
+										</div>
+									</td>
+									<th scope="row">설정순위</th>
+									<td><input type="text" name="" id="" maxlength="" value="" style="width:100%;" title="설정순위 입력"></td>
+								</tr>
+								<tr>								
+									<th scope="row">설정비용</th>
+									<td colspan="3">설정비용은 회사가 부담합니다. (단, 해지비용은 고객님이 부담합니다.)</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // 저당 설정 정보 -->
+						
+						<!-- 상담정보// -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">상담정보</h4>
+						</div>
+						<table class="bbs-table-view">
+							<caption>
+								상담자명, 심사내용, 상담내용, 메모사항의 정보를 입력하는 상담정보입니다
+							</caption>
+							<colgroup>
+								<col style="width:200px;">
+								<col style="width:37%;">
+								<col style="width:200px;">
+								<col style="width:37%;">
+							</colgroup>
+							<tbody>
+								<tr>								
+									<th scope="row">상담자명</th>
+									<td></td>
+									<th scope="row">심사내용</th>
+									<td>영업의견입니다.</td>
+								</tr>
+								<tr>								
+									<th scope="row">상담내용</th>
+									<td colspan="3"></td>
+								</tr>
+								<tr>								
+									<th scope="row">메모사항</th>
+									<td colspan="3"></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //상담정보 -->
+						
+						<!-- 알아두셔야 할 내용// -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">알아두셔야 할 내용</h4>
+						</div>
+						<div class="name_box">
+							<ul>
+								<li>차량 출고 이전에 아래 구비 서류를 팩스로 송부하셔야 합니다. (팩스번호 02-6008-0510)
+									<ul>
+										<li>- 자동차매매계약서 (공통)</li>
+										<li>- 급여소득자 : 건강보험 자격득실확인서, 건강보험 납부확인서<br>
+											※ 국민건강보험공단 1577-1000 &rarr; 2번 &rarr; 팩스발급요청</li>
+										<li>- 개인사업자 : 사업자등록증 (또는 증명원) 부가가치세과세 표준증명원<br>
+										※ 국세청 홈텍스(www.hometax.go.kr) 로그인 후 발급</li>
+									</ul>
+								</li>
+								<li>휴대전화가 고객님 명의가 아니거나 또는 차량을 공동명의로 등록하는 경우, 고객님 인감증명서 1통(공동명의인 경우 ‘공동명의자’ 인감증명서 1통 추가)을 차량출고 이전에 당사 주소지로 등기 발송해주셔야 합니다.
+									<ul>
+										<li>- 인감증명서는 본인 발급 또는 주민등록등본상 가족 발급분만 인정됩니다.</li>
+										<li>- 발송주소: 서울특별시 강남구 언주로 30길 39, 18층 (SEI 타워) 오토금융부 온라인오토 담당자 앞</li>
+									</ul>
+								</li>
+								<li>장기 선납금 또는 인지대를 납부하시는 고객님께서는 대출실행일에 해당 금액을 상기의 지정계좌(대구은행)로 입금하셔야 대출이 진행됩니다.
+									<ul>
+										<li>- 입금자명은 ‘고객님’ 명의로 하셔야 합니다.</li>
+									</ul>
+								</li>
+								<li>대출실행 후 10일 이내 고객님 명의(또는 공동명의)로 차량을 등록하는 조건으로, 등록완료 후 차량등록증 또는 차량번호를 당사에 송부하셔야 합니다.</li>
+							</ul>
+						</div>
+						<!-- //알아두셔야 할 내용 -->
+						
+						<p class="btn-align-right">
+							<a href="#" class="btn h42 neg">목록</a>
+							<a href="#" class="btn h42 red">수정</a>
+							<a href="#" class="btn h42 red">대출접수</a>
+						</p>
+					</div>
+					
+				</div><!--// contents -->
+			</div><!--// content-wrap -->
+		</div><!--// container -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+
+<!-- 에러 레이어 -->
+<span id='errorLayer' class="layerpop" style="position:absolute; left:300px; top:200px; z-index:3; display:none;"></span>
+
+
+</body>
+</html>

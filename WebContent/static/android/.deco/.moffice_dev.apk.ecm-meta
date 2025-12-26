@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<deco>
+    <fileData filename="moffice_dev.apk" filepath="/src/main/webapp/static/android" ischanged="0" lastversion="2" tstversion="0" realversion="0" dotversion="2" itemid="000000940025" ecmMd5sum="ed4b8a8b2ee5754d55291310e50c0ead" ecmTstmd5sum="" lastChangedDate="1664257751000" editor="정현석:16440" lastUser="정현석:16440" filestatus="체크인완료:B" islock="1" isAuthority="1" rsrccd="A2" rsrccdcodename="static" rsrcinfo="0100000000110000000000010000010000000000100000001000000001000000000" jobcd="HP" jobname="홈페이지" syscd="00102" sysmsg="홈페이지" srid="R202111-0094"/>
+</deco>

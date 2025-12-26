@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주택명의 선택 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half popup-select"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>주택명의 선택</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+                <ul>
+                    <li class="active"><!-- [D]활성화 시 클래스 추가 : active -->
+                        <a href="#">본인 명의</a>
+                    </li>
+                    <li>
+                        <a href="#">부부 공동명의</a>
+                    </li>
+                    <li>
+                        <a href="#">배우자 명의</a>
+                    </li>
+                    <li>
+                        <a href="#">자택(가족공동 명의)</a>
+                    </li>
+                    <li>
+                        <a href="#">전세</a>
+                    </li>
+                    <li>
+                        <a href="#">월세</a>
+                    </li>
+                    <li>
+                        <a href="#">기타(무소유)</a>
+                    </li>
+                </ul>
+                <!-- //content 끝 -->
+            </div>
+        </div>
+        <!--<div class="popup-close"><a href="javascript:;">닫기</a></div>-->
+    </div>
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전자약정 완료확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn js-open-popup" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <!--<div class="popup-text">
+                <h1>휴대폰 본인인증</h1>
+            </div>-->
+            <div class="popup-contents flex-col pad-small max-hei-inh">
+                <!-- Start : content //-->
+
+                <!-- Start : 설명글 -->
+                <div class="grp-cont">
+                    <div class="tbl-txt">대출실행 후 30일간 마이 홈에서 약정서류를 확인하실 수 있습니다.</div>
+
+                    <div class="head-tit mt24">※ 보이스피싱 예방</div>
+                    <div class="step-list-box type01">
+                        <ul>
+                            <li>
+                                <span>1</span>
+                                <div>저금리대출 유도 문자메세지/홈페이지</div>
+                            </li>
+                            <li>
+                                <span>2</span>
+                                <div>가상계좌를 통한 중도상환 요구</div>
+                            </li>
+                            <li>
+                                <span>3</span>
+                                <div>모바일 어플리케이션(APP) 설치요구 &rarr; 모바일 APP내 전화번호 클릭금지</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tbl-txt mb0 mt16">상기와 같은 요청은 전형적인 보이스피싱 수법이므로, 중도상환시 반드시 당사 고객센터(1566-0050) 및 대출신청 담당자와 유선통화로 상환계좌 등을 확인 후 입금하시기 바랍니다.</div>
+                </div>
+
+                <!-- //End : 설명글 -->
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <!--<div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>-->
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

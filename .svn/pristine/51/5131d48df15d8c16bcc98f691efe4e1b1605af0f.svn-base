@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>견적내기 | iM캐피탈 카버스</title>
+
+    <link rel="stylesheet" href="/static/carverse/css/style.css">
+    <link rel="stylesheet" href="/static/carverse/css/carverse.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn js-open-popup" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>한도조회 동의</h1>
+            </div>
+            <div class="popup-contents flex-col h-type01">
+                <!-- Start : content //-->
+
+                <div class="pop-tit-info">한도조회 동의 URL발송<br>휴대폰번호를 입력해주세요</div>
+
+                 <!-- Start : 수신번호 -->
+                 <div class="form-iem">
+                    <div class="com-inp">
+                        <label>수신번호</label>
+                        <input type="tel" placeholder="휴대폰번호 띄어쓰기 없이 입력" title="휴대폰번호 입력">
+                    </div>
+                </div>
+                <!-- //End : 수신번호 -->
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn line"><button type="button" id="">취소</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        <span class="btn"><button type="button" id="">발송</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/carverse/img/common2/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

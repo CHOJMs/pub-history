@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>해지의 관한 사항 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function textPopupAll() {
+        uiCommon.openPopup("textPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn js-open-popup" onclick="textPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="textPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>해지의 관한 사항</h1>
+            </div>
+            <div class="popup-contents flex-col popup-clau">
+                <!-- Start : content //-->
+                <div class="pop-cnt-wrap">
+
+                <!-- Start : 약관내용 -->
+                <ol class="term-list">
+                    <li>□ 대출계약의 해지 시 중도상환수수료가 부과 될 수 있습니다. 중도상환수수료는 대출계약이 성립한 날부터 <strong>3년 이내의 기간에만 부여</strong>되며, <strong>동일 금융회사와 기존 대출계약을 해지하고 사실상 동일 계약을 체결한 경우 양 계약기간을 합산하여 3년 경과 후에는 면제됩니다.</strong></li>
+                    <ul>
+                        <li>• 고객이 중도상환 등 해지를 요청할 경우, 금융회사는 고객에게 중도상환수수료 등 해지 시 납부해야 하는 금액을 안내하고 가상계좌를 발송합니다. (납부 시 해지 처리 진행)</li>
+                        <li>• 대출신청 이후 고객에 의한 대출취소 또는 대출심사 거절 시 발생한 비용(등기설정/말소비용, 감정수수료, 인지세 등)을 고객이 부담해야합니다. </li>
+                        <li>• 대출금 중도상환 시 입금방법은 선납방식입니다. 공휴일, 토 · 일요일, 근로자의 날  등 납부가 가능하며, 이용시간은  인터넷 홈페이지 및 모바일 앱을 통해 확인 가능합니다. </li>
+                    </ul>
+                </ol>
+
+               <!-- //End : 약관내용 -->
+
+                </div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

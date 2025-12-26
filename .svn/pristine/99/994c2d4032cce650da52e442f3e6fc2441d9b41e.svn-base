@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page contentType="text/html; charset=euc-kr" language="java" %>
+<title>DGB 캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<link rel="stylesheet" type="text/css" href="/static/admin/css/jquery.mCustomScrollbar.css" />
+
+<!-- SecureFrame Start-->
+
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/commonEncode.js"></script>
+<script type="text/javascript" src="/static/admin/js/common.js"></script>
+<script type="text/javascript" src="/static/admin/js/dsr_common.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/dsr_front_js.js"></script>
+
+<%-- START : JAVA로직 구현 --%>
+<%
+	//관리자 세션
+	String sessUserPerm05 = "Y";
+	String sessUserPerm06 = "Y";
+	String rcagCustNo  = "123457";
+
+	//공통코드
+	/*
+	String COMMON_CODE_TEL_SRCH   = "PL05";
+	String CUST_INCM_DVCD_SRCH    = "CA05"; // 소득구분 검색키워드
+	String SLRY_ACCP_FRMN_CD_SRCH = "PL76"; // 급여수령 검색키워드
+	String BZPL_OWN_DVCD_SRCH     = "PLB9"; // 사업장소유구분 검색키워드
+	String DWL_FRMN_DVCD_SRCH     = "CA10"; // 주거형태구분 검색키워드
+	String HSNG_FRMN_DVCD_SRCH    = "CA11"; // 주택형태구분 검색키워드
+	String RGHT_VION_DSTC_CD_SRCH = "PL21"; // 권리침해구분 검색키워드
+	String DMSC_FRIG_DVCD_SRCH    = "LF09"; // 국산외산구분 검색키워드
+	String VHCL_KIND_DVCD_SRCH    = "LF24"; // 차량종류구분 검색키워드
+	*/
+	String CUST_INCM_DVCD_SALARY  = "CA051"; // 소득구분_급여소득자
+	String CUST_INCM_DVCD_PRIVATE = "CA052"; // 소득구분_개인사업자
+	String CUST_INCM_DVCD_SPECIAL = "CA053"; // 소득구분_전문직개인사업자
+	String CUST_INCM_DVCD_HR      = "CA054"; // 소득구분_인적용역제공자
+	String CUST_INCM_DVCD_CO      = "CA055"; // 소득구분_법인사업자
+	String CUST_INCM_DVCD_ETC     = "CA059"; // 소득구분_기타소득
+
+	String BZPL_OWN_DVCD_IMCHA    = "PLB920"; // 사업장소유구분_임차
+
+	String INDV_CRDT_ATNT_PROD_DVCD_1 = "PLZ101"; // 관심상품_간편대출
+	String INDV_CRDT_ATNT_PROD_DVCD_2 = "PLZ102"; // 관심상품_직장인론
+	String INDV_CRDT_ATNT_PROD_DVCD_3 = "PLZ103"; // 관심상품_아파트론
+	String INDV_CRDT_ATNT_PROD_DVCD_4 = "PLZ104"; // 관심상품_중고차론
+
+	String SYS_RSLT_CD_OK        = "MLR201"; // 정상승인
+	String SYS_RSLT_CD_CONDITION = "MLR202"; // 조건승인
+	String SYS_RSLT_CD_DETAIL    = "MLR203"; // 정밀심사
+	String SYS_RSLT_CD_REJECT    = "MLR204"; // 자동거절
+	
+	String ROOT_CODE_1 = "PLZ201"; // 방문(대면)
+	String ROOT_CODE_2 = "PLZ202"; // 전단/판촉
+	String ROOT_CODE_3 = "PLZ203"; // 지인소개
+	String ROOT_CODE_4 = "PLZ204"; // 우편물
+	String ROOT_CODE_5 = "PLZ205"; // 옥외광고
+	String ROOT_CODE_6 = "PLZ206"; // 전화/SMS
+	String ROOT_CODE_7 = "PLZ207"; // TM
+	String ROOT_CODE_8 = "PLZ208"; // 기타
+
+	String CERT_TYPE_CODE1 = "PLA32"; // 본인인증_휴대전화
+	String CERT_TYPE_CODE2 = "PLA39"; // 본인인증_공인인증서
+
+	String DWL_FRMN_DVCD_CODE1 = "CA101"; //주택소유구분 자택(본인명의)
+	String DWL_FRMN_DVCD_CODE2 = "CA108"; //주택소유구분 자택(배우자명의)
+
+%>
+<%--   END : JAVA로직 구현 --%>
+
+<%-- START : SCRIPT로직 구현 --%>
+<script type="text/javascript">
+
+	// 페이지로드 시 호출
+	$(document).ready(function (){
+		
+	});
+	
+	// 사업자번호조회
+	function callPopup_job(index){
+		dgbDsrAjaxSubmit("popLayer01", "/dsr/contents/pop_job.jsp");
+	};
+
+	// 직업/직위조회
+	function callPopup_position(index){
+		dgbDsrAjaxSubmit("popLayer01", "/dsr/contents/pop_position.jsp");
+	};
+
+	// 직장/업체주소
+	function callPopup_address(index){
+		dgbDsrAjaxSubmit("popLayer01", "/dsr/contents/pop_address.jsp");
+
+	};
+
+	// 차량모델조회
+	function callPopup_car(){
+		dgbDsrAjaxSubmit("popLayer01", "/dsr/contents/pop_car.jsp"); 
+	};
+
+	/*
+	 * 메모등록/조회팝업
+	 */
+	function callPopup_memo(){
+		dgbDsrAjaxSubmit("popLayer01", "/admin/dgbAdmin007p.jsp");
+	};
+
+	function go_list(){
+		//EncLinkNormal(gHomePageUrl('09000200'));
+		history.go(-1);
+	}
+
+</script>
+<%--   END : SCRIPT로직 구현 --%>
+
+</head>
+
+
+
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="6"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+	<form name="submitForm_adminDetail" method="post" id="submitForm_adminDetail">
+		<div class="contents" style="width:1230px ! important;">
+			<h2>대출 접수내역</h2>
+			<p class="top-btn-bar">
+				<%-- if(sessUserPerm06.equals("Y")){ --%>
+				<%-- <a href="#" class="btn" onclick="submit_adminDetail_css();">CSS조회</a> --%>
+				<%-- } --%>
+				<%//if(sessUserPerm05.equals("Y")){%>
+				<a href="#" class="btn" onclick="submit_adminDetail_reg();">등록</a>
+				<%//}%>
+				<a href="#" class="btn" onclick="go_list();">목록</a>
+			</p><br />
+			<h3 class="titH3_type first">고객정보</h3>
+			<div class="form-type">
+				<table class="data-table form" border="1">
+					<colgroup>
+						<col width="12%" />
+						<col width="38%" />
+						<col width="12%" />
+						<col width="" />
+					</colgroup>
+					<tbody>
+					<tr>
+						<th class="bg4">접수구분</th>
+						<td id="txt_indv_crdt_acpt_dvcd_nm">Agent섭외</td>
+						<th class="bg4">접수번호</th>
+						<td id="txt_lon_cnsl_srno">000000001</td>
+					</tr>
+					<tr>
+						<th class="bg4">접수일시</th>
+						<td id="txt_cnsl_dt_cnsl_tm">20170321 11:33:17</td>
+						<th class="bg4">최종수정일(금융사)</th>
+						<td id="txt_last_revs_dt">20170321</td>
+					</tr>
+					<tr>
+						<th class="bg4">접수상태</th>
+						<td id="txt_indv_crdt_synr_sts_nm">미대상</td>
+						<th class="bg4">진행상태</th>
+						<td id="txt_indv_crdt_prgs_stcd_nm">신청</td>
+					</tr>
+					<tr>
+						<th class="bg4">진행상태상세</th>
+						<td id="txt_indv_crdt_dtls_prgs_stcd_nm">신청CSS산출완료</td>
+						<th class="bg4">담당자 상태</th>
+						<td id="txt_indv_crdt_chgr_stcd_nm">상담중</td>
+					</tr>
+					<tr>
+						<th class="bg4">신청금액</th>
+						<td id="txt_cnsn_amt">10,000,000</td>
+						<th class="bg4">권유자</th>
+						<td id="txt_sgsr_emnm"></td>
+					</tr>
+					<!--tr>
+						<th class="bg4">첨부서류</th>
+						<td colspan="3">00건 (최종등록 : yyyymmdd hh:mm / 최종확인 : yyyymmdd hh:mm)&nbsp;<a href="#" class="btn">서류첨부</a></td>
+					</tr-->
+					<tr>
+						<input type="hidden" id="CUST_NO_MEMO"       name="CUST_NO_MEMO"       value="" />   <%-- 고객번호 --%>
+						<input type="hidden" id="LON_CNSL_NO_MEMO"   name="LON_CNSL_NO_MEMO"   value="" />   <%-- 여신상담번호 --%>
+						<input type="hidden" id="LON_CNSL_SRNO_MEMO" name="LON_CNSL_SRNO_MEMO" value="" /> 	 <%-- 여신상담일련번호 --%>
+						<th class="bg4">메모</th>
+						<td colspan="3"><span id="txt_last_memo_cntn_memo_reg_dttm"></span><a href="#popLayer01" class="btn popClick layerClick" onclick="javascript:callPopup_memo();">메모 등록/ 조회</a></td>
+					</tr>
+
+
+					</tbody>
+				</table>
+			</div>
+			<h3 class="titH3_type">한도조회결과</h3>
+			<div class="form-type">
+				<table class="data-table form" border="1">
+					<colgroup>
+						<col width="150px" />
+						<col width="" />
+						<col width="150px" />
+						<col width="" />
+						<col width="150px" />
+						<col width="" />
+					</colgroup>
+					<tbody>
+					<tr>
+						<th class="bg4">시스템 판정</th>
+						<td id="txt_sys_rslt">정밀심사</td>
+						<th class="bg4">시스템 한도</th>
+						<td id="txt_sys_lmt_amt">5,020,000</td>
+						<th class="bg4">시스템 금리</th>
+						<td id="txt_sys_rate">24.7</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<h3 class="titH3_type">신청기본정보</h3>
+			<div class="form-type">
+				<table class="data-table form" border="1">
+					<colgroup>
+						<col width="12%" />
+						<col width="38%" />
+						<col width="12%" />
+						<col width="" />
+					</colgroup>
+					<tbody>
+					<tr>
+						<th class="bg4">* 소득구분</th>
+						<td colspan="3">
+						<select id="CUST_INCM_DVCD" name="CUST_INCM_DVCD" onchange="javascript:changeEvnt_CUST_INCM_DVCD();">
+							<option>급여소득자</option>	
+						</select></td>
+					</tr>
+					<tr>
+						<th class="bg4">* 고객명</th>
+						<td id="txt_cust_nm">홍길동</td>
+						<th class="bg4">생년월일</th>
+						<td><input type="text" maxlength="6" id="txt_cust_rl_nm_no" title="주민등록번호 앞자리" style="ime-mode:disabled;" onchange="DSR_onchange_date_format_regChk_len6(this);" value="701004" />
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">* 휴대폰</th>
+						<td id="txt_cpno">010-2623-6542</td>
+						<th class="bg4">본인인증</th>
+						<td><input type="radio" id="fcert01" name="cert" value="<%=CERT_TYPE_CODE1%>"/>&nbsp;<label for="flyc01">휴대폰인증</label>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" id="fcert02" name="cert" value="<%=CERT_TYPE_CODE2%>" /><label for="fcert02">공인인증</label>
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">* 관심상품</th>
+						<td colspan="3">
+							<input type="radio" id="fLoan01" name="loan" value="<%=INDV_CRDT_ATNT_PROD_DVCD_1%>" checked="checked" />&nbsp;<label for="fLoan01">간편대출</label>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="radio" id="fLoan02" name="loan" value="<%=INDV_CRDT_ATNT_PROD_DVCD_2%>" />&nbsp;<label for="fLoan02">직장인론</label>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="radio" id="fLoan03" name="loan" value="<%=INDV_CRDT_ATNT_PROD_DVCD_3%>" />&nbsp;<label for="fLoan03" />아파트론</label>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="radio" id="fLoan04" name="loan" value="<%=INDV_CRDT_ATNT_PROD_DVCD_4%>" />&nbsp;<label for="fLoan04">중고차론</label>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<br />
+			<!--p class="align-right">
+				<a href="#" class="btn h42">본인인증</a>
+			</p-->
+			<br />
+<div id="div_CUST_INCM_DVCD1" style="display:block;">
+			<h3 class="titH3_type">재직/사업정보</h3>
+			<div class="form-type">
+				<table class="data-table form" border="1">
+					<colgroup>
+						<col width="12%" />
+						<col width="38%" />
+						<col width="12%" />
+						<col width="" />
+					</colgroup>
+					<tbody>
+					<tr>
+						<th class="bg4">* 직장/업체명</th>
+						<td><input type="text" title="직장/업체명" id="WRST_NM1" class="valid_null_input" />
+							<a href="#popLayer01" class="btn popClick layerClick" onclick="javascript:callPopup_job('1');">조회</a>
+						</td>
+						<th class="bg4">사업자번호</th>
+						<td><input type="text" title="사업자번호" id="BRNO1" class="valid_null_input" maxlength="10" onkeypress="javascript:onkeypress_number();" /></td>
+					</tr>
+					<tr>
+						<th class="bg4">직업/직위</th>
+						<td colspan="3">
+							<!--<input type="text" id="OCPT_JBTT_NM1" class="disabled" title="직업/직위" readonly /> -->
+							<input type="text" class="wd2 disabled" title="직업/직위" id="OCPT_JBTT_TOT1" name="OCPT_JBTT_TOT1" readonly  />
+							<a href="#popLayer01" class="btn popClick layerClick" onclick="javascript:callPopup_position('1');">조회</a>
+							<input type="hidden" id="OCPT_JBTT_CD1"       name="OCPT_JBTT_CD1"       value="" />
+							<input type="hidden" id="JBCG_CD1"            name="JBCG_CD1"            value="" />
+							<input type="hidden" id="JBCG_MNG_HSTR_SRNO1" name="JBCG_MNG_HSTR_SRNO1" value="" />
+							<input type="hidden" id="OCPT_JBTT_NM1"       name="OCPT_JBTT_NM1"       value="" /> <%-- 직위명 --%>
+							<input type="hidden" id="OCPT_JBTT_LCLS_NM1"  name="OCPT_JBTT_LCLS_NM1"  value="" /> <%-- 대분류명 --%>
+							<input type="hidden" id="OCPT_JBTT_MDCF_NM1"  name="OCPT_JBTT_MDCF_NM1"  value="" /> <%-- 중분류명 --%>
+							<input type="hidden" id="OCPT_JBTT_SCLS_NM1"  name="OCPT_JBTT_SCLS_NM1"  value="" /> <%-- 소분류명 --%>
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">* 입사/개업일자</th>
+						<td><input type="text" id="ENCM_DT1" title="입사/개업일자" class="valid_null_input" maxlength="10" placeholder="yyyymmdd 형태로 입력." style="ime-mode:disabled;" onkeypress="javascript:onkeypress_number();" onkeyup="javascript:DSR_onkeyup_format_yyyymmdd(this);" /></td>
+						<th class="bg4">* 4대보험가입여부</th>
+						<td><select title="4대보험가입여부" id="sel_FMPI_ENTR_YN" class="valid_null_input">
+								<option value="" selected="selected">선택</option>
+								<option value="Y">예</option>
+								<option value="N">아니오</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">급여수령형태</th>
+						<td><select title="급여수령형태" id="sel_SLRY_ACCP_FRMN_CD" class="valid_optional_input">
+								<option value="" selected="selected">선택</option>
+								
+							</select>
+						</td>
+						<th class="bg4">급여일</th>
+						<td>
+							<select title="급여일" id="sel_SLRY_DD" class="valid_optional_input">
+								<option value="" selected="selected">선택</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+							</select>&nbsp;일
+						
+						<!--input type="text" />일-->
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">직장/업체주소</th>
+						<td colspan="3"><a href="#popLayer01" class="btn popClick layerClick" onclick="javascript:callPopup_address('1');">조회</a>
+							<input type="text" title="직장/업체주소" id="WRST_ADDR1" class="disabled valid_optional_input" readonly />
+							<input type="text" title="직장/업체주소" id="WRST_DTAD1" class="wd2 valid_optional_input disabled" readonly />
+							<input type="hidden" id="WRST_ADDR_DELI_CD1" name="WRST_ADDR_DELI_CD1" value="" />
+							<input type="hidden" id="WRST_ZPCD1" name="WRST_ZPCD1" value="" />
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">직장/업체전화번호</th>
+						<td colspan="3">
+							<input type="text" id="WRST_TLNO_TELCODE_1" class="valid_optional_input" title="통신사" maxlength="4" style="ime-mode:disabled;" onkeypress="javascript:onkeypress_number();" />
+							<!--select class="wdh">
+								<option value="" selected="selected"></option>
+								<option value=""></option>
+							</select-->
+							<input type="text" id="WRST_TLNO_MID_TEL_1" class="valid_optional_input" title="휴대폰 앞자리" maxlength="4" style="ime-mode:disabled;" onkeypress="javascript:onkeypress_number();" />
+							<input type="text" id="WRST_TLNO_END_TEL_1" class="valid_optional_input" title="휴대폰 뒷자리" maxlength="4" style="ime-mode:disabled;" onkeypress="javascript:onkeypress_number();" />
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+</div>
+<%--   END : 재직/사업정보 CASE 1 ( 급여소득자, 인적용역제공자, 기타 ) --%>
+
+<%-- START : 재직/사업정보 CASE 2 ( 개인사업자, 전문직개인사업자 ) --%>				
+<div id="div_CUST_INCM_DVCD2" style="display:none;">		
+			<h3 class="titH3_type">재직/사업정보</h3>
+			<div class="form-type">
+				<table class="data-table form" border="1">
+					<colgroup>
+						<col width="12%" />
+						<col width="38%" />
+						<col width="12%" />
+						<col width="" />
+					</colgroup>
+					<tbody>
+					<tr>
+						<th class="bg4">* 직장/업체명</th>
+						<td><input type="text" title="직장/업체명" id="WRST_NM2" class="valid_null_input" />
+							<a href="#popLayer01" class="btn popClick layerClick" onclick="javascript:callPopup_job('2');">조회</a>
+						</td>
+						<th class="bg4">사업자번호</th>
+						<td><input type="text" title="사업자번호" id="BRNO2" class="valid_null_input" maxlength="10" onkeypress="javascript:onkeypress_number();" /></td>
+					</tr>
+					<tr>
+						<th class="bg4">직업/직위</th>
+						<td colspan="3">
+							<!--<input type="text" id="OCPT_JBTT_NM2" class="disabled" title="직업/직위" readonly /> -->
+							<input type="text" class="disabled wd2" title="직업/직위" id="OCPT_JBTT_TOT2" name="OCPT_JBTT_TOT2" readonly />
+							<a href="#popLayer01" class="btn popClick layerClick" onclick="javascript:callPopup_position('2');">조회</a>							
+							<input type="hidden" id="OCPT_JBTT_CD2"       name="OCPT_JBTT_CD2"       value="" />
+							<input type="hidden" id="JBCG_CD2"            name="JBCG_CD2"            value="" />
+							<input type="hidden" id="JBCG_MNG_HSTR_SRNO2" name="JBCG_MNG_HSTR_SRNO2" value="" />
+							<input type="hidden" id="OCPT_JBTT_NM2"       name="OCPT_JBTT_NM2"       value="" /> <%-- 직위명 --%>
+							<input type="hidden" id="OCPT_JBTT_LCLS_NM2"  name="OCPT_JBTT_LCLS_NM2"  value="" /> <%-- 대분류명 --%>
+							<input type="hidden" id="OCPT_JBTT_MDCF_NM2"  name="OCPT_JBTT_MDCF_NM2"  value="" /> <%-- 중분류명 --%>
+							<input type="hidden" id="OCPT_JBTT_SCLS_NM2"  name="OCPT_JBTT_SCLS_NM2"  value="" /> <%-- 소분류명 --%>
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">* 입사/개업일자</th>
+						<td colspan="3"><input type="text" id="ENCM_DT2" title="입사/개업일자" class="valid_null_input" maxlength="10" placeholder="yyyymmdd 형태로 입력." style="ime-mode:disabled;" onkeypress="javascript:onkeypress_number();" onkeyup="javascript:DSR_onkeyup_format_yyyymmdd(this);" /></td>
+					</tr>
+					<tr>
+						<th class="bg4">직장/업체주소</th>
+						<td colspan="3"><a href="#popLayer01" class="btn popClick layerClick" onclick="javascript:callPopup_address('2');">조회</a>
+							<input type="text" title="직장/업체주소" id="WRST_ADDR2" class="disabled valid_optional_input" readonly />
+							<input type="text" title="직장/업체주소" id="WRST_DTAD2" class="disabled wd2 valid_optional_input" readonly />
+							<input type="hidden" id="WRST_ADDR_DELI_CD2" name="WRST_ADDR_DELI_CD2" value="" />
+							<input type="hidden" id="WRST_ZPCD2" name="WRST_ZPCD2" value="" />
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">직장/업체전화번호</th>
+						<td colspan="3">
+							<input type="text" id="WRST_TLNO_TELCODE_2" class="valid_optional_input" title="통신사" maxlength="4" style="ime-mode:disabled;" onkeypress="javascript:onkeypress_number();" />
+							<!--select class="wdh">
+								<option value="" selected="selected"></option>
+								<option value=""></option>
+							</select-->
+							<input type="text" id="WRST_TLNO_MID_TEL_2" class="valid_optional_input" title="휴대폰 앞자리" maxlength="4" style="ime-mode:disabled;" onkeypress="javascript:onkeypress_number();" />
+							<input type="text" id="WRST_TLNO_END_TEL_2" class="valid_optional_input" title="휴대폰 뒷자리" maxlength="4" style="ime-mode:disabled;" onkeypress="javascript:onkeypress_number();" />
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">사업장소유구분</th>
+						<td><select title="사업장소유구분" id="sel_BZPL_OWN_DVCD" class="wdh valid_optional_input" onchange="javascript:changeEvnt_sel_BZPL_OWN_DVCD();">
+							<option value="" selected="selected">선택</option>
+								
+						</select>
+						</td>
+						<th class="bg4">보증금</th>
+						<td>
+							<input type="text" id="input_BZPL_GRMN_AMT" title="보증금" class="valid_optional_input" maxlength="4" onKeyUp="OnlyDigitKeyUp(this);addComma(this);" />&nbsp;만원
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">월세</th>
+						<td>
+							<input type="text" id="input_BZPL_MAMT_AMT" title="월세" class="valid_optional_input" maxlength="4" onKeyUp="OnlyDigitKeyUp(this);addComma(this);" />&nbsp;만원
+						</td>
+						<th class="bg4">최근년도연매출</th>
+						<td>
+							<input type="text" id="input_RCNT_ANSE_AMT" title="최근년도연매출" class="valid_optional_input" maxlength="4" style="ime-mode:disabled;" onKeyUp="OnlyDigitKeyUp(this);addComma(this);" />&nbsp;만원
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+</div>
+<%--   END : 재직/사업정보 CASE 2 ( 개인사업자, 전문직개인사업자 ) --%>				
+				
+<%-- START : 재무정보 CASE 1 ( 간편대출 ) --%>				
+<div id="div_INDV_CRDT_ATNT_PROD_DVCD1" style="display:block;">
+			<h3 class="titH3_type">재무정보</h3>
+			<div class="form-type">
+				<table class="data-table form" border="1">
+					<colgroup>
+						<col width="12%" />
+						<col width="" />
+					</colgroup>
+					<tbody>
+					<tr>
+						<th class="bg4">* (연)근로/사업소득</th>
+						<td><input type="text" title="(연)근로/사업소득" id="ANIN_AMT1" class="valid_null_input" maxlength="4" style="ime-mode:disabled;" onKeyUp="OnlyDigitKeyUp(this);addComma(this);" />만원</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+</div>
+<%--   END : 재무정보 CASE 1 ( 간편대출 ) --%>				
+
+<%-- START : 재무정보 CASE 2 ( 아파트론 ) --%>				
+<div id="div_INDV_CRDT_ATNT_PROD_DVCD2" style="display:none;">
+			<h3 class="titH3_type">재무정보</h3>
+			<div class="form-type">
+				<table class="data-table form" border="1">
+					<colgroup>
+						<col width="12%" />
+						<col width="38%" />
+						<col width="12%" />
+						<col width="" />
+					</colgroup>
+					<tbody>
+					<tr>
+						<th class="bg4">* (연)근로/사업소득</th>
+						<td><input type="text" title="(연)근로/사업소득" id="ANIN_AMT2" class="valid_null_input" maxlength="4" style="ime-mode:disabled;" onKeyUp="OnlyDigitKeyUp(this);addComma(this);" />만원</td>
+						<th class="bg4">* 주거종류</th>
+						<td>
+							<select title="주거종류" id="sel_HSNG_FRMN_DVCD" class="wdh valid_null_input" >
+								<option value="" selected="selected">선택</option>
+								
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">* 주택소유구분</th>
+						<td>
+							<select title="주택소유구분" id="sel_DWL_FRMN_DVCD" class="wdh valid_null_input" onchange="changeEvnt_DWL_FRMN_DVCD();">
+								<option value="" selected="selected">선택</option>
+								
+							</select>
+						</td>
+						<th class="bg4">* 부동산가격</th>
+						<td><input type="text" class="valid_null_input" title="부동산가격" id="input_RLET_AMT" maxlength="4" style="ime-mode:disabled;" onKeyUp="OnlyDigitKeyUp(this);addComma(this);" />만원
+							<a href="#" class="btn" onclick="javascript:movePage_nLandPrice();">조회</a>
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">선순위설정액</th>
+						<td><input type="text" title="선순위설정액" id="input_PRIR_SETP_AMT" style="ime-mode:disabled;" maxlength="4" onKeyUp="OnlyDigitKeyUp(this);addComma(this);" />만원
+						</td>
+						<th class="bg4">선순위임대보증금</th>
+						<td><input type="text" title="선순위임대보증금" id="input_PRIR_RENT_GRMN" style="ime-mode:disabled;" maxlength="4" onKeyUp="OnlyDigitKeyUp(this);addComma(this);" />만원</td>
+					</tr>
+					<tr>
+						<th class="bg4">지분율</th>
+						<td><input type="text" title="지분율" id="input_SELF_POSH" maxlength="6" onKeyUp="OnlyDigitKeyUp(this);" />%</td>
+						<th class="bg4">권리침해구분</th>
+						<td>
+							<select title="권리침해구분" id="sel_RGHT_VION_DSTC_CD" class="wdh">
+								<option value="" selected="selected">선택</option>
+								
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">실거주여부</th>
+						<td colspan="3">
+							<select title="실거주여부" id="sel_RL_RSDN_YN" class="wdh">
+								<option value="" selected="selected">선택</option>
+								<option value="Y">예</option>
+								<option value="N">아니오</option>
+							</select>
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+</div>
+<%--   END : 재무정보 CASE 2 ( 아파트론 ) --%>				
+				
+<%-- START : 재무정보 CASE 3 ( 중고차론 ) --%>				
+<div id="div_INDV_CRDT_ATNT_PROD_DVCD3" style="display:none;">
+			<h3 class="titH3_type">재무정보</h3>
+			<div class="form-type">
+				<table class="data-table form" border="1">
+					<colgroup>
+						<col width="12%" />
+						<col width="38%" />
+						<col width="12%" />
+						<col width="" />
+					</colgroup>
+					<tbody>
+					<tr>
+						<th class="bg4">* (연)근로/사업소득</th>
+						<td><input type="text" title="(연)근로/사업소득" id="ANIN_AMT3" class="valid_null_input" maxlength="4" onKeyUp="OnlyDigitKeyUp(this);addComma(this);" />만원</td>
+						<th class="bg4">* 차량모델명</th>
+						<td><input type="text" class="disabled valid_null_input" title="차량모델명" id="input_VHCL_MDEL_NM" readonly />
+						<a href="#popLayer01" class="btn popClick layerClick" onclick="javascript:callPopup_car();">조회</a></td>
+					</tr>
+					<tr>
+						<th class="bg4">* 차량가격(현 시세)</th>
+						<td><input type="text" id="input_VHCL_PRC" class="f_size02 valid_null_input" style="ime-mode:disabled;" maxlength="4" onKeyUp="OnlyDigitKeyUp(this);addComma(this);" />만원</td>
+						
+						<th class="bg4">* 차량연식</th>
+						<td><input type="text" title="차량연식" id="input_VHCL_MDYM" class="f_size03 valid_null_input" maxlength="4" style="ime-mode:disabled;" onkeypress="javascript:onkeypress_number();" />&nbsp;
+						<!--<th class="bg4">* 국산/수입</th>
+						<td>
+							<select title="국산/수입" class="wdh valid_null_input" id="sel_DMSC_FRIG_DVCD">
+								<option value="" selected="selected"></option>
+								<option value=""></option>
+							</select>
+						</td>-->
+					</tr>
+					<!--<tr>
+						<th class="bg4">* 차량종류구분</th>
+						<td>
+							<select title="차량종류구분" id="sel_VHCL_KIND_DVCD" class="valid_null_input">
+								<option value="" selected="selected"></option>
+								<option value=""></option>
+							</select>
+						</td>
+						<input type="text" title="배기량" id="input_DSVL" class="f_size03 valid_null_input" maxlength="4" style="ime-mode:disabled;" onkeypress="javascript:onkeypress_number();" /></td>
+					</tr>-->
+					</tbody>
+				</table>
+			</div>
+</div>
+<%--   END : 재무정보 CASE 3 ( 중고차론 ) --%>			
+			<h3 class="titH3_type">대출모집인을 통한 대출 모집(유입) 경로 확인서</h3>
+			<div class="form-type">
+				<table class="data-table form" border="1">
+					<colgroup>
+						<col width="12%" />
+						<col width="12%" />
+						<col width="" />
+					</colgroup>
+					<tbody>
+					<tr>
+						<th rowspan="2" class="bg4 line">대출모집인</th>
+						<th class="bg4">유입경로</th>
+						<td><input type="radio" id="fWayD01" name="wayd" value="<%=ROOT_CODE_1%>" checked />&nbsp;<label for="fWayD01">방문(대면)</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayD02" name="wayd" value="<%=ROOT_CODE_2%>" />&nbsp;<label for="fWayD02">전단/판촉</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayD03" name="wayd" value="<%=ROOT_CODE_3%>" />&nbsp;<label for="fWayD03">지인소개</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayD04" name="wayd" value="<%=ROOT_CODE_4%>" />&nbsp;<label for="fWayD04">우편물</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayD05" name="wayd" value="<%=ROOT_CODE_5%>" />&nbsp;<label for="fWayD05">옥외광고</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayD06" name="wayd" value="<%=ROOT_CODE_6%>" />&nbsp;<label for="fWayD06">전화/SMS</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayD07" name="wayd" value="<%=ROOT_CODE_7%>" />&nbsp;<label for="fWayD07">TM</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayD08" name="wayd" value="<%=ROOT_CODE_8%>" />&nbsp;<label for="fWayD08">기타</label>
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">불법정보 활용여부</th>
+						<td><input type="radio" id="fcheckD01" name="checkD" value="Y" class="fchkInput_false" />&nbsp;<label for="fcheckD01">해당있음</label> 
+							&nbsp;&nbsp;<input type="radio" id="fcheckD02" name="checkD" value="N" checked />&nbsp;<label for="fcheckD02">해당없음 (개인정보 도용 등 불법적인 요소의 유무)</label> 
+						</td>
+					</tr>
+					<tr>
+						<th rowspan="2" class="bg4 line">채무자 <br />(대출신청인)</th>
+						<th class="bg4">유입경로</th>
+						<td><input type="radio" id="fWayC01" name="wayC" value="<%=ROOT_CODE_1%>" checked />&nbsp;<label for="fWayC01">방문(대면)</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayC02" name="wayC" value="<%=ROOT_CODE_2%>" />&nbsp;<label for="fWayC02">전단/판촉</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayC03" name="wayC" value="<%=ROOT_CODE_3%>" />&nbsp;<label for="fWayC03">지인소개</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayC04" name="wayC" value="<%=ROOT_CODE_4%>" />&nbsp;<label for="fWayC04">우편물</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayC05" name="wayC" value="<%=ROOT_CODE_5%>" />&nbsp;<label for="fWayC05">옥외광고</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayC06" name="wayC" value="<%=ROOT_CODE_6%>" />&nbsp;<label for="fWayC06">전화/SMS</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayC07" name="wayC" value="<%=ROOT_CODE_7%>" />&nbsp;<label for="fWayC07">TM</label>
+							&nbsp;&nbsp;<input type="radio" id="fWayC08" name="wayC" value="<%=ROOT_CODE_8%>" />&nbsp;<label for="fWayC08">기타</label>
+						</td>
+					</tr>
+					<tr>
+						<th class="bg4">불법정보 활용여부</th>
+						<td><input type="radio" id="fcheckC01" name="checkC" value="Y" class="fchkInput_false" />&nbsp;<label for="fcheckC01">해당있음</label> 
+							&nbsp;&nbsp;<input type="radio" id="fcheckC02" name="checkC" value="N" checked />&nbsp;<label for="fcheckC02">해당없음 (개인정보 도용 등 불법적인 요소의 유무)</label> 
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<h3 class="titH3_type">대출상담사 설명확인서</h3>
+			<div class="form-type">
+				<table class="data-table form" border="1">
+					<colgroup>
+						<col width="" />
+						<col width="20%" />
+					</colgroup>
+					<thead>
+					<tr>
+						<th class="bg4">설명 확인사항</th>
+						<th class="bg4">답변</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td id="fcheckQ01">1. 대출계약을 체결하기 전에 대출상담사로부터 대출상품의 조건 및 대출 내용 등에 관하여 충분한 설명을 받으셨나요?</td>
+						<td>
+							<input type="radio" id="fcheckEY01" name="checkE01" value="예" checked />&nbsp;<label for="fcheckEY01">예</label> 
+							&nbsp;&nbsp;<input type="radio" id="fcheckEN01" name="checkE01" value="아니오" class="fchkOk_false" />&nbsp;<label for="fcheckEN01">아니오</label> 
+							<input type="hidden" id="fcheckSeq01" name="fcheckSeq01" value="" />
+						</td>
+					</tr>
+					<tr>
+						<td id="fcheckQ02">2. 대출상담사로부터 대출모집인은 금융회사의 업무위탁을 받아 대출모집 및 소개 등의 섭외 활동을 한다는 사실에 대하여 사전에 고지 받으셨나요?</td>
+						<td>
+							<input type="radio" id="fcheckEY02" name="checkE02" value="예" checked />&nbsp;<label for="fcheckEY02">예</label> 
+							&nbsp;&nbsp;<input type="radio" id="fcheckEN02" name="checkE02" value="아니오" class="fchkOk_false" />&nbsp;<label for="fcheckEN02">아니오</label> 
+							<input type="hidden" id="fcheckSeq02" name="fcheckSeq02" value="" />
+						</td>
+					</tr>
+					<tr>
+						<td id="fcheckQ03">3. 대출상담사로부터 대출모집인은 고객에게 별도의 수수료를 요구하거나 수취할 수 없다는 사실에 대하여 사전에 고지 받으셨나요?</td>
+						<td>
+							<input type="radio" id="fcheckEY03" name="checkE03" value="예" checked />&nbsp;<label for="fcheckEY03">예</label> 
+							&nbsp;&nbsp;<input type="radio" id="fcheckEN03" name="checkE03" value="아니오" class="fchkOk_false" />&nbsp;<label for="fcheckEN03">아니오</label> 
+							<input type="hidden" id="fcheckSeq03" name="fcheckSeq03" value="" />
+						</td>
+					</tr>
+					<tr>
+						<td id="fcheckQ04">4. 대출상담사로부터 여신심사 등을 통한 대출실행의 결정은 금융회사가 한다는 사실에 대하여 사전에 고지 받으셨나요?</td>
+						<td>
+							<input type="radio" id="fcheckEY04" name="checkE04" value="예" checked />&nbsp;<label for="fcheckEY04">예</label> 
+							&nbsp;&nbsp;<input type="radio" id="fcheckEN04" name="checkE04" value="아니오" class="fchkOk_false" />&nbsp;<label for="fcheckEN04">아니오</label> 
+							<input type="hidden" id="fcheckSeq04" name="fcheckSeq04" value="" />
+						</td>
+					</tr>
+					<tr>
+						<td id="fcheckQ05">5. 대출상담사로부터 귀하의 소득ㆍ재산, 부채상황, 신용 및 변제계획 등을 고려하여 적합한 대출 상품을 권유 받으셨나요?</td>
+						<td>
+							<input type="radio" id="fcheckEY05" name="checkE05" value="예" checked />&nbsp;<label for="fcheckEY05">예</label> 
+							&nbsp;&nbsp;<input type="radio" id="fcheckEN05" name="checkE05" value="아니오" class="fchkOk_false" />&nbsp;<label for="fcheckEN05">아니오</label> 
+							<input type="hidden" id="fcheckSeq05" name="fcheckSeq05" value="" />
+						</td>
+					</tr>
+					<tr>
+						<td id="fcheckQ06">6. 대출상담사로부터 귀하가 필요한 자금의 범위를 초과하여 대출을 받도록 권유 또는 유도 받으셨나요?</td>
+						<td>
+							<input type="radio" id="fcheckEY06" name="checkE06" value="예" checked />&nbsp;<label for="fcheckEY06">예</label> 
+							&nbsp;&nbsp;<input type="radio" id="fcheckEN06" name="checkE06" value="아니오" class="fchkOk_false" />&nbsp;<label for="fcheckEN06">아니오</label> 
+							<input type="hidden" id="fcheckSeq06" name="fcheckSeq06" value="" />
+						</td>
+					</tr>
+					<tr>
+						<td id="fcheckQ07">7. 대출상담을 진행한 대출상담사의 성명은 무엇인가요?</td>
+						<td>
+							성명(&nbsp;<input type="text" class="wdh" id="checkE07" name="checkE07"/>)
+							<input type="hidden" id="fcheckSeq07" name="fcheckSeq07" value="" />
+						</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<br />
+			<p class="align-right">
+				<%-- if(sessUserPerm06.equals("Y")){ --%>
+				<%-- <a href="#" class="btn" onclick="submit_adminDetail_css();">CSS조회</a> --%>
+				<%-- } --%>
+				<%//if(sessUserPerm05.equals("Y")){%>
+				<a href="#" class="btn" onclick="submit_adminDetail_reg();">등록</a>
+				<%//}%>
+				<a href="#" class="btn" onclick="go_list();">목록</a>
+			</p><br />
+		</div><!--// contents -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+
+	<div class="layerPop_ui" id="popLayer01">
+		
+	</div>
+
+		<input type="hidden" name="METHOD"/>
+		<input type="hidden" name="SRCH_COM_CD_YN" id="SRCH_COM_CD_YN" />
+		<input type="hidden" name="SRCH_SMPL_LCCD" id="SRCH_SMPL_LCCD" />
+		<input type="hidden" name="SRCH_SMPL_MCCD" id="SRCH_SMPL_MCCD" />
+		<input type="hidden" name="SRCH_SMPL_SCCD" id="SRCH_SMPL_SCCD" />
+		<input type="hidden" name="SRCH_ETC_CD1" id="SRCH_ETC_CD1" />
+		<input type="hidden" name="SRCH_ETC_CD2" id="SRCH_ETC_CD2" />
+		<input type="hidden" name="SRCH_ETC_CD3" id="SRCH_ETC_CD3" />
+		<input type="hidden" name="SRCH_ETC_CD4" id="SRCH_ETC_CD4" />
+		<input type="hidden" name="SRCH_ETC_CD5" id="SRCH_ETC_CD5" />
+		<input type="hidden" name="SRCH_PRSN_NO" id="SRCH_PRSN_NO" />
+
+		<input type='hidden' name="menuNo"	value="6" />
+
+		<input type="hidden" name="CUST_NO" id="CUST_NO" />
+		<input type="hidden" name="LON_CNSL_NO" id="LON_CNSL_NO" />
+		<input type="hidden" name="LON_CNSL_SRNO" id="LON_CNSL_SRNO" />
+		<input type="hidden" name="CUST_INCM_DVCD" id="CUST_INCM_DVCD" />
+		<input type="hidden" name="WRST_NM" id="WRST_NM" />
+		<input type="hidden" name="BRNO" id="BRNO" />
+		<input type="hidden" name="OCPT_JBTT_CD" id="OCPT_JBTT_CD" />
+		<input type="hidden" name="JBCG_CD" id="JBCG_CD" />
+		<input type="hidden" name="JBCG_MNG_HSTR_SRNO" id="JBCG_MNG_HSTR_SRNO" />
+		<input type="hidden" name="ENCM_DT" id="ENCM_DT" />
+		<input type="hidden" name="FMPI_ENTR_YN" id="FMPI_ENTR_YN" />
+		<input type="hidden" name="SLRY_ACCP_FRMN_CD" id="SLRY_ACCP_FRMN_CD" />
+		<input type="hidden" name="SLRY_DD" id="SLRY_DD" />
+		<input type="hidden" name="WRST_ADDR_DELI_CD" id="WRST_ADDR_DELI_CD" />
+		<input type="hidden" name="WRST_ZPCD" id="WRST_ZPCD" />
+		<input type="hidden" name="WRST_ADDR" id="WRST_ADDR" />
+		<input type="hidden" name="WRST_DTAD" id="WRST_DTAD" />
+		<input type="hidden" name="WRST_TLNO" id="WRST_TLNO" />
+		<input type="hidden" name="BZPL_OWN_DVCD" id="BZPL_OWN_DVCD" />
+		<input type="hidden" name="BZPL_GRMN_AMT" id="BZPL_GRMN_AMT" />
+		<input type="hidden" name="BZPL_MAMT_AMT" id="BZPL_MAMT_AMT" />
+		<input type="hidden" name="RCNT_ANSE_AMT" id="RCNT_ANSE_AMT" />
+		<input type="hidden" name="INDV_CRDT_ATNT_PROD_DVCD" id="INDV_CRDT_ATNT_PROD_DVCD" />
+		<input type="hidden" name="ANIN_AMT" id="ANIN_AMT" />
+		<input type="hidden" name="DWL_FRMN_DVCD" id="DWL_FRMN_DVCD" />
+		<input type="hidden" name="HSNG_FRMN_DVCD" id="HSNG_FRMN_DVCD" />
+		<input type="hidden" name="RLET_AMT" id="RLET_AMT" />
+		<input type="hidden" name="PRIR_SETP_AMT" id="PRIR_SETP_AMT" />
+		<input type="hidden" name="PRIR_RENT_GRMN" id="PRIR_RENT_GRMN" />
+		<input type="hidden" name="SELF_POSH" id="SELF_POSH" />
+		<input type="hidden" name="RGHT_VION_DSTC_CD" id="RGHT_VION_DSTC_CD" />
+		<input type="hidden" name="RL_RSDN_YN" id="RL_RSDN_YN" />
+		<input type="hidden" name="VHCL_MDEL_CD" id="VHCL_MDEL_CD" />
+		<input type="hidden" name="VHCL_PRC" id="VHCL_PRC" />
+		<input type="hidden" name="DMSC_FRIG_DVCD" id="DMSC_FRIG_DVCD" />
+		<input type="hidden" name="VHCL_KIND_DVCD" id="VHCL_KIND_DVCD" />
+		<input type="hidden" name="VHCL_MDYM" id="VHCL_MDYM" />
+		<input type="hidden" name="DSVL" id="DSVL" />
+		<input type="hidden" name="LOAN_OFFR_PATH_CD" id="LOAN_OFFR_PATH_CD" />
+		<input type="hidden" name="LOAN_OFFR_ILGT_INFO_UTLZ_YN" id="LOAN_OFFR_ILGT_INFO_UTLZ_YN" />
+		<input type="hidden" name="APCT_LOAN_OFFR_PATH_CD" id="APCT_LOAN_OFFR_PATH_CD" />
+		<input type="hidden" name="LOAN_PROP_ILGT_INFO_UTLZ_YN" id="LOAN_PROP_ILGT_INFO_UTLZ_YN" />
+		<input type="hidden" name="REVS_EMNO" id="REVS_EMNO" />
+		<input type="hidden" name="TXT_CNFR_MTR_CNTN1" id="TXT_CNFR_MTR_CNTN1" />
+		<input type="hidden" name="TXT_CNFR_MTR_CNTN2" id="TXT_CNFR_MTR_CNTN2" />
+		<input type="hidden" name="TXT_CNFR_MTR_CNTN3" id="TXT_CNFR_MTR_CNTN3" />
+		<input type="hidden" name="TXT_CNFR_MTR_CNTN4" id="TXT_CNFR_MTR_CNTN4" />
+		<input type="hidden" name="TXT_CNFR_MTR_CNTN5" id="TXT_CNFR_MTR_CNTN5" />
+		<input type="hidden" name="TXT_CNFR_MTR_CNTN6" id="TXT_CNFR_MTR_CNTN6" />
+		<input type="hidden" name="TXT_CNFR_MTR_CNTN7" id="TXT_CNFR_MTR_CNTN7" />
+		<input type="hidden" name="SRNO1" id="SRNO1" />
+		<input type="hidden" name="SRNO2" id="SRNO2" />
+		<input type="hidden" name="SRNO3" id="SRNO3" />
+		<input type="hidden" name="SRNO4" id="SRNO4" />
+		<input type="hidden" name="SRNO5" id="SRNO5" />
+		<input type="hidden" name="SRNO6" id="SRNO6" />
+		<input type="hidden" name="SRNO7" id="SRNO7" />
+		<input type="hidden" name="TXT_CNFR_RPLY_CNTN1" id="TXT_CNFR_RPLY_CNTN1" />
+		<input type="hidden" name="TXT_CNFR_RPLY_CNTN2" id="TXT_CNFR_RPLY_CNTN2" />
+		<input type="hidden" name="TXT_CNFR_RPLY_CNTN3" id="TXT_CNFR_RPLY_CNTN3" />
+		<input type="hidden" name="TXT_CNFR_RPLY_CNTN4" id="TXT_CNFR_RPLY_CNTN4" />
+		<input type="hidden" name="TXT_CNFR_RPLY_CNTN5" id="TXT_CNFR_RPLY_CNTN5" />
+		<input type="hidden" name="TXT_CNFR_RPLY_CNTN6" id="TXT_CNFR_RPLY_CNTN6" />
+		<input type="hidden" name="TXT_CNFR_RPLY_CNTN7" id="TXT_CNFR_RPLY_CNTN7" />
+		<input type="hidden" name="RCAG_CUST_NO" id="RCAG_CUST_NO" />
+
+		<input type="hidden" id="INDV_CRDT_ACPT_DVCD" name="INDV_CRDT_ACPT_DVCD" value="PL631004" /> <%-- PL631004:상담사(DSR)  PL631005:인터넷(인터넷서비스) --%>
+		<input type="hidden" id="INQ_YN"             name="INQ_YN"             value="N" /> <%-- 빠른조회여부 --%>
+		
+		<input type="hidden" name="TOTL_CNT" id="TOTL_CNT" />
+		
+	</form>
+</body>
+</html>

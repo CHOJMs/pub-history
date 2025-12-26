@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>담당자 조회</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">   
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>담당자 조회</h1>
+            </div>
+            <div class="popup-contents no_btn"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+                        
+                        <div class="form_box">
+                            <p class="h_tit">직원명</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" name="" title="직원명 입력">
+                                </span>
+                            </div>
+                            <p class="h_tit">직원번호</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" name="" title="직원번호 입력">
+                                </span>
+                            </div>
+                            <p class="h_tit">조회본부</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="조회본부 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="h_tit">조회부팀점</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="조회부팀점 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="btn_box pt24">
+								<span class="btn"><a href="#">조회</a></span>
+							</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg_bottom">
+                        <table class="dataType">
+                            <caption>담당자조회 - 직원번호, 직원명, 직위명, 소속부점명 등으로 나타낸 표</caption>
+                            <colgroup>
+                                <col width="13%">
+                                <col width="20%">
+                                <col width="20%">
+                                <col width="15%">
+                                <col width="22%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">직원번호</th>
+                                    <th scope="col">직원명</th>
+                                    <th scope="col">직위명</th>
+                                    <th scope="col">소속부점명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="radiobox">
+                                            <input type="radio" name="r01" value="" id="r01" class="rchk" aria-hidden="true" title="선택">
+                                            <label for="r01" class="rchk-label pl28" role="radio" aria-checked="false"></label>
+                                        </div>
+                                    </td>
+                                    <td>m0001</td>
+                                    <td>김길동</td>
+                                    <td>사원</td>
+                                    <td>경영지원실</td>
+                                </tr>
+                                <tr>
+                                    <td  colspan="5" class="noData"><p>조회결과가 없습니다.</p></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- paging 시작 -->
+                        <div class="paging" id="paging">
+                            <a href="#" class="first">맨처음페이지</a><a href="#" class="prev">이전페이지</a><a href="#" class="current">1</a><a href="#" class="">2</a><a href="#" class="next">다음페이지</a><a href="#" class="end">맨마지막페이지</a>
+                        </div>
+                        <!-- paging 끝 -->
+                        <!-- 버튼 시작//-->
+                        <div class="btn_box pb0">
+                            <span class="btn"><button id="">선택</button></span>
+                        </div>
+                        <!-- //버튼 끝-->
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

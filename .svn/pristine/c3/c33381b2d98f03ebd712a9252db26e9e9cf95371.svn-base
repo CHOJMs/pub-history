@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<deco> 
+    <fileData filename="wa_mb.png" filepath="/src/main/webapp/static/web/img/common" ischanged="0" lastversion="3" tstversion="3" realversion="2" dotversion="0" itemid="000000931676" ecmMd5sum="4edae03d56d56ca2223ec66a52cbb5dd" ecmTstmd5sum="" lastChangedDate="1669857724000" editor="김탁균:16424" lastUser="김탁균:16424" filestatus="운영중:0" islock="1" isAuthority="1" rsrccd="A2" rsrccdcodename="static" rsrcinfo="0100000000110000000000010000010000000000100000001000000001000000000" jobcd="HP" jobname="홈페이지" syscd="00102" sysmsg="홈페이지" srid=""/> 
+</deco>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지문 인식 완료 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/ui_gnb.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+    function addrPopupAll2() {
+        uiCommon.openPopup("addrPopup02");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;" aira-haspopup="dialog">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <!-- Start : 두번쨰 팝업 띄우는 임시 버튼 (개발 진행 시 삭제해주세요.) -->
+    <a href="javascript:;" class="popup-btn" onclick="addrPopupAll2();return false;" aira-haspopup="dialog" style="position:absolute;top:0;left:50px;margin:0;z-index:10000">두번째 팝업 버튼</a>
+    <!-- //End : 두번쨰 팝업 띄우는 임시 버튼 (개발 진행 시 삭제해주세요.) -->
+
+    <div class="popup popup-01 popup-calc popup-640"><!-- [D] 작은 팝업인 경우 : 클래스 popup-small 추가 -->
+        <div class="inner">
+            <div class="popup-contents flex-col">
+                <!-- Start : content -->
+                <div class="pin-num-box">
+                    <p class="tit">지문센서를 터치해주세요</p>
+                    <div class="bio-wrap"><a href="#"><img src="/static/web/img/ui_common/img_bio02.png" alt="지문 인식 시작"></a></div>
+                </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+</div>
+
+<!-- Start : 두번째 팝업 -->
+<div class="popup-layer" id="addrPopup02">
+    <div class="dim-2nd"></div><!-- [D] 두번째 팝업에 띄워지는 dimmed -->
+    <div class="popup popup-01 popup-half popup-360"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-contents flex-col pad-small"><!-- 2022-10-11 : pad-small 추가 -->
+                <!-- Start : content -->
+                <div class="pop-finish f-ico-comp"><!-- [D]오류인 경우 : f-ico-errow / 정상인 경우 : f-ico-comp -->
+                    <p class="fin-txt">지문 등록이 완료되었어요.<br>지문을 간편 로그인으로 설정하시겠어요?</p>
+                </div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray01 w-94"><button type="button" id="">다음에</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        <span class="btn"><button type="button" id="">설정하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //End : 두번째 팝업 -->
+<script>
+    $(document).ready(function(){
+        $(window).on("resize", function() {
+            footerHide();
+        });
+        footerHide();
+        function footerHide() {
+            var screenWidth = $(window).width();
+            if (screenWidth < 1024) {
+                // 화면 너비가 1024px보다 작을 때 실행할 코드
+                $("footer").hide();
+                $("body").show();
+            }else{
+                $("body").hide();
+            }
+        }
+    });
+</script>
+</body>
+</html>

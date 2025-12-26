@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>팩스수신내역 | iM캐피탈 관리자</title>
+<style>
+    #myinput{
+        user-select: none;
+    }
+</style>
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#" class="on">담보대출관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#">담보대출 접수현황</a></li>
+                        <li><a href="#">담보대출 접수관리</a></li>
+                        <li><a href="#">담보대출 만기현황</a></li>
+                        <li><a href="#">담보대출 실행현황</a></li>
+                        <li><a href="#">부동산 권리변동 현황</a></li>
+                        <li><a href="#" class="on">팩스수신내역</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+                <div class="head-tit">
+                    <div class="flex-wrap"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h2>팩스수신내역</h2>
+                        <div class="ly-btn-wrap"><!-- [D]버튼에 대한 레이어팝업이 있는 경우 : ly-btn-wrap 추가 -->
+                            <div class="ly-btn">
+                                <div class="btn">
+                                    <a href="#" class="black">한도조회</a>
+                                </div>
+                                <div class="ly-btn-box">
+                                    <div class="top-area">
+                                        <p>한도조회 발송</p>
+                                        <div class="btn">
+                                            <a href="#" class="blue">발송</a>
+                                        </div>
+                                    </div>
+                                    <div class="bottom-area">
+                                        <div class="com-inp">
+                                            <p class="tit">직원명</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="com-inp">
+                                            <p class="tit">휴대폰번호</p>
+                                            <input type="tel" placeholder="띄어쓰기 없이 입력" value="">
+                                        </div>
+                                        <p class="ly-s-txt">신규 고객의 한도조회 시 휴대폰번호 입력 후 발송해주세요.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>조회정보</h3>
+                        <div class="btn">
+                            <a href="javascript:;" class="ico-re">초기화</a><a href="javascript:;" class="blue" onclick="addrPopupAll();return false;">조회</a>
+                        </div>
+                    </div>
+                    <!-- Start : 조회정보 -->
+                    <table class="data-tbl mb64">
+                        <colgroup>
+                            <col width="23%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">수신일자</p>
+                                        <div class="calendar">
+                                            <input type="tel" value="2022-11-09" class="w-86">
+                                            <span class="dash">-</span>
+                                            <input type="tel" value="2024-03-28" class="w-86"><img src="/static/admin/img/new_common/ico_cal.png">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">발송번호</p>
+                                        <input type="tel" placeholder="입력" value="">
+                                    </div>  
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">수신번호</p>
+                                        <input type="tel" placeholder="입력" value="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">모집법인</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value=""></option>
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">상담사</p>
+                                        <input type="text" placeholder="">
+                                        <a href="#" class="ico-search"><img src="/static/admin/img/new_common/ico_search.png"></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">확인여부</p>
+                                        <div class="cnt-box check">
+                                            <div class="inp-check">
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>미확인</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 조회정보 -->
+
+                    <!-- Start : 리스트 -->
+                    <div class="x-scrollBox">
+                        <table class="bbs-table auto">
+                            <colgroup>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">확인여부</th>
+                                    <th scope="col">수신일시</th>
+                                    <th scope="col">발신번호</th>
+                                    <th scope="col">수신번호</th>
+                                    <th scope="col">페이지</th>
+                                    <th scope="col">이미지</th>
+                                    <th scope="col">메모</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><span class="state">확인</span></td>
+                                    <td>2025-07-25 12:12</td>
+                                    <td>02-552-0747</td>
+                                    <td>0505-047-2061</td>
+                                    <td>4</td>
+                                    <td>
+                                        <a href="#" class="bbs_img"><img src="/static/admin/img/new_common/ico_imgpriview.svg"></a>
+                                    </td>
+                                    <td class="a-l">텍스트 가이드 텍스트 가이드 텍스트 가이드 텍스트 가이드 텍스트 가이드</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><span class="state complete">미확인</span></td>
+                                    <td>2025-07-25 12:12</td>
+                                    <td>02-552-0747</td>
+                                    <td>0505-047-2061</td>
+                                    <td>4</td>
+                                    <td><a href="#" class="bbs_img"><img src="/static/admin/img/new_common/ico_imgpriview.svg"></a></td>
+                                    <td class="a-l">텍스트 가이드 텍스트 가이드 텍스트 가이드 텍스트 가이드 텍스트 가이드</td>
+                                </tr>
+                                <tr>
+                                    <!-- 20250707 colspan 20-> 17로 변경 -->
+                                    <td colspan="17" class="nodata"><span>등록된 목록이 없습니다.</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //End : 리스트 -->
+                    <!-- Start : 페이징 -->
+                    <div class="paging-box">
+                        <a href="#none" class="first">맨처음</a>
+                        <a href="#none" class="prev">이전</a>
+                        <a href="#none" class="current">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none" class="next">다음</a>
+                        <a href="#none" class="end">맨마지막</a>
+                    </div>
+                    <!-- //End : 페이징 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>차량모델명 조회 및 중고차 시세</h1>
+            </div>
+            <div class="popup-contents flex-col-btm"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <div class="flex-item-top">
+                    <div class="item-cnt">
+                        <table class="data-tbl">
+                            <colgroup>
+                                <col width="100%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">대표차량명</p>
+                                            <input type="text" placeholder="차량명을 입력하세요. Ex)스파" value="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">연식</p>
+                                            <input type="tel" placeholder="연식을 입력하세요. Ex)1988" value="">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Start : 버튼 -->
+                        <div class="btn">
+                            <a href="#">조회</a><a href="#" class="line a-r">초기화</a><!-- 오른쪽정렬 버튼인 경우 : a-r 추가-->
+                        </div>
+                        <!-- //End : 버튼 -->
+                    </div>
+                </div>
+                <div class="flex-item-btm">
+                    <div class="x-scrollBox">
+                        <table class="bbs-table" style="min-width: 700px;">
+                            <colgroup>
+                                <col width="70px">
+                                <col width="120px">
+                                <col width="160px">
+                                <col width="160px">
+                                <col width="180px">
+                                <col width="90px">
+                                <col width="120px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="checkbox single">
+                                            <input type="checkbox" checked="checked">
+                                            <label></label>
+                                        </div>
+                                    </th>
+                                    <th scope="col">국산/수입</th>
+                                    <th scope="col">차종</th>
+                                    <th scope="col">차명</th>
+                                    <th scope="col">모델명</th>
+                                    <th scope="col">연식</th>
+                                    <th scope="col">시세</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox single">
+                                            <input type="checkbox" checked="checked">
+                                            <label></label>
+                                        </div>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="bor-line">
+                                    <td colspan="7" class="nodata"><span>정보가 없습니다.</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Start : 버튼 -->
+                    <div class="btn">
+                        <a href="#" onclick="gogo();return false;">선택</a>
+                    </div>
+                    <!-- //End : 버튼 -->
+                </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+
+
+<script>
+const input=document.getElementById("myinput")
+input.addEventListener('mousedown', (e)=>{
+    if(e.detail===2){
+        e.preventDefault()
+    }
+})
+input.addEventListener('dragstart', (e)=>{
+    e.preventDefault()
+})
+// document.addEventListener('selectstart', function(e) { e.preventDefault(); }); 
+// element.addEventListener('mousedown', function(e) { e.preventDefault(); }); 
+// element.addEventListener('dragstart', function(e) { e.preventDefault(); });
+$(document).ready(function(){
+	//$('#select-1 option[value=CODE-01]').parent().trigger('change');
+
+//	$('#select-1 option[value='+ code +']').parent().trigger('change');
+
+
+
+});
+
+function gogo() {
+	//$('#select-1 option[value=CODE-01]')
+	//$('#select-1 option[value=CODE-01]').attr('selected', true).parent().trigger('change');
+
+	uiCommon.setCustomSelectBox('select-1', 'CODE-05');
+
+	uiCommon.closePopup("addrPopup");
+}
+/*
+function gogo(v) {
+    v = 'CODE-01';
+
+    var idx = 0;
+	$('#select-1 option').each(function(){
+        console.log(v);
+        if(v === $(this).val()) {
+            idx = $(this).index();
+			var $t = $(this).parent().siblings('.select-items.select-hide').children().eq(idx);
+			$t.trigger('click');
+            return;
+        }
+	});
+	uiCommon.closePopup("addrPopup");
+}
+ */
+function addrPopupAll() {
+    uiCommon.openPopup("addrPopup");
+}
+</script>
+</body>
+</html>
+

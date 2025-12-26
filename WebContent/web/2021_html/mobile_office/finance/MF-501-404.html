@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>부동산등기부등본 조회 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+            
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+				
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>					
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">여신</a>
+							<ul>
+								<li><a href="">연체현황/명세</a></li>
+								<li><a href="">관리채권 내역조회</a></li>
+                                <li><a href="">외부활동 내역관리</a></li>
+                                <li><a href="">외부활동 경로관리</a></li>
+							</ul>
+						</li>
+						<li class=""><a href="">검수</a>
+							<ul>
+								<li><a href="">사전검수 요청명세</a></li>
+								<li><a href="">실행물건 검수명세</a></li>
+                                <li><a href="">물건검수 등록</a></li>
+                                <li><a href="">관리채권 내역조회</a></li>
+							</ul>
+						</li>
+                        <li class=""><a href="">오토</a>
+							<ul>
+								<li><a href="">재고금융현황(차량실사)</a></li>
+								<li><a href="">신규 딜러/모집인 등록안내(SMS) 발송</a></li>
+                                <li><a href="">중고차 제휴 공지사항</a></li>
+							</ul>
+						</li>
+                        <li class=""><a href="">기업금융</a>
+							<div class="flex-list">
+								<div>
+									<ul>
+										<li><a href="">물건평가</a></li>
+										<li><a href="">물건평가 등록</a></li>
+										<li><a href="">물건평가 조회/수정</a></li>
+                                        <li class="dep2"><a href="">상담신청</a>
+											<ul>
+												<li><a href="">신규 고객 본인인증 SMS 발송</a></li>
+												<li><a href="">기본 고객등록</a></li>
+												<li><a href="">고객별 정보조회</a></li>
+												<li><a href="">한도조회 (여신통합조회)</a></li>
+												<li><a href="">정보제공 (NICE정보)</a></li>
+												<li><a href="">부동산 등기부등본 조회</a></li>
+											</ul>
+										</li>
+                                        <li><a href="">결재 현황</a></li>
+                                        <li><a href="">결재 진행 현황</a></li>
+									</ul>
+								</div>								
+							</div>
+						</li>
+                        <li class=""><a href="">전세자금(개인)</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">신용조회</a></li>
+								<li><a href="">신청관리</a></li>
+								<li><a href="">만기관리</a></li>
+							</ul>
+						</li>
+						<li><a href="">전세자금(공공)</a>
+                            <ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">신용조회</a></li>
+								<li><a href="">신청관리</a></li>
+								<li><a href="">만기관리</a></li>
+							</ul>
+                        </li>
+                        <li><a href="">결재</a>
+                            <ul>
+								<li><a href="">결재 요청 현황</a></li>
+							</ul>
+                        </li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+				<h2 class="tl">부동산등기부등본 조회</h2>
+                <div class="box_form scoll mob_nobtn"><!-- 하단에 버튼이 없는경우 : mob_nobtn 클래스명 추가-->
+					
+					<div class="flex-btn">
+						<h3 class="txt">고객번호</h3>
+						<span class="btn btn-blk">
+							<a href="#">고객번호 조회</a>
+						</span>
+					</div>
+					<div class="white_box mb24">
+						<P class="a_c">1901-028000-0-000</P>
+					</div>
+					
+					<div class="form_box">
+						<p class="h_tit">고객명</p>
+						<div class="text_data">
+							<span class="form">
+							  <input type="text" id="" class="disabled" disabled="disabled" placeholder="" title="고객명 입력">
+							</span>					
+						</div>
+
+						<p class="h_tit">주민사업자번호</p>
+						<div class="text_data">
+							<span class="form">
+							  <input type="text" id="" class="disabled" disabled="disabled" placeholder="" title="주민사업자번호 입력">
+							</span>					
+						</div>
+
+						<!-- 조회 버튼//-->
+						<div class="btn_box pt24">
+							<span class="btn"><button id="">조회</button></span>
+						</div>
+						<!-- //조회 버튼-->
+					</div>
+
+					<h3 class="pb16">등기부 등본 신청내역</h3>
+					<div class="scroll_table">
+						<table class="dataType" style="min-width: 1500px;">
+							<caption>서비스번호, 부동산구분, 상세내용(PDF), 부동산고유번호, 부동산소재지, 부동산도로명소재지, 소유자, 상태, PDF최종발급일, 담보/전세목록, 매매목록조회, 전산폐쇄조회, 말소사항조회 등으로 나타낸 표</caption>
+							<colgroup>
+								<col width="6%">
+								<col width="7%">
+								<col width="6%">
+								<col width="10%">
+								<col width="13%">
+								<col width="13%">
+								<col width="6%">
+								<col width="6%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+								<col width="8%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">서비스번호</th>
+									<th scope="col">부동산구분</th>
+									<th scope="col">상세내용(PDF)</th>
+									<th scope="col">부동산고유번호</th>
+									<th scope="col">부동산소재지</th>
+									<th scope="col">부동산도로명소재지</th>
+									<th scope="col">소유자</th>
+									<th scope="col">상태</th>
+									<th scope="col">PDF최종발급일</th>
+									<th scope="col">담보/전세목록</th>
+									<th scope="col">매매목록조회</th>
+									<th scope="col">전산폐쇄조회</th>
+									<th scope="col">말소사항조회</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>토지</td>
+									<td>
+										<div class="btn_table">
+											<a href="#" class="btn">보기</a>
+										</div>
+									</td>
+									<td>1000-0000-000000</td>
+									<td>서울특별시 서초구 OO로 OOO</td>
+									<td>서울특별시 서초구 OO로 OOO</td>
+									<td>홍길동</td>
+									<td>폐쇄</td>
+									<td>2017-01-01</td>
+									<td>
+										<div class="checkbox">
+											<input type="checkbox" id="ch01" name="ch01" class="chk" aria-hidden="false" title="">
+											<label for="ch01" class="label pl28" role="checkbox"></label>
+										</div>
+									</td>
+									<td>
+										<div class="checkbox">
+											<input type="checkbox" id="ch011" name="ch011" class="chk" aria-hidden="false" title="">
+											<label for="ch011" class="label pl28" role="checkbox"></label>
+										</div>
+									</td>
+									<td>
+										<div class="checkbox">
+											<input type="checkbox" id="ch012" name="ch012" class="chk" aria-hidden="false" title="">
+											<label for="ch012" class="label pl28" role="checkbox"></label>
+										</div>
+									</td>
+									<td>
+										<div class="checkbox">
+											<input type="checkbox" id="ch013" name="ch013" class="chk" aria-hidden="false" title="">
+											<label for="ch013" class="label pl28" role="checkbox"></label>
+										</div>
+									</td>							
+								</tr>
+								<tr>
+									<td colspan="13" class="noData"><p>조회된 항목이 없습니다.</p></td>
+								</tr>
+							</tbody>
+						</table>						
+					</div>
+					<!-- 조회 버튼//-->
+					<div class="btn_box pt24">
+						<span class="btn"><button id="">등기부등본 신청</button></span>
+					</div>
+					<!-- //조회 버튼-->					
+
+				</div>
+                <!-- 내용 끝 -->				
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+
+<%
+	String topMenuNo = request.getParameter("menuNo");
+	String subMenuNo = request.getParameter("subMenuNo");
+	String[] menuClass = {"", "", "", "", "", "", ""};
+	
+	if(subMenuNo.equals("1"))
+		menuClass[0] = " class=\"on\"";
+	else if(subMenuNo.equals("2"))
+		menuClass[1] = " class=\"on\"";
+	else if(subMenuNo.equals("3"))
+		menuClass[2] = " class=\"on\"";
+	else if(subMenuNo.equals("4"))
+		menuClass[3] = " class=\"on\"";
+	else if(subMenuNo.equals("5"))
+		menuClass[4] = " class=\"on\"";
+	else if(subMenuNo.equals("6"))
+		menuClass[5] = " class=\"on\"";
+	else if(subMenuNo.equals("7"))
+		menuClass[6] = " class=\"on\"";
+%>
+<script type="text/javascript" src="/static/admin/js/dgblocation.js"></script>
+<%if(topMenuNo.equals("1")) {%>
+<h2>오토론관리</h2>
+<ul>
+	<li><a href="/admin/dgbAdmin001.jsp"<%=menuClass[0]%>>접수내역</a></li>
+	<li><a href="/admin/dgbAdmin004.jsp"<%=menuClass[1]%>>상품매칭</a></li>
+</ul>
+<%}else if(topMenuNo.equals("2")) {%>
+<h2>권한관리</h2>
+<ul>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09010100'));"<%=menuClass[0]%>>관리자 관리</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09010200'));"<%=menuClass[1]%>>코드 관리(공통)</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09010501'));"<%=menuClass[4]%>>코드 관리<br/>(오토론-차종/제조사)</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09010502'));"<%=menuClass[5]%>>코드 관리(오토론-라인업)</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09010503'));"<%=menuClass[6]%>>코드 관리(오토론-모델)</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09010300'));"<%=menuClass[2]%>>코드 관리(스탁론)</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09010400'));"<%=menuClass[3]%>>코드 관리(미트론)</a></li>
+</ul>
+<%}else if(topMenuNo.equals("3")) {%>
+<h2>게시판관리</h2>
+<ul>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020100'));"<%=menuClass[0]%>>자주하는 질문</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020200'));"<%=menuClass[1]%>>공지사항 및 안내</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020300'));"<%=menuClass[2]%>>뉴스</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020400'));"<%=menuClass[3]%>>채용</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020500'));"<%=menuClass[4]%>>경영공시</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020600'));"<%=menuClass[5]%>>결산공고</a></li>
+</ul>
+<%}else if(topMenuNo.equals("4")) {%>
+<h2>채용 관리</h2>
+<ul>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020100'));"<%=menuClass[0]%>>공고 등록</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020200'));"<%=menuClass[1]%>>채용 공고 현황</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020300'));"<%=menuClass[2]%>>인재 DB 관리</a></li>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020400'));"<%=menuClass[3]%>>FAQ 관리</a></li>
+</ul>
+<%}else if(topMenuNo.equals("5")) {%>
+<h2>앱관리</h2>
+<ul>
+	<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020100'));"<%=menuClass[0]%>>앱버전관리</a></li>
+</ul>
+<%}else if(topMenuNo.equals("6")) {%>
+
+<%}%>

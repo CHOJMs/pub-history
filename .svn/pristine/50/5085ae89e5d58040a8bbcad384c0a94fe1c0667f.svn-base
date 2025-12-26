@@ -1,0 +1,273 @@
+<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
+
+<%-- START : SCRIPT로직 구현 --%>
+<script type="text/javascript">
+
+	function init_pop(){
+		codeSearch_position("fdivision", "INCM_CLS_CD");
+
+		$('.layerPop_ui .close').click(function(){
+			$('body').css('overflow','');
+			$(".popScroll").mCustomScrollbar('disable');
+		}) 
+
+		$("#fJobName").focus(); 
+	}
+
+	function codeSearch_position(optionNm, etc1, etc2){	
+		var etc2Val = etc2 == null ? "" : etc2;
+
+		document.submitForm_position.SRCH_COM_CD_YN.value = 'N'; // $('#SRCH_COM_CD_YN').val("Y");
+		document.submitForm_position.SRCH_ETC_CD1.value = etc1; // $('#SRCH_ETC_CD1').val("Y");
+
+		if(etc2 != "" && etc2 != null){
+			etc2Val = $("#"+etc2).val();
+		}
+
+		$('#SRCH_ETC_CD2').val(etc2Val);
+
+		commCodeRenderingToSelectBox(document.submitForm_position, optionNm);
+	}
+
+	function srchPosition(pageNm){
+		if(!validation()){return;}
+
+		document.submitForm_position.METHOD.value = "srchPosition";
+		$("#SRCH_OCPT_JBTT_NM").val($("#fJobName").val());
+		$("#SRCH_INCM_CLS_CD").val($("#fdivision").val());
+		$("#SRCH_OCPT_JBTT_LCLS_CD").val($("#fBpart").val());
+		$("#SRCH_OCPT_JBTT_MDCF_CD").val($("#fMpart").val());
+		$("#SRCH_OCPT_JBTT_SCLS_CD").val($("#fSpart").val());
+
+		if(pageNm == null){
+			pageNm = 1;
+		}
+			$("#SRCH_PRSN_NO").val(pageNm)
+
+		var sFrm          = document.sendForm;
+		sendAjaxAction(document.submitForm_position, sFrm, "fAjaxCallBack", "/dsr/dsrActionCommon.do");
+	}
+
+	function fAjaxCallBack(result){
+		var INIpluginData = $(result).find("INIpluginData").attr("value");
+		var decrypt = Idecrypt(INIpluginData);
+		var renderedHtml = $(decrypt).find("htmlCode").attr("value");
+
+		$("#tbl_popposition tbody").html(renderedHtml);
+
+		$("#tbl_popposition tbody tr").each(function(){
+			$(this).find("td").eq(8).css("display", "none");
+			$(this).find("td").eq(9).css("display", "none");
+			$(this).find("td").eq(11).css("display", "none");
+		});
+
+		ajaxPaging(decrypt, 10);
+
+		onclickSelectTd_position();
+	}
+	
+	function movePage(pageNum){
+		srchPosition(pageNum);
+	}
+	
+	function confirm_pop(){
+		var trIdx = $("input[name=Jsel]:checked").index('input[name=Jsel]');
+
+		if(trIdx < 0){
+			alert("선택된 값이 없습니다.");
+			return;
+		}
+
+		var selectTd = $("#tbl_popposition tbody tr").eq(trIdx).find("td");
+		
+		if(!field.length+2 > selectTd.length){
+			alert();
+			return;
+		}
+
+		selectTd.each(function(idx){
+			if(idx < 2){return true;}
+			if(field[idx-2] == null || field[idx-2] == ""){return true;}
+			$("#"+field[idx-2]).val($(this).text());
+		});
+
+///////////////////////////
+		// 대분류명,중분류명,소분류명 화면출력
+		var val1 = $("#"+field[1]).val();
+		var val2 = $("#"+field[2]).val();
+		var val3 = $("#"+field[3]).val();
+		var val4 = $("#"+field[4]).val();
+
+		if('OCPT_JBTT_LCLS_NM1' == field[1]){
+			$('#OCPT_JBTT_TOT1').val(val1 + '-' + val2 + '-' + val3 + '-' + val4);
+		} else if('OCPT_JBTT_LCLS_NM2' == field[1]){
+			$('#OCPT_JBTT_TOT2').val(val1 + '-' + val2 + '-' + val3 + '-' + val4);
+		}
+//////////////////////
+		popCloseScrollbar();
+	}
+
+	function validation(){
+		if($("#fJobName").val() == "" && $("#fdivision").val() == ""){
+			alert("직업/직위명 이나 소득분류를 입력하여 주세요.");
+			return false;
+		}
+/*
+		if($("#fBpart").val() == ""){
+			alert("");
+			return false;
+		}
+		if($("#fMpart").val() == ""){
+			alert("");
+			return false;
+		}
+		if($("#fSpart").val() == ""){
+			alert("");
+			return false;
+		}
+*/
+		return true;
+	}
+
+	function reset_pop(){
+		$(".search_ui select").each(function(){
+			$(this).find("option").eq(0).prop("selected", "selected");
+		})
+		$("#tbl_popposition tbody").html("");
+		$(".search_ui input[type=text]").val("");
+		$("#paging").html("");
+		$("#totl_cnt").text("0");
+	}
+
+	function close_pop(){
+
+		popCloseScrollbar();
+	}
+
+	function onclickSelectTd_position(){
+		$("#tbl_popposition tbody tr").on("click", function(){
+			$("input#fJsel"+$(this).index()).prop("checked", "checked");
+		})
+	} 
+
+	function enter_srchPosition(e){
+		if(e.keyCode == "13"){
+			srchPosition();
+		}
+	}
+</script>
+<%--   END : SCRIPT로직 구현 --%>
+	
+
+
+		<div class="layer_pop pop_position">
+			<h1>직업_직위조회</h1>
+			<div class="cons">
+				<div class="search_ui">
+					<div class="box">
+						<label for="fJobName" class="tit">직업/직위명 :&nbsp;</label><input type="text" id="fJobName" maxlength="20" onkeydown="enter_srchPosition(event);" />
+						<label for="fdivision" class="tit">소득분류 :&nbsp;</label>
+						<select id="fdivision" onchange="codeSearch_position('fBpart', 'OCPT_JBTT_LCLS_CD', 'fdivision');">
+							<option value="" selected="selected"></option>
+							<option value=""></option>
+						</select>
+						<p>
+							<label for="fBpart" class="tit">대분류 :&nbsp;</label>
+							<select id="fBpart" class="size01" onchange="codeSearch_position('fMpart', 'OCPT_JBTT_MDCF_CD', 'fBpart');">
+								<option value="" selected="selected"></option>
+								<option value=""></option>
+							</select>
+							<label for="fMpart" class="tit">중분류 :&nbsp;</label>
+							<select id="fMpart" class="size01" onchange="codeSearch_position('fSpart', 'OCPT_JBTT_SCLS_CD', 'fMpart');">
+								<option value="" selected="selected"></option>
+								<option value=""></option>
+							</select>
+							<label for="fSpart" class="tit">소분류 :&nbsp;</label>
+							<select id="fSpart" class="size01">
+								<option value="" selected="selected"></option>
+								<option value=""></option>
+							</select>
+							&nbsp;<a href="#" class="btnS01" onclick="srchPosition();return false;">조회</a>
+						</p>
+					</div>
+				</div><!-- //search_ui -->
+				<p class="para01">조회건수 <strong><span id="totl_cnt">0</span></strong>건</p>
+				<div class="popScroll04">
+					<table class="tbl_col02" cellpadding="0" cellspacing="0" id="tbl_popposition">
+						<caption>직업지위 조회 결과</caption>
+						<colgroup>
+							<col width="50px" />
+							<col width="50px" />
+							<col width="" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col">선택</th>
+							<th scope="col">No</th>
+							<th scope="col">소득분류명</th>
+							<th scope="col">대분류명</th>
+							<th scope="col">중분류명</th>
+							<th scope="col">소분류명</th>
+							<th scope="col">직위명</th>
+							<th scope="col">직군</th>
+							<th scope="col">비고내용</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td><span class="chk_radio sel"><input type="radio" id="fPsel01" name="Psel" /><label for="fPsel01"><span>선택</span></label></span></td>
+							<td>2</td>
+							<td>급여소득자</td>
+							<td>금융계</td>
+							<td>기타 금융기관</td>
+							<td>캐피탈(할부금융)</td>
+							<td>대표</td>
+							<td>1군</td>
+							<td>&nbsp;</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="paging" id="paging"> 
+						<a href="맨처음" class="first">첫페이지</a> 
+						<a href="이전" class="prev">이전 블럭</a>
+						<ul>
+							<li><strong>1</strong></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">5</a></li>
+						</ul>
+						<a href="다음" class="next">다음 블럭</a>
+						<a href="맨 마지막" class="last">마지막 페이지</a>
+					</div>
+				</div><!-- //popScroll04 -->
+				<p class="btn_g03">
+					<a href="#" class="btnP01" onclick="reset_pop();return false;">초기화</a>
+					<a href="#1" class="btnP01" onclick="confirm_pop();return false;">확인</a>
+					<a href="#1" class="btnP01" onclick="close_pop();return false;">닫기</a>
+				</p>
+			</div>
+		</div><!-- //pop_position -->
+
+		
+
+		<form name="submitForm_position" method="post">
+		<input type="hidden" name="METHOD"/>
+		<input type="hidden" name="LOGIN_SVC" id="LOGIN_SVC" value="N" /> <%-- 공통코드조회 비로그인서비스 --%>
+		<input type="hidden" name="SRCH_COM_CD_YN" id="SRCH_COM_CD_YN" />
+		<input type="hidden" name="SRCH_SMPL_LCCD" id="SRCH_SMPL_LCCD" />
+		<input type="hidden" name="SRCH_SMPL_MCCD" id="SRCH_SMPL_MCCD" />
+		<input type="hidden" name="SRCH_SMPL_SCCD" id="SRCH_SMPL_SCCD" />
+		<input type="hidden" name="SRCH_ETC_CD1" id="SRCH_ETC_CD1" />
+		<input type="hidden" name="SRCH_ETC_CD2" id="SRCH_ETC_CD2" />
+		<input type="hidden" name="SRCH_ETC_CD3" id="SRCH_ETC_CD3" />
+		<input type="hidden" name="SRCH_ETC_CD4" id="SRCH_ETC_CD4" />
+		<input type="hidden" name="SRCH_ETC_CD5" id="SRCH_ETC_CD5" />
+		<input type="hidden" name="SRCH_PRSN_NO" id="SRCH_PRSN_NO" />
+
+		<input type="hidden" name="SRCH_OCPT_JBTT_NM" id="SRCH_OCPT_JBTT_NM" />
+		<input type="hidden" name="SRCH_INCM_CLS_CD" id="SRCH_INCM_CLS_CD" />
+		<input type="hidden" name="SRCH_OCPT_JBTT_LCLS_CD" id="SRCH_OCPT_JBTT_LCLS_CD" />
+		<input type="hidden" name="SRCH_OCPT_JBTT_MDCF_CD" id="SRCH_OCPT_JBTT_MDCF_CD" />
+		<input type="hidden" name="SRCH_OCPT_JBTT_SCLS_CD" id="SRCH_OCPT_JBTT_SCLS_CD" />
+		</form>

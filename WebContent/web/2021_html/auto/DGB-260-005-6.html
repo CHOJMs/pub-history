@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중요약정사항 확인</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>중요약정사항 확인</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+
+                <p class="txt-m mb32">약정사항에 체크해 주세요.</p>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="ch01" name="ch01" checked="checked" class="chk" aria-hidden="false" title="중도해지수수료 체크">
+                    <label for="ch01" class="label font22" role="checkbox" aria-checked="true"><b>중도해지수수료</b></label>
+
+                    <div class="checkbox-text">
+                        <p>잔여임대료X해지위약금율(잔여임대료=월임대료(VAT미포함)/30X미경과일수)
+                            해지위약금율 = 대여기간 2년이하 35%, 3년이하 30%, 3년초과 25% 입니다.</p>
+                    </div>
+                </div>
+
+                <div class="checkbox line-02">
+                    <input type="checkbox" id="ch02" name="ch02" checked="checked" class="chk" aria-hidden="false" title="승계수수료 체크">
+                    <label for="ch02" class="label font22" role="checkbox" aria-checked="true"><b>승계수수료</b></label>
+
+                    <div class="checkbox-text">
+                        <p>승계시 수수료 발생됩니다.</p>
+                    </div>
+                </div>
+
+                <div class="checkbox line-02">
+                    <input type="checkbox" id="ch03" name="ch03" checked="checked" class="chk" aria-hidden="false" title="반환지연금 체크">
+                    <label for="ch03" class="label font22" role="checkbox" aria-checked="true"><b>반환지연금</b></label>
+
+                    <div class="checkbox-text">
+                        <p>월임대료(VAT미포함)/30X경과일수X200%</p>
+                    </div>
+                </div>
+
+                <div class="checkbox line-02">
+                    <input type="checkbox" id="ch04" name="ch04" checked="checked" class="chk" aria-hidden="false" title="반환자동차의 평가 및 감가비용 체크">
+                    <label for="ch04" class="label font22" role="checkbox" aria-checked="true"><b>반환자동차의 평가 및 감가비용</b></label>
+
+                    <div class="checkbox-text">
+                        <p>
+                            계약기간 종료, 해제, 해지로 인하여 차량을 반납하실 경우 감가비용 및 수리비를 렌터카회사에 지급하여야 하며, 원상회복을 완료하였다 하더라도 차량의 가치감소분에 대하여는 사고 감가 기준에 따라 추가적인 비용을 렌터카회사에 지급하셔야 합니다.<br/>
+                            감가액을 산정하는 산식은 다음과 같습니다.<br/>
+                            감가액=(차량신차가(부가세포함)X총감가율)+수리실비*총감가율=사고감가+수리감가
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="checkbox line-02">
+                    <input type="checkbox" id="ch03" name="ch03" checked="checked" class="chk" aria-hidden="false" title="종료처리조건 체크">
+                    <label for="ch03" class="label font22" role="checkbox" aria-checked="true"><b>종료처리조건</b></label>
+
+                    <div class="checkbox-text">
+                        <p>반납/인수/만기시선택 선택가능</p>
+                    </div>
+                </div>
+
+                <div class="checkbox line-02">
+                    <input type="checkbox" id="ch03" name="ch03" checked="checked" class="chk" aria-hidden="false" title="기타(특약)사항 체크">
+                    <label for="ch03" class="label font22" role="checkbox" aria-checked="true"><b>기타(특약)사항</b></label>
+
+                    <div class="checkbox-text">
+                        <p>자동차 장기임대차 약정서 체결이후에 관계법령의 제정, 개정, 폐지 등 임대인의 책임있는 사유가 아닌 사유로 임대료의 변경사유가 발생할 경우 본 ‘상품조건＇상의 월 임대료를 조정하기로 한다.</p>
+                    </div>
+                </div>
+
+                <div class="popup-color-box">
+                    <p><span>렌트이용자(임차인) 및 연대보증인</span>은 중요약정 사항을
+                        확인하고 이에 동의합니다.</p>
+                </div>
+
+                <div class="checkbox mt16">
+                    <input type="checkbox" id="ch07" name="ch07" checked="checked" class="chk" aria-hidden="false" title="동의함 체크">
+                    <label for="ch07" class="label" role="checkbox" aria-checked="true">동의함</label>
+                </div>
+                
+                
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

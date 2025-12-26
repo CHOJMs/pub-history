@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>실행요청서 업데이트 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-full-1"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>실행요청서 업데이트</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <div class="popup-cnt">
+
+                    <!-- Start : 고객정보 - 상세 -->
+                    <h2>고객정보</h2>
+                    <table class="bbs-table-view1">
+                        <colgroup>
+                            <col width="160px">
+                            <col width="%">
+                            <col width="160px">
+                            <col width="%">
+                        </colgroup>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>계약자</th>
+                                <td>홍*동</td>
+                                <th>계약자 연락처</th>
+                                <td>010-1234-5678</td>
+                            </tr>
+                            <tr>
+                                <th>연대보증인</th>
+                                <td></td>
+                                <th>연대보증인 연락처</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>차량계약번호</th>
+                                <td colspan="3"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 고객정보 - 상세 -->
+
+                    <!-- Start : 차량정보 -->
+                    <h2>차량정보</h2>
+                    <table class="bbs-table-view1">
+                        <colgroup>
+                            <col width="160px">
+                            <col width="%">
+                            <col width="160px">
+                            <col width="%">
+                        </colgroup>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>차종</th>
+                                <td>현대 팰리세이드 2024년형 가솔린</td>
+                                <th>유종</th>
+                                <td>가솔린</td>
+                            </tr>
+                            <tr>
+                                <th>옵션명</th>
+                                <td colspan="3">
+                                    파킹어시스트플러스, 현대스마트센트
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>외부색상</th>
+                                <td>크리미 화이트펄</td>
+                                <th>내부색상</th>
+                                <td>블랙 원톤</td>
+                            </tr>
+                            <tr>
+                                <th>판매사 탁송료</th>
+                                <td>0원</td>
+                                <th>차량가격</th>
+                                <td>44,260,000원</td>
+                            </tr>
+                            <tr>
+                                <th>옵션가</th>
+                                <td>0원</td>
+                                <th rowspan="2">합계</th>
+                                <td rowspan="2">44,260,000원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 차량정보 -->
+
+                    <!-- Start : 상품조건 -->
+                    <h2>상품조건</h2>
+                    <table class="bbs-table-view1">
+                        <colgroup>
+                            <col width="160px">
+                            <col width="%">
+                            <col width="160px">
+                            <col width="%">
+                            <col width="160px">
+                            <col width="%">
+                        </colgroup>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>대여기간</th>
+                                <td>36개월</td>
+                                <th>월대여료</th>
+                                <td>500,000원</td>
+                                <th>보증금</th>
+                                <td>0원</td>
+                            </tr>
+                            <tr>
+                                <th>주행거리</th>
+                                <td>년 20,000km</td>
+                                <th>잔존가치</th>
+                                <td>15,585,000원</td>
+                                <th>선수금</th>
+                                <td>0원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 상품조건 -->
+
+                    <!-- Start : 용품신청정보 -->
+                    <h2>용품신청정보</h2>
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col span="6">
+                        </colgroup>
+                        <thead>
+                            <tr>
+								<th scope="col">구분</th>
+								<th scope="col">측/후면 썬팅농도</th>
+								<th scope="col">전면썬팅 농도</th>
+								<th scope="col">블랙박스</th>
+								<th scope="col">추가비용</th>
+								<th scope="col">총합계</th>
+							</tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>용품내용</td>
+                                <td>
+                                    <div class="inp-inline">
+                                        <div class="tbl-cominp widPer"><!-- 퍼센트 일경우 위드값 .widPer -->
+                                            <div class="inp-txt-right">
+                                                <input type="tel" placeholder="입력" value="100">
+                                                <span>%</span>
+                                            </div>
+                                        </div>
+                                        <div class="tbl-cominp">
+                                            <input type="text" placeholder="입력" value="버텍스 300">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inp-inline">
+                                        <div class="tbl-cominp widPer"><!-- 퍼센트 일경우 위드값 .widPer -->
+                                            <div class="inp-txt-right">
+                                                <input type="tel" placeholder="입력" value="100">
+                                                <span>%</span>
+                                            </div>
+                                        </div>
+                                        <div class="tbl-cominp">
+                                            <input type="text" placeholder="입력" value="버텍스 300">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tbl-cominp">
+                                        <input type="text" placeholder="입력" value="딥플라이 DF9">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tbl-cominp">
+                                        <input type="text" placeholder="입력" value="해당없음">
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>용품비용</td>
+                                <td>
+                                    <div class="tbl-cominp">
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="입력" value="232,000">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tbl-cominp">
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="입력" value="232,000">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tbl-cominp">
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="입력" value="154,000">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tbl-cominp">
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="입력" value="">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 용품신청정보 -->
+
+                    <!-- Start : 배송정보 -->
+                    <h2>배송정보</h2>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="50%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">제휴탁송사</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">발주탁송방법</p>
+                                        <div class="inp-area disabled"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select" disabled="disabled" class="disabled">
+                                                    <option value="">선택</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp etc"><!-- [D]필수입력 .etc -->
+                                        <p class="tit">탁송지</p>
+                                        <input type="text" placeholder="" disabled="disabled" class="disabled">
+                                        <a href="#" class="ico-search"><img src="/static/admin/img/new_common/ico_search.png"></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp etc"><!-- [D]필수입력 .etc -->
+                                        <p class="tit">상세주소</p>
+                                        <input type="text" placeholder="입력">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="com-inp etc"><!-- [D]필수입력 .etc -->
+                                        <p class="tit">인수자</p>
+                                        <input type="text" placeholder="입력">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp etc"><!-- [D]필수입력 .etc -->
+                                        <p class="tit">연락처(1)</p>
+                                        <input type="text" placeholder="입력">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">연락처(2)</p>
+                                        <input type="text" placeholder="입력">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 배송정보 -->
+
+                    <!-- Start : 여신담당 입력 -->
+                    <h2>여신담당</h2>
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col width="160px">
+                            <col width="%">
+                            <col width="300px">
+                            <col width="300px">
+                            <col width="300px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">구분</th>
+                                <th scope="col">여신담당</th>
+                                <th scope="col">CM</th>
+                                <th scope="col">AG</th>
+                                <th scope="col">AG연락처</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>이름</td>
+                                <td>
+                                    <div class="tbl-cominp">
+                                        <input type="text" placeholder="입력" value="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tbl-cominp">
+                                        <input type="text" placeholder="입력" value="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tbl-cominp">
+                                        <input type="text" placeholder="입력" value="홍길동">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tbl-cominp">
+                                        <input type="text" placeholder="입력" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>수수료율</td>
+                                <td></td>
+                                <td>0.000%</td>
+                                <td>0.000%</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 여신담당 입력 -->
+
+                    <!-- Start : 기타 특이사항 -->
+                    <h2>기타 특이사항</h2>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">특이사항</p>
+                                        <input type="text" placeholder="" value="입력">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 기타 특이사항 -->
+
+                    <!-- Start : 버튼 -->
+                    <div class="btn-area">
+                        <a href="#" class="gray">취소</a>
+                        <a href="#">확인</a>
+                    </div>
+                    <!-- //End : 버튼 -->
+
+                </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

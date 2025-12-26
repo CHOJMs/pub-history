@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+<link rel="stylesheet" href="/static/web/js/lib/swiper-bundle.min.css">
+<link rel="stylesheet" href="/static/web/js/lib/slick.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+<script src="/static/web/js/lib/swiper-bundle.min.js"></script>
+
+<script src="/static/web/js/slick.js"></script>
+<script src="/static/web/js/lib/slick.min.js"></script>
+
+
+<title>AI 검색 | iM캐피탈</title>
+
+</head>
+<body>
+    <div class="fixed-ai">
+        <div class="header-sub">
+            <div class="align-left"><button class="btn-page-prev">이전 페이지로 이동</button></div>
+            <p class="tit ico">AI 검색</p>
+            <div class="align-right">
+                <button class="btn-refresh">새로고침</button>
+                <button class="btn-close">닫기</button>
+            </div>
+        </div>
+        <!-- Start : 컨텐츠 영역 -->
+        <div class="ai-convo-wrap">
+            <!-- Start : 상단 검색 창 -->
+            <div class="ai-convo-input-box" style="display:none">
+                <div class="ai-convo-input-inner">
+                    <input type="text" id="" name="" placeholder="AI에게 원하시는 상품·서비스를 물어보세요">
+                    <button class="btn-ai-search">검색</button>
+                    <button class="btn-ai-search-remove">입력한 글자 삭제</button>
+                </div>
+            </div>
+            <!-- //End : 상단 검색 창 -->
+            
+            <!-- Start : 대화창 -->
+            <div class="ai-convo-chat">
+                <div class="chat-answer-box">
+                    <a href="#;" class="chat-rcmd-link">💰 금융거래확인서를 발급받고 싶어요</a>
+                    <a href="#;" class="chat-rcmd-link">📋 계약서를 발급받고 싶어요</a>
+                    <a href="#;" class="chat-rcmd-link">⬇️ ️금리를 낮출 수 있나요?</a>
+                    <a href="#;" class="chat-rcmd-link">📑️ 가상계좌 입금 내역을 확인하고 싶어요</a>
+                    <a href="#;" class="chat-rcmd-link">💰️ 대출을 중도상환하고 싶어요</a>
+                    <a href="#;" class="chat-rcmd-link">🥸️ 외국인 대출이 가능한가요?</a>
+                    <a href="#;" class="chat-rcmd-link">❗️ 마이데이터 조회 실패 오류메시지가 나타나요</a>
+                    <a href="#;" class="chat-rcmd-link">📞️ 상담원과 직접 통화하고 싶어요</a>
+                    <a href="#;" class="chat-rcmd-link">📃️ 채무조정 확인서를 발급받고 싶어요</a>
+                    <a href="#;" class="chat-rcmd-link">🆘 차량사고가 났는데 어떻게 처리하나요?</a>
+                    <a href="#;" class="chat-rcmd-link"><strong class="mark">신용</strong>대출 비대면으로 받고 싶어</a>
+                    <a href="#;" class="chat-rcmd-link">한도조회하면 <strong class="mark">신용</strong>도에 영향있어?</a>
+                </div>
+                <!-- Start : 질문 영역 -->
+                <div class="chat-ask-box">
+                    <div class="ask-tx"><p>내가 하는 질문 영역 가이드로 텍스트수는 최대 100자이며 너비 영역은 240이내</p></div>
+                </div>
+                <!-- //End : 질문 영역 -->
+
+                <!-- Start : 답변 로딩중일 때 -->
+                <div class="chat-answer-box">
+                    <div class="loading-tx"><p>답변을 생각하고 있어요</p></div>
+                </div>
+                <!-- //End : 답변 로딩중일 때 -->
+
+                <!-- Start : AI 답변 -->
+                <div class="chat-answer-box">
+                    <div class="ico-logo"></div><!-- 답변 로고 -->
+                    <p class="answer-tx">
+                        한도조회는 신용도에 영향을 미칠 수 있는 요소 중 하나에요. 한도조회는 주로 신용카드나 대출 상품의 신청 시 이루어지며, 이를 ‘신용 조회’라고 해요.
+                        <a href="#;" class="chat-detail-link">자세히 보기</a>
+                        <br>
+                        한도조회는 신용도에 영향을 미칠 수 있는 요소 중 하나에요. 한도조회는 주로 신용카드나 대출 상품의 신청 시 이루어지며, 이를 ‘신용 조회’라고 해요.
+                        <a href="#;" class="chat-detail-link">자세히 보기</a>
+                    </p>
+                </div>
+                <div class="chat-answer-box">
+                    <p class="tx-relation">관련 질문이에요</p>
+                    <a href="#;" class="chat-rcmd-link">신용도를 높이는 방법이 있나요?</a>
+                    <a href="#;" class="chat-rcmd-link">신용점수 가산점을 받는 방법이 있어?</a>
+                </div>
+                <!-- //End : AI 답변 -->
+
+                <!-- Start : 질문 영역 -->
+                <div class="chat-ask-box">
+                    <div class="ask-tx"><p>연락처 변경하고 싶어</p></div>
+                </div>
+                <!-- //End : 질문 영역 -->
+
+                <!-- Start : AI 답변 -->
+                <div class="chat-answer-box">
+                    <div class="ico-logo"></div><!-- 답변 로고 -->
+                    <p class="answer-tx">
+                        연락처 변경은 홈페이지에서 직접 수정할 수 있어요.<br>
+                        변경하려는 항목에 따라 다음과 같은 방법으로 수정하세요.<br>
+                        <br>
+                        1. 고객관리정보는 다음 경로에서 핸드폰번호, 이메일주소, 
+                        자택주소, 직장주소, 청구지 등을 변경할 수 있어요.<br>
+                        <a href="#;" class="chat-page-link">마이 > 온라인창구 > 고객정보 변경</a>
+                        2. 결제일 변경 경로는 다음과 같아요.
+                        <a href="#;" class="chat-page-link">마이 > 청구내역 > 결제일 변경</a>
+                        3. 결제계좌 변경 경로는 다음과 같아요.
+                        <a href="#;" class="chat-page-link">마이 > 이용내역 > 결제계좌 변경</a>
+                        <br>
+                        추가로 궁금한 사항이 있으신가요?
+                    </p>
+                </div>
+                <!-- //End : AI 답변 -->
+            </div>
+            <!-- //End : 대화창 -->
+
+            <!-- Start : 하단 검색 창 -->
+            <div class="ai-convo-bottom">
+                <div class="ai-convo-input-box">
+                    <div class="ai-convo-input-inner">
+                        <input type="text" id="" name="" placeholder="메시지를 입력하세요" class="mytext">
+                        <button class="btn-ai-search02">검색</button>
+                        <p class="char-count"><span class="current">0</span>/100</p>
+                    </div>
+                </div>
+                <p class="ai-notice-tx">AI가 자동으로 생성한 답변은 부적절하거나 부정확할 수 있어요.</p>
+            </div>
+            <!-- //End : 하단 검색 창 -->
+        </div>
+        <!-- //End : 컨텐츠 영역 -->
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="stylesheet" href="/static/carverse/css/style.css">
+<link rel="stylesheet" href="/static/carverse/css/carverse.css">
+
+<!-- common js -->
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+
+<title>약정서 신청완료 | iM캐피탈 카버스</title>
+
+</head>
+<body>
+
+    <!----------- Start : header 메뉴 ----------->
+    <header class="header" id="header">
+        <div class="inner_wrap">
+            <div class="inner_pc">
+                <a href="#none" onclick="goPage('/carverse/main.do');">
+                    <h1 class="logo"><span>CARVERSE</span></h1>
+                </a>
+                <ul class="gnb">
+                    <li>
+                        <a href="#none">견적</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/estimate/vecalc/brand.do');">견적내기</a></li>
+                            <li><a href="#none" onclick="goPage('/carverse/estimate/delCar.do');">즉시출고</a></li>
+                            <li><a href="#none" onclick="goPage('/carverse/estimate/recentEstimate.do');">최근견적</a></li>
+                            <li><a href="#none" onclick="goPage('/carverse/mypage/customRecommend.do');">나만의 맞춤추천</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none">중고차</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/autorental/limitInq/limitInqAuthUrl.do');">한도조회</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none" onclick="goPage('/carverse/autorental/contract.do');">전자약정</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/autorental/contract.do');">전자약정</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none">커뮤니티</a>
+                        <ul class="depth2">
+                            <li><a href="#none">동호회</a></li>
+                            <li><a href="#none">공지사항</a></li>
+                            <li><a href="#none">자주묻는질문</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none" onclick="goPage('/carverse/mydgb/myList.do');">마이페이지</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/mydgb/myList.do');">마이페이지</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 소스추가_11월29일 메인페이지 헤더 -->
+            <div class="inner_mo">
+                <a href="#none" class="logo" onclick="goPage('/carverse/main.do');">
+                    <span class="txt_hidden">메인페이지가기</span>
+                </a>
+                <!--// 모바일타이틀 개발소스 추가 영역 -->
+                <span class="util">
+                    <a href="#none" class="mo_header_direct_go" onclick="goPage('/carverse/mydgb/myList.do');"><span>마이페이지 바로가기</span></a>
+                    <button type="button" class="btn_menu"><span>전체메뉴 보기</span></button>
+                </span>
+            </div>
+
+            <!-- 클래스추가_11월29일 상세페이지는 type_detail 추가 -->
+            <div class="inner_mo type_detail" style="display: none;">
+                <a href="javascript:history.back();" class="btn_back"><span>뒤로가기</span></a>
+                <!-- 모바일타이틀 개발소스 추가 영역 -->
+                <h2 class="mo_tit">$모바일 타이틀$</h2>
+                <!--// 모바일타이틀 개발소스 추가 영역 -->
+                <span class="util">
+                    <a href="#none" class="mo_header_direct_go" onclick="goPage('/carverse/mydgb/myList.do');"><span>마이페이지 바로가기</span></a>
+                    <button type="button" class="btn_menu"><span>전체메뉴 보기</span></button>
+                </span>
+            </div>
+        </div>
+        <!-- // inner_wrap -->
+    </header>
+    <!----------- //End : header 메뉴 ----------->
+
+    <div class="wrap">
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-process">
+
+            <!-- Start : centents -->
+            <div class="contents pb130"><!--2023-12-27 : 클래스 추가-->
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="finish-box">
+                    <div class="f-ico-comp">
+                        <svg class="moving-circle" width="220" height="220" viewBox="0 0 168 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M163 84C163 127.63 127.63 163 84 163C40.3695 163 5 127.63 5 84C5 40.3695 40.3695 5 84 5C127.63 5 163 40.3695 163 84Z" stroke="#33c18f" stroke-width="6" stroke-linecap="round" repeatCount="1"/>
+                        </svg>
+                        <div class="ico-comp"></div>
+                    </div><!-- [D]오류인 경우 : f-ico-errow / 정상인 경우 : f-ico-comp -->
+                    <div class="f-type01">
+                        <div>
+                            <div class="fini-tit">약정신청이<br>완료되었어요!</div>
+
+                            <!-- Start : 아코디언  -->
+                            <div class="accordion-info-box">
+                                <ul>
+                                    <li class="show">
+                                        <div class="q">
+                                            <a href="#">상품 신청 정보<span class="ico-arrow">내용 열기</span></a>
+                                        </div>
+                                        <div class="a" style="display: block;">
+                                            <div class="box-gray">
+                                                <ul class="list-2">
+                                                    <li>
+                                                        <span class="p-tit">진행상품</span>
+                                                        <span class="p-txt">카버스 렌트</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">차량모델</span>
+                                                        <span class="p-txt">A6 40 TDI Premium</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">옵션사항</span>
+                                                        <span class="p-txt">%스타일%</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">색상</span>
+                                                        <span class="p-txt">[외장] 흰색<br> [내장] 브라운</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">총차량가</span>
+                                                        <span class="p-txt">723,900원</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">대여기간</span>
+                                                        <span class="p-txt">60개월</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">월임대료</span>
+                                                        <span class="p-txt">723,900원</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">보증금</span>
+                                                        <span class="p-txt">0원</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">선납임대료</span>
+                                                        <span class="p-txt">0원</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">지연배상금율</span>
+                                                        <span class="p-txt">(연)24%</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">약정주행거리</span>
+                                                        <span class="p-txt">연 20,000km</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">초과운행료</span>
+                                                        <span class="p-txt">200원</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">정비상품</span>
+                                                        <span class="p-txt">Slef</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">보험가입사항</span>
+                                                        <span class="p-txt">대인 [무한],<br>대인 [1]억,<br>자기신체사고 [1]억,<br>무보험차상해 [2]억,<br>긴급출동 연[5]회,<br>자기차량손해 (자기부담금)<br> [30]만원</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">결제인자</span>
+                                                        <span class="p-txt">1일</span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="p-tit">결제계좌</span>
+                                                        <span class="p-txt">대구은행 12345678890</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- //End : 아코디언 -->
+                        </div>
+                    </div>
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+
+                    <!-- Start : 대출상담문의 -->
+                    <div class="call-phone">고객센터 <span class="c-tel">1566-0050</span> (평일 오전 9시~오후 6시)</div>
+                    <!-- //End : 대출상담문의 -->
+
+                    <div class="btn-box">
+                        <span class="btn btn-full-width"><button type="button" id="">메인으로 가기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+
+    </div>
+
+    <!----------- Start : footer ----------->
+    <footer class="footer type_main">
+		<div class="inner_wrap">
+			<div class="footer_left">
+				<p class="footer_logo"><span>iM캐피탈</span></p>
+
+				<div class="cell">
+					<div class="footer_link">
+						<a href="#none">개인정보처리방침</a>
+						<a href="#none">이용약관</a>
+						<a href="#none">고객정보 제공내역 조회</a>
+					</div>
+
+					<ul class="contact_us">
+						<li>
+							<address>서울특별시 중구 남대문로 125, 8층 iM금융센터</address>
+							<span>사업자등록번호 220-87-87408</span>
+							<span></span>
+						</li>
+						<li class="customer_center">고객센터 1566-0050 <span>(평일09:00 ~ 18:00)</span></li>
+					</ul>
+
+					<p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+				</div>
+			</div>
+			<!-- // footer_left -->
+
+			<div class="footer_right">
+				<button type="button" class="btn_similar">DGB 금융그룹</button>
+				<ul class="layer_similar">
+					<li><a href="#none"></a></li>
+				</ul>
+
+				<ul class="footer_sns">
+					<li><a href="#none" class="instagram"><span>인스타그램 바로가기</span></a></li>
+					<li><a href="#none" class="facebook"><span>페이스북 바로가기</span></a></li>
+					<li><a href="#none" class="youtube"><span>유튜브 바로가기</span></a></li>
+					<li><a href="#none" class="naver_blog"><span>네이버블로그 바로가기</span></a></li>
+				</ul>
+			</div>
+			<!-- // footer_right -->
+
+		</div>
+		<!-- // inner_wrap -->
+
+	</footer>
+    <!----------- //End : footer ----------->
+
+    <!-- //셀렉트박스 js -->
+    <script type="text/javascript">
+        $(function(){
+            $('.accordion-info-box ul li .q a').click(function(){
+                $(this).closest('li').toggleClass('show').children('.q').next('.a').slideToggle();
+
+                if($(this).closest('li').hasClass('show')){
+                    $(this).children('.icon_acco').text('내용 닫기');
+                    $(this).children('.ico-arrow').text('내용 닫기');
+                }else{
+                    $(this).children('.icon_acco').text('내용 열기');
+                    $(this).children('.ico-arrow').text('내용 열기');
+                }
+                return false;
+            })
+        });
+    </script>
+</body>
+</html>
+

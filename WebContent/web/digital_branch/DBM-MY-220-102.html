@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>만기연장 심사결과 | iM캐피탈</title>
+
+</head>
+<body>
+    <div class="wrap">
+        <!-- Start : skip_navigation -->
+        <div id="tab_skip">
+            <a href="#common_body">
+                <span>본문 바로가기</span>
+            </a>
+        </div>
+        <!-- //End : skip_navigation -->
+
+        <header class="bg-none">
+            <div class="mobile-btn">
+                <ul>
+                    <li class="back"><a href="#none"><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+                </ul>
+            </div>
+            <!-- Start : PC -->
+            <div class="header-pc pc-view">
+                <div class="h-inner">
+                    <!-- Start : header 좌측 메뉴(PC) -->
+                    <div class="h-left">
+                        <h1 class="h1-logo"><a href="#;">iM캐피탈</a></h1>
+                        <ul class="menu-list">
+                            <li>
+                                <a href="#;">개인금융</a>
+                                <ul class="s-menu-wrap">													
+                                    <li>
+                                        <p class="menu-tit">신용대출</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">직장인론</a></li>
+                                            <li><a href="#;">자산론</a></li>
+                                            <li><a href="#;">오토론</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit"><a href="#" class="link">대출이동서비스</a></p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#;">담보대출</a>
+                                <ul class="s-menu-wrap">													
+                                    <li>
+                                        <p class="menu-tit">전세자금대출</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">개인임대</a></li>
+                                            <li><a href="#;">공공/민간임대</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit"><a href="#" class="link">사업자담보대출</a></p>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit">스탁론</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">KB점프론</a></li>
+                                            <li><a href="#;">키워드림론</a></li>
+                                            <li><a href="#;">NH점프론</a></li>
+                                            <li><a href="#;">하나점프론</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#;">자동차금융</a>
+                                <ul class="s-menu-wrap">													
+                                    <li>
+                                        <p class="menu-tit">신차</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">신차오토론</a></li>
+                                            <li><a href="#;">신차오토리스</a></li>
+                                            <li><a href="#;">장기렌터카</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit">중고차</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">중고오토론</a></li>
+                                            <li><a href="#;">중고오토할부</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#;">기업금융</a>
+                                <ul class="s-menu-wrap">
+                                    <li>
+                                        <p class="menu-tit"><a href="#" class="link">리스금융</a></p>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit"><a href="#" class="link">할부금융</a></p>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit"><a href="#" class="link">기업금융</a></p>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit"><a href="#" class="link">신기술금융</a></p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#;">마이</a>
+                                <ul class="s-menu-wrap">	
+                                    <li>
+                                        <p class="menu-tit"><a href="#" class="link">메인</a></p>
+                                    </li>												
+                                    <li>
+                                        <p class="menu-tit">이용현황</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">신청·이용내역</a></li>
+                                            <li><a href="#;">납입내역</a></li>
+                                            <li><a href="#;">청구내역</a></li>
+                                            <li><a href="#;">연체내역</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit">차량관리</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">과태료·범칙금 안내</a></li>
+                                            <li><a href="#;">리콜통지서</a></li>
+                                            <li><a href="#;">자동차세 안내</a></li>
+                                            <li><a href="#;">정기검사</a></li>
+                                            <li><a href="#;">자동차 연납안내</a></li>
+                                            <li><a href="#;">추가운전자 등록</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit">온라인창구</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">서류 제출</a></li>
+                                            <li><a href="#;">서류 발급·조회</a></li>
+                                            <li><a href="#;">제3자 위임 등록</a></li>
+                                            <li><a href="#;">고객정보 변경</a></li>
+                                            <li><a href="#;">결제정보 변경</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //End : header 좌측 메뉴(PC) -->
+
+                    <!-- Start : header 우측 메뉴(PC) -->
+                    <div class="h-right">
+                        <ul class="menu-list">
+                            <li>
+                                <a href="#;">고객센터</a>
+                                <ul class="s-menu-wrap">	
+                                    <li>
+                                        <p class="menu-tit">상담 및 문의</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">상담문의 접수</a></li>
+                                            <li><a href="#;">자주하는 질문</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit">이용안내</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">약관 및 규정</a></li>
+                                            <li><a href="#;">공지사항</a></li>
+                                            <li><a href="#;">고객확인의무안내</a></li>
+                                            <li><a href="#;">조달금리조회</a></li>
+                                            <li><a href="#;">대출인지급수수료현황</a></li>
+                                            <li><a href="#;">판매중단 상품안내</a></li>
+                                        </ul>
+                                    </li>												
+                                    <li>
+                                        <p class="menu-tit">고객정보관리</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">고객권리안내문</a></li>
+                                            <li><a href="#;">개인(신용)정보 이용/제공 내역</a></li>
+                                            <li><a href="#;">개인(신용)정보 열람 신청</a></li>
+                                            <li><a href="#;">개인(신용)정보 조회 동의</a></li>
+                                            <li><a href="#;">개인(신용)평가 결과에 대한 설명 및 이의제기 신청</a></li>
+                                            <li><a href="#;">계열사간 고객정보 제공내역 조회</a></li>
+                                            <li><a href="#;">마케팅목적 이용/제공내역 조회</a></li>
+                                            <li><a href="#;">마케팅활용동의 조회/변경</a></li>
+                                            <li><a href="#;">위탁업체현황</a></li>
+                                            <li><a href="#;">가명정보처리현황</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#;">금융소비자보호</a>
+                                <ul class="s-menu-wrap">	
+                                    <li>
+                                        <p class="menu-tit">금융소비자보호체계</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">금융소비자보호헌장</a></li>
+                                            <li><a href="#;">금융소비자보호조직</a></li>
+                                            <li><a href="#;">상품개발 프로세스</a></li>
+                                            <li><a href="#;">상품판매원칙</a></li>
+                                            <li><a href="#;">민원처리 프로세스</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit">유익정보</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">금융소비자보호공시</a></li>
+                                            <li><a href="#;">금융소비자 참고판례</a></li>
+                                            <li><a href="#;">금융소비자 유익정보</a></li>
+                                            <li><a href="#;">금융감독원 금융정보</a></li>
+                                        </ul>
+                                    </li>										
+                                    <li>
+                                        <p class="menu-tit">금융소비자권리</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">자료열람청구권</a></li>
+                                            <li><a href="#;">청약철회권</a></li>
+                                            <li><a href="#;">위법계약해지권</a></li>
+                                            <li><a href="#;">금리인하요구권</a></li>
+                                            <li><a href="#;">중도상환수수료감면</a></li>
+                                            <li><a href="#;">채무조정요청권</a></li>
+                                        </ul>
+                                    </li>		
+                                    <li>
+                                        <p class="menu-tit">접수 및 조회</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">금융민원 접수/조회</a></li>
+                                            <li><a href="#;">방문판매원조회</a></li>
+                                            <li><a href="#;">방문판매금지 신청/해제</a></li>
+                                            <li><a href="#;">고객재확인 안내</a></li>
+                                            <li><a href="#;">채권추심업무절차</a></li>
+                                            <li><a href="#;">불법채권추심대응</a></li>
+                                            <li><a href="#;">채권회수 임직원 조회</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#;">인증센터</a>
+                                <ul class="s-menu-wrap">		
+                                    <li>
+                                        <p class="menu-tit">본인인증 안내</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">카카오인증</a></li>
+                                            <li><a href="#;">금융인증서</a></li>
+                                            <li><a href="#;">공동인증서</a></li>
+                                        </ul>
+                                    </li>											
+                                    <li>
+                                        <p class="menu-tit"><a href="#" class="link">보안프로그램 설치</a></p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#;">회사소개</a>
+                                <ul class="s-menu-wrap">
+                                    <li>
+                                        <p class="menu-tit">기업정보</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">회사개요</a></li>
+                                            <li><a href="#;">CEO 인삿말</a></li>
+                                            <li><a href="#;">영업점 안내</a></li>
+                                            <li><a href="#;">조직도</a></li>
+                                            <li><a href="#;">그룹경영이념</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit">투자정보</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">경영공시</a></li>
+                                            <li><a href="#;">결산공고</a></li>
+                                            <li><a href="#;">재무정보</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit">ESG 경영</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">ESG 전략</a></li>
+                                            <li><a href="#;">E-환경</a></li>
+                                            <li><a href="#;">S-사회</a></li>
+                                            <li><a href="#;">G-지배구조</a></li>
+                                            <li><a href="#;">ESG 성과</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="menu-tit">윤리경영</p>
+                                        <ul class="s-menu-list">
+                                            <li><a href="#;">윤리경영비전</a></li>
+                                            <li><a href="#;">윤리경영헌장</a></li>
+                                            <li><a href="#;">윤리강령</a></li>
+                                            <li><a href="#;">윤리경영 Q&A</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- Start : header AI검색 -->
+                        <div class="h-search-ai">
+                            <button>AI 검색</button>
+                            <div class="ai-wrap">
+                                <div class="ai-tit-area">
+                                    <p class="ai-tit">AI 검색센터</p>
+                                    <div class="ai-right">
+                                        <button class="ai-btn-home">홈으로 이동</button>
+                                        <button class="ai-btn-close">닫기</button>
+                                    </div>
+                                </div>
+                                <!-- Start : AI검색 Chat 영역 -->
+                                <div class="ai-chat">AI검색 Chat 영역</div>
+                                <!-- //End : AI검색 Chat 영역 -->
+
+                                <!-- Start : AI검색 input 영역 -->
+                                <div class="ai-bottom-area">
+                                    <div class="ai-text-wrap">
+                                        <button class="file-add">파일첨부</button>
+                                        <input type="text" placeholder="궁금하신 사항을 입력해주세요.">
+                                        <button class="btn-enter">검색어 입력</button>
+                                    </div>
+                                </div>
+                                <!-- //End : AI검색 input 영역 -->
+                            </div>
+                        </div>
+                        <!-- //End : header AI검색 -->
+
+                        <!-- Start : header 전체메뉴(PC) -->
+                        <div class="h-all-menu">
+                            <button>전체메뉴 열기</button>
+                            <div class="all-menu-wrap">
+                                <div class="all-menu-header">
+                                    <div class="inner">
+                                        <div class="h1-logo">iM캐피탈</div>
+                                        <h2>전체메뉴</h2>
+                                        <button>전체메뉴 닫기</button>
+                                    </div>
+                                </div>
+                                <div class="all-menu-cont">
+                                    <ul class="all-menu-dep1">
+                                        <li class="on">
+                                            <button class="dep-tit">상품<span>목록 닫기</span></button>
+                                            <div class="dep-cont">
+                                                <div class="dep2-tit">개인금융</div>
+                                                <ul class="dep2-list">
+                                                    <li>
+                                                        <p><a href="#;">신용대출</a></p>
+                                                        <ul>
+                                                            <li><a href="#;">직장인론</a></li>
+                                                            <li><a href="#;">자산론</a></li>
+                                                            <li><a href="#;">오토론</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p><a href="#;">대출이동서비스</a></p>
+                                                    </li>
+                                                </ul>
+                                                <div class="dep2-tit type2">담보대출</div>
+                                                <ul class="dep2-list">
+                                                    <li>
+                                                        <p><a href="#;">전세자금대출</a></p>
+                                                        <ul>
+                                                            <li><a href="#;">개인임대</a></li>
+                                                            <li><a href="#;">공공/민간임대</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p><a href="#;">사업자담보대출</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p><a href="#;">스탁론</a></p>
+                                                        <ul>
+                                                            <li><a href="#;">KB점프론</a></li>
+                                                            <li><a href="#;">키워드림론</a></li>
+                                                            <li><a href="#;">NH점프론</a></li>
+                                                            <li><a href="#;">하나점프론</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <div class="dep2-tit type3">자동차금융</div>
+                                                <ul class="dep2-list">
+                                                    <li>
+                                                        <p><a href="#;">신차</a></p>
+                                                        <ul>
+                                                            <li><a href="#;">신차오토론</a></li>
+                                                            <li><a href="#;">신차오토리스</a></li>
+                                                            <li><a href="#;">장기렌터카</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p><a href="#;">중고차</a></p>
+                                                        <ul>
+                                                            <li><a href="#;">중고오토론</a></li>
+                                                            <li><a href="#;">중고오토할부</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                                <div class="dep2-tit type4">기업금융</div>
+                                                <ul class="dep2-list">
+                                                    <li>
+                                                        <p><a href="#;">리스금융</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p><a href="#;">할부금융</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p><a href="#;">기업금융</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p><a href="#;">신기술금융</a></p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="on">
+                                            <button class="dep-tit">마이<span>목록 닫기</span></button>
+                                            <div class="dep-cont">
+                                                <ul class="dep2-list">
+                                                    <li>
+                                                        <p><a href="#;">메인</a></p>
+                                                    </li>
+                                                    <li>
+                                                        <p>이용현황</p>
+                                                        <ul>
+                                                            <li><a href="#;">신청 · 이용내역</a></li>
+                                                            <li><a href="#;">납입내역</a></li>
+                                                            <li><a href="#;">청구내역</a></li>
+                                                            <li><a href="#;">연체내역</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p>차량관리</p>
+                                                        <ul>
+                                                            <li><a href="#;">과태료·범칙금 안내</a></li>
+                                                            <li><a href="#;">리콜통지서</a></li>
+                                                            <li><a href="#;">자동차세 안내</a></li>
+                                                            <li><a href="#;">정기검사</a></li>
+                                                            <li><a href="#;">자동차 연납안내</a></li>
+                                                            <li><a href="#;">추가운전자 등록</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p>온라인창구</p>
+                                                        <ul>
+                                                            <li><a href="#;">서류 제출</a></li>
+                                                            <li><a href="#;">서류 발급·조회</a></li>
+                                                            <li><a href="#;">제3자 위임 등록</a></li>
+                                                            <li><a href="#;">고객정보 변경</a></li>
+                                                            <li><a href="#;">결제정보 변경</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="on">
+                                            <button class="dep-tit">고객센터<span>목록 닫기</span></button>
+                                            <div class="dep-cont">
+                                                <ul class="dep2-list">
+                                                    <li>
+                                                        <p>상담 및 문의</p>
+                                                        <ul>
+                                                            <li><a href="#;">상담문의 접수</a></li>
+                                                            <li><a href="#;">자주하는 질문</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p>이용안내</p>
+                                                        <ul>
+                                                            <li><a href="#;">약관 및 규정</a></li>
+                                                            <li><a href="#;">공지사항</a></li>
+                                                            <li><a href="#;">고객확인의무안내</a></li>
+                                                            <li><a href="#;">조달금리조회</a></li>
+                                                            <li><a href="#;">대출인지급수수료현황</a></li>
+                                                            <li><a href="#;">판매중단 상품안내</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p>고객정보관리</p>
+                                                        <ul>
+                                                            <li><a href="#;">고객권리안내문</a></li>
+                                                            <li><a href="#;">개인(신용)정보 이용/제공 내역</a></li>
+                                                            <li><a href="#;">개인(신용)정보 열람 신청</a></li>
+                                                            <li><a href="#;">개인(신용)정보 조회 동의</a></li>
+                                                            <li><a href="#;">개인(신용)평가 결과에 대한 설명 및 이의제기 신청</a></li>
+                                                            <li><a href="#;">계열사간 고객정보 제공내역 조회</a></li>
+                                                            <li><a href="#;">마케팅목적 이용/제공내역 조회</a></li>
+                                                            <li><a href="#;">마케팅활용동의 조회/변경</a></li>
+                                                            <li><a href="#;">위탁업체현황</a></li>
+                                                            <li><a href="#;">가명정보처리현황</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="on">
+                                            <button class="dep-tit">금융소비자보호<span>목록 닫기</span></button>
+                                            <div class="dep-cont">
+                                                <ul class="dep2-list">
+                                                    <li>
+                                                        <p>금융소비자보호체계</p>
+                                                        <ul>
+                                                            <li><a href="#;">금융소비자보호헌장</a></li>
+                                                            <li><a href="#;">금융소비자보호조직</a></li>
+                                                            <li><a href="#;">상품개발 프로세스</a></li>
+                                                            <li><a href="#;">상품판매원칙</a></li>
+                                                            <li><a href="#;">민원처리 프로세스</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p>유익정보</p>
+                                                        <ul>
+                                                            <li><a href="#;">금융소비자보호공시</a></li>
+                                                            <li><a href="#;">금융소비자 참고판례</a></li>
+                                                            <li><a href="#;">금융소비자 유익정보</a></li>
+                                                            <li><a href="#;">금융감독원금융정보</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p>금융소비자권리</p>
+                                                        <ul>
+                                                            <li><a href="#;">자료열람청구권</a></li>
+                                                            <li><a href="#;">청약철회권</a></li>
+                                                            <li><a href="#;">위법계약해지권</a></li>
+                                                            <li><a href="#;">금리인하요구권</a></li>
+                                                            <li><a href="#;">중도상환수수료감면</a></li>
+                                                            <li><a href="#;">채무조정요구권</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p>접수 및 조회</p>
+                                                        <ul>
+                                                            <li><a href="#;">금융민원 접수/조회</a></li>
+                                                            <li><a href="#;">방문판매원조회</a></li>
+                                                            <li><a href="#;">방문판매금지 신청/해제</a></li>
+                                                            <li><a href="#;">고객재확인 안내</a></li>
+                                                            <li><a href="#;">채권추심업무절차</a></li>
+                                                            <li><a href="#;">불법채권추심대응</a></li>
+                                                            <li><a href="#;">채권회수 임직원 조회</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="on">
+                                            <button class="dep-tit">인증센터<span>목록 닫기</span></button>
+                                            <div class="dep-cont">
+                                                <ul class="dep2-list">
+                                                    <li>
+                                                        <p>본인인증 안내</p>
+                                                        <ul>
+                                                            <li><a href="#;">카카오인증</a></li>
+                                                            <li><a href="#;">금융인증서</a></li>
+                                                            <li><a href="#;">공동인증서</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p><a href="#;">보안프로그램 설치</a></p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="on">
+                                            <button class="dep-tit">회사소개<span>목록 닫기</span></button>
+                                            <div class="dep-cont">
+                                                <ul class="dep2-list">
+                                                    <li>
+                                                        <p>기업정보</p>
+                                                        <ul>
+                                                            <li><a href="#;">회사개요</a></li>
+                                                            <li><a href="#;">CEO 인삿말</a></li>
+                                                            <li><a href="#;">영업점 안내</a></li>
+                                                            <li><a href="#;">조직도</a></li>
+                                                            <li><a href="#;">경영진 소개</a></li>
+                                                            <li><a href="#;">사외이사 소개</a></li>
+                                                            <li><a href="#;">그룹경영이념</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p>투자정보</p>
+                                                        <ul>
+                                                            <li><a href="#;">경영공시</a></li>
+                                                            <li><a href="#;">결산공고</a></li>
+                                                            <li><a href="#;">재무정보</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p>ESG 경영</p>
+                                                        <ul>
+                                                            <li><a href="#;">ESG 전략</a></li>
+                                                            <li><a href="#;">E-환경</a></li>
+                                                            <li><a href="#;">S-사회</a></li>
+                                                            <li><a href="#;">G-지배구조</a></li>
+                                                            <li><a href="#;">ESG 성과</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <p>윤리경영</p>
+                                                        <ul>
+                                                            <li><a href="#;">윤리경영비전</a></li>
+                                                            <li><a href="#;">윤리경영헌장</a></li>
+                                                            <li><a href="#;">윤리강령</a></li>
+                                                            <li><a href="#;">윤리경영 Q&A</a></li>
+                                                            <li><a href="#;">내부자신고</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //End : header 전체메뉴(PC) -->
+                    </div>
+                    <!-- //End : header 우측 메뉴(PC) -->
+                </div>
+            </div>
+            <!-- //End : PC -->
+            <!-- Start : mobile -->
+            <div class="header-mobile mob-view">
+                <div class="h-inner-m">
+                    <div class="h-right-m">
+                        <ul class="menu-list-m">
+                            <li class="home"><a href="#none"><img src="/static/web/img/common/ico_home02.png" alt="home"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- //End : mobile -->
+        </header>
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-process">
+
+            <!-- Start : centents -->
+            <div class="contents cont-type02 bg-type02"><!-- blue 배경일 때 클래스 : bg-type02  -->
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="process-wrap">
+                    <div class="pro-box">
+                        <div class="tit-info">심사결과가 승인되어, <br><strong class="font-green">만기연장이 신청이 가능</strong>해요</div>
+
+                        <!-- Start : 결과 영역 -->
+                        <ul class="rst-list">
+                            <li>
+                                <div class="in-box">
+                                    <P class="chk-tit"><리스> 오토리스-재(리스)조건</P>
+                                    <ul class="list">
+                                        <li>
+                                            <span class="p-tit">차량명</span>
+                                            <span class="p-txt">K5</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">차량번호</span>
+                                            <span class="p-txt">123가 1234</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">보증금</span>
+                                            <span class="p-txt">12,882,000원</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">잔존가치</span>
+                                            <span class="p-txt">19,753,000원</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">약정거리</span>
+                                            <span class="p-txt">연 3만 km</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">리스기간</span>
+                                            <span class="p-txt">12개월</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">월 리스료</span>
+                                            <span class="p-txt">158,863원</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">심사결과</span>
+                                            <span class="p-txt font-green">승인</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- //End : 결과 영역 -->
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none"><!--전체 bg가 있는 경우 버튼에 클레스 추가 : btn-bg-none -->
+                    <div class="btn-box">
+                        <span class="btn gray01 w-94"><button type="button" id="">취소</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        <span class="btn"><button type="button" id="">신청하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : 셀렉트박스 선택용 팝업 ---------->
+    <div class="dim dim-02"></div>
+    <div class="popup-layer" id="addrPopup">
+        <div class="popup popup-01 popup-half popup-select"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+            <div class="inner">
+                <div class="popup-text">
+                    <h1>시도</h1>
+                </div>
+                <div class="popup-contents">
+                    <!-- content 시작 //-->
+                    <ul>
+                        <li class="active"><!-- [D]활성화 시 클래스 추가 : active -->
+                            <a href="#">선택하세요</a>
+                        </li>
+                    </ul>
+                    <!-- //content 끝 -->
+                </div>
+            </div>
+            <!--<div class="popup-close"><a href="javascript:;">닫기</a></div>-->
+        </div>
+    </div>
+    <!---------- //End : 셀렉트박스 선택용 팝업 ---------->
+
+    <script>
+        $(document).ready(function(){
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

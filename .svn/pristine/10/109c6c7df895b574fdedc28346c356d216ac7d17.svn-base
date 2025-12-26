@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>등록차량 상세보기 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+    window.addEventListener('load', addrPopupAll);
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-contents flex-col pad-small"><!-- 2022-10-11 : pad-small 추가 -->
+                <div class="car-plate-box">
+                    <p class="num">123가0000</p>
+                </div>
+                <div class="tab-box6 js-tab mt32">
+                    <button class="on" rel="tab01">기본정보</button>
+                    <button rel="tab02">사고이력</button>
+                    <button rel="tab03">주행거리</button>
+                </div>
+                <!-- Start : 기본정보 -->
+                <div id="tab01" class="js-tab-cont">
+                    <div class="mycar-detail-box">
+                        <ul class="list-style">
+                            <li>
+                                <p class="tit">모델명</p>
+                                <p class="tx">그랜저</p>
+                            </li>
+                            <li>
+                                <p class="tit">최초등록일</p>
+                                <p class="tx">2024-12-12</p>
+                            </li>
+                            <li>
+                                <p class="tit">연식</p>
+                                <p class="tx">2023년식</p>
+                            </li>
+                            <li>
+                                <p class="tit">유종</p>
+                                <p class="tx">휘발유(무연)</p>
+                            </li>
+                            <li>
+                                <p class="tit">차종</p>
+                                <p class="tx">승용</p>
+                            </li>
+                            <li>
+                                <p class="tit">모델명</p>
+                                <p class="tx">그랜저</p>
+                            </li>
+                            <li>
+                                <p class="tit">색상</p>
+                                <p class="tx">검정</p>
+                            </li>
+                            <li>
+                                <p class="tit">차대번호</p>
+                                <p class="tx">SALYYA2BX88TA11111</p>
+                            </li>
+                        </ul>
+                        <ul class="list-style">
+                            <li>
+                                <p class="tit">최종소유자</p>
+                                <p class="tx">김**</p>
+                            </li>
+                            <li>
+                                <p class="tit">주민등록번호</p>
+                                <p class="tx">8850000-1*****</p>
+                            </li>
+                        </ul>
+                        <ul class="list-style">
+                            <li>
+                                <p class="tit">압류건수</p>
+                                <p class="tx">0회</p>
+                            </li>
+                            <li>
+                                <p class="tit">저당건수</p>
+                                <p class="tx">0회</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //End : 기본정보 -->
+
+                <!-- Start : 사고이력 -->
+                <div id="tab02" class="js-tab-cont">
+                    <div class="mycar-detail-box">
+                        <ul class="list-style">
+                            <li>
+                                <p class="tit">피해횟수</p>
+                                <p class="tx">1건</p>
+                            </li>
+                            <li>
+                                <p class="tit">피해보험금</p>
+                                <p class="tx">1,500,000만원</p>
+                            </li>
+                            <li>
+                                <p class="tit">총 피해금액</p>
+                                <p class="tx">800,000원</p>
+                            </li>
+                        </ul>
+                        <ul class="list-style">
+                            <li>
+                                <p class="tit">전손이력</p>
+                                <p class="tx">0회</p>
+                            </li>
+                            <li>
+                                <p class="tit">도난이력</p>
+                                <p class="tx">0회</p>
+                            </li>
+                            <li>
+                                <p class="tit">침수이력</p>
+                                <p class="tx">0회</p>
+                            </li>
+                            <li>
+                                <p class="tit">대여 사용이력</p>
+                                <p class="tx">없음</p>
+                            </li>
+                            <li>
+                                <p class="tit">영업 사용이력</p>
+                                <p class="tx">없음</p>
+                            </li>
+                            <li>
+                                <p class="tit">관용 사용이력</p>
+                                <p class="tx">없음</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //End : 사고이력 -->
+
+                 <!-- Start : 주행거리 -->
+                <div id="tab03" class="js-tab-cont">
+                    <div class="mycar-detail-box">
+                        <ul class="list-style">
+                            <li>
+                                <p class="tit">주행거리</p>
+                                <p class="tx">65,000km</p>
+                            </li>
+                            <li>
+                                <p class="tit">제공처</p>
+                                <p class="tx">보험회사</p>
+                            </li>
+                            <li>
+                                <p class="tit">수집일</p>
+                                <p class="tx">2025-12-12</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //End : 주행거리 -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <!--<div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>-->
+    </div>
+
+</div>
+
+
+</body>
+</html>

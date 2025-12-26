@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+<link rel="stylesheet" href="/static/web/js/lib/swiper-bundle.min.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/lib/swiper-bundle.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+<script src="/static/web/js/slick.js"></script>
+<script src="/static/web/js/lib/slick.min.js"></script>
+<title>즉시출고 목록 | iM캐피탈</title>
+</head>
+<script>
+    $(document).ready(function(){
+        $('footer').load('/web/renewal/footer_inc.html');
+    }); 
+</script>
+<script>
+$(function() {
+    // 검색창 placeholder
+    $('.sub-search-box .input input').on('focus', function() {
+        $(this).siblings('.placeholder').hide();
+    });
+    $('.sub-search-box .input input').on('blur', function() {
+        if ($(this).val().trim() === '') {
+            $(this).siblings('.placeholder').show();
+        } else {
+            $(this).siblings('.placeholder').hide();
+        }
+    });
+    // input 입력 시 btn-remove 활성화 및 기능
+    $('.sub-search-box .input input').on('input', function() {
+        if ($(this).val().trim() !== '') {
+            $(this).siblings('.btn-remove').show();
+        } else {
+            $(this).siblings('.btn-remove').hide();
+        }
+    });
+    $('.sub-search-box .btn-remove').on('click', function(e) {
+        e.preventDefault();
+        const $input = $(this).siblings('input');
+        $input.val('');
+        $(this).hide();
+        $(this).siblings('.placeholder').show();
+        $input.focus();
+    });
+
+    //차량목록 정렬 버튼
+    $('.car-list-sort .btn-sort').on('click', function() {
+        $(this).siblings('.mycar-menu-layer').toggle();
+    });
+    $('.mycar-menu-layer .menu').on('click', function() {
+        const $text = $(this).text();
+        $('.car-list-sort .btn-sort').text($text);
+        $(this).parent('.mycar-menu-layer').hide();
+    });
+
+});
+</script>
+<body>
+    <div class="m-bottom-pad">
+        <!-- Start : skip_navigation -->
+        <div id="tab_skip">
+            <a href="#common_body">
+                <span>본문 바로가기</span>
+            </a>
+        </div>
+        <!-- //End : skip_navigation -->
+
+        <header class="digital-branch">
+            <!-- Start : PC -->
+            <div class="header-pc pc-view">
+                <div class="h-inner">
+                    <!-- Start : header 좌측 메뉴(PC) -->
+                    <div class="h-left">
+                        <div class="h1-logo">
+                            <a href="#;">iM캐피탈</a>
+                            <div class="h1-link-box">
+                                <button class="link">화면 전환</button>
+                                <ul class="digi-sub-menu">
+                                    <li><a href="#;">iM캐피탈 홈페이지</a></li>
+                                    <li><a href="#;">iM브랜치</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="digi-menu-list">
+                            <li>
+                                <a href="#;">내차사기</a>
+                                <ul class="digi-sub-menu">
+                                    <li><a href="#;">신차</a></li>
+                                    <li><a href="#;">즉시출고</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#;">마이</a>
+                                <ul class="digi-sub-menu">
+                                    <li><a href="#;">마이 홈</a></li>
+                                    <li><a href="#;">차량관리</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#;">고객라운지</a>
+                                <ul class="digi-sub-menu">
+                                    <li><a href="#;">공지사항</a></li>
+                                    <li><a href="#;">이벤트</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- //End : header 좌측 메뉴(PC) -->
+
+                    <!-- Start : header 우측 메뉴(PC) -->
+                    <div class="h-right">
+                        <button class="btn-header-ai">AI 서비스 데스크</button>
+                        <a href="#;" class="btn-header-my">
+                            <span class="tx" aria-label="마이 홈으로 이동"></span>
+                            <!-- <span class="tip-info up">로그인하고 <em>차량관리</em> 받으세요!</span> -->
+                        </a>
+                    </div>
+                    <!-- //End : header 우측 메뉴(PC) -->
+                </div>
+            </div>
+            <!-- //End : PC -->
+            <!-- Start : mobile -->
+            <div class="header-mobile mob-view">
+                <div class="h-inner-m">
+                    <div class="h-right-m">
+                        <ul class="menu-list-m">
+                            <li><button class="btn-header-ai">ai 서비스 데스크</button></li>
+                            <li><a href="#;" class="btn-header-my"><span class="tx" aria-label="마이 홈으로 이동"></span></a></li>
+                            <li>
+                                <div class="all-menu-m">
+                                    <button>전체 메뉴</button>
+                                    <div class="all-menu-wrap-m digi">
+                                        <div class="all-menu-header-m">
+                                            <div class="all-menu-left">
+                                                <h2 class="h-tit-m">전체</h2>
+                                            </div>
+                                            <ul class="all-menu-right">
+                                                <li><button class="btn-header-ai">ai 서비스 데스크</button></li>
+                                                <li><a href="#;" class="btn-setup">설정</a></li>
+                                                <li><a href="#;" class="btn-close">전체메뉴 닫기</a></li>
+                                            </ul>
+                                        </div>
+                                    
+                                        <!-- Start : 메뉴목록 -->
+                                        <div class="m-digi-all-wrap">
+                                            <div class="link-area">
+                                                <a href="#;">공지사항</a>
+                                                <a href="#;">견적내기</a>
+                                                <a href="#;">인증센터</a>
+                                                <a href="#;">이벤트</a>
+                                            </div>
+                                            <a href="#;" class="banner-link"><span>대기없는<span class="tag_imme">즉시출고</span>차량 전체보기<span class="arrow"></span></span></a>
+                                            <div class="digi-title-row">
+                                                <p class="tit">최근 본 차 👀</p>
+                                                <button class="btn-remove">전체삭제</button>
+                                            </div>
+                                            <div class="car-scroll-cover">
+                                                <div class="recent-list">
+                                                    <a href="#;">
+                                                        <span class="car-img"><img src="/static/web/img/digital_branch/@sample_car.png" alt=""></span>
+                                                        <span class="car-desc">
+                                                            <span class="name ellipsis">디 올 뉴 팰리세이드 HEV 디 올 뉴 팰리세이드 HEV</span>
+                                                            <span class="price">월 689,000원</span>
+                                                        </span>
+                                                        <button class="btn-remove">목록 삭제</button>
+                                                    </a>
+                                                    <a href="#;">
+                                                        <span class="car-img"><img src="/static/web/img/digital_branch/@sample_car.png" alt=""></span>
+                                                        <span class="car-desc">
+                                                            <span class="name ellipsis">디 올 뉴</span>
+                                                            <span class="price">월 689,000원</span>
+                                                        </span>
+                                                        <button class="btn-remove">목록 삭제</button>
+                                                    </a>
+                                                    <a href="#;">
+                                                        <span class="car-img"><img src="/static/web/img/digital_branch/@sample_car.png" alt=""></span>
+                                                        <span class="car-desc">
+                                                            <span class="name ellipsis">디 올 뉴 팰리세이드</span>
+                                                            <span class="price">월 689,000원</span>
+                                                        </span>
+                                                        <button class="btn-remove">목록 삭제</button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="common-line wide"></div>
+                                            <div class="all-menu-list">
+                                                <h2>내차사기</h2>
+                                                <ul>
+                                                    <li><a href="#;">신차</a></li>
+                                                    <li><a href="#;">즉시출고</a></li>
+                                                </ul>
+                                                <h2>마이</h2>
+                                                <ul>
+                                                    <li><a href="#;">마이 홈</a></li>
+                                                    <li><a href="#;">차량관리</a></li>
+                                                </ul>
+                                                <h2>고객라운지</h2>
+                                                <ul>
+                                                    <li><a href="#;">공지사항</a></li>
+                                                    <li><a href="#;">이벤트</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- //End : 메뉴목록 -->
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- //End : mobile -->
+        </header>
+        <div class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
+            <!---------- Start : 서브 컨텐츠 ---------->
+            <div id="common_body" class="sub-contents">
+                <!-- Start : 페이지 인디케이터 -->
+                <div class="indicator">
+                    <ul>
+                        <li>홈</li>
+                        <li>내차사기</li>
+                        <li aria-label="현재 화면">즉시출고</li>
+                    </ul>
+                </div>
+                <!-- //End : 페이지 인디케이터 -->
+
+                <!-- Start : centents -->
+                <div class="contents car-search">
+                    <h1 class="left">내 차 사기</h1>
+
+                    <!-- Start : 컨텐츠 영역 -->
+                    <div class="s-contWrap">
+                        <!-- Start : 탭 영역 -->
+                        <div class="swipe-shadow-box type">
+                            <div class="swiper-container qna-tab"><!-- tab 기능 사용 안할경우 'swipe_tab_box' 클래스 삭제 -->
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide"><a href="#;">신차</a></li>
+                                    <li class="swiper-slide"><a href="#;" class="on">즉시️⚡출고</a></li>
+                                </ul>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <!-- //End : 탭 영역 -->
+
+                        <!-- Start : 검색 영역 -->
+                        <div class="sub-search-box">
+                            <div class="search-bar">
+                                <div class="input">
+                                    <label for="inpSearch" class="placeholder"><span>즉시출고 차량</span>을 검색해보세요</label>
+                                    <input type="text" id="inpSearch">
+                                    <button class="btn-remove">검색 입력값 삭제</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //End : 검색 영역 -->
+
+                        <!-- Start : 검색 필터 -->
+                        <div class="car-scroll-cover">
+                            <div class="search-filter-box">
+                                <button class="btn-filter on">필터</button>
+                                <span class="bar" aria-hidden="true"></span>
+                                <button class="value brand m1 on">현대 외 3</button><!-- m1 현대 / m2 기아 / m3 제네시스 / m4 쉐보레 / m5 르노삼성 / m6 KG / m7 테슬라 -->
+                                <button class="value on">월20만원~200만원</button>
+                            </div>
+                        </div>
+                        <!-- //End : 검색 필터 -->
+
+                        <!-- Start : 신차 목록 -->
+                        <div class="car-list-flex">
+                            <p class="total">총 <strong>34</strong>대</p>
+                            <div class="car-list-sort">
+                                <button class="btn-sort">추천순</button>
+                                <div class="mycar-menu-layer">
+                                    <button class="menu">추천순</button>
+                                    <button class="menu">최신등록순</button>
+                                    <button class="menu">낮은 가격순</button>
+                                    <button class="menu">높은 가격순</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="car-sel-list type">
+                            <li>
+                                <a href="#;">
+                                    <span class="tx01">차량명은 최대 한줄만 노출되고 그 이상 노출시 말줄임</span>
+                                    <span class="tx02">월 1,689,000원~</span>
+                                    <span class="logo _441">테슬라</span><!-- _111 현대 / _121 기아 / _112 제네시스 / _131 쉐보레 / _151 르노삼성 / _141 KG / _441 테슬라 -->
+                                    <span class="tag">즉시출고</span>
+                                    <span class="car-img"><img src="/static/web/img/digital_branch/@sample_car05.png" alt=""></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#;">
+                                    <span class="tx01">디 올 뉴 팰리세이드</span>
+                                    <span class="tx02">월 1,689,000원~</span>
+                                    <span class="logo _121">기아</span><!-- _111 현대 / _121 기아 / _112 제네시스 / _131 쉐보레 / _151 르노삼성 / _141 KG / _441 테슬라 -->
+                                    <span class="tag">즉시출고</span>
+                                    <span class="car-img"><img src="/static/web/img/digital_branch/@sample_car04.png" alt=""></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#;">
+                                    <span class="tx01">디 올 뉴 팰리세이드</span>
+                                    <span class="tx02">월 1,689,000원~</span>
+                                    <span class="logo _111">현대</span><!-- _111 현대 / _121 기아 / _112 제네시스 / _131 쉐보레 / _151 르노삼성 / _141 KG / _441 테슬라 -->
+                                    <span class="tag">즉시출고</span>
+                                    <span class="car-img"><img src="/static/web/img/digital_branch/@sample_car03.png" alt=""></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#;">
+                                    <span class="tx01">디 올 뉴 팰리세이드</span>
+                                    <span class="tx02">월 1,689,000원~</span>
+                                    <span class="logo _111">현대</span><!-- _111 현대 / _121 기아 / _112 제네시스 / _131 쉐보레 / _151 르노삼성 / _141 KG / _441 테슬라 -->
+                                    <span class="tag">즉시출고</span>
+                                    <span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#;">
+                                    <span class="tx01">디 올 뉴 팰리세이드</span>
+                                    <span class="tx02">월 1,689,000원~</span>
+                                    <span class="logo _111">현대</span><!-- _111 현대 / _121 기아 / _112 제네시스 / _131 쉐보레 / _151 르노삼성 / _141 KG / _441 테슬라 -->
+                                    <span class="tag">즉시출고</span>
+                                    <span class="car-img"><img src="/static/web/img/digital_branch/@sample_car03.png" alt=""></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#;">
+                                    <span class="tx01">디 올 뉴 팰리세이드</span>
+                                    <span class="tx02">월 1,689,000원~</span>
+                                    <span class="logo _111">현대</span><!-- _111 현대 / _121 기아 / _112 제네시스 / _131 쉐보레 / _151 르노삼성 / _141 KG / _441 테슬라 -->
+                                    <span class="tag">즉시출고</span>
+                                    <span class="car-img"><img src="/static/web/img/digital_branch/@sample_car04.png" alt=""></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#;">
+                                    <span class="tx01">디 올 뉴 팰리세이드</span>
+                                    <span class="tx02">월 1,689,000원~</span>
+                                    <span class="logo _111">현대</span><!-- _111 현대 / _121 기아 / _112 제네시스 / _131 쉐보레 / _151 르노삼성 / _141 KG / _441 테슬라 -->
+                                    <span class="tag">즉시출고</span>
+                                    <span class="car-img"><img src="/static/web/img/digital_branch/@sample_car05.png" alt=""></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#;">
+                                    <span class="tx01">디 올 뉴 팰리세이드</span>
+                                    <span class="tx02">월 1,689,000원~</span>
+                                    <span class="logo _111">현대</span><!-- _111 현대 / _121 기아 / _112 제네시스 / _131 쉐보레 / _151 르노삼성 / _141 KG / _441 테슬라 -->
+                                    <span class="tag">즉시출고</span>
+                                    <span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#;" class="btn-more-list">더보기</a>
+                        <!-- //End : 신차 목록 -->
+                    </div>
+                    <!-- //End : 컨텐츠 영역 -->
+
+                </div>
+                <!-- //End : centents -->
+
+            </div>
+            <!---------- //End : 서브 컨텐츠 ---------->
+        </div>
+    </div>
+    <footer></footer>
+
+    <!-- Start : Top 버튼 -->
+    <div class="btn-top-area">
+        <button>페이지 상단으로 이동</button>
+    </div>
+    <!-- //End : Top 버튼 -->
+
+        <!-- Start : 모바일 하단 플로팅 메뉴 -->
+        <div class="m-bottom-area digital-branch">
+            <ul>
+                <li class="home on"><a href="#;">홈</a></li>
+                <li class="mycar"><a href="#;">내차사기</a></li>
+                <li class="type"><a href="#;">홈페이지</a></li>
+                <li class="my"><a href="#;">마이</a></li>
+                <li class="all"><a href="#;">전체</a></li>
+            </ul>
+        </div>
+        <!-- //End : 모바일 하단 플로팅 메뉴 -->
+
+    <!-- //Start : 퍼블확인용 -->
+    <script>
+        $(document).ready(function(){
+            $(window).on("resize", function() {
+                footerHide();
+            });
+            footerHide();
+            function footerHide() {
+                var screenWidth = $(window).width();
+                if (screenWidth < 1024) {
+                    // 화면 너비가 1024px보다 작을 때 실행할 코드
+                    $("footer").hide();
+                }else{
+                    $("footer").show();
+                }
+            }
+            
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

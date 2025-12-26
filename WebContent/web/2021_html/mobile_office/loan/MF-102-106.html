@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰어</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">   
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>뷰어</h1>
+            </div>
+            <div class="popup-contents no_btn"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top pb0">
+                        
+                        <h2>여신번호</h2>
+                        <div class="white_box mb24 mt12">
+                            <p class="a_c">1901-028000-0-000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg_bottom">                        
+                        <table class="dataType">
+                            <caption>
+                                뷰어 - 고객명, 문서명, 페이지 등으로 나타낸 표
+                            </caption>
+                            <colgroup>
+                                <col width="15%">
+                                <col width="25%">
+                                <col width="%">
+                                <col width="15%">
+                                </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">고객명</th>
+                                    <th scope="col">문서명</th>
+                                    <th scope="col">페이지</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="radiobox">
+                                            <input type="radio" name="r01" value="" id="r01" class="rchk" aria-hidden="true" title="선택 체크">
+                                            <label for="r01" class="rchk-label pl28" role="radio" aria-checked="false"></label>
+                                        </div>
+                                    </td>
+                                    <td>김길동</td>
+                                    <td>여신승인신청서</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="noData"><p>문서가 없습니다.</p></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <!-- paging 시작 -->
+                        <div class="paging" id="paging">
+                            <a href="#" class="first">맨처음페이지</a><a href="#" class="prev">이전페이지</a><a href="#" class="current">1</a><a href="#" class="">2</a><a href="#" class="next">다음페이지</a><a href="#" class="end">맨마지막페이지</a>
+                        </div>
+                        <!-- paging 끝 -->
+                        <!-- 버튼 시작//-->
+                        <div class="btn_box pb0">
+                            <span class="btn"><button id="">선택</button></span>
+                        </div>
+                        <!-- //버튼 끝-->
+                    </div>                    
+                </div>
+                <!--// content 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>재고금융현황 재고현황 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+            
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+				
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>					
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">오토 재고금융</a>
+							<ul>
+								<li><a href="">재고금융 신청</a></li>
+								<li><a href="">재고금융 현황</a></li>
+                                <li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+						<li class=""><a href="">중고차 제휴</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">한도조회 신청</a></li>
+                                <li><a href="">한도조회 신청(유선녹취)</a></li>
+                                <li><a href="">한도조회 상담이력</a></li>
+								<li><a href="">자동차 시세확인</a></li>
+								<li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+				<h2 class="tl">재고금융 현황</h2>
+                <div class="box_form scoll mob_nobtn"><!-- 하단에 버튼이 없는경우 : mob_nobtn 클래스명 추가-->
+					
+					<h3 class="txt">OO상사의 재고금융</h3>
+
+					<div class="box_viewType mb30">
+						<dl>
+							<dt>총 한도(원)</dt>
+							<dd>800,000,000</dd>
+							<dt>대출금액(원)</dt>
+							<dd>800,000,000</dd>
+							<dt>대출건수</dt>
+							<dd>7건</dd>
+							<dt>잔여한도(원)</dt>
+							<dd>800,000,000</dd>
+						</dl>
+					</div>
+					
+					<!-- 탭 시작// -->
+					<div class="tabwrap">
+						<div class="tab_navi">
+							<ul>
+								<li><a href="#" class="on" aria-label="재고현황 선택됨">재고현황</a></li>
+								<li><a href="#" aria-label="신청현황 선택안됨">신청현황</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //탭 끝 -->
+
+					<div class="scroll_table mt40">
+						<table class="dataType">
+							<caption>재고현황 - 차량정보, 실행번호, 최초대출일, 대출만기일, 대출금액(만원) 상태 등으로 나타낸 표</caption>
+							<colgroup>
+								<col width="20%">
+								<col width="%">
+								<col width="12%">
+								<col width="12%">
+								<col width="15%">
+								<col width="10%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">차량정보</th>
+									<th scope="col">실행번호</th>
+									<th scope="col">최초대출일</th>
+									<th scope="col">대출만기일</th>
+									<th scope="col">대출금액(만원)</th>
+									<th scope="col">상태</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>11가 0000 그랜저</td>
+									<td>000000000</td>
+									<td>2021-01-01</td>
+									<td>2022-01-31</td>
+									<td>2,920</td>
+									<td>대출중</td>
+								</tr>
+								<tr>
+									<td>11가 0000 그랜저</td>
+									<td>000000000</td>
+									<td>2021-01-01</td>
+									<td>2022-01-31</td>
+									<td>2,920</td>
+									<td>대출완제</td>
+								</tr>
+								<tr>
+									<td  colspan="6" class="noData"><p>조회결과가 없습니다.</p></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- paging 시작 -->
+					<div class="paging" id="paging">
+						<a href="#" class="first">맨처음페이지</a><a href="#" class="prev">이전페이지</a><a href="#" class="current">1</a><a href="#" class="">2</a><a href="#" class="next">다음페이지</a><a href="#" class="end">맨마지막페이지</a>
+					</div>
+					<!-- paging 끝 -->		
+
+				</div>
+                <!-- 내용 끝 -->				
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+</body>
+</html>

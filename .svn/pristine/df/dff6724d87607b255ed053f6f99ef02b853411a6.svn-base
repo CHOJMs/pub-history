@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 카버스 플랫폼 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:140px">
+                    <col>
+                    <col style="width:250px">
+                    <col style="width:100px">
+                    <col style="width:250px">
+                    <col style="width:120px">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 상담신청(한도조회) ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-04</td>
+                        <td>2024-01-04</td>
+                        <td>page</td>
+                        <td>상담신청</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F31010P.html">F31010P.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td>X버튼 추가</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신용정보조회 - 약관동의</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F31110P.html">F31110P.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-04</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>이용약관 전체동의서</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F31120F.html">F31120F.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F31210P.html">F31210P.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-05</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>[필수]개인(신용)정보의 필수적 동의서</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F31120F-1.html">F31120F-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-07</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>개인(신용) 정보의 선택적 동의서</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F31120F-3.html">F31120F-3.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-05</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>휴대폰 본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F31120F-2.html">F31120F-2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-11</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>휴대폰본인인증약관</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/휴대폰본인인증약관.html">휴대폰본인인증약관.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-11</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>약관동의 안내팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/약관동의안내팝업.html">약관동의안내팝업.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-07</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>통신사 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F31120F-4.html">F31120F-4.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-05</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류제출</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F33110P.html">F33110P.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-05</td>
+                        <td>2023-12-22</td>
+                        <td>page</td>
+                        <td>신분증촬영</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F34110P.html">F34110P.html</a></td>
+                        <td></td>
+                        <td class="red">1.pb140 추가</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-05</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>신분증촬영 실패</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F35310B.html">F35310B.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-05</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신분증촬영 - 정보확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F35410P.html">F35410P.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-06</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>상담신청 완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F36010P.html">F36010P.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-06</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>상담신청 불가</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F36010P-1.html">F36010P-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 전자약정 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-06</td>
+                        <td>2023-12-18</td>
+                        <td>page</td>
+                        <td>적합성체크</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F42110P.html">F42110P.html</a></td>
+                        <td></td>
+                        <td>s-txt03 수정</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-06</td>
+                        <td>2023-12-18</td>
+                        <td>page</td>
+                        <td>적합성체크 - 상품설명서 유형체크</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F42211P.html">F42211P.html</a></td>
+                        <td></td>
+                        <td>div class="pro-box division-box" 삭제, mt40 추가</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-06</td>
+                        <td>2023-12-27</td>
+                        <td>page</td>
+                        <td>전자약정 - 신청정보입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F42320P.html">F42320P.html</a></td>
+                        <td></td>
+                        <td class="red">1.자동이체 계좌번호 안내문구 아이콘수정삭제 <br>2.이체은행 아이콘없는경우 bank 삭제 <br>3.필수약관동의 화살표 이미지 수정<br>
+                            <span style="color:#0058ff">4.주소에 add 클래스 추가</span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-07</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>상품설명서</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F42212F.html">F42212F.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-07</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>은행선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F42322F.html">F42322F.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-21</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>중요 약정사항 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/중요약정사항확인.html">중요약정사항확인.html</a></td>
+                        <td></td>
+                        <td class="red">1.하단 약관동의 mb0추가</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-06</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>신청정보 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F42432F.html">F42432F.html</a></td>
+                        <td></td>
+                        <td class="red">1.보험정보에 흰색박스 없음</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-06</td>
+                        <td>2023-12-21</td>
+                        <td>page</td>
+                        <td>약정서 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F43310P.html">F43310P.html</a></td>
+                        <td></td>
+                        <td class="red">1.필수약관동의 화살표 이미지 수정 <br>2.본문내용중에 type01, type02, mb0 클래스 추가</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-06</td>
+                        <td>2023-12-27</td>
+                        <td>page</td>
+                        <td>약정 신청완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F44310P.html">F44310P.html</a></td>
+                        <td></td>
+                        <td><span style="color:#0058ff">1.클래스 pb130 추가</span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-08</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>약정 신청불가</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/F44310P-1.html">F44310P-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-08</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>상품선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/상품선택.html">상품선택.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-08</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>주소검색</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/주소검색.html">주소검색.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-08</td>
+                        <td>2023-12-22</td>
+                        <td>pop_full</td>
+                        <td>주소검색 - 검색결과</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/주소검색결과.html">주소검색결과.html</a></td>
+                        <td></td>
+                        <td>bg-gray 추가</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-08</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>주소검색 - 상세주소</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/주소검색상세주소.html">주소검색상세주소.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-22</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>예금주확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/예금주확인.html">예금주확인.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-22</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>추가설명 안내팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/추가설명팝업.html">추가설명팝업.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 팝업 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-07</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>카카오페이인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/카카오페이인증.html">카카오페이인증.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-07</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>PASS 인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/pass인증.html">pass인증.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-07</td>
+                        <td>2023-12-22</td>
+                        <td>pop</td>
+                        <td>전문금융소비자 안내팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/안내팝업.html">안내팝업.html</a></td>
+                        <td></td>
+                        <td>닫기버튼 삭제</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-12</td>
+                        <td></td>
+                        <td>pop-full</td>
+                        <td>남은시간 알림 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/남은시간알림팝업.html">남은시간알림팝업.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-12</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>전자서명 수단 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/전자서명수단선택.html">전자서명수단선택.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-22</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>모바일백신설치 안내팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/모바일백신안내.html">모바일백신안내.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-01-04</td>
+                        <td></td>
+                        <td>pop_pull</td>
+                        <td>공지사항 상세팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/carverse/limit/공지사항상세.html">공지사항상세.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

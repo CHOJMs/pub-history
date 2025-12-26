@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="nav">
+        <h1>[ iM캐피탈 ] 
+            <a target="_blank" href="/web/sample/가이드.html">UI guide</a><a target="_blank" href="/web/pub_html/index_history_1.html">History</a>
+            <a target="_blank" href="/web/pub_html/index_mob_office.html">모바일오피스</a>
+            <a target="_blank" href="/admin/pub_html/index.html">관리자</a>
+            <a target="_blank" href="/web/pub_html/index_dealer.html">재고금융</a>
+            <a target="_blank" href="/carverse/pub_html/index.html">세일즈 페이지</a></h1>
+        <div class="top-area">
+            <ul>
+                <li class="tit">메뉴</li>
+                <li><a class="on" href="/web/pub_html/history_2_19.html" target="main">리뉴얼</a></li>
+                <li><a href="/web/pub_html/history_2_15.html" target="main">공통</a></li>
+                <li><a href="/web/pub_html/history_2_20.html" target="main">서비스데스크</a></li>
+                <li><a href="/web/pub_html/history_2_1.html" target="main">대출이동서비스</a></li>
+                <li><a href="/web/pub_html/history_2_3.html" target="main">개인금융</a></li>
+                <li><a href="/web/pub_html/history_2_4.html" target="main">자동차금융</a></li>
+                <li><a href="/web/pub_html/history_2_5.html" target="main">커머셜</a></li>
+                <li><a href="/web/pub_html/history_2_2.html" target="main">마이</a></li>
+                <li><a href="/web/pub_html/history_2_13.html" target="main">회사소개</a></li>
+                <li><a href="/web/pub_html/history_2_11.html" target="main">고객센터</a></li>
+                <li><a href="/web/pub_html/history_2_14.html" target="main">고객재확인</a></li>
+                <li><a href="/web/pub_html/history_2_10.html" target="main">금융소비자보호</a></li>
+                <li><a href="/web/pub_html/history_2_12.html" target="main">Etc.</a></li>
+                <li><a href="/web/pub_html/history_2_16.html" target="main">정보보호포털연동</a></li>
+                <li><a href="/web/pub_html/history_2_17.html" target="main">국민주택채권 환급/보상</a></li>
+                <li><a href="/web/pub_html/history_2_18.html" target="main">이미지</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <iframe src="history_2_19.html" width="100%" frameborder="0" name="main" scrolling="yes"></iframe>
+        </div>
+    </div>
+
+    <script>
+
+    	$(function(){
+
+    		$('.top-area ul li a').on('click', function(e){
+
+    			if ( $(this).hasClass('index') ){
+
+    			}else{
+    				e.preventDefault();
+    				var target = $(this).attr('href')
+    				$('.dashboard').hide()
+    				$('#page-wrapper iframe').show().attr('src',target)
+    			}
+
+    			$(this).addClass('on')
+    			$(this).parent().siblings().find('a').removeClass('on')
+    		})
+    	})
+
+    </script>
+</body>
+</html>

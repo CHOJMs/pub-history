@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중요 약정사항 확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>중요 약정사항 확인</h1>
+            </div>
+            <div class="popup-contents flex-col no-scroll"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+                    <div class="col-cnt-type03 bg-gray"><!-- [D]블루배경일 때 : bg-blue / 흰색배경일 때 : bg-white -->
+
+                        <!-- Start : 아코디언 영역 -->
+                        <div class="accordion-list label-wid">
+                            <ul>
+                                <li class="show">
+                                    <div class="q">
+                                        <a href="#">
+                                            <div class="agree-box">
+                                                <div class="agree-total-box">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="ch01" name="ch01" class="chk" checked>
+                                                        <label for="ch01" class="label">중도해지손해배상금</label>
+                                                        <!-- Start : 툴팁팝업 : 20221031 : 수정 -->
+                                                        <abbr class="tooltip" title="리스만기일 도래 전에 리스계약을 해지하고 자동차를 리스사에 반납하고자 할 경우 금융회사의 손해에 대해 고객님이 부담하여야 합니다. (중도해지배상금률은 잔여기간에 따라 하향합니다) 이 경우 중도해지손해배상금은 당초 계약에 따른 잔여리스료의 합계금액 이내의 금액이어야 합니다." tabindex="0"></abbr>
+                                                        <!-- //End : 툴팁팝업 -->
+                                                        <span>1</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="a">미회수원금 × 최고요율(250%) × (잔여기간월수/리스기간전체월수)
+                                        <div class="dot">중도해지손해배상금율은 리스기간이 경과함에 따라 연 단위 또는 월 단위 또는 일 단위로 차등하여 인하되는 방식으로 적용하며, 계약해지일 현재의 잔존일수가 1년 이하인 경우에는 월 단위 또는 일 단위로 차등하여 인하하는 방식으로 적용</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q">
+                                        <a href="#">
+                                            <div class="agree-box">
+                                                <div class="agree-total-box">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                                        <label for="ch01" class="label">규정손해배상금</label>
+                                                        <!-- Start : 툴팁팝업 : 20221031 : 수정 -->
+                                                        <abbr class="tooltip" title="리스만기일 도래 전에 리스계약을 해지하고 자동차를 고객님의 명의로 이전하고자 할 경우 금융회사의 손해에 대해 부담하여야 합니다. (규정손해배상금률은 잔여기간에 따라 하향합니다) 이 경우 규정손해배상금과 미회수원금의 합계 금액은 당초 계약에 따른 잔여리스료와 잔존가치의 합계금액 이내의 금액이어야 합니다." tabindex="0"></abbr>
+                                                        <!-- //End : 툴팁팝업 -->
+                                                        <span class="on">2</span>
+                                                    </div>
+                                                </div>
+                                                <p></p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="a">미회수원금 X 최고요율(17%) X (잔여기간월수/리스기간전체월수)
+                                        <div class="dot">규정손해배상금율은 리스기간이 경과함에 따라 연 단위 또는 월 단위 또는 일 단위로 차등하여 인하되는 방식으로 적용하며, 계약해지일 현재의 잔존일수가 1년 이하인 경우에는 월 단위 또는 일 단위로 차등하여 인하하는 방식으로 적용</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q">
+                                        <a href="#">
+                                            <div class="agree-box">
+                                                <div class="agree-total-box">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                                        <label for="ch01" class="label">승계수수료</label>
+                                                        <span>3</span>
+                                                    </div>
+                                                </div>
+                                                <p></p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="a">미회수원금 X 승계수수료최고요율(1%) X (잔여기간월수/리스기간전체월수)
+                                        <div class="dot">[승계수수료 최소금액 300,000원, 최대금액 1,000,000원]</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q">
+                                        <a href="#">
+                                            <div class="agree-box">
+                                                <div class="agree-total-box">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                                        <label for="ch01" class="label">반환지연금</label>
+                                                        <span>4</span>
+                                                    </div>
+                                                </div>
+                                                <p></p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="a">미회수원금 X 최고요율(17%) X (잔여기간월수/리스기간전체월수)</div>
+                                </li>
+                                <li>
+                                    <div class="q">
+                                        <a href="#">
+                                            <div class="agree-box">
+                                                <div class="agree-total-box">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                                        <label for="ch01" class="label">반환자동차의 평가 및 감가비용</label>
+                                                        <!-- Start : 툴팁팝업 : 20221031 : 수정 -->
+                                                        <abbr class="tooltip type03" title="고객님이 리스계약기간내 중도해지 또는 만료시 자동차를 반환하는 경우 반환 자동차의 상태·성능을 평가하여 가치 감가사유가 있을 때에는 고객에게 설명하고 동의를 받은 후 그 금액을 청구하기로 합니다. 고객이 제1항의 평가결과에 이의가 있을 경우에는 금융회사와 고객의 상호협의하에 정한 별도의 평가기관에 의한 평가결과를 참고할 수 있습니다. (금융회사는 사전에 감가율에 대하여 홈페이지 등에 예시할 수 있으며, 근거 및 설명자료를 제시합니다.)" tabindex="0"></abbr>
+                                                        <!-- //End : 툴팁팝업 -->
+                                                        <span>5</span>
+                                                    </div>
+                                                </div>
+                                                <p></p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="a">감가금액 = 반환시점의 자동차의 기대가치(혹은 중고차시세) X 감가율의 합
+                                        <div class="dot">감가비 산정기준은 당사 홈페이지에서 확인하실 수 있습니다.</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q">
+                                        <a href="#">
+                                            <div class="agree-box">
+                                                <div class="agree-total-box">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                                        <label for="ch01" class="label">종료처리조건</label>
+                                                        <span>6</span>
+                                                    </div>
+                                                </div>
+                                                <p></p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="a">인수/반납/재리스 선택가능
+                                        <div class="dot">계약만기시 차량을 인수할 경우, 잔존가치 및  소유권 이전 비용은 고객님이 부담하셔야 합니다.</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //End : 아코디언 영역 -->
+
+                        <!-- Start : 최종확약내용 영역 -->
+                        <div class="srt-box">
+                            <p class="tit">최종 확약내용</p>
+                            <p class="txt"><span>리스이용자(본인) 및 연대보증인</span>은 중요약정 사항을 확인하고 이에 동의합니다</p>
+                            <p class="srt-logo"><img src="/static/web/img/imlogo/ci_basic.png" alt="iM캐피탈"></p>
+                        </div>
+                        <!-- //End : 최종확약내용 영역 -->
+
+                    </div>
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">확인하고 동의합니다</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+
+</body>
+</html>

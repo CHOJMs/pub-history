@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간편 비밀번호 입력 확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/ui_gnb.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;" aira-haspopup="dialog">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc popup-640"><!-- [D] 작은 팝업인 경우 : 클래스 popup-small 추가 -->
+        <div class="inner">
+            <div class="popup-contents flex-col">
+                <!-- Start : content -->
+                <div class="pin-num-box">
+                    <p class="tit">간편비밀번호 6자리를<br>한번 더 입력해주세요</p>
+                    <div class="pin-num">
+                        <span class="on"></span>
+                        <span class="on"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function(){
+        $(window).on("resize", function() {
+            footerHide();
+        });
+        footerHide();
+        function footerHide() {
+            var screenWidth = $(window).width();
+            if (screenWidth < 1024) {
+                // 화면 너비가 1024px보다 작을 때 실행할 코드
+                $("footer").hide();
+                $("body").show();
+            }else{
+                $("body").hide();
+            }
+        }
+    });
+</script>
+</body>
+</html>

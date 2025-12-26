@@ -1,0 +1,334 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/new_tab.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery-1.12.4.min.js"></script>
+
+<script type="text/javascript" >
+$(function(){
+	var tab1 = new tabpane(3,'tab','tabpage','_on.gif','.gif','active');
+})
+</script>
+
+</head>
+<body>
+
+<!-- 레이어 팝업 -->
+<div class="layer" tabindex="0" style="display: block;">
+	<div class="pop_bg"></div>
+	<div class="layerPop" id="cserLayerPopup" style="width: 950px; height: 700px; transform: translate(-50%, -50%);">
+		<h1>통합메세지관리(SMS)</h1>
+		<div class="Pop_content">
+			<div class="Pop_form-type">
+
+				<!-- tab -->
+				<div class="tab_2deps_box">
+					<ul class="tabwrap">
+						<li><a href="#" id="tab1">SMS발송</a></li>
+						<li><a href="#" id="tab2">SMS수신</a></li>
+						<li><a href="#" id="tab3">페이스북 발송</a></li>
+					</ul>
+				</div>
+				<!-- //tab -->
+				<div id="tabpage1" class="form-type border_top_none">
+					<div class="scroll_box" style="height: 480px;">
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">발송의뢰정보</h4>
+						</div>
+						<table class="bbs-table-view mb30" id="tbl_condition">
+							<colgroup>
+								<col width="20%">
+								<col width="30%">
+								<col width="20%">
+								<col width="30%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">문구구분</th>
+									<td><select class="wd5" id="" name="">
+											<option value="">선택</option>
+											<option value=""></option>
+										</select>
+									</td>
+									<th scope="row">SMS요청일자</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id=""><a href="#" class="btnCalendar"><img src="/static/admin/img/common/ico_calendar.png" alt="날짜 선택"></a>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>수신SMS번호</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th>발신SMS번호</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>SMS내용<em>*</em></th>
+									<td colspan="3">
+										<span class="textarea_box">
+											<textarea id="" placeholder="내용을 입력하세요" title="내용 입력" style="height:80px;"></textarea>
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="btn-align-center mb30">
+							<a href="#none" class="btn h42 wid120">발송</a>
+						</p>
+
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">발송이력</h4>
+						</div>
+						<table class="bbs-table mb30">
+							<colgroup>
+								<col style="width:90px;">
+								<col style="width:12%;">
+								<col style="width:12%;">
+								<col style="width:13%;">
+								<col style="width:%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">고객명</th>
+									<th scope="col">수신고객번호</th>
+									<th scope="col">수신번호</th>
+									<th scope="col">요청일자</th>
+									<th scope="col">문구내용</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+										<td>홍길동</td>
+										<td>01012345678</td>
+										<td>01012345678</td>
+										<td>2021-02-05</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>홍길동</td>
+										<td>01012345678</td>
+										<td>01012345678</td>
+										<td>2021-02-05</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td  colspan='5'>수신된 데이터가 없습니다.</td>
+									</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div id="tabpage2" class="form-type border_top_none">
+					<div class="scroll_box" style="height: 480px;">
+						<!-- 검색 시작 -->
+						<div class="search_p_box2">
+							<ul>
+								<li>
+									<label for="">고객번호</label>
+									<input type="text" id="" name="" value="" placeholder="" class="wid200">
+								</li>
+								<li>
+									<label for="">고객명</label>
+									<input type="text" id="" name="" value="" placeholder="" class="wid200">
+								</li>
+								<li>
+									<label for="">기준일자</label>
+									<div class="form_box" style="display: inline-block;">
+										<input type="text" name="" id="" class="m0 wid200"><a href="#" class="btnCalendar"><img src="/static/admin/img/common/ico_calendar.png" alt="날짜 선택"></a>
+									</div>
+								</li>
+							</ul>							
+							<p class="btn-align-center mb15 mt10">
+								<a href="#none" class="btn h42 wid100 wid120">조회</a>
+							</p>
+						</div>
+						<!-- 검색 끝 -->
+						<table class="bbs-table mb30">
+							<colgroup>
+								<col style="width:70px;">
+								<col style="width:13%;">
+								<col style="width:12%;">
+								<col style="width:12%;">
+								<col style="width:%;">
+								<col style="width:11%;">
+								<col style="width:11%;">
+								<col style="width:11%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">No</th>
+									<th scope="col">수신일자</th>
+									<th scope="col">수신시간</th>
+									<th scope="col">종류</th>
+									<th scope="col">메세지</th>
+									<th scope="col">이미지</th>
+									<th scope="col">이미지</th>
+									<th scope="col">이미지</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+										<td>1</td>
+										<td>2021-02-05</td>
+										<td>11:24:30</td>
+										<td></td>
+										<td class="a_l">문의합니다</td>
+										<td>
+											<a href="#" class="btn">보기</a>
+										</td>
+										<td>
+											<a href="#" class="btn">보기</a>
+										</td>
+										<td>
+											<a href="#" class="btn">보기</a>
+										</td>
+									</tr>
+									<tr>
+										<td  colspan='8'>수시된 데이터가 없습니다.</td>
+									</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div id="tabpage3" class="form-type border_top_none">
+					<div class="scroll_box" style="height: 480px;">
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">발송의뢰정보</h4>
+						</div>
+						<table class="bbs-table-view mb30" id="tbl_condition">
+							<colgroup>
+								<col width="20%">
+								<col width="30%">
+								<col width="20%">
+								<col width="30%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">고객번호</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row">고객명</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>문구구분</th>
+									<td>
+										<select class="wd5" id="" name="">
+											<option value="">선택</option>
+											<option value=""></option>
+										</select>
+									</td>
+									<th>요청일자</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>문구내용<em>*</em></th>
+									<td colspan="3">
+										<span class="textarea_box">
+											<textarea id="" placeholder="내용을 입력하세요" title="내용 입력" style="height:80px;"></textarea>
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="btn-align-center mb30">
+							<a href="#none" class="btn h42 wid120">발송</a>
+						</p>
+
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">발송이력</h4>
+						</div>
+						<table class="bbs-table mb30">
+							<colgroup>
+								<col style="width:10%;">
+								<col style="width:10%;">
+								<col style="width:12%;">
+								<col style="width:8%;">
+								<col style="width:10%;">
+								<col style="width:9%;">
+								<col style="width:10%;">
+								<col style="width:10%;">
+								<col style="width:10%;">
+								<col style="width:10%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">고객번호</th>
+									<th scope="col">여신번호</th>
+									<th scope="col">요청일자</th>
+									<th scope="col">문구구분</th>
+									<th scope="col">발송 성공여부</th>
+									<th scope="col">에러코드</th>
+									<th scope="col">에러서브코드</th>
+									<th scope="col">에러메세지</th>
+									<th scope="col">메신져ID</th>
+									<th scope="col">요청번호</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+										<td>01012345678</td>
+										<td>01012345678</td>
+										<td>2021-02-05</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td  colspan='10'>수신된 데이터가 없습니다.</td>
+									</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+			</div>
+			<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+
+		</div>
+	</div>
+</div>
+<!-- 팝업bg -->
+
+</body>
+</html>

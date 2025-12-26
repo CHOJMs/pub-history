@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+	공통
+---------------------------------------------------------- */
+/* layout */
+.wrap {width: 100%; min-height: 100%; }
+.sub-contaier {padding: 0 2rem;}
+.sub-contaier .contents {padding: 58px 0;}
+.cont-type01 {padding: 58px 0 120px !important;}
+
+/* title */
+.tit-info {font-size: 2.4rem; padding-bottom: 4rem; line-height: 3.4rem; font-weight: bold;}
+.h-tit {position: relative; font-size: 1.6rem; line-height: 1.6rem; margin-bottom: .6rem; color: rgb(34, 36, 38); letter-spacing: -0.01em; font-weight: 700; text-align: left;}
+
+/* fixed */
+.fixed-btn-area {position: fixed; left: 0; bottom: 0; width: 100%; padding: 0 2rem 2.4rem 2rem; box-sizing: border-box; background: linear-gradient(180deg, #ffffff2e 18%, #ffffff 100%);}
+.fixed-call-area {position: fixed; left: 0; bottom: 0; width: 100%; padding: 0 4rem 4rem 4rem; box-sizing: border-box;}
+
+/* 고정픽셀 */
+.wsize120 {flex: none !important;}
+
+/* ----------------------------------------------------------
+	폼객체
+---------------------------------------------------------- */
+/* 폼객체 : 공통 */
+button {border: none; background-color: transparent;}
+input.chk {color: #1e1e1e; font-size: 1.4rem; }
+input[type="radio"] {width:1px; height:1px; margin-left: -1px; appearance:none;-webkit-appearance:none;-moz-appearance:none; opacity: 0;}
+input[type="checkbox"] {width:1px; height:1px; margin-left: -1px; appearance:none;-webkit-appearance:none;-moz-appearance:none; opacity: 0;}
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+input[type="password"] {width:100%; height:4rem; padding:0; font-size:1.5rem; letter-spacing: -0.01em; color: rgb(34, 36, 38); border-bottom:2px solid rgb(211, 213, 216); border-left: none; border-top: none; border-right: none; background-color: transparent; border-radius: 0; box-sizing: border-box;vertical-align: top; appearance: none; font-family: "pretendard", "SemiBold", "droid sans fallback", "AppleSDGothicNeo", sans-serif, "돋움", Dotum;}
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="tel"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover {border-bottom:2px solid #222426; transition: all .5s; color: rgb(34, 36, 38);}
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {border-bottom:2px solid #222426; outline:none; color: rgb(34, 36, 38);}
+input::-ms-input-placeholder,
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input::-moz-placeholder {color: rgb(34, 36, 38);}
+input::placeholder {color: rgb(145, 145, 145);}
+
+select {-webkit-appearance:none; -moz-appearance:none; appearance:none; }
+select::-ms-expand {display:none; }
+select { border-bottom:1px solid rgb(211, 213, 216); letter-spacing: -0.05em; border-left: none; border-top: none; border-right: none; font-family: "pretendard", "SemiBold", "droid sans fallback", "AppleSDGothicNeo", sans-serif, "돋움", Dotum;}
+select em {color: rgb(255, 36, 36); font-size: 1.4rem;}
+select:focus, select:hover {border-bottom:2px solid #222426; transition: all .5s; color: rgb(34, 36, 38);}
+
+input:-internal-autofill-selected  { background-color: #fff !important;}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus { background-color: transparent !important;}
+
+/* 폼객체 : checkbox */
+.checkbox {margin-bottom: 1.6rem;}
+.checkbox:last-child {margin-bottom: 0rem !important;}
+
+/* 체크박스 : 기본형1 */
+.chk {overflow:hidden; position:absolute; border:0; background:#fff; margin:0 0 0 0rem; width:2.4rem; height:2.4rem;}
+.chk+.label {display:inline-block; position:relative; padding-left:3.2rem; font-size:1.4rem; height:2.4rem; line-height: 2.4rem; font-weight: 500; border: none; letter-spacing: -0.01em; color: rgb(34, 34, 34); cursor:pointer; box-sizing:border-box;}
+.chk+.label:after {position:absolute; top:0; left:0; width:2.4rem; height:2.4rem; margin-top:0rem; transition: .3s; background:url('../img/chatbot/ico_check.png') no-repeat center center #d3d5d8; border:.1rem solid #d3d5d8; border-radius: 50%; background-size:12px 8px; content: ''}
+.chk:checked+.label:after {margin-top:0; background: url('../img/chatbot/ico_check.png') no-repeat center center #1297ef; border:.1rem solid #1297ef; border-radius: 50%; background-size:14px auto;}
+
+/* 체크박스 : 기본형2 */
+.chk.chk_1+.label {padding-left: 3.2rem; font-weight: normal;}
+.chk.chk_1+.label:after {border:none; background:url('../img/chatbot/ico_check_off.png') no-repeat center center; background-color: transparent; background-size: 2.4rem auto;}
+.chk.chk_1:checked+.label:after {border:none; background: url('../img/chatbot/ico_check_on.png') no-repeat center center; background-color: transparent; background-size:2.6rem auto;}
+
+/* 폼객체 : selectbox */
+.selectbox {position: relative; flex: 1; margin-right: 1.5rem;}
+.select {width:100%; height: 4rem; padding:0 2rem 0 0; font-size:1.5rem; color: rgb(34, 36, 38); border-radius: initial; border-bottom: 2px solid rgb(211, 213, 216); background: url('../img/ico_select.png') no-repeat center right 0; background-size:auto 2rem; box-sizing: border-box;}
+.select:disabled, .select.disabled {background: url('../img/ico_select_dis.png') no-repeat center right 0; background-size:auto 2rem; border-bottom:2px solid #e9eaeb; color:rgb(112, 116, 120, 0.6);}
+.select:focus {outline:none;}
+.selectbox:last-child, .select:last-child, .select.disabled:last-child {margin-right: 0px;}
+
+/* 폼객체 : radiobox : 블록형 */
+.radio-type1 {display: table; width: 100%; margin-bottom: -0.6rem;}
+.radio-type1 div {position: relative; display: table-cell; color: rgb(34, 36, 38); width: 50%;}
+.radio-type1 div:first-child label {border-top-right-radius: 0; border-bottom-right-radius: 0;}
+.radio-type1 div:last-child label {border-top-left-radius: 0; border-bottom-left-radius: 0;}
+.radio-type1 input {overflow: hidden; position: absolute; border: 0; margin: 0 0 0 0px; width: 100%; height: 80px;}
+.radio-type1 input + label {width: 100%; display: inline-flex; justify-content: center; align-items: center; position: relative; height: 80px; font-size: 1.4rem; color: rgb(112, 116, 120); cursor: pointer; letter-spacing: -0.05em; border: 1px solid rgb(211, 213, 216); border-radius: 4px;}
+.radio-type1 input:checked + label {color: rgb(34, 36, 38); border: 1px solid rgb(18, 151, 239);}
+.radio-type1 label.ico-phone {background: url('../img/chatbot/ico_phone.png') no-repeat center 1.5rem; background-size:2.6rem auto;}
+.radio-type1 label.ico-kakao {background: url('../img/chatbot/ico_kakao.png?v=20230525001') no-repeat center 1.5rem; background-size:2.6rem auto;}
+.radio-type1 label.ico-phone span, .radio-type1 label.ico-kakao span {padding-top: 3.4rem;}
+
+/* ----------------------------------------------------------
+	버튼
+---------------------------------------------------------- */
+/* 버튼공통 */
+button {font-family: "pretendard";}
+.btn-box {display: table; width: 100%; text-align: center;}
+.btn-box .btn {display: table-cell; padding-left: 1rem; width: 1%; flex: 1;}
+.btn-box .btn:first-of-type { padding-left: 0;}
+.btn-box .btn.gray button {background: rgb(188, 192, 197); color: #fff;}
+.btn-box .btn button {font-size: 1.6rem; padding: 1.6rem 0; text-align: center; border-radius: .8rem; width: 100%; color: rgb(255, 243, 165); background: rgb(34, 36, 38);}
+
+/* 폼객체 + 버튼 */
+.auth_t .btn_cont {margin-left: 15px;}
+.auth_t .btn_cont button {padding:.9rem 0; width:8.8rem; cursor:pointer; border-radius:.4rem; letter-spacing: -0.01em; background: rgb(235, 236, 238); color:rgb(34, 36, 38); font-size:1.4rem; line-height: 2rem;}
+
+/* 폼유형 : 리스트형 */
+.form-box {position: relative;}
+.form-list {position: relative; display: table; width: 100%;}
+.form-list li {padding-bottom: 4rem;}
+.form-list li:last-child {padding-bottom: 0;}
+
+.text_data {display:flex; clear:both; position: relative; margin-top: .4rem;}
+.text_data .form {-webkit-flex:1; -moz-flex:1; flex:1; margin-right: 1.5rem; position: relative;}
+.text_data .form:last-of-type {margin-right: 0px;}
+.text_data .dash {position: relative;margin-right:1.5rem; margin-left: -0.5rem;}
+.text_data .dash::before {content: ''; display:inline-block; position: absolute; top: 50%; left: 0; background: rgb(34, 36, 38); width: 6px; height: 1px;}
+.text_data .time {color: rgb(18, 151, 239); position: absolute; right: 0; top: calc(50% - 1.2rem); font-size: 1.6rem;}
+
+.agree-box {margin-top: 1.6rem;}
+.agree-total-box {background: rgb(247, 247, 247); height: 4.8rem; border-radius: .8rem; padding: 12px 16px; margin-bottom: 1.6rem;}
+.agree-total-box .checkbox {margin-left: 0 !important;}
+.agree-box .checkbox {position: relative; margin-bottom: 1.2rem; margin-left: 1.6rem;}
+.agree-box .checkbox a.arrow {display: inline-block; font-size: 0; position: absolute; right: 4px; top: .4rem;}
+.agree-box .checkbox a.arrow::before {content: ''; display: block; width: 1.6rem; height: 1.6rem; background: url('../img/chatbot/ico_arrow.png') no-repeat right center; background-size:1.6rem auto;}
+
+/* 완료 */
+.finish_box {text-align: center; margin-top: 6.4rem; padding: 0 2rem;}
+.finish_box .fini-tit {font-size: 2.4rem; line-height: 3.2rem; letter-spacing: -0.24rem; margin-top: 2.4rem; font-weight: bold;}
+.finish_box .fini-txt {font-size: 1.4rem; line-height: 2.4rem; color: rgb(112, 116, 120); margin-top: 1.6rem;}
+
+/* 완료 + 라인 */
+.finish_box .line1:last-child {padding-bottom: 2rem;}
+.finish_box .line1 + h2 {padding-top: 0;}
+
+.f-ico-comp::before {display: block; content: ''; width: 6.4rem; height: 6.4rem; background: url('../img/chatbot/ico_check_finish.png') no-repeat center center; background-size:6.4rem auto; margin: auto;}
+.f-ico-errow::before {display: block; content: ''; width: 6.4rem; height: 6.4rem; background: url('../img/chatbot/ico_errow_finish.png') no-repeat center center; background-size:6.4rem auto; margin: auto;}
+
+/* 완료 : 리스트 */
+.list-1 li {display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 1.2rem;}
+.list-1 li:last-child {margin-bottom: 0;}
+.list-1 li span {font-size: 1.4rem; color: rgb(34, 36, 38);}
+.list-1 li span.tit { color: rgb(112, 116, 120); letter-spacing: -0.14rem;}
+.list-1.line {margin-top: 4rem; padding-top: 2.4rem; border-top: 1px solid rgb(235, 236, 238);}
+
+/* 이용안내 */
+.call_phone {background: rgb(242, 244, 246); text-align: center; font-size: 1.2rem; line-height: 2.4rem; color: rgb(34, 36, 38); height: 4.8rem; padding: 1.1rem 1.6rem; border-radius: .4rem;}
+.call_phone .c-info {font-weight: 500;}
+.call_phone .c-info::before {content:''; display: inline-block; width: 1.6rem; height: 1.6rem; margin-right: .2rem; vertical-align: middle; background: url('../img/chatbot/ico_call.png') no-repeat 0; background-size:1.6rem auto;}
+.call_phone .c-tel {color: rgb(18, 151, 239); padding-left: 1.6rem; font-weight: bold;}
+.call_phone .c-text {color: rgb(112, 116, 120); padding-left: .5rem;}
+
+
+/* 본인인증 */
+.process-wrap{padding:66px 20px 0}
+.tit-info {font-size: 2.4rem; padding-bottom: 4rem; font-weight: 700; line-height: 34px;}
+.tit-info .s-txt {font-size: 1.4rem; color: rgb(92, 103, 115); font-weight: 400; margin-top: 1.6rem;line-height:22px}
+.h-tit {font-size: 1.4rem; font-weight:400;margin-bottom: 0; letter-spacing: -0.05em; color: rgb(145, 145, 145); margin-left: .8rem; margin-bottom: .8rem;}
+.inp-data {display: flex;}
+.inp-data span {position: relative; flex: 1;  margin-left: 24px;}
+.inp-data span:first-child, .inp-data .selectbox:first-child {margin-left: 0 !important;}
+.inp-data span input, .select-area input {padding-left: .8rem; border-bottom: 2px solid  rgb(223, 227, 232);}
+.inp-data .selectbox {flex: 1; margin-left: 24px; margin-right: 0 !important;}
+.btn-clear {position: absolute; width: 2.4rem; height: 2.4rem; right: 0; top: 1.2rem; background: url('../img/ui_common/ico_del.png') no-repeat; background-size: 24px auto; font-size: 0;}
+.inp-data input, .select-area input {font-size: 2rem !important; color: rgb(34, 36, 38) !important; font-weight: 500; height: 4.8rem !important; font-family: "pretendard";}
+.inp-data .f-red {color: rgb(239, 64, 64); font-size: 1.2rem; padding-top: .8rem; padding-left: .8rem;}
+.error {border-bottom: 2px solid rgb(239, 64, 64) !important;}
+.btn-box .btn button {width: 100%; height: 56px; color: #fff; background: #00a88b; border-radius: 8px; font-size: 16px; text-align: center; font-weight: 500;}

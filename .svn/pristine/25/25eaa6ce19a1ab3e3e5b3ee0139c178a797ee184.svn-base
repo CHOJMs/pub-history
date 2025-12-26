@@ -1,0 +1,2721 @@
+/* ************************************************************************
+ * 파일명 : dgbc-exjs.util.js
+ * 생성자 : -
+ * 생성일자 : 2021. 04. 05.
+ * 클래스설명 : 홈페이지에서 사용하는 유틸리티
+ * ************************************************************************
+ */
+
+(function() {
+
+	"use strict";
+
+
+	/**
+	* ## exjs javascript library <br />
+	*
+	* @class exjs
+	*/
+	var exjs = {
+		version : "0.0.1"
+	};
+
+	//전역 객체로 선언
+	window.exjs = exjs;
+
+	/**
+	* 전역 설정을 저장하기 위한 변수
+	*
+	* @property exjs.global
+	* @type {Object}
+	*/
+	exjs.global = {};
+
+	/**
+	* debug 모드로 작동할 지에 대한 설정
+	*/
+	exjs.global.debug = (typeof GlobalJSConfig !== "undefined") ? GlobalJSConfig.isTestMode : false;
+
+	/**
+	 * debug 사용여부를 설정한다.
+	 * @method setDebug
+	 * @param (Boolean) true or false
+	 * @example
+	 *      exjs.setDebug(true);
+	 */
+	exjs.setDebug = function(isDebug) {
+		exjs.global.debug = isDebug;
+	};
+
+	exjs.isDebug = function() {
+	    return !!exjs.global.debug;
+	};
+
+	exjs.log = function(message) {
+		if (exjs.isDebug()) {
+			console.log(message);
+		}
+	};
+	///////////////////////////////////////////////////////////////////////////////////////////////
+    // EXJS UTIL
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+	/**
+	 * exjs Util
+	 */
+	exjs.util = {};
+
+	/**
+	 * 비동기 ajax 연속 호출 방지 flag
+	 * @method callOnceAjax
+	 * @type boolean true or false
+	 */
+	exjs.util.isAjaxPending = false;
+
+
+	///////////////////////////////////////////////////////////////////////////////////////////////
+    // Ajax
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * ajax 통신
+     * @param args	$.ajax 옵션값
+     */
+    exjs.util.callAjax = function(args) {
+
+    	// ajax 통신에 필요한 설정 기본값
+        var settings = {
+            type: "POST",
+            url: "",
+            data: {},
+            dataType: "json",
+            cache: false,
+            headers: {
+                "cache-control": "no-cache",
+                "pragma": "no-cache"
+            },
+            beforeSend: function(xhr) {
+            	// 로딩바 호출
+            },
+            complete: function() {
+            	// 로딩바 닫기
+            }
+        };
+
+        // 기본설정객체에 호출시 설정한 객체를 Merge.
+        $.extend(settings, args);
+
+
+        settings.success = function(data, textStatus, jqXHR) {
+
+        	exjs.log('  exjs.util.callAjax [success] : ');
+        	exjs.log(data);
+
+        	if (typeof args.success === "function") {
+        		args.success(data, textStatus, jqXHR);
+            }
+        }
+
+        settings.error = function _jQueryAjaxError(data) {
+
+        	exjs.log('  exjs.util.callAjax [error] : 호출 실패! ' + settings.url);
+        	exjs.log('  exjs.util.callAjax [error] : [' + data.status+'] ' + data.statusText);
+
+        	if (typeof args.error === "function") {
+        		args.error(data);
+            } else {
+            	// 디폴트 에러 처리
+            	alert("요청 처리 중 에러가 발생 했습니다." + "\n[" + data.status+ "] " + data.statusText);
+            }
+        }
+
+        return jQuery.ajax(settings);
+
+//        jQuery.ajax({
+//            type: settings.type,
+//            url: settings.url,
+//            data: settings.data,
+//            cache: settings.cache,
+//            beforeSend: function(xhr) {
+//            	// 로딩바 호출
+//            },
+//	        complete:function() {
+//	        	// 로딩바 닫기
+//	        },
+//            success: function(data, textStatus, jqXHR) {
+//
+//            	exjs.log('  exjs.util.callAjax [success] : ');
+//            	exjs.log(data);
+//
+//            	if (typeof settings.success === "function") {
+//            		settings.success(data, textStatus, jqXHR);
+//                }
+//            },
+//	        error: _jQueryAjaxError
+//        });
+
+//        function _jQueryAjaxError(data) {
+//
+//        	exjs.log('  exjs.util.callAjax [error] : 호출 실패! ' + settings.url);
+//        	exjs.log('  exjs.util.callAjax [error] : [' + data.status+'] ' + data.statusText);
+//
+//        	if (typeof args.error === "function") {
+//        		args.error(data);
+//            } else {
+//            	// 디폴트 에러 처리
+//            	alert("요청 처리 중 에러가 발생 했습니다." + "\n[" + data.status+ "] " + data.statusText);
+//            }
+//        }
+    };
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Ajax
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * ajax 통신 (중복 호출 방지)
+     * @param args	$.ajax 옵션값
+     */
+    exjs.util.callOnceAjax = function(args) {
+//    	console.log("1 isAjaxPending - "+exjs.util.isAjaxPending);
+
+    	if(exjs.util.isAjaxPending) return;
+    	exjs.util.isAjaxPending = true;
+
+//    	console.log("2 isAjaxPending - "+exjs.util.isAjaxPending);
+
+    	// ajax 통신에 필요한 설정 기본값
+        var settings = {
+            type: "POST",
+            url: "",
+            data: {},
+            dataType: "json",
+            cache: false,
+            headers: {
+                "cache-control": "no-cache",
+                "pragma": "no-cache"
+            },
+            beforeSend: function(xhr) {
+            	// 로딩바 호출
+            },
+            complete: function() {
+            	// 로딩바 닫기
+            }
+        };
+
+        // 기본설정객체에 호출시 설정한 객체를 Merge.
+        $.extend(settings, args);
+
+
+        settings.success = function(data, textStatus, jqXHR) {
+
+        	exjs.log('  exjs.util.callOnceAjax [success] : ');
+        	exjs.log(data);
+
+        	exjs.util.isAjaxPending = false;
+//        	console.log("3 success isAjaxPending - "+exjs.util.isAjaxPending);
+
+        	if (typeof args.success === "function") {
+        		args.success(data, textStatus, jqXHR);
+            }
+        }
+
+        settings.error = function _jQueryAjaxError(data) {
+
+        	exjs.log('  exjs.util.callOnceAjax [error] : 호출 실패! ' + settings.url);
+        	exjs.log('  exjs.util.callOnceAjax [error] : [' + data.status+'] ' + data.statusText);
+
+        	exjs.util.isAjaxPending = false;
+//        	console.log("3 error isAjaxPending - "+exjs.util.isAjaxPending);
+
+        	if (typeof args.error === "function") {
+        		args.error(data);
+            } else {
+            	// 디폴트 에러 처리
+            	alert("요청 처리 중 에러가 발생 했습니다." + "\n[" + data.status+ "] " + data.statusText);
+            }
+        }
+
+        return jQuery.ajax(settings);
+    };
+
+    /**
+     * Ajax 호출 (for 파일 업로드 용)
+     */
+    exjs.util.callMultipartAjax = function(args) {
+
+
+    };
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Ajax JSONP 요청
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * ajax JSONP 요청
+     * @param args	$.ajax 옵션값
+     */
+    exjs.util.callJsonpAjax = function(args) {
+
+    	// ajax JSONP 요청에 필요한 설정 기본값
+        var settings = {
+            url: "",
+            data: {},
+            dataType: "jsonp",
+            jsonpCallback: "getJsonpData", //Callback 함수 이름 변경 사용 가능
+            cache: false,
+            crossDomain: true,
+            beforeSend: function(xhr) {
+            	// 로딩바 호출
+            },
+            complete: function() {
+            	// 로딩바 닫기
+            }
+        };
+
+        // 기본설정객체에 호출시 설정한 객체를 Merge.
+        $.extend(settings, args);
+
+
+        settings.success = function(data) {
+
+        	exjs.log('  exjs.util.callJsonpAjax [success] : ');
+        	exjs.log(data);
+
+        	if (typeof args.success === "function") {
+        		args.success(data);
+            }
+        }
+
+        settings.error = function _jQueryJsonpAjaxError(data) {
+
+        	exjs.log('  exjs.util.callJsonpAjax [error] : 호출 실패! ' + settings.url);
+        	exjs.log('  exjs.util.callJsonpAjax [error] : [' + data.status+'] ' + data.statusText);
+
+        	if (typeof args.error === "function") {
+        		args.error(data);
+            } else {
+            	// 디폴트 에러 처리
+            	alert("요청 처리 중 에러가 발생 했습니다." + "\n[" + data.status+ "] " + data.statusText);
+            }
+        }
+
+        return jQuery.ajax(settings);
+    };
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Ajax -End
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Form
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Hidden 객체를 생성한다.
+     * @param formObj (Object)form의 참조 값
+     * @param fieldId 필드ID
+     * @param value 필드 값
+     * @param (Boolean)isDuplicate 중복 허용 여부
+     */
+    exjs.util.createHiddenField = function(formObj, fieldId, value, isDuplicate) {
+        var checkDuplicate = false;
+        if( isDuplicate ){
+            checkDuplicate = isDuplicate;
+        }
+        if( formObj[fieldId] && !checkDuplicate ){
+            formObj[fieldId].value = value;
+        }else{
+            var fieldObj = document.createElement('input');
+
+            fieldObj.type = 'hidden';
+            fieldObj.id = fieldId;
+            fieldObj.name = fieldId;
+            fieldObj.value = value;
+
+            formObj.appendChild(fieldObj);
+        }
+    };
+
+    /**
+     * Hidden 객체를 삭제한다.
+     * @param formObj (Object)form 참조 값
+     * @param fieldId 삭제 필드ID
+     */
+    exjs.util.removeHiddenField = function(formObj, fieldId){
+        if (formObj.childNodes) {
+            for (var idx = 0; idx < formObj.childNodes.length; idx++) {
+                if (formObj.childNodes[idx].id == fieldId) {
+                    formObj.removeChild(formObj.childNodes[idx]);
+                }
+            }
+        }
+    };
+
+    /**
+     * 가상 form을 생성한다.
+     * @param data
+     * @return form object
+     */
+    exjs.util.createForm = function(data) {
+        var virtualForm = document.createElement('form');
+
+        if (data != null && data != undefined) {
+            for (var i = 0; i < data.length; i++) {
+                exjs.util.createHiddenField(virtualForm, data[i].id, data[i].value, true);
+            }
+        }
+
+        return virtualForm;
+    };
+
+    /**
+     * 폼 데이터를 오브젝트로 생성하는 함수
+     *
+     * @param _formId
+     * @returns 해당 _formId에서 serializeArray한 Object
+     */
+    exjs.util.serializeArrayToObj = function(_formId)
+    {
+        var formJson = $(_formId).serializeArray();
+        var sndData = new Object();
+
+        $.each(formJson, function(index, entry)
+        {
+            if(sndData[entry.name])
+            {
+                if(!$.isArray(sndData[entry.name]))
+                {
+                    sndData[entry.name] = [sndData[entry.name]];
+                }
+                sndData[entry.name].push(entry.value);
+            }
+            else
+            {
+                sndData[entry.name] = entry.value;
+            }
+        });
+
+        return sndData;
+    };
+
+    /**
+     * Select 엘리먼트의 Option을 모두 제거한다. 단 0번째 index는 제외한다.
+     * @param selectElement optioins을 제거할 selectbox
+     */
+    exjs.util.clearSelectboxOptions = function(selectElement) {
+        if (selectElement.options.length > 1) {
+            for (idx = selectElement.length - 1; idx > 0; idx--) {
+                selectElement.options[idx] = null;
+            }
+        }
+    };
+    /**
+     * 3개로 분리되어 있는 이메일 주소를 하나로 합친다.
+     * @param email 하나로 합친 이메일 주소를 가지고 있을 엘리먼트 ID
+     * @param emailId 이메일 ID의 엘리먼트 ID
+     * @param inputId 직접 입력 도메인 엘리먼트의 ID
+     * @param selectId 도메인을 선택하는 엘리먼트 ID
+     */
+    exjs.util.emailMerge = function(email, emailId, inputId, selectId) {
+        var id = $('#'+emailId).val();
+        var input = $('#'+inputId).val();
+        var select = $('#'+selectId).val();
+
+        if(select == null || select == '') {
+            $('#'+email).val(id + '@' + input);
+        } else {
+            $('#'+email).val(id + '@' + select);
+        }
+    };
+
+    /**
+     * 2개의 입력 엘리먼트를 하나의 입력 엘리먼트에 합친다.
+     * @param merge 하나로 합친 엘리먼트 ID
+     * @param merge1 1번째 엘리먼트의 ID
+     * @param merge2 2번째 엘리먼트의 ID
+     */
+    exjs.util.merge2 = function(merge, merge1, merge2) {
+        $('#'+merge).val($('#'+merge1).val() + $('#'+merge2).val());
+    };
+
+    /**
+     * 3개의 입력 엘리먼트를 하나의 입력 엘리먼트에 합친다.
+     * @param merge 하나로 합친 엘리먼트 ID
+     * @param merge1 1번째 엘리먼트의 ID
+     * @param merge2 2번째 엘리먼트의 ID
+     * @param merge3 3번째 엘리먼트의 ID
+     */
+    exjs.util.merge3 = function(merge, merge1, merge2, merge3) {
+        $('#'+merge).val($('#'+merge1).val() + $('#'+merge2).val() + $('#'+merge3).val());
+    };
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Form -End
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Valid
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+  /**
+     * 이메일 유효성 검사를 한다.
+     * @param email 이메일주소
+     * @return 검사 결과
+     */
+    exjs.util.validEmail = function(email) {
+        if(email == null || email == '') return false;
+
+        //if (/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i.test(email)) return true;
+        var regExp = new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$");
+        if (regExp.test(email)) return true;
+        else return false;
+
+    };
+
+    /**
+     * 20190925 : DGBDS 운영팀 추가
+     */
+    exjs.util.validEmail1 = function(email) {
+        if(email == null || email == '') return false;
+        var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i
+        if (regExp.test(email)) return true;
+        else return false;
+    };
+
+    /**
+     * 주민등록번호 유효성 검사를 한다.
+     * @param juminNo 주민등록번호
+     * @return 검사 결과
+     */
+    exjs.util.validJumin = function(juminNo) {
+        var Sum = 0;
+        var i, j = 2;
+        var ChkKey1;
+        var ChkKey2;
+        var Month, Day;
+        var Sex;
+
+        if($.trim(juminNo).length != 13) return false;
+
+        for(i = 0; i < 12; i++) {
+            if(i == 8) j = 2;
+            Sum += juminNo.charAt(i) * j;
+            j    += 1;
+        }
+
+        ChkKey1 = juminNo.charAt(12);
+        ChkKey2 = (11 - (Sum % 11)) % 10;
+
+        Month    = juminNo.substr(2, 2);
+        Day        = juminNo.substr(4, 2);
+        Sex        = juminNo.charAt(6);
+
+        // Sex : 1(1900년대 국내남성),  2(1900년대 국내여성)
+        //         3(2000년대 국내남성),  4(2000년대 국내여성)
+        //         5(1900년대 외국남성),  6(1900년대 외국여성)
+        //         7(2000년대 외국남성),  8(2000년대 외국여성)
+        // if(ChkKey1 != ChkKey2 || Month > 12 || Day > 31 || (Sex != 1 && Sex != 2 && Sex != 3 && Sex != 4)) return false;
+        if((ChkKey1 != ChkKey2 && ChkKey1 != ((ChkKey2 + 2) % 10)) || Month > 12 || Day > 31) return false;
+
+        return true;
+    };
+
+    /**
+     * 개인사업자번호인지 구분
+     * @param bizNo 사업자번호
+     * @return 검사 결과
+     * true: 개인사업자, false: 법인사업자
+     */
+    exjs.util.isPersonBizNo = function(bizNo) {
+    	var nBrcd = Number(bizNo.substr(3,2));
+
+    	if( (nBrcd >= 1 && nBrcd <= 79) || (nBrcd >= 89 && nBrcd <= 99)){
+    		return true;
+    	}
+
+    	return false;
+    };
+
+    /**
+     * 사업자번호 유효성 검사를 한다.
+     * @param bizNo 사업자번호
+     * @return 검사 결과
+     */
+    exjs.util.validBizNo = function(bizNo) {
+        var sum = 0;
+        var getlist =new Array(10);
+        var chkvalue =new Array("1","3","7","1","3","7","1","3","5");
+        for(var i=0; i<10; i++) { getlist[i] = bizNo.substring(i, i+1); }
+        for(var i=0; i<9; i++) { sum += getlist[i]*chkvalue[i]; }
+        sum = sum + parseInt((getlist[8]*5)/10);
+        var sidliy = sum % 10;
+        var sidchk = 0;
+        if(sidliy != 0) { sidchk = 10 - sidliy; }
+        else { sidchk = 0; }
+        if(sidchk != getlist[9]) {
+            return false;
+        }
+        return true;
+    };
+
+    /**
+     * 법인번호 유효성 검사를 한다.
+     * @param corpNo 법인번호
+     * @return 검사 결과
+     */
+    exjs.util.validCorpNo = function(corpNo) {
+        var Sum = 0;
+        var i;
+        var ChkKey1;
+        var ChkKey2;
+
+        for(i = 0; i < 12; i++){
+            Sum += corpNo.charAt(i) * ((i % 2) + 1);
+        }
+
+        ChkKey1 = corpNo.charAt(12);
+        ChkKey2 = (10 - (Sum % 10)) % 10;
+
+        if(ChkKey1 != ChkKey2) return false;
+
+        return true;
+    };
+
+    /**
+     * 외국인등록번호 유효성 검사를 한다.
+     * @param foreignNo 외국인번호
+     * @return 검사 결과
+     */
+    exjs.util.validForeignNo = function(foreignNo) {
+        var sJuminChkDgt =  new Array (2,3,4,5,6,7,8,9,2,3,4,5);
+        var iOdd = 0;
+        var iSum = 0;
+        var iMidSum = new Array(13);
+
+        iOdd = parseInt(foreignNo.substr(7, 1))*10 + parseInt(foreignNo.substr(8, 1));
+        if (iOdd % 2 != 0 ) {
+            return false;
+        }
+
+        if ( (parseInt(foreignNo.substr( 11, 1)) !=6 ) && (parseInt(foreignNo.substr( 11, 1)) !=7 ) &&
+                 (parseInt(foreignNo.substr( 11, 1)) !=8 ) && (parseInt(foreignNo.substr( 11, 1)) !=9 ) ) {
+            return false;
+        }
+
+        for (  ix = 0; ix < 12 ; ix++) {
+            iSum += (parseInt(foreignNo.substr(ix, 1)) * sJuminChkDgt[ix]) ;
+        }
+
+        iSum = 11 - (iSum%11);
+
+        if ( iSum >= 10 ) {
+            iSum = iSum - 10;
+        }
+
+        iSum = iSum + 2;
+        if ( iSum >= 10 ) {
+            iSum = iSum - 10;
+        }
+
+        if (iSum != (parseInt(foreignNo.substr(12, 1)))) {
+            return false;
+        } else {
+            return true;
+        }
+
+        return true;
+    };
+
+    /**
+     * 날짜 유효성 검사를 한다.
+     * @param strDate "yyyyMMdd" 포맷의 String 형식의 날짜
+     * @return 검사 결과
+     *
+     * sample  : 1. $util.isDate("20160115");	 >	result true
+     *       	 2. $util.isDate("20160132");	 >  result false
+     */
+    exjs.util.validDate = function(strDate) {
+        var ret = true;
+        var value = strDate;
+        var d;
+
+        if (value.length!=8){
+            ret = false;
+        }else {
+            d = new Date(value.substring(0, 4),parseInt(value.substring(4, 6)) - 1,value.substring(6));
+
+            if(d.getFullYear() != value.substring(0, 4) || d.getMonth() + 1 != value.substring(4, 6) || d.getDate() != value.substring(6)){
+                ret = false;
+            }
+        }
+        return ret;
+    }
+
+    /**
+     * 날짜 유효성 검사를 한다.
+     * @param strDate "yyyyMM" 포맷의 String 형식의 날짜
+     * @return 검사 결과
+     *
+     * sample  : 1. $util.isDate("201601");	 >	result true
+     *       	 2. $util.isDate("201601");	 >  result false
+     */
+    exjs.util.validDate2 = function(strDate) {
+        var ret = true;
+        var value = strDate;
+        var d;
+
+        if (value.length!=6){
+            ret = false;
+        }else {
+            d = new Date(value.substring(0, 4),parseInt(value.substring(4)) - 1);
+
+            if(d.getFullYear() != value.substring(0, 4) || d.getMonth() + 1 != value.substring(4)){
+                ret = false;
+            }
+        }
+        return ret;
+    }
+
+    /**
+     * 전화번호/휴대폰번호 유효성 검증
+     * @param	전화번호/휴대폰번호
+     * @return	boolean
+     */
+    exjs.util.validTelNum = function(sValue) {
+
+    	sValue = sValue.replace(/[^\d]/g, "");
+
+    	var rx = /^(\d{2,3})(\d{3,4})(\d{4})$/;
+
+    	var bResult = false;
+    	if(rx.test(sValue)) {
+			var nLength = sValue.length
+
+			if(sValue.charAt(0) === "0") {
+				// 02-123-4567
+				// 02-1234-5678
+				// 01X-123-4567, 07X-123-4567, 지역번호-123-4567
+				// 01X-1234-5678, 07X-1234-5678, 0505-123-4567, 지역번호-1234-5678
+				if( (nLength === 9 && sValue.substring(0,2) === "02") || nLength === 10 || nLength === 11 ) {
+					bResult = true;
+				}
+			}
+		}
+		return bResult;
+    }
+
+    /**
+     * 휴대폰번호 유효성 검증
+     * @param	sValue	휴대폰번호
+     * @return	boolean
+     */
+    exjs.util.validMobileTelNum = function(sValue) {
+
+    	sValue = exjs.util.isNull(sValue) ? sValue : sValue.replace(/[^0-9]/g, "");
+
+    	return /^01[016789][1-9]{1}[0-9]{2,3}[0-9]{4}$/.test(sValue);
+    }
+
+    /**
+     * 자동차번호(차번호) 유효성 검증
+     */
+    exjs.util.validVhclNo = function(sVhclNo) {
+        if (/^\d{2}[가-힣]\d{4}/.exec(sVhclNo) != null && sVhclNo.length === 7) {
+        	return true;
+        }
+
+        if (/^\d{3}[가-힣]\d{4}/.exec(sVhclNo) != null && sVhclNo.length === 8) {
+        	return true;
+        }
+
+        if (/^[가-힣]{2}[\s]*[0-9]{2}[\s]*[가-힣]{1}[\s]*[0-9]{4}$/.exec(sVhclNo) != null && sVhclNo.length === 9) {
+        	return true;
+        }
+
+        return false;
+    };
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Valid -End
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // 입력 형식 변경
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * String 타입의 날짜 데이터를 Date 객체로 변환
+     * @param (String) strDate String 형식의 날짜 데이터
+     * @return (Date) 변환된 Date 객체
+     */
+    exjs.util.parseDate = function(strDate) {
+
+    	if (!strDate || typeof(strDate) !== "string") return null;
+
+    	strDate = strDate.replace(/\D/g, "");
+
+    	var d = null;
+
+		//YYYY
+		if(strDate.length === 4){
+			d = new Date(strDate.substr(0,4), 0, 1);
+		}
+		//YYYYMM
+		else if(strDate.length === 6){
+			d = new Date(strDate.substr(0,4), strDate.substr(4,2)-1, 1);
+		}
+		//YYYYMMDD
+		else if(strDate.length === 8){
+			d = new Date(strDate.substr(0,4), strDate.substr(4,2)-1, strDate.substr(6,2));
+		}
+		//YYYYMMDDHH24
+		else if(strDate.length === 10){
+			d = new Date(strDate.substr(0,4), strDate.substr(4,2)-1, strDate.substr(6,2), strDate.substr(8,2), 0, 0);
+		}
+		//YYYYMMDDHH24MI
+		else if(strDate.length === 12){
+			d = new Date(strDate.substr(0,4), strDate.substr(4,2)-1, strDate.substr(6,2), strDate.substr(8,2), strDate.substr(10,2), 0);
+		}
+		//YYYYMMDDHH24MISS
+		else if(strDate.length >= 14){
+			d = new Date(strDate.substr(0,4), strDate.substr(4,2)-1, strDate.substr(6,2), strDate.substr(8,2), strDate.substr(10,2), strDate.substr(12,2));
+		}
+
+		return d;
+    };
+
+    /**
+     * 날짜 포맷 형식으로 변환한다.
+     * @param strDate String 형식의 날짜
+     * @param pattern 날짜 패턴
+     * @return (String) 변환된 날짜
+     */
+    exjs.util.dateFormat = function(inputDate, pattern) {
+
+    	if(inputDate == null || inputDate == '') return '';
+
+        var d = null;
+		if (typeof inputDate === "string") {
+			d = exjs.util.parseDate(inputDate) || new Date();
+		}
+		else if (typeof inputDate ==="object" && inputDate instanceof Date) {
+			d = new Date(inputDate.valueOf());
+		}
+		else if (typeof(inputDate) === "number") {
+			d = new Date(inputDate); // milliseconds
+		}
+		else {
+			d = new Date();
+		}
+
+        return d.format(pattern);
+    };
+
+    /**
+     * 오늘 날짜를 반환한다.
+     * @param pattern 날짜 형식 (기본형식 : "yyyyMMdd")
+     * @return (String) 오늘 날짜에 해당하는 문자열
+     */
+    exjs.util.getToday = function(pattern) {
+    	pattern = pattern || "yyyyMMdd";
+    	return exjs.util.dateFormat(new Date(), pattern);
+    };
+
+    /**
+     * 입력 받은 날짜에 입력 받은 년 수 만큼 더한다.
+     * @param (String) date 날짜 데이터 (yyyyMMdd)
+     * @param (Number) amount 더할 년 수
+     * @param (String) pattern 날짜 패턴
+     * @return (String) 년을 더한 날짜
+     */
+    exjs.util.addYears = function(date, amount, pattern) {
+        pattern = pattern || "yyyyMMdd";
+        var dateObj = exjs.util.parseDate(date);
+        dateObj.setYear(dateObj.getFullYear() + amount);
+        return exjs.util.dateFormat(dateObj, pattern);
+    };
+
+    /**
+     * 입력 받은 날짜에 입력 받은 월 수 만큼 더한다.
+     * @param (String) date 날짜 데이터 (yyyyMMdd)
+     * @param (Number) amount 더할 월 수
+     * @param (String) pattern 날짜 패턴
+     * @return (String) 월을 더한 날짜
+     */
+    exjs.util.addMonths = function(date, amount, pattern) {
+    	pattern = pattern || "yyyyMMdd";
+    	var dateObj = exjs.util.parseDate(date);
+        dateObj.setMonth(dateObj.getMonth() + amount);
+        return exjs.util.dateFormat(dateObj, pattern);
+    };
+
+    /**
+     * 입력 받은 날짜에 입력 받은 일 수 만큼 더한다.
+     * @param (String) date 날짜 데이터 (yyyyMMdd)
+     * @param (Number) amount 더할 일 수
+     * @return (String) 일을 더한 날짜
+     */
+    exjs.util.addDays = function(date, amount, pattern) {
+    	pattern = pattern || "yyyyMMdd";
+        var dateObj = exjs.util.parseDate(date);
+        dateObj.setDate(dateObj.getDate() + amount);
+        return exjs.util.dateFormat(dateObj, pattern);
+    };
+
+    /**
+     * 출생일의 만나이 를 리턴합니다
+     *
+     * @param birthDay	String 출생일 or 주민번호 13자리 or 주민번호 앞 7자리
+     * @param baseDay	String 기준일 (생략시 오늘날짜)
+     */
+    exjs.util.getAge = function(birthDay, baseDay) {
+
+        var d = birthDay.length;
+        if (7 != d && 13 != d && 8 != d)
+        	console.log("[exjs.util.getAge] 올바르지 않은 출생일(" + birthDay + ")을 지정하였습니다.");
+        else {
+            if (7 == d || 13 == d) {
+            	var _yy = "";
+	            switch (birthDay.charAt(6)) {
+	            case "0":
+	            case "9":
+	            	_yy = "18";
+	                break;
+	            case "1":
+	            case "2":
+	            case "5":
+	            case "6":
+	            	_yy = "19";
+	                break;
+	            case "3":
+	            case "4":
+	            case "7":
+	            case "8":
+	            	_yy = "20"
+	            }
+	            birthDay = _yy + birthDay.substr(0, 6);
+            }
+
+            exjs.util.isEmpty(baseDay) && (baseDay = exjs.util.dateFormat(new Date(), "yyyyMMdd"));
+            if (parseInt(birthDay) > parseInt(baseDay))
+            	console.log("[exjs.util.getAge] 기준일(" + baseDay +")이 출생일(" + birthDay +")보다 이전 날짜입니다.");
+            else {
+                var d = exjs.util.splitDate(birthDay)
+                  , e = exjs.util.splitDate(baseDay);
+                return e.mm > d.mm ? e.yy - d.yy : e.mm == d.mm ? e.dd >= d.dd ? e.yy - d.yy : e.yy - d.yy - 1 : e.yy - d.yy - 1
+            }
+        }
+    };
+
+    /**
+     * 날짜 문자열을 년/월/일로 각각 분리하여 리턴합니다.
+     * @param sDate	String 년월일 을 포함하는 날짜 문자열
+     */
+    exjs.util.splitDate = function(sDate) {
+
+    	if (!sDate || typeof(sDate) !== "string") return null;
+
+    	sDate = sDate.replace(/\D/g, "");
+        if(sDate.length != 8) return null;
+
+    	return {
+    	    yy: parseInt(sDate.substr(0, 4), 10),
+    	    mm: parseInt(sDate.substr(4, 2), 10),
+    	    dd: parseInt(sDate.substr(6, 2), 10)
+    	}
+    };
+
+    /**
+     * TODO !# $util.formatCommas 함수와 기능 중복 - 확인 후 제거 필요
+     *
+     * 숫자 포맷 형식으로 변환한다.
+     *  3자리 간격으로 ,를 추가
+     * @param num String 형식의 숫자
+     */
+    exjs.util.numberFormat = function(num) {
+        if(num == null || num == '') return null;
+
+        var amount1 = '';
+        var amount2 = '';
+        var idx = num.lastIndexOf(".");
+        if(idx > -1) {
+            amount1 = num.substring(0, idx);
+            amount2 = num.substring(idx);
+        } else {
+            amount1 = num;
+        }
+
+        var amount = new String(amount1);
+        amount = amount.replace(/,/gi,'');
+
+        var sign = '';
+        if(isNaN(amount)) {
+            //alert('숫자만 입력할 수 있습니다.');
+            return 0;
+        }
+        if(amount == 0) {
+             return amount;
+        }
+
+        if(amount < 0) {
+            amount = amount * (-1);
+            sign = "-";
+        } else{
+            amount = amount * 1;
+        }
+
+        amount = new String(amount)
+        var temp="";
+        var pos=3;
+        var num_len=amount.length;
+        while(num_len>0) {
+            num_len=num_len-pos;
+            if(num_len<0) {
+                pos=num_len+pos;
+                num_len=0;
+            }
+            temp=","+amount.substr(num_len,pos)+temp;
+        }
+        return sign+temp.substr(1)+amount2;
+    };
+
+    /**
+     * 주민등록번호(사업자번호) 형식의 포맷으로 변환한 문자열을 반환합니다.
+     * @param bizNo 주민등록번호(사업자번호)
+     * @return 포맷 형식으로 변환된 주민등록번호(사업자번호)
+     */
+    exjs.util.bizNoFormat = function(bizNo) {
+        if(bizNo == null ) return null;
+        if(bizNo.length == 10) {
+            return bizNo.substring(0, 3) + "-" + bizNo.substring(3, 5) + "-" + bizNo.substring(5, 10);
+        }
+        //13자리이지만 앞 3자리가 999로 시작할 경우
+        else if(bizNo.length == 13 && exjs.util.startsWith(bizNo,'999')) {
+            return bizNo.substring(3, 6) + "-" + bizNo.substring(6, 8) + "-" + bizNo.substring(8, 13);
+        }
+        //그 이외에 13자리인경우 주민번호로 변환합니다.
+        else if(bizNo.length == 13) {
+            return bizNo.substring(0, 6) + "-" + bizNo.substring(6, 13);
+        }
+        else{
+            return bizNo;
+        }
+    };
+
+    /**
+     * 카드번호 포맷으로 변경한다.
+     * @param card 카드번호
+     * return 포맷으로 변환한 카드번호
+     */
+    exjs.util.cardFormat = function(card) {
+        if(card == null || card.indexOf("-") >= 0) return card;
+
+        var cardLength = card.length;
+        var nCard = '';
+
+        if(cardLength == 16) {
+            nCard = card.substring(0,4) + '-' + card.substring(4,8) + '-' + card.substring(8,12) + '-' + card.substring(12);
+        } else {
+            nCard = card
+        }
+
+        return nCard;
+    };
+
+    /**
+     * 전화번호 포맷으로 변경한다.
+     * @param phone 전화번호
+     * return 포맷으로 변환한 전화번호
+     */
+    exjs.util.phoneFormat = function(phone) {
+        if(phone == null) return null;
+        if(phone.indexOf('-') > 0) return phone;
+
+        var format = null;
+        var phoneLength = phone.length;
+
+        if(phoneLength < 7) return phone;
+        else if(phoneLength == 7)
+            format = phone.substring(0,3) + '-' + phone.substring(3);
+        else if(phoneLength == 8)
+            format = phone.substring(0,4) + '-' + phone.substring(4);
+        else if(phoneLength == 9)
+            format = phone.substring(0,2) + '-' + phone.substring(2,5) + '-' + phone.substring(5);
+        else if(phoneLength == 10) {
+            if(exjs.util.startsWith(phone, '02'))
+                format = phone.substring(0,2) + '-' + phone.substring(2,6) + '-' + phone.substring(6);
+            else
+                format = phone.substring(0,3) + '-' + phone.substring(3,6) + '-' + phone.substring(6);
+        } else
+            format = phone.substring(0,3) + '-' + phone.substring(3,7) + '-' + phone.substring(7);
+
+        return format;
+    };
+
+    /**
+     * 전화번호 포맷으로 변경한다.
+     * @param phone 전화번호
+     * return 포맷으로 변환한 전화번호
+     * 가운데 마스킹
+     */
+    exjs.util.phoneFormat2 = function(phone) {
+        if(phone == null) return null;
+        if(phone.indexOf('-') > 0) return phone;
+
+        var format = null;
+        var phoneLength = phone.length;
+
+        if(phoneLength < 7) return phone;
+        else if(phoneLength == 7)
+            format = phone.substring(0,3) + '-' + phone.substring(3);
+        else if(phoneLength == 8)
+            format = phone.substring(0,4) + '-' + phone.substring(4);
+        else if(phoneLength == 9)
+            format = phone.substring(0,2) + '-***-' + phone.substring(5);
+        else if(phoneLength == 10) {
+            if(exjs.util.startsWith(phone, '02'))
+                format = phone.substring(0,2) + '-****-' + phone.substring(6);
+            else
+                format = phone.substring(0,3) + '-***-' + phone.substring(6);
+        } else
+            format = phone.substring(0,3) + '-****-' + phone.substring(7);
+
+        return format;
+    };
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // 입력 형식 변경 -End
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Utils
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * 문자열 길이만큼 왼쪽에 패드문자를 덧붙인다.
+     * @param str 원본 문자열
+     * @param size 문자열 길이
+     * @param padChar 왼쪽에 덧붙일 문자
+     * @return 패드문자를 덧붙인 문자열
+     */
+    exjs.util.leftPad = function(str, size, padChar) {
+        str = str.toString();
+        var padCnt = size - str.length;
+        if(padCnt < 0) {
+            return str.substr(-padCnt);
+        } else {
+            for(var i=0; i<padCnt; i++) {
+                str = padChar + str;
+            }
+            return str;
+        }
+    };
+
+    /**
+     * 문자열 길이만큼 오른쪽에 패드문자를 덧붙인다.
+     * @param str 원본 문자열
+     * @param size 문자열 길이
+     * @param padChar 오른쪽에 덧붙일 문자
+     * @return 패드문자를 덧붙인 문자열
+     */
+    exjs.util.rightPad = function(str, size, padChar) {
+        var padCnt = size - str.length;
+        if(padCnt < 0) {
+            return str.substr(-padCnt);
+        } else {
+            for(var i=0; i<padCnt; i++) {
+                str = str + padChar;
+            }
+            return str;
+        }
+    };
+
+    /**
+     * '-' 를 제거한다.
+     * @param val 제거 전 데이터
+     * @return 제거 후 데이터
+     */
+    exjs.util.stripDash = function(val) {
+        var re = /-/g;
+        return val.replace(re, '');
+    };
+
+    /**
+     * 콤마(,)를 제거한다.
+     * @param val 제거 전 데이터
+     * @return 제거 후 데이터
+     */
+    exjs.util.stripComma = function(val) {
+        var re = /,/g;
+        return val.replace(re, '');
+    };
+
+    /**
+     * 닷(.)를 제거한다.
+     * @param val 제거 전 데이터
+     * @return 제거 후 데이터
+     */
+    exjs.util.stripDot = function(val) {
+        var re = /\./g;
+        return val.replace(re, '');
+    };
+
+    /**
+     * 숫자 앞에 있는 0을 제거한다.
+     * @param val 제거 전 데이터
+     * @return 제거 후 데이터
+     */
+    exjs.util.stripZero = function(val) {
+        var re = /^0+/;
+        if(val.replace(re, '') == ''){
+        	val = '0';
+            return val;
+        }
+        return val.replace(re, '');
+    };
+
+    /**
+     * 공백문자를 제거한다.
+     * @param val 제거 전 데이터
+     * @return 제거 후 데이터
+     */
+    exjs.util.stripWhiteSpace = function(val) {
+        return val.replace(/\s/g,'');
+    };
+
+    /**
+     * 객체가 null 인지 검사한다.
+     * @param obj 검사한 객체
+     * @reutrn 검사 결과
+     */
+    exjs.util.isNull = function(obj) {
+    	return (( typeof(obj) == "undefined") || ( obj === null ) );
+    };
+
+    /**
+     * 객체가 null 인지 검사한다.
+     * @param value 검사 대상 문자열
+     * @returns 널일 경우 공백, 그렇지 않을 경우 value
+     */
+    exjs.util.formatNull = function (val)
+    {
+    	if(val == null || val == "null"
+    	|| typeof(val) == "undefined" || val == "undefined")
+    	{
+    		return "";
+    	}
+    	else
+    	{
+    		return val;
+    	}
+    };
+
+    /**
+     * 매개변수가 empty 인지 검사한다.
+     * @param val 문자열 또는 배열 또는 오브젝트
+     * @reutrn emoty 여부
+     */
+    exjs.util.isEmpty = function(val) {
+
+ //    	return ( (exjs.util.isNull(val)) || val.length == 0);
+
+    	if (exjs.util.isNull(val)) return true; // typeof val === 'undefined' || val === null
+    	else if (typeof val === 'string' && val === '') return true;
+    	else if (Array.isArray(val) && val.length < 1) return true;
+    	else if (typeof val === 'object' && val.constructor.name === 'Object' && Object.keys(val).length < 1 && Object.getOwnPropertyNames(val) < 1) return true
+    	else if (typeof val === 'object' && val.constructor.name === 'String' && Object.keys(val).length < 1) return true // new String()
+
+		return false;
+    };
+
+	/**
+     * 해당 문자열이 널(null or undefined)이면 기본 문자열(defaultStr)을 반환한다.
+     *
+     * @param str (String) 문자열
+     * @reutrn (String) 문자열
+     */
+    exjs.util.nvl = function(str, defaultStr) {
+
+		if (exjs.util.isNull(str)) {
+			str = defaultStr;
+		}
+
+		return str;
+    }
+
+	/**
+     * 해당 문자열이 널(null or undefined) 또는 빈값("")이면  기본 문자열(defaultStr)을 반환한다.
+     *
+     * @param str (String) 문자열
+     * @reutrn (String) 문자열
+     */
+    exjs.util.nvl2 = function(str, defaultStr) {
+
+		if (exjs.util.isEmpty(str)) {
+			str = defaultStr;
+		}
+
+		return str;
+    }
+
+    /**
+     * 입력 문자가 영문인지 검사한다.
+     * @param value 입력 문자열
+     * @reutrn 검사 결과
+     */
+    exjs.util.isEng = function(val) {
+        var re = /^[a-zA-Z]+$/;
+        return re.test(val);
+    };
+
+    /**
+     * 입력 문자가 영문인지 검사한다. 띄어쓰기 허용
+     * @param value 입력 문자열
+     * @reutrn 검사 결과
+     */
+    exjs.util.isEng2 = function(val) {
+        var re = /^[a-zA-Z\s]+$/;
+        return re.test(val);
+    };
+
+    /**
+     * 입력 문자가 한글인지 검사한다.
+     * @param value 입력 문자열
+     * @reutrn 검사 결과
+     */
+    exjs.util.isKor = function(val) {
+        var re = /^[\u3130-\u318f\uac00-\ud7af]+$/;
+        return re.test(val);
+    };
+
+    /**
+     * 입력 문자가 숫자인지 검사한다.
+     * @param value 입력 문자열
+     * @param isDecimal true이면 닷(.) 입력 가능
+     * @reutrn 검사 결과
+     */
+    exjs.util.isNum = function(val, isDecimal) {
+        var re = '';
+        if(isDecimal != null && isDecimal == true) {
+            re = /^[0-9.]+$/;
+        } else {
+            re = /^[0-9]+$/;
+        }
+        return re.test(val);
+    };
+
+    /**
+     * 입력 문자가 한글&영문인지 검사한다.
+     * @param value 입력 문자열
+     * @reutrn 검사 결과
+     */
+    exjs.util.isKorEng = function(val) {
+        var re = /^[a-zA-Z\u3130-\u318f\uac00-\ud7af\s]+$/;
+        return re.test(val);
+    };
+
+    /**
+     * 입력 문자가 숫자&영문인지 검사한다.
+     * @param value 입력 문자열
+     * @reutrn 검사 결과
+     */
+    exjs.util.isNumNEng = function(val) {
+        var re = /^[0-9a-zA-Z]+$/;
+        return re.test(val);
+    };
+
+    /**
+     * 입력 문자가 숫자&한글인지 검사한다.
+     * @param value 입력 문자열
+     * @reutrn 검사 결과
+     */
+    exjs.util.isNumNKor = function(val) {
+        var re = /^[0-9\u3130-\u318f\uac00-\ud7af]+$/;
+        return re.test(val);
+    };
+
+    /**
+     * 입력 문자가 숫자&한글&영문인지 검사한다.
+     * @param value 입력 문자열
+     * @reutrn 검사 결과
+     */
+    exjs.util.isNumNKorNEng = function(val) {
+        var re = /^[0-9a-zA-Z\u3130-\u318f\uac00-\ud7af]+$/;
+        return re.test(val);
+    };
+
+    /**
+     * char 형식의 문자의 byte 수를 계산한다.
+     * @param char char 형식의 문자
+     * @return byte 수
+     */
+    exjs.util.charByteSize = function(ch) {
+        if (ch == null || ch.length == 0) {
+            return 0;
+        }
+
+        var charCode = ch.charCodeAt(0);
+
+        if (charCode <= 0x00007F) {
+            return 1;
+        } else if (charCode <= 0x0007FF) {
+            return 2;
+        } else if (charCode <= 0x00FFFF) {
+            return 3;
+        } else {
+            return 4;
+        }
+    };
+
+    /**
+     * String 형식의 문자열의 byte 수를 계산한다.
+     * @param str String 형식의 문자열
+     * @return byte 수
+     */
+    exjs.util.stringByteSize = function (str) {
+        if (str == null || str.length == 0) {
+            return 0;
+        }
+
+        var size = 0;
+        for (var i = 0; i < str.length; i++) {
+            size += exjs.util.charByteSize(str.charAt(i));
+        }
+            return size;
+    };
+
+    /**
+     * 일치하는 문자로 시작하는지 검사한다.
+     * @param str 문자열
+     * @param prefix 일치하는 문자열
+     * @return (Boolean) 문자열(str)의 시작 부분이 prefix 매개 변수와 일치하면 true 이고, 그렇지 않으면 false
+     */
+    exjs.util.startsWith = function(str, prefix) {
+//      return 0 === str.indexOf(prefix);
+    	return (str.match('^' + prefix) == prefix);
+    };
+
+    /**
+     * 일치하는 문자로 끝나는지 검사한다.
+     * @param str 문자열
+     * @param prefix 일치하는 문자열
+     * @return (Boolean) 문자열(str)의 끝 부분이 suffix 매개 변수와 일치하면 true 이고, 그렇지 않으면 false
+     */
+    exjs.util.endsWith = function(str, prefix) {
+//      return -1 !== str.indexOf(prefix, str.length - prefix.length)
+        return (str.match(prefix + '$') == prefix);
+    };
+
+    /**
+     * 원본 문자열(originString)에서 지정한 위치(index)에 문자열(insertString)을 추가한다.
+     * @param originString	(String) 원본 문자열
+     * @param index			(Number) 문자열을 추가할 색인(index) 값
+     * @param insertString 	(String) 추가할 문자열
+     * @return (String) 지정한 위치(index)에 문자열이 추가된 새로운 문자열
+     */
+    exjs.util.insertStr = function(originString, index, insertString) {
+    	originString = originString.split("");
+    	originString.splice(index, 0, insertString);
+    	return originString.join("")
+    };
+
+    /**
+     * 3 자리마다 콤마(,)를 붙여 반환한다.
+     * @param numStr 콤마를 붙일 숫자 또는 숫자형태의 문자열
+     * @return 콤마(,)를 붙인 숫자 형식의 문자열
+     */
+    exjs.util.formatCommas = function(numStr) {
+
+    	if (typeof numStr == "number") {
+    		numStr = numStr.toString();
+		}
+
+        var re = /,|\s+/g;
+        numStr = numStr.replace(re, "");
+
+        re = /(-?\d+)(\d{3})/;
+        while (re.test(numStr)) {
+            numStr = numStr.replace(re, "$1,$2");
+        }
+        return numStr;
+    };
+
+    /**
+     * 정수를 반환한다.
+     * @param numStr 소수점이 포함된 실수 또는 문자열
+     * @return
+     */
+    exjs.util.parseInt = function(numStr) {
+
+    	var val = parseInt(numStr, 10);
+
+        return isNaN(val) ? numStr : val;
+    };
+
+
+    /**
+     * toStr
+     * 숫자타입 데이터를 문자타입으로 변경하는 경우에 사용합니다.
+     *
+     * @param   val (Number) 숫자타입 데이터
+     * @return  (String) 문자 타입으로 변경된 데이터
+     */
+    exjs.util.toStr = function(val) {
+    	if (exjs.util.isNull(val)) return null;
+        return val.toString();
+    };
+
+    /**
+     * toNumber
+     * 숫자형태의 문자열을 숫자타입으로 변환 (숫자가 아니면 0)
+     *
+     * @param   string
+     * @return  int
+     */
+    exjs.util.toNumber = function(val) {
+        if (!Number(val)) {
+            val = 0;
+		}
+        return Number(val);
+    }
+
+    /**
+     * 여신번호 형식으로 변환한다.
+     * input : XXXXXXXXXXXXXX(14자리)
+     * output : XXXX-XXXXXX-X-XXX
+     */
+    exjs.util.toLonNo =  function(lonNo) {
+    	lonNo = $.trim(lonNo);
+    	lonNo = lonNo.replace(/-/g, '');
+
+    	var formatNumber = '';
+
+    	if(lonNo.length == 14) {
+    		formatNumber = lonNo.substring(0, 4) + '-' + lonNo.substring(4, 10)+ '-' + lonNo.substring(10, 11)+ '-' + lonNo.substring(11, 14);
+    	} else {
+    		formatNumber = lonNo;
+    	}
+
+    	return formatNumber;
+    }
+    /**
+     * 사업자번호 형식으로 변환한다.
+     * @param bizNo 사업자번호
+     * @return 사업자번호
+     */
+    exjs.util.toBizNo = function(bizNo){
+        if(bizNo == null) return '';
+        if(bizNo.length == 10){
+            return bizNo.substring(0, 3) + '-' + bizNo.substring(3, 5) + '-' + bizNo.substring(5, 10);
+        }
+        //13자리이지만 앞 3자리가 999로 시작할 경우
+        else if(bizNo.length == 13 && bizNo.startsWith('999')){
+            return bizNo.substring(3, 6) + '-' + bizNo.substring(6, 8) + '-' + bizNo.substring(8, 13);
+        }
+        //그 이외에 13자리인경우 주민번호로 변환합니다.
+        else if(bizNo.length == 13){
+            return bizNo.substring(0, 6) + '-' + bizNo.substring(6, 13);
+        }
+        else{
+            return bizNo;
+        }
+    };
+
+    /**
+     * 카드변호 형식으로 변환한다.
+     * @param cardNo 카드번호
+     * @return 카드번호
+     */
+    exjs.util.toCardNo = function(cardNo) {
+        if(cardNo == null ) return '';
+        if(cardNo.length == 16){
+            //return cardNo.substring(0, 4) + "-" + cardNo.substring(4, 8) + "-" + cardNo.substring(8, 12) + "-" + cardNo.substring(12, 16);
+            return cardNo.substring(0, 4) + "-****-****-" + cardNo.substring(12, 16);
+        }
+        else{
+            return cardNo;
+        }
+    };
+
+    /**
+     * 인자로 넘어온 value값을 Money 형식으로 변환해서 return 합니다.
+     * @param val
+     * @return
+     */
+    exjs.util.toMoney = function(val) {
+
+    	if(isNaN(val) || exjs.util.isEmpty(val)) { return "0"; }
+
+        // 첫자리 0 삭제
+        for(var i=0; i<val.length; i++){
+            if(val.length > 1 && val.indexOf('0') == 0 && val.indexOf('.') != 1) val = val.substring(1);
+            else break;
+        }
+
+        var indexOfPoint = val.indexOf(".");
+        if (indexOfPoint == -1) {
+            val = exjs.util.formatCommas(val);
+        } else {
+            val = exjs.util.formatCommas(val.substring(0, indexOfPoint)) + val.substring(indexOfPoint, val.length);
+        }
+        return val;
+    };
+    /**
+	 * 만원단위를 원단위로 변환하여 표시
+	 * @param  str
+	 * @param  flag
+	 * 			- true  : 천다위 구분기호 포함
+	 *          - false : 천단위 구분기호 없음 (default)
+     * @return 숫자형태의 문자열
+	 */
+	exjs.util.dispMWonToWon = function(str, flag) {
+
+    	if (exjs.util.isEmpty(str)) { return "0"; }
+
+		var won = "";
+		if (typeof str == "number") {
+			won = str.toString();
+		} else {
+			won = str;
+		}
+		won = exjs.util.stripComma($.trim(won));
+		won = (Number(won) * 10000).toString();
+
+		if (flag) {
+			won = exjs.util.toMoney(won);
+		}
+		return won;
+	};
+
+	/**
+	 * 원단위를 만원단위로 변환하여 표시
+	 * @param  str
+	 * @param  flag
+	 * 			- true  : 소수점 버림한 결과를 리턴
+	 *          - false : 소수점 자리 표시 (default)
+     * @return 천단위 구분기호가 포함된 숫자형태의 문자열
+	 */
+	exjs.util.dispWonToMWon = function(str, flag) {
+		var mWon = "";
+
+		if (typeof str == "number") {
+			mWon = str.toString();
+		} else {
+			mWon = str;
+		}
+		mWon = exjs.util.stripComma($.trim(mWon));
+
+		if (flag) {
+			mWon = Math.floor(Number(mWon) * 0.0001).toString();
+		} else {
+			mWon = (Number(mWon) / 10000).toString();
+		}
+		return exjs.util.toMoney(mWon);
+	};
+
+
+	/**
+	 * 입력된 숫자를 한글단위로 만든다
+	 *
+	 * 입력 : 숫자, 또는 숫자형 문자, 단위
+	 * 출력 : 한글숫자 예) 111 입력시 백십일 출력
+	 *
+	 * @param str	숫자, 또는 숫자형 문자
+	 * @param unit	단위. 1000 입력후 111 입력시 십일만천 출력
+	 * @returns (String)
+	 */
+    exjs.util.toKorNum = function(str, unit) {
+    	// 단위 배열
+    	var unitTen 	= ["","일","이","삼","사","오","육","칠","팔","구"];	// 십단위 10 (0~9)
+    	var unitTenThd 	= ["","십","백","천"];									// 만단위수
+    	var unitLimit 	= ["","만","억","조","경","해"];						// 이후단위 가변적 - 한계단위수
+    	var hanAmt 		= "";
+
+    	str = String(str).replace(/[^0-9]/g,"");	// 금액등의 입력에 대한 체크로 입력데이터를 숫자로 치환
+    	str = unit == undefined ? str : String(str * unit);
+    	var strLen = str.length;	// 숫자 자리수
+
+    	var curUnitTenThd	= 0; // 최초단위의 만단위수
+    	var curUnitLimit 	= 0; // 최초단위의 한계단위수
+
+    	var limitViewCnt = 0;	// 현재 변환중인 자릿수 저장
+    	var limitViewFlag = [false,true,true,true,true,true];	// 만단위를 표시할지에 대한 플래그
+
+    	// 숫자의 가장 뒷자리 부터 숫자를 체크하여 한글로 바꾼다)
+    	for(var i = strLen-1;i >= 0; i--){
+    		var limitFlag 	= curUnitLimit % 4 == 0 ? 1 : 0;				// 한계단위 체크 1일경우 만단위 출력하는 경우
+    		var curUT 		= Number(str.charAt(i));						// 10단위
+    		var curUTT 		= curUT == 0 ? 0 : curUnitTenThd % 4;			// 10000단위
+    		var curUL		= parseInt(curUnitLimit / 4, 10) * limitFlag;	// 한계단위
+
+    		// 만단위 (10,000~99,990,000)의 숫자가 없을경우 억단위 이상일경우 '만'을 지워주기 위한 처리
+    		if(curUT != 0){
+    			limitViewFlag[parseInt(limitViewCnt/4, 10)] = false;
+    		}
+
+    		if(curUT == 1 && limitFlag == 0) curUT = 0;
+
+    		hanAmt 	= unitTen[curUT]
+    				+ unitTenThd[curUTT]
+    				+ unitLimit[curUL]
+    				+ hanAmt;
+
+    		curUnitTenThd++;
+    		curUnitLimit++;
+    		limitViewCnt++;
+    	}
+
+    	// 만단위 삭제여부에 따라 치환
+    	for(var i=1; i<limitViewFlag.length; i++){
+    		if(limitViewFlag[i]){
+    			hanAmt = hanAmt.replace(unitLimit[i], '');
+    		}
+    	}
+    	return hanAmt;
+    };
+
+
+    /**
+     * 이율을 표시한다. 소수점 2번째 자리 까지 표시한다.
+     * @param val
+     * @return
+     */
+    exjs.util.toIrrt = function(val) {
+        val = (Math.round((val-0)*100))/100;
+        val = (val == Math.floor(val)) ? val + ".00" : ((val*10 == Math.floor(val*10)) ? val + "0" : val);
+        val = String(val);
+        return val;
+    };
+
+    /**
+     * 일치하는 문자를 찾아 모두 바꾼다.
+     * @param str 변경 전 문자열
+     * @param searchStr 찾을 문자
+     * @param replaceStr 바꿀 문자
+     * @return 변경된 문자열
+     */
+    exjs.util.replaceAll = function(str, searchStr, replaceStr) {
+        while (str.indexOf(searchStr) != -1) {
+            str = str.replace(searchStr, replaceStr);
+        }
+
+        return str;
+    };
+
+    /**
+     * HTML tag를 제거한다.
+     * @param string 문자열
+     * @return tag가 제거된 문자열
+     */
+    exjs.util.stripHTMLtag = function(string) {
+        var objStrip = new RegExp();
+        objStrip = /[<][^>]*[>]/gi;
+        return string.replace(objStrip, "");
+    };
+
+    /**
+     * @method type
+     * @param (Object) obj Object 타입을 알고 싶은 객체
+     * @return (String) javascript 식별 가능한 형태의 객체 문자열을 리턴한다. <br />
+     * 					[ Undefined Null Array RegExp String Number Boolean Function Object Date Error ]
+     */
+    exjs.util.type = function(obj) {
+        return Object.prototype.toString.call(obj).match(/^\[object\s(.*)\]$/)[1];
+    };
+
+    /**
+     * 해당 객체가 Array 타입인지에 대한 검사를 수행한다.
+     *
+     * @method isArray
+     * @param (Object) obj Array 타입의 객체인지 확인하고 싶은 객체
+     * @return (Boolean)
+     */
+    exjs.util.isArray = function(obj) {
+
+    	if (typeof Array.isArray === 'function') {
+            return Array.isArray(obj);
+        }
+
+        if (exjs.util.type(obj) === 'Array') {
+            return true;
+        }
+
+        return false;
+    };
+
+    /**
+     * 해당 문자열이 json 형태인지 확인
+     *
+     * @method isJSONExp
+     * @param (String) data json 형태임을 확인하고 싶은 문자열
+     * @return (Boolean)
+     */
+    exjs.util.isJSONExp = function(data) {
+        if (typeof data !== 'string') {
+            return false;
+        }
+        return /(^{[^}]+})|^\[[^\]]+\]/.test(data);
+    };
+
+    exjs.util._hasJSONField = function (data, field) {
+
+        if ( typeof data[ field ] === "undefined") {
+            return false;
+        }
+        return true;
+    };
+
+    /**
+     * JSON 객체에 해당 필드가 존재하는지 여부를 check 합니다.
+     *
+     * @method hasJSONField
+     * @param (JSON) data
+     * @param (String) or (Array) field
+     * @return (Boolean)
+     */
+    exjs.util.hasJSONField = function(data, field) {
+        if (typeof field  === "string") {
+            return exjs.util._hasJSONField(data, field);
+        } else if (exjs.util.isArray(field)) {
+            var hasField = false, f;
+            for (var i =0; i < field.length; i++) {
+                f = field[i];
+                if ( !exjs.util._hasJSONField(data, f)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    };
+
+    /**
+     * base64
+     * $util.base64.encode(input);	base64 인코딩
+     * $util.base64.decode(input);	base64 디코딩
+     */
+    exjs.util.base64 = {
+	    // private property
+	    _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+	    // public method for encoding
+	    encode: function (input) {
+	        var output = "";
+	        var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+	        var i = 0;
+
+	        while (i < input.length) {
+	            chr1 = input.charCodeAt(i++);
+	            chr2 = input.charCodeAt(i++);
+	            chr3 = input.charCodeAt(i++);
+
+	            enc1 = chr1 >> 2;
+	            enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+	            enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+	            enc4 = chr3 & 63;
+
+	            if (isNaN(chr2)) {
+	                enc3 = enc4 = 64;
+	            } else if (isNaN(chr3)) {
+	                enc4 = 64;
+	            }
+
+	            output = output +
+	                this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
+	                this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+	        }
+	        return output;
+	    },
+
+	    // public method for decoding
+	    decode: function (input) {
+	        var output = "";
+	        var chr1, chr2, chr3;
+	        var enc1, enc2, enc3, enc4;
+	        var i = 0;
+
+	        if (input == null) {
+	            return output;
+	        }
+
+	        var tempinput = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+	        input = tempinput;
+
+	        while (i < input.length) {
+	            enc1 = this._keyStr.indexOf(input.charAt(i++));
+	            enc2 = this._keyStr.indexOf(input.charAt(i++));
+	            enc3 = this._keyStr.indexOf(input.charAt(i++));
+	            enc4 = this._keyStr.indexOf(input.charAt(i++));
+
+	            chr1 = (enc1 << 2) | (enc2 >> 4);
+	            chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+	            chr3 = ((enc3 & 3) << 6) | enc4;
+
+	            output = output + String.fromCharCode(chr1);
+
+	            if (enc3 != 64) {
+	                output = output + String.fromCharCode(chr2);
+	            }
+	            if (enc4 != 64) {
+	                output = output + String.fromCharCode(chr3);
+	            }
+	        }
+	        return output;
+	    }
+    };
+
+    /**
+     * D-Day를 반환한다. (예:D-180)
+     * @param masDate 기준날짜 (예:20221231)
+     * return D-Day
+     */
+    exjs.util.diffDay = function(masDate) {
+        if(masDate == null) return 'D-0';
+
+        var masTime = new Date(exjs.util.dateFormat(masDate, "yyyy-MM-dd"));
+        var todayTime = new Date();
+
+        var diff = masTime.getTime() - todayTime.getTime();
+
+        var diffDay = Math.ceil(diff / (1000 * 60 * 60 *24));
+
+        return "D-" + diffDay;
+    };
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Utils -End
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // 마스킹
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    /**
+     * 주민번호를 마스킹한다. (예:800212-1******)
+     * @param jumin 주민번호
+     * return 마스킹한 주민번호
+     */
+    exjs.util.juminMasking = function(jumin) {
+        if(jumin == null) return null;
+
+        var juminLength = jumin.length;
+        if(juminLength == 13)
+            return jumin.substring(0,6) + '-' + jumin.substring(6,7) + '******';
+        else if(juminLength == 14)
+            return jumin.substring(0,8) + '******';
+        else return jumin;
+    };
+
+    /**
+     * 주민번호를 마스킹한다. (예:800212-1******)
+     * @param jumin 주민번호
+     * return 마스킹한 주민번호
+     */
+    exjs.util.jumin2Masking = function(jumin2) {
+        if(jumin2 == null) return null;
+
+        var jumin2Length = jumin2.length;
+        if(jumin2Length == 13)
+            return jumin2.substring(6,7) + '******';
+    };
+
+    /**
+     * 전화번호 숫자를 마스킹한다.
+     * @param phone 전화번호
+     * return 마스킹한 전화번호
+     */
+    exjs.util.phoneNumMasking = function(phoneNum) {
+        if(phoneNum == null) return null;
+
+        var nPhoneNum = '';
+        var numLength = phoneNum.length;
+        var max = numLength - 2;
+
+        for(var i=0; i<max; i++) {
+            nPhoneNum += '*';
+        }
+
+        nPhoneNum += phoneNum.substring(max);
+
+        return nPhoneNum;
+    };
+
+    /**
+     * 전화번호를 마스킹한다. (예:010-**12-**12)
+     * @param phone 전화번호
+     * return 마스킹한 전화번호
+     */
+    exjs.util.phoneMasking = function(phone) {
+        if(phone == null) return null;
+
+        var splitPhone = exjs.util.phoneFormat(phone).split("-");
+
+        var nPhone = '';
+        var splitLength = splitPhone.length;
+
+        switch(splitLength) {
+            case 2 :
+                nPhone += exjs.util.phoneNumMasking(splitPhone[0]) + '-' + exjs.util.phoneNumMasking(splitPhone[1]);
+                break;
+            case 3 :
+                nPhone += splitPhone[0] + '-' + exjs.util.phoneNumMasking(splitPhone[1]) + '-' + exjs.util.phoneNumMasking(splitPhone[2]);
+                break;
+            default :
+                return phone;
+        }
+
+        return nPhone;
+    };
+
+    /**
+     * 계좌변호를 마스킹한다. (예:1234******1234)
+     * @param account 계좌번호
+     * return 마스킹한 계좌번호
+     */
+    exjs.util.accountMasking = function(account) {
+        if(account == null) return null;
+
+        var accountLength = account.length;
+        if(accountLength <= 8) return account;
+
+        var nAccount = '';
+
+        nAccount += account.substring(0,4);
+
+        var max = accountLength - 8;
+        for(var i=0; i<max; i++) nAccount += '*';
+
+        nAccount += account.substring(accountLength-4);
+
+        return nAccount;
+    };
+
+    /**
+     * 카드번호를 마스킹한다. (예:1234-****-****-1234)
+     * @param card 카드번호
+     * return 마스킹한 카드번호
+     */
+    exjs.util.cardMasking = function(card) {
+        if(card == null) return null;
+
+        var fmtCard = exjs.util.cardFormat(card);
+        var nCard = '';
+
+        if(fmtCard.indexOf('-') > 0) {
+            var splitCard = fmtCard.split('-');
+
+            var cardLength = splitCard.length;
+            if(cardLength <= 2) return card;
+
+            nCard += splitCard[0] + '-';
+
+            for(var i=1; i<cardLength-1; i++) {
+                for(var j=0; j<splitCard[i].length; j++) {
+                    nCard += '*';
+                }
+                nCard += '-';
+            }
+
+            nCard += splitCard[cardLength-1];
+        } else {
+            var cardLength = card.length;
+            if(cardLength <= 8) return card;
+
+            nCard += card.substring(0,4);
+
+            var max = cardLength - 8;
+            for(var i=0; i<max; i++) nCard += '*';
+
+            nCard += card.substring(cardLength-4);
+        }
+        return nCard;
+    };
+
+    /**
+     * 이름을 마스킹한다. (예:홍*동)
+     * @param name 이름
+     * return 마스킹한 이름
+     */
+    exjs.util.nameMasking = function(name) {
+        if(name == null) return null;
+
+        var nameLength = name.length;
+        switch(nameLength) {
+            case 0 :
+                return name;
+            case 1 :
+                return name;
+            case 2 :
+                return name.substring(0,1) + '*';
+            case 3 :
+                return name.substring(0,1) + '*' + name.substring(2);
+            case 4 :
+                return name.substring(0,1) + '**' + name.substring(3);
+            default :
+                return name.substring(0,1) + '**' + name.substring(3);
+        }
+    };
+
+    /**
+     * 주소를 마스킹한다. (예:서울특별시 중구 XXX 5가 827번지)
+     * @param addr 주소
+     * return 마스킹한 주소
+     */
+    exjs.util.addrMasking = function(addr) {
+        if(addr == null) return null;
+
+        var splitAddr = addr.split(' ');
+        var lengthAddr = splitAddr.length;
+        if(lengthAddr < 3) return ad
+
+        var nAddr = '';
+
+        nAddr = splitAddr[0] + ' ' + splitAddr[1] + ' ';
+
+        var max = splitAddr[2].length;
+        for(var i=0; i<max-1; i++) {
+            nAddr += '*';
+        }
+        nAddr += splitAddr[2].substring(max-1);
+
+        for(var i=3; i<lengthAddr; i++) {
+            nAddr += ' ' + splitAddr[i];
+        }
+
+        return nAddr;
+    };
+
+    /**
+     * ID를 마스킹한다. (예:ab**cde)
+     * @param id ID
+     * return 마스킹한 ID
+     */
+    exjs.util.idMasking = function(id) {
+        if(id == null) return null;
+
+        var idLength = id.length;
+        if(idLength < 3) return id;
+
+        switch(idLength) {
+            case 3 :
+                return id.substring(0,2) + "*";
+            case 4 :
+                return id.substring(0,2) + "**";
+            default :
+                return id.substring(0,2) + "**" + id.substring(4);
+        }
+    };
+
+    /**
+     * 자동으로 다음  inputbox으로 이동한다.
+     * @param param1 - input.id
+     * @param param2 - maxlength
+     * @param param3 - taget input
+    */
+    exjs.util.moveAutoTab = function(param1,param2,param3) {
+        /*
+         * 접근성 이슈로 삭제
+        if($('#'+param1).val().length == param2)
+        {
+            $('#'+param3).focus();
+        }
+        */
+    };
+
+    /**
+     * 부가세 포함 금액을 산출한다.
+     * (소수점이 있는 경우 셋째자리 이후절삭하며 둘째자리에서 반올림한다.)
+     * @param price - 금액
+    */
+    exjs.util.vatInclPrice = function(price) {
+        if(exjs.util.isNum(price,true)){
+                //var num = Number('1e'+1.1);
+                //return (price * 1.1).toFixed(2);
+                return Math.round((price * 1.1) * 100) / 100;
+        }
+        else{
+            return price;
+        }
+    };
+
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // 마스킹 -End
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // ETC
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * 지정한 URL Parameter 값 가져오기
+     *
+     * @param name (String) URL Parameter name
+     * @return (String)
+     */
+    exjs.util.getUrlParameter = function(name, defaultValue, url) {
+
+	    if (!url) {
+	    	url = window.location.href;
+	    }
+
+	    name = name.replace(/[\[\]]/g, "\\$&");
+	    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+	        text = regex.exec(url);
+
+	    if (!text) {
+    		if (defaultValue || defaultValue == '')
+    			return defaultValue;
+
+    		return null;
+	    }
+	    if (!text[2]) {
+    		return '';
+	    }
+
+	    return decodeURIComponent(text[2].replace(/\+/g, " "));
+	};
+
+    /**
+     * 지정한 URL Parameter 값 모두 가져오기
+     *
+     * @param url (String) 옵션.
+     * @return (Object)
+     */
+    exjs.util.getUrlParameters = function(url) {
+
+		if (!url) {
+	    	url = window.location.href;
+	    }
+
+		var params = {};
+		url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) {
+		    key = decodeURIComponent(key);
+		    value = decodeURIComponent(value.replaceAll("+", "%20"));
+			params[key] = value;
+		});
+	    return params;
+	};
+
+	/**
+     * escapeHtml
+     *
+     * @param str (String) 문자열
+     * @return (String) escapeHtml 결과 문자열
+     */
+    exjs.util.escapeHtml = function(str) {
+
+    	if (!str) return str;
+
+	    return str.replace(/&/g, "&amp;")
+		        .replace(/</g, "&lt;")
+		        .replace(/>/g, "&gt;")
+		        .replace(/"/g, "&quot;")
+		        .replace(/'/g, "&#039;");
+	};
+
+	/**
+     * unescapeHtml
+     *
+     * @param str (String) 문자열
+     * @return (String) unescapeHtml 결과 문자열
+     */
+    exjs.util.unescapeHtml = function(str) {
+
+    	if (!str) return str;
+
+	    return str.replace(/&amp;/g, '&')
+				.replace(/&lt;/g, '<')
+				.replace(/&gt;/g, '>')
+				.replace(/&quot;/g, '"')
+				.replace(/&#039;/g, "'")
+				.replace(/&#63;/g, '?');
+	};
+
+
+	/**
+	 * 상품코드를 대,중,소,상세 분류코드 구분
+	 * @param prodCd	상품코드
+	 */
+	exjs.util.splitProdCd = function(prodCd) {
+
+		if (!prodCd || typeof(prodCd) !== "string") return null;
+
+	    if(prodCd.length != 9) return null;
+
+		return {
+		    lccd: prodCd.substr(0, 2),
+		    mccd: prodCd.substr(2, 2),
+		    sccd: prodCd.substr(4, 2),
+		    clcd: prodCd.substr(6, 3)
+		}
+	};
+
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // ETC -End
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+	/**
+	 * @method error
+	 * @param (String) msg 메시지
+	 * @return (sError) 에러를 발생한다.
+	 */
+	exjs.error = function(msg) {
+	    throw new Error(msg);
+	};
+
+
+	///////////////////////////////////////////////////////////////////////////////////////////////
+    // exjs Cookie
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+	exjs.cookie = {};
+
+	exjs.cookie.option = {
+			expires : 365*10,
+	    	path	 : "/"
+	};
+
+	/**
+	 * cookie 정보를 저장한다.
+	 * @method set
+	  * @param (String) cookieName
+	  * @param (String) cookieValue
+	  * @param (JSONObject) optionp
+	  * @example exjs.cookie.set("USER_ID", "testid", { expires : 5 , path : "/" });
+	 */
+	exjs.cookie.set = function(cookieName, cookieValue, option) {
+		var d = new Date();
+		if (3 == arguments.length && typeof option === "object") {
+			$.extend(exjs.cookie.option, option);
+		}
+		d.setDate( d.getDate() + exjs.cookie.option.expires );
+		document.cookie = cookieName + "=" + encodeURIComponent(cookieValue) + "; path="+exjs.cookie.option.path+"; expires=" + d.toGMTString() + ";";
+	};
+
+	 /**
+	 * cookie 정보를 불러온다.
+	 * @method get
+	 * @param (String) cookieName
+	 * @returns (String) cookieValue
+	 * @example exjs.cookie.get("USER_ID");
+	 */
+	exjs.cookie.get = function( cookieName ) {
+        var value = document.cookie.match('(^|;) ?' + cookieName + '=([^;]*)(;|$)');
+        return value ? value[2] : "";
+
+        /*
+		var name = cookieName + "=";
+		var ca = document.cookie.split(';');
+		for(var i = 0; i < ca.length; i++) {
+		    var c = ca[i];
+		    while (c.charAt(0)==' ') c = c.substring(1);
+		    if (c.indexOf(name) != -1) return decodeURIComponent(c.substring(name.length, c.length));
+		}
+        */
+	};
+
+	/**
+	* cookie 값을 삭제합니다.
+	* @param {Object} cookieName
+	*/
+	exjs.cookie.remove = function(cookieName) {
+		exjs.cookie.set(cookieName, "" , { expires : -1 });
+	};
+
+	///////////////////////////////////////////////////////////////////////////////////////////////
+    // exjs Storage
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+	if (typeof Storage == "undefined") {
+
+		exjs.error("storage 가 지원되지 않는 browser 입니다.");
+
+	} else {
+
+		exjs.sessionStorage = {};
+		exjs.localStorage = {};
+
+	     /**
+	     * sessionStroage에 저장합니다.
+	     */
+		exjs.sessionStorage.set = function(key, value) {
+	        var input = value;
+	        if ("string" !== typeof value) {
+	            input = JSON.stringify(value);
+	        }
+	        input = encodeURIComponent(input);
+	        sessionStorage.setItem(key, input);
+	    };
+	    /**
+	     * sessionStroage 값을 가져옵니다.
+	     */
+	    exjs.sessionStorage.get = function(key) {
+	        var result = sessionStorage.getItem(key);
+	        result = decodeURIComponent(result);
+	        if (exjs.util.isJSONExp(result)) {
+	            return JSON.parseJSON (result);
+	        }
+	        return result;
+	    };
+	   /**
+	    * sessionStorage 값을 삭제합니다.
+	    */
+	    exjs.sessionStorage.remove =  function(key) {
+	        sessionStorage.removeItem(key);
+	    };
+
+	     /**
+	     * localStorage 저장합니다.
+	     */
+	    exjs.localStorage.set = function(key, value) {
+	        var input = value;
+	        if ("string" !== typeof value) {
+	            input = JSON.stringify(value);
+	        }
+	        input = encodeURIComponent(input);
+	        localStorage.setItem(key, input);
+	    };
+	    /**
+	     * localStorage 값을 가져옵니다.
+	     */
+	    exjs.localStorage.get = function(key) {
+	        var result = localStorage.getItem(key);
+	        result = decodeURIComponent(result);
+	        if (exjs.util.isJSONExp(result)) {
+	            return JSON.parseJSON(result);
+	        }
+	        return result;
+	    };
+	   /**
+	    * localStorage 값을 삭제합니다.
+	    */
+	    exjs.localStorage.remove = function(key) {
+	        localStorage.removeItem( key );
+	    };
+	}
+
+})();
+
+
+// 축약형
+var $util = exjs.util;
+
+
+// !# TODO 추후 제거 예정 ==================================================================================
+// 기존 스크립트 호환 용
+// ========================================================================================================
+(function($) {
+
+    function deprecatedNoti() {
+        //console.log("[deprecated] $.유틸함수명 -> $util.유틸함수명 변경");
+    }
+
+    deprecatedNoti();
+
+	$.ajaxSubmit = $util.ajaxSubmit;
+	$.createHiddenField = $util.createHiddenField;
+	$.removeHiddenField = $util.removeHiddenField;
+	$.createForm = $util.createForm;
+	$.serializeArrayToObj = $util.serializeArrayToObj;
+	$.clearSelectboxOptions = $util.clearSelectboxOptions;
+	$.emailMerge = $util.emailMerge ;
+	$.merge2 = $util.merge2;
+	$.merge3 = $util.merge3;
+	$.validEmail = $util.validEmail;
+	$.validEmail1 = $util.validEmail1;
+	$.validJumin = $util.validJumin;
+	$.validBizNo = $util.validBizNo;
+	$.isPersonBizNo = $util.isPersonBizNo;
+	$.validCorpNo = $util.validCorpNo;
+	$.validForeignNo = $util.validForeignNo;
+	$.validDate = $util.validDate;
+	$.validTelNum = $util.validTelNum;
+	$.dateFormat = $util.dateFormat;  // $.dateFormat.patternParts, $.dateFormat.monthNames, $.dateFormat.dayNames, $.dateFormat.patternValue
+	$.dateFormatObj = $util.dateFormat;
+	$.getAge = $util.getAge;
+	$.splitDate = $util.splitDate;
+	$.numberFormat = $util.numberFormat;
+	$.bizNoFormat = $util.bizNoFormat;
+	$.cardFormat = $util.cardFormat;
+	$.phoneFormat = $util.phoneFormat;
+	$.phoneFormat2 = $util.phoneFormat2;
+	$.leftPad = $util.leftPad;
+	$.rightPad = $util.rightPad;
+	$.stripDash = $util.stripDash;
+	$.stripComma = $util.stripComma;
+	$.stripDot = $util.stripDot;
+	$.stripZero = $util.stripZero;
+	$.isNull = $util.isNull;
+	$.formatNull = $util.formatNull;
+	$.isEmpty = $util.isEmpty;
+	$.isEng = $util.isEng;
+	$.isEng2 = $util.isEng2;
+	$.isKor = $util.isKor;
+	$.isNum = $util.isNum;
+	$.isKorEng = $util.isKorEng;
+	$.isNumNEng = $util.isNumNEng;
+	$.isNumNKor = $util.isNumNKor;
+	$.isNumNKorNEng = $util.isNumNKorNEng;
+	$.charByteSize = $util.charByteSize;
+	$.stringByteSize = $util.stringByteSize;
+	$.startsWith = $util.startsWith;
+	$.formatCommas = $util.formatCommas;
+	$.delDecimalPointNumber = $util.delDecimalPointNumber;
+	$.toNumber = $util.toNumber;
+	$.toBizNo = $util.toBizNo;
+	$.toCardNo = $util.toCardNo;
+	$.toMoney = $util.toMoney;
+	$.dispMWonToWon = $util.dispMWonToWon;
+	$.dispWonToMWon = $util.dispWonToMWon;
+	$.toIrrt = $util.toIrrt;
+	$.addYears = $util.addYears;
+	$.addMonths = $util.addMonths;
+	$.addDays = $util.addDays;
+	$.parseDate = $util.parseDate;
+	$.replaceAll = $util.replaceAll;
+	$.stripHTMLtag = $util.stripHTMLtag;
+	$.base64 = $util.base64;
+	$.juminMasking = $util.juminMasking;
+	$.jumin2Masking = $util.jumin2Masking;
+	$.phoneNumMasking = $util.phoneNumMasking;
+	$.phoneMasking = $util.phoneMasking;
+	$.accountMasking = $util.accountMasking;
+	$.cardMasking = $util.cardMasking;
+	$.nameMasking = $util.nameMasking;
+	$.addrMasking = $util.addrMasking;
+	$.idMasking = $util.idMasking;
+	$.vatInclPrice = $util.vatInclPrice;
+	$.diffDay = $util.diffDay;
+})(jQuery);
+
+
+
+
+
+/*******************************************************************************
+ * jQuery 확장 구현부
+ ******************************************************************************/
+
+/**
+*
+* (form 요소) 직렬화 결과(serializeArrayString)를  Object(json object)로 변환
+*
+* @param	String
+* @return	obj
+*/
+jQuery.fn.serializeObject = function() {
+
+	var obj = null;
+	try{
+
+       if(this[0].tagName && this[0].tagName.toUpperCase() == "FORM"){
+           var arr = this.serializeArray();
+           if(arr){
+               obj = {};
+               jQuery.each(arr, function(){
+                   obj[this.name] = this.value;
+               });
+           }
+       }
+
+   }catch(e){
+       //console.log(e.message);
+   }
+
+   return obj;
+}
+
+
+
+
+
+/*******************************************************************************
+ * Javascript 확장 구현부
+ ******************************************************************************/
+
+/**
+ * 정수부에 3자리 단위로 콤마(comma)를 삽입합니다.
+ */
+Number.prototype.addComma = function() {
+
+	if(this==0) return 0;
+
+	var reg = /(^[+-]?\d+)(\d{3})/;
+	var n = (this + '');
+
+	while (reg.test(n)) n = n.replace(reg, '$1' + ',' + '$2');
+
+	return n;
+}
+
+
+/**
+ * 정수부에 3자리 단위로 콤마(comma)를 삽입합니다.
+ */
+String.prototype.addComma = function() {
+
+	var num = parseFloat(this.replace(/,/gi,""));
+	if (isNaN(num)) return "0";
+
+	return num.addComma();
+}
+
+String.prototype.replaceAll = function(searchStr, replaceStr) {
+	  return this.split(searchStr).join(replaceStr);
+}
+
+String.prototype.trim = function() {
+	return this.replace(/^\s+|\s+$/g, '');
+}
+
+
+/**
+ * String.format()
+ *
+ * @example
+ *      "({0}) {1}".format("12345", "서울 강남구 도곡동");  						// --> (12345) 서울 강남구 도곡동
+ *      "({zipcode}) {addr}".format({zipcode:"12345", addr:"서울 강남구 도곡동"});  // --> (12345) 서울 강남구 도곡동
+ **/
+if (!String.prototype.format) {
+
+    String.prototype.format = function () {
+
+        var args = arguments;
+        var str = this;
+
+        function replaceByObjectProperies(obj) {
+            for (var property in obj)
+                if (obj.hasOwnProperty(property))
+                    //replace all instances case-insensitive
+                    str = str.replace(new RegExp(escapeRegExp("{" + property + "}"), 'gi'), String(obj[property]));
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+        }
+
+        function replaceByArray(arrayLike) {
+            for (var i = 0, len = arrayLike.length; i < len; i++)
+                str = str.replace(new RegExp(escapeRegExp("{" + i + "}"), 'gi'), String(arrayLike[i]));
+        }
+
+        if (!arguments.length || arguments[0] === null || arguments[0] === undefined)
+            return str;
+        else if (arguments.length == 1 && Array.isArray(arguments[0]))
+            replaceByArray(arguments[0]);
+        else if (arguments.length == 1 && typeof arguments[0] === "object")
+            replaceByObjectProperies(arguments[0]);
+        else
+            replaceByArray(arguments);
+
+        return str;
+    };
+}
+
+/**
+ * String.format()
+ *
+ * @example
+ *      String.format("({0}) {1}", "12345", "서울 강남구 도곡동");  						// --> (12345) 서울 강남구 도곡동
+ *		String.format("({zipcode}) {addr}", {zipcode:"12345", addr:"서울 강남구 도곡동"});  // --> (12345) 서울 강남구 도곡동
+ **/
+String.format = function () {
+
+	var str = arguments[0];
+	var args = Array.prototype.slice.call(arguments, 1);
+
+	if (typeof str !== "string") {
+		return
+	}
+
+	return str.format(args);
+}
+
+
+/**
+ * Date.format(pattern)
+ *
+ * 날짜 및 시간을 특정 형태로 변환해준다. <br />
+ *
+ *  - yyyy 		 : 년				ex) 2009
+ *  - yy 	 	 : 년				ex) 09
+ *  - MM		 : 월				ex) 07
+ *  - M		 	 : 월				ex) 7
+ *  - dd	 	 : 일				ex) 01
+ *  - d	 	 	 : 일				ex) 1
+ *  - HH 	 	 : 시간 (00~23)		ex) 08
+ *  - H 	 	 : 시간 (0~23)		ex) 8
+ *  - hh 	 	 : 시간 (00~11)		ex) 03
+ *  - h 	 	 : 시간 (0~11)		ex) 3
+ *  - mm 	 	 : 분				ex) 03
+ *  - m 	 	 : 분				ex) 3
+ *  - ss 	 	 : 초				ex) 05
+ *  - s 	 	 : 초				ex) 5
+ *  - S 	 	 : 밀리초
+ *  - A 	 	 : AM; PM
+ *  - a 	 	 : am; pm
+ *  - AA(aa) 	 : 오전; 오후
+ *
+ * @method format
+ * @param {String} pattern
+ * @returns {String}
+ * @example
+ *      var date = new Date(2014, 9-1, 5, 14, 2, 44);
+ *      date.format("yyyy-MM-dd hh:mm:ss"); 			// --> 2014-09-05 02:02:44
+ *      date.format("yyyy년"); 							// --> 2014년
+ *      date.format("aa h시"); 							// --> 오후 2시
+ */
+Date.prototype.format = function(pattern) {
+
+    if (!this.valueOf()) return "";
+
+    if (!pattern) pattern = "yyyy-MM-dd"; // 기본 포맷 지정
+
+    var monthNames = ['January','February','March','April','May','June','July', 'August','September','October','November','December'];
+    var weekNames = [ "일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일" ];
+
+	var d = this;
+
+    return pattern.replace(/(yy(yy)?|MMMM|MMM|MM|M|dd|d|E|H(H)?|h(h)?|m(m)?|s(s)?|SSS|SS|S|A(A)?|a(a)?)/g, function($1) {
+        switch ($1) {
+            case "yyyy": return d.getFullYear();
+            case "yy"  : return exjs.util.leftPad(d.getFullYear(), 2, '0');
+            case "MMMM": return monthNames[d.getMonth()];
+            case "MMM" : return monthNames[d.getMonth()].substr(0, 3);
+            case "MM"  : return exjs.util.leftPad(d.getMonth()+1, 2, '0');
+            case "M"   : return d.getMonth()+1;
+            case "dd"  : return exjs.util.leftPad(d.getDate(), 2, '0');
+            case "d"   : return d.getDate();
+            case "E"   : return weekNames[d.getDay()];
+            case "HH"  : return exjs.util.leftPad(d.getHours(), 2, '0');
+            case "H"   : return d.getHours();
+            case "hh"  : return exjs.util.leftPad(((h = d.getHours() % 12) ? h : 12), 2, '0');
+            case "h"   : return ((h = d.getHours() % 12) ? h : 12);
+            case "mm"  : return exjs.util.leftPad(d.getMinutes(), 2, '0');
+            case "m"   : return d.getMinutes();
+            case "ss"  : return exjs.util.leftPad(d.getSeconds(), 2, '0');
+            case "s"   : return d.getSeconds();
+            case "SSS" : return exjs.util.leftPad(d.getMilliseconds(), 3, '0');
+            case "SS"  : return exjs.util.leftPad(d.getMilliseconds(), 2, '0');
+            case "S"   : return d.getMilliseconds();
+            case "aa"  :
+            case "AA"  : return d.getHours() < 12 ? "오전" : "오후";
+            case "a"   : return d.getHours() < 12 ? "am" : "pm";
+            case "A"   : return d.getHours() < 12 ? "AM" : "PM";
+
+            default: return $1;
+        }
+	});
+};
+
+/**
+ *
+ * @method format
+ * @param {String} pattern
+ * @param {Date} date 없을 경우 현재 시간을 기준으로 생성
+ * @returns {String}
+ * @static
+ * @example
+ *      var now = Date.format("yyyyMMdd"); // --> 20140925
+ *      var now = Date.format("yyyyMMdd", new Date(2014, 9, 25)); // --> 20140925
+ */
+Date.format = function(pattern, date) {
+    if (date instanceof Date) {
+        return date.format(pattern);
+    } else {
+        return new Date().format(pattern);
+    }
+};

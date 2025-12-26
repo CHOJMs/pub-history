@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>승계정보 확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>승계정보 확인</h1>
+            </div>
+            <div class="popup-contents flex-col info-pad-btm "><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+
+                    <!-- Start : 상품 신청내역 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">승계정보 확인</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">전이용자 정보</span>
+                                    <span class="p-txt">김개똥 / ㈜라마바컴퍼니</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">금융상품</span>
+                                    <span class="p-txt"><리스>일반(금융리스)</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">승계신청일자</span>
+                                    <span class="p-txt">2022-08-10</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">승계수수료</span>
+                                    <span class="p-txt">120,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">물건내역</span>
+                                    <span class="p-txt">ABC</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">기존실행번호</span>
+                                    <span class="p-txt">1234567</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">기존실행일자</span>
+                                    <span class="p-txt">2022-08-10</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">물건구입금액</span>
+                                    <span class="p-txt">30,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">실행금액</span>
+                                    <span class="p-txt">30,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">여신잔액</span>
+                                    <span class="p-txt">30,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">계약기간</span>
+                                    <span class="p-txt">60개월</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">잔여기간</span>
+                                    <span class="p-txt">30개월</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">보증금</span>
+                                    <span class="p-txt">30,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">잔존가액</span>
+                                    <span class="p-txt">30,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">원금유예</span>
+                                    <span class="p-txt">30,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">월납입금액</span>
+                                    <span class="p-txt">485,900원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 상품 신청내역 -->
+
+                    <!-- Start : 계약정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">계약정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">채무자</span>
+                                    <span class="p-txt">홍길동 또는 (주)abc</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">채무자주소</span>
+                                    <span class="p-txt">서울시 영등포구 신길동</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">연대보증인1</span>
+                                    <span class="p-txt">김철수</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">연대보증인1 주소</span>
+                                    <span class="p-txt">서울시 영등포구 대림동</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">연대보증인2</span>
+                                    <span class="p-txt">김영희</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">연대보증인2 주소</span>
+                                    <span class="p-txt">서울특별시 중구</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">피보증채무의 범위</span>
+                                    <span class="p-txt">한정근 보증</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">근보증 한도액</span>
+                                    <span class="p-txt">1,000,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">근보증 한도율</span>
+                                    <span class="p-txt">10%</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">근보증 결산기</span>
+                                    <span class="p-txt">자동확정형</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 계약정보 -->
+
+                    <!-- Start : 취급제한 안내 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">취급제한 안내</h2>
+                        <ul class="list-dot">
+                            <li>여신(리스/할부/대출) 실행시점에 신용도 변동, 타 금융기관 여신 발생시 취급이 제한될 수 있습니다.</li>
+                            <li>동일 물건에 타 금융기관과의 중복여신 신청이 확인될 경우 신청이 취소될 수 있습니다.</li>
+                        </ul>
+                    </div>
+                    <!-- //End : 취급제한 안내 -->
+
+                    <!-- Start : 신청내용 변경 절차 안내 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">신청내용 변경 절차 안내</h2>
+                        <p class="tbl-s-txt">아래 내용 변경은 영업 담당자를 통해 변경 가능 여부를 확인하시기 바랍니다.</p>
+
+                        <div class="box-green">구입장비, 신청금액, 여신기간, 월 납입금액 등 변경</div>
+                    </div>
+                    <!-- //End : 신청내용 변경 절차 안내 -->
+
+                    <!-- Start : 고객센터 -->
+                    <div class="fixed-call-area">
+                        <div class="call-phone">
+                            <span class="c-info">고객센터</span><span class="c-tel">1566-0050<span class="c-text">(평일 오전 9시~오후 6시)</span></span>
+                        </div>
+                    </div>
+                    <!-- //End : 고객센터 -->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

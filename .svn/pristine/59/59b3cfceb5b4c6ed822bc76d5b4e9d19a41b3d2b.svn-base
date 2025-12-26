@@ -1,0 +1,459 @@
+<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
+<%-- START : SCRIPT로직 구현 --%>
+<script type="text/javascript">
+
+	function init_pop(){
+		$('.layerPop_ui .close').click(function(){
+			$('body').css('overflow','');
+			$(".popScroll").mCustomScrollbar('disable');
+		})
+
+		$("#fWayName").focus(); 
+	}
+
+	function srchAddress(pageNm){
+		if(!validation()){return;}
+
+		document.submitForm_address.METHOD.value = "srchAddress";
+		$("#SRCH_EMD_STRT_NM").val($("#fWayName").val());
+		$("#SRCH_PNTM_ADDR_DELI_CD").val($("input[name=post]:checked").val() );
+
+		if(pageNm == null){
+			pageNm = 1;
+		}
+			$("#SRCH_PRSN_NO").val(pageNm)
+
+		var sFrm          = document.sendForm;
+		sendAjaxAction(document.submitForm_address, sFrm, "fAjaxCallBack", "/dsr/dsrActionCommon.do");
+	}
+
+	function fAjaxCallBack(result){
+		var INIpluginData = $(result).find("INIpluginData").attr("value");
+		var decrypt = Idecrypt(INIpluginData);
+		var renderedHtml = $(decrypt).find("htmlCode").attr("value");
+
+		$("#tbl_popaddress tbody").html(renderedHtml);
+
+		rdyAddrTable1();
+
+		/*$("#tbl_popjob tbody tr").each(function(){
+			var targetVal1 = $(this).find("td").eq(2).text();
+			if(targetVal1 != "" && targetVal1.length >= 10){
+				targetVal1 = targetVal1.substring(0, 3) + "-" + targetVal1.substring(3, 5) + "-" + targetVal1.substring(5);
+				$(this).find("td").eq(2).text(targetVal1); 
+			}
+
+			var targetVal2 = $(this).find("td").eq(7).text();
+			if(targetVal2 != "" && targetVal2.length >= 11){
+				targetVal2 = targetVal2.substring(0, 6) + "-" + targetVal2.substring(6);
+				$(this).find("td").eq(7).text(targetVal2);
+			}
+
+		});*/
+
+		ajaxPaging(decrypt, 50);
+
+		onclickSelectTd_address();
+	}
+
+	function rdyAddrTable1(){
+		$("#tbl_popaddress input[type=radio]").click(function(){
+			$("#srch_zip").val($(this).closest("tr").find("td").eq(2).text());
+			$("#srch_addr").val($(this).closest("tr").find("td").eq(3).text());
+		});
+	}
+	
+	function movePage(pageNum){
+		srchAddress(pageNum);
+	}
+
+	function confAddress(){
+		if($("#srch_addr").val() == ""){
+			alert("주소를 검색하고 선택해주세요");
+			return;
+		}
+		if($("#srch_dtAddr").val() == ""){
+			alert("나머지 주소를 입력하여 주세요.");
+			return;
+		}
+
+		document.submitForm_address.METHOD.value = "confAddress";
+		$("#SRCH_PNTM_ADDR_DELI_CD").val($("input[name=post]:checked").val());
+		$("#SRCH_INPT_ZPCD").val($("#srch_zip").val());
+		$("#SRCH_INPT_ADDR").val($("#srch_addr").val() );
+		$("#SRCH_INPT_DTAD").val($("#srch_dtAddr").val() );
+		$("#ADDR_RFNM_RSLT_MSG").val("");
+
+		var sFrm          = document.sendForm;
+		sendAjaxAction(document.submitForm_address, sFrm, "fAjaxCallBack_conf", "/dsr/dsrActionCommon.do");
+	}
+
+	function fAjaxCallBack_conf(result){
+		var INIpluginData = $(result).find("INIpluginData").attr("value");
+		var decrypt = Idecrypt(INIpluginData);
+		var renderedHtml = $(decrypt).find("htmlCode").attr("value");
+
+		$("#tbl_popaddressconf tbody").html(renderedHtml);
+
+		rdyAddrTable2();
+
+		$("#totl_cnt2").text(parseInt(getString(decrypt, "TOTL_CNT")));
+
+		if($("#tbl_popaddressconf tbody tr").length > 0){
+			insertConfAddr(0);
+			
+			if($("#res_addr3").val() != ""){
+				$("#fadd03").prop("checked", "checked");
+			}else if($("#res_addr2").val() != ""){
+				$("#fadd02").prop("checked", "checked");
+			}else if($("#res_addr1").val() != ""){
+				$("#fadd01").prop("checked", "checked");
+			}
+		}
+
+		/*$("#tbl_popjob tbody tr").each(function(){
+			var targetVal1 = $(this).find("td").eq(2).text();
+			if(targetVal1 != "" && targetVal1.length >= 10){
+				targetVal1 = targetVal1.substring(0, 3) + "-" + targetVal1.substring(3, 5) + "-" + targetVal1.substring(5);
+				$(this).find("td").eq(2).text(targetVal1);
+			}
+
+			var targetVal2 = $(this).find("td").eq(7).text();
+			if(targetVal2 != "" && targetVal2.length >= 11){
+				targetVal2 = targetVal2.substring(0, 6) + "-" + targetVal2.substring(6);
+				$(this).find("td").eq(7).text(targetVal2);
+			}
+
+		});*/
+
+		//ajaxPaging(decrypt, 50, "Conf");
+	}
+
+	function rdyAddrTable2(){
+		$("#tbl_popaddress input[type=radio]").click(function(){
+			$("#srch_zip").val($(this).closest("tr").find("td").eq(2).text());
+			$("#srch_addr").val($(this).closest("tr").find("td").eq(3).text());
+		});
+	}
+
+	function validation(){
+		if($("#fWayName").val() == ""){
+			alert("나머지 주소를 입력하여 주세요.");
+			return false;
+		}
+
+		return true;
+	}
+
+	function insertConfAddr(trIdx){
+		trIdx++; //0으로 넘어와서 tr은 1부터 시작
+		var tr = $("#tbl_popaddressconf tr").eq(trIdx);
+		var td_1 = tr.find("td").eq(0).text();
+		var td_2 = tr.find("td").eq(1).text();
+		var td_3 = tr.find("td").eq(2).text();
+		var td_4 = tr.find("td").eq(3).text();
+		var td_5 = tr.find("td").eq(4).text();
+		var td_6 = tr.find("td").eq(5).text();
+
+		//$("input[name=address]").each(function(rdoIdx){
+			$("#res_zip1").val($("#srch_zip").val());
+			$("#res_addr1").val($("#srch_addr").val());
+			$("#res_dtAddr1").val($("#srch_dtAddr").val());
+			$("#res_zip2").val(td_1);
+			$("#res_addr2").val(td_2);
+			$("#res_dtAddr2").val(td_3);
+			$("#res_zip3").val(td_4);
+			$("#res_addr3").val(td_5);
+			$("#res_dtAddr3").val(td_6);
+		//})
+	}
+
+	function confirm_pop(){
+		var rdoIdx = $("input[name=address]:checked").val();
+
+		var res1 = $("#res_zip"+rdoIdx).val();
+		var res2 = $("#res_addr"+rdoIdx).val();
+		var res3 = $("#res_dtAddr"+rdoIdx).val();
+
+		if(res2 == ""){
+			alert("입력된 주소가 없습니다.");
+			return;
+		}
+		if(res3 == ""){
+			alert("입력된 주소가 없습니다.");
+			return;
+		}
+
+		$("#"+field[0]).val(res1);
+		$("#"+field[1]).val(res2);
+		$("#"+field[2]).val(res3);
+
+		// 주소구분자코드 ( 입력주소:CA463, 지번주소:CA461, 도로명주소:CA462 )
+		if('1' == rdoIdx){
+			$("#"+field[3]).val('CA463');
+		}
+		if('2' == rdoIdx){
+			$("#"+field[3]).val('CA461');
+		}
+		if('3' == rdoIdx){
+			$("#"+field[3]).val('CA462');
+		}
+
+		popCloseScrollbar();
+	}
+
+	function reset_pop(){
+		$(".search_ui select").each(function(){
+			$(this).find("option").eq(0).prop("selected", "selected");
+		})
+		$("#tbl_popaddress tbody").html("");
+		$("#tbl_popaddressconf tbody").html("");
+		$(".layer_pop input[type=text]").val("");
+	}
+
+	function close_pop(){
+		popCloseScrollbar();
+	}
+
+	function onclickSelectTd_address(){
+		$("#tbl_popaddress tbody tr").on("click", function(){
+			$("input#fJsel"+$(this).index()).prop("checked", "checked");
+			$("#srch_zip").val($("#tbl_popaddress tbody tr").eq($(this).index()).find("td").eq(2).text());
+			$("#srch_addr").val($("#tbl_popaddress tbody tr").eq($(this).index()).find("td").eq(3).text());
+		})
+	} 
+
+	function enter_srchAddress(e){
+		if(e.keyCode == "13"){
+			srchAddress();
+		}
+	}
+</script>
+<%--   END : SCRIPT로직 구현 --%>
+	
+
+
+		<div class="layer_pop pop_address">
+			<h1>직장/업체주소 조회</h1>
+			<div class="cons">
+				<div class="cola">
+					<h2 class="titH2_pop">주소검색</h2>
+					<p class="para01">'읍면동/도로명+도로명건물번호’으로 입력하시면 더 쉽게 찾을 수 있습니다. (예 : 언주로30길 39)</p>
+					<div class="addr_search">
+						<label for="fWayName" class="tit">읍면동/도로명 :&nbsp;</label><input type="text" id="fWayName" maxlength="50" onkeydown="enter_srchAddress(event);" />
+						<span class="radio_group">
+							<span class="chk_radio"><input type="radio" id="fJibun" name="post" value="CA461" checked="checked" /><label for="fJibun">지번</label></span>
+							<span class="chk_radio"><input type="radio" id="fWay" name="post" value="CA462" /><label for="fWay">도로명</label></span>
+						</span>
+						<a href="#" class="btnS01" onclick="srchAddress();return false;">조회</a>
+					</div>
+
+					<p class="para01">조회건수 <strong><span id="totl_cnt">0</span></strong>건</p>
+					<div class="popScroll02">
+						<table class="tbl_col02" cellpadding="0" cellspacing="0" id="tbl_popaddress">
+							<caption>주소검색 결과</caption>
+							<colgroup> <!-- 개발참고 사항 : 필드추가할 경우 col에 width 값도 추가해야 가로스크롤 정상적으로 생깁니다. 반드시 단위는 px 사용해야 함 -->
+								<col width="50px" />
+								<col width="50px" />
+								<col width="100px" />
+								<col width="300px" />
+							</colgroup>
+							<thead>
+							<tr>
+								<th scope="col">선택</th>
+								<th scope="col">구분</th>
+								<th scope="col">우편번호</th>
+								<th scope="col">주소</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td><span class="chk_radio sel"><input type="radio" id="fSel01" name="sel" /><label for="fSel01"><span>선택</span></label></span></td>
+								<!-- 개발참고 사항 : for/id값 반드시 일치해야 합니다. id는 중복으로 사용할 수 없음. fSel01~ 숫자 증감식  -->
+								<td>도로</td>
+								<td>48562</td>
+								<td class="cell_type01">서울특별시 강남구 언주로 30길 10</td>
+							</tr>
+							<tr>
+								<td><span class="chk_radio sel"><input type="radio" id="fSel02" name="sel" /><label for="fSel02"><span>선택</span></label></span></td>
+								<td>도로</td>
+								<td>48562</td>
+								<td class="cell_type01">서울특별시 강남구 언주로 30길 10</td>
+							</tr>
+							<tr>
+								<td><span class="chk_radio sel"><input type="radio" id="fSel03" name="sel" /><label for="fSel03"><span>선택</span></label></span></td>
+								<td>도로</td>
+								<td>48562</td>
+								<td class="cell_type01">서울특별시 강남구 언주로 30길 10</td>
+							</tr>
+							<tr>
+								<td><span class="chk_radio sel"><input type="radio" id="fSel04" name="sel" /><label for="fSel04"><span>선택</span></label></span></td>
+								<td>도로</td>
+								<td>48562</td>
+								<td class="cell_type01">서울특별시 강남구 언주로 30길 10</td>
+							</tr>
+							<tr>
+								<td><span class="chk_radio sel"><input type="radio" id="fSel05" name="sel" /><label for="fSel05"><span>선택</span></label></span></td>
+								<td>도로</td>
+								<td>48562</td>
+								<td class="cell_type01">서울특별시 강남구 언주로 30길 10</td>
+							</tr-->
+							</tbody>
+						</table>
+						<div class="paging" id="paging"> 
+							<a href="맨처음" class="first">첫페이지</a> 
+							<a href="이전" class="prev">이전 블럭</a>
+							<ul>
+								<li><strong>1</strong></li>
+								<li><a href="">2</a></li>
+								<li><a href="">3</a></li>
+								<li><a href="">4</a></li>
+								<li><a href="">5</a></li>
+							</ul>
+							<a href="다음" class="next">다음 블럭</a>
+							<a href="맨 마지막" class="last">마지막 페이지</a>
+						</div>
+					</div><!-- //popScroll02 -->
+
+					<div class="addr_detail">
+						<p class="para02">나머지 주소를 입력하여 주십시오.</p>
+						<table class="tbl_row">
+							<caption>나머지 주소</caption>
+							<colgroup>
+								<col width="115px" />
+								<col width="" />
+							</colgroup>
+							<tbody>
+							<tr>
+								<th scope="row">검색주소</th>
+								<td><input type="text" title="우편번호" class="f_size07 readonly" id="srch_zip" disabled />
+									<input type="text" title="주소" class="f_size01 readonly" id="srch_addr" disabled />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">나머지주소</th>
+								<td><input type="text" title="나머지주소" class="f_size" id="srch_dtAddr" maxlength="200" /></td>
+							</tr>
+							</tbody>
+						</table>
+					</div><!-- //addr_detail -->
+					<p class="btn_g02"><a href="#" class="btnP01" onclick="confAddress();return false;">검증</a></p>
+				</div><!-- //cola -->
+
+				<div class="colb">
+					<h2 class="titH2_pop">주소확인</h2>
+					<p class="para01">조회건수 <strong><span id="totl_cnt2">0</span></strong>건</p>
+					<div class="popScroll03">
+						<table class="tbl_col02" cellpadding="0" cellspacing="0" id="tbl_popaddressconf">
+							<caption>주소확인 조회 결과</caption>
+							<colgroup>
+								<col width="140px" />
+								<col width="140px" />
+								<col width="140px" />
+								<col width="140px" />
+								<col width="140px" />
+								<col width="140px" />
+							</colgroup>
+							<thead>
+							<tr>
+								<th scope="col">지번우편번호</th>
+								<th scope="col">지번주소</th>
+								<th scope="col">지번상세</th>
+								<th scope="col">도로명우편번호</th>
+								<th scope="col">도로명주소</th>
+								<th scope="col">도로명상세</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>48562</td>
+								<td>서울 강남구 도곡동</td>
+								<td>서울 강남구 도곡동</td>
+							</tr>
+							</tbody>
+						</table>
+					</div><!-- //popScroll03 -->
+					<h2 class="titH3_pop"><span class="chk_radio"><input type="radio" id="fadd01" name="address" value="1" checked="checked" /><label for="fadd01">입력주소</label></span></h2>
+					<table class="tbl_row">
+						<caption>입력주소</caption>
+						<colgroup>
+							<col width="115px" />
+							<col width="" />
+						</colgroup>
+						<tbody>
+						<tr>
+							<th scope="row">검색주소</th>
+							<td><input type="text" title="우편번호" class="f_size07 readonly" id="res_zip1" disabled />
+								<input type="text" title="주소" class="f_size01 readonly" id="res_addr1" disabled />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">나머지주소</th>
+							<td><input type="text" title="나머지주소" class="f_size" id="res_dtAddr1" maxlength="200" /></td>
+						</tr>
+						</tbody>
+					</table>
+					<h2 class="titH3_pop"><span class="chk_radio"><input type="radio" id="fadd02" name="address" value="2" /><label for="fadd02">표준화 지번주소</label></span></h2>
+					<table class="tbl_row">
+						<caption>표준화 지번주소</caption>
+						<colgroup>
+							<col width="115px" />
+							<col width="" />
+						</colgroup>
+						<tbody>
+						<tr>
+							<th scope="row">검색주소</th>
+							<td><input type="text" title="우편번호" class="f_size07 readonly" id="res_zip2" disabled />
+								<input type="text" title="주소" class="f_size01 readonly" id="res_addr2" disabled />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">나머지주소</th>
+							<td><input type="text" title="나머지주소" class="f_size" id="res_dtAddr2" maxlength="200" /></td>
+						</tr>
+						</tbody>
+					</table>
+					<h2 class="titH3_pop"><span class="chk_radio"><input type="radio" id="fadd03" name="address" value="3" /><label for="fadd03">도로명주소</label></span></h2>
+					<table class="tbl_row">
+						<caption>도로명주소</caption>
+						<colgroup>
+							<col width="115px" />
+							<col width="" />
+						</colgroup>
+						<tbody>
+						<tr>
+							<th scope="row">검색주소</th>
+							<td><input type="text" title="우편번호" class="f_size07 readonly" id="res_zip3" disabled />
+								<input type="text" title="주소" class="f_size01 readonly" id="res_addr3" disabled />
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">나머지주소</th>
+							<td><input type="text" title="나머지주소" class="f_size" id="res_dtAddr3" maxlength="200" /></td>
+						</tr>
+						</tbody>
+					</table>
+					<p class="btn_g02">
+						<a href="#" class="btnP01" onclick="reset_pop();return false;">초기화</a>
+						<a href="#1" class="btnP01" onclick="confirm_pop();return false;">확인</a>
+						<a href="#1" class="btnP01" onclick="close_pop();return false;">닫기</a>
+					</p>
+				</div><!-- //colb -->
+			</div>
+		</div><!-- //pop_address -->
+
+		
+
+		<form name="submitForm_address" method="post">
+		<input type="hidden" name="METHOD"/>
+		<input type="hidden" name="LOGIN_SVC" id="LOGIN_SVC" value="N" /> <%-- 공통코드조회 비로그인서비스 --%>
+		<input type="hidden" name="SRCH_PRSN_NO" id="SRCH_PRSN_NO" />
+
+		<input type="hidden" name="SRCH_EMD_STRT_NM" id="SRCH_EMD_STRT_NM" />
+		<input type="hidden" name="SRCH_PNTM_ADDR_DELI_CD" id="SRCH_PNTM_ADDR_DELI_CD" />
+
+		<input type="hidden" name="SRCH_INPT_ZPCD" id="SRCH_INPT_ZPCD" />
+		<input type="hidden" name="SRCH_INPT_ADDR" id="SRCH_INPT_ADDR" />
+		<input type="hidden" name="SRCH_INPT_DTAD" id="SRCH_INPT_DTAD" />
+		<input type="hidden" name="ADDR_RFNM_RSLT_MSG" id="ADDR_RFNM_RSLT_MSG" />
+		</form>

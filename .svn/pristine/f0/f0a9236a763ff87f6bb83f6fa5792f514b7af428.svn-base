@@ -1,0 +1,518 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		// 뒤로가기 버튼으로 들어올때 값 사라짐 방지
+		if($('#BOARD_ID').val() == "")
+			$('#BOARD_ID').val("BOARD_ID");
+		if($('#PGE_NO').val() == "")
+			$('#PGE_NO').val("iPageNo");
+		if($('#menuNo').val() == "")
+			$('#menuNo').val("3");
+		if($('#subMenuNo').val() == "")
+			$('#subMenuNo').val("SUB_MENU");
+		if($('#INSERT_KEY').val() == "")
+			$('#INSERT_KEY').val("0");
+	});
+
+//window.alert($.fn.jquery);
+	// 조회
+	function goSearch(pageNum){
+
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardListSelect";
+		f.PGE_NO.value = pageNum;
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+
+	//파일다운로드
+	function download(fileName){
+		var path = "upload";
+
+		window.location.href = "/view/common/inc/FILE_DOWNLOAD.jsp?file_name="+fileName+"&file_path="+path;
+	}
+
+
+	//상세보기
+	function notsDtlSubmit(bid, ref){
+// 		var f = document.frm;
+
+// 		f.METHOD.value = "AdminBoardDetail";
+// 		f.B_ID.value   = bid;
+// 		f.REF_ID.value = ref;
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+		
+		location.href = "/admin/board/dgbNoticeBoardMngDtl.jsp"
+	}
+
+	function goWrite(){
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardWrite";
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+
+	}
+
+
+
+</script>
+</head>
+<body>
+	
+<!-- 레이어 팝업 -->
+<div class="layerPop" style="width:1330px;">
+	<h1>신청결과 CSS</h1>
+	<div class="Pop_content">
+		<div class="Pop_form-type">
+			
+			<p class="mb10">※‘부채정보수정‘, ‘CSS재산출‘ 후 한도조회 결과요약에서 해당상품을 다시 선택하시면 상세내역을 확인하실 수 있습니다.</p>
+            <p class="mb10">※‘CSS재산출’ 후 ＇결과등록’을 해주셔야 최종 입력값이 반영됩니다.</p>
+            <p class="mb20">※ 입력정보 수정 시(재직/사업정보, 재무정보, 차량정보, 타사대환정보) ‘CSS재산출‘, ‘결과등록＇을 다시 해주시기 바랍니다.</p>
+            <div class="tit_area">
+				<p class="btn-align-right mt0 mb10">
+					<a href="#" class="btn h42">부채정보 수정</a>
+					<a href="#" class="btn h42">CSS재산출</a>
+					<a href="#" class="btn h42">결과등록</a>
+				</p>
+			</div>
+				
+			<div class=" scroll_box" style="height:400px;">
+				<!-- 한도조회 결과요약 // -->
+				<div class="tit_area">
+					<h4 class="dl_tb_tit">한도조회 결과요약</h4>
+				</div>
+				<div style="height:218px; overflow-y:auto;">
+					<table class="bbs-table">
+						<colgroup>
+							<col style="width:4%;">
+							<col style="width:13%;">
+							<col style="width:12%;">
+							<col style="width:15%;">
+							<col style="width:15%;">
+							<col style="width:15%;">
+							<col style="width:13%;">
+							<col style="width:13%;">
+						</colgroup>
+						<thead>
+							<tr>		
+								<th scope="col"></th>
+								<th scope="col">상품명</th>
+								<th scope="col">시스템판정</th>
+								<th scope="col">Pre-Screen<br>적중</th>
+								<th scope="col">Risk-Policy<br>적중</th>
+								<th scope="col">Fraud-Policy<br>적중</th>
+								<th scope="col">시스템한도</th>
+								<th scope="col">시스템금리</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" id="" name=""></td>								
+								<td></td>
+								<td></td>
+								<td class="a_r">건</td>
+								<td class="a_r">건</td>
+								<td class="a_r">건</td>
+								<td class="a_r">원</td>
+								<td class="a_r">%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<table class="bbs-table-view mt20">
+					<colgroup>
+						<col style="width:20%;">
+						<col style="width:30%;">
+						<col style="width:20%;">
+						<col style="width:30%;">
+					</colgroup>
+					<tbody>
+						<tr>								
+							<th scope="row">타사대환 우대한도</th>
+							<td class="a_r">만원</td>
+							<th scope="row">타사대환 우대금리</th>
+							<td class="a_r">%</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="mt5 red">※ 상품 선택 후 ‘결과등록’ 해주시기 바랍니다.</p>
+				<table class="bbs-table-view mt20">
+					<colgroup>
+						<col style="width:20%;">
+						<col style="width:30%;">
+						<col style="width:20%;">
+						<col style="width:30%;">
+					</colgroup>
+					<tbody>
+						<tr>								
+							<th scope="row">결합스코어</th>
+							<td class="a_r">AO041</td>
+							<th scope="row">신용기초한도</th>
+							<td class="a_r">AZ119</td>
+						</tr>
+                        <tr>								
+							<th scope="row">승인구분등급</th>
+							<td class="a_r">등급</td>
+							<th scope="row">직군</th>
+							<td class="a_r">군</td>
+						</tr>
+						<tr>								
+							<th scope="row">결정소득</th>
+							<td class="a_r">원</td>
+							<th scope="row">DSR(%)</th>
+							<td class="a_r">%</td>
+						</tr>
+						<tr>								
+							<th scope="row">NICE추정소득</th>
+							<td></td>
+							<th scope="row">산출일시(최종)</th>
+							<td>2020-09-25 13:45:11</td>
+						</tr>
+					</tbody>
+				</table>
+                
+                <table class="bbs-table mt20">
+                    <colgroup>
+                        <col style="width:%;">
+                        <col style="width:%;">
+                        <col style="width:%;">
+                        <col style="width:%;">
+                        <col style="width:%;">
+                        <col style="width:%;">
+                        <col style="width:%;">
+                        <col style="width:%;">
+                    </colgroup>
+                    <thead>
+                        <tr>		
+                            <th scope="col" colspan="6">NICE</th>
+                            <th scope="col" colspan="2">KCB</th>
+                        </tr>
+                        <tr>		
+                            <th scope="col">CB등급/스코어</th>
+                            <th scope="col">SP등급/스코어</th>
+                            <th scope="col">SOHO_ML 스코어</th>
+                            <th scope="col">PI_ML 스코어</th>
+                            <th scope="col">후순위담보_ML 스코어</th>
+                            <th scope="col">FB_FRIS 등급/스코어</th>
+                            <th scope="col">CB등급/스코어</th>
+                            <th scope="col">SP등급/스코어</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>등급/ 점</td>								
+                            <td>등급/ 점</td>
+                            <td>점</td>
+                            <td>점</td>
+                            <td>점</td>
+                            <td>등급/ 점</td>
+                            <td>등급/ 점</td>
+                            <td>등급/ 점</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">신용한도_미부여_적중</td>								
+                            <td class="a_r">( )건</td>
+                            <td colspan="2">자산한도_미부여_적중</td>
+                            <td class="a_r">( )건</td>
+                            <td>차량한도_미부여_적중</td>
+                            <td class="a_r">( )건</td>
+                        </tr>
+                    </tbody>
+                </table>
+				<!-- //한도조회 결과요약 -->
+				
+				<!-- Pre-Screen // -->
+				<div class="tit_area mt30">
+					<h4 class="dl_tb_tit">Pre-Screen 적중 내용 (총 0건)</h4>
+				</div>
+				<div style="height:175px; overflow-y:auto;">
+					<table class="bbs-table">
+						<colgroup>
+							<col style="width:80px;">
+							<col style="width:auto;">
+						</colgroup>
+						<thead>
+							<tr>		
+								<th scope="col">No</th>
+								<th scope="col">항목명</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>								
+								<td class="a_l">최근 3개월이내 카드론 총금액</td>
+							</tr>
+							<tr>
+								<td>2</td>								
+								<td class="a_l">KCB SP등급</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //Pre-Screen -->
+				
+				<!-- Risk-Policy // -->
+				<div class="tit_area mt30">
+					<h4 class="dl_tb_tit">Risk-Policy 적중 내용 (총 0건)</h4>
+				</div>
+				<div style="height:175px; overflow-y:auto;">
+					<table class="bbs-table">
+						<colgroup>
+							<col style="width:80px;">
+							<col style="width:auto;">
+						</colgroup>
+						<thead>
+							<tr>		
+								<th scope="col">No</th>
+								<th scope="col">항목명</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>								
+								<td class="a_l">최근 3개월이내 카드론 총금액</td>
+							</tr>
+							<tr>
+								<td>2</td>								
+								<td class="a_l">KCB SP등급</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //Risk-Policy -->
+				
+				<!-- Fraud-Policy // -->
+				<div class="tit_area mt30">
+					<h4 class="dl_tb_tit">Fraud-Policy 적중 내용 (총 0건)</h4>
+				</div>
+				<div style="height:175px; overflow-y:auto;">
+					<table class="bbs-table">
+						<colgroup>
+							<col style="width:80px;">
+							<col style="width:auto;">
+						</colgroup>
+						<thead>
+							<tr>		
+								<th scope="col">No</th>
+								<th scope="col">항목명</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>								
+								<td class="a_l">최근 3개월이내 카드론 총금액</td>
+							</tr>
+							<tr>
+								<td>2</td>								
+								<td class="a_l">KCB SP등급</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //Fraud-Policy -->
+                
+                <!-- Pre-한도미산출 Rule // -->
+				<div class="tit_area mt30">
+					<h4 class="dl_tb_tit">1-5 한도미산출 Rule</h4>
+				</div>
+                <div class="total_box">
+                	<p class="a_l">신용한도_미부여 적중 (총  건)</p>
+                    <p class="a_c">자산한도_미부여 적중 (총  건)</p>
+                    <p class="a_r">차량한도_미부여 적중 (총  건)</p>
+                </div>
+				<div style="height:175px; overflow-y:auto;">
+					<table class="bbs-table">
+						<colgroup>
+							<col style="width:80px;">
+                            <col style="width:120px;">
+                            <col style="width:120px;">
+							<col style="width:%;">
+                            <col style="width:8%;">
+                            <col style="width:%;">
+                            <col style="width:7%;">
+                            <col style="width:7%;">
+                            <col style="width:7%;">
+						</colgroup>
+						<thead>
+							<tr>		
+								<th scope="col" rowspan="2">No</th>
+								<th scope="col" rowspan="2">출처</th>
+                                <th scope="col" rowspan="2">코드</th>
+                                <th scope="col" rowspan="2">기준값</th>
+                                <th scope="col" rowspan="2">해당값</th>
+                                <th scope="col" rowspan="2">항목명</th>
+                                <th scope="col" colspan="3">적중분류</th>
+							</tr>
+                            <tr>		
+								<th scope="col">신용</th>
+								<th scope="col">자산</th>
+                                <th scope="col">오토</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>								
+								<td class="a_l">최근 3개월이내 카드론 총금액</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //한도미산출 Rule -->
+				
+				<!-- 시스템금리 참조 // -->
+				<div class="tit_area mt30">
+					<h4 class="dl_tb_tit">시스템금리 참조</h4>
+				</div>
+				<table class="bbs-table-view mt5">
+					<colgroup>
+						<col style="width:20%;">
+						<col style="width:30%;">
+						<col style="width:20%;">
+						<col style="width:30%;">
+					</colgroup>
+					<tbody>
+						<tr>								
+							<th scope="row">시스템산출금리</th>
+							<td class="a_r">%</td>
+							<th scope="row">고시금리(신용)</th>
+							<td class="a_r">%</td>
+						</tr>
+						<tr>								
+							<th scope="row">고시금리(담보)</th>
+							<td class="a_r">%</td>
+							<th scope="row">조정금리(계)</th>
+							<td class="a_r">%</td>
+						</tr>
+						<tr>								
+							<th scope="col" colspan="4" class="a_c bold">시스템조정금리사유</th>
+						</tr>
+						<tr>								
+							<th scope="row">접수구분</th>
+							<td class="a_r">%</td>
+							<th scope="row">적군</th>
+							<td class="a_r">%</td>
+						</tr>
+                        <tr>								
+							<th scope="row">상환방식_AZ1</th>
+							<td class="a_r">%</td>
+							<th scope="row">프로모션_상품_AZ120</th>
+							<td class="a_r">%</td>
+						</tr>
+						<tr>								
+							<th scope="row">Thin-File</th>
+							<td class="a_r">%</td>
+							<th scope="row">여신기한</th>
+							<td class="a_r"></td>
+						</tr>
+						<tr>								
+							<th scope="row">NICE CB 등급우대</th>
+							<td class="a_r">등급</td>
+							<th scope="row">KCB CB 등급우대</th>
+							<td class="a_r">등급</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- //시스템금리 참조-->
+				
+				<!-- 부채현황요약 // -->
+				<div class="tit_area mt50">
+					<h4 class="dl_tb_tit">부채현황요약</h4>
+				</div>
+				<table class="bbs-table-view">
+					<colgroup>
+						<col style="width:25%;">
+						<col style="width:25%;">
+						<col style="width:25%;">
+						<col style="width:25%;">
+					</colgroup>
+					<tbody>
+						<tr>								
+							<th scope="row">타사대환 예정금액 합계</th>
+							<td class="a_r">만원</td>
+							<th scope="row">타사대환건 가중평균금리</th>
+							<td class="a_r">%</td>
+						</tr>
+					</tbody>
+				</table>
+				<div style="height:218px; overflow-y:auto">
+					<table class="bbs-table mt20">
+						<colgroup>
+							<col style="width:60px;">
+							<col style="width:80px;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+						</colgroup>
+						<thead>
+							<tr>		
+								<th scope="col">No</th>
+								<th scope="col">적용여부</th>
+								<th scope="col">대출종류</th>
+								<th scope="col">기관명</th>
+								<th scope="col">대출일자</th>
+								<th scope="col">최초대출금(원)</th>
+								<th scope="col">대출잔액(원)</th>
+								<th scope="col">적용이율(%)</th>
+								<th scope="col">수정여부</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td><input type="checkbox" id="" name=""></td>								
+								<td></td>
+								<td></td>
+								<td>건</td>
+								<td class="a_r">(수정가능)</td>
+								<td class="a_r"></td>
+								<td class="a_r">(수정가능)</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //부채현황요약-->
+			</div>
+			
+		</div>
+		
+		<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+	</div>
+</div>
+<!-- 팝업bg -->
+<div class="PopAll_bg"></div>
+
+</body>
+</html>

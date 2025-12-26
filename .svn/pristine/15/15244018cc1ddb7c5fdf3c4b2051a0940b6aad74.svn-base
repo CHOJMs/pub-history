@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page contentType="text/html; charset=euc-kr" language="java" %>
+
+<title>DGB 캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/commonEncode.js"></script>
+<script type="text/javascript" src="/static/admin/js/common.js"></script>
+
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+	});
+
+	// 조회
+	function goSearch(pageNum){
+
+		var f = document.frm;
+		f.METHOD.value = "AdminAutoModelCodeList";
+		f.PGE_NO.value = pageNum;
+		f.action = "/admin/AdminCodeAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+	
+	/*function goDetail(seqNum,userId){
+
+		var f = document.actionForm;
+		f.METHOD.value = "UserInfoDtl";
+		f.SEQ_NUM.value = seqNum;
+		f.ID.value = userId;
+		f.action = "/admin/AdminUserInfoAction.do";
+		EncForm(f);
+		f.submit();
+
+
+	}*/
+
+	// 입력화면 이동
+	function goInsert(){
+
+		var f = document.actionForm;
+		f.METHOD.value = "AdminAutoModelCodeInsFrm";
+		f.action = "/admin/AdminCodeAction.do";
+		EncForm(f);
+		f.submit();
+
+
+	}
+
+	// 변경
+	function goUpdate(cd,cdnm,cdnmeng,upcd,upcdnm,dvs){
+
+		var f = document.actionForm;
+		f.MODEL_CD.value = cd;
+		f.MODEL_CD_NM.value = cdnm;
+		f.CAR_COMP_CD.value = cdnmeng;
+		f.CAR_TYPE_CD.value = upcd;
+		f.LINE_UP_CD.value = upcdnm;
+		f.BIGO.value = dvs;
+
+		f.METHOD.value = "AdminAutoModelCodeUpdFrm";
+		f.action = "/admin/AdminCodeAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+
+	// 삭제 ajax
+	function goDelete(comcd){
+		if(confirm("삭제하시겠습니까?")){
+			var frm  = document.actionForm;
+			var sFrm = document.sendForm;
+			frm.METHOD.value = "AdminAutoModelCodeDel";
+			frm.MODEL_CD.value = comcd;
+			sendAjaxAction(frm , sFrm, "callbackDelete", "/admin/AdminCodeAction.do");			
+		}
+	}
+
+
+	//삭제 - 콜백
+	function callbackDelete(result){
+		var frm = document.frm;
+
+		var INIpluginData = $(result).find("INIpluginData").attr("value");
+
+		var ResDoc = Idecrypt(INIpluginData);
+		var count  = $(ResDoc).find("RESULT").attr("value");
+
+		if(count == "OK"){
+			alert("정상적으로 삭제가 완료 되었습니다.");
+
+			goSearch('1');
+		}else{
+			alert("삭제중 오류가 발생했습니다.");
+		}
+	}
+
+</script>
+</head>
+
+
+
+
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="2"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="container">
+			<div class="local-menu">
+				<jsp:include page="/admin/inc/leftMenu.jsp" flush="false"> 
+					<jsp:param name="menuNo" value="2"/>
+					<jsp:param name="subMenuNo" value="7"/>
+				</jsp:include>
+			</div> <!--// leftarea -->
+
+		<form name="actionForm" method="post">
+			<input type="hidden" name="METHOD" />
+			<input type="hidden" name="INIpluginData" />
+			<input type="hidden" name="LOGIN_SVC"  value="N"/>
+			<input type="hidden" name="menuNo"	value="2" />
+			<input type="hidden" name="subMenuNo"	value="7" />
+
+			<!-- 조회 조건 -->
+			<input type="hidden" name="CODEMENU_SELECT"	value="" />
+			<input type="hidden" name="CODE_SELECT"	value="" />
+			<input type="hidden" name="MODEL_CD" />
+			<input type="hidden" name="MODEL_CD_NM" />
+			<input type="hidden" name="CAR_COMP_CD" />
+			<input type="hidden" name="CAR_TYPE_CD" />
+			<input type="hidden" name="LINE_UP_CD" />
+			<input type="hidden" name="BIGO" />
+			<input type="hidden" name="PGE_NO"  value=""/>			
+		
+		</form>
+
+		<form name="frm" method="post">
+
+		  <input type="hidden" name="METHOD" />
+		  <input type="hidden" name="INIpluginData" />
+		  <input type="hidden" name="LOGIN_SVC"  value="N"/>
+		  <input type="hidden" name="PGE_NO"  value=""/>
+		  <input type="hidden" name="menuNo"	value="2" />
+		  <input type="hidden" name="subMenuNo"	value="7" />
+
+
+			<div class="content-wrap">
+				<h3>코드 관리(오토론-모델)</h3>
+				<div class="contents">
+					<fieldset class="form-type bbs-top">
+
+						<label for="CODEMENU_SELECT">검색</label>
+						<select name="CODEMENU_SELECT"  id="CODEMENU_SELECT">
+							<option value="ALL" >전체</option>
+							<option value="01" >모델코드</option>
+							<option value="02" >모델명</option>
+							<option value="03" >제조사코드</option>
+							<option value="04" >차종코드</option>
+							<option value="05" >라인업코드</option>
+							<option value="06" >비고</option>
+						</select>
+					
+						<input type="text" name="CODE_SELECT" id="CODE_SELECT" value="" title="검색어를 입력" />
+
+						<a href="#none" class="btn h42" onClick="javascript:goSearch('1');">조회</a>
+					</fieldset>
+					<br>
+					<table class="bbs-table">
+						<caption>
+							<p class="blind">번호, 모델코드, 모델명, 제조사코드, 차종코드, 라인업코드 등으로 나타낸 테이블</p>
+						</caption>
+						<colgroup>
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+
+							<col style="width:auto;">
+							<col style="width:auto;">
+						</colgroup>
+						<thead>
+							<tr>		
+								<th scope="col">번호</th>
+								<th scope="col">모델코드</th>
+								<th scope="col">모델명</th>
+								<th scope="col">제조사코드</th>
+								<th scope="col">차종코드</th>
+								<th scope="col">라인업코드</th>
+								<th scope="col">비고</th>
+								
+								<th scope="col">변경</th>
+								<th scope="col">삭제</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td>nCount</td>								
+									<td>MODEL_CD</td>
+									<td>MODEL_CD_NM</td>
+									<td>CAR_COMP_CD</td>
+									<td>CAR_TYPE_CD</td>
+									<td>LINE_UP_CD</td>
+									<td>BIGO</td>
+									
+									<td class="font-color-blue" ><a href="#none" onClick="javascript:goUpdate('MODEL_CD','MODEL_CD_NM','CAR_COMP_CD','CAR_TYPE_CD','LINE_UP_CD','BIGO');">변경</a></td>
+									<td class="font-color-blue" ><a href="#none" onClick="javascript:goDelete('MODEL_CD');">삭제</a></td>
+
+								</tr>
+						
+						</tbody>
+					</table>
+					<br>
+					<p class="align-right"><a href="#none" onClick="javascript:goInsert();" class="btn h42 neg">코드 추가</a></p>
+					<br>
+					<div class="paging" id="paging">
+						<a href="#none" class="navi first" onClick="">맨처음</a>
+						<a href="#none" class="navi prev" onClick="" >이전</a>
+						<a href="#none" class="current">1</a>
+						<a href="#none">2</a>
+						<a href="#none">3</a>
+						<a href="#none">4</a>
+						<a href="#none">5</a>
+						<a href="#none">6</a>
+						<a href="#none">7</a>
+						<a href="#none">8</a>
+						<a href="#none">9</a>
+						<a href="#none">10</a>
+						<a href="#none" class="navi next">다음</a>						
+						<a href="#none" class="navi end">맨끝으로</a>
+					</div>	
+				</div><!--// contents -->
+			</div><!--// content-wrap -->
+
+			</form>
+
+		</div><!--// container -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+
+<script type="text/javascript" src="/static/admin/js/nProtect.js"></script>
+
+</body>
+</html>

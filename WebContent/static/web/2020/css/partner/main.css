@@ -1,0 +1,112 @@
+@charset'utf-8';
+body {background:#fff !important;}
+
+.wrap {min-height:initial !important;}
+
+.sub_contaier { padding:0 !important; border-radius:initial !important; width: 100% !important;}
+#common_body {margin-top:0px !important;}
+.nav-container .gnb {border-bottom:2px solid #007dc5;}
+
+/* 중고차제휴-메인 */
+.partner_m_box {background:#eaf0f4; display:block; padding:23px 16px 15px 16px;}
+.partner_m_box:after {clear:both; content:""; display:block;}
+.partner_m_box .pc_tl {display:none;}
+.partner_m_box li {margin-bottom:10px; box-shadow:0px 3px 2px #d5dde2; background:url("../../img/common/icon_arrow3.png") no-repeat 95% 50% / 8px 13px #fff;}
+.partner_m_box li a {display:block; font-size:16px; font-weight:bold; padding:30px 20px 30px 56px;}
+.partner_m_box li:nth-child(1) a {background:url("../../img/common/ico_partner_i01.png") no-repeat 20px 50% / 25px 23px;}
+.partner_m_box li:nth-child(2) a {background:url("../../img/common/ico_partner_i02.png") no-repeat 20px 50% / 25px 23px;}
+.partner_m_box li:nth-child(3) a {background:url("../../img/common/ico_partner_i03.png") no-repeat 20px 50% / 25px 23px;}
+.partner_m_box li:nth-child(4) a {background:url("../../img/common/ico_partner_i04.png") no-repeat 20px 50% / 25px 23px;}
+.partner_m_box li:nth-child(5) a {background:url("../../img/common/ico_partner_i05.png") no-repeat 20px 50% / 25px 23px;}
+.partner_m_box li:nth-child(6) a {background:url("../../img/common/ico_partner_i07.png") no-repeat 20px 50% / 25px 23px;}
+
+/* 중고차제휴-고객센터번호 */
+.phone_partner { border-top:1px solid #d4d9dd; background:#eaf0f4; padding-bottom:6px;}
+.phone_partner div {text-align:center; padding:14px 0; background:#fff; border-bottom:1px solid #d4d9dd;}
+.phone_partner div span:nth-child(1) {padding-left:50px; background:url("../../img/common/ico_customer.png") no-repeat 0 0 / 33px 34px;}
+.phone_partner div span {display:inline-block; color:#000; font-size:16px; font-weight:bold; padding-right:10px; line-height:34px;}
+
+/* 중고차제휴-푸터
+.par_footer_wrap { text-align:center; padding:20px 0; display:block !important; border:none;}
+.par_footer_wrap .m_f_logo img {width:145px; padding-bottom:10px;}
+.par_footer_wrap ul {display:none;}
+.par_footer_wrap .address {font-size:12px; display:block;}
+.par_footer_wrap .address li {line-height:22px; padding:0 16px;}
+
+
+
+/* Tablet View */
+@media only screen and (min-width:768px){
+
+	.nav-container .gnb {border-bottom:4px solid #007dc5;}
+
+	/* 중고차제휴-메인 */
+	.partner_m_box {padding:40px 30px 25px 30px;}
+	.partner_m_box li {background-position:97% 50%; background-size:10px 15px;}
+	.partner_m_box li a {padding:40px 20px 40px 95px; font-size:18px;}
+	.partner_m_box li:nth-child(1) a,
+	.partner_m_box li:nth-child(2) a,
+	.partner_m_box li:nth-child(3) a,
+	.partner_m_box li:nth-child(4) a,
+	.partner_m_box li:nth-child(5) a,
+	.partner_m_box li:nth-child(6) a {background-position:40px 50%; background-size:35px 33px;}
+
+	/* 중고차제휴-고객센터번호 */
+	.phone_partner div {padding:20px 0;}
+
+}
+
+
+/* iphone View */
+@media (max-width:320px) {
+
+
+}
+
+/* PC View */
+@media only screen and (min-width:1280px) {
+
+	.sub_contaier {margin-bottom:0 !important;}
+
+	.nav-menu,
+	.nav-container .gnb {border:none;}
+
+	/* 중고차제휴-메인 */
+	.partner_m_box {display:block; height:561px; padding:106px 36px 15px 36px; text-align:center; background:url("../../img/common/partner_i01.png") no-repeat 0 0 / 100% auto;}
+	.partner_m_box:after {clear:both; content:""; display:block;}
+	.partner_m_box .pc_tl {display:block; color:#fff; font-size:40px; font-weight:bold; padding-bottom:100px;}
+	.partner_m_box li {display:inline-block; width:188px; height:209px; vertical-align:top; padding-top:60px; margin-bottom:10px; margin-left:18px; box-shadow:none; background-image:none; background-color:#fff; border-radius:15px;}
+	.partner_m_box li:first-child  {margin-left:0;}
+	.partner_m_box li a {display:block; font-size:16px; font-weight:bold; padding:70px 0 30px 0;}
+	.partner_m_box li:nth-child(1) a {background:url("../../img/common/ico_partner_i01.png") no-repeat center 0 / 46px 42px;}
+	.partner_m_box li:nth-child(2) a {background:url("../../img/common/ico_partner_i02.png") no-repeat center 0 / 46px 42px;}
+	.partner_m_box li:nth-child(3) a {background:url("../../img/common/ico_partner_i03.png") no-repeat center 0 / 46px 42px;}
+	.partner_m_box li:nth-child(4) a {background:url("../../img/common/ico_partner_i04.png") no-repeat center 0 / 46px 42px;}
+	.partner_m_box li:nth-child(5) a {background:url("../../img/common/ico_partner_i05.png") no-repeat center 0 / 46px 42px;}
+	.partner_m_box li:nth-child(6) {display:none;}
+
+	/* 중고차제휴-고객센터번호 */
+	.phone_partner {border-top:1px solid #d4d9dd; background:#eaf0f4; padding-bottom:6px;}
+	.phone_partner div {text-align:center; padding:25px 0; background:#fff; border-bottom:1px solid #d4d9dd;}
+	.phone_partner div span:nth-child(1) {padding-left:50px; background:url("../../img/common/ico_customer.png") no-repeat 0 0 / 33px 34px;}
+	.phone_partner div span {display:inline-block; color:#000; font-size:18px; font-weight:bold; padding-right:10px; line-height:34px;}
+
+
+	/* 중고차제휴-마이페이지 */
+	.myinfo_box {padding-top:30px;}
+
+	/* 중고차제휴-푸터 */
+	.par_footer_wrap {display:block; text-align:left; padding-bottom:20px; padding-top:25px; clear:both; width:100%; height:180px; background:#fff; border-top:none;}
+	.par_footer_wrap .par_footer {width:1100px; margin:auto; font-size:24px; color:#fff; padding:0; line-height:30px; display:block; position:relative;}
+	.par_footer_wrap .par_footer .m_f_logo {float:left; width:215px; height:100%; vertical-align:top; text-indent:-5000px; background:url("/static/web/img/imlogo/ci_darkcolor_black.png") no-repeat 0 0 / 153px auto;}
+	.par_footer_wrap .par_footer .m_f_logo img {width:153px; padding-bottom:10px;}
+	.par_footer_wrap .par_footer .pc_f_address {float:left; text-align:left; padding-left:30px;}
+	.par_footer_wrap .par_footer .pc_f_address li {display:inline-block; padding:0 8px 0 13px; line-height:30px; background:url("../../img/pc_footer_line.png") no-repeat left 9px / 1px 13px;}
+	.par_footer_wrap .par_footer .pc_f_address li a {color:#666; font-size:16px;}
+	.par_footer_wrap .par_footer .pc_f_address li:first-child  {background-image:none; padding-left:0;}
+	.par_footer_wrap .par_footer .address {margin-top:16px; text-align:left; margin-bottom:15px;}
+	.par_footer_wrap .par_footer .address li {display:block; font-size:14px; padding:0; background-image:none; color:#bbb; line-height:20px;}
+	.par_footer_wrap .par_footer .address li:first-child {background-image:none; color:#bbb; padding-left:0;}
+
+}
+

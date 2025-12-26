@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+<meta name="description" content="iM캐피탈-오토다이렉트 서비스">
+<meta property="og:title" content="iM캐피탈-오토다이렉트">
+<meta property="og:description" content="iM캐피탈-오토다이렉트 상품 안내">
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="referrer" content="no-referrer">
+
+<!-- common ico -->
+<link rel="shortcut icon" type="image/x-icon" href="/static/web/img/common/favicon.ico?v=202406100001">
+
+<!-- common css -->
+<link rel="stylesheet" href="/static/carverse/css/style.css">   
+<link rel="stylesheet" href="/static/carverse/css/carverse.css">
+<link rel="stylesheet" href="/static/carverse/css/common.css">
+<!-- common js -->
+<script type="text/javascript" src="/static/carverse/js/vendor/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/static/carverse/js/vendor/swiper-bundle.min.js"></script>
+<script type="text/javascript" src="/static/carverse/js/vendor/jquery.scrollbar.min.js"></script>
+<script type="text/javascript" src="/static/carverse/js/vendor/nouislider.min.js"></script>
+<script type="text/javascript" src="/static/carverse/js/vendor/wNumb.min.js"></script>
+<script type="text/javascript" src="/static/carverse/js/vendor/lottie.min.js"></script>
+
+
+<script type="text/javascript" src="/static/carverse/js/ui.common.js"></script>
+<script type="text/javascript" src="/static/carverse/js/common-web.js?v=20231128001"></script>
+
+<title>오토다이렉트 | iM캐피탈</title>
+
+</head>
+<body cz-shortcut-listen="true" style="overflow: hidden;">
+    <script type="text/javascript">
+        function addrPopupAll() {
+            uiCommon.openPopup("addrPopup");
+        }
+    </script>
+
+    <a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+    <div class="dim active"></div>
+    <div class="popup-layer active" id="addrPopup">
+        <div class="popup popup-01 popup-half popup-360" tabindex="0"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+            <div class="inner">
+                <div class="popup-contents flex-col pad-small">
+                    <!-- Start : content //-->
+
+                    <!-- Start : 인증완료 -->
+                    <div class="pop-finish ico-f-comp"><!-- [D]오류인 경우 : ico-f-error / 정상인 경우 : ico-f-comp -->
+                        <p class="fin-txt">방문판매 금지가 신청되었어요!</p>
+                    </div>
+                    <!-- //End : 인증완료 -->
+
+                    <!-- //End : content -->
+
+                    <!-- Start : 버튼 -->
+                    <div class="fixed-btn-area">
+                        <div class="btn-box">
+                            <span class="btn"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        </div>
+                    </div>
+                    <!-- //End : 버튼 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,246 @@
+
+/**
+*
+* 차량 정보 추가입력 팝업 (for jQuery Selector Methods)
+*
+* @param callback 함수
+*
+* 조회 팝업을 띄워야할 버튼을 셀렉터로 선택 ex : $(셀렉터).vhclSearchPopup(function(result){});
+*
+* result 리턴값 : { "dwlFrmnDvcd" : 주거형태구분코드, "rlRsdnYn" : 실거주 여부, "hsngFrmnDvcd" : 주거종류, "vhclAmt" : 차량금액 }
+*/
+$.fn.vhclSearchPopup = function(popUrl, vhclSaveUrl, callback) {
+
+    var popupId = "vhclPopup";
+    var popupVo = {};
+    var $layer = null;
+    var vhclVo = null;
+
+    return this.each(function(i, item) {
+        init();
+    });
+
+    /**
+     * 팝업 초기화
+     */
+    function init() {
+
+        // 팝업 레이어 불러오기
+        appendLayer(popUrl);
+    };
+
+    /* 레이어 팝업 본문(body) 추가 */
+    function appendLayer(url) {
+
+        $.get(url, function(result) {
+            $.each($.parseHTML(result), function(i, ele) {
+                if ($(ele).hasClass('popup-layer')) {
+                    if($(ele).prop("id") == popupId){
+                        $layer = $($(ele)[0].outerHTML);
+                    }
+                }
+            });
+
+            if($('#sessionAlarmLayerPopup').length){
+                // 본문(세션팝업) 위에 레이어 팝업 추가
+                $('#sessionAlarmLayerPopup').before($layer);
+            }else{
+                // 본문(body)에 레이어 팝업 추가
+                $('body').append($layer);
+            }
+
+            // 팝업 호출
+            uiCommon.openPopup($layer[0].id, true);
+
+            //dim off
+            //uiCommon.dimdFn("off");
+
+            //custom_dim
+            //$("#" + $layer[0].id).prepend("<div class='custom_dim' style='opacity: 1;visibility: visible;position: fixed;left: 0;top: 0; width: 100%;height: 100%;background: rgba(0, 0, 0, 0.2);transition: all 0.3s;'></div>");
+
+            // 숫자입력 default 0
+            $layer.find("[formatter=number]").on("input", (e) => {
+                let n = Number(e.target.value.replace(/\D/g, ""));
+                if(isNaN(n)) { e.target.value = 0; return false; }
+                else e.target.value = n;
+            });
+
+            // 가격입력
+            $layer.find("[formatter=money]").on("input", (e) => {
+                //var n = Number(e.target.value.replace(/\D/g, ""));
+                //if(isNaN(n)) { e.target.value = 0; return false; }
+                //else e.target.value = n;
+
+                let val = e.target.value.replace(/\D/g, "");
+                if(val == "") { e.target.value = 0; return false; }
+                let maxlen = !isNaN(e.target.getAttribute("maxlength")) ? parseInt(e.target.getAttribute("maxlength")) : -1;  if(maxlen > 0 && val.length > maxlen) { val = val.slice(0, maxlen); } /* MS Edge에서 콤마추가 로직이 들어가면 기본 maxlength 처리가 무시되는 문제 해결*/
+                e.target.value = Number(val).toString().replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,");
+
+                let id = e.target.getAttribute("id");
+
+                let target = document.querySelector(`[name=${id}]`);
+                let amt = val * 10000;
+                target.value = amt;
+            });
+
+            //입력폼 change event
+            $layer.find(".popup-cnt").children(".form-iem").find('input').on('keyup, input', function(e) {
+                e.preventDefault();
+                buttonValidate();
+            });
+
+            //다음 버튼 클릭 이벤트
+            $("#btnNext").on("click", function(e) {
+                //if (validate()) {
+                    forwardSendForm();
+                //}
+
+                return false;
+            });
+
+            //나중에 할께요 버튼
+            $("#vhclLater").click(function() {
+                vhclVo =    {
+                        "clickType"         : "later"
+                };
+
+                uiCommon.closePopup($layer[0].id); // 팝업 close
+                $layer.remove();
+                callback(vhclVo);
+            });
+
+
+            // 닫기 버튼 클릭 이벤트
+            $layer.find(".popup-close").find('a').click(function() {
+                vhclVo =    {
+                        "clickType"         : "later"
+                };
+
+                // 레이어 요소 제거
+                uiCommon.closePopup($layer[0].id); // 팝업 close
+                $layer.remove();
+                callback(vhclVo);
+            });
+
+            // ***값 매핑***
+
+            buttonValidate();
+        });
+    }
+
+    function forwardSendForm() {
+
+//        if(!validate()) {
+//            return false;
+//        }
+
+        const datas = {
+            'vhclNo' : $layer.find("[name='vhclNo']").val(),
+            'cnVhclPrc' : $layer.find("[name='cnVhclPrc']").val(),
+            'totMcDamAmt' : $layer.find("[name='totMcDamAmt']").val(),
+            'vhclMdym' : $layer.find("[name='vhclMdym']").val(),
+            'drvDtce' : $layer.find("[name='drvDtce']").val()
+        }
+
+        $util.callAjax({
+            url : vhclSaveUrl,
+            data: datas,
+            success : function(data) {
+                if (data.RSPCD == "0000") {
+
+                    uiCommon.closePopup($layer[0].id); // 팝업 close
+                    $layer.remove();
+
+                    vhclVo =    {
+                    		"clickType"         : "next",
+                            "vhclPhotTrgtYn"         : data.vhclPhotTrgtYn,
+                            "dsbdPhotTrgtYn"         : data.dsbdPhotTrgtYn,
+                            "ep" : data.ep
+                    };
+                    callback(vhclVo);
+                } else if (data.RSPCD == "5007") {
+                    alert("연계기관의 일시적 오류가 발생하였습니다.\n잠시 후 재조회 부탁드립니다.");
+                } else if (data.RSPCD == "5008"){
+                    alert("차량 소유자명이 상이합니다.\n확인 후 재조회 부탁드립니다.");
+                } else {
+                    alert("요청 처리 중 오류가 발생했습니다. [" + data.RSPCD + "]");
+                }
+            }
+        });
+
+        return false;
+    }
+
+
+    function validate() {
+
+        var vhclNo = $layer.find("[name='vhclNo']");
+        if (vhclNo.val() == "") {
+            alert("차량번호를 입력해 주세요.");
+            $layer.find("#vhclNo").focus();
+            return false;
+        }
+
+        var cnVhclPrc = $layer.find("[name='cnVhclPrc']");
+        if (cnVhclPrc.val() == "" || cnVhclPrc.val() == "0") {
+            alert("차량시세를 입력해 주세요.");
+            $layer.find("#cnVhclPrc").focus();
+            return false;
+        }
+
+        var vhclMdym = $layer.find("[name='vhclMdym']");
+        if (vhclMdym.val() == "" || vhclMdym.val().length != 4) {
+            alert("연식을 다시 확인해 주세요.");
+            $layer.find("#vhclMdym").focus();
+            return false;
+        }
+
+        var drvDtce = $layer.find("[name='drvDtce']");
+        if (drvDtce.val() == "" || drvDtce.val() == "0") {
+            alert("주행거리를 입력해 주세요.");
+            $layer.find("#drvDtce").focus();
+            return false;
+        }
+
+        return true;
+    }
+
+    //다음 버튼 활성화 여부체크
+    function buttonValidate() {
+
+        var activateNextBtn = false;
+
+        var Checklist = [];
+
+        $layer.find(".form-iem").children().each(function(j){
+            if($(this).find("input[Check]")) {
+                if($(this).find("input").length) {
+                    if($(this).find("input").val().length) {
+                        Checklist.push(true);
+                    } else {
+                        Checklist.push(false);
+                    }
+                }
+            }
+
+            if(Checklist.includes(false) == true){
+                activateNextBtn = false;
+            }else{
+                activateNextBtn = true;
+            }
+
+            if(!activateNextBtn) return;
+        });
+
+
+
+        if (activateNextBtn) { // 다음 버튼 활성화
+            $("#btnNext").parent().removeClass("gray");
+        } else { // 다음 버튼 비활성화
+            $("#btnNext").parent().addClass("gray");
+        }
+
+    }
+
+
+};

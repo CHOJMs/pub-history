@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부동산 추가정보 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>부동산 추가정보</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt pb32">
+
+                    <!-- Start : 폼 -->
+                    <div class="form-iem">
+                       <div class="com-inp">
+                            <div class="label">주택명의</div>
+                            <a href="#" id="" class="ico-select alink">
+                                <span class="placeholder">선택하세요</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                            </a>
+                        </div>
+                        <div class="com-inp">
+                            <div class="label">실거주 여부</div>
+                            <a href="#" id="" class="ico-select alink">
+                                <span class="placeholder">선택하세요</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                            </a>
+                        </div>
+                        <div class="com-inp">
+                            <label for="">주거종류</label>
+                            <input type="text" id="" placeholder="선택하세요" readonly="readonly" class="ico-select"><!--2023-08-24 : a태그 삭제, 클래스 추가-->
+                        </div>
+                        <div class="com-inp">
+                            <label for="">시세조회</label>
+                            <input type="text" id="" placeholder="검색하세요" readonly="readonly" class="ico-arrow"><!-- //20221108 : button삭제, a태그로 주소 수정 -->
+                        </div>
+                        <div class="com-inp">
+                            <label for="">시세 직접입력</label>
+                            <input type="tel" id="" placeholder="" value="3,000" class="a_r_txt disabled" disabled="disabled">
+                            <span>만원</span>
+                        </div>
+                        <div class="com-inp">
+                            <label for="">선순위 설정액</label>
+                            <input type="tel" id="" placeholder="" value="3,000" class="a_r_txt">
+                            <span>만원</span>
+                        </div>
+                        <div class="com-inp">
+                            <label for="">선순위 임대보증금</label>
+                            <input type="tel" id="" placeholder="" value="3,000" class="a_r_txt">
+                            <span>만원</span>
+                        </div>
+                        <!-- 2023-08-25 : 수정// -->
+                        <div class="com-inp">
+                            <div class="add-tit">실거주지</div>
+                            <a class="ico-arrow add-txt">서울특별시 중구 남대문로 125, 8층 (다동), iM금융센터</a>
+                        </div>
+                        <!-- //2023-08-25 : 수정 -->
+                    </div>
+                    <!-- //End : 폼 -->
+                    <p class="ico-info mt16">부동산 시세 등록은 한 건만 가능합니다.</p>
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray"><button type="button" id="">다음</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                    <div class="btn-txt"><a href="#">나중에 할게요</a></div><!-- 20221111 : 버튼 수정 -->
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

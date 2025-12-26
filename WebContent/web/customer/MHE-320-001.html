@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>고객확인의무 안내 | iM캐피탈</title>
+<script>
+    $(document).ready(function(){
+        $('header').load('/web/renewal/header_sub_inc.html');
+        $('footer').load('/web/renewal/footer_inc.html');
+    }); 
+</script>
+</head>
+<body>
+    <header></header>
+    <div class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-contents">
+            <!-- Start : 페이지 인디케이터 -->
+            <div class="indicator">
+                <ul>
+                    <li>홈</li>
+                    <li>고객센터</li>
+                    <li>이용안내</li>
+                    <li aria-label="현재 화면">고객확인의무 안내</li>
+                </ul>
+            </div>
+            <!-- //End : 페이지 인디케이터 -->
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <h1>고객확인의무 안내</h1>
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+                    <div class="pro-box">
+                        <div class="cm-gray-box">
+                            <p class="cm-g-tit"><span>고객확인의무(CDD/EDD)</span>란?</p>
+                            <p class="cm-g-txt">금융회사가 제공하는 금융거래 또는 서비스가 자금세탁 등의 불법행위에 이용되지 않도록 고객확인 및 검증, 거래관계의 목적 확인 및 실소유자 확인 등 고객에 대해 합당한 주의를 기울이는 제도로서 「특정금융거래정보의 보고 및 이용 등에 관한 법률(이하, '특정금융거래정보법') 제5조의 2」에 의한 금융회사의 법률적 의무사항입니다.</p>
+                        </div>
+                    </div>
+                    <div class="pro-box division-box">
+                        <h3 class="s-tl02">주요내용</h3>
+                        <dl class="dl-list">
+                            <dt>적용대상</dt>
+                            <dd>본인 및 대리인을 포함한 금융거래 당사자</dd>
+                            <dt>이행대상 거래</dt>
+                            <dd>
+                                1. 계좌 신규개설<br>
+                                2. 1천만원 이상(시행일 2021.3.25)의 일회성 금융거래<br>
+                                3. 실제 거래 담당자 여부가 의심되는 등 자금세탁 우려가 있는 것으로 의심되는 금융거래
+                            </dd>
+                        </dl>
+
+                        <h3 class="s-tl02">고객확인 및 검증</h3>
+                        <h4 class="s-tl03">- 개인(외국인포함)</h4>
+                        <dl class="dl-list">
+                            <dt>신원확인 및 검증사항</dt>
+                            <dd>
+                                - 성명<br>
+                                - 생년월일, 성별(외국인 비거주자의 경우에 한함)<br>
+                                - 실명번호<br>
+                                - 국적(외국인의 경우에 한함)<br>
+                                - 주소 및 연락처(단, 외국인 비거주자의 경우 실제 거소 또는 연락처)<br>
+                                - 실제소유자
+                            </dd>
+                            <dt>추가확인정보</dt>
+                            <dd>
+                                - 직업 또는 업종(개인사업자)<br>
+                                - 거래의 목적<br>
+                                - 거래자금의 원천<br>
+                                - 금융회사가 자금세탁 우려를 해소하기 위해 필요하다고 판단한 사항
+                            </dd>
+                        </dl>
+
+                        <h4 class="s-tl03">- 법인(영리, 비영리, 기타 및 외국단체 포함)</h4>
+                        <dl class="dl-list">
+                            <dt>신원확인 및 검증사항</dt>
+                            <dd>
+                                - 법인(단체)명<br>
+                                - 실명번호<br>
+                                - 본점 및 사업장의 주소·소재지(외국법인인 경우 연락 가능한 실제 사업장 소재지)<br>
+                                - 업종(영리법인인 경우), 회사 연락처<br>
+                                - 설립목적(비영리 법인인 경우)<br>
+                                - 대표자 정보 : 성명, 생년월일 및 국적<br>
+                                - 실제소유자
+                            </dd>
+                            <dt>추가확인정보</dt>
+                            <dd>
+                                - 법인구분 정보(대기업, 중소기업 등), 상장정보(거래소, 코스닥 등), 사업체 설립일, 홈페이지(또는 이메일) 등 회사에 관한 기본정보<br>
+                                - 거래자금의 원천<br>
+                                - 거래의 목적<br>
+                                - 금융회사가 자금세탁 우려를 해소하기 위해 필요하다고 판단한 사항
+                            </dd>
+                        </dl>
+
+                        <h3 class="s-tl02">실제소유자 확인</h3>
+                        <p class="cont-txt2">금융회사는 금융거래를 이용한 자금세탁행위 및 공중협박자금 조달행위를 방지하기 위한 합당한 주의로서 (고객이 계좌를 신규로 개설하거나 1천만원 이상(시행일 2021.3.25) 일회성 금융거래를 하는 경우) 고객을 최종적으로 지배하거나 통제하는 자연인 (개인)인 실제소유자를 확인하여야 합니다.</p>
+
+                        <h4 class="s-tl03">- 개인고객</h4>
+                        <p class="cont-txt2">실제소유자와 동일한 것이 일반적이나, 동창회비 등 소유자가 따로 존재할 경우 실제소유자 신원확인 및 계좌성격 파악</p>
+
+                        <h4 class="s-tl03">- 법인/단체고객</h4>
+                        <p class="cont-txt2">법인/단체의 실제소유자 확인은 다음의 순서로 확인함</p>
+                        <div class="box-gray02">
+                            <ul class="num-box03 mt0">
+                                <li>
+                                    <p class="step-tit"><span>1</span>25% 이상의 지분을 소유한 자 中 최대 지분 소유자 1인</p>
+                                </li>
+                                <li>
+                                    <p class="step-tit"><span>2</span>1번을 확인할 수 없는 경우</p>
+                                    <div class="step-desc">
+                                        <p>
+                                            ① 최대 지분을 소유한 자<br>
+                                            ② 대표자 또는 임원·업무집행사원의 과반수를 선임한 자<br>
+                                            ③ 상기①,②외에 법인 또는 단체를 사실상 지배하는 자
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="step-tit"><span>3</span>2번을 확인할 수 없는 경우에는 해당 법인 또는 단체의 대표자 단, 국가·지방자치단체·공공단체, 공시의무가 있는 상장기업 및 금융회사 등은 실제소유자 확인 생략이 가능함 </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h3 class="s-tl02">고객확인 및 검증거절시 조치 등</h3>
+                        <p class="cont-txt2">금융회사는 「특정 금융거래정보의 보고 및 이용 등에 관한 법률」에 따라 고객이 신원확인 등을 위한 정보 제공을 거부하여 고객확인을 할 수 없는 경우에는 계좌 개설 등 해당 고객과의 신규 거래를 거절하고, 이미 거래관계가 수립되어 있는 경우에는 해당 거래를 종료할 수 있습니다.</p>
+                        <h4 class="s-tl03">기타사항</h4>
+                        <p class="cont-txt2">고객확인의무(CDD/EDD)는 금융거래의 투명성과 신뢰성을 높이기 위해 반드시 필요한 제도로서 인터넷뱅킹이나, 스마트폰뱅킹만을 이용하시는 비대면 거래 고객께서는 가까운 영업점을 통해 동 제도에 대한 상세한 안내를 받으시기 바랍니다.</p>
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <footer></footer>
+    <!---------- //End : footer ---------->
+
+    <!-- //Start : 퍼블확인용 -->
+    <script>
+        $(document).ready(function(){
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

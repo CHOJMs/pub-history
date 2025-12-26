@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+/* common.css에 있던 접근성 관련 소스 */
+:focus{outline-width: 2px !important;outline-style: dotted !important;}
+button:focus{outline-width: 3px !important;outline-style: dotted !important;outline-color: #333;}
+input[type=checkbox]:focus, input[type=radio]:focus {outline: none !important;}
+input:focus:not([type=text])+label {outline-width: 2px !important;outline-style: dotted !important;}
+input[type="checkbox"] {width:24px !important;height:24px !important;margin-left:0 !important;appearance:auto !important;-webkit-appearance:auto !important;-moz-appearance: auto !important;opacity: 0 !important;}
+.chk {clip: auto !important;}
+/* .chk:checked+.label:after { outline: 2px dotted #333 !important;} */
+/* //common.css에 있던 접근성 관련 소스 */
+
+.main-popup .controler,.main-popup .numcount-box{background-color:rgba(34, 36, 38, 0.65)}
+.top-sub-bn > li:nth-child(1) > a{background:#3672d3 !important}
+.top-sub-bn > li:nth-child(2) > a{background:#1ea37e !important}
+.service-ul .tx1{color:#161c23}
+.bottom-bn-in{background-image:linear-gradient(97deg, #2d9757, #37be98 99%) !important}
+.btn-loan-all{color:#5e6367 !important}
+.follow-link a span{background:#cf4545}
+header .mo-menu-sub > div > ul > li > a,
+header .mo-menu-sub > div > p a{background-image:url('../img/ui_common/ico_arrow14.png');}
+.m-bottom-area ul li.on a{font-weight:700;text-decoration:underline}
+
+input[type="checkbox"]:focus + label{outline:2px dotted #000 !important}
+.popup.popup-select > .inner > .popup-contents li a:focus{outline:2px dotted #000;outline-offset:-2px;}
+.inp-data span input:focus, .select-area input:focus{outline:2px dotted #000;}
+.flex-division .flex-item-btm .item-list li a:focus{outline-offset:-2px}
+.item-date-box .date-box .item-date-list a:focus{outline-offset:-2px}
+.zoom-box button:focus{outline-offset:-4px}
+.qna-tab li a{font-weight:500;color:#737171}
+.prod-top-banner .tx-area .tx3,.tip-box a span{color:#0a7764}
+.flex-division .flex-item-top .option-detail-wrap{color:#888}
+.in-box.type01 .in-cnt .box-gray div.blue{color:#07977e;font-weight:700}
+.com-list-box01 li .in-box .f-tit.ellipsis .badge{color:#5f5d5d;background:#d4d7db}
+.accordion-list li .q .checkbox span.on,
+.accordion-list li:first-child .q .checkbox span{color:#055749;background:#ecfbf3}
+.accordion-list li .q .checkbox span{background:#818181}
+.btn-clear,.search-box .sch-cnt .btn-del{background:url('../img/ui_common/ico_del01.png') no-repeat;background-size:24px auto}
+.agree-box .checkbox .wa-arrow:after{position:absolute;top:0;left:0;width:24px;height:24px;background:url('../img/ui_common/ico_arrow02_pc.png');background-size:24px auto;opacity:0.4;content:''}
+.agree-box .checkbox .chk+.label:after{background-image:url('../img/ui_common/ico_check_off_acc.png');}
+.agree-box .checkbox .chk.chk_1+.label:after{background-image:url('../img/ico_check2_off_acc.png')}
+.agree-box .checkbox .chk.chk_1:checked+.label:after{background-image:url('../img/ico_check2_on_acc.png')}
+.img_org{margin:0 auto}
+.img_org.pc-view{max-width:825px}
+.img_org.mob-view{max-width:375px}
+
+.call-phone .c-tel{color:#127d5b}
+.box-green1 .ico-info,.box-green .ico-info,.box-green4 .ico-info{color:#0d7b68}
+.pay-step-box .pay-step li::after{background-image:url('../img/ui_common/ico_step_dott_acc.png')}
+
+.category-list > li a{font-weight:400}
+.category-list > li.on{border-width:2px;}
+.category-list > li.on a{font-weight:700}
+
+.cont-tab ul li a{font-weight:400}
+.cont-tab ul li.active{border-width:2px}
+.cont-tab ul li.active a{font-weight:700}
+.cont-radio-tab .com-inp label{font-weight:400}
+.cont-radio-tab .com-inp input:checked + label{border-width:2px;font-weight:700}
+.cont-radio-tab .com-inp input:checked + label:after{bottom:-2px;width:2px}
+.cont-radio-tab .com-inp input:checked + label:before{top:-2px;width:2px}
+.cont-radio-tab .com-inp:first-child input:checked + label:after,
+.cont-radio-tab .com-inp:first-child input:checked + label:before{display:none}
+
+@media screen and (max-width: 1280px) {
+
+}
+
+@media screen and (max-width: 1023px){
+    .agree-box .checkbox .wa-arrow:after{background-image:url('../img/ui_common/ico_arrow02_mob.png');}
+}
+
+@media only screen and (max-width: 767px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}

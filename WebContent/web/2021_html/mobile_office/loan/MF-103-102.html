@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>외부활동 내역 상세 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+            
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+				
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>					
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">여신</a>
+							<ul>
+								<li><a href="">연체현황/명세</a></li>
+								<li><a href="">관리채권 내역조회</a></li>
+                                <li><a href="">외부활동 내역관리</a></li>
+                                <li><a href="">외부활동 경로관리</a></li>
+							</ul>
+						</li>
+						<li class=""><a href="">검수</a>
+							<ul>
+								<li><a href="">사전검수 요청명세</a></li>
+								<li><a href="">실행물건 검수명세</a></li>
+                                <li><a href="">물건검수 등록</a></li>
+                                <li><a href="">관리채권 내역조회</a></li>
+							</ul>
+						</li>
+                        <li class=""><a href="">오토</a>
+							<ul>
+								<li><a href="">재고금융현황(차량실사)</a></li>
+								<li><a href="">신규 딜러/모집인 등록안내(SMS) 발송</a></li>
+                                <li><a href="">중고차 제휴 공지사항</a></li>
+							</ul>
+						</li>
+                        <li class=""><a href="">기업금융</a>
+							<div class="flex-list">
+								<div>
+									<ul>
+										<li><a href="">물건평가</a></li>
+										<li><a href="">물건평가 등록</a></li>
+										<li><a href="">물건평가 조회/수정</a></li>
+                                        <li class="dep2"><a href="">상담신청</a>
+											<ul>
+												<li><a href="">신규 고객 본인인증 SMS 발송</a></li>
+												<li><a href="">기본 고객등록</a></li>
+												<li><a href="">고객별 정보조회</a></li>
+												<li><a href="">한도조회 (여신통합조회)</a></li>
+												<li><a href="">정보제공 (NICE정보)</a></li>
+												<li><a href="">부동산 등기부등본 조회</a></li>
+											</ul>
+										</li>
+                                        <li><a href="">결재 현황</a></li>
+                                        <li><a href="">결재 진행 현황</a></li>
+									</ul>
+								</div>								
+							</div>
+						</li>
+                        <li class=""><a href="">전세자금(개인)</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">신용조회</a></li>
+								<li><a href="">신청관리</a></li>
+								<li><a href="">만기관리</a></li>
+							</ul>
+						</li>
+						<li><a href="">전세자금(공공)</a>
+                            <ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">신용조회</a></li>
+								<li><a href="">신청관리</a></li>
+								<li><a href="">만기관리</a></li>
+							</ul>
+                        </li>
+                        <li><a href="">결재</a>
+                            <ul>
+								<li><a href="">결재 요청 현황</a></li>
+							</ul>
+                        </li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+				<h2 class="tl">외부활동 내역 상세</h2>
+                <div class="box_form scoll mob_nobtn"><!-- 하단에 버튼이 없는경우 : mob_nobtn 클래스명 추가-->
+
+					<div class="flex-btn">
+						<h3 class="txt">외부활동 내용</h3>
+						<span class="btn btn-blk">
+							<a href="#">외부활동조회</a>
+						</span>
+					</div>
+
+					<div class="white_box mb24">
+						<p class="a_c">1901-028000-0-000</p>
+					</div>
+
+					<div class="form_box mt12">
+						<p class="h_tit">대상구분</p>
+						<div class="text_data">
+							<div class="selectbox">
+								<select class="select" title="대상구분 선택">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+						<div class="text_data">
+							<div class="selectbox">
+								<select class="select disabled" disabled="disabled" title="대상구분 상세 선택">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+						<p class="h_tit">외부활동목적</p>
+						<div class="text_data">
+							<div class="selectbox">
+								<select class="select" title="외부활동목적 선택">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" id="" class="disabled" disabled="disabled" placeholder="" title="외부활동목적 입력">
+							</span>
+						</div>
+						<p class="h_tit">목적지<a href="#" class="icon_map"><img src="/static/web/img/mobile_office/ico_map.png" alt="목적지보기"></a></p>
+						<div class="text_data">
+							<div class="selectbox">
+								<select class="select" title="목적지 선택">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" id="" class="disabled" disabled="disabled" placeholder="" title="주소 입력">
+							</span>
+						</div>
+					</div>
+
+					<h3 class="txt">외부활동 결과</h3>
+					<div class="form_box mt12">
+						<p class="h_tit">외부활동결과</p>
+						<div class="text_data">
+							<div class="selectbox">
+								<select class="select" title="외부활동결과 선택">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+						<p class="h_tit">외부활동담당자</p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" id="" class="disabled" disabled="disabled" placeholder="김길동" title="외부활동담당자 입력">
+							</span>
+						</div>
+						<!-- 2021-07-22 수정-->
+						<p class="h_tit">외부활동 완료일시</p>
+						<p class="cn_txt">2021-04-11 11:00~13:00</p><!-- class="cn_txt" 추가-->
+
+						<p class="h_tit">외부활동 예정일시</p>
+						<p class="cn_txt">2021-04-11 11:00~13:00</p><!-- class="cn_txt" 추가-->
+						<!-- 2021-07-22 수정-->
+						<p class="h_tit">첨부파일</p>
+						<div class="bg_photo_box">
+							<ul>
+								<li>20201019_1.jpg</li>
+								<li>20201019_2.jpg</li>
+							</ul>
+						</div>
+					</div>
+
+					<h3 class="txt">현장상태</h3>
+					<div class="form_box mt12">
+						<ul class="radio_list">
+							<li>
+								<span>사업장은 운영(직장은 재직)중인 상태인가?</span>
+								<div class="radiobox">
+									<ul class="inline_rchk">
+										<li>
+											<input type="radio" name="r011" value="" id="r011" class="rchk" aria-hidden="true" title="Y 체크">
+											<label for="r011" class="rchk-label" role="radio" aria-checked="false"><span>Y</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r011" value="" id="r011_1" class="rchk" aria-hidden="true" title="N 체크">
+											<label for="r011_1" class="rchk-label" role="radio" aria-checked="false"><span>N</span></label>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<span>계약 당시와 비교하였을 때 매출 금액 및 직원 수의 감소가 있는가?</span>
+								<div class="radiobox">
+									<ul class="inline_rchk">
+										<li>
+											<input type="radio" name="r011" value="" id="r011_2" class="rchk" aria-hidden="true" title="Y 체크">
+											<label for="r011_2" class="rchk-label" role="radio" aria-checked="false"><span>Y</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r011" value="" id="r011_3" class="rchk" aria-hidden="true" title="N 체크">
+											<label for="r011_3" class="rchk-label" role="radio" aria-checked="false"><span>N</span></label>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<span>유체동산 강제집행의 실익이 있는 물건이 있는가?</span>
+								<div class="radiobox">
+									<ul class="inline_rchk">
+										<li>
+											<input type="radio" name="r011" value="" id="r011_4" class="rchk" aria-hidden="true" title="Y 체크">
+											<label for="r011_4" class="rchk-label" role="radio" aria-checked="false"><span>Y</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r011" value="" id="r011_5" class="rchk" aria-hidden="true" title="N 체크">
+											<label for="r011_5" class="rchk-label" role="radio" aria-checked="false"><span>N</span></label>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="txt">Auto</h3>
+					<div class="form_box mt12">
+						<ul class="radio_list">
+							<li>
+								<span>차량의 소재가 확인 되었는가?</span>
+								<div class="radiobox">
+									<ul class="inline_rchk">
+										<li>
+											<input type="radio" name="r012" value="" id="r012" class="rchk" aria-hidden="true" title="Y 체크">
+											<label for="r012" class="rchk-label" role="radio" aria-checked="false"><span>Y</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r012" value="" id="r012_1" class="rchk" aria-hidden="true" title="N 체크">
+											<label for="r012_1" class="rchk-label" role="radio" aria-checked="false"><span>N</span></label>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<span>차량의 상태는 양호한가?</span>
+								<div class="radiobox">
+									<ul class="inline_rchk">
+										<li>
+											<input type="radio" name="r012" value="" id="r012_2" class="rchk" aria-hidden="true" title="Y 체크">
+											<label for="r012_2" class="rchk-label" role="radio" aria-checked="false"><span>Y</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r012" value="" id="r012_3" class="rchk" aria-hidden="true" title="N 체크">
+											<label for="r012_3" class="rchk-label" role="radio" aria-checked="false"><span>N</span></label>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<span>유체동산 강제집행의 실익이 있는 물건이 있는가?</span>
+								<div class="radiobox">
+									<ul class="inline_rchk">
+										<li>
+											<input type="radio" name="r012" value="" id="r012_4" class="rchk" aria-hidden="true" title="Y 체크">
+											<label for="r012_4" class="rchk-label" role="radio" aria-checked="false"><span>Y</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r012" value="" id="r012_5" class="rchk" aria-hidden="true" title="N 체크">
+											<label for="r012_5" class="rchk-label" role="radio" aria-checked="false"><span>N</span></label>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="txt">Equipment</h3>
+					<div class="form_box mt12">
+						<ul class="radio_list">
+							<li>
+								<span>물건을 고객이 직접 이용하고 있는가?<br>
+									(제 3자 점유 여부 등 확인)</span>
+								<div class="radiobox">
+									<ul class="inline_rchk">
+										<li>
+											<input type="radio" name="r013" value="" id="r013" class="rchk" aria-hidden="true" title="Y 체크">
+											<label for="r013" class="rchk-label" role="radio" aria-checked="false"><span>Y</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r013" value="" id="r013_1" class="rchk" aria-hidden="true" title="N 체크">
+											<label for="r013_1" class="rchk-label" role="radio" aria-checked="false"><span>N</span></label>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<span>물건을 계약서 또는 검수보고서에 설치된 장소와 동일한가?</span>
+								<div class="radiobox">
+									<ul class="inline_rchk">
+										<li>
+											<input type="radio" name="r013" value="" id="r013_2" class="rchk" aria-hidden="true" title="Y 체크">
+											<label for="r013_2" class="rchk-label" role="radio" aria-checked="false"><span>Y</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r013" value="" id="r013_3" class="rchk" aria-hidden="true" title="N 체크">
+											<label for="r013_3" class="rchk-label" role="radio" aria-checked="false"><span>N</span></label>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<span>물건은 정상으로 작동하고 있는가?</span>
+								<div class="radiobox">
+									<ul class="inline_rchk">
+										<li>
+											<input type="radio" name="r013" value="" id="r013_4" class="rchk" aria-hidden="true" title="Y 체크">
+											<label for="r013_4" class="rchk-label" role="radio" aria-checked="false"><span>Y</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r013" value="" id="r013_5" class="rchk" aria-hidden="true" title="N 체크">
+											<label for="r013_5" class="rchk-label" role="radio" aria-checked="false"><span>N</span></label>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<span>품목별 자산 확인 스티커가 검수 당시 부착 위치와 동일한가?</span>
+								<div class="radiobox">
+									<ul class="inline_rchk">
+										<li>
+											<input type="radio" name="r013" value="" id="r013_6" class="rchk" aria-hidden="true" title="Y 체크">
+											<label for="r013_6" class="rchk-label" role="radio" aria-checked="false"><span>Y</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r013" value="" id="r013_7" class="rchk" aria-hidden="true" title="N 체크">
+											<label for="r013_7" class="rchk-label" role="radio" aria-checked="false"><span>N</span></label>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<span>품목별 자산 확인 스티커가 검수 당시 부착 위치와 동일한가?</span>
+								<div class="radiobox">
+									<ul class="inline_rchk">
+										<li>
+											<input type="radio" name="r013" value="" id="r013_8" class="rchk" aria-hidden="true" title="Y 체크">
+											<label for="r013_8" class="rchk-label" role="radio" aria-checked="false"><span>Y</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r013" value="" id="r013_9" class="rchk" aria-hidden="true" title="N 체크">
+											<label for="r013_9" class="rchk-label" role="radio" aria-checked="false"><span>N</span></label>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="txt">외부활동내용</h3>
+					<div class="textarea_box mb30">
+						<p>외부활동 입력된 내용 표시</p>
+					</div>
+
+				</div>
+                <!-- 내용 끝 -->
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+</body>
+</html>

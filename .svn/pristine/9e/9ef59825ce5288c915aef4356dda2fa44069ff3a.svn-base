@@ -1,0 +1,128 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+</head>
+<body>
+
+<!-- 레이어 팝업 -->
+<div class="layer" tabindex="0" style="display: block;">
+	<div class="pop_bg"></div>
+	<div class="layerPop" style="width: 950px; transform: translate(-50%, -50%);">
+		<h1>첨부파일관리</h1>
+		<div class="Pop_content">
+			<div class="Pop_form-type">				
+				<div class=" scroll_box" style="height:650px;">
+					<div class="tit_area ">
+						<h4 class="dl_tb_tit">파일첨부</h4>
+						<p class="btn-align-right mt-45 mb10">
+							<a href="#" class="btn h42">등록</a>
+						</p>
+					</div>
+					<table class="bbs-table-view mb30" id="tbl_condition">
+						<colgroup>
+							<col width="15%">
+							<col width="35%">
+							<col width="15%">
+							<col width="30%">
+						</colgroup>
+						<tbody>
+							<tr>								
+								<th scope="row">파일명</th>
+								<td>
+									<div id="divFile2" style="display: grid;">
+										<input type="file" name="" id="" class="wd2">
+									</div>
+								</td>
+								<th scope="row">파일구분</th>
+								<td>
+									<select id="" style="width: 100%;">
+										<option value="" selected="selected"></option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<div class="tit_area ">
+						<h4 class="dl_tb_tit">파일내역</h4>
+						<p class="btn-align-right mt-45 mb10">
+							<a href="#" class="btn h42">삭제</a>
+						</p>
+					</div>
+					<div class="scroll_box pd0 mr0" style="overflow-x: auto; height: auto;">
+						<table class="bbs-table" style="width: 1300px;">
+							<colgroup>
+								<col style="width:4%;">
+								<col style="width:4%;">
+								<col style="width:13%;">
+								<col style="width:4%;">
+								<col style="width:15%;">
+								<col style="width:8%;">
+								<col style="width:16%;">
+								<col style="width:5%;">
+								<col style="width:5%;">
+								<col style="width:8%;">
+								<col style="width:6%;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col"><input type="checkbox" id="" name=""></th>
+									<th scope="col">NO</th>
+									<th scope="col">파일관리번호</th>
+									<th scope="col">순번</th>
+									<th scope="col">파일명</th>
+									<th scope="col">파일크기</th>
+									<th scope="col">파일구분명</th>
+									<th scope="col">다운횟수</th>
+									<th scope="col">사용여부</th>
+									<th scope="col">등록일</th>
+									<th scope="col">등록자</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="checkbox" id="" name=""></td>
+									<td>1</td>
+									<td>2021000000111</td>
+									<td>1</td>
+									<td>abcdef.jpg</td>
+									<td>38,098</td>
+									<td>신용정보조회동의서</td>
+									<td>0</td>
+									<td>Y</td>
+									<td>2021-02-26</td>
+									<td>홍길동</td>
+								</tr>
+								<tr>
+									<td colspan="11" class="">조회된 내용이 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>						
+					</div>
+					
+				</div>
+			</div>
+			<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+			
+		</div>
+	</div>
+</div>
+<!-- 팝업bg -->
+
+</body>
+</html>

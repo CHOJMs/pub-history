@@ -1,0 +1,85 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<%
+	//System.out.println("request.getParameter( : " + request.getParameter("menuNo"));
+	String menuNo = request.getParameter("menuNo");
+	String[] menuClass = {"", "", "", "", "", ""};
+	
+	if(menuNo.equals("1"))
+		menuClass[0] = " class=\"on\"";
+	else if(menuNo.equals("2"))
+		menuClass[1] = " class=\"on\"";
+	else if(menuNo.equals("3"))
+		menuClass[2] = " class=\"on\"";
+	else if(menuNo.equals("4"))
+		menuClass[3] = " class=\"on\"";
+	else if(menuNo.equals("5"))
+		menuClass[4] = " class=\"on\"";
+	else if(menuNo.equals("6"))
+		menuClass[5] = " class=\"on\"";
+%>
+<%@ include file="/admin/inc/common.jsp" %>
+<%
+	if(sSeesKey.equals("SESS_NON")) {
+%>
+<script type="text/javascript">
+alert("세션이 종료되었습니다.\n로그인 페이지로 이동합니다.");
+location.href="/admin/dgbManager.jsp";
+</script>
+<%
+	}
+%>
+<script type="text/javascript" src="/static/admin/js/dgblocation.js"></script>
+<script type="text/javascript">
+
+function dsr_go(){ //get
+	document.submitForm_dsr.METHOD.value = "srchDsrAdmin";
+	document.submitForm_dsr.menuNo.value = "6";
+	var frm		 = document.submitForm_dsr;
+	frm.action		 = "/admin/AdminDsrAction.do";
+	EncForm(frm);
+	frm.submit();
+}
+</script>
+<div>
+	<h1 style="padding-top:30px;"><img src="/static/admin/img/h1_logo_sub.png" alt="iM캐피탈"></h1>
+	<div class="gnb-area">
+		<p><%=sessUserName %> 님 환영합니다. <a href="/admin/dgbLogout.jsp">LOGOUT</a></p>
+		<ul class="gnb">
+			<%if(sessUserPerm05.equals("Y") || sessUserPerm06.equals("Y")){%>
+			<li><a href="#none"<%=menuClass[5]%>>DSR 상담관리</a>
+				<ul style="width:180px;">
+					<li><a href="#none">대출접수내역</a></li>
+					<li><a href="#none">대출접수등록</a></li>
+					<li><a href="#none">상담사 사진관리</a></li>
+				</ul>
+			</li>
+			<%}%>
+			<%if(sessUserPerm01.equals("Y")){%>
+			<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09000100'));"<%=menuClass[0]%>>오토론관리</a></li>
+			<%}%>
+			<%if(sessUserPerm05.equals("Y")){%>
+			<!--<li><a href="#none" onclick="alert('준비중입니다.');"<%=menuClass[4]%>>스탁론관리</a></li>-->
+			<%}%>
+			<%if(sessUserPerm02.equals("Y")){%>
+			<!--<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09010100'));"<%=menuClass[1]%>>권한관리</a></li>-->
+			<%}%>
+			<%if(sessUserPerm03.equals("Y")){%>
+			<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020100'));"<%=menuClass[1]%>>게시판관리</a></li>
+			<%}%>
+			<%if(sessUserPerm04.equals("Y")){%>
+			<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020100'));"<%=menuClass[2]%>>문서관리</a></li>
+			<%}%>
+			<%if(sessUserPerm05.equals("Y")){%>
+			<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020100'));"<%=menuClass[3]%>>채용</a></li>
+			<%}%>
+			<%if(sessUserPerm06.equals("Y")){%>
+				<li><a href="#none" onclick="EncLinkNormal(gHomePageUrl('09020100'));"<%=menuClass[4]%>>앱관리</a></li>
+			<%}%>
+		</ul>
+	</div>
+</div>
+<form name="submitForm_dsr" method="get">
+	<input type="hidden" name="METHOD"/>
+	<input type="hidden" name="INIpluginData" />
+	<input type='hidden' name="menuNo"	value="" />
+</form>

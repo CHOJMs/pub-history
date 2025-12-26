@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<deco> 
+    <fileData filename="fincert_common.js" filepath="/src/main/webapp/static/web/js" ischanged="0" lastversion="11" tstversion="0" realversion="1" dotversion="10" itemid="000000930963" ecmMd5sum="6a6afbcfa97a9b52cf9d2d200ba7093c" ecmTstmd5sum="" lastChangedDate="1646893727000" editor="김탁균:16424" lastUser="김탁균:16424" filestatus="체크아웃:5" islock="1" isAuthority="1" rsrccd="A2" rsrccdcodename="static" rsrcinfo="0100000000110000000000010000010000000000100000001000000001000000000" jobcd="HP" jobname="홈페이지" syscd="00102" sysmsg="홈페이지" srid="R202203-0032"/> 
+</deco>

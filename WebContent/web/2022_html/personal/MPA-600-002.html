@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>채무통합 선택 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>채무통합 선택</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+
+                    <!-- Start : 문구 -->
+                    <div class="pop-cont-txt1">
+                        채무 통합하실 타 금융 대출정보를<br>최대 3개까지 선택해주세요.
+                    </div>
+                    <!-- //End : 문구 -->
+
+                    <!-- Start : 문구 -->
+                    <div class="total-box">
+                        <span>총 <em>10</em>건</span>
+                        <div class="qu-list"><a href="#">높은 금액순</a></div>
+                    </div>
+                    <!-- //End : 문구 -->
+
+                    <!-- Start : 리스트 -->
+                    <ul class="ogt-list">
+                        <li class="active">
+                            <div class="in-box">
+                                <div class="bank-img"><img src="/static/web/img/bank/bank_dgb.png" alt="iM캐피탈"></div><!-- 20221102 : 이미지 경로,이름 수정-->
+                                <div class="ogt-area">
+                                    <div class="chk-tit">대구은행</div>
+                                    <ul>
+                                        <li>
+                                            <span class="p-tit">가계대출·담보대출-보금자리론</span>
+                                            <span class="p-txt">4,800만원</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="in-box">
+                                <div class="bank-img"><img src="/static/web/img/bank/bank_woori.png" alt="우리은행"></div>
+                                <div class="ogt-area">
+                                    <div class="chk-tit">우리은행</div>
+                                    <ul>
+                                        <li>
+                                            <span class="p-tit">가계대출·담보대출-보금자리론</span>
+                                            <span class="p-txt">4,800만원</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="active">
+                            <div class="in-box">
+                                <div class="bank-img"><img src="/static/web/img/bank/bank_hana.png" alt="하나은행"></div>
+                                <div class="ogt-area">
+                                    <div class="chk-tit">하나은행</div>
+                                    <ul>
+                                        <li>
+                                            <span class="p-tit">가계대출·담보대출-보금자리론</span>
+                                            <span class="p-txt">4,800만원</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="in-box">
+                                <div class="bank-img"><img src="/static/web/img/bank/bank_ibk.png" alt="기업은행"></div>
+                                <div class="ogt-area">
+                                    <div class="chk-tit">기업은행</div>
+                                    <ul>
+                                        <li>
+                                            <span class="p-tit">가계대출·담보대출-보금자리론</span>
+                                            <span class="p-txt">4,800만원</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- //End : 리스트 -->
+                    <!-- Start : 더보기 버튼 -->
+                    <div class="btn_more">
+                        <a href="#" class="more_btn"><i class="more"></i>더보기</a>
+                    </div>
+                    <!-- //End : 더보기 버튼 -->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

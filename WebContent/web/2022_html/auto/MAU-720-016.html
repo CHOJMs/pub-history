@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대출금 수령 안내 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>대출금 수령 안내</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+
+                    <!-- Start : 대출금 유의사항 -->
+                    <div class="grp-cont">
+                        <p class="head-tit">대출금 사용에 관한 유의사항</p>
+                        <ul class="list-dot">
+                            <li>각종 부대비용을 제외한 순수 자동차 구입 비용의 대출금을 고객님 계좌로 입금합니다.</li>
+                            <li>본 대출금을 중고차 구입 용도 외 사용 시 여신거래기본약관 (제8조 제3항)에 따라 대출금 전액 일시 상환 등 모든 책임은 고객님에게 있음을 유의하여 주시기 바랍니다.</li>
+                        </ul>
+                    </div>
+                    <!-- //End : 대출금 유의사항 -->
+
+                    <!-- Start : 대출철회 환급 -->
+                    <div class="grp-cont">
+                        <p class="head-tit">대출철회 및 환급</p>
+                        <ul class="list-dot">
+                            <li>14일 이내에 차량구매 취소 또는 대출 철회 시에는 대출금 상환과 발생된 부대비용을 당사로 환급하셔야 합니다.</li>
+                        </ul>
+                    </div>
+                    <!-- //End : 대출철회 환급 -->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none">
+                    <div class="btn-box">
+                        <span class="btn gray"><button type="button" id="">위 내용을 확인하고 동의합니다</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

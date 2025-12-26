@@ -1,0 +1,212 @@
+/**
+*
+* 커스텀 스크롤 날짜 선택 팝업
+*
+*/
+$.fn.scrollDateEvent = function(popupId, params, callback) {
+//	var popupId = "customDatePopup";
+	var $layer = null;
+
+	//팝업에 표시되는 연도 (현재 연도 -start) ~ (현재 연도 +end)
+	var start = params.startYear;
+	var end = params.endYear;
+
+	if((typeof start != 'undefined') && (typeof end != 'undefined')){
+		return this.each(function(i, item) {
+			appendLayer("/common/customDatePopup.do?start="+start+"&end="+end);
+		});
+	} else {
+		return this.each(function(i, item) {
+			appendLayer("/common/customDatePopup.do");
+		});
+	}
+
+	/**
+	 * 레이어 팝업 본문(body) 추가
+	 */
+	function appendLayer(url) {
+		$.get(url, function(result) {
+			$.each($.parseHTML(result), function(i, ele) {
+				if ($(ele).hasClass('popup-layer')) {
+					if($(ele).prop("id") == popupId){
+						$layer = $($(ele)[0].outerHTML);
+					}
+				}
+			});
+
+			if($('#sessionAlarmLayerPopup').length){
+				// 본문(세션팝업) 위에 레이어 팝업 추가
+				$('#sessionAlarmLayerPopup').before($layer);
+			}else{
+				// 본문(body)에 레이어 팝업 추가
+				$('body').append($layer);
+			}
+
+			$layer.find(".popup-text h1").text(params.title);
+
+			if(params.year != null && params.year != "" && (typeof params.year != 'undefined')) {
+				$layer.find("#dtYear").val(params.year);
+				$layer.find("#dtYear").text(params.year+"년");
+			}
+			if(params.month != null && params.month != "" && (typeof params.month != 'undefined')) {
+				$layer.find("#dtMonth").val(params.month);
+				$layer.find("#dtMonth").text(params.month+"월");
+			}
+			if(params.day != null && params.day != "" && (typeof params.day != 'undefined')) {
+				$layer.find("#dtDay").val(params.day);
+				$layer.find("#dtDay").text(params.day+"일");
+			}
+			if(params.ampm != null && params.ampm != "" && (typeof params.ampm != 'undefined')) {
+				$layer.find("#dtAmPm").val(params.ampm);
+				$layer.find("#dtAmPm").text(params.ampm);
+			}
+			if(params.hour != null && params.hour != "" && (typeof params.hour != 'undefined')) {
+				$layer.find("#dtHour").val(params.hour);
+				$layer.find("#dtHour").text(params.hour+"시");
+			}
+			if(params.minute != null && params.minute != "" && (typeof params.minute != 'undefined')) {
+				$layer.find("#dtMinute").val(params.minute);
+				$layer.find("#dtMinute").text(params.minute+"분");
+			}
+
+			// 팝업 호출
+			uiCommon.openPopup(popupId);
+
+			//dim off
+            uiCommon.dimdFn("off");
+
+            //custom_dim
+	   		$("#" + $layer[0].id).prepend("<div class='custom_dim' style='z-index: 9990; opacity: 1;visibility: visible;position: fixed;left: 0;top: 0; width: 100%;height: 100%;background: rgba(0, 0, 0, 0.2);transition: all 0.3s;'></div>");
+
+	   		//커스텀 dim 클릭 이벤트
+			$("#"+popupId).find(".custom_dim").click(function(e) {
+				uiCommon.closePopup(popupId);
+				// 레이어 요소 제거
+				$layer.remove();
+			});
+
+			// 년도 클릭 이벤트
+			$layer.find(".date-box").eq(0).find("ul li").click(function(){
+		    	$("#dtYear").text($(this).children('a').text());
+		    	$("#dtYear").val($(this).children('a').attr('name'));
+		    	$("#dtMonth").next("ul").find("li").eq(0).click();
+		    });
+
+			// 월 클릭 이벤트
+			$layer.find(".date-box").eq(1).find("ul li").click(function(){
+		    	var today = new Date();
+		    	var lastDay = 0;
+		    	var html = "";
+
+		    	$("#dtMonth").text($(this).children('a').text());
+		    	$("#dtMonth").val($(this).children('a').attr('name'));
+
+		    	if ($("#dtYear").val() == "") {
+		    		lastDay = daysInMonth($(this).children('a').attr('name'), today.getFullYear());
+				}else{
+					lastDay = daysInMonth($(this).children('a').attr('name'), $("#dtYear").val());
+				}
+
+		    	for(var i = 1; i <= lastDay; i++){
+		    		if(i < 10){
+		    			html +=	'<li style="cursor: pointer;"><a name="0'+i+'">0'+i+'일</a></li>';
+		    		}else{
+		    			html +=	'<li style="cursor: pointer;"><a name="'+i+'">'+i+'일</a></li>';
+		    		}
+		    	}
+
+				$("#dtDay").next("ul").html(html);
+				$("#dtDay").next("ul").find("li").eq(0).click();
+		    });
+
+		 	// 일 클릭 이벤트
+			var dayStr = "#"+popupId+" .item-date-box .date-box:eq(2) ul li";
+		    $(document).on("click", dayStr, function(){
+		    	$("#dtDay").text($(this).children('a').text());
+		    	$("#dtDay").val($(this).children('a').attr('name'));
+		    });
+		    // 오전오후 클릭 이벤트
+		    var dayStr = "#"+popupId+" .item-date-box .date-box:eq(0) ul li";
+		    $(document).on("click", dayStr, function(){
+		    	$("#dtAmPm").text($(this).children('a').text());
+		    	$("#dtAmPm").val($(this).children('a').attr('name'));
+		    });
+		    // 시 클릭 이벤트
+		    var dayStr = "#"+popupId+" .item-date-box .date-box:eq(1) ul li";
+		    $(document).on("click", dayStr, function(){
+		    	$("#dtHour").text($(this).children('a').text());
+		    	$("#dtHour").val($(this).children('a').attr('name'));
+		    });
+		    // 분 클릭 이벤트
+		    var dayStr = "#"+popupId+" .item-date-box .date-box:eq(2) ul li";
+		    $(document).on("click", dayStr, function(){
+		    	$("#dtMinute").text($(this).children('a').text());
+		    	$("#dtMinute").val($(this).children('a').attr('name'));
+		    });
+
+		 	// 확인 버튼 이벤트
+		    $layer.find("#dtBtn").click(function(){
+		    	var today = new Date();
+		    	var resultVo = {
+						"year" : "",
+						"month" : "",
+						"day" : "",
+						"ampm" : "",
+						"hour" : "",
+						"minute" : ""
+				};
+
+		    	if ($("#dtYear").val() == "") {
+		    		$("#dtYear").val(today.getFullYear());
+				}
+
+		    	if ($("#dtMonth").val() == "") {
+		            $("#dtMonth").val(("0" + (today.getMonth() + 1)).slice(-2));
+		    	}
+
+		    	if ($("#dtDay").val() == "") {
+		    		$("#dtDay").val(("0" + (today.getDate())).slice(-2));
+				}
+
+		    	if ($("#dtAmPm").val() == "") {
+		    		$("#dtAmPm").val($("#dtAmPm").text());
+		    	}
+		    	if ($("#dtHour").val() == "") {
+		    		$("#dtHour").val($("#dtHour").text());
+		    	}
+
+		    	if ($("#dtMinute").val() == "") {
+		    		$("#dtMinute").val(("0" + (today.getDate())).slice(-2));
+		    	}
+
+		    	resultVo.year = $("#dtYear").val();
+		    	resultVo.month = $("#dtMonth").val();
+		    	resultVo.day = $("#dtDay").val();
+		    	resultVo.ampm = $("#dtAmPm").val();
+		    	resultVo.hour = $("#dtHour").val();
+		    	resultVo.minute = $("#dtMinute").val();
+
+		    	uiCommon.closePopup(popupId);
+		    	// 레이어 요소 제거
+				$layer.remove();
+		    	callback(resultVo);
+		    });
+
+			// 날짜 클릭 포인터 변경
+			$layer.find(".date-box").find("ul li").css("cursor", "pointer");
+		});
+	}
+
+	function daysInMonth(month, year){
+    	var daysInMonth = 31;
+    	if(month == 4 || month == 6 || month == 9 || month == 11)
+    		daysInMonth = 30;
+    	if(month == 2 && (year/4) != Math.floor(year/4))
+    		daysInMonth = 28;
+    	if(month == 2 && (year/4) == Math.floor(year/4))
+    		daysInMonth = 29;
+
+    	return daysInMonth;
+    }
+
+}

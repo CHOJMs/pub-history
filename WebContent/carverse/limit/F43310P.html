@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="stylesheet" href="/static/carverse/css/style.css">
+<link rel="stylesheet" href="/static/carverse/css/carverse.css">
+
+<!-- common js -->
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+
+<title>약정서 확인 | iM캐피탈 카버스</title>
+
+</head>
+<body>
+
+    <!----------- Start : header 메뉴 ----------->
+    <header class="header" id="header">
+        <div class="inner_wrap">
+            <div class="inner_pc">
+                <a href="#none" onclick="goPage('/carverse/main.do');">
+                    <h1 class="logo"><span>CARVERSE</span></h1>
+                </a>
+                <ul class="gnb">
+                    <li>
+                        <a href="#none">견적</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/estimate/vecalc/brand.do');">견적내기</a></li>
+                            <li><a href="#none" onclick="goPage('/carverse/estimate/delCar.do');">즉시출고</a></li>
+                            <li><a href="#none" onclick="goPage('/carverse/estimate/recentEstimate.do');">최근견적</a></li>
+                            <li><a href="#none" onclick="goPage('/carverse/mypage/customRecommend.do');">나만의 맞춤추천</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none">중고차</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/autorental/limitInq/limitInqAuthUrl.do');">한도조회</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none" onclick="goPage('/carverse/autorental/contract.do');">전자약정</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/autorental/contract.do');">전자약정</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none">커뮤니티</a>
+                        <ul class="depth2">
+                            <li><a href="#none">동호회</a></li>
+                            <li><a href="#none">공지사항</a></li>
+                            <li><a href="#none">자주묻는질문</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none" onclick="goPage('/carverse/mydgb/myList.do');">마이페이지</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/mydgb/myList.do');">마이페이지</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 소스추가_11월29일 메인페이지 헤더 -->
+            <div class="inner_mo">
+                <a href="#none" class="logo" onclick="goPage('/carverse/main.do');">
+                    <span class="txt_hidden">메인페이지가기</span>
+                </a>
+                <!--// 모바일타이틀 개발소스 추가 영역 -->
+                <span class="util">
+                    <a href="#none" class="mo_header_direct_go" onclick="goPage('/carverse/mydgb/myList.do');"><span>마이페이지 바로가기</span></a>
+                    <button type="button" class="btn_menu"><span>전체메뉴 보기</span></button>
+                </span>
+            </div>
+
+            <!-- 클래스추가_11월29일 상세페이지는 type_detail 추가 -->
+            <div class="inner_mo type_detail" style="display: none;">
+                <a href="javascript:history.back();" class="btn_back"><span>뒤로가기</span></a>
+                <!-- 모바일타이틀 개발소스 추가 영역 -->
+                <h2 class="mo_tit">$모바일 타이틀$</h2>
+                <!--// 모바일타이틀 개발소스 추가 영역 -->
+                <span class="util">
+                    <a href="#none" class="mo_header_direct_go" onclick="goPage('/carverse/mydgb/myList.do');"><span>마이페이지 바로가기</span></a>
+                    <button type="button" class="btn_menu"><span>전체메뉴 보기</span></button>
+                </span>
+            </div>
+        </div>
+        <!-- // inner_wrap -->
+    </header>
+    <!----------- //End : header 메뉴 ----------->
+
+    <div class="wrap">
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-process">
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="process-wrap">
+                    <div class="pro-box">
+                        <h2 class="s-t1">전자약정</h2>
+                        <div class="tit-info font28">대출신청완료를 위해<br>약정서를 확인해주세요</div>
+
+                        <!-- Start : 전체동의 -->
+                        <div class="agree-box mt24">
+                            <div class="agree-total-box">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                    <label for="ch01" class="label">내용에 모두 동의하기</label>
+                                    <a href="#" class="wa-arrow"><img src="/static/carverse/img/common2/ico_arrow.png" alt="동의서 보기" class="agr-pc"></a>
+                                </div>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="ch011" name="ch011" class="chk chk_1">
+                                <label for="ch011" class="label">자동차 장기임대 약정서</label>
+                                <a href="#" class="wa-arrow"><img src="/static/carverse/img/common2/ico_arrow.png" alt="동의서 보기" class="agr-pc"></a>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="ch012" name="ch011" class="chk chk_1">
+                                <label for="ch012" class="label">CMS 출금이체 신청서</label>
+                                <a href="#" class="wa-arrow"><img src="/static/carverse/img/common2/ico_arrow.png" alt="동의서 보기" class="agr-pc"></a>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="ch013" name="ch011" class="chk chk_1">
+                                <label for="ch013" class="label">자동차 장기임대 거래약관</label>
+                                <a href="#" class="wa-arrow"><img src="/static/carverse/img/common2/ico_arrow.png" alt="동의서 보기" class="agr-pc"></a>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="ch014" name="ch011" class="chk chk_1">
+                                <label for="ch014" class="label">개인 신용정보 제공 활용에 대한 고객권리 안내문</label>
+                                <a href="#" class="wa-arrow"><img src="/static/carverse/img/common2/ico_arrow.png" alt="동의서 보기" class="agr-pc"></a>
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="ch015" name="ch011" class="chk chk_1">
+                                <label for="ch015" class="label">전자금융거래 기본약관</label>
+                                <a href="#" class="wa-arrow"><img src="/static/carverse/img/common2/ico_arrow.png" alt="동의서 보기" class="agr-pc"></a>
+                            </div>
+                        </div>
+                        <!-- //End : 전체동의 -->
+
+                    </div>
+
+                    <div class="pro-box division-box">
+                        <div class="s-txt mb32">실제 소유자 확인</div>
+                        <!-- Start : 폼 -->
+                        <div class="form-iem">
+                            <div class="com-inp">
+                                <p class="s-txt mb20">고객님이 실제 소유자 이신가요?</p>
+                                <div class="inp-radio">
+                                    <div class="radiobox">
+                                        <input type="radio" id="ch01" name="ch01" checked="checked">
+                                        <label for="ch01" class="label">아니요</label>
+                                    </div>
+                                    <div class="radiobox">
+                                        <input type="radio" id="ch011" name="ch01">
+                                        <label for="ch011" class="label">네, 맞습니다</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //End : 폼 -->
+                        <!-- 2023-12-21 : type01 추가-->
+                        <ul class="list-dot type01 mt20">
+                            <li>특정금융거래정보의 보고 및 이용 등에 관한 법률 시행령 제 10조의 5(실제소유자에 대한 확인)에 따라 실제 소유자 확인이 필요합니다.</li>
+                            <li>정보 제출을 거부하거나 실제소유자 확인이 불가한 경우 거래관계의 설정 또는 유지가 불가능할 수 있음을 알려드립니다.</li>
+                        </ul>
+
+                        <div class="s-txt mt40">이면계약 확인</div>
+                        <div class="s-txt02 mb20">해당 계약 건과 관련하여 iM캐피탈 이외에 제 3자와 자금지원확약서 등 이면계약을 작성하거나 계약차량을 렌터카 업체에 제공하고 수익분배 등을 약속 받거나 또는 이면계약을 작성하신적이 있습니까?</div>
+
+                        <!-- Start : 폼 -->
+                        <div class="form-iem">
+                            <div class="com-inp">
+                                <div class="inp-radio">
+                                    <div class="radiobox">
+                                        <input type="radio" id="ch021" name="ch021" checked="checked">
+                                        <label for="ch021" class="label">네</label>
+                                    </div>
+                                    <div class="radiobox">
+                                        <input type="radio" id="ch0211" name="ch021">
+                                        <label for="ch0211" class="label">아니요</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //End : 폼 -->
+                        <!-- 2023-12-21 : type01 추가-->
+                        <div class="s-txt02 type01">※ iM캐피탈이 고객님과 체결한 카버스 렌트 계약과는 별도로 고객님께서 판매업자 및 렌터카 업체 등 제3자와 작성하신 이면계약에 대해서 어떠한 책임이 없음을 알려드립니다.</div>
+
+                        <div class="srt-box">
+                            <p class="tit">최종 확약내용</p>
+                            <p class="txt"><strong>신청자(본인)</strong>은</p>
+
+                            <!-- 2023-12-21 : type02 추가-->
+                            <ul class="list-dot type02">
+                                <li>카버스 렌트 신청서 및 약정서의 상세내용과 여신거래기본약관, 자동차 장기임대차 거래약관에 대해 충분한 설명을 듣고 이해한 후 본인의 의사에 따라 동의하였고, 약정내용을 성실히 이행할 것을 확약합니다.</li>
+                                <li>약관 및 계약서의 사본 등을 이메일, 팩스, 문자로 제공받는 것에 동의합니다. 이 내용을 확인하셨습니까?</li>
+                            </ul>
+                        </div>
+
+                        <!-- Start : 동의 -->
+                        <div class="agree-box">
+                            <div class="agree-total-box mt8 mb0"><!-- 2023-12-21 : mb0 추가-->
+                                <div class="checkbox">
+                                    <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                    <label for="ch01" class="label">네, 확인했어요</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start : 동의 -->
+
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">약정신청하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+
+    </div>
+
+    <!-- //통신사 셀렉트 js -->
+    <script type="text/javascript">
+        $(function(){
+            $('.accordion-sel-box ul li .q a').click(function(){
+                $(this).closest('li').toggleClass('show').children('.q').next('.a').slideToggle();
+
+                if($(this).closest('li').hasClass('show')){
+                    $(this).children('.icon_acco').text('내용 닫기');
+                    $(this).children('.ico-arrow').text('내용 닫기');
+                }else{
+                    $(this).children('.icon_acco').text('내용 열기');
+                    $(this).children('.ico-arrow').text('내용 열기');
+                }
+                return false;
+            })
+        });
+    </script>
+</body>
+</html>
+

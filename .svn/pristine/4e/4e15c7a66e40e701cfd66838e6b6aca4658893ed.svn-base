@@ -1,0 +1,485 @@
+/**
+ * 관리자 페이지 DSR 대출접수관리 차량조회 팝업
+ */
+
+//검색관련 속성 초기화 및 팝업 컨트롤 함수 정의
+var srchCarSrchLayerPopVo= null;
+
+	srchCarSrchLayerPopVo = {
+	"carInqSrchCheck" : false,
+	"carAllSrchCheck" : false,
+	"popupElement" : $("#srchCarSrchLayerPop"),
+	"custNo" : $('#custNo').val(), // 고객번호
+	"lonCnslNo" : $('#lonCnslNo').val(), // 여신상담번호
+	"srno" : "", // 요청구분
+	"vhclNo" : "", // 차량번호
+	"selInputNm" : "" // 조회구분
+};
+/**
+ * 팝업 열기 함수
+ */
+srchCarSrchLayerPopVo.fnOpenPop = function() {
+	layer_open(this.popupElement.attr("id")); // layer_open 함수 호출
+	
+	var $pop = this.popupElement;
+	
+	var strnDay = new Date();
+	strnDay = new Date(strnDay.setDate(strnDay.getDate()-30)).format("yyyyMMdd");
+	$pop.find("#srchcarStrInqDt").val(strnDay);		
+	
+	var endDay = $.datepicker.formatDate('yymmdd', new Date());
+	$pop.find("#srchcarEndInqDt").val(endDay);
+}
+
+/**
+ * 레이어팝업 이벤트 설정 함수
+ */
+srchCarSrchLayerPopVo.fnInitSetting = function() {
+
+	var $pop = this.popupElement;
+
+	// datepicker 설정
+	$.datepicker.setDefaults({
+		showOn : "button",
+		buttonImage : "/static/admin/img/common/ico_cal.gif",
+		beforeShow : function() {
+			setTimeout(function() {
+				$(".ui-datepicker").css('z-index', 30000);
+			}, 0);
+		},
+		buttonImageOnly : true,
+		changeMonth : true,
+		changeYear : true,
+		dateFormat : 'yymmdd',
+		maxDate : 0
+	});
+	$pop.find("#srchcarStrInqDt")
+	.datepicker({
+		onSelect: function( selectedDate, instance ) {
+			var dateFormat = $(this).datepicker("option", "dateFormat");
+		var sToday = $.datepicker.formatDate(dateFormat, new Date());
+			$pop.find("#srchcarEndInqDt").datepicker( "option", "minDate", selectedDate );
+		$pop.find("#srchcarEndInqDt").datepicker( "option", "maxDate", 0 );
+		}
+	});
+	
+	$pop.find("#srchcarEndInqDt").datepicker();
+	
+	
+	
+	// 레이어 닫기 버튼 이벤트 설정
+	$pop.find('a.cbtn').click(function(e) {
+		e.preventDefault();
+		fn_reset();
+		result_reset();
+	});
+	// 통합조회 버튼 이벤트 설정
+	$pop.find('#btnAllCarSrch').click(function(e) {
+		e.preventDefault();
+		if($pop.find('#vhclNo1').val() == "")
+		{
+			alert("차량번호를 입력해 주세요.");
+			$pop.find("#vhclNo1").focus();
+			return false;
+		}
+		srchCarSrchLayerPopVo.carAllSrchCheck = true;
+		
+		srchCarSrchLayerPopVo.vhclNo = $pop.find('#vhclNo1').val();
+		$pop.find('#vhclNo2').val(srchCarSrchLayerPopVo.vhclNo);
+		$pop.find('#vhclNo3').val(srchCarSrchLayerPopVo.vhclNo);
+		result_reset();
+		srchCarOnebuAjax();
+		srchAccHistoryAjax();
+		srchCarSrchLayerPopVo.carAllSrchCheck = false;
+		
+	});
+	// 초기화 버튼 이벤트 설정
+	$pop.find('#btnCarSrchReset').click(function(e) {
+		e.preventDefault();
+		fn_reset();
+		result_reset();
+	});
+	// 차량조회 버튼 이벤트 설정
+	$pop.find('#btnCarInq').click(function(e) {
+		e.preventDefault();
+		if (!validation()) {
+			return false;
+		}
+		srchCarInqAjax();
+	});
+	// 차량원부조회 버튼 이벤트 설정
+	$pop.find('#btnCarOnebu').click(function(e) {
+		e.preventDefault();
+		if($pop.find('#vhclNo2').val() == "")
+		{
+			alert("차량번호를 입력해 주세요.");
+			$pop.find("#vhclNo2").focus();
+			return false;
+		}
+		srchCarSrchLayerPopVo.carAllSrchCheck = false;
+		srchCarSrchLayerPopVo.carInqSrchCheck = false;
+		srchCarOnebuAjax();
+	});
+	 
+	// 중고차 사고이력조회 버튼 이벤트 설정
+	$pop.find('#btnAccHistory').click(function(e) {
+		e.preventDefault();
+		if($pop.find('#vhclNo3').val() == "")
+		{
+			alert("차량번호를 입력해 주세요.");
+			$pop.find("#vhclNo3").focus();
+			return false;
+		}
+		srchCarSrchLayerPopVo.carAllSrchCheck = false;
+		srchCarSrchLayerPopVo.carInqSrchCheck = false;
+		srchAccHistoryAjax();
+	});
+	
+	// 조회결과 tr 선택 이벤트 설정
+	$pop.find(".tbody").on("click", "tr.link", function() {
+		var selectedEle = $(this).find("td[name='carScrhInqInfo']")[0];
+		var item = selectedEle.rowData;
+
+		srchCarSrchLayerPopVo.carInqSrchCheck = true;
+		srchCarSrchLayerPopVo.selInputNm = item.selInputNm;
+		srchCarSrchLayerPopVo.srno = item.srno;
+		srchCarSrchLayerPopVo.vhclNo = item.vhclNo;
+		if(srchCarSrchLayerPopVo.selInputNm == '원부조회'){
+			$pop.find('#vhclNo2').val(srchCarSrchLayerPopVo.vhclNo);
+			srchCarOnebuAjax()
+		}else if(srchCarSrchLayerPopVo.selInputNm == '이력조회'){
+			$pop.find('#vhclNo3').val(srchCarSrchLayerPopVo.vhclNo);
+			srchAccHistoryAjax();
+		}
+		srchCarSrchLayerPopVo.carInqSrchCheck = false;
+	});
+	function validation() {
+		if($pop.find('#srchcarStrInqDt').val() == "")
+		{
+			alert("조회시작일자를 입력해 주세요.");
+			$pop.find("#srchcarStrInqDt").focus();
+			return false;
+		}
+		
+		if($pop.find('#srchcarEndInqDt').val() == "")
+		{
+			alert("조회종료일자를 입력해 주세요.");
+			$pop.find("#srchcarEndInqDt").focus();
+			return false;
+		}
+		if($pop.find('#vhclNo1').val() == "")
+		{
+			alert("차량번호를 입력해 주세요.");
+			$pop.find("#vhclNo1").focus();
+			return false;
+		}
+		return true;
+	}
+	/**
+	 * 차량조회
+	 */
+	function srchCarInqAjax() {
+		srchCarSrchLayerPopVo.vhclNo = $pop.find('#vhclNo1').val();
+		$.ajax({
+			dataType : "json",
+			type : "post",
+			url : "/admin/dsr/srchCarInqAjax.do",
+			data : {
+                'selInputType' : $pop.find('#selInputType').val(),		//조회구분
+                'strInqDt' : $pop.find('#srchcarStrInqDt').val(),			//조회시작일자
+                'endInqDt' : $pop.find('#srchcarEndInqDt').val(),					//조회종료일자
+                'vhclNo' : srchCarSrchLayerPopVo.vhclNo,					//차량번호
+                'caridNo' : $pop.find('#caridNo').val(),				//차대번호
+                'mngDtbrCd' : $pop.find('#mngDtbrCd').val(),					//관리부팀점코드
+                //'LonRegEmno' : $('#vhclNo2').val()					//여신등록지원번호
+                },
+			success : function(data) {
+				if(data.resultCd == "0000") {
+					
+					
+					var infoList3 = data.infoList3;
+					$pop.find('#list1_content tbody').empty();
+
+		       		if((infoList3 == null ||  infoList3.length == 0 )) {
+		       			$pop.find('#list1_content tbody').html('<tr><td colspan="30">조회결과가 없습니다.</td></tr>');
+						return;
+					}
+
+					if(infoList3) {
+
+			          	var template = '<tr class="link">';
+			          	template	+= '<td id="carScrhInqInfo{28}" name="carScrhInqInfo">{0}</td>';
+			          	template	+= '<td>{1}</td>';
+			          	template	+= '<td>{2}</td>';
+			          	template	+= '<td>{3}</td>';
+			          	template	+= '<td>{4}</td>';
+			          	template	+= '<td>{5}</td>';
+			          	template	+= '<td>{6}</td>';
+			          	template	+= '<td>{7}</td>';
+			          	template	+= '<td>{8}</td>';
+			          	template	+= '<td>{9}</td>';
+			          	template	+= '<td>{10}</td>';
+			          	template	+= '<td>{11}</td>';
+			          	template	+= '<td>{12}</td>';
+			          	template	+= '<td>{13}</td>';
+			          	template	+= '<td>{14}</td>';
+			          	template	+= '<td>{15}</td>';
+			          	template	+= '<td>{16}</td>';
+			          	template	+= '<td>{17}</td>';
+			          	template	+= '<td>{18}</td>';
+			          	template	+= '<td>{19}</td>';
+			          	template	+= '<td>{20}</td>';
+			          	template	+= '<td>{21}</td>';
+			          	template	+= '<td>{22}</td>';
+			          	template	+= '<td>{23}</td>';
+			          	template	+= '<td>{24}</td>';
+			          	template	+= '<td>{25}</td>';
+			          	template	+= '<td>{26}</td>';
+			          	template	+= '<td>{27}</td>';
+			          	template	+= '</tr>';
+
+			          	$.each(infoList3, function(index){
+
+				          	var item = infoList3[index];
+				          	var str = String.format(template
+				          				, item.selInputNm, setDateFormat_person_yyyymmdd(item.inqDt), item.vhclNo, item.vhclNm, item.mdym
+				          				, item.useFuelCode, item.tkcarPscapCo, item.kncrNm, item.usgNm, item.caridNo
+				          				, setDateFormat_person_yyyymmdd(item.carregDt), item.distCt, item.mortCt, item.tolAcdtCcnt, item.rbrAcdtCcnt
+				          				, item.fodTolAcdtCcnt, item.mcDamAcdtTmct, item.inqDtbrNm, item.inqEmno, item.afflNm
+				          				, item.custNo, item.custNm, item.lonCnslNo, setDateFormat_person_yyyymmdd(item.cnslDt), item.lonCnsnNo
+				          				, setDateFormat_person_yyyymmdd(item.cnsnDt), item.lonNo, setDateFormat_person_yyyymmdd(item.newExctDt), index);
+				          	$pop.find('#list1_content tbody').append(str);
+				          	$pop.find('#carScrhInqInfo' + index)[0].rowData = item;
+			          	});
+		 			}
+				}
+				else{
+					alert("차량조회내역 실패했습니다.");
+				}
+			},
+			error : function(err) {
+				alert("차량조회내역 중 에러가 발생 했습니다.");
+			}
+		});
+	}
+	/**
+	 * 차량원부조회
+	 */
+	function srchCarOnebuAjax() {
+		if(!srchCarSrchLayerPopVo.carInqSrchCheck && !srchCarSrchLayerPopVo.carAllSrchCheck){
+			srchCarSrchLayerPopVo.vhclNo = $pop.find('#vhclNo2').val();
+			srchCarSrchLayerPopVo.srno = "";
+		}
+		$pop.find("#onebuTable input[type=text]").not("#vhclNo2").val("");
+		$.ajax({
+			dataType : "json",
+			type : "post",
+			url : "/admin/dsr/srchCarOnebuAjax.do",
+			data : {
+				'srno' : srchCarSrchLayerPopVo.srno,
+                //'custNo' : $('#custNo').val(), 			//고객번호
+                'lonCnslNo' : $('#lonCnslNo').val(), 	//여신상담번호
+                'vhclNo' : srchCarSrchLayerPopVo.vhclNo		 	//차량번호
+                },
+			success : function(data) {
+				if(data.resultCd == "0000") {
+					
+					var resVo = data.resVo;
+					$pop.find('#srchCarCarNm').val(resVo.carNm);						// 차명
+					$pop.find('#srchCarCarYy').val(resVo.carYy);							// 연식
+					$pop.find('#srchCarUseFuelCode').val(resVo.useFuelCode);					// 유종
+					$pop.find('#srchCarTkcarPscapCo').val(resVo.tkcarPscapCo);				// 인승
+					$pop.find('#srchCarCarKd').val(resVo.carKd);				// 차종
+					$pop.find('#srchCarVhclMdelLccd').val(resVo.vhclMdelLccdNm);		// 용도
+					$pop.find('#srchCarCaridNo').val(resVo.caridNo);			// 차대번호
+					$pop.find('#srchCarCarregDt').val(setDateFormat_person_yyyymmdd(resVo.carregDt));				// 최초등록일
+					//$pop.find('#srchCarBzopHstrYn').val(data.bzopHstrYn);				// 최종등록일
+					$pop.find('#srchCarDistCt').val(resVo.distCt);			// 압류건수
+					$pop.find('#srchCarMortCt').val(resVo.mortCt);		// 저당건수
+					
+					
+					// list1
+					var infoListDtl = data.infoListDtl;
+					$pop.find('#list2_content tbody').empty();
+
+		       		if((infoListDtl == null ||  infoListDtl.length == 0 )) {
+		       			$pop.find('#list2_content tbody').html('<tr><td colspan="7">조회결과가 없습니다.</td></tr>');
+						return;
+					}
+
+					if(infoListDtl) {
+
+			          	var template = '<tr>';
+			          	template	+= '<td>{0}</td>';
+			          	template	+= '<td>{1}</td>';
+			          	template	+= '<td>{2}</td>';
+			          	template	+= '<td>{3}</td>';
+			          	template	+= '<td>{4}</td>';
+			          	template	+= '<td>{5}</td>';
+			          	template	+= '<td>{6}</td>';
+			          	template	+= '</tr>';
+
+			          	$.each(infoListDtl, function(index){
+
+				          	var item = infoListDtl[index];
+				          	var str = String.format(template
+				          				, index+1, '', setDateFormat_person_yyyymmdd(item.mortSetDt), '', item.mortNm, item.eulbuNo, $.formatCommas(item.bondAmt));
+				          	$pop.find('#list2_content tbody').append(str);
+			          	});
+		 			}
+				}
+				else{
+					alert("차량원부조회를 실패했습니다.");
+				}
+
+			},
+			error : function(err) {
+				alert("차량원부조회 중 에러가 발생 했습니다.");
+			}
+		});
+	}
+	
+	/**
+	 * 중고차 사고이력조회 조회
+	 */
+	function srchAccHistoryAjax() {
+		if(!srchCarSrchLayerPopVo.carInqSrchCheck && !srchCarSrchLayerPopVo.carAllSrchCheck){
+			srchCarSrchLayerPopVo.vhclNo = $pop.find('#vhclNo3').val();
+			srchCarSrchLayerPopVo.srno = "";
+		}
+		$pop.find("#accHistoryTable input[type=text]").not("#vhclNo3").val("");
+		$.ajax({
+			dataType : "json",
+			type : "post",
+			url : "/admin/dsr/srchAccHistoryAjax.do",
+			data : {
+				'srno' : srchCarSrchLayerPopVo.srno,
+                'custNo' : $('#custNo').val(), 			//고객번호
+                'lonCnslNo' : $('#lonCnslNo').val(), 	//여신상담번호
+                'vhclNo' : srchCarSrchLayerPopVo.vhclNo		 	//차량번호
+                },
+			success : function(data) {
+				if(data.resultCd == "0000") {
+					
+					var resVo = data.resVo;
+					$pop.find('#srchCarVhclNm').val(resVo.vhclNm);						// 차명
+					$pop.find('#srchCarMdym').val(resVo.mdym);							// 연식
+					$pop.find('#srchCarUseFlItem').val(resVo.useFlItem);					// 사용연료
+					$pop.find('#srchCarTolAcdtCcnt').val(resVo.tolAcdtCcnt);				// 전손횟수
+					$pop.find('#srchCarRbrAcdtCcnt').val(resVo.rbrAcdtCcnt);				// 도난횟수
+					$pop.find('#srchCarFodPlsAcdtCcnt').val(resVo.fodPlsAcdtCcnt);		// 침수횟수
+					$pop.find('#srchCarMcDamAcdtTmct').val(resVo.mcDamAcdtTmct);			// 내차피해횟수
+					$pop.find('#srchCarLndnHstrYn').val(resVo.lndnHstrYn);				// 대여용도사용이력
+					$pop.find('#srchCarBzopHstrYn').val(resVo.bzopHstrYn);				// 영업용도사용이력
+					$pop.find('#srchCarCommonHstrYn').val(resVo.commonHstrYn);			// 관용용도사용이력
+					$pop.find('#srchCarMcDamInsuSumAmt').val($.formatCommas(resVo.mcDamInsuSumAmt));		// 내차피해보험금
+					$pop.find('#srchCarUncfYn').val(resVo.uncfYn);						// 미확정여부
+					$pop.find('#srchCarUncfCnt').val(resVo.uncfCnt);						// 미확정건수
+					$pop.find('#srchCarUncfAmt').val($.formatCommas($.stripZero(resVo.uncfAmt)));						// 미확정금액
+					$pop.find('#srchCarTotMcDamAmt').val($.formatCommas(resVo.totMcDamAmt));				// 총내차피해금액
+					
+					
+					
+					var infoList1 = data.infoList1;
+					$pop.find('#list3_content tbody').empty();
+					
+					
+					var infoList2 = data.infoList2;
+					$pop.find('#list4_content tbody').empty();
+
+		       		if((infoList1 == null ||  infoList1.length == 0 )) {
+		       			$pop.find('#list3_content tbody').html('<tr><td colspan="5">조회결과가 없습니다.</td></tr>');
+					}
+		       		
+		       		if((infoList2 == null ||  infoList2.length == 0 )) {
+		       			$pop.find('#list4_content tbody').html('<tr><td colspan="7">조회결과가 없습니다.</td></tr>');
+					}
+
+					if(infoList1) {
+
+			          	var template = '<tr>';
+			          	template	+= '<td>{0}</td>';
+			          	template	+= '<td>{1}</td>';
+			          	template	+= '<td>{2}</td>';
+			          	template	+= '<td>{3}</td>';
+			          	template	+= '<td>{4}</td>';
+			          	template	+= '</tr>';
+
+			          	$.each(infoList1, function(index){
+
+				          	var item = infoList1[index];
+				          	var str = String.format(template
+				          				, index+1, setDateFormat_person_yyyymmdd(item.vhclInfoChgDt), item.vhclInfoChgDvcdNm, item.vhclNo, item.usgCdNm);
+				          	$pop.find('#list3_content tbody').append(str);
+			          	});
+		 			}
+					
+					if(infoList2) {
+
+			          	var template = '<tr>';
+			          	template	+= '<td>{0}</td>';
+			          	template	+= '<td>{1}</td>';
+			          	template	+= '<td>{2}</td>';
+			          	template	+= '<td>{3}</td>';
+			          	template	+= '<td>{4}</td>';
+			          	template	+= '<td>{5}</td>';
+			          	template	+= '<td>{6}</td>';
+			          	template	+= '</tr>';
+
+			          	$.each(infoList2, function(index){
+
+				          	var item = infoList2[index];
+				          	var str = String.format(template
+				          			, index+1, item.acdtDvnm, setDateFormat_person_yyyymmdd(item.acdtOcrnDt), $.formatCommas($.stripZero(item.insuAmt)), $.formatCommas($.stripZero(item.cmntCost)), $.formatCommas($.stripZero(item.wageCost)), $.formatCommas($.stripZero(item.pntnCost)));
+				          	$pop.find('#list4_content tbody').append(str);
+			          	});
+		 			}
+				}
+				else{
+					alert("중고차 사고이력조회를 실패했습니다.");
+				}
+
+			},
+			error : function(err) {
+				alert("중고차 사고이력조회 중 에러가 발생 했습니다.");
+			}
+		});
+	}
+	
+	/**
+	 * 팝업 초기화
+	 */
+	function fn_reset(){
+		$pop.find(".data-table select").find("option:first").prop("selected","selected");
+		$pop.find(".data-table select").trigger("change");
+		$pop.find(".data-table input[type=text]").val("");
+		
+		var strnDay = new Date();
+		strnDay = new Date(strnDay.setDate(strnDay.getDate()-30)).format("yyyyMMdd");
+		$pop.find("#srchcarStrInqDt").val(strnDay);		
+		
+		var endDay = $.datepicker.formatDate('yymmdd', new Date());
+		$pop.find("#srchcarEndInqDt").val(endDay);
+	}
+	
+	/**
+	 * 팝업 리스트 전체 초기화
+	 */
+	function result_reset() {
+		$pop.find('#list1_content tbody').empty();
+		$pop.find('#list1_content tbody').html('<tr><td colspan="28">조회결과가 없습니다.</td></tr>');
+		
+		$pop.find('#list2_content tbody').empty();
+		$pop.find('#list2_content tbody').html('<tr><td colspan="7">조회결과가 없습니다.</td></tr>');
+		
+		$pop.find('#list3_content tbody').empty();
+		$pop.find('#list3_content tbody').html('<tr><td colspan="5">조회결과가 없습니다.</td></tr>');
+		
+		$pop.find('#list4_content tbody').empty();
+		$pop.find('#list4_content tbody').html('<tr><td colspan="7">조회결과가 없습니다.</td></tr>');
+
+	}
+}
+$(document).ready(function(){
+	srchCarSrchLayerPopVo.fnInitSetting(); // 팝업 이벤트 초기 설정 함수 호출
+});

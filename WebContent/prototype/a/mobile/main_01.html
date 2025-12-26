@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="back-btn"><a href="./index.html"></a></div>
+        <div>
+            <figure><img src="./assets/images/main_default_top.png" alt=""></figure>
+        </div>
+        <div class="default-top">
+            <a href="">
+                <div>모영현님<span><img src="./assets/images/arrow.png" alt=""></span></div>
+                <figure><img src="./assets/images/ico_dot.png" alt=""></figure>
+            </a>
+        </div>
+        <div class="text">
+            <div>
+                <p>대출금액이 없습니다.</p>
+                <div>0<span>원</span></div>
+            </div>
+        </div>
+        <a href="./main_02.html">
+            <figure><img src="./assets/images/main_default_bottom.png" alt=""></figure>
+        </a>
+    </div>
+    
+    <script>
+        $(function(){
+            $('.default-top > a').click(function(){
+
+                if($('html, body').is(':animated')){
+                    return false;
+                }
+
+                if($('.text').is(':hidden')){
+                    $('.text').slideDown();
+                    $(this).find('span').css({'transform':'rotate(180deg)'});
+                }else{
+                    $('.text').slideUp();
+                    $(this).find('span').css({'transform':'rotate(0)'});
+                }
+                
+                return false;
+            });
+        });
+
+    </script>
+</body>
+</html>

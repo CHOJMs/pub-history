@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <link rel="stylesheet" href="./resources/js/swiper-bundle.min.css">
+
+    <script src="./resources/js/jquery-3.6.0.min.js"></script>
+    <script src="./resources/js/vendor.min.js"></script>
+    <script src="./resources/js/swiper-bundle.min.js"></script>
+</head>
+<body>
+
+    <header class="sub-header">
+        <nav><img src="./resources/images/header.png" alt=""></nav>
+        <div><img src="./resources/images/btn_back.png" alt=""></div>
+    </header>
+
+    <div class="sub-container">
+        <div class="swiper-container">
+            <div class="dim"></div>
+            <div class="count"><span></span> / 8</div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <figure class=""><img src="./resources/images/sub_01.png" alt=""></figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class=""><img src="./resources/images/sub_02.png" alt=""></figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class=""><img src="./resources/images/sub_03.png" alt=""></figure>
+                </div>
+                <div class="swiper-slide" style="padding-bottom: 50px;">
+                    <figure class=""><img src="./resources/images/sub_04.png" alt=""></figure>
+                    <div>건너뛰기</div>
+                </div>
+                <div class="swiper-slide">
+                    <figure class=""><img src="./resources/images/sub_05.png" alt=""></figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class=""><img src="./resources/images/sub_06.png" alt=""></figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class=""><img src="./resources/images/sub_07.png" alt=""></figure>
+                </div>
+                <div class="swiper-slide">
+                    <a href="./sub_02.html">
+                        <figure class=""><img src="./resources/images/sub_08.png" alt=""></figure>
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        
+    </div>
+
+    <script defer src="./resources/js/main.js"></script>
+</body>
+</html>

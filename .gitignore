@@ -1,7 +1,10 @@
 # ❌ 제외할 폴더
-WEB-INF/
-prototype/
-carverse/
+.settings/
+branches/
+build/
+src/
+tags/
+trunk/
 
 # ❌ 서버 파일
 *.jsp

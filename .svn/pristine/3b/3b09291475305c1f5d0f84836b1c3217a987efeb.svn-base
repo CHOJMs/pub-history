@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>접수문의현황 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#" class="on">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#">대출접수 현황</a></li>
+                        <li><a href="#">외국인접수 현황</a></li>
+                        <li><a href="#">외국인접수 관리</a></li>
+                        <li><a href="#">신용조회건수</a></li>
+                        <li><a href="#" class="on">접수문의현황</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <h2>접수문의 현황</h2>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>조회정보</h3>
+                        <div class="btn">
+                            <a href="#" class="ico-re">초기화</a><a href="#" class="blue">조회</a>
+                        </div>
+                    </div>
+                    <!-- Start : 조회정보 -->
+                    <table class="data-tbl mb72">
+                        <colgroup>
+                            <col width="24%">
+                            <col width="26%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp disabled">
+                                        <p class="tit">권유자</p>
+                                        <input type="text" value="홍길동" readonly>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">문의기간</p>
+                                        <div class="calendar">
+                                            <input type="tel" value="2024-05-15" class="w-86">
+                                            <span class="dash">-</span>
+                                            <input type="tel" value="2024-05-25" class="w-86"><img src="/static/admin/img/new_common/ico_cal.png">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">고객명</p>
+                                        <input type="text" placeholder="띄어쓰기 없이 입력" value="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">상품</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">처리구분</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">문의유형</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">휴대폰번호</p>
+                                        <input type="tel" placeholder="‘-‘제외하고 입력" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 조회정보 -->
+
+                    <!-- Start : 리스트 -->
+                    <div class="x-scrollBox">
+                        <table class="bbs-table tbl-hover" style="min-width: 1600px;">
+                            <colgroup>
+                                <col width="80px">
+                                <col width="170px">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="110px">
+                                <col width="140px">
+                                <col width="140px">
+                                <col width="440px">
+                                <col width="150px">
+                                <col width="110px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+									<th scope="col">번호</th>
+									<th scope="col">상담번호</th>
+									<th scope="col">문의일자</th>
+									<th scope="col">고객명</th>
+									<th scope="col">생년월일</th>
+									<th scope="col">문의진행상태</th>
+									<th scope="col">문의유형</th>
+									<th scope="col">문의내용</th>
+									<th scope="col">한도</th>
+									<th scope="col">금리</th>
+								</tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>24100001231000</td>
+                                    <td>2024-05-21</td>
+                                    <td>서은형</td>
+                                    <td>951030</td>
+                                    <td><span class="state complete">완료</span></td>
+                                    <td>부동산문의</td>
+                                    <td><div class="ellipsis">금융사 대환 대출 신청 문의드립니다. 문의 내용이 길면 말줄임 처리가 되도록 합니다.</div></td>
+                                    <td>100,000,000</td>
+                                    <td>15.4%</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>24100001231000</td>
+                                    <td>2024-05-21</td>
+                                    <td>서은형</td>
+                                    <td>951030</td>
+                                    <td><span class="state stand">대기</span></td>
+                                    <td>부동산문의</td>
+                                    <td><div class="ellipsis">금융사 대환 대출 신청 문의드립니다. 문의 내용이 길면 말줄임 처리가 되도록 합니다.</div></td>
+                                    <td>100,000,000</td>
+                                    <td>15.4%</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="10" class="nodata"><span>정보가 없습니다.</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //End : 리스트 -->
+                    <!-- Start : 페이징 -->
+                    <div class="paging-box">
+                        <a href="#none" class="first">맨처음</a>
+                        <a href="#none" class="prev">이전</a>
+                        <a href="#none" class="current">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none" class="next">다음</a>
+                        <a href="#none" class="end">맨마지막</a>
+                    </div>
+                    <!-- //End : 페이징 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footerwrap ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footerwrap ---------->
+</body>
+</html>
+

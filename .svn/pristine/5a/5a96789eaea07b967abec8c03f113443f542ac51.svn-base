@@ -1,0 +1,651 @@
+<%@ page import="java.util.*,java.text.*"%>
+<%@ page import="org.w3c.dom.*" %>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page contentType="text/html; charset=euc-kr" language="java" %>
+<title>DGB 캐피탈 &lt; IFS 시스템 &lt; 전자서명대상 리스트</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/ifs_admin.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<script type="text/javascript" src="/static/admin/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/commonEncode.js"></script>
+<script type="text/javascript" src="/static/admin/js/common.js"></script>
+
+<!-- SecureFrame Start-->
+
+<!-- SecureFrame End-->
+
+
+<%
+
+	Document dResXml = null;
+	
+	//초기값
+	String RUNCDE = "";
+	String CARCDE = "";
+	String DVS = "";
+	String BRGRGTNBR = "";
+	String CUSTMRNAME = "";
+	String APSTDATE = "";
+	String APENDATE = "";
+
+	if(dResXml != null){
+		//신청시작일자
+		APSTDATE = "";
+		//신청종료일자
+		APENDATE = "";
+		//실행번호
+		RUNCDE = "";
+		//차량번호
+		CARCDE = "";
+		//전자서명 구분값
+		DVS = "";
+		//사업자등록번호
+		BRGRGTNBR = "";
+		//거래처명
+		CUSTMRNAME = "";
+	}
+	 
+%>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<!--header_new.html-->
+			<div class="header_wrap">
+				<div class="header">
+					<h1><img src="../../static/admin/img/admin/h1_logo_sub.png" alt="DGB 캐피탈 로고"></h1>
+					<div class="gnb_wrap">
+						<p><%=CUSTMRNAME%>&nbsp;님 환영합니다. <a href="#none" onclick="javascript:goLogout();">LOGOUT</a></p>
+					</div>
+				</div>
+			</div>
+		</div> <!--// header -->
+
+		<div class="contents">
+			<h2 style="margin-left:10px;">재고금융 신청리스트</h2>
+			<form name="frm" method="post" onsubmit="return false;">
+				<input type="hidden" name="INIpluginData" />
+				<input type="hidden" name="LOGIN_SVC" value="N" />
+				<input type="hidden" name="METHOD" /> 
+				<input type="hidden" name="NOWPAGE" />										<!--현재페이지-->
+				<input type="hidden" name="BRGRGTNBR" value="<%=BRGRGTNBR%>" />				<!--사업자등록번호-->
+				<input type="hidden" name="CUSTMRNAME" value="<%=CUSTMRNAME%>" />			<!--거래처명-->
+				
+				<div class="srh-wrap">
+					<span>
+						<label for="APSTDATE" style="margin-left:10px;">시작일자</label>
+						<input type="text" name="APSTDATE" id="APSTDATE" value="<%=APSTDATE%>" maxlength="10" style="ime-mode:disabled;" onkeypress="javascript:number();" onchange="javascript:dayChange2(this);" />
+						<a href="#FROM_" class="btnCalendar"><img src="../../static/admin/img/common/ico_cal.gif" alt="날짜 선택" /></a>
+						<div class="calendar" id="FROM_"></div>
+					</span>
+					<span>
+						<label for="APENDATE">종료일자</label>
+						<input type="text" name="APENDATE" id="APENDATE" value="<%=APENDATE%>" maxlength="10" style="ime-mode:disabled;" onkeypress="javascript:number();" onchange="javascript:dayChange2(this);" />
+						<a href="#TO_" class="btnCalendar"><img src="../../static/admin/img/common/ico_cal.gif" alt="날짜 선택" /></a>
+						<div class="calendar" id="TO_"></div>
+					</span>
+					<span>
+						<label for="RUNCDE">실행번호</label>
+						<input type="text" name="RUNCDE" id="RUNCDE" value="<%=RUNCDE%>" maxlength="20" />
+					</span>
+					<span>
+						<label for="CARCDE">차량번호</label>
+						<input type="text" name="CARCDE" id="CARCDE" value="<%=CARCDE%>" maxlength="20" />
+					</span>
+					<span>
+						<span id="signyn">전자서명</span>
+						<input type="radio" name="DVS" id="sign01" class="ml10" value="N" <% if(DVS.equals("N")){ %> checked <%}%> /> <label for="sign01" style="cursor:pointer;">미서명</label>
+						<input type="radio" name="DVS" id="sign02" class="ml15" value="Y" <% if(DVS.equals("Y")){ %> checked <%}%> /> <label for="sign02" style="cursor:pointer;">서명</label>
+					</span>
+
+					<input type="button" value="검색" onclick="javascript:goSearch('1');" />
+				</div>
+			</form>
+
+			<form name="tFrm" method="post">
+				<input type="hidden" name="PKCS7SignedData" />								<!--전자서명-->
+				<input type="hidden" name="INIpluginData" />
+				<input type="hidden" name="LOGIN_SVC" value="N" />
+				<input type="hidden" name="METHOD" /> 
+				<input type="hidden" name="RUNCDE" value="<%=RUNCDE%>" />					<!--실행번호-->
+				<input type="hidden" name="CARCDE" value="<%=CARCDE%>" />					<!--차량번호-->
+				<input type="hidden" name="DVS" value="<%=DVS%>" />							<!--전자서명 구분값-->
+				<input type="hidden" name="APSTDATE" value="<%=APSTDATE%>" />				<!--신청시작일자-->
+				<input type="hidden" name="APENDATE" value="<%=APENDATE%>" />				<!--신청종료일자-->
+				<input type="hidden" name="BRGRGTNBR" value="<%=BRGRGTNBR%>" />				<!--사업자등록번호-->
+				<input type="hidden" name="CUSTMRNAME" value="<%=CUSTMRNAME%>" />			<!--거래처명-->
+				<!-- TEST -->
+				<input type="hidden" name="SGTIME" value="20160822121212" />	
+				<input type="hidden" name="IRT0101" value="16080003604006" />	
+
+
+			<div class="bbsTableLine"></div>
+			<table class="bbs-table">
+				<caption>
+					<p class="blind">순번, 신청일자, 실행번호, 대상차량 등을 나타낸 테이블</p>
+				</caption>
+				<colgroup>
+					<% if(DVS.equals("N")){%>
+						<col style="width:4%;">
+						<col style="width:4%;">
+						<col style="width:7%;">
+						<col style="width:9%;">
+						<col style="width:26%;">
+						<col style="width:19%;">
+						<col style="width:4%;">
+						<col style="width:13%;">
+						<col style="width:6%;">
+						<col style="width:8%;">
+
+					<% }else{%>
+						<col style="width:4%;">
+						<col style="width:7%;">
+						<col style="width:9%;">
+						<col style="width:26%;">
+						<col style="width:22%;">
+						<col style="width:4%;">
+						<col style="width:14%;">
+						<col style="width:6%;">
+						<col style="width:8%;">
+					<% }%>
+				</colgroup>
+				<thead>
+					<tr>
+					<% if(DVS.equals("N")){%>
+						<th scope="col">선택</th>
+					<% }%>
+						<th scope="col">순번</th>
+						<th scope="col">신청일자</th>
+						<th scope="col">실행번호</th>
+						<th scope="col">대상차량</th>
+						<th scope="col">차량번호</th>
+						<th scope="col">연식</th>
+						<th scope="col">여신금액</th>
+						<th scope="col">여신기간</th>
+						<th scope="col">전자서명일자</th>
+					</tr>
+				</thead>
+				<tbody>
+
+				<%
+
+				// 조회조건 세팅	
+				if(dResXml == null){
+				
+					String sNum = "";
+
+					for(int i=1;i<11;i++){
+						sNum = Integer.toString(i);
+						int IRT0101_Num = 0;
+
+						if(i<10){
+							sNum = "0" + sNum;
+						}
+
+						// 순번						IRT0101
+						String IRT0101_Key = "IRT" + sNum + "01";
+						int IRT0101 = 1;
+
+						if(IRT0101 == 0){
+							break;
+						}
+
+						// 신청일자					IRT0102
+						String IRT0102_Key = "IRT" + sNum + "02";
+						String IRT0102 = "2010-01-01";
+
+						// 실행번호					IRT0103
+						String IRT0103_Key = "IRT" + sNum + "03";
+						String IRT0103 = "1010";
+
+						// 대상차량					IRT0104
+						String IRT0104_Key = "IRT" + sNum + "04";
+						String IRT0104 = "대상차량";
+
+						// 여신기간					IRT0105
+						String IRT0105_Key = "IRT" + sNum + "05";
+						int IRT0105 = 60;
+
+						// 여신금액					IRT0106
+						String IRT0106_Key = "IRT" + sNum + "06";
+						long IRT0106 = 2000000;
+
+						// 전자서명일자				IRT0107
+						String IRT0107_Key = "IRT" + sNum + "07";
+						String IRT0107 = "2010-01-01";
+
+						// 차량번호					IRT0108
+						String IRT0108_Key = "IRT" + sNum + "08";
+						String IRT0108 = "15나 1234";
+
+						if(IRT0108.equals("0")){
+							IRT0108 = "";
+						}
+
+						// 연식						IRT0109
+						String IRT0109_Key = "IRT" + sNum + "09";
+						long IRT0109 = 3;
+
+						//체크박스					LstCheck
+						String LstCheck = "Lst" + sNum;
+					%>
+
+					<tr>
+						<% if(DVS.equals("N")){%>
+							<td id="td_01"><input type="checkbox" id="<%=LstCheck%>" name="LstCheck" value="Y" /></td>
+						<% }%>
+						<td><%=IRT0101%></td>
+						<td><%=IRT0102%></td>
+						<td><%=IRT0103%></td>
+						<td><%=IRT0104%></td>
+						<td><%=IRT0108%></td>
+						<td><%=IRT0109%></td>
+						<td><%=IRT0106%></td>
+						<td><%=IRT0105%></td>
+						<td><%=IRT0107%></td>
+					</tr>
+
+				<!---전자서명에 담을 데이터-->
+					<input type="hidden" id="<%=IRT0101_Key%>" name="<%=IRT0101_Key%>" value="<%=IRT0101%>" />
+					<input type="hidden" id="<%=IRT0102_Key%>" name="<%=IRT0102_Key%>" value="<%=IRT0102%>" />
+					<input type="hidden" id="<%=IRT0103_Key%>" name="<%=IRT0103_Key%>" value="<%=IRT0103%>" />
+					<input type="hidden" id="<%=IRT0104_Key%>" name="<%=IRT0104_Key%>" value="<%=IRT0104%>" />
+					<input type="hidden" id="<%=IRT0105_Key%>" name="<%=IRT0105_Key%>" value="<%=IRT0105%>" />
+					<input type="hidden" id="<%=IRT0106_Key%>" name="<%=IRT0106_Key%>" value="<%=IRT0106%>" />
+					<input type="hidden" id="<%=IRT0107_Key%>" name="<%=IRT0107_Key%>" value="<%=IRT0107%>" />
+					<input type="hidden" id="<%=IRT0108_Key%>" name="<%=IRT0108_Key%>" value="<%=IRT0108%>" />
+					<input type="hidden" id="<%=IRT0109_Key%>" name="<%=IRT0109_Key%>" value="<%=IRT0109%>" />
+					
+				<% }%>
+				<input type="hidden" id="lstNum" name="lstNum" value="<%=sNum%>" />
+				<!--------------------------->
+				</tbody>				
+			</table>
+
+			<div class="ifs_confoot">
+				<div class="paging" align="center">
+					<%
+					// 전체 건수
+					String TOTALCNT = "10";
+					// 현재페이지
+					String NOWPAGE = "1";
+
+					int TOTALCNT_len = 0;
+					int NOWPAGE_len = 0;
+					int nTotalRow = 0;
+					int nNowPage = 0;
+					
+					if(TOTALCNT != null){
+						TOTALCNT_len = TOTALCNT.length();
+					}
+
+					if(TOTALCNT == null || TOTALCNT_len == 0){
+						TOTALCNT = "0";
+					}
+
+					nTotalRow = Integer.parseInt(TOTALCNT); 
+
+					if(nTotalRow > 0){
+
+						// 전체 페이지 수
+						int nTotPage = nTotalRow / 10;
+						if((nTotalRow%10) > 0){
+							nTotPage = nTotPage + 1;
+						}
+						
+						if(NOWPAGE != null){
+							NOWPAGE_len = NOWPAGE.length();
+						}
+
+						if(NOWPAGE == null || NOWPAGE_len == 0){
+							NOWPAGE = "0";
+						}
+
+						nNowPage = Integer.parseInt(NOWPAGE);
+
+						int nStartNum = nNowPage % 10;
+						if(nStartNum == 0){
+							nStartNum = nStartNum +10;
+						}
+						nStartNum = (nNowPage - nStartNum);
+						
+						int nBeforeNum = 1;
+						if(nStartNum > 10){
+							nBeforeNum = nStartNum - 9;
+						}
+					%>
+
+					<a href="#none" class="navi" onClick="javascript:goSearch('1');"><img src="../../static/admin/img/ifs_admin/before_arr2.gif" alt="처음으로"></a>
+					<a href="#none" class="navi" onClick="javascript:goSearch('<%=nBeforeNum%>');" ><img src="../../static/admin/img/ifs_admin/before_arr1.gif" alt="이전꺼 보러"></a>
+
+					<%
+					int nBreakCnt = 0;
+					for(int i=nStartNum;i<nTotPage;i++){
+						if(nBreakCnt == 10){
+							break;
+						}else{
+							nBreakCnt++;
+							nStartNum ++;
+						}
+						%>
+						<a href="#none" <%if(nStartNum == nNowPage){%> class="current" <%}%> onClick="javascript:goSearch('<%=nStartNum%>');"><%=nStartNum %></a>
+					<%} %>
+
+					<%if(nStartNum < nTotPage){ 
+						nStartNum = nStartNum + 1;
+					%>
+						<a href="#none" class="navi" onClick="javascript:goSearch('<%=nStartNum%>');"><img src="../../static/admin/img/ifs_admin/next_arr1.gif" alt="다음꺼 보러"></a>						
+						<a href="#none" class="navi" onClick="javascript:goSearch('<%=nTotPage%>');"><img src="../../static/admin/img/ifs_admin/next_arr2.gif" alt="끝으로"></a>
+					<%}%>
+				<%}%>
+						
+				</div>
+			</div>
+			<%}%>
+			<!--검색 후 서명 구분값에 따라 보이기/숨기기-->
+			<% if(DVS.equals("N")){%>
+				<div align="center">
+					<input type="button" value="전자서명하기" class="btn2" style="margin-top:10px;background-color:red;" onclick="javascript:goSign();" />
+					<!--<input type="button" value="전자서명하기" class="btn2" style="margin-top:10px;background-color:red;" onclick="javascript:forwardSendForm();" />-->
+				</div>
+			<% }%>
+			</form>
+		</div><!--// contents -->
+
+		<!--footer.html-->
+	
+	</div><!--// wrapper -->
+
+<!--//////스크립트////////-->
+<script type="text/javascript" src="/static/admin/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.ui.datepicker.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	//차량번호 입력후 엔터시 작동
+	$('#CARCDE').keydown(function(e) {
+		if(e.which == 13) {
+			goSearch('1');  
+		}
+	});
+
+	// calendar
+	$(".btnCalendar").click(function(){
+		$('.calendar').datepicker({
+			changeYear: true,
+			onSelect: function(dateText, inst) { 
+				$(this).closest('.calendar').hide();
+				var id = $(this).attr('id');
+
+				if(id == 'FROM_'){
+					$('#APSTDATE').val(dateText);
+				}
+
+				if(id == 'TO_'){
+					$('#APENDATE').val(dateText);
+				}
+
+				$('.btnCalendar[href="#'+$(this).attr('id')+'"]').focus();
+			}
+		});
+		$('.calendar').not($(this).attr("href")).hide();
+		calendarPosReset($(this));
+		$($(this).attr("href")).toggle();
+		return false;
+	});
+
+});
+
+
+function forwardSendForm(){
+	var frm = document.tFrm;
+	var sendForm = document.sendForm;
+
+	frm.METHOD.value = 'GoSign';
+	frm.action = '/admin/IfsAction.do';
+
+	sendAjaxAction(frm, sendForm, 'fAjaxCallBack2', frm.action);
+
+
+}
+
+function fAjaxCallBack2(result) {
+
+
+	var INIpluginData = getData(result, 'INIpluginData');
+	//alert(INIpluginData);
+
+	var ResDoc = Idecrypt(INIpluginData);
+	//alert("decryptAjax(), decrypt=["+ResDoc+"]");
+
+	//응답결과
+	var rspcd = getData(ResDoc, 'RSPCD');
+	
+	if(rspcd == '0000'){
+		alert("재고금융 신청이 완료되었습니다.");
+
+	}else{		
+		alert("재고금융 신청오류 - 고객센터에 문의바랍니다.");
+		
+	}
+}
+
+
+//달력
+function calendarPosReset(a){
+	var len = a.length;
+	if(len > 0){
+		var l = a.position().left-180;
+		var t = a.position().top+22;
+		a.parentsUntil('dl').each(function(){
+			var position = $(this).css('position');
+
+			if(position == 'absolute', position == 'relative'){
+				l += $(this).position().left;
+				t += $(this).position().top;
+			}
+		});
+		$(a.attr("href")).css({"left":l,"top":t});
+	}
+}
+
+function validate(){
+	var isSuccess = true;
+	var lstCheck_len = $('input:checkbox[name="LstCheck"]:checked').length;
+
+	if(lstCheck_len == 0){
+		alert("전자서명할 대상을 선택하세요.");
+		isSuccess = false;
+		return false;
+	}
+
+	if (!isSuccess) return false;
+	return true;	
+}
+
+//검색
+function goSearch(pageNum){
+
+	var frm  = document.frm;
+	var APSTDATE = $('#APSTDATE').val().replaceAll('-','');		//신청시작일자
+	var APENDATE = $('#APENDATE').val().replaceAll('-','');		//신청종료일자
+	$('#APSTDATE').val(APSTDATE);
+	$('#APENDATE').val(APENDATE);
+	frm.NOWPAGE.value = pageNum;								//현재페이지
+	frm.METHOD.value = 'SignListSearch';
+	frm.action = '/admin/IfsAction.do';
+	EncForm(frm);
+	frm.submit();
+	
+}
+
+//서명하기
+function goSign(){
+	var tFrm = document.tFrm;
+	var sendForm = document.sendForm;
+
+	tFrm.METHOD.value = 'GoSign';
+	if(validate()){
+		var lstNum = $('#lstNum').val();
+		var data = '';
+
+		for(var r=1; r<lstNum; r++){
+			var cnt = r;
+		
+			if(r < 10){
+				cnt = '0' + r;
+			}
+			var lstCheck = 'Lst' + cnt;
+			var m1 = 'IRT' + cnt;
+			var checkyn = $('#'+lstCheck+':checked').val();
+			
+			//체크가 되지 않은 라인에 해당하는 데이터는 공백으로 수정.
+			if(checkyn != 'Y'){
+				for(var s=1; s<10; s++){
+					var m2 = '0' + s;
+					var cntString =  m1 + m2;		//id에 해당하는 문자를 변수에 담기
+					
+					$('#'+cntString).val('');
+			
+				}
+			}
+			
+			var data0101 = $('#'+m1+'01').val();
+			var data0102 = $('#'+m1+'02').val();
+				data0102 = dayChange(data0102);					//날짜형식 변경
+			var data0103 = $('#'+m1+'03').val();
+			var data0104 = $('#'+m1+'04').val();
+			var data0105 = $('#'+m1+'05').val();
+			var data0106 = $('#'+m1+'06').val().addComma();		//콤마 추가
+			var data0107 = $('#'+m1+'07').val();
+				data0107 = dayChange(data0107);					//날짜형식 변경
+			var data0108 = $('#'+m1+'08').val();
+			var data0109 = $('#'+m1+'09').val();
+
+			//전자서명에 담을 데이터
+			if(data0101 != ''){
+				data = AddSignValue(data, "순번", data0101);
+				data = AddSignValue(data, "거래일자(대출신청일)", data0102);
+				data = AddSignValue(data, "실행번호", data0103);
+				data = AddSignValue(data, "차량모델코드", data0104);
+				data = AddSignValue(data, "여신기간", data0105);
+				data = AddSignValue(data, "여신금액", data0106);
+				data = AddSignValue(data, "전자서명일자", data0107);
+				data = AddSignValue(data, "차량번호", data0108);
+				data = AddSignValue(data, "연식", data0109);
+			}
+		}
+		
+		InitCache();
+		//전자서명	
+		if(PKCS7SignDataWithRandom(tFrm, data, true)){
+			//공인인증서
+			if (EncFormVerify2(tFrm, sendForm)) {
+				sendForm.action = '/admin/ifs/CertVIDCheck.jsp';
+				sendForm.submit();
+				
+				return true;
+			}
+		
+		}
+	  return false; 
+	}
+}
+
+//로그아웃
+function goLogout(){
+	location.href = '/admin/ifs/dgbLogin.jsp';
+}
+
+//일자 형식 변경
+function dayChange(day){
+	var newDay;
+	var day_len = 0;
+
+	if(day != ''){
+		day_len = day.length;
+	}
+
+	if(day_len == 8){
+		newDay = day.substring(0,4) + '-' + day.substring(4,6) + '-' + day.substring(6,8);
+	}
+
+	return newDay;
+}
+
+//일자 형식 변경
+function dayChange2(obj){
+	var newDay;
+	var day = obj.value;
+	var day_len = 0;
+
+	if(day != ''){
+		day_len = day.length;
+	}
+
+	newDay = day;
+
+	if(day_len == 8){
+		newDay = day.substring(0,4) + '-' + day.substring(4,6) + '-' + day.substring(6,8);
+	}
+
+	obj.value = newDay;
+}
+
+//문자열에서 str1을 str2치환
+String.prototype.replaceAll = function (str1,str2){
+	var str    = this;    
+	var result   = str.replace(eval("/\\"+str1+"/g"),str2);
+	return result;
+	
+}
+
+//콤마 생성
+String.prototype.addComma = function(){
+	
+	var num = parseFloat(this.replace(/,/gi,""));
+		
+	if( isNaN(num) ) return "0";
+	   return num.addComma();
+}
+
+Number.prototype.addComma = function(){
+	
+	if(this==0) return 0;
+	 
+	var reg = /(^[+-]?\d+)(\d{3})/;
+	var n = (this + '');
+	 
+	while (reg.test(n)) n = n.replace(reg, '$1' + ',' + '$2');
+	 
+		return n;
+}
+
+//숫자만 입력
+function number(){
+	var ua = navigator.userAgent;
+	var keyCode = event.keyCode;
+	var Trident_7 = ua.indexOf('Trident/7.0');
+
+	if((keyCode < 48) || (keyCode > 57)){
+		if(Trident_7 != -1){
+			event.preventDefault();
+		}else{
+			event.returnValue = false;
+		}
+	}		
+}
+
+</script>
+<!-- ///////////////////////-->
+</body>
+</html>

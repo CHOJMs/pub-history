@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page contentType="text/html; charset=euc-kr" language="java" %>
+
+<title>DGB 캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.ui.datepicker.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	// 숫자만 입력
+	$(document).on("keyup", "input:text[numberOnly]", function() {
+		$(this).val( $(this).val().replace(/[^0-9]/gi,"") );
+	});
+	/*
+
+	*/
+	// calendar
+	$(".btnCalendar").click(function(){
+		$('.calendar').datepicker({
+			changeYear: true,
+			onSelect: function(dateText, inst) { 
+				$(this).closest('.calendar').hide();
+				if($(this).attr('id') == 'SDSCLST02_'){
+					$('#SDSCLST02').val(dateText);
+				}
+				if($(this).attr('id') == 'SDSCLST03_'){
+					$('#SDSCLST03').val(dateText);
+				}
+
+				$('.btnCalendar[href="#'+$(this).attr('id')+'"]').focus();
+			}
+		});
+		$('.calendar').not($(this).attr("href")).hide();
+		calendarPosReset($(this));
+		$($(this).attr("href")).toggle();
+		return false;
+	});
+	
+});
+
+//달력
+function calendarPosReset(a){
+	if(a.length > 0){
+		var l = a.position().left-180;
+		var t = a.position().top+22;
+		a.parentsUntil('dl').each(function(){
+			if($(this).css('position')=='absolute', $(this).css('position')=='relative'){
+				l += $(this).position().left;
+				t += $(this).position().top;
+			}
+		});
+		$(a.attr("href")).css({"left":l,"top":t});
+	}
+}
+
+function goSearch(pageNum){
+
+	if(validate()){
+		var f  = document.frm;
+		f.SDSCLST09.value = pageNum;
+		f.METHOD.value = "AdminContract";
+		f.action = "/admin/AdminAction.do";
+		EncForm(f);
+		f.submit();
+	}
+}
+
+//엔터누를때 조회검색
+function enterCheck(){     
+	if(event.keyCode == 13){
+		goSearch('1');  
+     }
+}
+
+</script>
+
+</head>
+
+
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="1"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="contents">
+			<h2>상담 및 약정신청 내역</h2>
+			<br>
+			<form name="frm" method="post" onsubmit="return false;">
+				
+				<input type="hidden" id="INIpluginData" name="INIpluginData" />
+				<input type="hidden" id="METHOD" name="METHOD" /> 
+				<input type="hidden" id="LOGIN_SVC" name="LOGIN_SVC" value="N" />
+				<input type="hidden" id="menuNo" name="menuNo" value="1" />
+				
+				<!-- 약정신청내용 조회 여신신청 번호 -->
+				<input type="hidden" id="SDSCCNT01" name="SDSCCNT01" />
+				<input type="hidden" id="SDSCL0108_CODE" name="SDSCL0108_CODE" />
+
+				<!-- 상담접수(한도조회) 여신신청 번호 -->
+				<input type="hidden" id="SDJSSCH01" name="SDJSSCH01" />
+				<input type="hidden" id="SDJSINS24" name="SDJSINS24" />
+				<input type="hidden" id="SDJSINS25" name="SDJSINS25" />
+
+
+				<div class="srh-wrap">
+					<span>
+						<select name="SDSCLST05" id="SDSCLST05" onchange="searchChange(this.value)">
+							<option value="1" selected>날짜&nbsp;&nbsp;</option>
+							<option value="2">고객명&nbsp;&nbsp;</option>
+							<option value="3">전화번호&nbsp;&nbsp;</option>
+						</select>
+					</span>
+					<span id="search1">
+						<select name="SDSCLST01" id="SDSCLST01">
+							<option value="1">접수일자&nbsp;&nbsp;</option>
+							<option value="2">신청일자&nbsp;&nbsp;</option>
+							<option value="3">실행일자&nbsp;&nbsp;</option>
+						</select>
+						<input type="text" name="SDSCLST02" id="SDSCLST02" value="2010-01-01" style="text-align:center;" maxlength="10" />
+						<a href="#SDSCLST02_" class="btnCalendar"><img src="/static/admin/img/common/ico_cal.gif" alt="날짜 선택" /></a>
+						<div class="calendar" id="SDSCLST02_"></div>
+						<input type="text" name="SDSCLST03" id="SDSCLST03" value="2010-02-01" style="text-align:center;" maxlength="10" />
+						<a href="#SDSCLST03_" class="btnCalendar"><img src="/static/admin/img/common/ico_cal.gif" alt="날짜 선택" /></a>
+						<div class="calendar" id="SDSCLST03_"></div>
+					</span>
+					<span id="search2" style="display:none;">
+						<label for="SDSCLST04">고객명</label>
+						<input type="text" name="SDSCLST04" id="SDSCLST04" value="SDSCLST04" maxlength="20" onkeydown="javascript:enterCheck();" />
+					</span>
+					<span id="search3" style="display:none;">
+						<label for="SDSCLST06">전화번호</label>
+						<input type="text" numberonly="true" name="SDSCLST06" id="SDSCLST06" value="SDSCLST06" maxlength="12" onkeydown="javascript:enterCheck();" />
+					</span>
+					<span>
+						<label for="SDSCLST07">진행단계</label>
+						<select name="SDSCLST07" id="SDSCLST07">
+							<option value="        ">전체</option>
+							<option value="IC4101" selected>접수등록&nbsp;&nbsp;</option>
+							<option value="IC4102" >심사완료&nbsp;&nbsp;</option>
+							<option value="IC4103" >약정신청&nbsp;&nbsp;</option>
+							<option value="IC4104" >대출실행&nbsp;&nbsp;</option>
+							<option value="IC4105" >재심사요청&nbsp;&nbsp;</option>
+						</select>
+					</span>
+					<span>
+						<label for="SDSCLST08">심사결과</label>
+						<select  name="SDSCLST08" id="SDSCLST08" >
+							<option value="        ">전체</option>
+							<option value="ML03001" >승인&nbsp;&nbsp;</option>
+							<option value="ML03002" >부결&nbsp;&nbsp;</option>
+							<!--
+							<option value="FJ070001">승인&nbsp;&nbsp;</option>
+							<option value="FJ070002">부결&nbsp;&nbsp;</option>
+							<option value="FJ070003">심사취소&nbsp;&nbsp;</option>
+							<option value="FJ070004">재심사요청&nbsp;&nbsp;</option>
+							-->
+						</select>
+					</span>
+					<!--
+					<span>
+						<label for="">담당자</label>
+						<input type="text" id="">
+					</span>
+					-->
+					<input type="button" value="조회" onClick="javascript:goSearch('1');" />
+				</div>
+			</form>
+			<br>
+			<table class="bbs-table" border="1">
+				<colgroup>
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+					<col style="width:auto;">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">No</th>
+						<th scope="col">접수일자</th>
+						<th scope="col">신청일자</th>
+						<th scope="col">실행일자</th>
+						<th scope="col">접수방법</th>
+						<th scope="col">진행단계</th>
+						<th scope="col">심사결과</th>
+						<th scope="col">상담등록</th>
+						<th scope="col">고객명</th>
+						<th scope="col">차종</th>
+						<th scope="col">신청금액</th>
+						<th scope="col">기간</th>
+						<th scope="col">선납</th>
+						<th scope="col">금리</th>
+						<th scope="col">캐쉬백</th>
+						<th scope="col">상품종류</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ondblclick="javascript:goAdminInquiry('SDSCL0102','SDSCL0108_CODE');" style="cursor:pointer;"> 
+						<td>00005</td>
+						<td>20170310&nbsp;16:48</td>
+						<td>20170310</td>
+						<td>20170310</td>
+						<td>홈페이지(공인인증)</td>
+						<td>대출실행</td>
+						<td style="color:red;">승인</td>
+						<td></td>
+						<td>최세근</td>
+						<td>K7</td>
+						<td>15,000,000</td>
+						<td>60</td>
+						<td>5%</td>
+						<td>0</td>
+						<td>없음</td>
+						<td style="text-align:left;">온라인오토론(국사/일반/SAVE)</td>
+					</tr>
+					<tr class="bg">
+						<td>계</td>
+						<td>10건</td>
+						<td colspan="14">135,000,000 원</td>
+					</tr>
+				</tbody>
+			</table>
+			<br>
+			<div class="paging" id="paging">
+				<a href="#none" class="navi first" onClick="">맨처음</a>
+				<a href="#none" class="navi prev" onClick="" >이전</a>
+				<a href="#none" class="current">1</a>
+				<a href="#none">2</a>
+				<a href="#none">3</a>
+				<a href="#none">4</a>
+				<a href="#none">5</a>
+				<a href="#none">6</a>
+				<a href="#none">7</a>
+				<a href="#none">8</a>
+				<a href="#none">9</a>
+				<a href="#none">10</a>
+				<a href="#none" class="navi next">다음</a>						
+				<a href="#none" class="navi end">맨끝으로</a>
+			</div>		
+		</div><!--// contents -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+</body>
+</html>

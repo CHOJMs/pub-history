@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>적합성 체크 신청정보 확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>신청정보 확인</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+
+                    <!-- Start : 상품 신청내역 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">상품 신청 내역</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">진행상품</span>
+                                    <span class="p-txt">자동차 구입자금대출</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">등록명의</span>
+                                    <span class="p-txt">123456-11-123456</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 상품 신청내역 -->
+
+                    <!-- Start : 차량 정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">차량 정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">브랜드</span>
+                                    <span class="p-txt">제네시스</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차량모델</span>
+                                    <span class="p-txt">A6 40 TDI Premium</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차량기본가</span>
+                                    <span class="p-txt">49,500,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">옵션가격</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">총차량가</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 차량 정보 -->
+
+                    <!-- Start : 계약 정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">계약 정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">취득원가</span>
+                                    <span class="p-txt">50,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">잔존가치</span>
+                                    <span class="p-txt">50,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">보증금</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">선납리스트</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">리스기간</span>
+                                    <span class="p-txt">60개월</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">월리스트</span>
+                                    <span class="p-txt">0원</span>
+                                    <ul class="list-dash">
+                                        <li>
+                                            <span class="p-tit">월자동차세</span>
+                                            <span class="p-txt">0원 (미포함)</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">월보험료</span>
+                                            <span class="p-txt">0원 (미포함)</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <span class="p-tit">보증금 납입에 따른 할인정보</span>
+                                    <span class="p-txt">0% / 0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">선납리스료 납입에 따른 할인정보</span>
+                                    <span class="p-txt">0% / 0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">지연배상금</span>
+                                    <span class="p-txt">(연) 19%</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">계약주행거리</span>
+                                    <span class="p-txt">연 20,000km</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">km당 초과운영료</span>
+                                    <span class="p-txt">4000원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 계약 정보 -->
+
+                    <!-- Start : 승계약정 정보 : 2023-10-25 추가 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">승계약정 정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">브랜드</span>
+                                    <span class="p-txt">아우디</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차량모델</span>
+                                    <span class="p-txt">A6 40 TDI Premium</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">취득원가</span>
+                                    <span class="p-txt">49,500,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">잔존가치</span>
+                                    <span class="p-txt">49,500,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차량번호</span>
+                                    <span class="p-txt">319너 1234</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">개시일자</span>
+                                    <span class="p-txt">2022-10-25</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">만기일자</span>
+                                    <span class="p-txt">2027-10-25</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">리스기간</span>
+                                    <span class="p-txt">60개월</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">잔여회차</span>
+                                    <span class="p-txt">46회차</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">보증금</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">선납리스료잔액</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">월리스료</span>
+                                    <span class="p-txt">723,900원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">승계수수료</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 승계약정 정보 -->
+
+                    <!-- Start : 보험조건 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">보험조건</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">보험관리주체</span>
+                                    <span class="p-txt">리스이용자</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 보험조건 -->
+
+                    <!-- Start : 과태료/범칙금 -->
+                    <div class="grp-cont">
+                        <p class="head-tit">과태료/범칙금</p>
+                        <ul class="list-dot">
+                            <li>자동차세 : 월리스료 미포함인 경우 6월, 12월 당사 대납 후 익월 리스료 포함 청구</li>
+                            <li>과태료 · 범칙금 : 1차 사전 통지서 카카오톡 알림 또는 SMS발송, 미납 시 당사 대납 후 익월 리스료 포함 청구</li>
+                        </ul>
+                    </div>
+                    <!-- //End : 과태료/범칙금 -->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none">
+                    <div class="btn-box">
+                        <span class="btn gray"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

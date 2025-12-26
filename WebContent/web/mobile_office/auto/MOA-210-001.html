@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>에이전트 실적 현황 | iM캐피탈</title>
+
+</head>
+<body>
+    <div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- Start : skip_navigation -->
+        <div id="tab_skip">
+            <a href="#common_body">
+                <span>본문 바로가기</span>
+            </a>
+        </div>
+        <!-- //End : skip_navigation -->
+
+		<!----------- Start : 모바일 메뉴 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">오토 재고금융</a>
+							<ul>
+								<li><a href="">재고금융 신청</a></li>
+								<li><a href="">재고금융 현황</a></li>
+                                <li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+						<li class=""><a href="">중고차 제휴</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">한도조회 신청</a></li>
+                                <li><a href="">한도조회 신청(유선녹취)</a></li>
+                                <li><a href="">한도조회 상담이력</a></li>
+								<li><a href="">자동차 시세확인</a></li>
+								<li><a href="">차량정보 확인</a></li>
+								<li><a href="">에이전트 실적 현황</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+        <!----------- //End : 모바일 메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <!-- Start : 컨텐츠 영역 -->
+                <h2 class="tl">에이전트 실적 현황</h2>
+                <div class="box_form scoll mob_nobtn"><!-- 하단에 버튼이 없는경우 : no_btn 클래스명 추가-->
+                    <div class="form_box">
+                        <p class="h_tit">에이전트 담당자 명</p>
+						<!-- [D] 기본 노출되는 입력폼 -->
+                        <div class="text_data">
+                            <span class="form">
+                                <input type="text" class="disabled" disabled="disabled" title="에이전트 담당자" value="홍길동">
+                            </span>
+                        </div>
+
+						<!-- [D] 당사직원이 진입 시 노출되는 입력폼 -->
+						<div class="text_data">
+                            <span class="form">
+                                <input type="text" title="에이전트 담당자" value="홍길동">
+                            </span>
+							<div class="btn_cont">
+								<button>검색</button>
+							</div>
+                        </div>
+
+						<p class="h_tit">조회기간</p>
+						<div class="text_data">
+							<span class="form">
+							  <input type="tel" id="" placeholder="1981-01-25" title="결재요청일자 입력">
+							  <button id="" class="calender">달력보기</button>
+							</span>
+							<span class="dash">-</span>
+							<span class="form">
+							  <input type="tel" id="" placeholder="1981-01-25" title="결재요청일자 입력">
+							  <button id="" class="calender">달력보기</button>
+							</span>							
+						</div>
+
+						<!-- Start : 조회 버튼 -->
+						<div class="btn_box pt16">
+							<span class="btn"><button id="">조회</button></span>
+						</div>
+						<!-- //End : 조회 버튼 -->
+
+						<!-- Start : 실적현황 -->
+						<div>
+							<h3 class="pb8">실적 현황</h3>
+							<table class="viewType mb30">
+								<caption>실적 및 대출건수를 나타낸 표</caption>
+								<colgroup>
+								<col width="130px">
+								<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">실적</th>
+										<td>1,500,000원</td>
+									</tr>
+									<tr>
+										<th scope="row">대출건수</th>
+										<td>3 건</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- [D] 조회 결과 없는 경우 -->
+							<div class="gray_box">검색결과가 없습니다.<br>검색조건을 다시 입력해 주세요.</div>
+						</div>
+						<!-- //End : 실적현황 -->
+					</div>
+				</div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+</body>
+</html>

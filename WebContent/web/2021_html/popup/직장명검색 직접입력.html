@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직장명 검색</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/css/loan.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">    
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>직장명 직접입력</h1>                
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+                
+                <div class="block">
+                    <p class="h_tit">직장명</p>
+                    <div class="text_data">
+                        <span class="form" style="position: relative;">
+                            <input type="text" id="id_corp_name" style="padding-right: 6rem;" placeholder="iM캐피탈" title="직장명 입력" required>
+                            <button class="btn-clear d-none" style="right:0; "></button>
+                        </span>
+                    </div>
+
+                    <p class="h_tit">사업자번호</p>
+                    <div class="text_data">
+                        <span class="form">
+                            <input type="text" id="" placeholder="" title="사업자번호 입력">
+                        </span>
+                    </div>
+                    <p class="txt_small" style="padding-top: .4rem; color: #999;">정확하게 모르실 경우 공란으로 남겨두세요</p>
+
+                    <p class="h_tit">직장 주소<em>*</em></p>
+                    <div class="text_data">
+                        <span class="form">
+                            <input type="text" id="" placeholder="직장 주소 입력" title="직장 주소 입력">
+                        </span>
+                    </div>
+                    
+                    <p class="h_tit">직장 연락처<em>*</em></p>
+                    <div class="text_data">
+                        <span class="form">
+                            <input type="text" id="" placeholder="직장 연락처 입력" title="직장 연락처 입력">
+                        </span>
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">등록</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+    <script type="text/javascript">
+        $('.text_data').on('click', '.form input + .btn-clear', function(e) {
+            e.preventDefault();
+            $(this).prev('input').val('');
+            $(this).toggleClass('d-none');
+        });
+        $('#id_corp_name').on('focus blur keyup', function(e) {
+            e.preventDefault();
+            if ($(this).val().length) {
+                $('.btn-clear').removeClass('d-none');
+            }
+            else {
+                $('.btn-clear').addClass('d-none');
+            }
+        });
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+﻿@charset "utf-8";
+
+#wrap {padding-top:100px}
+#header {position:fixed; top:0; left:0; z-index:100; padding-top:32px; border-bottom:1px solid #f1f1f1; width:100%; height:100px; text-align:center; background:#fff}
+#header h1 {display:inline-block}
+#header h1 a {display:block; width:200px; height:39px; text-indent:-9999px; background:url("/static/web/img/imlogo/ci_basic.png") no-repeat center}
+#container .topArea {background:#f1f1f1}
+#container .topArea .inner {margin:0 auto; padding:80px 20px; width:1040px; max-width:100%}
+#container .topArea .inner strong {display:block; padding:24px 0; height:180px; line-height:66px; font-size:36px; font-weight:400; color:#164581; background:url("/static/landing/img/bg01.png") no-repeat right bottom; letter-spacing:-0.05em}
+#container .topArea .inner strong span {font-size:50px; font-weight:700}
+#container .topArea .inner > ul {overflow:hidden; background:#fff}
+#container .topArea .inner > ul li {position:relative; float:left; width:33.333333%; text-align:center; line-height:65px; font-size:18px; font-weight:500; color:#333}
+#container .topArea .inner > ul li + li:before {display:block; content:""; position:absolute; top:23px; left:0; width:1px; height:20px; background:#ccc}
+#container .topArea .inner .imgDesc {margin-top:63px}
+#container .topArea .inner .imgDesc ul {overflow:hidden}
+#container .topArea .inner .imgDesc ul li {position:relative; float:left; width:33.333333%; text-align:center}
+#container .topArea .inner .imgDesc ul li + li:before {display:block; content:""; position:absolute; top:23px; left:0; width:1px; height:172px; background:#e1e1e1}
+#container .topArea .inner .imgDesc ul li p {display:table; margin-top:8px; width:100%; height:70px; background:url("/static/landing/img/bg02.png") no-repeat center}
+#container .topArea .inner .imgDesc ul li p span {display:table-cell; padding-top:12px; vertical-align:middle; line-height:18px; font-size:16px; font-weight:700; color:#333; letter-spacing:-0.04em}
+#container .topArea .inner .imgDesc ul li p span em {display:block; font-style:normal; font-size:13px}
+#container .topArea .inner .btnCenter {margin-top:80px; text-align:center}
+#container .topArea .inner .btnCenter .btnBlue {background:#164581}
+#container .content {padding:50px 20px 60px; margin:0 auto; width:1040px; max-width:100%}
+#container .content .tabWrap > ul {display:flex; margin-bottom:40px; text-align:center}
+#container .content .tabWrap > ul li {flex:1}
+#container .content .tabWrap > ul li + li {margin-left:10px}
+#container .content .tabWrap > ul li a {display:block; border-radius:8px; border:1px solid #999; line-height:58px; font-size:18px; letter-spacing:-0.04em; color:#454545}
+#container .content .tabWrap > ul li.curr a {border-color:#127ec2; color:#127ec2}
+#container .content .tabWrap .terms dl {letter-spacing:-0.03em}
+#container .content .tabWrap .terms dl + dl {margin-top:24px}
+#container .content .tabWrap .terms dl dt {margin-bottom:4px; line-height:36px; font-size:20px; font-weight:500; color:#333}
+#container .content .tabWrap .terms dl dd {padding:0 15px; line-height:26px; font-size:16px; color:#555}
+#container .content .tabWrap .terms dl dd * + * {margin-top:8px}
+#container .content .tabWrap .terms dl dd .dotTxt,
+#container .content .tabWrap .terms dl dd .dotList li {position:relative; padding-left:10px}
+#container .content .tabWrap .terms dl dd .dotTxt:before,
+#container .content .tabWrap .terms dl dd .dotList li:before {display:block; content:"·"; position:absolute; top:0; left:0}
+#container .content .tabWrap .terms .boxWhite {padding:15px 19px; border:1px solid #d5d5d5; line-height:26px; font-size:15px; color:#555}
+#container .content .tabWrap .terms .boxWhite ol li {padding-left:20px; text-indent:-20px}
+#container .content .tabWrap .terms .boxWhite * + * {margin-top:8px}
+#container .content .tabWrap .terms dl + .boxWhite {margin-top:24px; border-color:#fa8628}
+#container .content .tabWrap .terms dl + .boxWhite strong {display:block; margin-bottom:6px; line-height:36px; font-size:20px; font-weight:500; color:#333}
+#container .content .tabWrap .terms > p {margin-top:16px; line-height:24px; font-size:16px; font-weight:500; color:#333}
+@media (max-width: 1160px) {
+	#container .topArea .inner {padding:60px 20px}
+	#container .topArea .inner strong {padding:15px 0; height:auto; line-height:56px; font-size:30px; background-size:200px}
+	#container .topArea .inner strong span {font-size:40px}
+	#container .topArea .inner > ul {padding:0 20px}
+	#container .topArea .inner > ul li {width:100%; line-height:50px; font-size:16px}
+	#container .topArea .inner > ul li + li {border-top:1px solid #ddd}
+	#container .topArea .inner > ul li + li:before {display:none}
+	#container .topArea .inner .imgDesc {margin-top:40px}
+	#container .topArea .inner .btnCenter {margin-top:60px}
+}
+@media (max-width: 767px) {
+	#wrap {padding-top:60px}
+	#header {padding-top:16px; height:60px}
+	#header h1 a {width:150px; height:28px; background-size:100% auto}
+	#container .topArea .inner {padding:40px 20px}
+	#container .topArea .inner strong {padding:10px 0 80px; line-height:40px; font-size:24px; background-size:150px}
+	#container .topArea .inner strong span {font-size:30px}
+	#container .topArea .inner > ul {padding:0 15px}
+	#container .topArea .inner > ul li {line-height:40px; font-size:14px}
+	#container .topArea .inner .imgDesc {margin-top:30px}
+	#container .topArea .inner .imgDesc ul li {width:100%}
+	#container .topArea .inner .imgDesc ul li + li {margin-top:15px; padding-top:10px; border-top:1px solid #e1e1e1}
+	#container .topArea .inner .imgDesc ul li + li:before {display:none}
+	#container .topArea .inner .imgDesc ul li img {height:100px}
+	#container .topArea .inner .imgDesc ul li p {margin-top:0; height:60px; background-size:auto 100%}
+	#container .topArea .inner .imgDesc ul li p span {padding-top:9px; font-size:14px}
+	#container .topArea .inner .imgDesc ul li p span em {font-size:12px}
+	#container .topArea .inner .btnCenter {margin-top:40px}
+	#container .topArea .inner .btnCenter .btnBlue {max-width:100%}
+	#container .content {padding:30px 20px 50px}
+	#container .content .tabWrap > ul {margin-bottom:20px}
+	#container .content .tabWrap > ul li a {line-height:38px; font-size:15px}
+	#container .content .tabWrap .terms dl + dl {margin-top:20px}
+	#container .content .tabWrap .terms dl dt {line-height:30px; font-size:16px}
+	#container .content .tabWrap .terms dl dd {padding:0 10px; line-height:24px; font-size:14px}
+	#container .content .tabWrap .terms dl dd * + * {margin-top:3px}
+	#container .content .tabWrap .terms dl dd .dotTxt,
+	#container .content .tabWrap .terms dl dd .dotList li {padding-left:8px}
+	#container .content .tabWrap .terms .boxWhite {padding:10px 15px; line-height:22px; font-size:13px}
+	#container .content .tabWrap .terms .boxWhite ol li {padding-left:16px; text-indent:-16px}
+	#container .content .tabWrap .terms .boxWhite * + * {margin-top:8px}
+	#container .content .tabWrap .terms dl + .boxWhite {margin-top:20px}
+	#container .content .tabWrap .terms dl + .boxWhite strong {line-height:30px; font-size:16px}
+	#container .content .tabWrap .terms > p {margin-top:10px; line-height:20px; font-size:14px}
+
+}
+
+/* 공통 */
+.btnBlue {display:inline-block; border-radius:8px; width:360px; line-height:60px; font-size:22px; font-weight:500; letter-spacing:-0.04em; color:#fff; background:#002b6f}
+.cRed {color:#ff3737 !important}
+.txtR {text-align:right !important}
+.btnBottom {margin-top:40px}
+.btnBottom .btnBlue {border-radius:4px; text-align:center; width:100%; line-height:70px; font-size:20px}
+@media (max-width: 767px) {
+	.btnBlue {border-radius:4px; max-width:100%; line-height:50px; font-size:16px}
+	.btnBottom {margin-top:20px}
+	.btnBottom .btnBlue {line-height:55px; font-size:16px}
+}
+
+/* 체크박스 */
+.checkWrap {overflow:hidden}
+.checkWrap .check {float:left}
+.checkWrap .check + .check {margin-left:50px}
+.check {display:inline-block; position:relative}
+.check input {position:absolute; top:0; left:0; opacity:0}
+.check input + label {display:inline-block; padding-left:32px; min-height:22px; line-height:22px; font-size:18px; color:#333; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.check input[type=checkbox] + label {padding-left:27px; font-size:16px; color:#666; background:url("/static/landing/img/checkbox.png") no-repeat left 3px}
+.check input[type=checkbox]:checked + label {background:url("/static/landing/img/checkbox-on.png") no-repeat left 3px}
+.check input[type=radio] + label {background:url("/static/landing/img/radio.png") no-repeat left top}
+.check input[type=radio]:checked + label {background:url("/static/landing/img/radio-on.png") no-repeat left top}
+@media (max-width: 767px) {
+	.checkWrap .check + .check {margin-left:30px}
+	.check input + label {font-size:16px}
+	.check input[type=checkbox] + label {font-size:14px}
+}
+
+
+/* 팝업 */
+.layer {display:none; position:fixed; top:0; left:0; overflow:hidden; padding:10px; text-align:center; width:100%; height:100%; z-index:10000; background:rgba(0,0,0,0.5)}
+.layer .inner {display:inline-block; position:relative; top:50%; overflow:hidden; border-radius:10px; width:640px; max-width:100%; max-height:100%; text-align:left; background:#fff; transform:translate(0, -50%); -webkit-transform:translate(0, -50%); -moz-transform:translate(0, -50%)}
+.layer .inner .tit {position:absolute; top:0; left:0; z-index:1; width:100%; padding:26px 50px 0; border-bottom:1px solid #d5d5d5; height:72px; background:#fff}
+.layer .inner .tit img {height:29px}
+.layer .inner .popCont {overflow-y:auto; padding:100px 50px 30px}
+.layer .inner > a {display:block; position:absolute; top:10px; right:35px; z-index:1; width:50px; height:50px; text-indent:-9999px; background:url("/static/landing/img/btn-close.png") no-repeat center}
+@media (max-width: 767px) {
+	.layer {padding:0; background:#fff}
+	.layer .inner {border-radius:0; height:100%}
+	.layer .inner .tit {padding:15px 20px 0; height:60px}
+	.layer .inner .tit img {height:28px}
+	.layer .inner .popCont {padding:80px 20px 30px}
+	.layer .inner > a {top:0; right:0; width:60px; height:60px; background-size:15px}
+}
+
+/* 로딩창 */
+.loading_layer .loading_inner {width: 220px; border-radius:20px; height: 160px;}
+.loading_layer .loading_box {height: 160px; position: relative; padding:15px 15px 20px 15px;}
+.loading_layer .loading_box .title {color: #000; text-align: center; display: block; font-size: 18px; position: absolute; bottom: 32px; left: 0; width: 100%;}
+@media (max-width: 767px) {
+	.loading_layer {padding:10px; background: rgba(0,0,0,0.5);}
+	.loading_layer .loading_inner {width: 150px; height: 110px; border-radius:10px;}
+	.loading_layer .loading_box {height: 110px;}
+	.loading_layer .loading_box .title {font-size: 12px; bottom: 17px;}
+}
+
+/* 신청기본정보 */
+h2 {margin-bottom:15px; line-height:28px; font-size:22px; font-weight:500; color:#141414}
+.inputList li + li {margin-top:10px}
+.inputList li strong {display:block; line-height:36px; font-size:18px; color:#333; font-weight:500}
+.inputList li .phoneNum {overflow:hidden}
+.inputList li .phoneNum > * {float:left; width:64.8%}
+.inputList li .phoneNum > .select + span {margin-right:10px; width:calc(35.2% - 10px) !important; text-align:left}
+.inputList li .price {position: relative;}
+.inputList li .price input {padding-right: 60px;}
+.inputList li .price input + span {font-size: 18px; padding: 15px 0 0 4px; position: absolute; top: 0; right: 15px; color: #666;}
+.agreeArea {margin-top:30px; padding-top:14px; border-top:1px solid #333}
+.agreeArea > strong {display:block; margin-bottom:15px; line-height:28px; font-size:20px; font-weight:500; color:#333}
+/* .agreeArea > strong a {display:inline-block; margin-left:8px; width:28px; height:28px; text-indent:-9999px; background:url("/static/landing/img/btn-ico.png") no-repeat center} */
+.agreeArea > .check {display:block}
+.agreeArea > .check + .check {margin-top:10px}
+.agreeArea .checkWrap {margin-top:20px}
+a.agreeText:link		{color:#000; text-decoration:none;}
+a.agreeText:visited	{color:#000; text-decoration:none;}
+a.agreeText:active	{color:#000; text-decoration:none;}
+a.agreeText:focus     {color:#000; text-decoration:none;}
+a.agreeText:hover		{color:#008dd6; text-decoration:none;}
+a.agreeText:active,a:hover { outline: 0;}
+.agreeArea > strong a .open_img {width:18px;height:18px;margin-left: 8px;}
+@media (max-width: 767px) {
+	h2 {margin-bottom:10px; line-height:26px; font-size:18px}
+	.inputList li strong {line-height:36px; font-size:16px}
+	.inputList li .phoneNum > * {width:100%}
+	.inputList li .phoneNum > .select + span {margin:0 0 10px 0 !important; width:100% !important}
+	.agreeArea {margin-top:20px}
+	.agreeArea > strong {margin-bottom:10px; line-height:24px; font-size:15px}
+	.agreeArea > strong a {margin-left:0; width:24px; height:24px; background-size:15px}
+	.agreeArea .checkWrap {margin-top:15px}
+	.agreeArea > strong a .open_img {width: 15px;height: 15px;margin-left: 3px;}
+}
+
+/* 상담신청 완료 */
+.completeBox .box {padding:30px; border:1px solid #d5d5d5; text-align:center; background:#f8f8f8}
+.completeBox .box + .box {margin-top:10px}
+.completeBox .box > strong {display:block; margin-top:14px; line-height:28px; font-size:18px; font-weight:500; color:#141414; letter-spacing:-0.04em}
+.completeBox .box > strong span {color:#002b6f}
+.completeBox .box > p {margin-top:10px; line-height:24px; font-size:16px; color:#666}
+.completeBox .box > .btnBlue {margin-top:25px; border-radius:26px; width:180px; line-height:52px; font-size:16px; font-weight:400}
+.completeBox dl.box {padding:10px 30px 0; text-align:left}
+.completeBox dl.box dt {display:table; border-bottom:1px solid #d5d5d5; width:100%}
+.completeBox dl.box dt > * {display:table-cell; height:50px; vertical-align:middle}
+.completeBox dl.box dt > strong {line-height:28px; font-size:18px; font-weight:500; color:#333; letter-spacing:-0.05em}
+.completeBox dl.box dt > div {text-align:right}
+.completeBox dl.box dt > div p {display:inline-block; line-height:28px; font-size:16px; color:#666; letter-spacing:-0.04em}
+.completeBox dl.box dt > div p span {font-weight:500; color:#333}
+.completeBox dl.box dt > div .btnBlue {margin-left:26px; border-radius:3px; width:70px; text-align:center; line-height:30px; font-size:14px; font-weight:400}
+.completeBox dl.box dd {padding:13px 0; line-height:22px; font-size:14px; color:#666}
+.completeBox > p {margin-top:10px; line-height:22px; font-size:14px; color:#333}
+@media (max-width: 767px) {
+	.completeBox .box {padding:15px}
+	.completeBox .box > strong {margin-top:10px; line-height:24px; font-size:16px}
+	.completeBox .box > p {line-height:22px; font-size:14px}
+	.completeBox .box > .btnBlue {margin-top:15px; border-radius:23px; width:160px; line-height:44px; font-size:14px}
+	.completeBox dl.box {padding:10px 15px 0}
+	.completeBox dl.box dt {display:block; overflow:hidden; padding:0 0 10px 0}
+	.completeBox dl.box dt > * {display:inline-block; height:auto}
+	.completeBox dl.box dt > strong {line-height:28px; font-size:16px}
+	.completeBox dl.box dt > div {float:right}
+	.completeBox dl.box dt > div p {line-height:28px; font-size:14px}
+	.completeBox dl.box dt > div .btnBlue {margin-left:15px; width:70px; line-height:28px; font-size:12px}
+	.completeBox dl.box dd {padding:10px 0; line-height:20px; font-size:12px}
+	.completeBox > p {margin-top:10px; line-height:20px; font-size:12px}
+}
+
+/* 링크 */
+a.agreeText:link		{color:#000; text-decoration:none;}
+a.agreeText:visited	{color:#000; text-decoration:none;}
+a.agreeText:active	{color:#000; text-decoration:none;}
+a.agreeText:focus     {color:#000; text-decoration:none;}
+a.agreeText:hover		{color:#008dd6; text-decoration:none;}
+a.agreeText:active,a:hover { outline: 0;}
+.open_img {width:18px;height:18px;margin-left: 8px;}
+
+/* pdf파일-뷰 */
+.scroll_box {position:absolute; top:0; right:0; bottom:0; left:0; margin:0px; overflow:hidden; overflow-y:hidden; -webkit-overflow-scrolling:touch;}
+.scroll_box div {min-height:100% !important; height:100% !important;}
+.scroll_box div iframe {min-height:100% !important; height:100% !important;}
+.pdfViewer .page {padding-bottom:15px !important;}
+
+/* pdf파일-뷰 버튼 */
+.box_pdfBtn_wrap {position:relative; width:70%; height:40px; margin:55px auto 0; display:none;}
+.box_pdfBtn_wrap .pdfBtn {display:block; height:40px; padding:4px 6px 0 6px; border-radius:30px; border:1px solid #d6d6d6; background:url('../img/common/bg_pdfView.png') 0 bottom repeat-x;}
+.box_pdfBtn_wrap .pdfBtn li {text-align:center;}
+.box_pdfBtn_wrap .pdfBtn li p {position:absolute; left:50%; top:calc(50% - 8px); margin-left:-12px; color:#007bc8; font-weight:bold; font-size:14px;}
+.box_pdfBtn_wrap .pdfBtn li:first-child {float:left;}
+.box_pdfBtn_wrap .pdfBtn li:first-child a {padding-right:4px; border:1px solid #d6d6d6; border-radius:50%; width:30px; height:30px; background:#fff;}
+.box_pdfBtn_wrap .pdfBtn li:last-child {float:right;}
+.box_pdfBtn_wrap .pdfBtn li:last-child a {padding-left:4px; border:1px solid #d6d6d6; border-radius:50%; width:30px; height:30px; background:#fff;}
+.box_pdfBtn_wrap .pdfBtn li a {line-height:25px; text-align:center; width:30px; display:block;}
+.box_pdfBtn_wrap .pdfBtn li a img {width:10px; height:auto;}
+.box_pdfBtn_wrap.box_pdfBtn_block {display:block !important;}
+.box_pdfBtn_wrap.box_pdfBtn_block + .scroll_box2 {top:120px !important;}

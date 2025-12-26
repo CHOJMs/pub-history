@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page contentType="text/html; charset=euc-kr" language="java" %>
+
+<title>DGB 캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/commonEncode.js"></script>
+<script type="text/javascript" src="/static/admin/js/common.js"></script>
+
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+	});
+
+
+	function goInsert(){
+		if(validate()){
+
+			var frm  = document.frm;
+
+			frm.METHOD.value = "AdminAutoCarCodeIns";
+			frm.action = "/admin/AdminCodeAction.do";
+			EncForm(frm);
+			frm.submit();
+		}
+	}
+
+
+	function validate(){
+		var CAR_CD1 = $("input[name='CAR_CD1']").val();
+	
+		if( CAR_CD1 == '' ){
+			alert("차종코드를 입력하세요.");
+			$("input[name='CAR_CD1']").focus();
+			return false;
+		}
+
+		return true;	
+	}
+
+	// 목록
+	function goSearch(){
+
+		var f = document.frm;
+		f.METHOD.value = "AdminAutoCarCodeList";
+		f.action = "/admin/AdminCodeAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+</script>
+</head>
+
+
+
+
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="2"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="container">
+			<div class="local-menu">
+				<jsp:include page="/admin/inc/leftMenu.jsp" flush="false"> 
+					<jsp:param name="menuNo" value="2"/>
+					<jsp:param name="subMenuNo" value="5"/>
+				</jsp:include>
+			</div> <!--// leftarea -->
+
+
+		<form name="frm" method="post">
+			<input type="hidden" name="METHOD" />
+			<input type="hidden" name="INIpluginData" />
+			<input type="hidden" name="LOGIN_SVC"  value="N"/>
+			<input type="hidden" name="menuNo"	value="2" />
+			<input type="hidden" name="subMenuNo"	value="5" />
+
+			<!-- 조회 조건 -->
+			<input type="hidden" name="CODEMENU_SELECT"	value="" />
+			<input type="hidden" name="CODE_SELECT"	value="" />
+			<input type="hidden" name="PGE_NO"	value="" />
+
+
+			<div class="content-wrap">
+				<h3>코드 관리(오토론-차종/제조사)</h3>
+				<div class="contents">
+					<h4>코드 정보 등록</h4>
+					<p class="align-right"><em>* 필수항목입니다.</em></p>
+					<br>
+					<fieldset class="form-type bbs-form">
+						<div class="dl-type tb">
+							<dl>
+								<dd style="text-align:center;width:150px;font-size:11pt;line-height:10px;">차종코드<em>*</em></dt>
+								<dd style="text-align:center;width:300px;font-size:11pt;line-height:10px;">차종명 <em>*</em></dt>
+								<dd style="text-align:center;width:250px;font-size:11pt;line-height:10px;">제조사코드 <em>*</em></dt>
+								<dd style="text-align:center;width:300px;font-size:11pt;line-height:10px;">구분<em>*</em></dt>
+							</dl>
+							<dl>	
+								<dd><div><input type="text" id="CAR_CD1" name="CAR_CD1" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+								<dd><div><input type="text" id="CAR_CD_NAME1" name="CAR_CD_NAME1" class="wd3"></div></dd>
+								<dd><div><input type="text" id="UPPER_CD_FST1" name="UPPER_CD_FST1" class="wd3"></div></dd>
+								<dd><div><input type="text" id="BIGO1" name="BIGO1" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+							</dl>
+							<dl>	
+								<dd><div><input type="text" id="CAR_CD2" name="CAR_CD2" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+								<dd><div><input type="text" id="CAR_CD_NAME2" name="CAR_CD_NAME2" class="wd3"></div></dd>
+								<dd><div><input type="text" id="UPPER_CD_FST2" name="UPPER_CD_FST2" class="wd3"></div></dd>
+								<dd><div><input type="text" id="BIGO2" name="BIGO2" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+							</dl>
+							<dl>	
+								<dd><div><input type="text" id="CAR_CD3" name="CAR_CD3" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+								<dd><div><input type="text" id="CAR_CD_NAME3" name="CAR_CD_NAME3" class="wd3"></div></dd>
+								<dd><div><input type="text" id="UPPER_CD_FST3" name="UPPER_CD_FST3" class="wd3"></div></dd>
+								<dd><div><input type="text" id="BIGO3" name="BIGO3" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+							</dl>
+							<dl>	
+								<dd><div><input type="text" id="CAR_CD4" name="CAR_CD4" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+								<dd><div><input type="text" id="CAR_CD_NAME4" name="CAR_CD_NAME4" class="wd3"></div></dd>
+								<dd><div><input type="text" id="UPPER_CD_FST4" name="UPPER_CD_FST4" class="wd3"></div></dd>
+								<dd><div><input type="text" id="BIGO4" name="BIGO4" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+							</dl>
+							<dl>	
+								<dd><div><input type="text" id="CAR_CD5" name="CAR_CD5" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+								<dd><div><input type="text" id="CAR_CD_NAME5" name="CAR_CD_NAME5" class="wd3"></div></dd>
+								<dd><div><input type="text" id="UPPER_CD_FST5" name="UPPER_CD_FST5" class="wd3"></div></dd>
+								<dd><div><input type="text" id="BIGO5" name="BIGO5" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+							</dl>
+							<dl>	
+								<dd><div><input type="text" id="CAR_CD6" name="CAR_CD6" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+								<dd><div><input type="text" id="CAR_CD_NAME6" name="CAR_CD_NAME6" class="wd3"></div></dd>
+								<dd><div><input type="text" id="UPPER_CD_FST6" name="UPPER_CD_FST6" class="wd3"></div></dd>
+								<dd><div><input type="text" id="BIGO6" name="BIGO6" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+							</dl>
+							<dl>	
+								<dd><div><input type="text" id="CAR_CD7" name="CAR_CD7" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+								<dd><div><input type="text" id="CAR_CD_NAME7" name="CAR_CD_NAME7" class="wd3"></div></dd>
+								<dd><div><input type="text" id="UPPER_CD_FST7" name="UPPER_CD_FST7" class="wd3"></div></dd>
+								<dd><div><input type="text" id="BIGO7" name="BIGO7" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+							</dl>
+							<dl>	
+								<dd><div><input type="text" id="CAR_CD8" name="CAR_CD8" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+								<dd><div><input type="text" id="CAR_CD_NAME8" name="CAR_CD_NAME8" class="wd3"></div></dd>
+								<dd><div><input type="text" id="UPPER_CD_FST8" name="UPPER_CD_FST8" class="wd3"></div></dd>
+								<dd><div><input type="text" id="BIGO8" name="BIGO8" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+							</dl>
+							<dl>	
+								<dd><div><input type="text" id="CAR_CD9" name="CAR_CD9" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+								<dd><div><input type="text" id="CAR_CD_NAME9" name="CAR_CD_NAME9" class="wd3"></div></dd>
+								<dd><div><input type="text" id="UPPER_CD_FST9" name="UPPER_CD_FST9" class="wd3"></div></dd>
+								<dd><div><input type="text" id="BIGO9" name="BIGO9" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+							</dl>
+							<dl>	
+								<dd><div><input type="text" id="CAR_CD10" name="CAR_CD10" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+								<dd><div><input type="text" id="CAR_CD_NAME10" name="CAR_CD_NAME10" class="wd3"></div></dd>
+								<dd><div><input type="text" id="UPPER_CD_FST10" name="UPPER_CD_FST10" class="wd3"></div></dd>
+								<dd><div><input type="text" id="BIGO10" name="BIGO10" class="wd3" maxlength="8" style="width:100px;"></div></dd>
+							</dl>
+						</div>
+						<br>
+						<br>
+						<p class="align-center">
+							<a href="#none" class="btn h42" onClick="javascript:goInsert();">등록</a>
+							<a href="#none" class="btn h42 neg" onClick="javascript:goSearch();">목록</a>
+						</p>
+					</fieldset>
+				</div><!--// contents -->
+			</div><!--// content-wrap -->
+			</form>
+
+		</div><!--// container -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+
+<script type="text/javascript" src="/static/admin/js/nProtect.js"></script>
+
+
+</body>
+</html>

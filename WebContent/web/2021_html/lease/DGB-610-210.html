@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>물건내역 상세 확인</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">    
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>물건내역 상세 확인</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+                <table class="dataType">
+                    <caption>
+                        물건내역 상세 - 물건명, 년식, 공급사, 수량, 금액 등으로 나타낸 표
+                    </caption>
+                    <colgroup>
+                        <col width="13%">
+                        <col width="15%">
+                        <col width="%">
+                        <col width="12%">
+                        <col width="%">
+                        </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">물건명</th>
+                            <th scope="col">년식</th>
+                            <th scope="col">공급사</th>
+                            <th scope="col">수량</th>
+                            <th scope="col">금액</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td><em class="number">2021</em></td>
+                            <td>㈜유승</td>
+                            <td>1</td>
+                            <td class="a_r"><em class="number">30,000,000</em>원(VAT포함)</td>
+                        </tr>
+                        <tr class="bg">
+                            <td colspan="4">합계</td>
+                            <td class="a_r"><em class="number">30,000,000</em>원(VAT포함)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="noData">조회 결과가 없습니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

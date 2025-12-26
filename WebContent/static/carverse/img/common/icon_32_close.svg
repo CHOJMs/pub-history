@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <path data-name="사각형 2272" style="fill:none" d="M0 0h32v32H0z"/>
+    <g data-name="그룹 2315">
+        <path data-name="선 16" style="stroke:#242f4b;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px;fill:none" d="M0 14 14 0" transform="translate(9 9)"/>
+        <path data-name="선 17" style="stroke:#242f4b;stroke-linecap:round;stroke-miterlimit:10;stroke-width:1.5px;fill:none" d="M14 14 0 0" transform="translate(9 9)"/>
+    </g>
+</svg>

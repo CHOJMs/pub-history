@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* for styles */
+@import url("common.css?v=20231011001");
+@import url("layout.css?v=20230706001");
+@import url("form.css?v=20230817001");
+@import url("popup.css?v=20231228003");
+@import url("auto.css?v=20211223001");
+@import url("user_contents.css?v=20230126001");
+
+@import url("ui_contents.css?v=20240507001");
+@import url("ui_form.css?v=20240507001");
+@import url("ui_popup.css?v=20240507001");
+@import url("ui_agree_popup.css?v=20231010001");
+@import url("ui_about.css?v=20240112004");
+/* @import url("dsr_main.css?v=20211103020");
+@import url("main.css?v=20211103020"); */

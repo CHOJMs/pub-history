@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>올바른 소리 | iM캐피탈</title>
+<script>
+    $(document).ready(function(){
+        $('header').load('/web/renewal/header_sub_inc.html');
+        $('footer').load('/web/renewal/footer_inc.html');
+    }); 
+</script>
+</head>
+<body>
+    <header></header>
+    <div class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
+       <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-contents">
+            <!-- Start : 페이지 인디케이터 -->
+            <div class="indicator">
+                <ul>
+                    <li>홈</li>
+                    <li>회사소개</li>
+                    <li>윤리경영</li>
+                    <li aria-label="현재 화면">올바른 소리</li>
+                </ul>
+            </div>
+            <!-- //End : 페이지 인디케이터 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <h1>올바른 소리</h1>
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+                    <div class="pro-box">
+                        <div class="banner-top type07">
+                            <p>정직과 청렴한 윤리의식을 바탕으로 <br class="pc">새로운 가치를 창조하는 기업이 되겠습니다.</p>
+                        </div>
+                        <div class="cm-gray-box">
+                            <p class="cm-g-tit"><span>올바른 소리</span>란?</p>
+                            <p class="cm-g-txt">올바른 소리는 윤리적 기업문화의 확고한 정착을 위해 각종 부정부패 및 잘못된 관행을 신고할 수 있는 iM캐피탈의 내부자 신고제도입니다. 본 제도는 회사의 발전과 공공이익을 목적으로 접수된 신고내용에 대해 객관적이고 공정한 조사를 실시하여 부정부패 및 잘못된 관행을 개선함으로써 건강하고 올바른 iM캐피탈을 만드는 것에 그 목적이 있습니다. iM캐피탈의 공공이익 및 윤리적 기업문화의 정착을 위하여 임직원 여러분의 적극적인 참여를 바랍니다.</p>
+                        </div>
+                        <!-- Start : 버튼 -->
+                        <div class="btn-box mgt-type">
+                            <span class="btn w-160 ico"><button type="button" id="">제보하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        </div>
+                        <!-- //End : 버튼 -->
+                    </div>
+
+                    <div class="pro-box division-box">
+                        <h3 class="s-tl06">제보 방법</h3>
+                        <dl class="dl-list">
+                            <dt>우편</dt>
+                            <dd>
+                                <p class="call-tx2 ico-type2"><a href="#;">서울특별시 중구 남대문로 125, iM금융센터 8층 준법지원부 | 우편번호 04521</a></p>
+                            </dd>
+                            <dt>이메일</dt>
+                            <dd>
+                                <p class="call-tx2 ico-type"><a href="mailto:cleanjebo@dgbfn.com">cleanjebo@dgbfn.com</a></p>
+                            </dd>
+                            <dt>외부 신고채널</dt>
+                            <dd>
+                                <p class="call-tx2 ico-type"><span>레드휘슬 헬프라인</span><a href="www.redwhistle.org/main">www.redwhistle.org/main접속 후 조직명에 iM캐피탈 검색</a></p>
+                            </dd>
+                        </dl>
+
+                        <h3 class="s-tl06">제보 절차</h3>
+                        <ul class="num-box only-tit">
+                            <li>
+                                <p class="step-tit"><span>1</span>우편, 이메일, 외부 신고채널(헬프라인) 통한 제보</p>
+                            </li>
+                            <li>
+                                <p class="step-tit"><span>2</span>담당자가 해당 내용 확인 후 사실관계 확인</p>
+                            </li>
+                            <li>
+                                <p class="step-tit"><span>3</span>조사 후 해당사건에 대한 결과 통보</p>
+                            </li>
+                        </ul>
+                        <div class="box-green4">
+                            <p class="ico-info">조사는 최초 접수일로부터 20영업일 이내로 처리 완료하되 부득이한 사유로 기한 내 통보가 어려울 경우 사전에 그 사유를 제보자에게 통보합니다.</p>
+                        </div>
+
+                        <h3 class="s-tl06">제보자 보호</h3>
+                        <div class="check-list-box">
+                            <ul class="check-list">
+                                <li>제보자의 신분 및 비밀을 철저하게 보호합니다.</li>
+                                <li>제보내용은 담당자 외 열람이 불가합니다.</li>
+                                <li>제보자 및 제보 내용에 대한 IP추적이 불가합니다.</li>
+                                <li>제출한 자료에 대해서는 철저하게 보안을 준수하며 신고한 모든 내용은 조사외의 다른 용도로는 활용되지 않습니다.</li>
+                                <li>제보자의 신분을 알기 위한 색출 행위 등을 철저하게 배제합니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <footer class="footerwrap">
+        <!-- Mobile_footer -->
+        <div class="mo_footer">
+            <p class="chatbot-btn"><a href="#" target="_blank" title="카카오 새창이동">챗봇</a></p>
+            <div class="footer-inner">
+                <div class="right">
+                    <figure><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+                    <div>
+                        <p>고객센터 : <a href="tel:1566-0050"><strong>1566-0050</strong></a></p>
+                        <span>(평일 오전 9시 ~ 오후6시)</span>
+
+                            <div class="mark-list">
+                                <p class="mark">
+                                    <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=10913" target="_blank" title="웹어워드코리아 평가내역 새창이동">
+                                        <img src="/static/web/img/common/wa2_mb.png" alt="웹어워드코리아 2021 금융분야 최우수상 수상인증마크">
+                                    </a>
+                                </p>
+                                <p class="mark">
+                                    <a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="한국웹접근성인증평가원 새창이동">
+                                        <img src="/static/web/img/common/wa_mb.png?v=20211116001" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)">
+                                    </a>
+                                </p>
+                            </div>
+                    </div>
+                </div>
+                <div class="left">
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a href="#none" class="policy" onclick="goPage('/customer/termsList.do?termId=terms14');">개인정보처리방침</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do');">이용약관</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/customerInfoStep01.do');">고객정보 제공내역 조회</a></li>
+                        </ul>
+                        <ul>
+                            <li>서울특별시 중구 남대문로 125, 8층 (다동), iM금융센터</li>
+                            <li>사업자등록번호 : 220-87-87408</li>
+                        </ul>
+                        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Mobile_footer -->
+
+        <!-- PC_footer -->
+        <div class="pc_footer">
+
+            <p class="home-btn"><a href="#none" class="pc-chatbot-btn" target="_blank" title="챗봇 새창이동">챗봇</a><a href="#none" onclick="goPage('/main.do');">홈</a></p>
+            <div class="footer-inner">
+                <div class="left">
+                    <figure><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do?termId=terms14');" class="policy">개인정보처리방침</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do');">이용약관</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/customerInfoStep01.do');">고객정보 제공내역 조회</a></li>
+                        </ul>
+
+                        <ul>
+                            <li>서울특별시 중구 남대문로 125, 8층(iM금융센터)</li>
+                            <li>사업자등록번호 : 220-87-87408</li>
+                        </ul>
+
+                        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="footer-familysite">
+                        <button>패밀리사이트</button>
+                        <ul>
+                            <li><a href="http://www.dgbfg.co.kr" title="DGB금융지주 사이트 새창열림" target="_blank">DGB금융지주</a></li>
+                            <li><a href="https://www.dgb.co.kr" title="iM뱅크 사이트 새창열림" target="_blank">iM뱅크</a></li>
+                            <li><a href="https://www.hi-ib.com" title="iM증권 사이트 새창열림" target="_blank">iM증권</a></li>
+                            <li><a href="https://www.dgbfnlife.com" title="iM라이프 사이트 새창열림" target="_blank">iM라이프</a></li>
+                            <li><a href="http://www.hi-asset.com" title="iM에셋자산운용 사이트 새창열림" target="_blank">iM에셋자산운용</a></li>
+                            <li><a href="https://www.dgbupay.com" title="iM유페이 사이트 새창열림" target="_blank">iM유페이</a></li>
+                            <li><a href="http://www.dgbds.co.kr" title="iM데이터시스템 사이트 새창열림" target="_blank">iM데이터시스템</a></li>
+                            <li><a href="http://www.dgbci.co.kr" title="iM신용정보 사이트 새창열림" target="_blank">iM신용정보</a></li>
+                            <li><a href="https://www.hi-investment.com" title="iM투자파트너스 사이트 새창열림" target="_blank">iM투자파트너스</a></li>
+                            <li><a href="https://intro.newsystock.com" title="뉴지스탁 사이트 새창열림" target="_blank">뉴지스탁</a></li>
+                            <li><a href="http://www.dgbscf.or.kr" title="DGB사회공헌재단 사이트 새창열림" target="_blank">DGB사회공헌재단</a></li>
+                        </ul>
+                    </div>
+                    <div class="mark-wrap">
+                        <a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="한국웹접근성인증평가원 새창이동">
+                            <img src="/static/web/img/common/wa_pc2.png" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)">
+                        </a>
+                        <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=10913" target="_blank" title="웹어워드코리아 평가내역 새창이동">
+                            <img src="/static/web/img/common/wa2_pc2.png" alt="웹어워드코리아 2021 금융분야 최우수상 수상인증마크">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //PC_footer -->
+    </footer>
+    <!---------- //End : footer ---------->
+
+    <!-- //Start : 퍼블확인용 -->
+    <script>
+        $(document).ready(function(){
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

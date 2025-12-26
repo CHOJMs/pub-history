@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>적합성 체크 신청정보 확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>신청정보 확인</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+
+                    <!-- Start : 상품 신청내역 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">상품 신청 내역</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">진행상품</span>
+                                    <span class="p-txt">자동차 구입자금대출</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 상품 신청내역 -->
+
+                    <!-- Start : 차량정보  -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">차량 정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">브랜드</span>
+                                    <span class="p-txt">제네시스</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차량모델</span>
+                                    <span class="p-txt">G90_3.5T(RS4)2WD(2022)</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차량기본가</span>
+                                    <span class="p-txt">49,500,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">옵션가격</span>
+                                    <span class="p-txt">49,500,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">외장색상</span>
+                                    <span class="p-txt"></span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">내장색상</span>
+                                    <span class="p-txt"></span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">총차량가</span>
+                                    <span class="p-txt font-blue">49,500,000원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 견적 정보 -->
+
+                    <!-- Start : 계약 정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">계약 정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">대여기간</span>
+                                    <span class="p-txt">60개월</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">보증금</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">선납임대료</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">상계방법</span>
+                                    <span class="p-txt">안분</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">월임대료</span>
+                                    <span class="p-txt">828,520원 <span class="s-txt">(VAT포함)</span></span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">지연배상금율</span>
+                                    <span class="p-txt">연 19%</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">계약주행거리</span>
+                                    <span class="p-txt">연 20,000 km</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">Km당 초과운행료 </span>
+                                    <span class="p-txt">400원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 계약 정보 -->
+
+                    <!-- Start : 정비상품 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">정비상품</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">정비상품</span>
+                                    <span class="p-txt">self</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 정비상품 -->
+
+                    <!-- Start : 보험정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">보험정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">운전자연령</span>
+                                    <!-- 21001115 수정 -->
+                                    <span class="p-txt">만 26세이상
+                                        <p class="s-txt">(운전면허 취득 1년이상 경과)</p>
+                                    </span>
+                                    <!-- 21001115 수정 -->
+                                </li>
+                                <li>
+                                    <span class="p-tit">임직원 한정 운전특약</span>
+                                    <span class="p-txt">가입/미가입</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">운전자범위 </span>
+                                    <!-- 21001115 수정 -->
+                                    <span class="p-txt">
+                                        [개인] 본인,배우자,직계가족
+                                        <p class="s-txt mb10">사업자는 임직원 포함</p>
+                                        [법인] 임직원 또는 등기임직원
+                                        <p class="s-txt mt4">임직원 전용 특약가입</p>
+                                    </span>
+                                    <!-- 21001115 수정 -->
+                                </li>
+                                <li>
+                                    <span class="p-tit">의무가입사항</span>
+                                    <span class="p-txt">대인배상(책임,무한) 무한, <br>무보험차 상해(1인당 ) 2억, <br>긴급출동 연 5회</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">필수가입사항</span>
+                                    <span class="p-txt">대물배상(1사고당) 1억, <br>자기신체사고(1인당) 1억, <br>자기차량손해(자기부담금) 1만원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 보험정보 -->
+
+                    <!-- Start : 과태료/범칙금 : 21001115 수정 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">과태료/범칙금</h2>
+                        <p class="head-txt pb12">1차 사전통지서 SMS 발송, 미납시 당사 대납 후 익월 렌탈료 포함 청구</p>
+                        <p class="dot mt0">사고 발생시 대표번호(1833-8756), 추가운전자 신청하실 경우 대표번호 (1566-0050)으로 접수 부탁드립니다.</p>
+                    </div>
+                    <!-- //End : 과태료/범칙금 : 21001115 수정 -->
+
+                    <!-- Start : 연대 보증정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">연대 보증정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">채무자명</span>
+                                    <span class="p-txt">홍길동</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">연대보증인명</span>
+                                    <span class="p-txt">김길동</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">입보자격</span>
+                                    <span class="p-txt">대표이사</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">보증종류</span>
+                                    <span class="p-txt">특정근보증</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">보증내용</span>
+                                    <span class="p-txt"></span>
+                                    <ul class="list-dash">
+                                        <li>
+                                            <span class="p-tit">보증채무최고액</span>
+                                            <!-- 21001115 수정 -->
+                                            <span class="p-txt">85,000,000원
+                                                <p class="s-txt">(총이용금액 X130%)</p>
+                                            </span>
+                                            <!-- 21001115 수정 -->
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">보증기간</span>
+                                            <span class="p-txt">대여기간과 동일</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 연대 보증정보 -->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none">
+                    <div class="btn-box">
+                        <span class="btn gray"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

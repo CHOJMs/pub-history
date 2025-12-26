@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00a88b;
+      }
+
+      .cls-2 {
+        fill: #f1f4f3;
+      }
+
+      .cls-2, .cls-3 {
+        opacity: 0;
+      }
+
+      .cls-3 {
+        fill: #ef4040;
+      }
+
+      .cls-4 {
+        fill: #bcc8d7;
+      }
+
+      .cls-5, .cls-8 {
+        fill: #fff;
+      }
+
+      .cls-6 {
+        fill: #6e819b;
+      }
+
+      .cls-7 {
+        fill: #445063;
+      }
+
+      .cls-8 {
+        fill-rule: evenodd;
+        opacity: 0.996;
+      }
+
+      .cls-9 {
+        clip-path: url(#clip-path);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <circle id="타원_746" data-name="타원 746" class="cls-1" cx="6" cy="6" r="6" transform="translate(-3 -1)"/>
+    </clipPath>
+  </defs>
+  <g id="ic_모바일_주민등록증_인증" data-name="ic_모바일 주민등록증 인증" transform="translate(-36 -178)">
+    <path id="패스_13092" data-name="패스 13092" class="cls-2" d="M20.174,0h-.348C8.877,0,0,3.833,0,19.826v.348C0,36.037,8.877,40,19.826,40h.348C31.124,40,40,36.167,40,20.174v-.348C40,3.7,31.124,0,20.174,0" transform="translate(36 178)"/>
+    <g id="ic">
+      <rect id="사각형_5544" data-name="사각형 5544" class="cls-3" width="24" height="24" transform="translate(44 186)"/>
+      <g id="그룹_11073" data-name="그룹 11073" transform="translate(-3)">
+        <rect id="사각형_5545" data-name="사각형 5545" class="cls-4" width="18" height="24" rx="2" transform="translate(47 186)"/>
+        <rect id="사각형_5546" data-name="사각형 5546" class="cls-5" width="12" height="13" rx="1" transform="translate(50 189)"/>
+        <circle id="타원_745" data-name="타원 745" class="cls-6" cx="2" cy="2" r="2" transform="translate(54 204)"/>
+      </g>
+      <g id="그룹_11075" data-name="그룹 11075" transform="translate(53.064 193.69)">
+        <circle id="타원_744" data-name="타원 744" class="cls-7" cx="8" cy="8" r="8" transform="translate(-1.064 0.31)"/>
+        <g id="그룹_11074" data-name="그룹 11074" transform="translate(3.937 5.31)">
+          <path id="패스_9357" data-name="패스 9357" class="cls-8" d="M377.5,500a2.5,2.5,0,1,0,2.5,2.5,2.5,2.5,0,0,0-2.5-2.5" transform="translate(-374.504 -501.145)"/>
+          <g id="마스크_그룹_157" data-name="마스크 그룹 157" class="cls-9" transform="translate(0 -2)">
+            <path id="패스_9358" data-name="패스 9358" class="cls-8" d="M254.223,1125c-2.333,0-4.223,1.365-4.223,3.05v1.109c0,.459.516.832,1.152.832h7.679c.636,0,1.152-.372,1.152-.832v-1.109c0-1.685-1.891-3.05-4.223-3.05Z" transform="translate(-252 -1118.153)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

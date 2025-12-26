@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<deco> 
+    <fileData filename="ui_form.css" filepath="/src/main/webapp/static/web/css" ischanged="0" lastversion="31" tstversion="31" realversion="4" dotversion="0" itemid="000000941606" ecmMd5sum="2285a741cb4eca7690d1eb1fb495a226" ecmTstmd5sum="" lastChangedDate="1672306990000" editor="이종범-아크로퓨처:63755" lastUser="이종범-아크로퓨처:63755" filestatus="운영중:0" islock="1" isAuthority="1" rsrccd="A2" rsrccdcodename="static" rsrcinfo="0100000000110000000000010000010000000000100000001000000001000000000" jobcd="HP" jobname="홈페이지" syscd="00102" sysmsg="홈페이지" srid="R202212-0079"/> 
+</deco>

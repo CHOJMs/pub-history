@@ -1,0 +1,163 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+<script type="text/javascript">
+
+	function goList(){
+// 		var f = document.actionForm;
+// 		f.METHOD.value = "AdminBoardListSelect";
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+
+		location.href = "/admin/board/dgbNoticeBoardMngList.jsp"
+	}
+
+
+	function goMod(){
+// 		var f = document.actionForm;
+// 		f.METHOD.value = "AdminBoardModPage";
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+		location.href = "/admin/board/dgbNoticeBoardMngMod.jsp"
+	}
+
+	function goDel(){
+		var f = document.actionForm;
+		f.METHOD.value = "AdminBoardDel";
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+
+	//파일다운로드
+	function download(fileName){
+
+		var path = "upload";
+		window.location.href = "/view/common/inc/FILE_DOWNLOAD.jsp?file_name="+fileName+"&file_path="+path;
+	}
+
+</script> 
+</head>
+<body>
+
+<form name="actionForm">
+	  <input type="hidden" name="METHOD" />
+	  <input type="hidden" name="INIpluginData">
+	  <input type="hidden" name="LOGIN_SVC"  value="N"/>
+	  <input type="hidden" name="PGE_NO"  value="iPageNo "/>
+	  <input type="hidden" name="TITLE_SELECT"  value="TITLE_SELECT "/>
+
+	  <input type="hidden" name="OPEN_FLAG_SELECT"  value="OPEN_FLAG_SELECT "/>
+	  <input type="hidden" name="DEL_FLAG_SELECT"  value="DEL_FLAG_SELECT "/>
+
+	  <input type="hidden" name="BOARD_ID" id="BOARD_ID" value="BOARD_ID " />
+	  <input type="hidden" name="B_ID" id="B_ID" value="B_ID " />
+	  <input type='hidden' name="menuNo"	value="3" />
+	  <input type='hidden' name="subMenuNo"	value="SUB_MENU " />
+	  <input type='hidden' name="INSERT_KEY"	value="1" />
+</form>
+
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="4"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="container">
+			<div class="local-menu">
+				<jsp:include page="/admin/inc/leftMenu.jsp" flush="false"> 
+					<jsp:param name="menuNo" value="4"/>
+					<jsp:param name="subMenuNo" value="SUB_MENU "/>
+				</jsp:include>
+			</div> <!--// leftarea -->
+			
+			
+			<!--컨텐츠내용 시작-->
+			<div class="content-wrap">
+				<h3>FAQ 관리</h3>
+				<div class="contents">
+					
+					<table class="bbs-table-view">
+						<colgroup>
+							<col style="width:150px;">
+							<col style="width:%;">
+						</colgroup>
+						<tbody>
+							<tr>								
+								<th scope="row">질문</th>
+								<td><input type="text" name="" id="" maxlength="120" value="" style="width:100%;"></td>
+							</tr>
+							<tr>								
+								<th scope="row">답변</th>
+								<td>에디터 사용</td>
+							</tr>
+							<tr>								
+								<th scope="row">이미지 첨부 <em></em></th>
+								<td>
+									<div id="divFile1">
+										<input type="file" name="ATTACH_FILE" id="ATTACH_FILE" onchange="javascript:updateFile('ATTACH_FILE"');" style="width:300px;" title="본문 이미지 파일 찾기">
+										<em>※ 이미지 파일은 gif, jpg, jpeg, png 확장자만 가능합니다.</em>
+									</div>
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">이미지 Alt <em></em></th>
+								<td>
+									<div class="text_data">
+										<textarea id="" placeholder="" title="내용 입력" style="height:120px;">*주)웹접근성 준수를 위하여 이미지를 올릴 경우에는 에디터를 사용하지 마시고 본문이미지 업로드 기능을 사용하세요</textarea>
+									</div>
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">게시 여부<em></em></th>
+								<td>
+									<input type="radio" name="OPEN_FLAG" id="OPEN_FLAG" checked title="게시 선택"/> 게시
+									<input type="radio" name="OPEN_FLAG" id="OPEN_FLAG" style="margin-left:25px;" title="보류 선택"/> 보류
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">파일첨부 <em></em></th>
+								<td>
+									<div id="divFile1">
+										<input type="file" name="ATTACH_FILE" id="ATTACH_FILE" onchange="javascript:updateFile('ATTACH_FILE"');" style="width:300px;" title="이미지 파일 찾기">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="btn-align-center">
+						<a href="#none" class="btn h42" onClick="javascript:goUpdate();">등록</a>
+						<a href="#none" class="btn h42 neg" onClick="javascript:goSearch();">취소</a>
+					</p>
+					
+				</div><!--// contents -->
+			</div>
+			<!--컨텐츠내용 끝-->
+			<!--// content-wrap -->
+		</div><!--// container -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+</body>
+</html>

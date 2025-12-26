@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>나의차량 조회 등록 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#" class="on">즉시출고차량</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#">즉시출고차량 관리</a></li>
+                        <li><a href="#" class="on">나의차량 조회</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <h2>나의차량 조회</h2>
+                </div>
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <!-- Start : 폼 -->
+                    <table class="data-tbl type01"><!-- td 아래 간격이 16인 경우 : type01 추가 -->
+                        <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">브랜드</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">현대</option>
+                                                    <option value="">기아</option>
+                                                    <option value="">외산</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                        <p class="tit">출고지점</p>
+                                        <div class="inp-area disabled">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>목동중부지점</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">계약번호</p>
+                                        <input type="text" placeholder="계약번호를 입력해주세요" value="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">발주일자</p>
+                                        <div class="calendar">
+                                            <input type="tel" value="2022-11-15"><img src="/static/admin/img/new_common/ico_cal.png">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">상품구분</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">리스</option>
+                                                    <option value="">렌탈</option>
+                                                    <option value="">리스/렌탈</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">출고방식</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">특판출고</option>
+                                                    <option value="">지점/대리점</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">전시차</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">Y</option>
+                                                    <option value="">N</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">차량모델</p>
+                                        <input type="text" placeholder="입력" value="G70 슈팅 브레이크 가솔린 2.0 터보 스포츠 패키지 2WD" class="disabled pr110" disabled="disabled">
+                                        <div class="c-btn">
+                                            <a href="#">차량선택</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="com-inp">
+                                        <p class="tit">메모</p>
+                                        <textarea placeholder="직접 입력"></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="com-inp option-list">
+                                        <p class="tit">옵션내역</p>
+                                        <table>
+                                            <colgroup>
+                                                <col width="16%">
+                                                <col width="%">
+                                                <col width="16%">
+                                                <col width="100px">
+                                                <col width="125px">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <td>외장컬러</td>
+                                                    <td>마칼루 그레이</td>
+                                                    <td>
+                                                        <div class="inp-txt-right">
+                                                            <input type="tel" placeholder="" value="0">
+                                                            <span>원</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="c-btn">
+                                                            <a href="#" class="white">삭제</a>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="c-btn">
+                                                            <a href="#">옵션선택</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>외장컬러</td>
+                                                    <td>본드실버</td>
+                                                    <td>
+                                                        <div class="inp-txt-right">
+                                                            <input type="tel" placeholder="" value="700,000">
+                                                            <span>원</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="c-btn">
+                                                            <a href="#" class="white">삭제</a>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>외장컬러</td>
+                                                    <td>비크블랙</td>
+                                                    <td>
+                                                        <div class="inp-txt-right">
+                                                            <input type="tel" placeholder="" value="0">
+                                                            <span>원</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="c-btn">
+                                                            <a href="#" class="white">삭제</a>
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">기본가격</p>
+                                        <div class="inp-txt-right">
+                                            <input type="text" placeholder="0" value="47,900,000">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">옵션금액</p>
+                                        <div class="inp-txt-right">
+                                            <input type="text" placeholder="0" value="47,900,000" class="disabled" disabled="disabled">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">탁송료</p>
+                                        <div class="inp-txt-right">
+                                            <input type="text" placeholder="0" value="0">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">최종차량가격</p>
+                                        <div class="inp-txt-right">
+                                            <input type="text" placeholder="0" value="47,900,000원" class="disabled" disabled="disabled">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">차량등록지원</p>
+                                        <input type="text" placeholder="0" value="홍길동" class="disabled" disabled="disabled">
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 폼 -->
+
+                    <!-- Start : 버튼 -->
+                    <div class="btn-area">
+                        <a href="#" class="gray">취소</a>
+                        <a href="#">등록</a>
+                    </div>
+                    <!-- //End : 버튼 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

@@ -1,0 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+
+<div>
+	<p class="footer_logo">
+		<img src="/static/web/img/imlogo/ci_black_white.png" alt="DGB금융그룹 iM캐피탈">
+	</p>
+	<div class="company_info">
+		<address>서울특별시 강남구 언주로30길 39, 18층(도곡동 SEI타워) 사업자번호 : 220-87-87408</address>
+		<p class="copyright">Copy &copy; iM Capital Co.,LTD.All rights Reserved.</p>
+	</div>
+</div>

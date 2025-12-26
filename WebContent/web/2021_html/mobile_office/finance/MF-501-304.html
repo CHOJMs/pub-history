@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인신용정보 조회</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>개인신용정보 조회</h1>
+            </div>
+            <div class="popup-contents no_btn"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+                        
+                        <div class="box_viewType mb30">
+                            <dl>
+                                <dt>고객번호</dt>
+                                <dd>1901-028000-0-000</dd>
+                                <dt>주민사업자번호</dt>
+                                <dd>000000-0****00</dd>
+                                <dt>고객명</dt>
+                                <dd>홍길동</dd>
+                            </dl>
+                        </div>
+
+                        <h2 class="pb16">종합등급</h2>
+                        <table class="dataType">
+							<caption>종합등급 - NICE-CB, NICE-SP, KCB 등으로 나타낸 표</caption>
+							<colgroup>
+								<col width="25%">
+								<col width="25%">
+								<col width="25%">
+								<col width="25%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col"></th>
+									<th scope="col">NICE-CB</th>
+									<th scope="col">NICE-SP</th>
+									<th scope="col">KCB</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>신용평점</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+                                <tr>
+									<td>신용등급</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+
+                    </div>                    
+                </div>
+                <!--// content 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

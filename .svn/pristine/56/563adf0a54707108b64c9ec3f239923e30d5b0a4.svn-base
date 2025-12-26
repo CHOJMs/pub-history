@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+/* reset */
+img {max-width: 100%;}
+
+/* title */
+
+/* radio-box-type1 */
+.radio-box-type1 {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: -.6rem;}
+.radio-box-type1 > div {position: relative; display: inline-flex; margin-bottom: 1.2rem; width: calc(50% - 0.75rem);}
+.radio-box-type1.grid3 > div {width: calc(33.333% - 0.75rem);}
+.radio-box-type1 input:not(.cssbrowser) {overflow:hidden; position:absolute; border:0; margin:0 0 0 0px; width: 100%; height: 56px;}
+.radio-box-type1 input:not(.cssbrowser) + label {width: 100%; display:inline-flex; justify-content: center; align-items: center; position:relative; height: 56px; font-size: 1.6rem;color:rgb(34, 36, 38); font-weight: 500; cursor:pointer; letter-spacing: -0.05em; background: #fff; border: 1px solid rgb(211, 213, 216); border-radius: 4px;}
+.radio-box-type1 input:not(.cssbrowser):checked + label {background: rgb(18, 151, 239); color: #fff; border: 1px solid rgb(18, 151, 239);}
+
+.bg_graybox .radio_box .inline_rchk { display: flex; flex-wrap: wrap; justify-content: space-between;}
+.bg_graybox .radio_box .inline_rchk li { position: relative; display: inline-flex !important; width: calc(50% - 0.75rem);}
+
+/* 개인금융 대출 신청 박스 */
+.app-input-box {position: relative; display: flex; flex-wrap: wrap; flex-direction: column; align-items: flex-end;}
+.app-input-box input[type="text"], .app-input-box input[type="tel"] {padding: 0 35.7px 0 0; font-size: 28px !important; font-weight: bold; color: rgb(34, 36, 38); border-bottom: 2px solid #000; text-align: right;}
+.app-input-box span {position: absolute; right: 0; bottom: 8px; font-size: 17px; font-weight: bold; color: rgb(34, 36, 38);}
+.app-input-box input::placeholder { font-size: 18px; font-weight: 500;}
+.small-text {display: block; margin-top: 6px ; line-height: 1.5; font-size: 12px; text-align: right;}
+.black_box.black_box_2 .list_1 li {flex-direction: column; justify-content: space-between;}
+.black_box.black_box_2 .list_1 li > span.tit {}
+.black_box.black_box_2 .list_1 li > span {width: 100%;}
+.black_box p {margin-top: 20px; padding-top: 15px; font-size: 13px; font-weight: 500; color: #fff; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center;}
+.black_box p span {color: rgb(255, 243, 165);}
+
+/* 완료 페이지 가방 */
+/* .sub_process .process_wrap.add-bg {background: url(../../img/mobile_office/img_briefcase.svg) right bottom / 24% no-repeat;} */
+
+/* 모바일 대출실행 완료 페이지 */
+.finish_box.fail-box {padding-top: 0;}
+.finish_box .fail-icon {margin-bottom: 56px; display: inline-flex; flex-direction: column; justify-content: center; align-items: center; width: 120px; height: 120px; background: rgb(34,36,38); border-radius: 100%;}
+.finish_box .fail-icon::before {content: ""; display: inline-flex; width: 5px; height: 44px; border-radius: 50px; background: #fff;}
+.finish_box .fail-icon::after {content: ""; display: inline-flex; margin-top: 10px; width: 5px; height: 5px; border-radius: 100%; background: #fff;}
+.finish_box .fail_t_box .tit_info {display: block; font-size: 4rem; line-height: 5rem; font-weight: 700; padding-bottom: 4rem;}
+.finish_box .fail_t_box .txt {font-size: 2rem; line-height: 3.4rem; padding-bottom: 4.8rem; font-weight: 400; letter-spacing: -0.05em; color:rgb(34, 36, 38);}
+.finish_box .fail_t_box .txt strong {font-weight: 700;}
+.finish_box .fail_t_box .call_phone {font-size: 1.8rem; padding-bottom: 9.7rem; color:rgb(112, 116, 120);}
+
+/* 수정 */
+.img-box {margin-bottom: 24px;}
+
+/* number list */
+.number-list {margin: 48px 0 16px;}
+.number-list p {line-height: 1.5; font-size: 18px; font-weight: 700; color: rgb(34, 36, 38); letter-spacing: -0.05em;}
+.number-list ul {margin-top: 16px;}
+.number-list ul li {line-height: 1.5; font-size: 15px; font-weight: 400; color: rgb(34, 36, 38); letter-spacing: -0.05em;}
+.number-list ul li span {display: inline-flex; transform: translateY(-1px);}
+
+/* 세션 알림 */
+.remain-time-wrap {padding-top: 75px; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.remain-time-wrap figure {max-width: 120px; margin-bottom: 40px;}
+.remain-time-wrap .remain-time {margin-bottom: 16px; line-height: 1.5; font-size: 17px; font-weight: 500; color: rgb(34, 36, 38); letter-spacing: -0.05em;}
+.remain-time-wrap .remain-time span {color:rgb(18, 151, 239); font-weight: 700;}
+.remain-time-wrap p {line-height: 1.6; font-size: 14px; font-weight: 400; color:rgb(112, 116, 120); letter-spacing: -0.05em; text-align: center;}
+
+/* list-type-dot */
+.list-type-dot ul {padding-left: 4px;}
+.list-type-dot ul li {line-height: 1.3; font-size: 18px; font-weight: 400; color:rgb(112, 116, 120); letter-spacing: -0.05em; padding-left: 4px; text-indent: -4px;}
+.list-type-dot ul li + li {margin-top: 6px;}
+.list-type-dot ul li::before {display: inline-block; content: "·"; margin-right: 4px; font-size: 18px;}
+
+/* list-type-dash */
+.list-type-dash ul {padding-left: 4px;}
+.list-type-dash ul li {line-height: 1.6; font-size: 17px; font-weight: 400; color:rgb(112, 116, 120); letter-spacing: -0.05em; padding-left: 4px; text-indent: -4px;}
+.list-type-dash ul li + li {margin-top: 6px;}
+.list-type-dash ul li::before {display: inline-block; content: "-"; margin-right: 4px; font-size: 15px; vertical-align: top;}
+.list-type-dash ul li ul li::before { display: none;}
+
+/* list-type-dashbox */
+.list-type-dashbox {position: relative; display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: center;}
+.list-type-dashbox > div {position: absolute; top: 0; margin-right: 24px; display: flex; justify-content: center; align-items: center; width: 88px; height: 100%; line-height: 1.4; font-size: 18px; font-weight: 500; color:rgb(34, 36, 38); text-align: center; background: rgb(235, 236, 238);}
+.list-type-dashbox ul {padding: 16px 0; padding-left: 108px;}
+.list-type-dashbox ul li {line-height: 1.6; font-size: 17px; font-weight: 400; color:rgb(112, 116, 120); letter-spacing: -0.05em; padding-left: 4px; text-indent: -4px;}
+.list-type-dashbox ul li + li {margin-top: 6px;}
+.list-type-dashbox ul li::before {display: inline-block; content: "-"; margin-right: 4px; font-size: 17px; vertical-align: text-bottom;}
+
+/* text-type */
+.txt-r, .txt-s {line-height: 1.6; font-size: 17px; font-weight: 400; color:rgb(112, 116, 120); letter-spacing: -0.05em;}
+.txt-r .font_red,
+.txt-s .font_red {font-size: 17px;}
+
+/* 개인금융 > 추가대출 */
+/* radio-box-type-rect 2022-04-15 snake0207 */
+.d-none { display: none; }
+.income { width: 100%;  height: 13.714em; display: flex;}
+.income-sidebar { width: 38%; background-color: white; border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
+.income-sidebar-sub { width: 62%; background-color: #f7f7f7; border-top-right-radius: 5px; border-bottom-right-radius: 5px; overflow-y: auto; position: relative; }
+.income-sidebar, .income-sidebar-sub { list-style-type: none; margin: 0; padding: 0; }
+.income-sidebar li a, .income-sidebar-sub li { display: block; height: 4.8rem; padding: 1.4rem 1.6rem; }
+.income-sidebar li a { color: #222426; }
+.income-sidebar-sub li label { color: #707478; }
+.income-sidebar li a, .income-sidebar-sub li label { font-size: 1.4rem; text-align: left; line-height: 1.43; letter-spacing: -0.05em; text-decoration: none; }
+.income-sidebar li a:hover, .income-sidebar li a.active, .income-sidebar li a:active { background-color: #1297ef; color: white; font-weight: 500; border-top-left-radius: 5px; border-bottom-left-radius: 5px; }
+.income-sidebar-sub input:not(.cssbrowser) { display: none; }
+.income-sidebar-sub input:not(.cssbrowser) + label { width: 100%; display:flex; justify-content: space-between; align-items: center; cursor:pointer; }
+.income-sidebar-sub input:not(.cssbrowser):checked + label { background: url("/static/web/img/btn_check_on.png") no-repeat center right; font-weight: 500; color:#1297ef; }
+.income-sidebar-sub div { position: absolute; width: 100%; height: 100%;}
+
+/* 고용형태 radio 처리 */
+.radio-box-type-rect {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: -.8rem;}
+.radio-box-type-rect li { margin-bottom: 1.2rem; width: 25%;}
+.radio-box-type-rect li:first-child input + label { border-top-left-radius: .4rem; border-bottom-left-radius: .4rem;}
+.radio-box-type-rect li:last-child input + label { border-top-right-radius: .4rem; border-bottom-right-radius: .4rem;}
+.radio-box-type-rect input:not(.cssbrowser) {overflow:hidden; position:absolute; margin:0 0; }
+.radio-box-type-rect input:not(.cssbrowser) + label {width: 100%; height: 4.8rem; display:inline-flex; justify-content: center; align-items: center; font-size: 1.5rem;color:rgb(34, 36, 38); font-weight: 500; cursor:pointer; letter-spacing: -0.05em; background: #fff; border: 1px solid rgb(211, 213, 216); }
+.radio-box-type-rect input:not(.cssbrowser):checked + label {background: white; color: #1297ef; outline: none; border: 1px solid #1297ef;}
+
+/* 중고차담보대출 차량사진 추가 */
+.photo-main{position:relative;margin:48px auto 0;width:295px;height:295px;background:url('../img/ui_common/bg_photo_main.png') no-repeat;background-size:295px auto;}
+.photo-main .phone-slide-box{overflow:hidden;position:absolute;top:12px;left:81px;width:136px;height: 220px;border-radius:16px;}
+.photo-main .phone-slide-box > div{position:absolute;top:0;left:0;width:100%;height:100%;background-size:138px auto;background-position: center;animation: phone-slider 4s infinite linear;}
+.photo-main .phone-slide-box .phone-slide01{background-image:url('../img/ui_common/img_phone_slide01.png');animation-delay: 0;}
+.photo-main .phone-slide-box .phone-slide02{background-image:url('../img/ui_common/img_phone_slide02.png');animation-delay: -2s;}
+@keyframes phone-slider {
+   0% {
+    transform: translateX(0);
+  }
+
+  45% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+    animation-timing-function: step-end;
+  }
+  95% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+.photo-guide-box{margin-top:32px}
+.photo-guide-box .tit{color:#5c6773;font-size:16px;font-weight:600}
+.photo-guide-box .tit2{margin-top:8px;color:#222426;font-size:18px;font-weight:700}
+.photo-guide-box .ex-img{display:flex;gap:12px;margin-top:16px}
+.photo-guide-box .ex-img img{width:calc(50% - 6px)}
+.photo-guide-box .ex-img.w100 img{width:100%}
+.add-photo-box{display:flex;flex-wrap:wrap;gap:14px}
+.add-photo-box .btn-add button{display:block;width:104px;height:104px;border-radius:16px;background-color:#f0f9f4;text-align:center;font-size:16px;font-weight:600;color:#00a88b}
+.add-photo-box .btn-add button:before{display:block;margin:0 auto 12px;width:24px;height:24px;background:url('../img/ui_common/ico_add.png') no-repeat;background-size:24px auto;content:''}
+.add-photo-box .add-photo{position:relative;}
+.add-photo-box .add-photo .img-cover{overflow:hidden;width:104px;height:104px;border-radius:16px;}
+.add-photo-box .add-photo .img-cover img{width:100%;height:100%;object-fit:cover;}
+.add-photo-box .add-photo a{position:absolute;top:-20px;right:-20px;width:48px;height:48px;background:url('../img/ui_common/ico_remove.svg') no-repeat center center;background-size:24px auto;text-indent:-9999px}
+.fixed-guide-area{position:fixed;left:50%;bottom:152px;z-index:1;width:560px;transform:translateX(-50%);}
+.btn-guide-bar{position:relative;display:flex;align-items:center;width:100%;height:56px;padding:0 24px;border-radius:16px;font-size:16px;font-weight:600;background-color:#f4f5f7;text-align:left;color:#222426;}
+.btn-guide-bar:before{display:inline-block;width:32px;height:32px;margin-right:15px;background:url('../img/ui_common/ico_camera.png') no-repeat;background-size:32px auto;content:''}
+.btn-guide-bar:after{position:absolute;top:50%;right:24px;margin-top:-12px;width:24px;height:24px;background:url('../img/ui_common/ico_arrow13.png') no-repeat;background-size:24px auto;content:''}
+/* 20250723 auto에만 사용하던 토스트팝업 전체 적용을 위해 common.css에 옮김 혹시나 주석으로 남김
+.fixed-guide-area.toast{z-index:100;animation-name: alertShow, alertHide, zIndex-1;animation-delay: 0s, 3s, 4.2s;animation-duration: 0.8s, 0.8s, 0.1s;animation-fill-mode:forwards;}
+.toast-msg{position:relative;display:flex;align-items:center;width:100%;min-height:56px;padding:16px 16px 16px 48px;border-radius:8px;background-color:#373a3c;}
+.toast-msg:before{position:absolute;top:16px;left:16px;width:24px;height:24px;margin-right:7px;background:url('../img/ui_common/ico_check_on.png') no-repeat;background-size:24px auto;content:''}
+.toast-msg.ico-error:before{background-image:url('../img/ui_common/ico_error02.png');}
+.toast-msg p{font-size:16px;font-weight:500;text-align:left;color:#fff;} */
+
+@keyframes zIndex-1 {
+    to{z-index:-1}
+}
+
+@media screen and (max-width: 1365px){
+    .finish_box {padding-top: 13rem;}
+    .finish_box .fail-icon {width: 8rem; height: 8rem; margin-bottom: 50px;}
+    .finish_box .fail_t_box .tit_info {font-size: 3.6rem;}
+    .finish_box .fail-icon::before {width: 4px; height: 26px;}
+    .finish_box .fail-icon::after {width: 4px; height: 4px;}
+}
+
+@media screen and (max-width: 1280px){
+    /* 중고차담보대출 차량사진 추가 */
+    .fixed-guide-area{width:100%;padding:0 60px;}
+}
+
+@media screen and (max-width: 1024px){
+
+    /* title */
+
+    .app-input-box span {bottom: 4px; font-size: 15px;}
+
+    .radio-box-type1 input:not(.cssbrowser) + label {height: 4.8rem; font-size: 1.4rem;}
+
+    .finish_box .fail-icon {content: ''; margin-bottom: 32px; width: 9.8rem; height: 9.8rem;}
+    .finish_box .fail-icon::before {content: ""; display: inline-flex; width: 4px; height: 33px; border-radius: 50px; background: #fff;}
+    .finish_box .fail-icon::after {content: ""; display: inline-flex; margin-top: 8px; width: 4px; height: 4px; border-radius: 100%; background: #fff;}
+    .finish_box .fail_t_box .tit_info {display: block; font-size: 2.2rem; line-height: 3.5rem; padding-bottom: 2.4rem;}
+    .finish_box .fail_t_box .txt {font-size: 1.4rem; line-height: 2.4rem; padding-bottom: 4rem; letter-spacing: -0.05rem;}
+    .finish_box .fail_t_box .call_phone {font-size: 1.2rem; padding-bottom: 9.7rem;}
+
+    /* list-type-dot */
+    .list-type-dot ul li {font-size: 15px;}
+    .list-type-dot ul li::before {font-size: 15px;}
+    .list-type-dot ul li span.font_red { font-size: 15px;}
+
+    /* list-type-dash */
+    .list-type-dash ul li {font-size: 15px;}
+    .list-type-dash ul li::before {font-size: 15px; vertical-align: text-bottom;}
+
+    /* list-type-dashbox */
+    .list-type-dashbox > div {margin-right: 16px; width: 64px; font-size: 14px;}
+    .list-type-dashbox ul {padding: 16px 0; padding-left: 84px;}
+    .list-type-dashbox ul li {font-size: 15px;}
+    .list-type-dashbox ul li + li {margin-top: 6px;}
+    .list-type-dashbox ul li::before {font-size: 15px;}
+
+    /* text-type */
+    .txt-r {line-height: 1.6; font-size: 15px; font-weight: 400; color:rgb(112, 116, 120); letter-spacing: -0.05em;}
+    .txt-r .font_red {font-size: 15px;}
+    .txt-s {line-height: 1.6; font-size: 14px; font-weight: 400; color:rgb(112, 116, 120); letter-spacing: -0.05em;}
+    .txt-s .font_red {font-size: 14px;}
+
+    /* 중고차담보대출 차량사진 추가 */
+    .photo-main{margin-top:0;}
+    .photo-guide-box .tit{font-size:14px}
+    .photo-guide-box .tit2{font-size:16px}
+    .add-photo-box{gap:8px}
+    .add-photo-box .btn-add button{width:88px;height:88px;font-size:14px;font-weight:500}
+    .add-photo-box .add-photo .img-cover{width:88px;height:88px}
+    .btn-guide-bar{height:48px;font-size:14px;font-weight:500}
+    .btn-guide-bar:before{margin-right:8px;width:24px;height:24px;background-size:24px auto;}
+    .btn-guide-bar:after{margin-top:-8px;width:16px;height:16px;background-size:16px auto}
+    .fixed-guide-area{bottom:104px;padding:0 20px;}
+    /* 20250723 auto에만 사용하던 토스트팝업 전체 적용을 위해 common.css에 옮김 혹시나 주석으로 남김
+    .toast-msg p{font-size:15px}
+    */
+}
+
+@media screen and (max-width: 767px){
+    /* .sub_process .process_wrap.fin_cen_box2 {background-position: bottom 7rem right -15% !important; background: url(../../img/mobile_office/img_briefcase.svg) right -15% bottom / 56% no-repeat;} */
+    /* display: flex; align-items: center; padding-top: 0; */
+}

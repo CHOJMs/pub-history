@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>본인인증 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">    
+    <div class="popup popup-01 popup-certify"><!-- 작은 팝업 클래스 추가 -->
+        <div class="inner">
+            <div class="popup-text mb10">
+                <h1>인증서</h1>
+            </div>
+            <div class="popup-contents flex-column">
+                
+                <!-- content 시작 //-->
+                <div class="pop_cont">
+                    <p class="font_gray mb32">스마트폰에 등록된 인증서를 사용하여 본인인증합니다.</p>
+                    
+                    <!-- 버튼 시작 -->
+					<div class="btn_box pb12">
+                        <span class="btn gray"><button id="">금융인증서</button></span>
+                    </div>
+                    <div class="btn_box">
+                        <span class="btn gray"><button id="">공동인증서</button></span>
+                    </div>
+					<!-- 버튼 끝 -->
+
+                    <ul class="list_bull mt16">
+                        <li>금융인증서 또는 금융기관(은행/보험 등)에서 발급받으신 본인 명의의 공동인증서를 소지하셔야 합니다.</li>
+                        <li>이용 가능한 공동인증서 종류 : 전자거래 범용 인증서, 은행/보험 인증서</li>
+                        <li>공동인증서가 없으신 고객님은 해당 증권사 계좌 개설 시 범용 공동인증서를 신청하시고, 해당 범용 공동 인증서를 활용하여 서비스를 이용하실 수 있습니다.</li>
+                        <li>증권 거래용 인증서는 사용하실 수 없습니다.</li>
+                    </ul>
+
+                    <!-- 버튼 시작 -->
+					<div class="fixed_botton_btn">	
+                        <div class="btn_blue"><a href="#">다른 인증수단 선택</a></div>
+                    </div>
+					<!-- 버튼 끝 -->
+
+                </div>
+                <!--// content 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+</div>
+
+</body>
+</html>

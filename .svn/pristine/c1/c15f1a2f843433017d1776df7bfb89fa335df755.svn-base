@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="nav">
+        <h1>[ iM캐피탈 관리자 ] <a target="_blank" href="/web/pub_html/index.html">History</a><a target="_blank" href="/web/pub_html/index_mob_office.html">모바일오피스</a></h1>
+        <div class="top-area">
+            <ul>
+                <li class="tit"><a href="#none">메뉴</a></li>
+                <li><a href="/admin/pub_html/history_common.html" target="main">공통</a></li>
+                <li><a class="on" href="/admin/pub_html/history_1.html" target="main">DSR상담관리</a></li>
+                <li><a href="/admin/pub_html/history_2.html" target="main">담보대출관리</a></li>
+                <li><a href="/admin/pub_html/history_3.html" target="main">오토론관리</a></li>
+                <li><a href="/admin/pub_html/history_4.html" target="main">오토리스관리</a></li>
+                <li><a href="/admin/pub_html/history_5.html" target="main">게시판관리</a></li>
+                <li><a href="/admin/pub_html/history_6.html" target="main">채용</a></li>
+                <li><a href="/admin/pub_html/history_7.html" target="main">앱관리</a></li>
+                <li><a href="/admin/pub_html/history_8.html" target="main">설정</a></li>
+                <li><a href="/admin/pub_html/history_9.html" target="main">약관관리</a></li>
+                <li><a href="/admin/pub_html/history_10.html" target="main">즉시출고차량</a></li>
+                <li><a href="/admin/pub_html/history_11.html" target="main">사후관리</a></li>
+                <li><a href="/admin/pub_html/history_12.html" target="main">AG영업관리</a></li>
+                <li><a href="/admin/pub_html/history_13.html" target="main">잔가보장사관리</a></li>
+                <li><a href="/admin/pub_html/history_14.html" target="main">보험관리</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <iframe src="history_1.html" width="100%" frameborder="0" name="main" scrolling="yes"></iframe>
+        </div>
+    </div>
+
+    <script>
+
+    	$(function(){
+
+    		$('.top-area ul li a').on('click', function(e){
+
+    			if ( $(this).hasClass('index') ){
+
+    			}else{
+    				e.preventDefault();
+    				var target = $(this).attr('href')
+    				$('.dashboard').hide()
+    				$('#page-wrapper iframe').show().attr('src',target)
+    			}
+
+    			$(this).addClass('on')
+    			$(this).parent().siblings().find('a').removeClass('on')
+    		})
+    	})
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>AG영업관리 | iM캐피탈 관리자</title>
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#" class="on">AG영업관리</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#" class="on">대시보드</a></li>
+                        <li><a href="#">견적내기</a></li>
+                        <li><a href="#">진행현황</a></li>    
+                        <li><a href="#">발주현황</a></li>    
+                        <li><a href="#">월별수수료</a></li>
+                        <li><a href="#">게시판</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <h2>대시보드</h2>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>조회정보</h3>
+                        <div class="btn">
+                            <a href="javascript:;" class="blue" onclick="addrPopupAll();return false;">조회</a>
+                        </div>
+                    </div>
+
+                    <!-- Start : 조회 -->
+                    <table class="data-tbl mb72">
+                        <colgroup>
+                            <col width="23%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <!-- [D] 슈퍼유저 에이전트 선택 -->
+                                <!-- 
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">에이전트</p>
+                                        <input type="text" placeholder="에이전트 입력" value="">
+                                        <a href="#" class="ico-search"><img src="/static/admin/img/new_common/ico_search.png"></a>
+                                    </div>
+                                </td> 
+                                -->
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">에이전트</p>
+                                        <div class="inp-area"><!-- [D] 비활성화: disabled 클래스 추가 -->
+                                            <div class="selchk-box">
+                                                <div class="selchk-selected">전체</div>
+                                                <div class="selchk-option">
+                                                    <ul class="selchk-list">
+                                                        <li class="selchk-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="chk_1">
+                                                                <label>전체</label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="selchk-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="chk_1">
+                                                                <label>A에이전트</label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="selchk-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="chk_1">
+                                                                <label>B에이전트</label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="selchk-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="chk_1">
+                                                                <label>C에이전트</label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="selchk-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="chk_1">
+                                                                <label>D에이전트</label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="selchk-item">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" class="chk_1">
+                                                                <label>F에이전트</label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    
+                                                    <div class="btn-group">
+                                                        <div class="btn">
+                                                            <a href="javascript:;" class="black close">닫기</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">월별선택</p>
+                                        <div class="calendar">
+                                            <input type="tel" value="2024-09" id="" class=""><img src="/static/admin/img/new_common/ico_cal.png">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 조회 -->
+                
+                    <!-- Start : 대시보드 -->
+                    <ul class="dashboard-info-list">
+                        <li class="dashboard-info-item">
+                            <span class="ico">
+                                <img src="/static/admin/img/new_common/ico_car_total.png" alt="">
+                            </span>
+                            <span class="dashboard-info-tit">총 실행금액</span>
+                            <span class="won"><strong>7,400</strong>만원</span>
+                            <span class="count">270대</span>
+                        </li>
+                        <li class="dashboard-info-item">
+                          <span class="ico">
+                            <img src="/static/admin/img/new_common/ico_car_ori_01.png" alt="">
+                          </span>
+                          <span class="dashboard-info-tit">렌터카</span> 
+                          <span class="won"><strong>7,400</strong>만원</span>
+                          <span class="count">270대</span>
+                        </li>
+                        <li class="dashboard-info-item">
+                          <span class="ico">
+                            <img src="/static/admin/img/new_common/ico_car_ori_02.png" alt="">
+                          </span>
+                          <span class="dashboard-info-tit">국산리스</span> 
+                          <span class="won"><strong>7,400</strong>만원</span>
+                          <span class="count">270대</span>
+                        </li>
+                        <li class="dashboard-info-item">
+                          <span class="ico">
+                            <img src="/static/admin/img/new_common/ico_car_ori_03.png" alt="">
+                          </span>
+                          <span class="dashboard-info-tit">수입리스</span> 
+                          <span class="won"><strong>7,400</strong>만원</span>
+                          <span class="count">270대</span>
+                        </li>
+                        <li class="dashboard-info-item">
+                          <span class="ico">
+                            <img src="/static/admin/img/new_common/ico_car_ori_04.png" alt="">
+                          </span>
+                          <span class="dashboard-info-tit">오토론</span> 
+                          <span class="won"><strong>0</strong>만원</span>
+                          <span class="count">0대</span>
+                        </li>
+                        <li class="dashboard-info-item">
+                          <span class="ico">
+                            <img src="/static/admin/img/new_common/ico_car_average.png" alt="">
+                          </span>
+                          <span class="dashboard-info-tit">지급수수료</span> 
+                          <span class="won"><strong>930</strong>만원</span>
+                          <span class="count">Average 4.56%</span>
+                        </li>
+                      </ul>
+
+                    <!-- Start : 월별 실행 현황, 월별 수수료 현황 -->
+                    <div class="chartArea mt48">
+                        <div class="chartArea-item">
+                            <h3>월별 실행 현황</h3>
+                            <div class="chartBox">
+                                <div class="barChartWrap">
+                                    <canvas id="myChart1"></canvas>
+                                </div>
+                            </div>    
+                        </div>
+
+                        <div class="chartArea-item">
+                            <h3>월별 수수료 현황</h3>
+                            <div class="chartBox">
+                                <div class="barChartWrap">
+                                    <canvas id="myVerticalChart"></canvas>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                    <!-- //End : 월별 실행 현황, 월별 수수료 현황 -->
+
+                    <!-- Start : 볼륨인센티브 -->
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>볼륨인센티브</h3>
+                        <div class="btn">
+                            <a href="javascript:;" class="ico-re">초기화</a>
+                        </div>
+                    </div>
+                    <div class="car-incentive-box">
+                        <div class="car-incentive-list">
+                            <div class="car-incentive-item car-graph-box">
+                                <div class="car-graph-wrap">
+                                    <div class="car-graph-tit">
+                                        <span class="car-graph-tit-line">
+                                            <span>렌터카</span>
+                                        </span>
+                                    </div>
+                                    <ul class="car-graph-list rent">
+                                        <li class="car-graph-item active">
+                                            <span class="per">0.55%</span>
+                                            <span class="won">5억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">1.1%</span>
+                                            <span class="won">10억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">1.32%</span>
+                                            <span class="won">20억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">1.43%</span>
+                                            <span class="won">25억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">0.55%</span>
+                                            <span class="won">30억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">0.55%</span>
+                                            <span class="won">40억</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="car-graph-wrap">
+                                    <div class="car-graph-tit">
+                                        <span class="car-graph-tit-line">
+                                            <span>국산리스</span>
+                                        </span>
+                                    </div>
+                                    <ul class="car-graph-list lease">
+                                        <li class="car-graph-item active">
+                                            <span class="per">0.55%</span>
+                                            <span class="won">5억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">0.55%</span>
+                                            <span class="won">10억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">0.55%</span>
+                                            <span class="won">15억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">0.55%</span>
+                                            <span class="won">20억</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="car-graph-wrap">
+                                    <div class="car-graph-tit">
+                                        <span class="car-graph-tit-line">
+                                            <span>수입리스</span>
+                                        </span>
+                                    </div>
+                                    <ul class="car-graph-list lease-importe">
+                                        <li class="car-graph-item active">
+                                            <span class="per">0.15%</span>
+                                            <span class="won">3억</span>
+                                        </li>
+                                        <li class="car-graph-item active">
+                                            <span class="per">0.3%</span>
+                                            <span class="won">5억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">0.55%</span>
+                                            <span class="won">7억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">0.55%</span>
+                                            <span class="won">10억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">0.55%</span>
+                                            <span class="won">15억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">0.55%</span>
+                                            <span class="won">20억</span>
+                                        </li>
+                                        <li class="car-graph-item">
+                                            <span class="per">0.55%</span>
+                                            <span class="won">30억</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="car-incentive-item result-car-box">
+                                <ul class="result-car-list">
+                                    <li class="result-car-item">
+                                        <div class="result-car-top">
+                                            <span class="ico">
+                                                <img src="/static/admin/img/new_common/ico_car_ori_01.png" alt="">
+                                            </span>
+                                            <span class="result-car-tit">렌터카</span>
+                                        </div>
+                            
+                                        <div class="result-car-btm">
+                                            <span class="won">82,500,000원</span>
+                                            <div class="result-message-wrap">
+                                                <div class="result-message-ready">구간 미달성</div><!-- [D] 구간 미달성시 나타남 -->
+                                                <!-- <div class="result-message-done">MAX구간달성</div> --><!-- [D] MAX구간달성시 나타남 -->
+                                                <!--
+                                                <span class="result-message-money">+9천만원 추가시</span>
+                                                <span class="result-message-tit">예상 수수료 금액</span>
+                                                <span class="result-message-won">24,000,000원</span>
+                                                -->
+                                            </div>
+                                        </div>
+                                    </li>
+                            
+                                    <li class="result-car-item">
+                                        <div class="result-car-top">
+                                            <span class="ico">
+                                                <img src="/static/admin/img/new_common/ico_car_ori_02.png" alt="">
+                                            </span>
+                                            <span class="result-car-tit">국산리스</span>
+                                        </div>
+                            
+                                        <div class="result-car-btm">
+                                            <span class="won">82,500,000원</span>
+                                            <div class="result-message-wrap">
+                                                <div class="result-message-done">MAX구간달성</div><!-- [D] MAX구간달성시 나타남 -->
+                                                <!-- 
+                                                <span class="result-message-money">+5억추가시</span>
+                                                <span class="result-message-tit">예상 수수료 금액</span>
+                                                <span class="result-message-won">24,000,000원</span> 
+                                                -->
+                                            </div>
+                                        <div>
+                                    </li>
+                            
+                                    <li class="result-car-item">
+                                        <div class="result-car-top">
+                                            <span class="ico">
+                                                <img src="/static/admin/img/new_common/ico_car_ori_03.png" alt="">
+                                            </span>
+                                            <span class="result-car-tit">수입리스</span>
+                                        </div>
+                            
+                                        <div class="result-car-btm">
+                                            <span class="won">82,500,000원</span>
+                                            <div class="result-message-wrap">
+                                                <!-- <div class="result-message-done">MAX구간달성</div> --><!-- [D] MAX구간달성시 나타남 -->
+                                                
+                                                <span class="result-message-money">+5억 추가시</span>
+                                                <span class="result-message-tit">예상 수수료 금액</span>
+                                                <span class="result-message-won">24,000,000원</span> 
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //End : 볼륨인센티브 -->
+
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+
+
+<script src="/static/admin/js/chart.min.js"></script>
+<script>
+$(function() {
+    // 셀렉트체크박스 다중선택용
+    $(".selchk-selected").on('click', function(event) {
+        
+        // disabled 비활성화 클래스를 가진 부모가 있으면 클릭 이벤트를 중지
+        if ($(this).closest('.inp-area').hasClass('disabled')) {
+            return; 
+        }
+
+        if($(this).hasClass("active")) {
+            $(this).removeClass('active');
+            $(this).closest('.selchk-box').removeClass('active');
+        } else {
+            $('.selchk-box').removeClass('active');
+            $(".selchk-selected").removeClass('active');
+            
+            $(this).closest('.selchk-box').addClass('active');
+            $(this).addClass('active');
+        }
+        
+        // 셀렉트박스 활성화되어있을 경우 닫기
+        $('.select-arrow-active').trigger(click);
+        
+        // 이벤트 전파 방지 (버블링 방지)
+        event.stopPropagation();
+    });
+
+    // 셀렉트박스 클릭했을때 셀렉트체크박스 닫힘
+    $('.select-selected').on('click', function(event) {
+        $(".selchk-box").removeClass("active");
+        $(".selchk-selected").removeClass("active");
+
+        // 이벤트 전파 방지 (버블링 방지)
+        event.stopPropagation();
+    });
+
+    // 닫기버튼 눌렀을때
+    $(".selchk-box .close").on('click', function() {
+        $(this).closest('.selchk-box').removeClass('active');
+        $(this).closest('.selchk-selected').removeClass('active');
+        return false;
+    });
+
+    // 바깥영역 클릭했을때 닫힘
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.selchk-box').length) {
+            $(".selchk-box").removeClass("active");
+            $(".selchk-selected").removeClass("active");
+        }
+    });
+
+    function updateHighlight() {
+        // 하나라도 체크된 체크박스가 있으면 클래스 추가
+        $('.selchk-box').each(function() {
+            if ($(this).find('.selchk-option .selchk-list .selchk-item input[type="checkbox"]:checked').length > 0) {
+                $(this).find('.selchk-selected').addClass('color');
+            } else {
+                $(this).find('.selchk-selected').removeClass('color');
+            }
+        });
+    }
+
+    // 체크박스 상태 변경 시 클래스 업데이트
+    $('.selchk-list .selchk-item input[type="checkbox"]').change(function() {
+        updateHighlight();
+    });
+
+    // 페이지 로드 시 체크박스 상태에 따라 클래스 업데이트
+    updateHighlight();
+});
+
+
+
+// 월별 실행현황
+const ctx1 = document.getElementById('myChart1').getContext('2d');
+const myChart1 = new Chart(ctx1, {
+    type: 'bar', // 차트 타입을 'bar'로 설정 (막대 차트)
+    data: {
+        labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'], // X축에 표시될 레이블들
+        datasets: [{
+            label: '렌터카', // 첫 번째 데이터셋 레이블
+            data: [120, 150, 180, 200, 220, 250, 270, 300, 320, 340, 360, 400], // 월별 데이터
+            backgroundColor: 'rgba(71, 89, 156, 0.7)', // 막대의 색상
+            borderColor: 'rgba(71, 89, 153, 1)', // 테두리 색상
+            borderWidth: 1 // 테두리 두께
+        }, {
+            label: '국산리스', // 두 번째 데이터셋 레이블
+            data: [90, 110, 140, 160, 190, 220, 240, 270, 290, 310, 330, 370],
+            backgroundColor: 'rgba(152, 179, 86, 0.7)',
+            borderColor: 'rgba(152, 179, 86, 1)',
+            borderWidth: 1
+        }, {
+            label: '수입리스', // 세 번째 데이터셋 레이블
+            data: [100, 130, 160, 180, 210, 240, 260, 290, 310, 330, 350, 390],
+            backgroundColor: 'rgba(233, 156, 56, 0.7)',
+            borderColor: 'rgba(233, 156, 56, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        indexAxis: 'y', // 가로형 차트를 만들기 위한 설정
+        scales: {
+            x: {
+                stacked: true // X축을 스택형으로 설정
+            },
+            y: {
+                stacked: true // Y축을 스택형으로 설정
+            }
+        },
+        responsive: true,
+    }
+});
+
+// 월별 수수료 현황
+const ctx = document.getElementById('myVerticalChart').getContext('2d');
+const myVerticalChart = new Chart(ctx, {
+    type: 'bar', // 차트 타입을 'bar'로 설정 (막대 차트)
+    data: {
+        labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'], // X축에 표시될 월별 레이블
+        datasets: [{
+            label: '기본수수료', // 첫 번째 데이터셋 레이블
+            data: [120, 150, 180, 200, 220, 250, 270, 300, 320, 340, 360, 400], // 각 월에 대한 데이터 값
+            backgroundColor: 'rgba(255, 99, 132, 0.7)', // 막대의 색상
+            borderColor: 'rgba(255, 99, 132, 1)', // 테두리 색상
+            borderWidth: 1 // 테두리 두께
+        }, {
+            label: '추가수수료', // 두 번째 데이터셋 레이블
+            data: [100, 130, 160, 180, 210, 240, 260, 290, 310, 330, 350, 390],
+            backgroundColor: 'rgba(54, 162, 235, 0.7)', // 막대의 색상
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }, {
+            label: '볼륨수수료', // 세 번째 데이터셋 레이블
+            data: [90, 110, 140, 160, 190, 220, 240, 270, 290, 310, 330, 370],
+            backgroundColor: 'rgba(75, 192, 192, 0.7)', // 막대의 색상
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+            scales: {
+                x: {
+                    stacked: true, // X축을 스택형으로 설정
+                    grid: {
+                        borderDash: [5, 5], // 가로선을 dashed로 설정
+                    }
+                },
+                y: {
+                    stacked: true, // Y축을 스택형으로 설정
+                    grid: {
+                        borderDash: [5, 5], // 가로선을 dashed로 설정
+                    }
+                }
+            },
+            responsive: true,
+        }
+});
+</script>

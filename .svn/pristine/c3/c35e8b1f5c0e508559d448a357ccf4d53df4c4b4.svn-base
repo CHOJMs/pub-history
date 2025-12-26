@@ -1,0 +1,324 @@
+<%@ page import="org.w3c.dom.*" %>
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+
+<%
+//172.20.24.95 개발자(내부IP)
+//172.20.24.175 개발자(내부IP)
+//172.20.24.237 개발자(내부IP)
+//172.20.24.242 개발자(내부IP)
+//118.219.55.4 개발자(공인IP)
+//121.141.19.65 iM캐피탈 사용자
+//121.141.19.71 iM캐피탈 사용자
+//61.85.70.40 iM캐피탈 사용자
+//61.85.70.180 iM캐피탈 박정은
+
+//58.149.24.66 2016-04-11 사무실 IP 변경으로 추가
+//IP대역을 막을 경우 예) request.getRemoteAddr().substring(0,9).equals("172.20.24") || 
+
+String RemoteAddr = request.getRemoteAddr();
+
+/**
+if(!(
+	RemoteAddr.equals("121.141.19.71")
+	|| RemoteAddr.equals("118.219.55.4")
+	|| RemoteAddr.equals("172.20.24.95")
+	|| RemoteAddr.equals("172.20.24.175")
+	|| RemoteAddr.equals("172.20.24.237")
+	|| RemoteAddr.equals("172.20.24.242")
+	|| RemoteAddr.equals("121.141.19.65")
+	|| RemoteAddr.equals("61.85.70.40")
+	|| RemoteAddr.equals("172.20.24.173")
+	|| RemoteAddr.equals("121.141.19.43")
+	|| RemoteAddr.equals("58.149.24.66")
+	|| RemoteAddr.equals("58.149.24.68")
+	|| RemoteAddr.equals("118.219.55.7")
+	|| RemoteAddr.equals("118.219.55.2")
+	|| RemoteAddr.equals("211.219.156.7")
+	|| RemoteAddr.equals("211.219.156.2")
+	|| RemoteAddr.equals("172.20.24.241")
+	|| RemoteAddr.equals("61.85.70.180")
+		|| RemoteAddr.equals("203.251.77.68")
+		|| RemoteAddr.equals("172.20.24.68")
+		|| RemoteAddr.equals("172.20.24.55") // DGB_ADMIN 신규화면개발_이상민
+)) {*/
+if(false) {
+%>
+<script type="text/javascript">
+alert('Your-IP is [<%=request.getRemoteAddr()%>].\nDo Not Access this page.');
+top.location.href='/';
+</script>
+<%
+  return;
+}
+%>
+<title>iM캐피탈 관리자 로그인</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/dgblocation.js"></script>
+<script type="text/javascript" src="/static/admin/js/commonEncode.js"></script>
+<script type="text/javascript" src="/static/admin/js/common.js"></script>
+<script type="text/javascript" src="/static/admin/js/commmd5.js"></script>       <!-- md5 -->
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$('#PWD').keydown(function(e) {
+		if(e.which == 13) {
+			adviceLogin_Submit();
+		}
+	});
+
+    var userInputId = getCookie("userInputId");
+    $("input[name='ID']").val(userInputId);
+
+    if($("input[name='ID']").val() != ""){
+        $("#IDSAVE").attr("checked", true);
+    }
+
+    $("#IDSAVE").change(function(){
+        if($("#IDSAVE").is(":checked")){ // ID 저장하기 체크했을 때,
+            var userInputId = $("input[name='ID']").val();
+            setCookie("userInputId", userInputId, 365); // 1년 동안 쿠키 보관
+        }else{ // ID 저장하기 체크 해제 시,
+            deleteCookie("userInputId");
+        }
+    });
+
+    $("input[name='ID']").keyup(function(){ // ID 입력 칸에 ID를 입력할 때,
+        if($("#IDSAVE").is(":checked")){ // ID 저장하기를 체크한 상태라면,
+            var userInputId = $("input[name='ID']").val();
+            setCookie("userInputId", userInputId, 365); // 1년 동안 쿠키 보관
+        }
+    });
+});
+
+function setCookie(cookieName, value, exdays){
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+    document.cookie = cookieName + "=" + cookieValue;
+}
+
+function deleteCookie(cookieName){
+    var expireDate = new Date();
+    expireDate.setDate(expireDate.getDate() - 1);
+    document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
+}
+
+function getCookie(cookieName) {
+    cookieName = cookieName + '=';
+    var cookieData = document.cookie;
+    var start = cookieData.indexOf(cookieName);
+    var cookieValue = '';
+    if(start != -1){
+        start += cookieName.length;
+        var end = cookieData.indexOf(';', start);
+        if(end == -1)end = cookieData.length;
+        cookieValue = cookieData.substring(start, end);
+    }
+    return unescape(cookieValue);
+}
+
+function validate(){
+	var isSuccess = true;
+		if( $("input[name='ID']").val() == ""){
+			alert("아이디를 입력하세요.");
+			$(this).focus();
+			isSuccess = false;
+			return false;
+		}
+		if( $("input[name='PWD']").val() == "" ){
+			alert("비밀번호를 입력하세요.");
+			isSuccess = false;
+			return false;
+		}
+	if (!isSuccess) return false;
+	return true;	
+}	
+
+function adviceLogin_Submit(){
+   if(validate()){
+		var f = document.frm;
+		var sFrm = document.sendForm;
+
+		f.PWD.value = MD5(f.PWD.value);
+
+		f.METHOD.value = "Login";
+		sendAjaxAction(frm, sFrm, "fAjaxCallBack", "/admin/AdminLoginAction.do");
+   }
+}
+ ///////////////
+function getData(xmlData, dataName) {
+	var data = $(xmlData).find(dataName).attr("value");
+	if(typeof data == "undefined") {
+		data = getString(xmlData, dataName);
+	}
+	
+	return data;
+}
+///////////////
+function fAjaxCallBack(result) {
+	//hideLoading();
+	var frm    = document.frm;
+	var sFrm   = document.sendForm;
+
+	var INIpluginData = getData(result, "INIpluginData");
+	//alert(INIpluginData);
+
+	var ResDoc = Idecrypt(INIpluginData);
+	//alert("decryptAjax(), decrypt=["+ResDoc+"]");
+
+	//거래결과
+	var RTCODE = getData(ResDoc, "RTCODE");
+	var RTMSG = getData(ResDoc, "RTMSG");
+	var PERM01 = getData(ResDoc, "PERM01");
+	var PERM02 = getData(ResDoc, "PERM02");
+	var PERM03 = getData(ResDoc, "PERM03");
+	var PERM05 = getData(ResDoc, "PERM05");
+	var PERM06 = getData(ResDoc, "PERM06");
+	//var PERM04 = getData(ResDoc, "PERM04");
+	//alert("RTCODE=["+RTCODE+"], RTMSG=["+RTMSG+"], ROLE_NO=["+ROLE_NO+"]");
+	
+	if(RTCODE == "ADM000") {
+		var sUrlArr = [
+			"PERM01",
+			"PERM02",
+			"PERM03",
+			"",
+			"PERM05"
+		];
+		var sURL = "";
+	
+		if(PERM03 == "Y")
+			sURL = sUrlArr[2];
+		if(PERM02 == "Y")
+			sURL = sUrlArr[1];
+		if(PERM01 == "Y")
+			sURL = sUrlArr[0];
+		if(PERM05 == "Y" || PERM06 == "Y")
+			sURL = sUrlArr[4];
+
+		if(sURL == "") {
+			alert("초기 URL 값이 없습니다. 관리자에게 문의하세요.");
+			return false;
+		}else{
+			if(sURL == "PERM01")
+				EncLinkNormal(gHomePageUrl('09000100'));
+			else if(sURL == "PERM02")
+				EncLinkNormal(gHomePageUrl('09010100'));
+			else if(sURL == "PERM03")
+				EncLinkNormal(gHomePageUrl('09020100'));
+			else if(sURL == "PERM05"){
+				//EncLinkNormal(gHomePageUrl('09000200'));
+				document.submitForm_dsr.METHOD.value = "srchDsrAdmin";
+				document.submitForm_dsr.menuNo.value = "6";
+				var frm		 = document.submitForm_dsr;
+				frm.action		 = "/admin/AdminDsrAction.do";
+				EncForm(frm);
+				frm.submit();
+			}
+		}
+	}else if(RTCODE == "ID_NOT"){
+		alert("["+RTCODE+"] 입력하신 ID를 확인 후 다시 거래하여 주십시요.");
+		frm.PWD.value="";
+		frm.ID.focus();
+	}else if(RTCODE == "ID_INSERT_NOT"){
+		alert("["+RTCODE+"] 등록되지 않은 ID입니다. 확인 후 다시 거래하여 주십시요.");
+		frm.PWD.value="";
+		frm.ID.focus();
+	}else if(RTCODE == "PW_NOT"){
+		alert("["+RTCODE+"] 입력하신 비밀번호를 확인 후 다시 거래하여 주십시요.");
+		frm.PWD.value="";
+		frm.PWD.focus();
+	}else{
+		//fErrorMsg(RTCODE, RTMSG);
+		alert("["+RTCODE+"] "+RTMSG);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body class="logingBg">
+
+
+<div class="login-wrap">
+	<fieldset class="login-form">
+		<legend>로그인</legend>
+		<h1><img src="/static/admin/img/h1_logo.jpg" alt="iM캐피탈"></h1>
+		<p class="fs14">iM캐피탈 다이렉트 오토론 관리자 및 제휴사 전용 페이지로 인증된 PC와 사용자만 이용이 가능합니다.</p> 
+		<br>
+		<form name="frm" method="post">
+		<input type="hidden" name="INIpluginData" />
+		<input type="hidden" name="METHOD" />
+		<input type="hidden" name="LOGIN_SVC" value="N" />
+		<div class="login">
+			<ul>
+				<li><label for="ID">아이디</label><input type="text" id="ID" name="ID" value="" placeholder="아이디를 입력해 주세요" title="아이디 입력" /></li>
+				<li><label for="PWD">비밀번호</label><input type="password" id="PWD" name="PWD" value="" placeholder="비밀번호를 입력해 주세요" title="비밀번호 입력" /></li>
+				<li><input type="button" value="로그인" onclick="adviceLogin_Submit();" /></li>
+			</ul>
+			<p><input type="checkbox" id="IDSAVE" name="IDSAVE" value="Y" /><label for="IDSAVE">아이디 저장</label></p>
+			<p><label for="r01"><input type="radio" id="r01" name="r01" value="" title="공인인증서 인증 선택" /> 공인인증서 인증</label> <label for="r02"><input type="radio" id="r02" name="r01" value="" title="휴대폰 인증 선택" /> 휴대폰 인증</label></p>
+			<ul>
+				<li><label for="">주민등록번호</label><input type="text" id="" placeholder="생년월일" title="주민등록번호 앞 6자리 입력" class="w_135"> - <input type="text" id="" placeholder="뒷자리 7자리" title="주민등록번호 뒤 7자리 입력" class="w_135"></li>
+				<li><label for="tel">휴대전화번호</label>
+					<select id="tel" name="" class="color" title="통신사 선택">
+						<option value="">SK</option>
+						<option value="">KT</option>
+						<option value="">LG U+</option>
+					</select> - <input type="text" id="tel1" placeholder="" title="휴대전화번호 입력" class="w_180">
+				</li>
+			</ul>
+			
+		</div>
+		</form>
+	</fieldset>
+</div>
+<%--
+<!-- 로딩바 시작-->
+<div id="loadingLayer" class="mwinow open" style="display:none">
+	<div class="bg"></div>
+	<div id="loading">
+		<div class="loadingBar"><img src="/static/admin/img/common/loading2.gif" alt="로딩중 데이터처리중입니다.. 잠시만 기다려 주십시오." /></div>
+	</div>
+</div>
+<!--// 로딩바 끝-->
+<!-- 에러 레이어 -->
+<span id='errorLayer' class="layerpop" style="position:absolute; left:300px; top:200px; z-index:3; display:none;"></span>
+--%>
+<script type="text/javascript" src="/static/admin/js/nProtect_admin.js"></script>
+
+<%--DSR 전송 폼 추가--%>
+	<form name="submitForm_dsr" method="get">
+		<input type="hidden" name="METHOD"/>
+		<input type="hidden" name="INIpluginData" />
+		<input type='hidden' name="menuNo"	value="" />
+	</form>
+</body>
+</html>

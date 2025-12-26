@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계좌등록 안내 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;" >팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+    <div class="popup-layer" id="addrPopup">
+        <div class="popup popup-01 popup-half"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+            <div class="inner">
+                <div class="popup-text">
+                    <h1>계좌등록 안내</h1>
+                </div>
+                <div class="popup-contents flex-col pad-small">
+                    <!-- Start : content -->
+
+                    <div class="popup-cnt">
+                        <div class="grp-cont">
+                            <p class="tbl-txt1">자동이체 계좌 등록 중 오류가 발생하는 경우 등록된 휴대폰 번호로 문자가 발송됩니다. 3영업일 후 결과를 확인하실 수 있으며 재변경하지 않을 경우 연체금이 발생할 수 있습니다.</p>
+                            <div class="box-gray">
+                                <p class="tit">오류발생 case</p>
+                                <ul class="list-dot f-color dot-none">
+                                    <li>농협코드 상이 / 평생계좌 / 타인명의 / 사업자번호 상이</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- //End : content -->
+
+                    <!-- Start : 버튼 -->
+                    <div class="fixed-btn-area">
+                        <div class="btn-box">
+                            <span class="btn"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        </div>
+                    </div>
+                    <!-- //End : 버튼 -->
+                </div>
+            </div>
+            <div class="popup-close pc-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+        </div>
+    </div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

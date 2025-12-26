@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+<link rel="stylesheet" href="/static/web/css/main.css">
+<link rel="stylesheet" href="/static/web/js/lib/swiper-bundle.min.css">
+<link rel="stylesheet" href="/static/web/js/lib/flicking.css">
+<link rel="stylesheet" href="/static/web/js/lib/flicking-inline.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/lib/swiper-bundle.min.js"></script>
+<script src="/static/web/js/lib/jquery.fullPage.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<link rel="stylesheet" href="/static/web/js/lib/slick.css">
+<script src="/static/web/js/slick.js"></script>
+<script src="/static/web/js/lib/slick.min.js"></script>
+<style>
+html{scroll-behavior: smooth;}
+aside{overflow-y:auto;position:fixed;left:0;top:0;bottom:0;width:200px;padding:20px;background-color:#f8f8f8;box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;}
+aside a{display:block;padding:8px 20px 8px 5px;font-size:13px;color:#555}
+aside a:hover,aside a.on{color:#81a9db}
+aside a.on{font-weight:bold}
+aside > ul{border-top:2px solid #222}
+aside > ul > li > a{font-weight:700;border-bottom:1px solid #999}
+aside > ul > li > ul > li > a{position:relative;padding-left:30px;font-weight:500;color:#777;border-top:1px dashed #e0e0e0}
+aside > ul > li > ul > li > a:after{position:absolute;top:6px;left:10px;width:13px;height:20px;color:#b3b3b3;content:'↘'}
+aside > ul > li > ul > li:first-child > a{border-top:0}
+section{padding:20px 20px 20px 220px;max-width:1200px}
+section h1{display:inline-block;margin-top:80px;padding:2px 15px 2px 10px;color:#fff;font-size:18px;font-weight:600;background-color:#81a9db;border-radius:0 28px 28px 0;}
+section h1:first-child{margin-top:0}
+.g-content{padding:15px 30px;border-top:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;}
+h1 + .g-content{margin-top:10px}
+.tag-wrap{margin-top:20px;padding:10px 20px 10px 10px;background:#f5f4f4}
+.list li{position:relative;padding-left:18px;}
+.list li:before{position:absolute;top:8px;left:7px;width:3px;height:3px;background:#9e9e9e;border-radius:50%;content:''}
+.list li + li{margin-top:5px}
+.highlight{font-weight:bold;text-decoration: underline;}
+.list a.link,.list a.link:visited,.list a.link:hover{color:#81a9db;font-weight:500;}
+.col-group{display:flex}
+.col-group > li{width:50%}
+</style>
+</head>
+<body>
+<div class="btn-top-area">
+    <button>페이지 상단으로 이동</button>
+</div>
+<div class="guide-style-wrap">
+    <aside>
+        <ul>
+            <li><a href="/web/sample/팝업가이드.html" target="_blank">팝업 가이드 (_blank)</a></li>
+            <li><a href="/web/sample/페이지가이드.html" target="_blank">페이지 가이드 (_blank)</a></li>
+            <li>
+                <a href="#;">CSS 라이브러리</a>
+                <ul>
+                    <li><a href="#lib_tab01">공통</a></li>
+                    <li><a href="#lib_tab02">타이틀</a></li>
+                    <!-- <li><a href="#lib_tab03">서브 텍스트</a></li> -->
+                    <li><a href="#lib_tab04">테이블</a></li>
+                    <li><a href="#lib_tab05">리스트</a></li>
+                    <li><a href="#lib_tab06">인풋</a></li>
+                    <li><a href="#lib_tab07">탭</a></li>
+                    <li><a href="#lib_tab08">박스</a></li>
+                    <li><a href="#lib_tab09">버튼</a></li>
+                    <li><a href="#lib_tab10">기타</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <section>
+        <!-- Start : 공통 -->
+        <h1 id="lib_tab01" class="h1_tit">공통</h1>
+        <div class="g-content">
+            <!-- group -->
+            <h4 class="s-tl06 mt0">경로</h4>
+            <ul class="list">
+                <li>홈페이지, 모바일오피스, 재고금융 히스토리 _____ \web\pub_html</li>
+                <li>관리자 히스토리 _____ \admin\pub_html</li>
+                <li>[관리자] HTML _____ \WebContent\admin</li>
+                <li>[관리자] CSS, 이미지, JS _____ \WebContent\static\admin</li>
+                <li>HTML _____ \web\해당폴더</li>
+                <li>CSS _____ \static\web\css</li>
+                <li>JS _____ \static\web\js</li>
+                <li>
+                    이미지 _____ \static\web\img<br>
+                    * 기본적으로는 각 카테고리별 폴더에 저장한다. 그 외 해당 카테고리의 폴더가 없거나(신규 추가되는 카테고리는 폴더 생성), 공통적으로 쓰이는 이미지는 ui_common 폴더에 저장한다.<br>
+                    - 로고(공통) : imlogo<br>
+                    - 은행 로고(공통) : bank<br>
+                    - 메인 : main<br>
+                    - 회사소개 : about<br>
+                    - 모바일 오피스 : mobile_office<br>
+                    - 모집인 : dsr<br>
+                </li>
+            </ul>
+            <!-- //group -->
+
+            <!-- group -->
+            <h4 class="s-tl06">정의</h4>
+            <ul class="list">
+                <li>
+                    버튼의 경우 모바일에서는 하단 고정으로 한다. (단, 조회하는 버튼의 경우 제외)<br>
+                    하단 버튼 고정 예시 : <a href="/web/customer/MFC-300-004.html" class="link" target="_blank">금리인하요구권 (customer/MFC-300-004.html)</a><br>
+                    하단 버튼 비고정 예시 : <a href="/web/customer/FCP-000-001.html" class="link" target="_blank">방문판매원 조회 (customer/FCP-000-001.html)</a>
+                </li>
+                <li>
+                    padding, margin과 같은 여백은 디자인 사이즈로 맞춤. (font의 line-height값으로 인해 달라지는 전체 높이값은 디자인과 다를 수 있음.)
+                </li>
+            </ul>
+            <!-- //group -->
+
+            <!-- group -->
+            <h4 class="s-tl06">자주 사용하는 클래스</h4>
+            <ul class="list">
+                <li>.pc-view : PC에서만 보일 때 (1024px 이상)</li>
+                <li>.mob-view : 모바일에서만 보일 때 (1024 이하)</li>
+                <li>.hidden : 텍스트 감춤</li>
+                <li>.mt0 : 상단 여백 0px</li>
+                <li>.mt16 : 상단 여백 16px</li>
+                <li>.mt24 : 상단 여백 24px</li>
+                <li>.mgt-type : 상단 여백 PC 24px / mobile 16px</li>
+                <li class="font-green">.font-green : font-color #00a88b</li>
+                <li class="font-blue">.font-blue : font-color #1571eb</li>
+                <li class="font-gray">.font-gray : font-color #5c6773</li>
+                <li class="font-red">.font-red : font-color #ef4040</li>
+            </ul>
+            <div class="tag-wrap">
+                <p class="highlight">해당 클래스들은 important가 선언되어 있어 꼭 필요한 경우에만 사용.</p>
+            </div>
+            <!-- //group -->
+
+            <!-- group -->
+            <h4 class="s-tl06">폰트</h4>
+            <ul class="list">
+                <li>폰트 사이즈 16px 이상인 경우 line-height는 10씩 증가(ex. 18px일때 28px)</li>
+                <li>폰트 사이즈 16px인 경우 line-height 24px</li>
+                <li>폰트 사이즈 14px인 경우 line-height 22px</li>
+                <li>폰트 사이즈 13px인 경우 line-height 19px</li>
+                <li>폰트 사이즈 12px인 경우 line-height 18px</li>
+            </ul>
+            <!-- //group -->
+        </div>
+        <!-- //End : 공통 -->
+
+        <!-- Start : 타이틀 -->
+        <h1 id="lib_tab02" class="h1_tit">타이틀</h1>
+        <div class="g-content">
+            <!-- group -->
+            <p class="s-tl05">
+                <a href="https://www.yessign.or.kr/" class="link" title="새창으로 이동" target="_blank">링크 들어간 타이틀</a>
+            </p>
+            <!-- //group -->
+            <!-- group -->
+            <div class="flex-tit02"><!-- 좌우 텍스트 있는 경우 flex-tit02 클래스 추가 -->
+                <h4 class="s-tl06">타이틀 + 우측 링크영역 조합</h4>
+                <p class="s-tl05">
+                    <a href="https://www.yessign.or.kr/" class="link" title="새창으로 이동" target="_blank">금융인증센터</a>
+                </p>
+            </div>
+            <div class="tag-wrap">
+                <p>
+                    좌우 각각 텍스트 있는 경우 flex-tit02 클래스 추가
+                </p>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <br>
+            <!-- group -->
+            <ul class="col-group">
+                <li>
+                    <h3 class="s-tl02">타이틀(.s-tl02)</h3>
+                </li>
+                <li>
+                    <h3 class="s-tl02">타이틀(.s-tl02) + 본문(.cont-txt2)</h3>
+                    <p class="cont-txt2">타이틀과 .cont-txt2 클래스의 본문내용 조합인 경우 상단 여백 확인용입니다.</p>
+                </li>
+            </ul>
+            <div class="tag-wrap">
+                <p>
+                    .s-tl02<br>
+                    PC : 상단여백 64px / 폰트 24px<br>
+                    mobile : 상단여백 40px / 폰트 20px
+                </p>
+            </div>
+            <!-- //group -->
+
+            <!-- group -->
+            <ul class="col-group">
+                <li>
+                    <h4 class="s-tl03">타이틀</h4>
+                </li>
+                <li>
+                    <h4 class="s-tl03">타이틀(.s-tl03) + 본문(.cont-txt2)</h4>
+                    <p class="cont-txt2">타이틀과 .cont-txt2 클래스의 본문내용 조합인 경우 상단 여백 확인용입니다.</p>
+                </li>
+            </ul>
+            <div class="tag-wrap">
+                <p>
+                    .s-tl03<br>
+                    PC : 상단여백 24px / 폰트 18px<br>
+                    mobile : 상단여백 16px / 폰트 16px
+                </p>
+            </div>
+            <!-- //group -->
+
+            <!-- group -->
+            <ul class="col-group">
+                <li>
+                    <h4 class="s-tl04">타이틀</h4>
+                </li>
+                <li>
+                    <h4 class="s-tl04">타이틀(.s-tl04) + 본문(.cont-txt2)</h4>
+                    <p class="cont-txt2">타이틀과 .cont-txt2 클래스의 본문내용 조합인 경우 상단 여백 확인용입니다.</p>
+                </li>
+            </ul>
+            <div class="tag-wrap">
+                <p>
+                    .s-tl04<br>
+                    PC : 상단여백 12px / 폰트 16px<br>
+                    mobile : 상단여백 8px / 폰트 14px
+                </p>
+            </div>
+            <!-- //group -->
+
+            <!-- group -->
+            <ul class="col-group">
+                <li>
+                    <h4 class="s-tl05">타이틀</h4>
+                </li>
+                <li>
+                    <h4 class="s-tl05">타이틀(.s-tl05) + 본문(.cont-txt2)</h4>
+                    <p class="cont-txt2">타이틀과 .cont-txt2 클래스의 본문내용 조합인 경우 상단 여백 확인용입니다.</p>
+                </li>
+            </ul>
+            <div class="tag-wrap">
+                <p>
+                    .s-tl05<br>
+                    PC : 상단여백 44px / 폰트 18px<br>
+                    mobile : 상단여백 36px / 폰트 16px
+                </p>
+            </div>
+            <!-- //group -->
+
+            <!-- group -->
+            <h4 class="s-tl06">타이틀</h4>
+            <div class="tag-wrap">
+                <p>
+                    .s-tl06<br>
+                    PC : 상단여백 48px / 하단여백 16px / 폰트 20px<br>
+                    mobile : 상단여백 40px / 하단여백 16px / 폰트 18px
+                </p>
+            </div>
+            <!-- //group -->
+
+        </div>
+        <!-- //End : 타이틀 -->
+        <!-- Start : 운영방침 첫단락 문구 -->
+        <h1 id="lib_tab02" class="h1_tit">텍스트</h1>
+        <div class="g-content">
+            <!-- group -->
+            <p class="s-tl01">
+                <p class="poli-tl">주식회사 디지비캐피탈(이하 “회사”라 합니다)은 『개인정보보호법』, 『신용정보의 이용 및 보에 관한 법률』, 『정보통신망 이용촉진 및 정보보호 등에 관한 법률』 등 관련 법령을 준수하고 고객의 개인정보 및 권익을 보호하고 개인정보와 관련한 고충을 원할하게 처리할 수 있도록 다음과 같은 처리 방침을 두고 있습니다.</p>
+            </p>            
+            <div class="tag-wrap">
+                <p>
+                    .poli-tl<br>
+                    PC : line-height:26px / 폰트 16px / font-weight: 400<br>
+                    mobile : line-height:22px / 폰트 14px / font-weight: 400
+                </p>
+            </div>
+            <br>
+            <ul class="list">
+                <li>
+                    예시 : <a href="/web/customer/개인정보처리방침.html" class="link" target="_blank">개인정보처리방침</a>
+                </li>
+            </ul>
+            <!-- group -->
+            
+            <!-- //group -->
+            <!-- group -->
+        </div>
+        <!-- //End : 운영방침 첫단락 문구 -->
+        <!-- Start : 서브 텍스트 -->
+        <!-- <h1 id="lib_tab03" class="h1_tit">서브텍스트</h1>
+        <div class="g-content">
+            <ul class="list">
+                <li>서브 텍스트</li>
+            </ul>
+        </div> -->
+        <!-- //End : 서브 텍스트 -->
+
+        <!-- Start : 테이블 -->
+        <h1 id="lib_tab04" class="h1_tit">테이블</h1>
+        <div class="g-content">
+            <!-- group -->
+            <h2 class="sub-tit">가로형(모바일에서는 세로형으로 바뀜)</h2>
+            <dl class="dl-list">
+                <dt>개요</dt>
+                <dd>채무를 정상적으로 상환할 수 없는 과중 채무자를 대상으로 상환기간 연장, 이자율 조정, 채무감면 등을 통해 본인의 상환능력에 맞게 채무를 조정하는 절차</dd>
+                <dt>소득재산 증가</dt>
+                <dd>
+                    소득 증가(취업, 승진, 이직, 전문자격 취득 등), 재산증가 등 개인의 재무 상태가 개선된 것으로 판단되는 경우
+                    <br>
+                    <span class="sm-tx">* 소득이나 재산의 증가는 대출감소,연체해소,금융자산 증가에 영을 주어 금융회사 내부신용등급 개선에 긍정적 영향을 줄 수 있습니다.</span>
+                </dd>
+                <dt>리스트 타입<br>(강조있는경우)</dt>
+                <dd>
+                    <ul class="list-dot">
+                        <li>
+                            <strong>6대판매규제란?</strong>
+                            적합성원칙, 적정성원칙, 설명의무, 불공정영업행위금지, 부당권유행위금지를 위반한 경우
+                            <br>단, 전문금융소비자는 적합성원칙, 적정성원칙, 설명의무 를 적용하지 않음
+                            <br>(『금융소비자 보호에 관한 법률』 제17조제3항, 제18조제2항, 제19조제1항 및 3항, 제20조제1항, 제21조)
+                        </li>
+                        <li>
+                            <strong>대상금융상품</strong>
+                            계속적 형태의 금융상품에 관한 계약으로서, 해지 시 금융소비자에게 재산상 불이익이 발상하는 금융상품(렌트카상품은 제외)
+                        </li>
+                    </ul>
+                </dd>
+                <dt>리스트 타입</dt>
+                <dd>
+                    <ul class="list-dot">
+                        <li>계약체결에 관한 자료</li>
+                        <li>계약의 이행에 관한 자료</li>
+                        <li>금융상품등에 관한 광고 자료</li>
+                    </ul>
+                </dd>
+                <dt>연락처 강조</dt>
+                <dd><p class="call-tx2 font-green">신용회복 위원회<a href="tel:1600-5500" class="font-green">1600-5500</a></p></dd>
+                <dt>연락처 (1개)</dt>
+                <dd><p class="call-tx2">신용회복 위원회<a href="tel:1600-5500">1600-5500</a></p></dd>
+                <dt>연락처 (2개)</dt>
+                <dd>
+                    <p class="call-tx2">신용회복 위원회<a href="tel:1600-5500">1600-5500</a></p>
+                    <p class="call-tx2">신용회복 위원회<a href="tel:1600-5500">1600-5500</a></p>
+                </dd>
+                <dt>연락처+웹주소</dt>
+                <dd>
+                    <p class="call-tx2"><a href="tel:1600-5500">1600-5500</a></p>
+                    <p class="call-tx2 ico-type"><a href="www.cica.or.kr">www.cica.or.kr</a></p>
+                </dd>
+                <dt>연락처 긴경우</dt>
+                <dd>
+                    <p class="call-tx2"><a href="tel:02-3775-2761">02-3775-2761~3</a></p>
+                    <p class="call-tx2 ico-type"><a href="www.cica.or.kr">www.cica.or.kr</a></p>
+                </dd>
+                <dt>연락처+주소</dt>
+                <dd>
+                    <p class="call-tx2"><a href="tel:02-3775-2761">02-3775-2761~3</a></p>
+                    <p class="call-tx2 ico-type2"><a href="#;">서울특별시 중구 명동11길 19 (명동1가)</a></p>
+                </dd>
+            </dl>
+            <p class="txt4">※ 테이블 아래에 붙는 작은 텍스트 타입</p>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>연락처 min-width값 135px이며 135px을 넘는 경우 우측여백 16px</li>
+                </ul>
+            </div>
+
+            <h2 class="sub-tit">가로형(width 230px인 경우 dt-width 클래스 추가)</h2>
+            <dl class="dl-list dt-width">
+                <dt>개요</dt>
+                <dd>채무를 정상적으로 상환할 수 없는 과중 채무자를 대상으로 상환기간 연장, 이자율 조정, 채무감면 등을 통해 본인의 상환능력에 맞게 채무를 조정하는 절차</dd>
+            </dl>
+            <ul class="list-dot02">
+                <li>테이블 하단에 붙는 텍스트가 리스트인 경우</li>
+                <li>테이블 하단에 붙는 텍스트가 리스트인 경우</li>
+            </ul>
+
+            <h2 class="sub-tit">세로형</h2>
+            <table class="tbl-type">
+                <colgroup>
+                <col width="25%">
+                <col width="25%">
+                <col width="25%">
+                <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>조회기준 월</th>
+                        <th>1년</th>
+                        <th>3년</th>
+                        <th>th가<br>두줄인 경우</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="font-gray">2023-10</td>
+                        <td>5.15%</td>
+                        <td>5.38%</td>
+                        <td>5.64%</td>
+                    </tr>
+                    <tr>
+                        <td class="font-gray">2023-09</td>
+                        <td>5.15%</td>
+                        <td>5.38%</td>
+                        <td>5.64%</td>
+                    </tr>
+                    <tr>
+                        <td class="font-gray">2023-08</td>
+                        <td>5.15%</td>
+                        <td>5.38%</td>
+                        <td>5.64%</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="none"><span>내용이 없습니다</span></td><!-- 내용이 없는 경우 none 클래스 추가 -->
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="sub-tit">세로형 (모바일에서 가로 스크롤 auto)</h2>
+            <div class="tbl-scroll">
+                <table class="tbl-type">
+                    <colgroup>
+                    <col width="20%">
+                    <col width="20%">
+                    <col width="20%">
+                    <col width="20%">
+                    <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>제공받은 자</th>
+                            <th>제공목적</th>
+                            <th>제공 일시</th>
+                            <th>제공한 정보 내용</th>
+                            <th>보유 및 이용기간</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="5" class="none"><span>내용이 없습니다</span></td><!-- 내용이 없는 경우 none 클래스 추가 -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MHE-350-004.html" class="link" target="_blank">계열사간 고객정보 제공내역 조회 (customer/MHE-350-004.html)</a></li>
+                    <li>'내용이 없습니다' 텍스트는 모바일 가로 사이즈 기준으로 중앙정렬 fixed. <strong class="highlight">(현재 페이지에서는 좌측 메뉴가 있어 가운데 정렬로 보이지 않음)</strong></li>
+                </ul>
+            </div>
+            <!-- //group -->
+        </div>
+        <!-- //End : 테이블 -->
+
+        <!-- Start : 리스트 -->
+        <h1 id="lib_tab05" class="h1_tit">리스트</h1>
+        <div class="g-content">
+            <!-- group -->
+            <ul class="list-dot">
+                <li>공통 리스트<br>두 줄인 경우</li>
+                <li>공통 리스트</li>
+            </ul>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>기본 공통 리스트</li>
+                </ul>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <!-- group -->
+            <ul class="list-dot type">
+                <li>공통 리스트</li>
+                <li>공통 리스트</li>
+            </ul>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>dot 컬러 #bcc0c5인 경우 .type 클래스 추가</li>
+                </ul>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <br>
+            <!-- group -->
+            <div id="resultList" class="qna-list">
+                <div>
+                    <ul class="active">
+                        <li>
+                            <a href="javascript:;" title="내용 열기"><span>Q</span>신용정보란 무엇인가요?</a>
+                            <div>
+                                금융거래 등 상거래에 있어서 거래상대방의 신용을 판단할 때 필요로 하는  정보로서 특정 신용정보주체를 식별할 수 있는 정보, 신용정보주체의 거래내용을 판단할 수 있는 정보, 신용정보주체의 신용도를 판단할 수 있는 정보, 신용정보주체의 신용거래능력을 판단할 수 정보 등을 말합니다.
+                            </div>
+                        </li>
+                        <li>
+                            <a href="javascript:;" title="내용 열기"><span>Q</span>나윤리 사원은 자신의 부정행위에 대해 자발적으로 신고를 하면 징계가 감면 된다는 사실을 알게 되었습니다. 대부분의 회사에서도 같은 방식으로 운영되는지 궁금합니다.</a>
+                            <div>
+                                개인정보는 살아있는 개인에 관한 정보로서 성명, 주민등록번호 및 영상 등을 통하여 개인을 알아볼 수 있는 정보(해당 정보만으로는 특정 개인을 알아볼 수 없더라도 다른 정보와 쉽게 결합하여 알아볼 수 있는 것을 포함)를 말합니다.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/about/MAB-200-005.html" class="link" target="_blank">윤리경영 Q&A (about/MAB-200-005.html)</a></li>
+                    <li>목록 선택 시, 다른 목록 내용 닫힘</li>
+                </ul>
+            </div>
+            <!-- //group -->
+
+            <!-- group -->
+            <h2 class="sub-tit">넘버링 리스트(타이틀 + 보조텍스트)</h2>
+            <ul class="num-box">
+                <li>
+                    <p class="step-tit"><span>1</span>민원접수</p>
+                    <div class="step-desc">
+                        <p>홈페이지, 전화, 방문, 외부기관 등</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="step-tit"><span>2</span>접수사실 통지</p>
+                    <div class="step-desc">
+                        <p>전자통신 수단(문자, 전화, 알림톡 등)</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MFC-200-005.html" class="link" target="_blank">민원처리 프로세스 (customer/MFC-200-005.html)</a></li>
+                </ul>
+            </div>
+            <!-- //group -->
+
+            <!-- group -->
+            <h2 class="sub-tit">넘버링 리스트(타이틀만 있는 경우)</h2>
+            <ul class="num-box only-tit">
+                <li>
+                    <p class="step-tit"><span>1</span>열람 신청 접수</p>
+                </li>
+                <li>
+                    <p class="step-tit"><span>2</span>청구주체 및 열람 범위 확인</p>
+                </li>
+            </ul>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MHE-350-005.html" class="link" target="_blank">개인(신용)정보 열람 신청 (customer/MHE-350-005.html)</a></li>
+                </ul>
+            </div>
+            <!-- //group -->
+             <!-- group -->
+            <h2 class="sub-tit">넘버링 리스트(보조텍스트만 있는 경우)</h2>
+            <ul class="num-box tit-none">
+                <li>
+                    <p class="step-tit"><span>1</span></p>
+                    <div class="step-desc">
+                        <p>당사 홈페이지 &gt; 금융소비자보호 &gt; 금융소비자권리 &gt; 금리인하요구권 &gt; '금리인하 신청하기' 등록</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="step-tit"><span>2</span></p>
+                    <div class="step-desc">
+                        <p>고객센터(1566-0050) 및 지점으로 필요서류 작성 후 제출</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MFC-300-004.html" class="link" target="_blank">금리인하요구권 (customer/MFC-300-004.html)</a></li>
+                </ul>
+            </div>
+            <!-- //group -->
+             <!-- group -->
+            <h2 class="sub-tit">넘버링 리스트(타이틀 + 보조텍스트 / 보조텍스트에 강조있는 경우)</h2>
+            <ul class="num-box">
+                <li>
+                    <p class="step-tit"><span>1</span>요청</p>
+                    <div class="step-desc">
+                        <p><span>채무자</span>채권금융회사에 구비서류 제출과 함께 채무조정을 요청합니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="step-tit"><span>2</span>심사 및 결과통지</p>
+                    <div class="step-desc">
+                        <p><span>채권금융회사</span>채무조정 심사 후 결과를 통지합니다. (10영업일 이내)</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MFC-300-006.html" class="link" target="_blank">채무조정요청권 (customer/MFC-300-006.html)</a></li>
+                </ul>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <br>
+            <!-- group -->
+            <ul class="num-box03">
+                <li>
+                    <p class="step-tit"><span>1</span>채무상환 요구를 위한 우편 발송 및 불이행시 안내</p>
+                    <div class="step-desc">
+                        <p>‘변제 독촉장’, ’변제 최고장’, ’채무정리 최종촉구 통고서’ 등의 우편물을 발송하여 채무상환을 요구하게 되고 채무불이행시 불이익(연체정보 등록에 따른 금융거래 제한 등)에 대한 안내를 하게 됩니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="step-tit"><span>2</span>전화, 문자메시지 발송 및 불이행시 안내</p>
+                    <div class="step-desc">
+                        <p>우편물과 별도로 전화나 문자메시지를 통해 채무상환을 요구하게 되며, 채무불이행 시 불이익에 대한 안내를 하게 됩니다.</p>
+                    </div>
+                </li>
+                <li>
+                    <p class="step-tit"><span>3</span>근무지, 기타 소재지 방문</p>
+                    <div class="step-desc">
+                        <p>우편물이나 전화 또는 문자메시지 등을 통한 채무상환 요구에도 불구하고 변제가 이루어지지 않거나 귀하와 연락이 닿지 않는 경우에는 우편물이나 전화 또는 문자메시지 등을 통해 ‘방문추심’에 관한 사전안내를 한 후, 채무상환 요구나 소재파악 또는 재산조사 등을 위해 자택이나 근무지, 기타 소재지에 대한 방문을 할 수 있습니다.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MFC-300-007.html" class="link" target="_blank">채권추심업무 처리절차 (customer/MFC-300-007.html)</a></li>
+                    <li>넘버링 영역에 회색 line 있는 경우</li>
+                </ul>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <br>
+            <!-- group -->
+            <ul class="num-box03 none-bar">
+                <li>
+                    <p class="step-tit"><span>1</span>개인신용정보 이용 및 제공 사실 조회 요청권 (신용정보의 이용 및 보호에 관한 법률 제35조)</p>
+                    <div class="step-desc">
+                        <ul class="list-dot type">
+                            <li>금융회사가 내부경영관리의 목적으로 이용하거나 반복적인 업무위탁을 위해 제공하는 경우 등을 제외하고 개인신용정보를 이용하거나 제공 중인 현황을 확인할 수 있는 권리</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p class="step-tit"><span>2</span>제공동의 철회 또는 연락중지청구권(신용정보 이용 및 보호에 관한 법률 제37조)</p>
+                    <div class="step-desc">
+                        <ul class="list-dot type">
+                            <li>고객님이 본인정보의 제3자 제공에 대한 선택적 동의 철회할 수 있는 권리</li>
+                            <li>고객님이 원치 않는 마케팅 목적의 연락을 중지할 수 있는 권리</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <p class="step-tit"><span>3</span>개인(신용)정보 열람 및 오류 개인(신용)정보의 정정·삭제 요구권 (개인정보보호법 제 35조·제36조, 신용정보의 이용 및 보호에 관한 법률 제38조)</p>
+                    <div class="step-desc">
+                        <ul class="list-dot type">
+                            <li>당사에 본인의 개인(신용)정보에 대한 열람을 요구할 수 있는 권리 및 자신의 개인(신용)정보를 열람한 후 사실과 다르거나 확인할 수 없는 개인(신용)정보에 대하여 정정 또는 삭제를 요구할 수 있는 권리</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MHE-350-001.html" class="link" target="_blank">고객권리안내문 (customer/MHE-350-001.html)</a></li>
+                    <li>넘버링 영역에 회색 line 없는 경우 .none-bar 클래스 추가</li>
+                </ul>
+            </div>
+            <!-- //group -->
+        </div>
+        <!-- //End : 리스트 -->
+
+        <!-- Start : 인풋 -->
+        <h1 id="lib_tab06" class="h1_tit">인풋</h1>
+        <div class="g-content">
+            <div class="com-inp">
+                <label for="">이름</label>
+                <input type="tel" id="" value="홍길동" class="disabled" disabled="">
+            </div>
+            <div class="com-inp">
+                <div class="label">상담희망일</div>
+                <a href="#;" id="" class="ico-select alink calendar">
+                    <span class="placeholder">선택해주세요</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                </a>
+            </div>
+            <div class="com-inp">
+                <label for="i01">이메일</label>
+                <input type="text" id="i01" placeholder="입력해주세요" value="">
+            </div>
+            <div class="com-inp">
+                <label for="i01">label이<br>두줄인 경우</label>
+                <input type="text" id="i01" placeholder="입력해주세요" value="">
+            </div>
+            <div class="com-inp">
+                <div class="label">민원종류</div>
+                <a href="#;" id="" class="ico-select alink">
+                    <span class="placeholder">여신상품관련 민원</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                </a>
+            </div>
+            <div class="com-inp">
+                <label for="i05" class="label-textarea">내용<br><p class="font12">2000자이내</p></label>
+                <textarea id="i05" placeholder="입력해주세요" class="hei-textarea"></textarea>
+            </div>
+            <br>
+            <div style="width:300px"><!-- 임시로 넣은 style이므로 사용시 제거 -->
+                <div class="sel-type">
+                    <button class="selected">
+                        <div class="selected-value">2024-11-27</div>
+                    </button>
+                    <div class="ul">
+                        <a href="#;" class="option">2024-10-27</a>
+                        <a href="#;" class="option">2023-09-30</a>
+                        <a href="#;" class="option">2022-11-27</a>
+                    </div>
+                </div>
+            </div>
+            <div class="com-inp">
+                <label for="">임대보증금</label>
+                <input type="tel" id="" placeholder="숫자로 입력" value="" class="a_r_txt">
+                <span>만원</span>
+            </div>
+            <div class="com-inp">
+                <label for="">임대보증금</label>
+                <input type="tel" id="" placeholder="숫자로 입력" value="" class="a_r_txt1">
+                <span>원</span>
+            </div>
+            <div class="com-inp">
+                <div class="add-tit">소재지</div>
+                <a class="add-txt ico-arrow">서울특별시 중구 남대문로 125, 8층 (다동), iM금융센터</a>
+            </div>
+            <div class="com-inp">
+                <div class="label">소득증빙서류</div>
+                <a href="#;" id="" class="ico-arrow alink">
+                    <span>0817_사진.jpg</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                </a>
+            </div>
+            <div class="com-inp">
+                <div class="label">은행</div>
+                <div><i class="ico-bank"><img src="/static/web/img/bank/bank_dgb.png" alt="대구은행"></i>
+                    <a href="#;" id="" class="ico-select alink bank">
+                        <span class="placeholder">선택하세요</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                    </a>
+                </div>
+            </div>
+            <div class="com-inp">
+                <a href="#;" id="" class="ico-select alink none-label"><!--[D] : 비활성화인 경우 : 클래스 disabled 추가 -->
+                    <span class="" id="settDdNm" name="settDdNm">
+                        <em class="badge gray">완제</em><대출> 연계_중금리론(완제)
+                    </span>
+                </a>
+            </div>
+            <div class="com-inp">
+                <a href="#;" id="" class="ico-select alink none-label"><!--[D] : 비활성화인 경우 : 클래스 disabled 추가 -->
+                    <span class="" id="settDdNm" name="settDdNm">
+                        <em class="badge line">이용중</em><대출> 연계_중금리론(완제)
+                    </span>
+                </a>
+            </div>
+
+            <h2 class="sub-tit">체크박스 및 라디오버튼</h2>
+            <div class="input-type">
+                <input type="checkbox" id="ck01-1" name="ck01">
+                <label for="ck01-1">개인정보의 제 3자 제공현황</label>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/FCR-810-004.html" class="link" target="_blank">채무조정요청권 신청 (customer/FCR-810-004.html)</a></li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <div class="input-type02">
+                <input type="checkbox" id="ck02-2" name="ck02">
+                <label for="ck02-2">개인정보의 제 3자 제공현황</label>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MHE-350-006.html" class="link" target="_blank">개인(신용)정보 열람 신청 (customer/MHE-350-006.html)</a></li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <ul class="category-list">
+                <li class="type01"><a href="#;">아이콘 타입 (클래스 .type01)</a></li>
+                <li class="type02"><a href="#;">아이콘 타입 (클래스 .type02)</a></li>
+                <li class="type03"><a href="#;">아이콘 타입 (클래스 .type03)</a></li>
+                <li class="type04"><a href="#;">아이콘 타입 (클래스 .type04)</a></li>
+                <li class="type05"><a href="#;">아이콘 타입 (클래스 .type05)</a></li>
+                <li class="type06"><a href="#;">아이콘 타입 (클래스 .type06)</a></li>
+                <li class="type07"><a href="#;">아이콘 타입 (클래스 .type07)</a></li>
+                <li class="type08"><a href="#;">아이콘 타입 (클래스 .type08)</a></li>
+                <li class="type09"><a href="#;">아이콘 타입 (클래스 .type09)</a></li>
+                <li class="type10"><a href="#;">아이콘 타입 (클래스 .type10)</a></li>
+                <li class="type11"><a href="#;">아이콘 타입 (클래스 .type11)</a></li>
+                <li class="type12"><a href="#;">아이콘 타입 (클래스 .type12)</a></li>
+                <li class="type13"><a href="#;">아이콘 타입 (클래스 .type13)</a></li>
+                <li class="type14"><a href="#;">아이콘 타입 (클래스 .type14)</a></li>
+            </ul>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MHE-360-005.html" class="link" target="_blank">개인(신용)정보 조회 동의 (customer/MHE-360-005.html)</a></li>
+                    <li>아이콘 이미지 타입 추가시 .type00 형식으로 클래스 추가</li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <div class="cont-radio-tab col3">
+                <div class="com-inp">
+                    <input type="radio" id="ch21" name="ch21" checked="checked">
+                    <label for="ch21" class="label">전자우편</label>
+                </div>
+                <div class="com-inp">
+                    <input type="radio" id="ch211" name="ch21">
+                    <label for="ch211" class="label">문자</label>
+                </div>
+                <div class="com-inp">
+                    <input type="radio" id="ch212" name="ch21">
+                    <label for="ch212" class="label">우편</label>
+                </div>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MHE-350-004.html" class="link" target="_blank">계열사간 고객정보 제공내역 조회 (customer/MHE-350-004.html)</a></li>
+                    <li>2개인 경우 : .col2 클래스 / 3개인 경우 : .col3 클래스</li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <div class="toggle-box">
+                <input type="checkbox" id="chk4" checked="">
+                <label for="chk4"></label>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MHE-350-013.html" class="link" target="_blank">마케팅활용동의 조회/변경 (customer/MHE-350-013.html)</a></li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <ul class="sale-inp-list">
+                <li>
+                    <input type="radio" id="rdi01" name="rdi" class="rchk2" checked="">
+                    <label for="rdi01" class="rchk2-label">방문판매 금지<span class="sm-tx">방문판매를 원하지 않아요</span></label>
+                </li>
+                <li>
+                    <input type="radio" id="rdi02" name="rdi" class="rchk2">
+                    <label for="rdi02" class="rchk2-label">방문판매 허용<span class="sm-tx">방문판매를 원해요</span></label>
+                </li>
+            </ul>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/FCP-200-001.html" class="link" target="_blank">방문판매 금지 신청/해제 (customer/FCP-200-001.html)</a></li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <div class="checkbox noline mt16">
+                <input type="checkbox" id="ch01" name="ch01" class="chk" checked>
+                <label for="ch01" class="label">차량번호 확인이 어려울 경우 체크해주세요</label>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/auto/차량정보입력.html" class="link" target="_blank">차량정보입력 (auto/차량정보입력.html)</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- //End : 인풋 -->
+
+        <!-- Start : 탭 -->
+        <h1 id="lib_tab07" class="h1_tit">탭</h1>
+        <div class="g-content">
+            <!-- group -->
+            <div class="tab-type js-tab">
+                <button rel="tab-1" class="on">tab1</button>
+                <button rel="tab-2">tab2</button>
+                <button rel="tab-3">tab3</button>
+                <button rel="tab-4">tab4 (버튼의 width값은 유동적)</button>
+            </div>
+            <div id="tab-1" class="js-tab-cont active">tab1111 content</div>
+            <div id="tab-2" class="js-tab-cont">tab2222 content</div>
+            <div id="tab-3" class="js-tab-cont">tab3333 content</div>
+            <div id="tab-4" class="js-tab-cont">tab4444 content</div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/personal/PFP-100-001.html" class="link" target="_blank">직장인론-상품안내 (personal/PFP-100-001.html)</a></li>
+                    <li>버튼 : .js-tab / 컨텐츠 : .js-tab-cont 클래스가 있어야 스크립트 동작한다.</li>
+                    <li>.js-tab, .js-tab-cont는 스크립트 동작을 위한 클래스이므로 <strong class="highlight">해당 클래스에는 디자인을 위한 css는 사용하지 않아야 한다.</strong></li>
+                    <li>button의 rel값과 content div에 id값이 일치해야 한다.</li>
+                    <li>버튼이 브라우저의 가로 사이즈를 초과하는 경우 두줄로 떨어진다.</li>
+                </ul>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <br>
+            <!-- group -->
+            <div class="swipe-shadow-box type">
+                <div class="swiper-container qna-tab"><!-- tab 기능 사용 안할경우 'swipe_tab_box' 클래스 삭제 -->
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#;" class="on">직장인론</a></li>
+                        <li class="swiper-slide"><a href="#;">자산론</a></li>
+                        <li class="swiper-slide"><a href="#;">자동차담보대출</a></li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/personal/PFP-100-001.html" class="link" target="_blank">직장인론 (personal/PFP-100-001.html)</a></li>
+                    <li><strong class="highlight">탭 갯수가 3개 이하인 경우</strong>모바일에서 탭 width값 동일 비율을 위해 .swiper-container에 <strong class="highlight">.type 클래스 필요</strong></li>
+                    <li><strong class="highlight">[공통]</strong> 탭 기능이 아닌 <strong class="highlight">페이지 이동인 경우</strong> .swiper-container에 <strong class="highlight">.swipe_tab_box 클래스 삭제</strong> (스크립트 동작하지 않게 하기 위함)</li>
+                    <li><strong class="highlight">[공통]</strong> 스크롤 시, 상단에 고정이 필요한 경우 .swipe-shadow-box에 .fixed 클래스 추가</li>
+                </ul>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <br>
+            <!-- group -->
+            <div class="swipe-shadow-box">
+                <div class="swiper-container qna-tab"><!-- tab 기능 사용 안할경우 'swipe_tab_box' 클래스 삭제 -->
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide"><a href="#;" class="on">KB점프론</a></li>
+                        <li class="swiper-slide"><a href="#;">키워드림론</a></li>
+                        <li class="swiper-slide"><a href="#;">NH점프론</a></li>
+                        <li class="swiper-slide"><a href="#;">하나점프론</a></li>
+                    </ul>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/personal/MLP-310-001.html" class="link" target="_blank">KB점프론 (personal/MLP-310-001.html)</a></li>
+                    <li><strong class="highlight">탭 갯수가 4개 이상인 경우</strong> 모바일에서 탭 좌측정렬을 위해 .swiper-container에 <strong class="highlight">.type 클래스 제거</strong></li>
+                </ul>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <br>
+            <!-- group -->
+            <div class="cont-tab1">
+                <ul>
+                    <li class="active"><a href="#;" role="tab" aria-controls="tab1">대출모집인 조회</a></li>
+                    <li class=""><a href="#;" role="tab" aria-controls="tab2">방문 · 전화권유 <br class="mob">판매원 조회</a></li>
+                </ul>
+                <div class="cont-tab1-list">
+                    <div id="tab1" class="active">
+                        tab11111 content
+                    </div>
+                    <div id="tab2">
+                        tab22222 content
+                    </div>
+                </div>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/FCP-000-001.html" class="link" target="_blank">방문판매원 조회 (customer/FCP-000-001.html)</a></li>
+                </ul>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <!-- group -->
+            <div class="tab-box6 js-tab">
+                <button class="on" aria-label="선택됨">전체<span>4</span></button>
+                <button class="" aria-label="">진행중</button>
+                <button aria-label="" class="">완료</button>
+                <button aria-label="" class="">취소</button>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/servicedesk/내역목록.html" class="link" target="_blank">서비스데스크 내역 (servicedesk/내역목록.html)</a></li>
+                </ul>
+            </div>
+            <!-- //group -->
+        </div>
+        <!-- //End : 탭 -->
+
+        <!-- Start : 박스 -->
+        <h1 id="lib_tab08" class="h1_tit">박스</h1>
+        <div class="g-content">
+            <!-- group -->
+            <div class="box-line">
+                <p class="p-txt">iM캐피탈의 금융상품과 관련된 신상품(서비스)소개, 편의 제공(경품 판촉활동 등), 안내, 금융그룹 자회사의 신상품 소개 등의 수신동의 여부를 선택하실 수 있는 화면입니다.</p>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MHE-350-012.html" class="link" target="_blank">마케팅활용동의 조회/변경 (customer/MHE-350-012.html)</a></li>
+                    <li>PC : 상하단 여백 24px / 좌우여백 48px</li>
+                    <li>mobile : 상하좌우 여백 24px</li>
+                </ul>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <!-- group -->
+            <div class="tab-info-cont">
+                <p class="tx type">고객님의 신용점수 등에 따라 대출금리가 차등 적용 됩니다.</p>
+                <p class="tx type">고객님의 신용도에 따라 대출한도, 대출기간, 상환방법이 다를 수 있습니다.</p>
+
+                <p class="tx type2 mgt"><strong>상환능력에 비해 대출금이 과도할 경우, 귀하의 개인신용평점이 하락할 수 있습니다.</strong></p>
+                <p class="tx type2"><strong>개인신용평점 하락 시 금융거래와 관련된 불이익이 발생할 수 있습니다.</strong></p>
+
+                <p class="tx sm mgt">금융소비자는 금융소비자보호법 제19조 제1항에 따라 해당상품 또는 서비스에 대하여 설명을 받을 권리가 있으며, 그 설명을 듣고 내용을 충분히 이해한 후 거래하시기 바랍니다.</p>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/personal/PFP-100-002.html" class="link" target="_blank">자산론 (personal/PFP-100-002.html)</a></li>
+                    <li>PC : 상하좌우 여백 40px</li>
+                    <li>mobile : 상하단 여백 18px / 좌우여백 24px</li>
+                </ul>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <!-- group -->
+            <div class="call-box02">
+                <p>담당자 연락처</p>
+                <div>
+                    <ul class="list-dot">
+                        <li>리테일여신관리부 홍세윤 대리 : 02-6441-7881</li>
+                        <li>리테일여신관리부 이지선 주임 : 02-6441-7849</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MFC-300-006.html" class="link" target="_blank">채무조정요청권 -> 자체채무조정 탭 (customer/MFC-300-006.html)</a></li>
+                </ul>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <!-- group -->
+            <div class="call-box02 ico-none">
+                <p>제공 내역</p>
+                <div>
+                    <ul class="list-dot">
+                        <li>신용위험관리 등 위험관리와 내부통제</li>
+                        <li>업무 및 재선 상태에 대한 검사</li>
+                        <li>고객분석과 상품 및 서비스의 개발</li>
+                        <li>성과관리</li>
+                        <li>위탁업무 수행</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MHE-350-004.html" class="link" target="_blank">계열사간 고객정보 제공내역 조회 (customer/MHE-350-004.html)</a></li>
+                    <li>아이콘 없는 경우 .ico-none 클래스 추가</li>
+                </ul>
+            </div>
+            <!-- //group -->
+            <br>
+            <br>
+            <!-- group -->
+            <div class="box-gray05">
+                <ul class="list-dot">
+                    <li>얼굴을 영역안에 맞추고 정면을 바라봐주세요</li>
+                    <li>너무 밝거나 어둡지 않은 곳에서 촬영하세요</li>
+                    <li>휴대폰 전면부 카메라를 깨끗히 닦고 휴대폰을 얼굴 높이까지 들어주세요</li>
+                </ul>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/common/얼굴촬영안내.html" class="link" target="_blank">신분증 안면인식 (common/얼굴촬영안내.html)</a></li>
+                </ul>
+            </div>
+            <!-- //group -->
+        </div>
+        <!-- //End : 박스 -->
+
+        <!-- Start : 박스 -->
+        <h1 id="lib_tab09" class="h1_tit">버튼</h1>
+        <div class="g-content">
+            <!-- group -->
+            <div class="btn-box">
+                <span class="btn">
+                    <button type="button">기본 풀사이즈 버튼</button>
+                </span>
+            </div>
+            <br>
+            <div class="btn-box">
+                <span class="btn gray01"><button type="button" id="">이전</button></span>
+                <span class="btn"><button type="button" id="">다음</button></span>
+            </div>
+            <br>
+            <div class="btn-box">
+                <span class="btn gray01"><button type="button" id="">이전</button></span>
+                <span class="btn gray"><button type="button" id="">다음(비활성화인 경우)</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+            </div>
+            <br>
+            <div class="btn-box">
+                <span class="btn pc-btn"><button type="button" id="">모바일에서 사라지는 버튼</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                <span class="btn line"><button type="button" id="">라인형 버튼</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                <span class="btn"><button type="button" id="">다음</button></span>
+            </div>
+            <br>
+            <div class="btn-box">
+                <span class="btn w-240">
+                    <button type="button">width 240px 버튼</button>
+                </span>
+            </div>
+            <br>
+            <div class="btn-box">
+                <span class="btn w-200">
+                    <button type="button">width 200px 버튼</button>
+                </span>
+            </div>
+            <br>
+            <div class="btn-box">
+                <span class="btn w-160">
+                    <button type="button">width 160px 버튼</button>
+                </span>
+            </div>
+            <br>
+            <br>
+            <div class="btn-box">
+                <span class="btn">
+                    <button type="button">개별 버튼 Tip 말풍선 예시<span class="tip"><em>추가대출</em> 대상 고객님께 <em>우대금리</em> 혜택이 있어요!</span></button>
+                </span>
+            </div>
+            <br>
+            <br>
+            <div class="btn-box" style="position:relative"><!-- style은 가이드 페이지에서만 임시로 사용 -->
+                <span class="btn">
+                    <button type="button">버튼 여러개에</button>
+                </span>
+                <span class="btn">
+                    <button type="button">하단 화살표 없는 경우</button>
+                </span>
+                <span class="tip none-arrow">아래 버튼은 상품 구분없이 <em>스탁론 모든 상품</em>에 해당돼요</span>
+            </div>
+            <div class="btn_more mt16">
+                <a href="#;" class="more_btn"><i class="more"></i>더보기</a>
+            </div>
+            <div class="btn_more02 mt16">
+                <a href="#;" class="more_btn"><i class="more"></i>더보기</a>
+            </div>
+            <h2 class="sub-tit">좌측 버튼 width 94px일 때</h2>
+            <div class="btn-box">
+                <span class="btn gray01 w-94"><button type="button">나중에</button></span>
+                <span class="btn "><button type="button">등록하기</button></span>
+            </div>
+            <h2 class="sub-tit">좌측 버튼 width 120px일 때</h2>
+            <div class="btn-box">
+                <span class="btn gray01 wid120"><button type="button">나중에</button></span>
+                <span class="btn "><button type="button">등록하기</button></span>
+            </div>
+            <h2 class="sub-tit">input + 버튼 조합(input 2개)</h2>
+            <div class="history-check-box">
+                <div class="com-inp">
+                    <a href="#;" id="" class="ico-select alink none-label"><!--[D] : 비활성화인 경우 : 클래스 disabled 추가 -->
+                        <span class="placeholder" id="settDdNm" name="settDdNm">년도</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                    </a>
+                </div>
+                <div class="com-inp">
+                    <a href="#;" id="" class="ico-select alink none-label"><!--[D] : 비활성화인 경우 : 클래스 disabled 추가 -->
+                        <span class="placeholder" id="settDdNm" name="settDdNm">월</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                    </a>
+                </div>
+                <div class="btn-box">
+                    <span class="btn w-160"><button type="button" id="">조회하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                </div>
+            </div>
+            <!-- //group -->
+        </div>
+        <!-- //End : 박스 -->
+
+        <!-- Start : 기타 -->
+        <h1 id="lib_tab10" class="h1_tit">기타</h1>
+        <div class="g-content">
+            <!-- group -->
+            <h2 class="sub-tit mt0">* 팁</h2>
+            <div class="tip-box"><a href="#;"><img src="/static/web/img/ui_common/ico_tip.png" alt="TIP"><span>상환방식 쉽게 알아보기</span></a></div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/personal/PFP-100-001.html" class="link" target="_blank">직장인론 (personal/PFP-100-001.html)</a></li>
+                    <li>기본 상단 여백 24px</li>
+                </ul>
+            </div>
+            <br>
+            <p class="tx-tip"><span class="tx-tip-ico">TIP</span>이렇게 촬영해보세요!</p>
+            <br>
+            <p class="tx-tip"><span class="tx-tip-ico">안내</span>다음과 같은 이유로 실패할 수 있어요</p>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/common/얼굴촬영안내.html" class="link" target="_blank">신분증 안면인식 (common/얼굴촬영안내.html)</a></li>
+                </ul>
+            </div>
+            <!-- //group -->
+
+            <!-- group -->
+            <h2 class="sub-tit">* 안내 사항</h2>
+            <div class="box-green4">
+                <p class="ico-info">위의 신청과 관련하여 불편함을 느끼시거나 어려움이 있으신 경우, 당사의 신용정보관리·보호인 / 개인정보보호책임자 또는 한국신용정보원(소비자보호실), 금융감독원(금융민원실) 앞으로 연락하여 주시기 바랍니다.</p>
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MHE-350-001.html" class="link" target="_blank">고객권리안내문 (customer/MHE-350-001.html)</a></li>
+                    <li>기존 box-green1 ~ box-green3은 사용하지 않고 <strong class="highlight">box-green4를 공통으로 사용.</strong></a></li>
+                </ul>
+            </div>
+            <!-- //group -->
+
+            <!-- group -->
+            <div class="pro-box division-box">
+                <!-- Start : 안내사항 -->
+                <div class="accordion-info-box accordion-fine">
+                    <ul>
+                        <li class="">
+                            <div class="q">
+                                <a href="#;" class="f-btn">
+                                    <p class="f-tit">안내사항</p>
+                                    <span class="ico-arrow">내용 닫기</span>
+                                </a>
+                            </div>
+                            <div class="a" style="display: block;">
+                                <ul class="list-dot">
+                                    <li>신용상태 개선이 금리 산정에 영향을 주지 않는 경우 금리인하요구가 거절될 수 있습니다.</li>
+                                    <li>신용상태 개선이 발생한 경우 신청횟수, 신청시점에 관계없이 금리인하요구 가능합니다.</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //End : 안내사항 -->
+            </div>
+            <!-- //group -->
+
+            <!-- group -->
+            <h2 class="sub-tit">* 다운로드</h2>
+            <a href="#;" class="download-file">자료열람 신청서</a>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/customer/MFC-300-001.html" class="link" target="_blank">자료열람청구권 (customer/MFC-300-001.html)</a></li>
+                </ul>
+            </div>
+            <!-- //group -->
+
+            <!-- group -->
+            <h2 class="sub-tit">* 토스트 팝업</h2>
+            <img src="/static/web/img/sample_toast_pop.png" style="width:500px">
+            <img src="/static/web/img/sample_toast_pop2.png" style="width:500px">
+            
+            <div class="fixed-guide-area toast">
+                <div class="toast-msg"><p>사진이 정상적으로 등록되었어요.</p></div><!-- [D] 에러인 경우 : 클래스 ico-error 추가 -->
+            </div>
+            <div class="tag-wrap">
+                <ul class="list">
+                    <li>적용 페이지 : <a href="/web/auto/MPC-550-002.html" class="link" target="_blank">차량 앞면 사진 추가 (auto/MPC-550-002.html)</a></li>
+                    <li><strong class="highlight">에러인 경우</strong> : toast-msg 클래스에 ico-error 추가</li>
+                </ul>
+            </div>
+            <!-- //group -->
+        </div>
+        <!-- //End : 기타 -->
+    </section>
+</div>
+<script>
+$(window).on('scroll', function() {
+    var scrollTop = $(window).scrollTop();
+    $('.h1_tit').each(function() {
+        var $this = $(this);
+        if (scrollTop+100 >= $this.offset().top) {
+            var id = $this.attr('id');
+            $('aside a').removeClass('on');
+            $('aside a[href="#' + id + '"]').addClass('on');
+        }
+    });
+});
+</script>
+</body>
+</html>

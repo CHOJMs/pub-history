@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상담 전 확인사항</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>상담 전 확인사항</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+
+                <h2>개인임대용</h2>
+                <p class="txt-m mb32">전세자금대출 상담전에 확인해주세요!</p>
+
+                <p class="h_tit">임대차 계약서 작성시 3자(임대인, 임차인, 공인중개소) 계약하셨나요?</p>
+                <div class="list-type-dash">
+                    <ul>
+                        <li>임대인과 임차인간 쌍방 계약은 대출이 불가합니다.</li>
+                        <li>임대차계약의 연장 계약은 최초 계약한 공인중개소 확인 시 신청 가능합니다.</li>
+                    </ul>
+                </div>
+
+                <p class="h_tit">임대차 계약서에 확정일자 받으셨나요?</p>
+                <div class="list-type-dash">
+                    <ul>
+                        <li>임대차 계약서에 확정일자는 필수사항입니다.</li>
+                    </ul>
+                </div>
+
+                <p class="h_tit">임대인과 임차인간 특수관계(채권 · 채무관계, 친인척) 이신가요?</p>
+                <div class="list-type-dash">
+                    <ul>
+                        <li>임대인과 임차인이 특수관계인 경우 대출이 불가합니다.</li>
+                    </ul>
+                </div>
+
+                <p class="h_tit">대출신청 시 임대인의 동의를 받으셨나요?</p>
+                <div class="list-type-dash">
+                    <ul>
+                        <li>대출신청 시 임대인이 질권설정 승낙이 필요하며, 거부 또는 임대차계약서 상 금지조항이 있으면 대출이 불가합니다.</li>
+                    </ul>
+                </div>
+
+                <p class="h_tit">현재 타 금융에 전세자금대출을 이용중 이신가요?</p>
+                <div class="list-type-dash">
+                    <ul>
+                        <li>전세자금대출은 중복으로 신청 불가합니다.</li>
+                    </ul>
+                </div>
+
+                <p class="h_tit">대출 신청 금액이 5억원 초과인가요?</p>
+                <div class="list-type-dash">
+                    <ul>
+                        <li>대출 신청 금액이 5억원 초과인 경우는 전세권부 근저당 설정으로 진행 가능합니다.</li>
+                    </ul>
+                </div>                
+                
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

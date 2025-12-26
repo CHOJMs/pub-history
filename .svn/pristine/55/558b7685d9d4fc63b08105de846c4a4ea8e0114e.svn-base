@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<deco> 
+    <fileData filename="etc_240.png" filepath="/src/main/webapp/static/web/img/bank" ischanged="0" lastversion="5" tstversion="5" realversion="2" dotversion="0" itemid="000000930713" ecmMd5sum="c6cf90af01adefd1e42fdcb63384ce4b" ecmTstmd5sum="" lastChangedDate="1669887362000" editor="조수용:63765" lastUser="조수용:63765" filestatus="운영중:0" islock="1" isAuthority="1" rsrccd="A2" rsrccdcodename="static" rsrcinfo="0100000000110000000000010000010000000000100000001000000001000000000" jobcd="HP" jobname="홈페이지" syscd="00102" sysmsg="홈페이지" srid="R202211-0135"/> 
+</deco>

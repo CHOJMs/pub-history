@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+
+
+/* 달력 */
+.date-picker-wrapper {border: none !important; background-color: transparent !important; padding: 0 !important; -webkit-box-shadow: none !important; box-shadow: none !important; font-family:'pretendard' !important; z-index: 99995 !important;}
+.date-picker-wrapper .month-wrapper {padding: 0 16px !important;}
+.date-picker-wrapper .month-wrapper table {margin: 24px 0 !important;}
+.drp_top-bar {display: none !important;}
+.date-picker-wrapper .month-element {font-size: 16px !important; font-weight: 700 !important; padding: 0px 8px;}
+.date-picker-wrapper table .caption {height: 50px !important;}
+.date-picker-wrapper table .caption>th:first-of-type, .date-picker-wrapper table .caption>th:last-of-type {width: 24px !important;}
+.date-picker-wrapper table .caption th {line-height: 24px !important; vertical-align: top !important;}
+.date-picker-wrapper table .caption .prev {background:url('../img/new_common/ico_calendar01.png') 0 0 no-repeat; background-size: 24px; color: transparent; padding: 4px 10px !important;}
+.date-picker-wrapper table .caption .next {background:url('../img/new_common/ico_calendar02.png') 0 0 no-repeat; background-size: 24px; color: transparent; padding: 4px 10px !important;}
+.date-picker-wrapper table .caption .next:hover, .date-picker-wrapper table .caption .prev:hover {background-color: transparent !important; color: transparent !important;}
+.date-picker-wrapper .month-wrapper {border: 1px solid #222426 !important; border-radius: 8px !important; box-shadow: 0 8px 16px rgb(34 36 38 / 24%) !important;}
+.date-picker-wrapper .month-wrapper table td:first-of-type .day, .date-picker-wrapper .month-wrapper table th:first-of-type {color: #ff2424 !important;}
+.date-picker-wrapper .month-wrapper table td:last-of-type .day, .date-picker-wrapper .month-wrapper table th:last-of-type {color: #125fef !important;}
+.date-picker-wrapper .month-wrapper table th {color: #222426 !important; font-size: 14px !important; font-weight: 500 !important; padding-bottom: 8px !important;}
+.date-picker-wrapper .month-wrapper table .day {color: #222426; font-size: 14px !important; font-weight: 500 !important; line-height: 33px !important; width: 32px; height: 32px; margin: 0 !important; padding: 0 !important;}
+.date-picker-wrapper .month-wrapper table .day.real-today {color: #fff !important; background-color: transparent !important; background:url('../img/new_common/bg_cal.png') 0 0 no-repeat; background-size: 32px;}
+.date-picker-wrapper .first-date-selected, .date-picker-wrapper .last-date-selected {background-color: #1571eb !important; color: #fff !important;}
+
+.date-picker-wrapper .gap, .date-picker-wrapper .gap .gap-top-mask, .date-picker-wrapper .gap .gap-bottom-mask {background-color: transparent !important;}
+.date-picker-wrapper .gap .gap-line .gap-1,
+.date-picker-wrapper .gap .gap-line .gap-2,
+.date-picker-wrapper .gap .gap-line .gap-3 {border-left: none !important; border-top: none !important; border-bottom:none !important;}
+
+.date-picker-wrapper .month-wrapper table .day.toMonth.hovering {background-color: #daecff !important;}
+.date-picker-wrapper .month-wrapper table .day.checked {background-color: #daecff !important;}
+.date-picker-wrapper .month-wrapper table .day.checked.first-date-selected,
+.date-picker-wrapper .month-wrapper table .day.checked.last-date-selected {color: #fff !important; background-color: #1571eb !important;}
+
+.month2::before {content: ''; display: inline-flex; position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background-color: #222426 !important;}
+
+.date-picker-wrapper .select-wrapper {position: relative; font-size: 16px; font-weight: 700; padding-right: 20px; background:url('../img/new_common/ico_cal_arrow.png') right center no-repeat; background-size: 12px 7px;}
+.date-picker-wrapper .select-wrapper:last-of-type {margin-left: 24px !important;}
+.date-picker-wrapper .select-wrapper:hover {text-decoration: none !important;}
+.date-picker-wrapper .select-wrapper select {top: 5px !important; padding-left: 5px !important; padding-right: 20px !important;}
+.date-picker-wrapper .select-wrapper select option {font-size: 14px !important;}

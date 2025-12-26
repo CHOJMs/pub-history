@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중고차 인수증 등록 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>중고차 인수증 등록</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+
+                    <!-- Start : 인수자 (구매자) -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">인수자 (구매자)</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">성명</span>
+                                    <span class="p-txt">홍길동</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">생년월일</span>
+                                    <span class="p-txt">1993.03.15</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">주소</span>
+                                    <span class="p-txt">(04521) 서울특별시 중구 남대문로 125 iM금융센터</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">전화번호</span>
+                                    <span class="p-txt">010-1234-5678</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 인수자 (구매자) -->
+
+                    <!-- Start : 인수차량 (구매차량) -->
+                    <div class="grp-cont">
+                        <p class="head-tit">인수차량 (구매차량)</p>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">차량번호</span>
+                                    <span class="p-txt">41주4859</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">모델연도</span>
+                                    <span class="p-txt">2022</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차종</span>
+                                    <span class="p-txt">중고승용</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차명</span>
+                                    <span class="p-txt">[현대] 더 뉴 그랜저 IG</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">인수년월</span>
+                                    <span class="p-txt"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 인수차량 (구매차량) -->
+                    <div class="s-txt mt24">
+                        본인은(OO상사)로부터 중고 자동차 매매계약에 따라 상기 차량을 이상 없이 인수하였으며, 중고 자동차 대출 표준약관 제4조에 따라 중고 자동차 구입자금 대출을 위해 주식회사 디지비캐피탈에 동 인수증을 제출하는 것에 동의합니다.
+                    </div>
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none">
+                    <div class="btn-box">
+                        <span class="btn gray"><button type="button" id="">동의합니다</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

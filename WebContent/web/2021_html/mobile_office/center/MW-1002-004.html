@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+
+<title>인증 기본정보 관리 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap fing_wrap"><!-- 인증센터 - 모바일전용 class="fing_wrap"-->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header>
+			<div class="gnb">
+				<!--// 모바일용 GNB 메뉴 -->
+				<p class="menu_icon">
+                    <a href="#" class="mobile_back_btn" title="뒤로가기"></a>
+                    <a href="#" class="mobile_menu_btn" title="모바일 메뉴"></a>
+                </p>
+				<div class="mobile_menu">
+
+				</div>
+				<!-- 모바일용 GNB 메뉴// -->
+
+				<!-- //웹용 GNB 메뉴 -->
+				<div id="nav">
+
+				</div>
+				<!-- 웹용 GNB 메뉴// -->
+			</div>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+				 <!-- 인증센터 시작 -->
+				<div class="finger_box">
+					<h1>인증 기본정보 관리</h1>
+
+					<!-- 내용 시작 -->
+					<div class="fing_main_box">
+						
+						<div class="form_box">
+							<p class="h_tit">고객유형</p>
+							<ul class="inline_rchk">
+								<li>
+									<input type="radio" name="r011" value="" id="r011" checked="checked" class="rchk" aria-hidden="true" title="개인/개인사업자 체크">
+									<label for="r011" class="rchk-label" role="radio" aria-checked="false"><span>개인/개인사업자</span></label>
+								</li>
+								<li>
+									<input type="radio" name="r011" value="" id="r012" class="rchk" aria-hidden="true" title="법인 체크">
+									<label for="r012" class="rchk-label" role="radio" aria-checked="false"><span>법인</span></label>
+								</li>
+							</ul>
+
+							<p class="h_tit">사업자번호</p>
+							<div class="text_data">
+								<input type="text" name="" id="" placeholder="" title="사업자번호 입력">
+							</div>
+							<ul class="list_bull">
+								<li>인증 기본정보를 삭제하시면 모든 인증설정이 삭제되며 본인인증이 해제됩니다.</li>
+								<li>인증 기본정보 변경시 재인증이 필요합니다.</li>
+								<li>법인 고객은 공동인증서로만 인증하실 수 있습니다.</li>
+							</ul>
+						</div>
+					</div>
+					 <!-- 내용 끝 -->					
+					 
+				</div>
+				<!-- 인증센터 끝 -->
+				
+				<!-- 버튼 시작 -->
+				<div class="fixed_botton_btn">
+					<div class="btn_box">
+						<span class="btn gray"><button id="">기본정보 삭제</button></span>
+						<span class="btn"><button id="">기본정보 변경</button></span>
+					</div>
+				</div>
+				<!-- 버튼 끝 -->
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+</body>
+</html>

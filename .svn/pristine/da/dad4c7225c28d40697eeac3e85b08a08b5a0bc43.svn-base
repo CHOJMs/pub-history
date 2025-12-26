@@ -1,0 +1,105 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+</head>
+<body>
+
+<!-- 레이어 팝업 -->
+<div class="layer" tabindex="0" style="display: block;">
+	<div class="pop_bg"></div>
+	<div class="layerPop" style="width: 850px; transform: translate(-50%, -50%);">
+		<h1>고객조회</h1>
+		<div class="Pop_content">
+			<div class="Pop_form-type">				
+				<div class="search_p_box2">
+					<ul>
+						<li>
+							<label for="">고객명<em>*</em></label>
+							<input type="text" id="" name="" value="" placeholder="">
+						</li>
+						<li>
+							<label for="">생년월일</label>
+							<input type="text" id="" name="" value="" placeholder="" style="width: 35%;"> - *******
+						</li>
+						<li>
+							<label for="">사업자번호</label>
+							<input type="text" id="" name="" value="" placeholder="">
+						</li>
+						<li>
+							<label for="">전화번호</label>
+							<input type="text" id="" name="" value="" placeholder="">
+						</li>
+						<li>
+							<label for="">고객번호</label>
+							<input type="text" id="" name="" value="" placeholder="">
+						</li>
+						<li>
+							<label for="">차량번호</label>
+							<input type="text" id="" name="" value="" placeholder="">
+						</li>
+					</ul>
+					<p class="btn-align-center mb15 mt10">
+						<a href="#none" class="btn h42 wid120">조회하기</a>
+					</p>
+				</div>
+				<div class="scroll_box">
+					<table class="bbs-table">
+						<colgroup>
+							<col style="width:60px;">
+							<col style="width:23%;">
+							<col style="width:23%;">
+							<col style="width:23%;">
+							<col style="width:23%;">
+						</colgroup>
+						<thead>
+							<tr>		
+								<th scope="col"></th>
+								<th scope="col">고객명</th>
+								<th scope="col">생년월일</th>
+								<th scope="col">사업자번호</th>
+								<th scope="col">휴대전화</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>o</td>
+								<td>홍길동</td>
+								<td>2021-02-05</td>
+								<td>123-45.123456</td>
+								<td>010-1234-5678</td>
+							</tr>
+							<tr>
+								<td  colspan='5'>조회결과가 없습니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="btn-align-center mb15 mt10">
+					<a href="#none" class="btn h42 wid120">선택</a>
+				</p>	
+			
+			</div>
+			<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+			
+		</div>
+	</div>
+</div>
+<!-- 팝업bg -->
+
+</body>
+</html>

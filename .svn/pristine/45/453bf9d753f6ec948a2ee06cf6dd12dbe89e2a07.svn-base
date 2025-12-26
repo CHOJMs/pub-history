@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>메모등록조회 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+
+    <script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>메모등록조회</h1>
+            </div>
+            <div class="popup-contents flex-col-btm"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <div class="flex-item-top">
+                    <div class="item-cnt">
+                        <table class="data-tbl">
+                            <colgroup>
+                                <col width="100%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit ver-top">메모<span class="s-txt">1 / 100</span></p><!-- 2023-08-08 수정 -->
+                                            <textarea style="height: 112px;" placeholder="내용을 입력하세요 (100자 이내)"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td colspan="2">
+                                        <div class="com-inp">
+                                            <p class="tit">담당자 알림</p>
+                                            <div class="cnt-box">
+                                                <div class="inp-radio">
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r01" name="r0" checked="checked">
+                                                        <label for="r01">Y</label>
+                                                    </div>
+                                                    <div class="radiobox">
+                                                        <input type="radio" id="r02" name="r0">
+                                                        <label for="r02">N</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Start : 버튼 -->
+                        <div class="btn">
+                            <a href="#">등록</a>
+                        </div>
+                        <!-- //End : 버튼 -->
+                    </div>
+                </div>
+
+                <div class="flex-item-btm">
+                    <h2>메모이력</h2>
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col width="50px">
+                            <col width="15%">
+                            <col width="11%">
+                            <col width="%">
+                            <col width="15%">
+                            <col width="16%">
+                            <col width="12%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">등록일</th>
+                                <th scope="col">등록시간</th>
+                                <th scope="col">메모내용</th>
+                                <th scope="col">등록직원번호</th>
+                                <th scope="col">등록직원명</th>
+                                <th scope="col">담당자알림</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>2023-12-12</td>
+                                <td>17:41</td>
+                                <td class="a-l">test</td><!-- 2023-08-08 수정 -->
+                                <td>EX9999</td>
+                                <td>대외계시스템</td>
+                                <td>Y</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2023-12-12</td>
+                                <td>17:41</td>
+                                <td class="a-l">test</td>
+                                <td>EX9999</td>
+                                <td>대외계시스템</td>
+                                <td>N</td>
+                            </tr>
+                            <tr class="bor-line">
+                                <td colspan="7" class="nodata"><span>정보가 없습니다.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+jQuery(function($){
+    $.datepicker.regional['ko'] = {
+        closeText: '닫기',
+        prevText: '이전달',
+        nextText: '다음달',
+        currentText: '오늘',
+        buttonText: '날짜 선택',
+        monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+        dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
+        dayNamesShort: ['일','월','화','수','목','금','토'],
+        dayNamesMin: ['일','월','화','수','목','금','토'],
+        weekHeader: 'Wk',
+        dateFormat: 'yy-mm-dd',
+        firstDay: 0,
+        isRTL: false,
+        showMonthAfterYear: true,
+        yearSuffix: '년',
+		beforeShow: function(input, inst) {
+			var $input = $(input);
+			var $dp = $(inst.dpDiv);
+			// 달력 div를 input 부모 내부로 이동
+			$dp.appendTo($input.parent());
+			setTimeout(function(){
+				var pos = $input.position();
+				var height = $input.outerHeight();
+				var dpHeight = $dp.outerHeight();
+				var parentHeight = $input.parent().innerHeight();
+				var windowHeight = $(window).height();
+				var scrollTop = $(window).scrollTop();
+				var inputOffsetTop = $input.offset().top - scrollTop;
+				var top;
+				// 아래 공간이 충분하면 아래로, 부족하면 위로
+				if (inputOffsetTop + height + dpHeight <= windowHeight) {
+					top = pos.top + height;
+				} else {
+					top = pos.top - dpHeight;
+				}
+
+				$dp.css({
+					position: 'absolute',
+					top: top,
+					left: pos.left,
+					zIndex: 9999
+				});
+
+			}, 0);
+		}
+    };
+    $.datepicker.setDefaults($.datepicker.regional['ko']);
+});

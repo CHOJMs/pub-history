@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>진행현황 | iM캐피탈 관리자</title>
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#" class="on">AG영업관리</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#">대시보드</a></li>
+                        <li><a href="#">견적내기</a></li>
+                        <li><a href="#" class="on">진행현황</a></li>    
+                        <li><a href="#">발주현황</a></li>
+                        <li><a href="#">즉시출고/선구매</a></li>     
+                        <li><a href="#">월별수수료</a></li>
+                        <li><a href="#">게시판</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <div class="flex-wrap"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h2>진행현황</h2>
+                        <div class="btn">
+                            <a href="#" class="blue disabled">실행요청서 업데이트</a><a href="#" class="blue disabled">실행요청서 제출 완료</a>
+                            <a href="#" class="blue">실행요청서 업데이트</a><a href="#" class="blue">실행요청서 제출</a><a href="#" class="black">목록</a><!-- [D]비활성화 : disabled 추가 -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <!-- Start : 고객정보 -->
+                    <h3>고객정보</h3>
+                    <table class="bbs-table-view1">
+                        <colgroup>
+                            <col width="160px">
+                            <col width="%">
+                            <col width="160px">
+                            <col width="%">
+                        </colgroup>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th><span class="etc">계약자</span></th><!-- [D]필수입력 .etc -->
+                                <td>홍*동</td>
+                                <th><span class="etc">계약자 연락처</span></th><!-- [D]필수입력 .etc -->
+                                <td>010-1234-5678</td>
+                            </tr>
+                            <tr>
+                                <th><span class="etc">연대보증인</span></th><!-- [D]필수입력 .etc -->
+                                <td></td>
+                                <th><span class="etc">연대보증인 연락처</span></th><!-- [D]필수입력 .etc -->
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th><span class="etc">차량계약번호</span></th><!-- [D]필수입력 .etc -->
+                                <td colspan="3"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 고객정보 -->
+
+                    <!-- Start : 제출된 서류정보 -->
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>제출된 서류정보<span class="count">(<strong>3</strong>/5)</span></h3>
+                        <div class="btn">
+                            <a href="javascript:;" class="blue">서류제출</a><a href="javascript:;" class="blue">서류제출 URL발송</a>
+                        </div>
+                    </div>
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col width="60px">
+                            <col width="300px">
+                            <col width="180px">
+                            <col width="190px">
+                            <col width="%">
+                            <col width="100px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">번호</th>
+                                <th scope="col">최종 제출일시</th>
+                                <th scope="col">단계</th>
+                                <th scope="col">건수</th>
+                                <th scope="col">제출서류</th>
+                                <th scope="col">서류확인</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>2024-07-17 10:30:00</td>
+                                <td>서류제출</td>
+                                <td>2건</td>
+                                <td>주민등록등본</td>
+                                <td><a href="#" class="btn">보기</a></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>2024-07-17 10:30:00</td>
+                                <td>서류제출</td>
+                                <td>3건</td>
+                                <td>건강보험득실확인서</td>
+                                <td><a href="#" class="btn">보기</a></td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" class="nodata"><span>제출된 서류가 없습니다.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 제출된 서류정보 -->
+
+                    <!-- Start : 차량정보 -->
+                    <h3>차량정보</h3>
+                    <table class="bbs-table-view1">
+                        <colgroup>
+                            <col width="160px">
+                            <col width="%">
+                            <col width="160px">
+                            <col width="%">
+                        </colgroup>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>차종</th>
+                                <td>현대 팰리세이드 2024년형 가솔린</td>
+                                <th>유종</th>
+                                <td>가솔린</td>
+                            </tr>
+                            <tr>
+                                <th>옵션명</th>
+                                <td colspan="3">
+                                    파킹어시스트플러스, 현대스마트센트
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>외부색상</th>
+                                <td>크리미 화이트펄</td>
+                                <th>내부색상</th>
+                                <td>블랙 원톤</td>
+                            </tr>
+                            <tr>
+                                <th>판매사 탁송료</th>
+                                <td>0원</td>
+                                <th>차량가격</th>
+                                <td>44,260,000원</td>
+                            </tr>
+                            <tr>
+                                <th>옵션가</th>
+                                <td>0원</td>
+                                <th rowspan="2">합계</th>
+                                <td rowspan="2">44,260,000원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 차량정보 -->
+
+                    <!-- Start : 상품조건 -->
+                    <h3>상품조건</h3>
+                    <table class="bbs-table-view1">
+                        <colgroup>
+                            <col width="160px">
+                            <col width="%">
+                            <col width="160px">
+                            <col width="%">
+                            <col width="160px">
+                            <col width="%">
+                        </colgroup>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>대여기간</th>
+                                <td>36개월</td>
+                                <th>월대여료</th>
+                                <td>500,000원</td>
+                                <th>보증금</th>
+                                <td>0원</td>
+                            </tr>
+                            <tr>
+                                <th>주행거리</th>
+                                <td>년 20,000km</td>
+                                <th>잔존가치</th>
+                                <td>15,585,000원</td>
+                                <th>선수금</th>
+                                <td>0원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 상품조건 -->
+
+                    <!-- Start : 용품신청정보 -->
+                    <h3>용품신청정보</h3>
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col span="6">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">구분</th>
+                                <th scope="col">측/후면 썬팅농도</th>
+                                <th scope="col">전면썬팅 농도</th>
+                                <th scope="col">블랙박스</th>
+                                <th scope="col">추가비용</th>
+                                <th scope="col">총합계</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>용품내용</td>
+                                <td>15%, 버텍스 300</td>
+                                <td>35%, 버텍스 300</td>
+                                <td>딥플라이 DF9</td>
+                                <td>해당없음</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>용품비용</td>
+                                <td>232,000원</td>
+                                <td>154,000원</td>
+                                <td>N/A</td>
+                                <td></td>
+                                <td>N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 용품신청정보 -->
+
+                    <!-- Start : 배송정보 -->
+                    <h3>배송정보</h3>
+                    <table class="bbs-table-view1">
+                        <colgroup>
+                            <col width="160px">
+                            <col width="%">
+                            <col width="160px">
+                            <col width="%">
+                            <col width="160px">
+                            <col width="%">
+                        </colgroup>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>탁송방법</th>
+                                <td colspan="5">제휴탁송사</td>
+                            </tr>
+                            <tr>
+                                <th>탁송지</th>
+                                <td colspan="5"></td>
+                            </tr>
+                            <tr>
+                                <th>인수자</th>
+                                <td></td>
+                                <th>연락처(1)</th>
+                                <td></td>
+                                <th>연락처(2)</th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 배송정보 -->
+
+                    <!-- Start : 여신담당 -->
+                    <h3>여신담당</h3>
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col width="160px">
+                            <col width="%">
+                            <col width="300px">
+                            <col width="300px">
+                            <col width="300px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">구분</th>
+                                <th scope="col">여신담당</th>
+                                <th scope="col"><span class="etc">CM</span></th><!-- [D]필수입력 .etc -->
+                                <th scope="col"><span class="etc">AG</span></th><!-- [D]필수입력 .etc -->
+                                <th scope="col"><span class="etc">AG연락처</span></th><!-- [D]필수입력 .etc -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>이름</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>수수료율</td>
+                                <td></td>
+                                <td>0.000%</td>
+                                <td>0.000%</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 여신담당 -->
+
+                    <!-- Start : 기타 특이사항 -->
+                    <h3>기타 특이사항</h3>
+                    <table class="bbs-table-view1">
+                        <colgroup>
+                            <col width="160px">
+                            <col width="%">
+                        </colgroup>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th><span class="etc">특이사항</span></th><!-- [D]필수입력 .etc -->
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 기타 특이사항 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

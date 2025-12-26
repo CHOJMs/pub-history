@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:15%">
+                    <col style="width:8%">
+                    <col style="width:13%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 서비스데스크 ▣</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-10-01</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>메인 홈 - 로그인 (레이어 팝업)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/메인홈로그인_팝업.html">메인홈로그인_팝업.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>메인 홈 - 로그인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/메인홈로그인.html">메인홈로그인.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>메인 홈 - 비로그인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/메인홈비로그인.html">메인홈비로그인.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 셀프처리 외 문의/접수 화면 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>직접문의</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/직접문의.html">직접문의.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>1:1 문의</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/일대일문의.html">일대일문의.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신청완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/신청완료.html">신청완료.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 접수 내역 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>내역 전체목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/내역목록.html">내역목록.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신청 내역 없는 경우</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/내역목록_없는경우.html">내역목록_없는경우.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>접수 취소 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/접수취소팝업.html">접수취소팝업.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>추가 문의</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/추가문의.html">추가문의.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ AI검색 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>AI 검색 (통합본)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/AI검색.html">AI검색.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>[검수용] 첫화면 - 추천 질문 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/AI검색_타입1.html">AI검색_타입1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>[검수용] 검색어 입력시, 연관질문 리스트</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/AI검색_타입2.html">AI검색_타입2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>[검수용] 답변 생각중</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/AI검색_타입3.html">AI검색_타입3.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>[검수용] 문의사항 답변</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/AI검색_타입4.html">AI검색_타입4.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>[검수용] 새로고침 후 첫화면</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/servicedesk/AI검색_타입5.html">AI검색_타입5.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

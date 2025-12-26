@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="stylesheet" href="/static/carverse/css/style.css">
+<link rel="stylesheet" href="/static/carverse/css/carverse.css">
+
+<!-- common js -->
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+
+<title>전자약정 신청정보입력 | iM캐피탈 카버스</title>
+
+</head>
+<body>
+
+    <!----------- Start : header 메뉴 ----------->
+    <header class="header" id="header">
+        <div class="inner_wrap">
+            <div class="inner_pc">
+                <a href="#none" onclick="goPage('/carverse/main.do');">
+                    <h1 class="logo"><span>CARVERSE</span></h1>
+                </a>
+                <ul class="gnb">
+                    <li>
+                        <a href="#none">견적</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/estimate/vecalc/brand.do');">견적내기</a></li>
+                            <li><a href="#none" onclick="goPage('/carverse/estimate/delCar.do');">즉시출고</a></li>
+                            <li><a href="#none" onclick="goPage('/carverse/estimate/recentEstimate.do');">최근견적</a></li>
+                            <li><a href="#none" onclick="goPage('/carverse/mypage/customRecommend.do');">나만의 맞춤추천</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none">중고차</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/autorental/limitInq/limitInqAuthUrl.do');">한도조회</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none" onclick="goPage('/carverse/autorental/contract.do');">전자약정</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/autorental/contract.do');">전자약정</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none">커뮤니티</a>
+                        <ul class="depth2">
+                            <li><a href="#none">동호회</a></li>
+                            <li><a href="#none">공지사항</a></li>
+                            <li><a href="#none">자주묻는질문</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#none" onclick="goPage('/carverse/mydgb/myList.do');">마이페이지</a>
+                        <ul class="depth2">
+                            <li><a href="#none" onclick="goPage('/carverse/mydgb/myList.do');">마이페이지</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 소스추가_11월29일 메인페이지 헤더 -->
+            <div class="inner_mo">
+                <a href="#none" class="logo" onclick="goPage('/carverse/main.do');">
+                    <span class="txt_hidden">메인페이지가기</span>
+                </a>
+                <!--// 모바일타이틀 개발소스 추가 영역 -->
+                <span class="util">
+                    <a href="#none" class="mo_header_direct_go" onclick="goPage('/carverse/mydgb/myList.do');"><span>마이페이지 바로가기</span></a>
+                    <button type="button" class="btn_menu"><span>전체메뉴 보기</span></button>
+                </span>
+            </div>
+
+            <!-- 클래스추가_11월29일 상세페이지는 type_detail 추가 -->
+            <div class="inner_mo type_detail" style="display: none;">
+                <a href="javascript:history.back();" class="btn_back"><span>뒤로가기</span></a>
+                <!-- 모바일타이틀 개발소스 추가 영역 -->
+                <h2 class="mo_tit">$모바일 타이틀$</h2>
+                <!--// 모바일타이틀 개발소스 추가 영역 -->
+                <span class="util">
+                    <a href="#none" class="mo_header_direct_go" onclick="goPage('/carverse/mydgb/myList.do');"><span>마이페이지 바로가기</span></a>
+                    <button type="button" class="btn_menu"><span>전체메뉴 보기</span></button>
+                </span>
+            </div>
+        </div>
+        <!-- // inner_wrap -->
+    </header>
+    <!----------- //End : header 메뉴 ----------->
+
+    <div class="wrap">
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-process">
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="process-wrap">
+                    <div class="pro-box">
+                        <h2 class="s-t1">전자약정</h2>
+                        <div class="tit-info font28">신청정보 확인 후<br>내용을 입력해주세요</div>
+
+                        <!-- Start : 전체동의 -->
+                        <div class="agree-box">
+                            <div class="agree-total-box mb8">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                    <label for="ch01" class="label">[필수]신청정보 확인하기</label>
+                                    <a href="#" class="wa-arrow"><img src="/static/carverse/img/common2/ico_arrow.png" alt="동의서 보기" class="agr-pc"></a><!--2023-12-22 : 이미지 수정 -->
+                                </div>
+                            </div>
+                            <div class="agree-total-box">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="ch02" name="ch02" class="chk">
+                                    <label for="ch02" class="label">[필수]중요약정 확인하기</label>
+                                    <a href="#" class="wa-arrow"><img src="/static/carverse/img/common2/ico_arrow.png" alt="동의서 보기" class="agr-pc"></a><!--2023-12-22 : 이미지 수정 -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //End : 전체동의 -->
+
+                        <!-- Start : 폼 -->
+                        <div class="form-iem">
+                            <div class="com-inp">
+                                <div class="s-txt mb20 mt32">위 내용에 대해 추가적인 설명이 필요하신가요?</div>
+                                <div class="inp-radio">
+                                    <div class="radiobox">
+                                        <input type="radio" id="ch031" name="ch031" checked="checked">
+                                        <label for="ch031" class="label">아니요</label>
+                                    </div>
+                                    <div class="radiobox">
+                                        <input type="radio" id="ch0311" name="ch031">
+                                        <label for="ch0311" class="label">네, 필요해요</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //End : 폼 -->
+
+                    </div>
+
+                    <div class="pro-box division-box">
+                        <div class="s-txt mb32">신청정보</div>
+
+                        <!-- Start : 폼 -->
+                        <div class="form-iem">
+                            <div class="com-inp">
+                                <p class="s-txt">자택주소</p>
+                                <input type="text"  placeholder="주소를 입력해주세요" value="" class="add"><!--2023-12-27 : 클래스 추가-->
+                                <button type="button" class="btn-search">검색</button>
+                            </div>
+                            <div class="com-inp">
+                                <p class="s-txt">직장/사업장 주소</p>
+                                <input type="text"  placeholder="주소를 입력해주세요" value="" class="add"><!--2023-12-27 : 클래스 추가-->
+                                <button type="button" class="btn-search">검색</button>
+                            </div>
+                            <div class="com-inp">
+                                <p class="s-txt">직업분류</p>
+                                <div class="accordion-sel-box">
+                                    <ul>
+                                        <li>
+                                            <div class="q"><a href="#">직업을 선택해주세요<span class="ico-arrow">내용 닫기</span></a>
+                                            </div>
+                                            <div class="a">
+                                                <ul>
+                                                    <li><a href="#">대기업</a></li>
+                                                    <li><a href="#">중소기업(KCB)</a></li>
+                                                    <li><a href="#">공공기관, 공무원 및 법조계, 교수</a></li>
+                                                    <li><a href="#">교사</a></li>
+                                                    <li><a href="#">교직원, 자영업자, 기타소득자</a></li>
+                                                    <li><a href="#">무직자</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="com-inp">
+                                <p class="s-txt">통신사</p>
+                                <div class="accordion-sel-box">
+                                    <ul>
+                                        <li>
+                                            <div class="q"><a href="#">통신사를 선택해주세요<span class="ico-arrow">내용 닫기</span></a>
+                                            </div>
+                                            <div class="a">
+                                                <ul>
+                                                    <li><a href="#">SKT</a></li>
+                                                    <li><a href="#">KT</a></li>
+                                                    <li><a href="#">LG U+</a></li>
+                                                    <li><a href="#">SKT 알뜰폰</a></li>
+                                                    <li><a href="#">KT 알뜰폰</a></li>
+                                                    <li><a href="#">LG U+ 알뜰폰</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="com-inp">
+                                <p class="s-txt">휴대폰번호</p>
+                                <input type="tel"  placeholder="휴대폰번호를 입력해주세요" value="">
+                            </div>
+                            <div class="com-inp">
+                                <p class="s-txt">결제일자</p>
+                                <div class="accordion-sel-box">
+                                    <ul>
+                                        <li>
+                                            <div class="q"><a href="#">결제일를 선택해주세요<span class="ico-arrow">내용 닫기</span></a>
+                                            </div>
+                                            <div class="a">
+                                                <ul>
+                                                    <li><a href="#">1일</a></li>
+                                                    <li><a href="#">5일</a></li>
+                                                    <li><a href="#">10일</a></li>
+                                                    <li><a href="#">15일</a></li>
+                                                    <li><a href="#">21일</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <p class="info-txt">첫 회차 납부일자는 개시(대여)일에 확정됩니다.<br></p>
+                            </div>
+                        </div>
+                        <!-- //End : 폼 -->
+
+                    </div>
+
+                    <div class="pro-box division-box">
+                        <div class="s-txt mb32">자동이체 계좌정보</div>
+
+                        <!-- Start : 폼 -->
+                        <div class="form-iem">
+                            <div class="com-inp">
+                                <p class="s-txt">자동이체 은행</p>
+                                <div><i class="ico-bank"><img src="/static/web/img/bank/bank_dgb.png" alt="대구은행"></i>
+                                    <a href="#" id="" class="ico-select alink bank">
+                                        <input type="text"  placeholder="선택하세요" value="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="com-inp">
+                                <p class="s-txt">자동이체 계좌번호</p>
+                                <div class="inp-btn">
+                                    <input type="tel"  placeholder="계좌번호를 입력해주세요" value="">
+                                    <button type="button" class="btn">계좌확인하기</button>
+                                </div>
+                                <p class="mt20">본인명의 계좌만 신청 가능합니다.</p><!--2023-12-22 : 수정 -->
+                            </div>
+                        </div>
+                        <!-- //End : 폼 -->
+                        <p class="info-txt mt40">※ 사업자번호 계좌 평생계좌(임의번호)를 활용하여 원계좌에 연계해둔 계좌는 자동이체를 신청할 수 없습니다.</p>
+
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">다음</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+
+    </div>
+
+    <!-- //통신사 셀렉트 js -->
+    <script type="text/javascript">
+        $(function(){
+            $('.accordion-sel-box ul li .q a').click(function(){
+                $(this).closest('li').toggleClass('show').children('.q').next('.a').slideToggle();
+
+                if($(this).closest('li').hasClass('show')){
+                    $(this).children('.icon_acco').text('내용 닫기');
+                    $(this).children('.ico-arrow').text('내용 닫기');
+                }else{
+                    $(this).children('.icon_acco').text('내용 열기');
+                    $(this).children('.ico-arrow').text('내용 열기');
+                }
+                return false;
+            })
+        });
+    </script>
+</body>
+</html>
+

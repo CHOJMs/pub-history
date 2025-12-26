@@ -1,0 +1,967 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/new_tab.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery-1.12.4.min.js"></script>
+
+<script type="text/javascript" >
+$(function(){
+	var tab1 = new tabpane(4,'tab','tabpage','_on.gif','.gif','active');
+})
+</script>
+
+</head>
+<body>
+
+<!-- 레이어 팝업 -->
+<div class="layer" tabindex="0" style="display: block;">
+	<div class="pop_bg"></div>
+	<div class="layerPop" id="cserLayerPopup" style="width: 1200px; transform: translate(-50%, -50%);">
+		<h1>부동산 시세조회</h1>
+		<div class="Pop_content" style="overflow:auto; height:800px;">
+			<div class="Pop_form-type">
+				
+				<table style="width: 100%" id="srchPntmAddrTable">
+					<colgroup>
+						<col width="50%" />
+						<col width="50%" />
+					</colgroup>
+					<tbody>
+						<tr>
+							<td>
+								<div class="rd_area a_l mb10">
+									<input type="radio" id="srchPntmAddrDeliCd_2" name="srchPntmAddrDeliCd" value="2" checked="checked" title="간편검색 선택"><label for="srchPntmAddrDeliCd_2" class="mr20 ml5">간편검색</label>
+									<input type="radio" id="srchPntmAddrDeliCd_2" name="srchPntmAddrDeliCd" value="2" title="지번주소 선택"><label for="srchPntmAddrDeliCd_2" class="mr20 ml5">소재지번으로 찾기</label>
+									<input type="radio" id="srchPntmAddrDeliCd_1" name="srchPntmAddrDeliCd" value="1" title="도로명주소 선택"><label for="srchPntmAddrDeliCd_1" class="mr20 ml5">도로명주소로 찾기</label>
+								</div>
+							</td>
+							<td>
+								<p class="right_btn a_r mb10">
+									<a href="#" id="btnReset" class="btn h42">초기화</a>
+									<a href="#" id="btnAddSrch" class="btn h42 neg">조회</a>
+								</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- 간편검색으로 찾기 시작 -->
+				<div id="CASE1" class="input_box" >
+					<div class="input_self box_form">
+						<table class="data-table form mb15" id="tbl_condition">
+						<caption>
+							부동산구분, 시/도, 동/리, 지번, 건물명칭, 동, 호 정보를 입력하는 테이블입니다
+						</caption>
+						<colgroup>
+							<col width="12%" />
+							<col width="21%" />
+							<col width="12%" />
+							<col width="21%" />
+							<col width="12%" />
+							<col width="" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="bg4">부동산구분</th>
+								<td>
+									<div class="form_box">
+										<select id="rletDstc2" name="rletDstc2" class="w100 rletDstc" title="부동산구분 선택">
+											<option value="">선택</option>
+										</select>
+									</div>
+								</td>
+								<th class="bg4">시/도</th>
+								<td>
+									<select id="trlCd2" name="trlCd2" class="w100 trlCd" title="시도 선택">
+										<option value="">선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th class="bg4">주소</th>
+								<td colspan="3">
+									<input type="text" class="w100" id="" name="" maxlength="13" title="주소 입력" />
+								</td>
+							</tr>
+							</tbody>
+						</table>
+						<p class="fs14">※ 자유롭게 주소를 입력하되 <span class="red">적어도 동 이름과 지번, 도로명과 건물번호를 포함</span>하여 검색하시기 바랍니다. (예 : 서초동 967, 서초대로 219)</p>
+						<p class="mt5 mb30 fs14">※ 도로명주소가 병기되지 않은 부동산 등기사상증명서는 <span class="red">도로명주소</span>로 검색되지 않을 수 있으니 검색되지 않는 등기사항증명서는 <span class="red">소재지번</span>을 입력하여 검색하시기 바랍니다.</p>
+					</div>
+				</div>
+				<!-- 간편검색으로 찾기 끝 -->
+
+				<!-- 소재지번으로 찾기 시작 -->
+				<div id="CASE2" class="input_box" >
+					<div class="input_self box_form">
+						<table class="data-table form mb30" id="tbl_condition">
+						<caption>
+							부동산구분, 주택구분, 시/도, 동/리, 지번, 건물명칭, 동, 호 정보를 입력하는 테이블입니다
+						</caption>
+						<colgroup>
+							<col width="12%" />
+							<col width="21%" />
+							<col width="12%" />
+							<col width="21%" />
+							<col width="12%" />
+							<col width="" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th class="bg4">부동산구분</th>
+								<td>
+									<div class="form_box">
+										<select id="rletDstc2" name="rletDstc2" class="w100 rletDstc" title="부동산구분 선택">
+											<option value="">선택</option>
+										</select>
+									</div>
+								</td>
+								<th class="bg4">주택구분</th>
+								<td>
+									<select id="inqDstc2" name="inqDstc2" class="w100 inqDstc" title="주택구분 선택">
+										<option value="">선택</option>
+										<option value="1">아파트</option>
+										<option value="2">오피스텔</option>
+										<option value="3">연립/빌라</option>
+										<option value="4">다세대주택</option>
+									</select>
+								</td>
+								<th class="bg4">시/도</th>
+								<td>
+									<select id="trlCd2" name="trlCd2" class="w100 trlCd" title="시도 선택">
+										<option value="">선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th class="bg4">동/리</th>
+								<td>
+									<input type="text" class="w100" id="dongRi" name="dongRi" maxlength="13" title="동/리 입력" />
+								</td>
+								<th class="bg4">지번</th>
+								<td>
+									<input type="text" class="w100" id="nolo" name="nolo" maxlength="13" title="지번 입력" />
+								</td>
+								<th class="bg4">건물명칭</th>
+								<td>
+									<input type="text" class="w100" id="bldgTite" name="bldgTite" maxlength="13" title="건물명칭 입력" />
+								</td>
+							</tr>
+							<tr>
+								<th class="bg4">동</th>
+								<td>
+								<input type="text" class="w100 dong readonly" id="dong2" name="dong2" maxlength="13" title="동 입력" readonly="readonly"/>
+								</td>
+
+								<th class="bg4">호</th>
+								<td>
+								<input type="text" class="w100 ho readonly" id="ho2" name="ho2" maxlength="13" title="호 입력" readonly="readonly"/>
+								</td>
+								<th class="bg4"></th>
+								<td>
+
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- 소재지번으로 찾기 끝 -->
+
+				<!-- 도로명주소로 찾기 시작 -->
+				<div id="CASE3" class="input_box" style="display:none;">
+					<div class="input_self box_form">
+						<table class="data-table form mb30" id="tbl_condition">
+						<caption>
+								부동산구분, 주택구분, 시/도, 시/군/구 , 도로명, 도로명건물번호, 동, 호 정보를 입력하는 테이블입니다
+						</caption>
+						<colgroup>
+							<col width="12%" />
+							<col width="21%" />
+							<col width="12%" />
+							<col width="21%" />
+							<col width="12%" />
+							<col width="" />
+						</colgroup>
+						<tbody>
+						<tr>
+							<th class="bg4">부동산구분</th>
+							<td>
+								<div class="form_box">
+									<select id="rletDstc1" name="rletDstc1" class="w100 rletDstc" title="부동산구분 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+							</td>
+							<th class="bg4">주택구분</th>
+							<td>
+								<select id="inqDstc1" name="inqDstc1" class="w100 inqDstc" title="주택구분 선택">
+									<option value="">선택</option>
+									<option value="1">아파트</option>
+									<option value="2">오피스텔</option>
+									<option value="3">연립/빌라</option>
+									<option value="4">다세대주택</option>
+								</select>
+							</td>
+							<th class="bg4">시/도</th>
+							<td>
+								<select id="trlCd1" name="trlCd1" class="w100 trlCd" title="시도 선택">
+									<option value="">선택</option>
+								</select>
+							</td>
+							</tr>
+							<tr>
+								<th class="bg4">시/군/구</th>
+								<td>
+									<select id="ccwCd" name="ccwCd" class="w100" title="시군구 선택">
+										<option value="">선택</option>
+									</select>
+								</td>
+								<th class="bg4">도로명</th>
+								<td>
+									<input type="text" class="w100" id="strtNm" name="strtNm" maxlength="13" title="지번 입력" />
+								</td>
+								<th class="bg4">도로명건물번호</th>
+								<td>
+									<input type="text" class="w100" id="strtNmBldgNo" name="strtNmBldgNo" maxlength="13" title="건물명칭 입력" />
+								</td>
+							</tr>
+							<tr>
+								<th class="bg4">동</th>
+								<td>
+								<input type="text" class="w100 dong readonly" id="dong1" name="dong1" maxlength="13" title="동 입력" readonly="readonly"/>
+								</td>
+
+								<th class="bg4">호</th>
+								<td>
+								<input type="text" class="w100 ho readonly" id="ho1" name="ho1" maxlength="13" title="호 입력" readonly="readonly" />
+								</td>
+								<th class="bg4"></th>
+								<td>
+
+								</td>
+							</tr>
+							</tbody>
+						</table>
+							</div>
+				</div>
+				<!-- 도로명주소로 찾기 끝 -->
+
+				<!-- 주소조회 Tab 시작-->
+				<div class="tab_box">
+					<table style="width: 100%">
+						<colgroup>
+							<col width="50%" />
+							<col width="50%" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<td>
+									<div class="tab_navi">
+										<ul class="tab1">
+											<li><a href="#" id="rlrgst_tab" class="active" rel="rlrgst_content">부동산등기</a></li>
+											<li><a href="#" id="rlet_tab" rel="rlet_content">부동산시세</a></li>
+											<li><a href="#" id="rd_tab" rel="rd_content">레이다시세</a></li>
+										</ul>
+									</div>
+								</td>
+								<td>
+									<p class="right_btn a_r mb10 w100">
+										<a href="#" id="btnPriceSrch" class="btn h42 neg">조회</a>
+										<a href="#" id="btnRlrgstReq" class="btn h42 neg">신청</a>
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 주소조회 Tab 끝 -->
+
+				<!-- 부동산등기 content 시작 -->
+			<div class="content_tab" id="rlrgst_content">
+				<!-- 부동산등기 조회 결과 리스트 시작 -->
+				<div class="scroll_box4">
+					<table class="bbs-table" id="rlrgstResult1" style="width:1300px;">
+						<caption>선택, 부동산구분, 부동산고유번호, 부동산소재지, 부동산도로명소재지, 소유자, 상태로 나타낸 테이블</caption>
+						<colgroup>
+							<col width="5%" />
+							<col width="10%" />
+							<col width="10%" />
+							<col width="32%" />
+							<col width="" />
+							<col width="8%" />
+							<col width="8%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">선택</th>
+								<th scope="col">부동산구분</th>
+								<th scope="col">부동산고유번호</th>
+								<th scope="col">부동산소재지</th>
+								<th scope="col">부동산도로명소재지</th>
+								<th scope="col">소유자</th>
+								<th scope="col">상태</th>
+							</tr>
+						</thead>
+						<tbody class="tbody" id="rlrgst_tbody">
+							<tr>
+								<td colspan="7">조회결과가 없습니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 부동산등기 조회 결과 리스트 끝 -->
+				<div class="button_box1">
+					<p class="a_r mb10 w100">
+						<a href="#" id="btnPDF" class="btn h42">PDF다운</a>
+						<a href="#" id="btnSrchRgstReq" class="btn h42">등기신청건조회</a>
+						<a href="#" id="btnSrchRgstDetail" class="btn h42">등기상세조회</a>
+					</p>
+				</div>
+				
+				<!-- 부동산등기 조회 결과 리스트2 시작 -->
+				<div class="scroll_box4 mt5">
+					<table class="bbs-table" id="rlrgstResult2" style="width:1600px;">
+						<caption>선택, 부동산구분, 파일건수, 부동산고유번호, 부동산소재지, 부동산도로명소재지, 소유자, 상태, PDF최종발급일로 나타낸 테이블</caption>
+						<colgroup>
+							<col width="4%" />
+							<col width="9%" />
+							<col width="7%" />
+							<col width="9%" />
+							<col width="26%" />
+							<col width="" />
+							<col width="7%" />
+							<col width="7%" />
+							<col width="9%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">선택</th>
+								<th scope="col">부동산구분</th>
+								<th scope="col">파일건수</th>
+								<th scope="col">부동산고유번호</th>
+								<th scope="col">부동산소재지</th>
+								<th scope="col">부동산도로명소재지</th>
+								<th scope="col">소유자</th>
+								<th scope="col">상태</th>
+								<th scope="col">PDF최종발급일</th>
+							</tr>
+						</thead>
+						<tbody class="tbody" id="rlrgst_tbody">
+							<tr>
+								<td colspan="9">조회결과가 없습니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 부동산등기 조회 결과 리스트2 끝 -->
+
+				<!-- 부동산등기 Tab 시작 -->
+				<div class="tab_box1">
+					<div class=" tab_navi">
+						<ul class=" tab4">
+							<li><a href="#" class="active" rel="rlrgst_1">요약-소유지분현황 갑구</a></li>
+							<li><a href="#" rel="rlrgst_2">요약-소유지분을 제외한 소유권 갑구</a></li>
+							<li><a href="#" rel="rlrgst_3">요약-근저당권 및 전세권 을구</a></li>
+							<li><a href="#" rel="rlrgst_4">표제부</a></li>
+						</ul>
+					</div>
+				</div>
+				<!-- 부동산등기 Tab 끝 -->
+
+				<!-- 부동산등기조회 리스트 시작 -->
+				<div class="tab_box2">
+					<!-- 요약-소유지분현황 갑구 시작 -->
+					<div class="scroll_box3 list_tab3" id="rlrgst_1">
+						<table class="bbs-table" id="dtl1Grid" style="width: 100%">
+							<caption>일련번호, 순위번호, 등기명의인, 소유구분, 주민, 최종지분, 주소로 나타낸 테이블</caption>
+							<colgroup>
+								<col width="9%" />
+								<col width="9%" />
+								<col width="9%" />
+								<col width="9%" />
+								<col width="9%" />
+								<col width="9%" />
+								<col width="" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">일련번호</th>
+									<th scope="col">순위번호</th>
+									<th scope="col">등기명의인</th>
+									<th scope="col">소유구분</th>
+									<th scope="col">주민</th>
+									<th scope="col">최종지분</th>
+									<th scope="col">주소</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td colspan="7">조회결과가 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 요약-소유지분현황 갑구 끝 -->
+
+					<!-- 요약-소유지분을 제외한 소유권 갑구 시작 -->
+					<div class="scroll_box3 list_tab3" id="rlrgst_2">
+						<table class="bbs-table" id="dtl2Grid" style="width: 1800px;">
+							<caption>일련번호, 등기분류, 순위번호, 등기목적, 등기목적코드, 접수일자, 접수번호, 대상소유자, 권리자, 당사자금액, 화폐구분으로 나타낸 테이블</caption>
+							<colgroup>
+								<col width="8%" />
+								<col width="8%" />
+								<col width="8%" />
+								<col width="10%" />
+								<col width="10%" />
+								<col width="9%" />
+								<col width="9%" />
+								<col width="7%" />
+								<col width="7%" />
+								<col width="9%" />
+								<col width="" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">일련번호</th>
+									<th scope="col">등기분류</th>
+									<th scope="col">순위번호</th>
+									<th scope="col">등기목적</th>
+									<th scope="col">등기목적코드</th>
+									<th scope="col">접수일자</th>
+									<th scope="col">접수번호</th>
+									<th scope="col">대상소유자</th>
+									<th scope="col">관리자</th>
+									<th scope="col">당사자금액</th>
+									<th scope="col">화폐구분</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td colspan="11">조회결과가 없습니다.</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 요약-소유지분을 제외한 소유권 갑구 끝 -->
+
+					<!-- 요약-근저당권 및 전세권 을구 시작 -->
+					<div class="scroll_box3 list_tab3" id="rlrgst_3">
+						<table class="bbs-table" id="dtl3Grid" style="width:1800px;">
+							<caption>일련번호, 등기분류, 순위번호, 등기목적, 등기목적코드, 접수일자, 접수번호, 대상소유자, 권리자, 당사자금액, 화폐구분으로 나타낸 테이블</caption>
+							<colgroup>
+								<col width="8%" />
+								<col width="8%" />
+								<col width="8%" />
+								<col width="10%" />
+								<col width="10%" />
+								<col width="9%" />
+								<col width="9%" />
+								<col width="7%" />
+								<col width="7%" />
+								<col width="9%" />
+								<col width="" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">일련번호</th>
+									<th scope="col">등기분류</th>
+									<th scope="col">순위번호</th>
+									<th scope="col">등기목적</th>
+									<th scope="col">등기목적코드</th>
+									<th scope="col">접수일자</th>
+									<th scope="col">접수번호</th>
+									<th scope="col">대상소유자</th>
+									<th scope="col">관리자</th>
+									<th scope="col">당사자금액</th>
+									<th scope="col">화폐구분</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td colspan="11">조회결과가 없습니다.</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 요약-근저당권 및 전세권 을구 끝 -->
+
+					<!-- 표제부 시작 -->
+					<div class="scroll_box3 list_tab3" id="rlrgst_4">
+						<table class="bbs-table" id="dtl4Grid" style="width: 100%">
+							<caption>표시번호, 접수일자, 표제부상세코드, 표제부일련번호, 표제부내용으로 나타낸 테이블</caption>
+							<colgroup>
+								<col width="12%" />
+								<col width="12%" />
+								<col width="21%" />
+								<col width="12%" />
+								<col width="180px" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">표시번호</th>
+									<th scope="col">접수일자</th>
+									<th scope="col">표제부상세코드</th>
+									<th scope="col">표제부일련번호</th>
+									<th scope="col">표제부내용</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td colspan="5">조회결과가 없습니다.</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 표제부 실거래가 끝 -->
+				</div>
+				<!-- 부동산등기조회 리스트 끝 -->
+			</div>
+			<!-- 부동산등기 content 끝 -->
+
+			<!-- 부동산시세 content 시작 -->
+			<div class="content_tab" id="rlet_content">
+				<!-- 부동산시세 주소조회 결과 리스트 리스트 시작 -->
+				<div class="scroll_box4">
+					<table class="bbs-table" id="rletPriceResult" style="width:1800px;">
+						<caption>선택, 부동산구분, 부동산고유번호, 소유자, 상태, 조회기준일, 실거래가검색개월수로 나타낸 테이블</caption>
+						<colgroup>
+							<col width="3%" />
+							<col width="6%" />
+							<col width="12%" />
+							<col width="15%" />
+							<col width="15%" />
+							<col width="%" />
+							<col width="%" />
+							<col width="10%" />
+							<col width="10%" />
+							<col width="10%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">선택</th>
+								<th scope="col">부동산구분</th>
+								<th scope="col">부동산고유번호</th>
+								<th scope="col">부동산소재지</th>
+								<th scope="col">부동산도로명소재지</th>
+								<th scope="col">소유자</th>
+								<th scope="col">상태</th>
+								<th scope="col">PDF최종발급일</th>
+								<th scope="col">발급이후변동여부</th>
+								<th scope="col">전자발급요청번호</th>
+							</tr>
+						</thead>
+						<tbody class="tbody" id="rlet_tbody">
+							<tr>
+								<td colspan="10">조회결과가 없습니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 부동산시세 주소조회 결과 리스트 리스트 끝 -->
+
+				<!-- 부동산 시세조회 Tab 시작 -->
+				<div class="tab_box1">
+						<div class=" tab_navi">
+							<ul class=" tab2">
+								<li><a href="#" class="active" rel="rletLand_1">기본정보</a></li>
+								<li><a href="#" rel="rletLand_2">공동주택 공시가격</a></li>
+								<li><a href="#" rel="rletLand_3">KB아파트시세</a></li>
+								<li><a href="#" rel="rletLand_4">아파트실거래가</a></li>
+								<li><a href="#" rel="rletLand_5">연립/다세대 실거래가</a></li>
+							</ul>
+						</div>
+					</div>
+				<!-- 부동산 시세조회 Tab 끝 -->
+
+				<!-- 부동산 시세조회 리스트 시작 -->
+				<div class="tab_box2">
+					<!-- 기본정보 시작 -->
+					<div class="scroll_box3 list_tab" id="rletLand_1">
+						<table class="bbs-table" id="rletBsicResult" style="width: 100%">
+							<caption>부동산구분 소재지주소 법정동코드로 나타낸 테이블</caption>
+							<colgroup>
+								<col width="20%" />
+								<col width="50%" />
+								<col width="30%" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">부동산구분</th>
+									<th scope="col">소재지주소</th>
+									<th scope="col">법정동코드</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td colspan="3">조회결과가 없습니다.</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 기본정보 끝 -->
+
+					<!-- 공공주택 공시가격 시작 -->
+					<div class="scroll_box3 list_tab" id="rletLand_2">
+						<table class="bbs-table" id="commResult" style="width: 1800px">
+							<caption>기준연도, 아파트명, 동, 호, 면적, 공동주택가격(만원), 1년전공동주택가격(만원), 2년전공동주택가격(만원), 3년전공동주택가격(만원)으로 나타낸 테이블</caption>
+							<colgroup>
+								<col width="11.1%" />
+								<col width="11.1%" />
+								<col width="11.1%" />
+								<col width="11.1%" />
+								<col width="11.1%" />
+								<col width="11.1%" />
+								<col width="11.1%" />
+								<col width="11.1%" />
+								<col width="11.1%" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">기준연도</th>
+									<th scope="col">아파트명</th>
+									<th scope="col">동</th>
+									<th scope="col">호</th>
+									<th scope="col">면적</th>
+									<th scope="col">공동주택가격(만원)</th>
+									<th scope="col">1년전공동주택가격(만원)</th>
+									<th scope="col">2년전공동주택가격(만원)</th>
+									<th scope="col">3년전공동주택가격(만원)</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td colspan="9">조회결과가 없습니다.</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 공공주택 공시가격 끝 -->
+
+					<!-- KB아파트시세 시작 -->
+					<div class="scroll_box3 list_tab" id="rletLand_3">
+						<table class="bbs-table" id="kbResult" style="width: 2000px">
+							<caption>기준일자, 평행, 평행구분, 매매하위평균가, 매매상위평균가, 전세하위평균가, 전세일반평균가, 전세상위평균가, 세대수, 주상복합여부, 방개수, 총동수, 입주년월로 나타낸 테이블</caption>
+							<colgroup>
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">기준일자</th>
+									<th scope="col">평형</th>
+									<th scope="col">평형구분</th>
+									<th scope="col">매매하위평균가</th>
+									<th scope="col">매매일반평균가</th>
+									<th scope="col">매매상위평균가</th>
+									<th scope="col">전세하위평균가</th>
+									<th scope="col">전세일반평균가</th>
+									<th scope="col">전세상위평균가</th>
+									<th scope="col">세대수</th>
+									<th scope="col">주상복합여부</th>
+									<th scope="col">방개수</th>
+									<th scope="col">총동수</th>
+									<th scope="col">입주년월</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td colspan="14">조회결과가 없습니다.</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- KB아파트시세 끝 -->
+
+					<!-- 아파트실거래가 시작 -->
+					<div class="scroll_box3 list_tab" id="rletLand_4">
+						<table class="bbs-table" id="aptResult" style="width: 1800px">
+							<caption>기준일자, 아파트명, 거래구분코드, 전용면적, 층, 거래가격(만원), 월세(만원), 건축연도, 거래건수로 나타낸 테이블</caption>
+							<colgroup>
+								<col width="150px" />
+								<col width="150px" />
+								<col width="150px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">기준일자</th>
+									<th scope="col">아파트명</th>
+									<th scope="col">거래구분코드</th>
+									<th scope="col">전용면적</th>
+									<th scope="col">층</th>
+									<th scope="col">거래가격(만원)</th>
+									<th scope="col">월세(만원)</th>
+									<th scope="col">건축연도</th>
+									<th scope="col">거래건수</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td colspan="9">조회결과가 없습니다.</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 아파트실서래가 끝 -->
+
+					<!-- 연립/다세대 실거래가 시작 -->
+					<div class="scroll_box3 list_tab" id="rletLand_5">
+						<table class="bbs-table" id="mltpResult" style="width: 1800px">
+							<caption>기준일자, 연립/다세대명, 거래구분코드, 전용면적, 층, 거래가격(만원), 월세(만원), 건축연도, 거래건수로 나타낸 테이블</caption>
+							<colgroup>
+								<col width="150px" />
+								<col width="150px" />
+								<col width="150px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+								<col width="180px" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">기준일자</th>
+									<th scope="col">연립/다세대명</th>
+									<th scope="col">거래구분코드</th>
+									<th scope="col">전용면적</th>
+									<th scope="col">층</th>
+									<th scope="col">거래가격(만원)</th>
+									<th scope="col">월세(만원)</th>
+									<th scope="col">건축연도</th>
+									<th scope="col">거래건수</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td colspan="9">조회결과가 없습니다.</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 연립/다세대 실거래가 끝 -->
+
+				</div>
+				<!-- 부동산 시세조회 리스트 끝 -->
+
+
+			</div>
+			<!-- 부동산시세 content 끝 -->
+
+			<!-- 레이다시세 content 시작 -->
+			<div class="content_tab" id="rd_content">
+				<!-- 레이다시세 주소조회 결과 리스트 시작 -->
+				<div class="scroll_box4">
+					<table class="bbs-table" id="rdPriceResult">
+						<caption>선택, AVM관리번호, 물건종류, 물건종류명, 지번주소, 도로명주소로 나타낸 테이블</caption>
+						<colgroup>
+							<col width="40px" />
+							<col width="150px" />
+							<col width="100px" />
+							<col width="220px" />
+							<col width="220px" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">선택</th>
+								<th scope="col">AVM관리번호</th>
+								<th scope="col">물건종류</th>
+								<th scope="col">지번주소</th>
+								<th scope="col">도로명주소</th>
+							</tr>
+						</thead>
+						<tbody class="tbody">
+							<tr>
+								<td colspan="5">조회결과가 없습니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 레이다시세 주소조회 결과 리스트 끝 -->
+
+				<!-- 레이다 시세조회 Tab -->
+				<div class="tab_box1">
+					<table style="width: 100%">
+						<colgroup>
+						</colgroup>
+						<tbody>
+							<tr>
+								<td>
+									<div class="tab_navi">
+										<ul class="tab3">
+											<li><a href="#" class="active" rel="rdLand_1">기본정보</a></li>
+											<li><a href="#" rel="rdLand_2">거래시세</a></li>
+											<li><a href="#" rel="rdLand_3">전월세시세</a></li>
+										</ul>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 레이다 시세조회 Tab -->
+
+				<!-- 레이다 시세조회 리스트 -->
+				<div class="tab_box2">
+					<!-- 기본정보 시작 -->
+					<div class="scroll_box3 list_tab2" id="rdLand_1">
+						<table class="bbs-table" id="rdBsicResult" style="width: 2000px">
+							<caption>물건종류, 지번주소, 도로명주소, 멸실여부, 멸실일자, 사용승인일자, 엘리베이터유무, 주구조, 지붕, 층명, 전유면적(m2), 공유면적(m2), 분양면적(m2), 평형, 주용도, 부동산고유번호로 나타낸 테이블</caption>
+							<colgroup>
+								<col width="150px" />
+								<col width="220px" />
+								<col width="220px" />
+								<col width="100px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">물건종류</th>
+									<th scope="col">지번주소</th>
+									<th scope="col">도로명주소</th>
+									<th scope="col">멸실여부</th>
+									<th scope="col">멸실일자</th>
+									<th scope="col">사용승인일자</th>
+									<th scope="col">엘리베이터유무</th>
+									<th scope="col">주구조</th>
+									<th scope="col">지붕</th>
+									<th scope="col">층명</th>
+									<th scope="col">전유면적(m2)</th>
+									<th scope="col">공유면적(m2)</th>
+									<th scope="col">분양면적(m2)</th>
+									<th scope="col">평형</th>
+									<th scope="col">주용도</th>
+									<th scope="col">부동산고유번호</th>
+								</tr>
+							</thead>
+							<tbody class="tbody">
+								<tr>
+									<td colspan="16">조회결과가 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 기본정보 끝 -->
+
+					<!-- 거래시세 시작 -->
+					<div class="scroll_box3 list_tab2" id="rdLand_2">
+						<table class="bbs-table" id="trResult" style="width: 1500px">
+							<caption>거래기준일자, 일반거래시세(만원), 상위거래시세(만원), 하위거래시세(만원), 거래시세서비스불가사유, 거래시세신뢰등급, 거래시세등급의견으로 나타낸 테이블</caption>
+							<colgroup>
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="150px" />
+								<col width="120px" />
+								<col width="300px" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">거래기준일자</th>
+									<th scope="col">일반거래시세(만원)</th>
+									<th scope="col">상위거래시세(만원)</th>
+									<th scope="col">하위거래시세(만원)</th>
+									<th scope="col">거래시세서비스불가사유</th>
+									<th scope="col">거래시세신뢰등급</th>
+									<th scope="col">거래시세등급의견</th>
+								</tr>
+							</thead>
+							<tbody class="tbody">
+								<tr>
+									<td colspan="7">조회결과가 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 거래시세 끝 -->
+
+					<!-- 전월세시세 시작 -->
+					<div class="scroll_box3 list_tab2" id="rdLand_3">
+						<table class="bbs-table" id="rentResult" style="width: 100%">
+							<caption>전월세기준일자, 전세시세(만원), 보등급(만원), 임차료(만원), 전월세신뢰등급, 전월세등급의견으로 나타낸 테이블</caption>
+							<colgroup>
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="120px" />
+								<col width="250px" />
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">전월세기준일자</th>
+									<th scope="col">전세시세(만원)</th>
+									<th scope="col">보증금(만원)</th>
+									<th scope="col">임차료(만원)</th>
+									<th scope="col">전월세신뢰등급</th>
+									<th scope="col">거래월세등급의견</th>
+								</tr>
+							</thead>
+							<tbody class="tbody">
+								<tr>
+									<td colspan="6">조회결과가 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 전월세시세 끝 -->
+				</div>
+				<!-- 레이다 시세조회 리스트 -->
+			</div>
+			<!-- 레이다시세 content 끝 -->
+				
+			</div>
+			
+			<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+			
+		</div>
+	</div>
+</div>
+<!-- 팝업bg -->
+
+</body>
+</html>

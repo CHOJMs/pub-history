@@ -1,0 +1,765 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/new_tab.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery-1.12.4.min.js"></script>
+
+<script type="text/javascript" >
+$(function(){
+	var tab1 = new tabpane(6,'tab','tabpage','_on.gif','.gif','active');
+})
+</script>
+
+</head>
+<body>
+
+<!-- 레이어 팝업 -->
+<div class="layer" tabindex="0" style="display: block;">
+	<div class="pop_bg"></div>
+	<div class="layerPop" id="cserLayerPopup" style="width: 1200px; height: 700px; transform: translate(-50%, -50%);">
+		<h1>온라인서류 제출내역</h1>
+		<div class="Pop_content">
+			<div class="Pop_form-type">
+
+				<!-- 검색// -->
+				<div class="search_p_box2">
+					<ul>
+						<li>
+							<label for="">고객번호<em>*</em></label>
+							<input type="text" id="" name="" value="" placeholder="" style="width: 59.5%;" disabled="disabled" class="disabled">
+						</li>
+						<li>
+							<label for="">고객명<em>*</em></label>
+							<input type="text" id="" name="" value="" placeholder="" disabled="disabled" class="disabled">
+						</li>
+						<li>
+							<label for="">기준일자</label>
+							<div class="form_box ">
+								<span><input type="text" name="" id="" maxlength="" value="yyyymmdd" style="width:100%; flex:inherit;" title="시작일자 입력"><a href="#" class="btnCalendar"><img src="/static/admin/img/common/ico_cal.gif" alt="날짜 선택"></a></span>
+								<span class="dash">-</span>
+								<span><input type="password" name="" id="" maxlength="7" value="" style="width:100%; flex:inherit;" title="종료일자 입력"><a href="#" class="btnCalendar"><img src="/static/admin/img/common/ico_cal.gif" alt="날짜 선택"></a></span>
+							</div>
+						</li>
+					</ul>
+					<p class="btn-align-center mb15 mt10">
+						<a href="#none" class="btn h42 wid120">조회하기</a>
+					</p>
+				</div>
+				<!-- //검색 -->
+				
+				<!-- tab -->
+				<div class="tab_2deps_box">
+					<ul class="tabwrap">
+						<li><a href="#" id="tab1">소득금액증명</a></li>
+						<li><a href="#" id="tab2">건강보험자격득실확인</a></li>
+						<li><a href="#" id="tab3">건강보험납부내역</a></li>
+						<li><a href="#" id="tab4">주민등록등본(초본)</a></li>
+						<li><a href="#" id="tab5">지방세납세증명</a></li>
+						<li><a href="#" id="tab6">국세납세증명</a></li>
+					</ul>
+				</div>
+				<!-- //tab -->
+				
+				<div id="tabpage1" class="form-type border_top_none">
+					<div class="scroll_box" style="height: 270px;">
+						<table class="bbs-table-view mb30">
+							<colgroup>
+								<col width="15%">
+								<col width="20%">
+								<col width="15%">
+								<col width="20%">
+								<col width="15%">
+								<col width="20%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">성명</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row">주민등록번호</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row">발급번호</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>주소</th>
+									<td colspan="3">
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th>증명구분</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>결과</th>
+									<td colspan="5">
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">소득증명내역</h4>
+						</div>
+
+						<table class="bbs-table">
+							<colgroup>
+								<col style="width:70px;">
+								<col style="width:18%;">
+								<col style="width:10%;">
+								<col style="width:20%;">
+								<col style="width:13%;">
+								<col style="width:18%;">
+								<col style="width:18%;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col">NO</th>
+									<th scope="col">소득구분</th>
+									<th scope="col">귀속연도</th>
+									<th scope="col">법인명</th>
+									<th scope="col">사업자번호</th>
+									<th scope="col">소득금액</th>
+									<th scope="col">총결정세액</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td></td>
+									<td>2021</td>
+									<td>OOO사</td>
+									<td>123-45-6789</td>
+									<td>0000-0000-0000</td>
+									<td>5,000,000</td>
+								</tr>
+								<tr>
+									<td colspan="7">조회된 내용이 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="a_r mb30 mt15 font14">[조회건수 : <strong>1</strong>건]</p>						
+					</div>
+				</div>
+				<!-- tab1// -->
+
+				<!-- tab2// -->
+				<div id="tabpage2" class="form-type border_top_none">
+					<div class="scroll_box" style="height: 270px;">
+						<table class="bbs-table-view mb30">
+							<colgroup>
+								<col width="15%">
+								<col width="20%">
+								<col width="15%">
+								<col width="20%">
+								<col width="15%">
+								<col width="20%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">성명</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row">주민등록번호</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row">발급번호</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>결과</th>
+									<td colspan="5">
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">자격득실확인내역</h4>
+						</div>
+
+						<table class="bbs-table">
+							<colgroup>
+								<col style="width:70px;">
+								<col style="width:24%;">
+								<col style="width:24%;">
+								<col style="width:24%;">
+								<col style="width:24%;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col">NO</th>
+									<th scope="col">가입자구분</th>
+									<th scope="col">사업자명칭</th>
+									<th scope="col">자격취득일</th>
+									<th scope="col">자격상실일</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>직장가입자</td>
+									<td>OOO사</td>
+									<td>2021-10-00</td>
+									<td>2021-10-00</td>
+								</tr>
+								<tr>
+									<td colspan="5">조회된 내용이 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="a_r mb30 mt15 font14">[조회건수 : <strong>1</strong>건]</p>						
+					</div>
+				</div>
+				<!-- //tab2 -->
+
+				<!-- tab3// -->
+				<div id="tabpage3" class="form-type border_top_none">
+					<div class="scroll_box" style="height: 270px;">
+						<table class="bbs-table-view mb30">
+							<colgroup>
+								<col width="15%">
+								<col width="20%">
+								<col width="15%">
+								<col width="20%">
+								<col width="15%">
+								<col width="20%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">가입자성명</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row">생년월일</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row">발급번호</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>조회년월</th>
+									<td>
+										<div class="form_box ">
+											<span><input type="text" name="" id="" maxlength="" value="yyyymmdd" style="width:100%; flex:inherit;" disabled="disabled" class="disabled"></span>
+											<span class="dash">-</span>
+											<span><input type="password" name="" id="" maxlength="7" value="" style="width:100%; flex:inherit;" disabled="disabled" class="disabled"></span>
+										</div>
+									</td>
+									<th>결과</th>
+									<td colspan="3">
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">건강보험납부내역</h4>
+						</div>
+
+						<table class="bbs-table">
+							<colgroup>
+								<col style="width:70px;">
+								<col style="width:15%;">
+								<col style="width:12%;">
+								<col style="width:8%;">
+								<col style="width:8%;">
+								<col style="width:13%;">
+								<col style="width:13%;">
+								<col style="width:13%;">
+								<col style="width:13%;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col" rowspan="2">NO</th>
+									<th scope="col" rowspan="2">사업장명칭</th>
+									<th scope="col" rowspan="2">납부자번호</th>
+									<th scope="col" rowspan="2">년도</th>
+									<th scope="col" rowspan="2">월별</th>
+									<th scope="col" colspan="2">고지금액</th>
+									<th scope="col" colspan="2">납부금액</th>
+								</tr>
+								<tr>		
+									<th scope="col">건강보험료</th>
+									<th scope="col">장기요양보험료</th>
+									<th scope="col">건강보험료</th>
+									<th scope="col">장기요양보험료</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>OOO사</td>
+									<td>00000000000</td>
+									<td>2019</td>
+									<td>11</td>
+									<td>50,000</td>
+									<td>5,000</td>
+									<td>50,000</td>
+									<td>5,000</td>
+								</tr>
+								<tr class="bg-red">
+									<td>합계</td>
+									<td>OOO사</td>
+									<td>00000000000</td>
+									<td>2019</td>
+									<td>11</td>
+									<td>50,000</td>
+									<td>5,000</td>
+									<td>50,000</td>
+									<td>5,000</td>
+								</tr>
+								<tr>
+									<td colspan="9">조회된 내용이 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="a_r mb30 mt15 font14">[조회건수 : <strong>1</strong>건]</p>						
+					</div>
+				</div>
+				<!-- //tab3 -->
+
+				<!-- tab4// -->
+				<div id="tabpage4" class="form-type border_top_none">
+					<div class="scroll_box" style="height: 270px;">
+						<table class="bbs-table-view mb30">
+							<colgroup>
+								<col width="15%">
+								<col width="20%">
+								<col width="15%">
+								<col width="20%">
+								<col width="15%">
+								<col width="20%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">성명</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row">생년월일</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row"></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">주민등록등본(초본)기본정보 내역</h4>
+						</div>
+
+						<table class="bbs-table">
+							<colgroup>
+								<col style="width:10%;">
+								<col style="width:7%;">
+								<col style="width:9%;">
+								<col style="width:9%;">
+								<col style="width:8%;">
+								<col style="width:6%;">
+								<col style="width:6%;">
+								<col style="width:9%;">
+								<col style="width:6%;">
+								<col style="width:7%;">
+								<col style="width:6%;">
+								<col style="width:8%;">
+								<col style="width:6%;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col">결과</th>
+									<th scope="col">민원사무구분</th>
+									<th scope="col">문서확인번호</th>
+									<th scope="col">발행일</th>
+									<th scope="col">발행기관</th>
+									<th scope="col">세대주<br>성명</th>
+									<th scope="col">세대구성사유</th>
+									<th scope="col">세대구성일자</th>
+									<th scope="col">성명</th>
+									<th scope="col">주민등록번호</th>
+									<th scope="col">담당자</th>
+									<th scope="col">담당자<br>연락처</th>
+									<th scope="col">신청인</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>정상처리되었습니다.</td>
+									<td>등본</td>
+									<td>0000-0000-0000-0000</td>
+									<td>2021-06-01</td>
+									<td>서울특별시 종로구</td>
+									<td>홍길동</td>
+									<td>전입</td>
+									<td>2018-00-00</td>
+									<td>홍길동</td>
+									<td>123456-7891234</td>
+									<td>홍길동</td>
+									<td>010-1234-5678</td>
+									<td>홍길동</td>
+								</tr>
+								<tr>
+									<td colspan="13">조회된 내용이 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="a_r mb30 mt15 font14">[조회건수 : <strong>1</strong>건]</p>	
+						
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">주민등록등본(초본)주소정보 내역</h4>
+						</div>
+						<table class="bbs-table">
+							<colgroup>
+								<col style="width:70px;">
+								<col style="width:%;">
+								<col style="width:12%;">
+								<col style="width:12%;">
+								<col style="width:15%;">
+								<col style="width:15%;">
+								<col style="width:12%;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col">NO</th>
+									<th scope="col">주소</th>
+									<th scope="col">전입일</th>
+									<th scope="col">변동일</th>
+									<th scope="col">변동사유</th>
+									<th scope="col">세대주및관계</th>
+									<th scope="col">등록상태</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>서울시 OO구 OO동 OO로 OO</td>
+									<td>2021-06-01</td>
+									<td>2021-06-01</td>
+									<td>도로명주소</td>
+									<td>OOO의 자녀</td>
+									<td>거주자</td>
+								</tr>
+								<tr>
+									<td colspan="7">조회된 내용이 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="a_r mb30 mt15 font14">[조회건수 : <strong>1</strong>건]</p>	
+
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">주민등록등본(초본)세대원정보 내역</h4>
+						</div>
+						<table class="bbs-table">
+							<colgroup>
+								<col style="width:70px;">
+								<col style="width:15%;">
+								<col style="width:15%;">
+								<col style="width:15%;">
+								<col style="width:15%;">
+								<col style="width:15%;">
+								<col style="width:15%;">
+								<col style="width:15%;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col">NO</th>
+									<th scope="col">세대주와의 관계</th>
+									<th scope="col">성명</th>
+									<th scope="col">주민등록번호</th>
+									<th scope="col">전입일</th>
+									<th scope="col">변동일</th>
+									<th scope="col">등록상태</th>
+									<th scope="col">변동사유</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>본인</td>
+									<td>홍길동</td>
+									<td>000000-0****00</td>
+									<td>2021-10-00</td>
+									<td>2021-10-00</td>
+									<td>거주자</td>
+									<td>전입</td>
+								</tr>
+								<tr>
+									<td colspan="8">조회된 내용이 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="a_r mb30 mt15 font14">[조회건수 : <strong>1</strong>건]</p>	
+					</div>
+				</div>
+				<!-- //tab4 -->
+
+				<!-- tab5// -->
+				<div id="tabpage5" class="form-type border_top_none">
+					<div class="scroll_box" style="height: 270px;">
+						<table class="bbs-table-view mb30">
+							<colgroup>
+								<col width="15%">
+								<col width="20%">
+								<col width="15%">
+								<col width="20%">
+								<col width="15%">
+								<col width="20%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">가입자성명</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row">생년월일</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row">발급번호</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>발급일자</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th>결과</th>
+									<td colspan="3">
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">징수유예등 체납처분유예 내역</h4>
+						</div>
+
+						<table class="bbs-table">
+							<colgroup>
+								<col style="width:70px;">
+								<col style="width:24%;">
+								<col style="width:12%;">
+								<col style="width:10%;">
+								<col style="width:15%;">
+								<col style="width:12%;">
+								<col style="width:12%;">
+								<col style="width:12%;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col">NO</th>
+									<th scope="col">유예종류</th>
+									<th scope="col">유예기간</th>
+									<th scope="col">과세연도</th>
+									<th scope="col">세목</th>
+									<th scope="col">납부기한</th>
+									<th scope="col">지방세</th>
+									<th scope="col">가산금</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td colspan="8">조회된 내용이 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="a_r mb30 mt15 font14">[조회건수 : <strong>1</strong>건]</p>						
+					</div>
+				</div>
+				<!-- //tab5 -->
+
+				<!-- tab6// -->
+				<div id="tabpage6" class="form-type border_top_none">
+					<div class="scroll_box" style="height: 270px;">
+						<table class="bbs-table-view mb30">
+							<colgroup>
+								<col width="15%">
+								<col width="20%">
+								<col width="15%">
+								<col width="20%">
+								<col width="15%">
+								<col width="20%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">가입자성명</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row">생년월일</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th scope="row">발급번호</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>발급일자</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+									<th>결과</th>
+									<td colspan="3">
+										<div class="form_box">
+											<input type="text" name="" id="" disabled="disabled" class="disabled">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">징수유예등 체납처분유예 내역</h4>
+						</div>
+
+						<table class="bbs-table">
+							<colgroup>
+								<col style="width:70px;">
+								<col style="width:24%;">
+								<col style="width:12%;">
+								<col style="width:10%;">
+								<col style="width:15%;">
+								<col style="width:12%;">
+								<col style="width:12%;">
+								<col style="width:12%;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col">NO</th>
+									<th scope="col">유예종류</th>
+									<th scope="col">유예기간</th>
+									<th scope="col">과세기간</th>
+									<th scope="col">세목</th>
+									<th scope="col">납부기한</th>
+									<th scope="col">세액</th>
+									<th scope="col">가산금</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td colspan="8">조회된 내용이 없습니다.</td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="a_r mb30 mt15 font14">[조회건수 : <strong>1</strong>건]</p>						
+					</div>
+				</div>
+				<!-- //tab6 -->
+
+			</div>
+			<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+
+		</div>
+	</div>
+</div>
+<!-- 팝업bg -->
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공동인증서 내보내기 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>내보내기(스마트폰 → PC)</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+                <div class="pro-box">
+                    <div class="confi_box line-type">
+                        <div class="tl">
+                            <span>홍길동()123456789123456789525232432342342342465747574<p></p>
+                        </span></div>
+                        <ul class="list_1">
+                            <li>
+                                <span class="tit">용도</span>
+                                <span>은행개인</span>
+                            </li>
+                            <li>
+                                <span class="tit">발급기관</span>
+                                <span>yessign</span>
+                            </li>
+                            <li>
+                                <span class="tit">만료일자</span>
+                                <span>2024-07-21</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pro-box division-box">
+                    <div class="com-inp">
+                        <label for="">인증번호</label>
+                        <div class="inp-area certi-num">
+                            <input type="text" title="인증번호 첫 네자리" placeholder="0000">
+                            <em class="dash">-</em>
+                            <input type="text" title="인증번호 가운데 네자리" placeholder="0000">
+                            <em class="dash">-</em>
+                            <input type="text" title="인증번호 마지막 네자리" placeholder="0000">
+                        </div>
+                    </div>
+                </div>
+                <!-- //End : content -->
+
+                 <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray01"><button type="button" id="">이전</button></span>
+                        <span class="btn"><button type="button" id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function(){
+        $(window).on("resize", function() {
+            footerHide();
+        });
+        footerHide();
+        function footerHide() {
+            var screenWidth = $(window).width();
+            if (screenWidth < 1024) {
+                // 화면 너비가 1024px보다 작을 때 실행할 코드
+                $("footer").hide();
+                $("body").show();
+            }else{
+                $("body").hide();
+            }
+        }
+    });
+</script>
+</body>
+</html>

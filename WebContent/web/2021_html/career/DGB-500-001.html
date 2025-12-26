@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/career/styles.css">
+<!--<link rel="stylesheet" href="/static/web/css/career/mobile_layout.css"> 모바일인 경우 : "mobile_layout.css" 넣어줌-->
+
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/jquery-1.12.4.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+<script src="/static/web/js/ui_gnb_career_pc.js"></script>
+
+<title>본인확인 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap">
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			
+			<!--// 모바일용 작은 사이즈 GNB 메뉴 -->
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+			<div class="mobile-logo"><a href=""><img src="/static/web/img/career/logo.png" alt="iM캐피탈 채용"></a></div>
+			
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+				
+				<div class="mobile-menu">
+					<p tabindex="0"><img src="/static/web/img/career/logo.png" alt="iM캐피탈 채용"></p>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>
+					<ul>
+						<li class="name"><span>홍길동</span>님 반갑습니다.</li>
+						<li class="home"><a href="">홈</a></li>
+					</ul>					
+				</div>
+
+				<div class="right">
+					<ul>
+						<li class="#none"><a href="#none">인사제도</a>
+							<ul>
+								<li><a href="">인재상</a></li>
+								<li><a href="">복리후생</a></li>
+								<li><a href="">채용 프로세스</a></li>
+							</ul>
+						</li>
+						<li><a href="#none">입사지원</a>
+							<ul>
+								<li><a href="">채용공고</a></li>
+								<li><a href="">전형결과 확인</a></li>
+								<li><a href="">지원자 등록</a></li>
+								<li><a href="">FAQ</a></li>
+							</ul>
+						</li>
+						<li><a href="#none">직무소개</a></li>
+						<li><a href="#none">나의 지원서</a></li>
+					</ul>
+				</div>
+			</nav>
+			<!-- 모바일용 작은 사이즈 GNB 메뉴 //-->
+
+			<!-- //웹용 큰 사이즈 GNB 메뉴 -->
+			<div id="nav">
+				<div class="logo_area"><h1><a href="#"><img src="/static/web/img/career/logo.png" alt="iM캐피탈 채용"></a></h1></div>
+				<div id="blind"></div>
+				<div id="gnb">
+					<ul>
+						<li><a href="#"><span>인사제도</span></a>
+							<ul class="menuBox">
+								<li><a href="#">인재상</a></li>
+								<li><a href="#">복리후생</a></li>
+								<li><a href="#">채용 프로세스</a></li>
+							</ul>
+						</li>
+						<li><a href="#"><span>입사지원</span></a>
+							<ul class="menuBox">
+								<li><a href="#">채용공고</a></li>
+								<li><a href="#">전형결과 확인</a></li>
+								<li><a href="#">지원자 등록</a></li>
+								<li><a href="#">FAQ</a></li>
+							</ul>
+						</li>
+						<li><a href="#"><span>직무소개</span></a></li>
+						<li><a href="#"><span>나의 지원서</span></a></li>
+					</ul>
+					<p class="name"><span>홍길동</span> 님</p>
+					<p class="logout"><a href="#">로그아웃</a>
+				</div>
+			</div>
+			<!-- 웹용 큰 사이즈 GNB 메뉴// -->
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <p class="img3"><span>나의 지원서</span></p>
+				
+				<!-- 내용 시작 -->
+				<div class="cont_box">					
+					
+					<!-- 제목// -->
+					<p class="h_tit">지원서등록</p>
+					<table class="viewType">
+						<caption>지원서등록 - 직무, 지원자, 휴대폰번호, 이메일, 지원분야, 신입/경력 등으로 나타낸 표</caption>
+						<colgroup>
+						  <col width="20%">
+						  <col width="%">
+						  <col width="20%">
+						  <col width="%">
+						  </colgroup>
+						  <tbody>
+							<tr>
+								<th scope="row">직무</th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" class="disabled" disabled="disabled" placeholder="" title="직무 입력">
+										</span>					
+									</div>
+								</td>
+								<th scope="row">지원자</th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" class="disabled" disabled="disabled" placeholder="" title="지원자 입력">
+										</span>					
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">휴대폰번호</th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="010-1234-5678" title="휴대폰번호 입력">
+										</span>	
+										<div class="btn_cont">
+											<button id="">수정</button>
+										</div>				
+									</div>
+								</td>
+								<th scope="row">이메일</th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="email" id="" placeholder="" title="이메일 입력">
+										</span>	
+										<div class="btn_cont">
+											<button id="">수정</button>
+										</div>				
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">지원분야</th>
+								<td>
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="지원분야 선택">
+												<option>선택</option>
+											</select>
+										</div>
+									</div>
+								</td>
+								<th scope="row">신입/경력</th>
+								<td>
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="신입/경력 선택">
+												<option>선택</option>
+											</select>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //제목 -->
+
+					<!-- 기본정보// -->
+					<p class="h_tit">기본정보</p>
+					<table class="viewType">
+						<caption>기본정보 - 사진, 주소, 장애여부, 보훈여부, 병역정보 등으로 나타낸 표</caption>
+						<colgroup>
+							<col width="20%">
+							<col width="%">
+							<col width="%">
+							<col width="%">
+							<col width="%">
+					    </colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">사진<em>*<span>필수</span></em></th>
+								<td>
+									<div class="file_box">
+										<p><img src="/static/web/img/career/img_photo.png" alt=""></p>								
+										<div class="btn_file_box">
+											<a href="#" class="btn_file">사진 등록</a>
+											<input type="file" name="file_1" class="file_input_hidden" title="파일명 입력">
+										</div>
+									</div>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">주소<em>*<span>필수</span></em></th>
+								<td colspan="4">
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="" title="주소 입력">
+										</span>	
+										<div class="btn_cont">
+											<button id="">우편번호 검색</button>
+										</div>				
+									</div>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="상세주소를 입력해주세요" title="상세주소 입력">
+										</span>			
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">장애여부<em>*<span>필수</span></em></th>
+								<td>
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="장애여부 선택">
+												<option>선택</option>
+											</select>
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="장애구분 선택">
+												<option>구분</option>
+											</select>
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="등급입력" title="등급 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<div class="checkbox">
+											<input type="checkbox" id="ch01" name="ch01" checked="checked" class="chk" aria-hidden="false" title="민감정보 활용 동의">
+											<label for="ch01" class="label" role="checkbox">민감정보 활용 동의</label>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">보훈여부<em>*<span>필수</span></em></th>
+								<td>
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="보훈여부 선택">
+												<option>선택</option>
+											</select>
+										</div>
+									</div>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">병역정보<em>*<span>필수</span></em></th>
+								<td>
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="병역정보 선택">
+												<option>선택</option>
+											</select>
+										</div>
+									</div>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //기본정보 -->
+
+					<!-- 학력정보// -->
+					<p class="h_tit">학력정보</p>
+					<table class="viewType">
+						<caption>학력정보 - 고등학교, 대학교 등으로 나타낸 표</caption>
+						<colgroup>
+						  	<col width="20%">
+						  	<col width="%">
+						  	<col width="%">
+						  	<col width="%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="고등학교 선택">
+												<option>고등학교</option>
+											</select>
+										</div>
+										<span><a href="#" class="plus"><img src="/static/web/img/career/ico_plus.png" alt="추가"></a></span>		
+									</div>
+								</th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="학교명" title="학교명 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="입학년월" title="입학년월 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="졸업년월" title="졸업년월 입력">
+										</span>	
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="졸업상태 선택">
+												<option>졸업상태</option>
+											</select>
+										</div>		
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="2" class="ver_top pt24">
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="대학교 선택">
+												<option>대학교</option>
+											</select>
+										</div>
+										<span><a href="#" class="plus"><img src="/static/web/img/career/ico_plus.png" alt="추가"></a></span>		
+									</div>
+								</th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="학교명" title="학교명 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="입학년월" title="입학년월 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="졸업년월" title="졸업년월 입력">
+										</span>	
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="졸업상태 선택">
+												<option>졸업상태</option>
+											</select>
+										</div>		
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="전공" title="전공 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="평점/총점" title="평점/총점 입력">
+										</span>
+									</div>
+								</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //학력정보 -->
+
+					<!-- 자격/수상/IT 활용능력// -->
+					<p class="h_tit">자격/수상/IT 활용능력</p>
+					<table class="viewType">
+						<caption>자격/수상/IT 활용능력 등으로 나타낸 표</caption>
+						<colgroup>
+						  	<col width="20%">
+						  	<col width="%">
+						  	<col width="%">
+						  	<col width="%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><span>자격증/수상/ IT활용능력</span><span><a href="#" class="plus"><img src="/static/web/img/career/ico_plus.png" alt="추가"></a></span></th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="학교명" title="학교명 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="입학년월" title="입학년월 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="졸업년월" title="졸업년월 입력">
+										</span>	
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="졸업상태 선택">
+												<option>졸업상태</option>
+											</select>
+										</div>		
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //자격/수상/IT 활용능력 -->
+
+					<!-- 외국어사항// -->
+					<p class="h_tit">외국어 사항</p>
+					<table class="viewType">
+						<caption>외국어사항 - 언어 등으로 나타낸 표</caption>
+						<colgroup>
+						  	<col width="20%">
+						  	<col width="%">
+						  	<col width="%">
+						  	<col width="%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">언어<span><a href="#" class="plus"><img src="/static/web/img/career/ico_plus.png" alt="추가"></a></span></th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="언어명" title="언어명 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="언어 시험명" title="언어시험명 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="주최기관" title="주최기관 입력">
+										</span>	
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="취득일" title="취득일 입력">
+										</span>	
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //외국어사항 -->
+
+					<!-- 해외경험// -->
+					<p class="h_tit">해외 경험</p>
+					<table class="viewType">
+						<caption>해외경험 - 국가 등으로 나타낸 표</caption>
+						<colgroup>
+						  	<col width="20%">
+						  	<col width="%">
+						  	<col width="%">
+						  	<col width="%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" rowspan="2" class="ver_top">국가<span><a href="#" class="plus"><img src="/static/web/img/career/ico_plus.png" alt="추가"></a></span></th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="국가명" title="국가명 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="시작일" title="시작일 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="종료일" title="종료일 입력">
+										</span>	
+									</div>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<div class="text_data">
+										<textarea name="" id="" placeholder="" title="해외경험 내용 입력">해외에서 어떤 경험을 했는지 기재해 주세요. (Ex. 어학연수, 교환학생, 워킹홀리데이, 해외근무)</textarea>									
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //해외경험 -->
+
+					<!-- 경력사항// -->
+					<div class="flex-btn">
+						<p class="h_tit">경력 사항</p>
+						<span class="btn btn-blk">
+							<a href="#">저장</a>
+						</span>
+					</div>
+					<table class="viewType">
+						<caption>경력사항 - 회사명 등으로 나타낸 표</caption>
+						<colgroup>
+						  	<col width="20%">
+						  	<col width="%">
+						  	<col width="%">
+						  	<col width="%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" rowspan="2" class="ver_top">회사명<span><a href="#" class="plus"><img src="/static/web/img/career/ico_plus.png" alt="추가"></a></span></th>
+								<td>
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="고용형태 선택">
+												<option>고용형태</option>
+											</select>
+										</div>		
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="입사일" title="입사일 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="퇴사일" title="퇴사일 입력">
+										</span>	
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="직급" title="직급 입력">
+										</span>	
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<div class="text_data">
+										<textarea name="" id="" placeholder="" title="담당업무 입력">담당업무 입력</textarea>									
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //경력사항 -->
+
+					<!-- 상세경력기술// -->					
+					<div class="flex-btn">
+						<p class="h_tit">상세 경력 기술</p>
+						<span class="btn btn-blk">
+							<a href="#">저장</a>
+						</span>
+					</div>
+					<table class="viewType">
+						<caption>상세경력기술 - 업무명 등으로 나타낸 표</caption>
+						<colgroup>
+						  	<col width="20%">
+						  	<col width="%">
+						  	<col width="%">
+						  	<col width="%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" rowspan="3" class="ver_top">업무명<span><a href="#" class="plus"><img src="/static/web/img/career/ico_plus.png" alt="추가"></a></span></th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="국가명" title="국가명 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="시작일" title="시작일 입력">
+										</span>
+									</div>
+								</td>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="종료일" title="종료일 입력">
+										</span>	
+									</div>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<div class="text_data">
+										<textarea name="" id="" placeholder="" title="업무 내용 입력">업무 내용 및 목적 입력</textarea>									
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<div class="text_data">
+										<textarea name="" id="" placeholder="" title="상세 내용 입력">담당 업무 및 사용 기술(역할) 상세 입력 (2,000자 이내)</textarea>									
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //상세경력기술 -->
+
+					<!-- 희망처우// -->					
+					<div class="flex-btn">
+						<p class="h_tit">희망처우</p>
+						<span class="btn btn-blk">
+							<a href="#">저장</a>
+						</span>
+					</div>
+					<table class="viewType">
+						<caption>희망처우 - 희망직위, 희망기본연봉 (성과급미포함), 희망총연봉 (성과급포함) 등으로 나타낸 표</caption>
+						<colgroup>
+						  	<col width="20%">
+						  	<col width="%">
+						  	<col width="%">
+						  	<col width="%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">희망직위</th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" id="" placeholder="Ex) 대리,과장,차장,부장" title="희망직위 입력">
+										</span>
+									</div>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">희망기본연봉 (성과급미포함)</th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="Ex) 50,000,000원" title="희망기본연봉 입력">
+										</span>
+									</div>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">희망총연봉 (성과급포함)</th>
+								<td>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="Ex) 50,000,000원" title="희망총연봉 입력">
+										</span>
+									</div>
+								</td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //희망처우 -->
+
+					<!-- 자기소개// -->					
+					<div class="flex-btn">
+						<p class="h_tit">자기소개</p>
+						<span class="btn btn-blk">
+							<a href="#">저장</a>
+						</span>
+					</div>
+					<table class="viewType">
+						<caption>자기소개 - 업무명 등으로 나타낸 표</caption>
+						<colgroup>
+						  	<col width="20%">
+						  	<col width="%">
+						  	<col width="%">
+						  	<col width="%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" rowspan="3" class="ver_top">자기소개</th>
+								<td colspan="4">
+									<div class="text_data">
+										<textarea name="" id="" placeholder="" title="자기소개 입력">3,000자 이내 입력</textarea>									
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //상세경력기술 -->
+
+					<p class="h_tit">지원서를 등록하시겠습니까?<br>등록하신 지원서는 iM캐피탈 채용을 위해 활용됩니다.</p>
+					<div class="blue_box">
+						<div class="checkbox">
+							<input type="checkbox" id="ch02" name="ch02" checked="checked" class="chk" aria-hidden="false" title="개인정보 추가 이용에 대한 동의">
+							<label for="ch02" class="label" role="checkbox">개인정보 추가 이용에 대한 동의</label>
+							<span class="img">
+								<a href="#">보기</a>
+							</span>
+						</div>
+					</div>
+
+
+				 </div>
+                <!-- 내용 끝 -->
+				<!-- 버튼 시작 -->
+				<div class="btn_fixed">
+					<div class="btn_box">
+						<span class="btn gray"><a href="#">삭제하기</a></span>
+						<span class="btn gray1"><a href="#">미리보기</a></span>
+						<span class="btn line"><a href="#">임시저장</a></span>
+						<span class="btn"><a href="#">등록하기</a></span>
+					</div>
+				</div>
+				<!-- 버튼 끝 -->
+
+            </div>
+			<!-- centents 끝 -->			
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+	<footer class="footerwrap">
+        <!-- PC_footer -->
+		<div class="pc_footer">
+			<!--<div class="pc_f_logo"><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></div>-->
+			<div class="pc_f_address">
+				<ul>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">이용약관</a></li>
+					<li><a href="#">고객정보 제공내역 조회</a></li>
+				</ul>
+				<ul class="address">
+					<li>ⓒ iM CAPITAL Corp. All Rights Reserved.</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //PC_footer -->
+    </footer>
+</body>
+</html>

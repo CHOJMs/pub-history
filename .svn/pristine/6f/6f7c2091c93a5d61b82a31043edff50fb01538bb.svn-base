@@ -1,0 +1,1330 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		// 뒤로가기 버튼으로 들어올때 값 사라짐 방지
+		if($('#BOARD_ID').val() == "")
+			$('#BOARD_ID').val("BOARD_ID");
+		if($('#PGE_NO').val() == "")
+			$('#PGE_NO').val("iPageNo");
+		if($('#menuNo').val() == "")
+			$('#menuNo').val("3");
+		if($('#subMenuNo').val() == "")
+			$('#subMenuNo').val("SUB_MENU");
+		if($('#INSERT_KEY').val() == "")
+			$('#INSERT_KEY').val("0");
+	});
+
+//window.alert($.fn.jquery);
+	// 조회
+	function goSearch(pageNum){
+
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardListSelect";
+		f.PGE_NO.value = pageNum;
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+
+	//파일다운로드
+	function download(fileName){
+		var path = "upload";
+
+		window.location.href = "/view/common/inc/FILE_DOWNLOAD.jsp?file_name="+fileName+"&file_path="+path;
+	}
+
+
+	//상세보기
+	function notsDtlSubmit(bid, ref){
+// 		var f = document.frm;
+
+// 		f.METHOD.value = "AdminBoardDetail";
+// 		f.B_ID.value   = bid;
+// 		f.REF_ID.value = ref;
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+
+		location.href = "/admin/board/dgbNoticeBoardMngDtl.jsp"
+	}
+
+	function goWrite(){
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardWrite";
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+
+	}
+
+
+
+</script>
+
+<!-- 20180509 버튼추가 -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script type="text/javascript">
+	/*
+	* Author: Ryan Sutana
+	* Author URI: http://www.sutanaryan.com/
+	* Description: This snippet add more site functionality.
+	*/
+
+	var _rys = jQuery.noConflict();
+	_rys("document").ready(function(){
+
+		_rys(window).scroll(function () {
+			if (_rys(this).scrollTop() > 136) {
+				_rys('.nav-container').addClass("f-nav");
+			} else {
+				_rys('.nav-container').removeClass("f-nav");
+			}
+		});
+
+	});
+</script>
+
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false">
+				<jsp:param name="menuNo" value="6"/>
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="container bg_none">
+
+			<div class="content-wrap">
+				<h3>대출접수등록</h3>
+
+				<div class="contents">
+					<div class="form-type bbs-form">
+
+						<!-- 상담기본정보// -->
+						<div class="tit_area">
+							<h4 class="dl_tb_tit">상담기본정보</h4>
+							<p class="btn-align-right mt-45 mb10 nav-container"><!-- 20180509 : nav-container추가 -->
+								<a href="#" class="btn h42">초기화</a>
+								<a href="#" class="btn h42">목록333333333</a>
+								<a href="#" class="btn h42">수정</a>
+								<a href="#" class="btn h42">접수등록</a>
+							</p>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">접수구분</th>
+									<td>한도조회</td>
+									<th scope="row">상담번호</th>
+									<td>000000000</td>
+									<th scope="row">상담일시</th>
+									<td>yyyy-mm-dd hh:mm</td>
+									<th scope="row">최종수정일(금융사)</th>
+									<td>yyyy-mm-dd hh:mm</td>
+								</tr>
+								<tr>
+									<th scope="row">접수상태</th>
+									<td>대기</td>
+									<th scope="row">진행상태</th>
+									<td>상담</td>
+									<th scope="row">진행상태상세</th>
+									<td>인증완료</td>
+									<th scope="row">담당자상태</th>
+									<td>상담중</td>
+								</tr>
+								<tr>
+									<th scope="row">소속</th>
+									<td>강남론센터</td>
+									<th scope="row">권유자</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="나권유  /  김길동" title="권유자 입력"><span class="m0 p0"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span>
+										</div>
+									</td>
+									<th scope="row">메모</th>
+									<td colspan="5">
+										<div class="form_box">
+											메모내용입니다.<span class="m0 p0 btn"><a href="#" class="btn h42">메모 등록/조회</a></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //상담기본정보 -->
+
+
+						<!-- 한도조회 결과// -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">한도조회 결과</h4>
+							<p class="btn-align-right mt-45 mb10"><!-- 20180704 추가 -->
+								<a href="#" class="btn h42 neg">신청결과_CSS</a>
+							</p>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">상품명</th>
+									<td></td>
+									<th scope="row">시스템판정</th>
+									<td></td>
+									<th scope="row">시스템한도</th>
+									<td class="a_r">원</td>
+									<th scope="row">시스템 금리</th>
+									<td class="a_r">%</td>
+								</tr>
+								<tr>
+									<th scope="row">타사대환 우대한도</th>
+									<td class="a_r">원</td>
+									<th scope="row">타사대환 우대금리</th>
+									<td class="a_r">%</td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<p class="mt20 red">※ 한도조회결과(한도, 금액등)은 심사결과에 따라 변경될 수 있습니다.</p>
+						<!-- //한도조회 결과 -->
+
+						<!-- 고객기본정보// -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">고객기본정보</h4>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">고객소득 구분<em>*</em></th>
+									<td>
+										<select id="" title="고객소득 구분 항목선택" style="width:150px;">
+											<option value="" selected="selected">급여소득자</option>
+										</select>
+									</td>
+									<th scope="row">고객명<em>*</em></th>
+									<td>홍길동</td>
+									<th scope="row">주민등록번호<em>*</em></th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="6" value="" style="width:100px; flex:inherit;" title="주민등록번호 앞6자리 입력"><span class="dash">-</span><input type="password" name="" id="" maxlength="7" value="" style="width:100px; flex:inherit;" title="주민등록번호 뒤7자리 입력">
+										</div>
+									</td>
+									<th scope="row">휴대폰<em>*</em></th>
+									<td>
+										<div class="form_box">
+											<span class="m5">000 – 0000 – 0000</span> <span class="m0"><a href="#none" class="btn h42" style="padding: 0 13px;">신용정보동의</a></span>
+										</div>
+									</td>
+								</tr>
+								<tr>]
+									<th scope="row">신청금액<em>*</em></th>
+									<td>
+										<div class="form_box" style="width:150px;">
+											<input type="text" name="" id="" maxlength="" value="000" class="input_right" title="신청금액 입력"><span>원</span>
+										</div>
+									</td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //고객기본정보 -->
+
+						<!-- 재직 / 사업정보 // -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">재직 / 사업정보</h4>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">직장 / 업체명<em></em></th>
+									<td><input type="text" name="" id="" maxlength="" value="" style="width:100%;" title="직장/업체명 입력"></td>
+									<th scope="row">사업자번호</th>
+									<td><input type="text" name="" id="" maxlength="" value="1234567890" style="width:100%;" title="사업자번호 입력"></td>
+									<th scope="row">직업 / 직위<em></em></th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="직업/직위 입력"><span class="m0 p0"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span>
+										</div>
+									</td>
+									<th scope="row">표준산업분류<em>*</em></th>
+									<td>
+										<div class="form_box">
+											<span class="m0 mr3 p0" style="width: 50%;"><input type="text" name="" id="" maxlength="" value="" title="표준산업분류 입력" style="width: 100%;"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span><input type="text" name="" id="" maxlength="" value="" style="width:30%;" title="표준산업분류 입력">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">입사 / 개업일자<em>*</em></th>
+									<td><input type="text" name="" id="" maxlength="" value="yyyymmdd" style="width:150px;" title="입사/개업일자 입력"></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row">직장/업체 주소<em></em></th>
+									<td colspan="3">
+										<div class="form_box">
+										<span class="m0 mr3 p0" style="width: 40%;"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a><input type="text" name="" id="" maxlength="" value="" title="직장/업체 주소 입력" style="width: 100%;"></span> <input type="text" name="" id="" maxlength="" value="나머지 주소를 입력하세요" title="직장/업체 상세주소 입력">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">직장/ 업체 전화번호<em></em></th>
+									<td><input type="text" name="" id="" maxlength="" value="" style="width:150px;" title="직장/ 업체 전화번호 입력"></td>
+									<th scope="row">직군<em></em></th>
+									<td>
+										<div class="form_box">
+										<select id="" title="직군 구분 항목선택" style="width:75%;">
+											<option value="" selected="selected">선택</option>
+										</select><span class="m0"><a href="#none" class="btn h42">직군산출</a></span>
+										</div>
+									</td>
+									<th scope="row">직군결정구분<em></em></th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="직군결정구분 입력">
+										</div>
+									</td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // 재직 / 사업정보 -->
+
+						<!-- Case 1. 고객소득구분 – 급여소득자 -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">재직 / 사업정보 Case 1 (고객소득구분 – 급여소득자)</h4>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">직장 / 업체명<em></em></th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="직장/업체명 입력"><span class="m0 p0"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span>
+										</div>
+									</td>
+									<th scope="row">사업자번호</th>
+									<td><input type="text" name="" id="" maxlength="" value="1234567890" style="width:100%;" title="사업자번호 입력"></td>
+									<th scope="row">직업 / 직위<em></em></th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="직업/직위 입력"><span class="m0 p0"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span>
+										</div>
+									</td>
+									<th scope="row">입사 / 개업일자<em>*</em></th>
+									<td><input type="text" name="" id="" maxlength="" value="yyyymmdd" style="width:150px;" title="입사/개업일자 입력"></td>
+								</tr>
+								<tr>
+									<th scope="row">4대보험 가입여부<em>*</em></th>
+									<td>
+										<div class="form_box">
+										<select id="" title="4대보험 가입여부 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+										</div>
+									</td>
+									<th scope="row">급여수령형태<em></em></th>
+									<td>
+										<div class="form_box">
+										<select id="" title="급여수령형태 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+										</div>
+									</td>
+									<th scope="row">급여일<em></em></th>
+									<td>
+										<div class="form_box">
+										<select id="" title="급여일 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+										</div>
+									</td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">직장/업체 주소<em></em></th>
+									<td colspan="7">
+										<div class="form_box">
+										<span class="m0 mr3 p0" style="width: 40%;"><input type="text" name="" id="" maxlength="" value="" title="직장/업체 주소 입력" style="width: 100%;"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span> <input type="text" name="" id="" maxlength="" value="나머지 주소를 입력하세요" title="직장/업체 상세주소 입력">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">직장/ 업체 전화번호<em></em></th>
+									<td>
+										<div class="form_box">
+										<select id="" title="지역번호 항목선택" style="width:30%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+										<input type="text" name="" id="" maxlength="" value="" style="width:20%;" title="국번 입력">
+										<input type="text" name="" id="" maxlength="" value="" style="width:20%;" title="전화번호 입력">
+										</div>
+									</td>
+									<th scope="row">직군<em></em></th>
+									<td>
+										<div class="form_box">
+										<select id="" title="직군 구분 항목선택" style="width:75%;">
+											<option value="" selected="selected">선택</option>
+										</select><span class="m0"><a href="#none" class="btn h42">직군산출</a></span>
+										</div>
+									</td>
+									<th scope="row">직군결정구분<em></em></th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="직군결정구분 입력">
+										</div>
+									</td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // Case 1. 고객소득구분 – 급여소득자 -->
+
+						<!-- Case 2. 고객소득구분 – 개인사업자 / 전문직개인사업자 -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">재직 / 사업정보 Case 2 (개인사업자 / 전문직개인사업자)</h4>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">직장 / 업체명<em></em></th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="직장/업체명 입력"><span class="m0 p0"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span>
+										</div>
+									</td>
+									<th scope="row">사업자번호</th>
+									<td><input type="text" name="" id="" maxlength="" value="1234567890" style="width:100%;" title="사업자번호 입력"></td>
+									<th scope="row">직업 / 직위<em></em></th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="직업/직위 입력"><span class="m0 p0"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span>
+										</div>
+									</td>
+									<th scope="row">표준산업분류<em>*</em></th>
+									<td>
+										<div class="form_box">
+											<span class="m0 mr3 p0" style="width: 50%;"><input type="text" name="" id="" maxlength="" value="" style="width:100%;" title="표준산업분류 입력"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span><input type="text" name="" id="" maxlength="" value="" style="width:30%;" title="표준산업분류 입력">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">입사 / 개업일자<em>*</em></th>
+									<td><input type="text" name="" id="" maxlength="" value="yyyymmdd" style="width:150px;" title="입사/개업일자 입력"></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">직장/업체 주소<em></em></th>
+									<td colspan="7">
+										<div class="form_box">
+											<span class="m0 mr3 p0" style="width: 40%;"><input type="text" name="" id="" maxlength="" value="" title="직장/업체 주소 입력" style="width: 100%;"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span> <input type="text" name="" id="" maxlength="" value="나머지 주소를 입력하세요" title="직장/업체 상세주소 입력">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">직장/ 업체 전화번호<em></em></th>
+									<td>
+										<div class="form_box">
+										<select id="" title="지역번호 항목선택" style="width:30%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+										<input type="text" name="" id="" maxlength="" value="" style="width:20%;" title="국번 입력">
+										<input type="text" name="" id="" maxlength="" value="" style="width:20%;" title="전화번호 입력">
+										</div>
+									</td>
+									<th scope="row">사업장소유구분<em></em></th>
+									<td>
+										<div class="form_box">
+										<select id="" title="사업장소유구분 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+										</div>
+									</td>
+									<th scope="row">보증금<em></em></th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" class="input_right" title="보증금 입력"><span>만원</span>
+										</div>
+									</td>
+									<th scope="row">월세<em></em></th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" class="input_right" title="월세 입력"><span>만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">최근년도연매출<em></em></th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" class="input_right" title="최근년도연매출 입력"><span>만원</span>
+										</div>
+									</td>
+									<th scope="row">직군<em></em></th>
+									<td>
+										<div class="form_box">
+										<select id="" title="직군 구분 항목선택" style="width:75%;">
+											<option value="" selected="selected">선택</option>
+										</select><span class="m0"><a href="#none" class="btn h42">직군산출</a></span>
+										</div>
+									</td>
+									<th scope="row">직군결정구분<em></em></th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="직군결정구분 입력">
+										</div>
+									</td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // Case 2. 고객소득구분 – 개인사업자 / 전문직개인사업자 -->
+
+						<!-- Case 3. 고객소득구분 – 기타소득 -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">재직 / 사업정보 Case 3 (고객소득구분 – 기타소득)</h4>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">직장 / 업체명<em></em></th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="직장/업체명 입력"><span class="m0 p0"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span>
+										</div>
+									</td>
+									<th scope="row">사업자번호</th>
+									<td><input type="text" name="" id="" maxlength="" value="1234567890" style="width:100%;" title="사업자번호 입력"></td>
+									<th scope="row">직업 / 직위<em></em></th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="직업/직위 입력"><span class="m0 p0"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span>
+										</div>
+									</td>
+									<th scope="row">입사 / 개업일자<em>*</em></th>
+									<td><input type="text" name="" id="" maxlength="" value="yyyymmdd" style="width:150px;" title="입사/개업일자 입력"></td>
+								</tr>
+								<tr>
+									<th scope="row">직장/업체 주소<em></em></th>
+									<td colspan="7">
+										<div class="form_box">
+											<span class="m0 mr3 p0" style="width: 40%;"><input type="text" name="" id="" maxlength="" value="" title="직장/업체 주소 입력" style="width: 100%;"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span> <input type="text" name="" id="" maxlength="" value="나머지 주소를 입력하세요" title="직장/업체 상세주소 입력">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">직장/ 업체 전화번호<em></em></th>
+									<td>
+										<div class="form_box">
+										<select id="" title="지역번호 항목선택" style="width:30%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+										<input type="text" name="" id="" maxlength="" value="" style="width:20%;" title="국번 입력">
+										<input type="text" name="" id="" maxlength="" value="" style="width:20%;" title="전화번호 입력">
+										</div>
+									</td>
+									<th scope="row">직군<em></em></th>
+									<td>
+										<div class="form_box">
+										<select id="" title="직군 구분 항목선택" style="width:75%;">
+											<option value="" selected="selected">선택</option>
+										</select><span class="m0"><a href="#none" class="btn h42">직군산출</a></span>
+										</div>
+									</td>
+									<th scope="row">직군결정구분<em></em></th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="직군결정구분 입력">
+										</div>
+									</td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // Case 3. 고객소득구분 – 기타소득 -->
+
+						<!-- 재무 정보// -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">재무 정보</h4>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">(연)근로/사업소득<em>*</em></th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" class="input_right" title="(연)근로/사업소득 입력"><span>만원</span>
+										</div>
+									</td>
+									<th scope="row">주택소유구분<em>*</em></th>
+									<td>
+										<select id="" title="주택소유구분 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+									</td>
+									<th scope="row">주거종류<em>*</em></th>
+									<td>
+										<select id="" title="주거종류 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+									</td>
+									<th scope="row">부동산가격<em>*</em></th>
+									<td>
+										<div class="form_box">
+											<span class="m0 p0" style="width: 86%;"><input type="text" name="" id="" maxlength="" value="" style="width:100%;" title="부동산가격 입력"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span><span>만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">부동산소재지 주소<em></em></th>
+									<td colspan="7">
+										<div class="form_box">
+											<span class="m0 mr3 p0" style="width: 40%;"><input type="text" name="" id="" maxlength="" value="" title="부동산소재지 주소 입력" style="width: 100%;"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span> <input type="text" name="" id="" maxlength="" value="" title="부동산소재지 상세주소 입력">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">선순위설정액</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" style="width:95%;" class="input_right" title="선순위설정액 입력"><span>만원</span>
+										</div>
+									</td>
+									<th scope="row">선순위임대보증금</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" style="width:95%;" class="input_right" title="선순위임대보증금 입력"><span>만원</span>
+										</div>
+									</td>
+									<th scope="row">지분율</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" style="width:95%;" class="input_right" title="지분율 입력"><span>%</span>
+										</div>
+									</td>
+									<th scope="row">권리침해구분</th>
+									<td>
+										<select id="" title="권리침해구분 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">실거주여부</th>
+									<td>
+										<select id="" title="실거주여부 항목선택" style="width:180px;">
+											<option value="" selected="selected">선택</option>
+										</select>
+									</td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //재무 정보 -->
+
+						<!-- Case 1. 재무정보 – 직장인론 -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">재무 정보 Case 1 (관심상품 – 간편대출 / 직장인론)</h4>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">(연)근로/사업소득<em>*</em></th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" class="input_right" title="(연)근로/사업소득 입력"><span>만원</span>
+										</div>
+									</td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //Case 1. 재무정보 – 직장인론 -->
+
+						<!-- Case 2. 재무정보 – 아파트론 -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">재무 정보 Case 2 (관심상품 - 아파트론)</h4>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">(연)근로/사업소득<em>*</em></th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" class="input_right" title="(연)근로/사업소득 입력"><span>만원</span>
+										</div>
+									</td>
+									<th scope="row">주택소유구분<em>*</em></th>
+									<td>
+										<select id="" title="주택소유구분 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+									</td>
+									<th scope="row">주거종류<em>*</em></th>
+									<td>
+										<select id="" title="주거종류 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+									</td>
+									<th scope="row">부동산가격<em>*</em></th>
+									<td>
+										<div class="form_box">
+											<span class="m0 p0" style="width: 86%;"><input type="text" name="" id="" maxlength="" value="" style="width:100%;" title="부동산가격 입력"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span><span>만원</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">부동산소재지 주소<em></em></th>
+									<td colspan="7">
+										<div class="form_box">
+											<span class="m0 mr3 p0" style="width: 40%;"><input type="text" name="" id="" maxlength="" value="" title="부동산소재지 주소 입력" style="width: 100%;"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span> <input type="text" name="" id="" maxlength="" value="" title="부동산소재지 상세주소 입력">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">선순위설정액</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" style="width:95%;" class="input_right" title="선순위설정액 입력"><span>만원</span>
+										</div>
+									</td>
+									<th scope="row">선순위임대보증금</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" style="width:95%;" class="input_right" title="선순위임대보증금 입력"><span>만원</span>
+										</div>
+									</td>
+									<th scope="row">지분율</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" style="width:95%;" class="input_right" title="지분율 입력"><span>%</span>
+										</div>
+									</td>
+									<th scope="row">권리침해구분</th>
+									<td>
+										<select id="" title="권리침해구분 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">실거주여부</th>
+									<td>
+										<select id="" title="실거주여부 항목선택" style="width:180px;">
+											<option value="" selected="selected">선택</option>
+										</select>
+									</td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //Case 2. 재무정보 – 아파트론 -->
+
+						<!-- Case 3. 재무정보 – 중고차론 -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">재무 정보 Case 3 (관심상품 – 중고차론)</h4>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">(연)근로/사업소득<em>*</em></th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" class="input_right" title="(연)근로/사업소득 입력"><span>만원</span>
+										</div>
+									</td>
+									<th scope="row">차량모델명<em>*</em></th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="차량모델명 입력"><span class="m0 p0"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span>
+										</div>
+									</td>
+									<th scope="row">차량가격(현 시세)<em>*</em></th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="000" class="input_right" title="차량가격(현 시세) 입력"><span>만원</span>
+										</div>
+									</td>
+									<th scope="row">국산/수입</th>
+									<td>
+										<select id="" title="국산/수입 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">차량연식/배기량<em>*</em></th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="연식" style="width:50%;" title="차량연식 입력"><input type="text" name="" id="" maxlength="" value="배기량" style="width:50%;" title="배기량 입력">
+										</div>
+									</td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //Case 3. 재무정보 – 중고차론 -->
+
+						<!-- 차량조건// -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">차량조건</h4>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+								<col style="width:160px;">
+								<col style="width:18%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">차량모델명</th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="차량모델명 입력"><span class="m0 p0"><a href="#" class="btnSearch"><img src="/static/admin/img/common/ico_search.png"></a></span>
+										</div>
+									</td>
+									<th scope="row">차량가격</th>
+									<td>
+										<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="차량가격 입력"><span class="m0">원</span>
+										</div>
+									</td>
+									<th scope="row">국산/수입</th>
+									<td>
+										<select id="" title="국산/수입 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+									</td>
+									<th scope="row">차량종류구분</th>
+									<td>
+										<select id="" title="차량종류 항목선택" style="width:100%;">
+											<option value="" selected="selected">선택</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">차량연식/배기량</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="" value="연식" style="width:50%;" title="차량연식 입력"> <input type="text" name="" id="" maxlength="" value="배기량" style="width:50%;" title="배기량 입력">
+										</div>
+									</td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+									<th scope="row"><em></em></th>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //차량조건 -->
+
+						<!-- 대출 모집인을 통한 대출 모집(유입) 경로 확인서 // -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">대출모집인을 통한 대출 모집(유입) 경로 확인서</h4>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:180px;">
+								<col style="width:85%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row" rowspan="2">채무자 작성(대출신청인)</th>
+									<th scope="row" class="line_left">유입경로</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio2" id="" title="방문(대면) 선택">
+											<label for="" class="mr20">방문(대면)</label>
+											<input type="radio" name="radio2" id="" title="전단/판촉 선택">
+											<label for="" class="mr20">전단/판촉</label>
+											<input type="radio" name="radio2" id="" title="지인소개 선택">
+											<label for="" class="mr20">지인소개</label>
+											<input type="radio" name="radio2" id="" title="우편물 선택">
+											<label for="" class="mr20">우편물</label>
+											<input type="radio" name="radio2" id="" title="옥외광고 선택">
+											<label for="" class="mr20">옥외광고</label>
+											<input type="radio" name="radio2" id="" title="전화/SMS 선택">
+											<label for="" class="mr20">전화/SMS</label>
+											<input type="radio" name="radio2" id="" title="TM 선택">
+											<label for="" class="mr20">TM</label>
+											<input type="radio" name="radio2" id="" title="기타 선택">
+											<label for="" class="mr20">기타</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">불법정보 활용여부</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio3" id="" title="해당있음 선택">
+											<label for="" class="mr20">해당있음</label>
+											<input type="radio" name="radio3" id="" title="해당없음 (개인정보 도용 등 불법적인 요소의 유무) 선택">
+											<label for="" class="mr20">해당없음 (개인정보 도용 등 불법적인 요소의 유무)</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row" rowspan="2">대출 모집인 작성</th>
+									<th scope="row" class="line_left">유입경로</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio4" id="" title="방문(대면) 선택">
+											<label for="" class="mr20">방문(대면)</label>
+											<input type="radio" name="radio4" id="" title="전단/판촉 선택">
+											<label for="" class="mr20">전단/판촉</label>
+											<input type="radio" name="radio4" id="" title="지인소개 선택">
+											<label for="" class="mr20">지인소개</label>
+											<input type="radio" name="radio4" id="" title="우편물 선택">
+											<label for="" class="mr20">우편물</label>
+											<input type="radio" name="radio4" id="" title="옥외광고 선택">
+											<label for="" class="mr20">옥외광고</label>
+											<input type="radio" name="radio4" id="" title="전화/SMS 선택">
+											<label for="" class="mr20">전화/SMS</label>
+											<input type="radio" name="radio4" id="" title="TM 선택">
+											<label for="" class="mr20">TM</label>
+											<input type="radio" name="radio4" id="" title="기타 선택">
+											<label for="" class="mr20">기타</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">불법정보 활용여부</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio5" id="" title="해당있음 선택">
+											<label for="" class="mr20">해당있음</label>
+											<input type="radio" name="radio5" id="" title="해당없음 (개인정보 도용 등 불법적인 요소의 유무) 선택">
+											<label for="" class="mr20">해당없음 (개인정보 도용 등 불법적인 요소의 유무)</label>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // 대출 모집인을 통한 대출 모집(유입) 경로 확인서 -->
+
+						<!-- 대출상담사 확인설명서 // -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">대출상담사 설명확인서</h4>
+							<p class="dl_tb_tit_1">설명 확인사항 - 채무자 작성 (대출신청인)</p>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:85%;">
+								<col style="width:300px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">1. 대출계약을 체결하기 전에 대출상담사로부터 대출상품의 조건 및 대출 내용 등에 관하여 충분한 설명을 받으셨나요?</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio10" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio10" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">2. 대출상담사로부터 대출모집인은 금융회사의 업무위탁을 받아 대출모집 및 소개 등의 섭외 활동을 한다는 사실에 대하여 사전에 고지 받으셨나요?</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio11" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio11" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">3. 대출상담사로부터 대출모집인은 고객에게 별도의 수수료를 요구하거나 수취할 수 없다는 사실에 대하여 사전에 고지 받으셨나요?</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio12" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio12" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">4. 대출상담사로부터 여신심사 등을 통한 대출실행의 결정은 금융회사가 한다는 사실에 대하여 사전에 고지 받으셨나요?</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio13" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio13" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">5. 대출상담사로부터 귀하의 소득·재산, 부채상황, 신용 및 변제계획 등을 고려하여 적합한 대출 상품을 권유 받으셨나요?</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio14" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio14" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">6. 대출상담사로부터 귀하가 필요한 자금의 범위를 초과하여 대출을 받도록 권유 또는 유도 받으셨나요?</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio15" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio15" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">7. 대출상담을 진행한 대출상담사의 성명은 무엇인가요?</th>
+									<td><input type="text" name="" id="" maxlength="" value="성명: ( 홍길동 )" style="width:100%;" title="대출 상담사 입력"></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="tit_area mt50">
+							<p class="dl_tb_tit_1">설명 확인사항 - 대출모집인 작성</p>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:85%;">
+								<col style="width:300px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">1. 대출계약을 체결하기 전에 대출상담사로부터 대출상품의 조건 및 대출 내용 등에 관하여 충분한 설명을 받으셨나요?</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio20" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio20" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">2. 대출상담사로부터 대출모집인은 금융회사의 업무위탁을 받아 대출모집 및 소개 등의 섭외 활동을 한다는 사실에 대하여 사전에 고지 받으셨나요?</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio21" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio21" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">3. 대출상담사로부터 대출모집인은 고객에게 별도의 수수료를 요구하거나 수취할 수 없다는 사실에 대하여 사전에 고지 받으셨나요?</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio22" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio22" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">4. 대출상담사로부터 여신심사 등을 통한 대출실행의 결정은 금융회사가 한다는 사실에 대하여 사전에 고지 받으셨나요?</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio23" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio23" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">5. 대출상담사로부터 귀하의 소득·재산, 부채상황, 신용 및 변제계획 등을 고려하여 적합한 대출 상품을 권유 받으셨나요?</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio24" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio24" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">6. 대출상담사로부터 귀하가 필요한 자금의 범위를 초과하여 대출을 받도록 권유 또는 유도 받으셨나요?</th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio25" id="" title="예 선택">
+											<label for="" class="mr20">예</label>
+											<input type="radio" name="radio25" id="" title="아니오 선택">
+											<label for="" class="mr20">아니오</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">7. 대출상담을 진행한 대출상담사의 성명은 무엇인가요?</th>
+									<td><input type="text" name="" id="" maxlength="" value="성명: ( 홍길동 )" style="width:100%;" title="대출 상담사 입력"></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // 대출상담사 확인설명서 -->
+
+						<!-- 대출모집인 본인인증 // -->
+						<div class="tit_area mt50">
+							<h4 class="dl_tb_tit">대출모집인 본인인증</h4>
+						</div>
+						<table class="bbs-table-view">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:93%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">본인인증<em></em></th>
+									<td>
+										<div class="rd_area3">
+											<input type="radio" name="radio30" id="" title="휴대폰인증 선택">
+											<label for="" class="mr20">휴대폰인증</label>
+											<input type="radio" name="radio30" id="" title="공인인증 선택">
+											<label for="" class="mr20">공인인증</label>
+											<input type="radio" name="radio30" id="" title="카카오인증 선택">
+											<label for="" class="mr20">카카오인증</label>
+											<span class="m0"><a href="#none" class="btn h42">인증</a></span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<!-- 카드인증시// -->
+						<table class="bbs-table-view mt20">
+							<colgroup>
+								<col style="width:160px;">
+								<col style="width:93%;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">주민등록번호</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="6" value="" style="width:20%; flex:inherit;" title="주민등록번호 앞6자리 입력"><span class="dash">-</span><input type="password" name="" id="" maxlength="7" value="" style="width:20%; flex:inherit;" title="주민등록번호 뒤7자리 입력">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">카드번호</th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="6" value="" style="width:10%; flex:inherit;" title="첫번째 카드번호4자리 입력"><span class="dash">-</span><input type="text" name="" id="" maxlength="6" value="" style="width:10%; flex:inherit;" title="두번째 카드번호4자리 입력"><span class="dash">-</span><input type="text" name="" id="" maxlength="6" value="" style="width:10%; flex:inherit;" title="세번째 카드번호4자리 입력"><span class="dash">-</span><input type="password" name="" id="" maxlength="6" value="" style="width:10%; flex:inherit;" title="마지막 카드번호4자리 입력">
+									</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">카드유효기간 </th>
+									<td>
+										<div class="form_box">
+											<input type="text" name="" id="" maxlength="6" value="" style="width:10%; flex:inherit;" title="카드 유효기간 월 입력"><span class="dash">/</span><input type="text" name="" id="" maxlength="6" value="" style="width:10%; flex:inherit;" title="카드 유효기간 년 입력">
+									</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">카드비밀번호(앞2자리)</th>
+									<td><input type="password" name="" id="" maxlength="6" value="" style="width:10%;" title="카드비밀번호(앞2자리) 입력"></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- // 카드인증시 -->
+						<!-- // 대출모집인 본인인증 -->
+
+						<!-- // 버튼
+						<p class="btn-align-right">
+							<a href="#" class="btn h42">목록</a>
+							<a href="#" class="btn h42">한도조회(저장)</a>
+							<a href="#" class="btn h42">접수등록</a>
+						</p>
+						// 버튼 -->
+					</div>
+
+				</div><!--// contents -->
+			</div><!--// content-wrap -->
+		</div><!--// container -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+
+<!-- 에러 레이어 -->
+<span id='errorLayer' class="layerpop" style="position:absolute; left:300px; top:200px; z-index:3; display:none;"></span>
+
+
+</body>
+</html>

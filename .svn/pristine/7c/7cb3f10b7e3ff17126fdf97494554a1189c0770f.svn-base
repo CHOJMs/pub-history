@@ -1,0 +1,279 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+</head>
+<body>
+
+<!-- 레이어 팝업 -->
+<div class="layer" tabindex="0" style="display: block;">
+	<div class="pop_bg"></div>
+	<div class="layerPop" style="width: 1200px; transform: translate(-50%, -50%);">
+		<h1>신용정보동의</h1>
+		<div class="Pop_content">
+			<div class="Pop_form-type">				
+				<div class=" scroll_box" style="height:650px;">
+					<div class="search_p_box2">
+						<ul>
+							<li>
+								<label for="">고객번호</label>
+								<input type="text" id="" name="" value="" placeholder="">
+							</li>
+							<li>
+								<label for="">고객명</label>
+								<input type="text" id="" name="" value="" placeholder="">
+							</li>
+							<li>
+								<label for="">기준일자</label>
+								<div class="form_box ">
+									<span><input type="text" name="" id="" maxlength="" value="yyyymmdd" style="width:100%; flex:inherit;" title="시작 기준일자 입력"><a href="#" class="btnCalendar"><img src="/static/admin/img/common/ico_cal.gif" alt="날짜 선택"></a></span>
+									<span class="dash">-</span>
+									<span><input type="password" name="" id="" maxlength="7" value="" style="width:100%; flex:inherit;" title="종료 기준일자 입력"><a href="#" class="btnCalendar"><img src="/static/admin/img/common/ico_cal.gif" alt="날짜 선택"></a></span>
+								</div>
+							</li>
+						</ul>
+						<p class="btn-align-center mb15 mt10">
+							<a href="#none" class="btn h42 wid120">조회하기</a>
+						</p>
+					</div>
+					
+					<div class="tit_area">
+						<h4 class="dl_tb_tit">개인신용정보 제공 및 활용 동의내역</h4>
+					</div>
+					<div class="scroll_box pd0 mr0" style="overflow-x: auto; height: auto;">
+						<table class="bbs-table" style="width: 1300px;">
+							<colgroup>
+								<col style="width:50px;">
+								<col style="width:50px;">
+								<col style="width:5%;">
+								<col style="width:8%;">
+								<col style="width:8%;">
+								<col style="width:4%;">
+								<col style="width:8%;">
+								<col style="width:4%;">
+								<col style="width:10%;">
+								<col style="width:10%;">
+								<col style="width:8%;">
+								<col style="width:5%;">
+								<col style="width:5%;">
+								<col style="width:5%;">
+								<col style="width:5%;">
+								<col style="width:7%;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col">선택</th>
+									<th scope="col">순번</th>
+									<th scope="col">고객명</th>
+									<th scope="col">주민등록번호</th>
+									<th scope="col">신용정보제공일련번호</th>
+									<th scope="col">동의매체</th>
+									<th scope="col">동의일자</th>
+									<th scope="col">동의여부</th>
+									<th scope="col">(선택)금융상품마케팅 사용동의여부</th>
+									<th scope="col">(선택)금융상품외 마케팅 사용동의여부</th>
+									<th scope="col">이용권유방법</th>
+									<th scope="col">전화</th>
+									<th scope="col">문자</th>
+									<th scope="col">서면</th>
+									<th scope="col">이메일</th>
+									<th scope="col">특이사항</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="radio" id="" name=""></td>
+									<td>1</td>
+									<td>홍길동</td>
+									<td>000000-0****00</td>
+									<td>2</td>
+									<td>전화녹취</td>
+									<td>2021-02-26</td>
+									<td>Y</td>
+									<td>거부</td>
+									<td>거부</td>
+									<td>N</td>
+									<td>N</td>
+									<td>N</td>
+									<td>N</td>
+									<td>N</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>						
+					</div>
+					<p class="a_r mb30 mt15 font14">[조회건수 : <strong>1</strong>건]</p>
+
+					<div class="tit_area ">
+						<h4 class="dl_tb_tit">개인신용정보 제공 및 활용 동의 관리</h4>
+						<p class="btn-align-right mt-45 mb10">
+							<a href="#" class="btn h42">신규</a><a href="#" class="btn h42">등록</a><a href="#" class="btn h42">수정</a>
+						</p>
+					</div>
+					<table class="bbs-table-view mb30" id="tbl_condition">
+						<colgroup>
+							<col width="200px">
+							<col width="%">
+							<col width="200px">
+							<col width="%">
+						</colgroup>
+						<tbody>
+							<tr>								
+								<th scope="row">고객명</th>
+								<td>홍길동</td>
+								<th scope="row">주민등록번호</th>
+								<td>000000-0****00</td>
+							</tr>
+							<tr>								
+								<th scope="row">제공동의매체</th>
+								<td>
+									<select id="" style="width: 100%;">
+										<option value="" selected="selected"></option>
+									</select>
+								</td>
+								<th scope="row">온라인접수방식</th>
+								<td>모바일(휴대전화)</td>
+							</tr>
+							<tr>								
+								<th scope="row">조회동의일자</th>
+								<td>
+									<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="yyyymmdd" style="width:100%; flex:inherit;" title="조회동의일자 입력"><a href="#" class="btnCalendar"><img src="/static/admin/img/common/ico_cal.gif" alt="날짜 선택"></a>
+									</div>
+								</td>
+								<th scope="row">신용조회사유</th>
+								<td>상담용 조회</td>
+							</tr>
+							<tr>								
+								<th scope="row">필수적 수집∙이용 동의여부<em>*</em></th>
+								<td>
+									<div class="rd_area3">
+										<input type="radio" name="radio15" id="" title="동의 선택">
+										<label for="" class="mr20">동의</label>
+										<input type="radio" name="radio15" id="" title="거부 선택">
+										<label for="" class="mr20">거부</label>
+									</div>
+								</td>
+								<th scope="row">필수적 조회 동의여부<em>*</em></th>
+								<td>
+									<div class="rd_area3">
+										<input type="radio" name="radio15" id="" title="동의 선택">
+										<label for="" class="mr20">동의</label>
+										<input type="radio" name="radio15" id="" title="거부 선택">
+										<label for="" class="mr20">거부</label>
+									</div>
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">필수적 제공 동의여부<em>*</em></th>
+								<td>
+									<div class="rd_area3">
+										<input type="radio" name="radio15" id="" title="동의 선택">
+										<label for="" class="mr20">동의</label>
+										<input type="radio" name="radio15" id="" title="거부 선택">
+										<label for="" class="mr20">거부</label>
+									</div>
+								</td>
+								<th scope="row">(선택) 제공동의여부</th>
+								<td>
+									<div class="rd_area3">
+										<input type="radio" name="radio15" id="" title="동의 선택">
+										<label for="" class="mr20">동의</label>
+										<input type="radio" name="radio15" id="" title="거부 선택">
+										<label for="" class="mr20">거부</label>
+									</div>
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">(선택) 금융상품관련 마케팅 사용 동의여부</th>
+								<td>
+									<div class="rd_area3">
+										<input type="radio" name="radio15" id="" title="동의 선택">
+										<label for="" class="mr20">동의</label>
+										<input type="radio" name="radio15" id="" title="거부 선택">
+										<label for="" class="mr20">거부</label>
+									</div>
+								</td>
+								<th scope="row">(선택) 금융상품외 마케팅 사용 동의여부</th>
+								<td>
+									<div class="rd_area3">
+										<input type="radio" name="radio15" id="" title="동의 선택">
+										<label for="" class="mr20">동의</label>
+										<input type="radio" name="radio15" id="" title="거부 선택">
+										<label for="" class="mr20">거부</label>
+									</div>
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">간편서류 등록 동의여부</th>
+								<td colspan="3">
+									<div class="rd_area3">
+										<input type="radio" name="radio15" id="" title="동의 선택">
+										<label for="" class="mr20">동의</label>
+										<input type="radio" name="radio15" id="" title="거부 선택">
+										<label for="" class="mr20">거부</label>
+									</div>
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">이용권유방법</th>
+								<td colspan="3">
+									<div class="rd_area3">
+										<input type="radio" name="radio15" id="" title="전부 동의 선택">
+										<label for="">전부 동의</label>
+										( <input type="checkbox" id="" name="">
+										  <label for="" class="mr10">전화</label>
+										  <input type="checkbox" id="" name="">
+										  <label for="" class="mr10">문자 </label>
+										  <input type="checkbox" id="" name="">
+										  <label for="" class="mr10">서명 </label>
+										  <input type="checkbox" id="" name="">
+										  <label for="" class="mr20">이메일 )</label>
+										<input type="radio" name="radio15" id="" title="거부 선택">
+										<label for="" class="mr20">거부</label>
+									</div>
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">특이사항</th>
+								<td colspan="3">
+									<div class="form_box">
+										<input type="text" name="" id="" maxlength="" title="">
+									</div>
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">첨부파일</th>
+								<td colspan="3">
+									<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="" title="첨부파일 입력"><span class="m0 p0"><a href="#none" class="btn h42">파일관리</a></span>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+			
+		</div>
+	</div>
+</div>
+<!-- 팝업bg -->
+
+</body>
+</html>

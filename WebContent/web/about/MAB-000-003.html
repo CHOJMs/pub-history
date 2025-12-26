@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0fc67a28e3c6e1f724a173b10b9f8d1d"></script>
+
+<title>회사소개 영업점안내 | iM캐피탈</title>
+
+</head>
+<body>
+    <div class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
+        <!-- Start : skip_navigation -->
+        <div id="tab_skip">
+            <a href="#common_body">
+                <span>본문 바로가기</span>
+            </a>
+        </div>
+        <!-- //End : skip_navigation -->
+
+        <!----------- Start : 모바일 메뉴 ----------->
+        <header id="header" class="sub"> <!-- main -->
+            <div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+            <div class="mobile-btn">
+                <ul>
+                    <li class="back"><a href="#none"><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+                    <li class="home"><a href="#none"><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+                </ul>
+            </div>
+
+            <nav class="header-inner">
+                <div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+
+                <div class="mobile-menu">
+                    <!-- <p tabindex="0"><a href="">본인인증</a></p>-->
+                    <p tabindex="0">홍길동님 반갑습니다.</p>
+                    <ul>
+                        <li><a href="">공지사항</a></li>
+                        <li><a href="">인증센터</a></li>
+                        <li class="setting"><a href="">설정</a></li>
+                    </ul>
+                    <div class="mobile-logout"><a href="">로그아웃</a></div>
+                </div>
+
+                <div class="left left-pc">
+					<ul>
+						<li><a href="">회사소개</a>
+							<ul>
+                                <li class="dep2"><a href="">기업정보</a>
+                                   <ul>
+                                        <li><a href="">회사개요</a></li>
+                                        <li><a href="">CEO 인사말</a></li>
+                                        <li><a href="">영업점 안내</a></li>
+                                        <li><a href="">조직도</a></li>
+                                        <li><a href="">그룹경영이념</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">투자정보</a>
+                                    <ul>
+                                        <li><a href="">경영공시</a></li>
+                                        <li><a href="">결산공고</a></li>
+                                        <li><a href="">재무정보</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">윤리경영</a>
+                                    <ul>
+                                        <li><a href="">윤리경영비전</a></li>
+                                        <li><a href="">윤리경영헌장</a></li>
+                                        <li><a href="">윤리강령</a></li>
+                                        <li><a href="">윤리경영 Q&A</a></li>
+                                    </ul>
+                                    </li>
+                                <li><a href="#none" class="ico_openwindow" onclick="goPage('/career/hrSystem/hrSystem01.do', '_blank'); return false;" title="인재채용 새창이동">인재채용</a></li>
+                            </ul>
+						</li>
+						<li><a href="">고객센터</a>
+							<div class="flex-list">
+								<div>
+									<p class="mt0">상담ㆍ문의</p>
+									<ul>
+										<li><a href="">상담문의/민원접수</a></li>
+										<li><a href="">자주하는 질문 FAQ</a></li>
+									</ul>
+								</div>
+								<div>
+									<p>이용안내</p>
+									<ul>
+										<li><a href="">약관 및 규정</a></li>
+                                        <li class="dep2"><a href="">본인인증안내</a>
+											<ul>
+												<li><a href="">카카오페이</a></li>
+												<li><a href="">금융인증서</a></li>
+												<li><a href="">모바일 웹 공동인증서</a></li>
+												<li><a href="">공동인증서 내보내기<br>(PC → 모바일앱)</a></li>
+												<li><a href="">공동인증서 가져오기<br>(모바일앱 → PC)</a></li>
+											</ul>
+										</li>
+                                        <li><a href="">공지사항</a></li>
+                                        <li><a href="">고객확인의무 안내</a></li>
+                                        <li><a href="">대출인 모집 지급<br>수수료 현황</a></li>
+                                        <li><a href="">금리조회</a></li>
+										<li class="dep2"><a href="">고객정보관리</a>
+											<ul>
+												<li><a href="">고객(신용)정보 수집,<br>이용 및 제공 관련<br> 고객 권리 안내문</a></li>
+												<li><a href="">계열사간 고객정보<br>제공 내역 조회</a></li>
+                                                <li><a href="">개인정보 열람신청</a></li>
+												<li><a href="">개인(신용)정보<br>이용 및 제공내역</a></li>
+												<li><a href="">마케팅목적제공 현황</a></li>
+												<li><a href="">신용정보조회 동의</a></li>
+												<li><a href="">위탁업체 현황</a></li>
+                                                <li><a href="">개인신용평가 결과에<br>대한 설명 및 이의제기<br>신청</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+                        <li><a href="">금융소비자보호</a>
+							<ul>
+                                <li><a href="">금융소비자보호체계</a></li>
+                                <li><a href="">금융소비자보호공시</a></li>
+                                <li><a href="">금융소비자 참고판례</a></li>
+                                <li><a href="">금융소비자 유익정보</a></li>
+                                <li><a href="">금융감독원금융정보</a></li>
+                                <li><a href="">금융소비자권리</a></li>
+                                <li><a href="">적합성적정성원칙확인서</a></li>
+                            </ul>
+						</li>
+                        <li><a href="">클린센터</a></li>
+					</ul>
+				</div>
+
+				<div class="right">
+					<ul>
+						<li class=""><a href="javascript:;">개인금융</a>
+							<ul>
+								<li class="tit"><h2>개인금융</h2></li>
+								<li><a href="">상품소개</a></li>
+								<li><a href="">즉시대출</a></li>
+								<li><a href="">한도조회</a></li>
+								<li><a href="">전자약정</a></li>
+								<li class="dep2"><a href="">온라인서류제출</a>
+									<ul>
+										<li><a href="">소득 서류제출</a></li>
+										<li><a href="">신분증 제출</a></li>
+										<li><a href="">FIND 서류제출</a></li>
+									</ul>
+								</li>
+								<li><a href="">대출계산기</a></li>
+                                <li class="dep2"><a href="">인증서안내</a>
+									<ul>
+										<li><a href="">공동인증서 내보내기<br>(PC → 모바일웹)</a></li>
+										<li><a href="">공동인증서 가져오기<br>(모바일웹 → PC)</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">자동차금융</a>
+							<ul>
+								<li class="tit"><h2>자동차금융</h2></li>
+                                <li><a href="">상품소개</a></li>
+								<li><a href="">신차오토론</a></li>
+								<li><a href="">오토리스</a></li>
+								<li><a href="">중고차오토론</a></li>
+								<li><a href="">장기렌터카</a></li>
+								<li><a href="">전자약정</a></li>
+								<li class="dep2"><a href="">온라인서류제출</a>
+									<ul>
+										<li><a href="">소득 서류제출</a></li>
+										<li><a href="">FIND 서류제출</a></li>
+									</ul>
+								</li>
+                                <li><a href="">내차승계</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">스탁론</a>
+							<ul>
+								<li class="tit"><h2>스탁론</h2></li>
+                                <li><a href="">상품소개</a></li>
+								<li><a href="">대출신청</a></li>
+								<li><a href="">한도변경</a></li>
+								<li><a href="">추가대출</a></li>
+                                <li><a href="">대출상환</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">금융센터</a>
+							<ul>
+								<li class="tit"><h2>금융센터</h2></li>
+								<li><a href="">리스금융</a></li>
+								<li><a href="">할부금융</a></li>
+								<li><a href="">기업금융</a></li>
+								<li><a href="">신기술금융</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">마이</a>
+							<ul>
+								<li class="tit"><h2>마이</h2></li>
+								<li><a href="">신청/이용내역</a></li>
+								<li><a href="">고객정보 변경</a></li>
+								<li><a href="">서류변경</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+                <div class="left left-mob">
+					<ul>
+						<li>
+							<a href="">회사소개</a>
+							<ul>
+								<li class="tit"><h2>회사소개</h2></li>
+                                <li class="dep2"><a href="">기업정보</a>
+                                    <ul>
+                                        <li><a href="">회사개요</a></li>
+                                        <li><a href="">CEO 인사말</a></li>
+                                        <li><a href="">영업점 안내</a></li>
+                                        <li><a href="">조직도</a></li>
+                                        <li><a href="">그룹경영이념</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">투자정보</a>
+                                    <ul>
+                                        <li><a href="">경영공시</a></li>
+                                        <li><a href="">결산공고</a></li>
+                                        <li><a href="">재무정보</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">윤리경영</a>
+                                    <ul>
+                                        <li><a href="">윤리경영비전</a></li>
+                                        <li><a href="">윤리경영헌장</a></li>
+                                        <li><a href="">윤리강령</a></li>
+                                        <li><a href="">윤리경영 Q&A</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none" class="ico_openwindow" onclick="goPage('/career/hrSystem/hrSystem01.do', '_blank'); return false;" title="인재채용 새창이동">인재채용</a></li>
+							</ul>
+						</li>
+						<li><a href="">고객센터</a>
+							<div class="flex-list">
+								<div>
+									<h2 class="tit">고객센터</h2>
+                                    <p>상담ㆍ문의</p>
+									<ul>
+										<li><a href="">상담문의/민원접수</a></li>
+										<li><a href="">자주하는 질문</a></li>
+									</ul>
+								</div>
+								<div>
+									<p>이용안내</p>
+									<ul>
+										<li><a href="">약관 및 규정</a></li>
+                                        <li class="dep2"><a href="">본인인증안내</a>
+											<ul>
+												<li><a href="">카카오페이</a></li>
+												<li><a href="">금융인증서</a></li>
+												<li><a href="">모바일 웹 공동인증서</a></li>
+												<li><a href="">공동인증서 내보내기<br>(PC → 모바일앱)</a></li>
+												<li><a href="">공동인증서 가져오기<br>(모바일앱 → PC)</a></li>
+											</ul>
+										</li>
+                                        <li><a href="">공지사항</a></li>
+										<li><a href="">고객확인의무 안내</a></li>
+										<li><a href="">대출인모집 지급수수료<br>현황</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+                        <li>
+							<a href="">금융소비자보호</a>
+							<ul>
+								<li class="tit"><h2>금융소비자보호</h2></li>
+                                <li><a href="">금융소비자보호체계</a></li>
+                                <li><a href="">금융소비자보호공시</a></li>
+                                <li><a href="">금융소비자 참고판례</a></li>
+                                <li><a href="">금융소비자 유익정보</a></li>
+                                <li><a href="">금융감독원금융정보</a></li>
+                                <li><a href="">금융소비자권리</a></li>
+                                <li><a href="">적합성적정성원칙확인서</a></li>
+							</ul>
+						</li>
+                        <li><a href="">클린센터</a></li>
+					</ul>
+					<div class="mobile-btn-wrap">
+						<div class="btn-half">
+							<a href="">한도조회</a>
+							<a href="">대출계산기</a>
+						</div>
+						<div class="btn-full"><a href="">iM캐피탈 APP 경험하기<span>다운로드</span></a></div>
+						<div class="btn-full_app"><a href="">쉽고 편리한 간편인증 등록하기<span>등록하기</span></a></div><!--앱일 경우 노츨-->
+
+						<!-- <div class="btn-full btn-color"><a href="">쉽고 편리한 간편인증</a></div> -->
+					</div>
+				</div>
+            </nav>
+        </header>
+        <!----------- //End : 모바일 메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-contents">
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <h1>영업점 안내</h1>
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+                    <div class="pro-box">
+
+                        <div class="store-info-box">
+                            <ul>
+                                <li>
+                                    <div class="add-info-box">
+                                        <p class="store-tit">본점</p>
+                                        <!--20250708 텍스트 8층 삭제-->
+                                        <p class="store-txt">서울특별시 중구 남대문로 125, iM금융센터</p>
+                                        <ul>
+                                            <li class="addr-tel" aria-label="전화번호"><a href="tel:1566-0050">1566-0050</a></li>
+                                            <li class="addr-fax" aria-label="팩스">0505-047-2034</li>
+                                            <li class="addr-map" aria-label="주소">
+                                                <p><img src="/static/web/img/ui_common/ico_subway01.png" alt="1호선">1호선 종각역 5번출구에서 약150m</p>
+                                                <p><img src="/static/web/img/ui_common/ico_subway02.png" alt="2호선">2호선 을지로입구 2번출구에서 약190m</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="container" class="map-area view_map">
+                                        <div id="mapWrapper" style="width: 100%; height: 240px; position: relative;">
+                                            <div id="map" style="width: 100%; height: 100%; position: relative; overflow: hidden; background: url(&quot;https://t1.daumcdn.net/mapjsapi/images/bg_tile.png&quot;);"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; touch-action: none; cursor: url(&quot;https://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;) 7 5, url(&quot;https://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;), default;"><div style="position: absolute; left: 11px; top: -129px;"><div style="position: absolute; z-index: 0;"></div><div style="position: absolute; z-index: 1; left: 0px; top: 0px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"></div><div style="position: absolute; z-index: 1;"></div><div style="width: 480px; height: 300px; position: absolute; z-index: 1;"></div><div style="position: absolute; z-index: 1;"><svg version="1.1" style="stroke: none; stroke-dashoffset: 0.5; stroke-linejoin: round; fill: none; transform: translateZ(0px); position: absolute; left: -971px; top: -471px; width: 2400px; height: 1500px;" viewBox="0 0 2400 1500"><defs></defs></svg></div><div style="position: absolute; z-index: 1; width: 100%; height: 0px; transform: translateZ(0px);"><div style="position: absolute; margin: -39px 0px 0px -14px; z-index: 0; left: 240px; top: 149px;"><img draggable="false" src="https://t1.daumcdn.net/mapjsapi/images/marker.png" alt="" role="presentation" title="" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; clip: rect(0px, 29px, 42px, 0px); top: 0px; left: 0px; width: 29px; height: 42px;"><img src="https://t1.daumcdn.net/mapjsapi/images/transparent.gif" alt="" role="presentation" draggable="false" usemap="#daum.maps.Marker.Area:5" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; width: 29px; height: 42px;"><map id="daum.maps.Marker.Area:5" name="daum.maps.Marker.Area:5"><area href="javascript:void(0)" alt="" role="presentation" shape="poly" coords="14,39,9,27,4,21,1,16,1,10,4,4,11,0,18,0,25,4,28,10,28,16,25,21,20,27" title="" style="-webkit-tap-highlight-color: transparent;"></map></div></div></div></div><div style="position: absolute; cursor: default; z-index: 1; margin: 0px 6px; height: 19px; line-height: 14px; left: 0px; bottom: 0px; color: rgb(0, 0, 0);"><div style="color: rgb(0, 0, 0); text-align: center; font-size: 10px; float: left;"><div style="float: left; margin: 2px 3px 0px 4px; height: 6px; transition: width 0.1s ease 0s; border-top: none rgb(0, 0, 0); border-right: 2px solid rgb(0, 0, 0); border-bottom: 2px solid rgb(0, 0, 0); border-left: 2px solid rgb(0, 0, 0); border-image: initial; width: 58px;"></div><div style="float: left; margin: 0px 4px 0px 0px; font-family: AppleSDGothicNeo-Regular, 돋움, dotum, sans-serif; font-weight: bold; color: rgb(0, 0, 0);">250m</div></div><div style="margin: 0px 4px; float: left;"><a target="_blank" href="http://map.kakao.com/" title="Kakao 지도로 보시려면 클릭하세요." style="float: left; width: 32px; height: 10px;"><img src="https://t1.daumcdn.net/mapjsapi/images/m_bi_b.png" alt="Kakao 지도로 이동" style="float: left; width: 32px; height: 10px; border: none;"></a><div style="font: 11px / 11px Arial, Tahoma, Dotum, sans-serif; float: left;"></div></div></div><div style="cursor: auto; position: absolute; z-index: 2; left: 0px; top: 0px;"></div></div>
+                                            <div class="custom_zoomcontrol radius_border">
+                                                <span onclick="zoomIn()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>
+                                                <span onclick="zoomOut()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                                            </div>
+                                        </div>
+                                        <div id="rvWrapper" style="width: 100%; height: 240px; position: absolute; top: 0; left: 0;">
+                                            <div id="roadview" style="height: 100%"></div>
+                                            <div id="btnMap" onclick="toggleMap(true)">
+                                                <span>지도</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="add-info-box">
+                                        <p class="store-tit">대구지점</p>
+                                        <!--20250708 텍스트 대구은행 -> iM뱅크 변경-->
+                                        <p class="store-txt">대구광역시 달서구 월배로 109, iM뱅크 월배영업부 6층</p>
+                                        <ul>
+                                            <li class="addr-tel" aria-label="전화번호"><a href="tel:1566-0050">1566-0050</a></li>
+                                            <li class="addr-fax" aria-label="팩스">0505-047-2050</li>
+                                            <li class="addr-map" aria-label="주소">
+                                                <p><img src="/static/web/img/ui_common/ico_subway03.png" alt="1호선">대구 지하철 1호선 월배역 1번출구에서 384m</p>
+                                                <p><img src="/static/web/img/ui_common/ico_subway03.png" alt="2호선">대구 지하철 1호선 진천역 4번출구에서 319m</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="container" class="map-area view_map">
+                                        <div id="mapWrapper" style="width: 100%; height: 240px; position: relative;">
+                                            <div id="map" style="width: 100%; height: 100%; position: relative; overflow: hidden; background: url(&quot;https://t1.daumcdn.net/mapjsapi/images/bg_tile.png&quot;);"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; touch-action: none; cursor: url(&quot;https://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;) 7 5, url(&quot;https://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;), default;"><div style="position: absolute; left: 11px; top: -129px;"><div style="position: absolute; z-index: 0;"></div><div style="position: absolute; z-index: 1; left: 0px; top: 0px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"></div><div style="position: absolute; z-index: 1;"></div><div style="width: 480px; height: 300px; position: absolute; z-index: 1;"></div><div style="position: absolute; z-index: 1;"><svg version="1.1" style="stroke: none; stroke-dashoffset: 0.5; stroke-linejoin: round; fill: none; transform: translateZ(0px); position: absolute; left: -971px; top: -471px; width: 2400px; height: 1500px;" viewBox="0 0 2400 1500"><defs></defs></svg></div><div style="position: absolute; z-index: 1; width: 100%; height: 0px; transform: translateZ(0px);"><div style="position: absolute; margin: -39px 0px 0px -14px; z-index: 0; left: 240px; top: 149px;"><img draggable="false" src="https://t1.daumcdn.net/mapjsapi/images/marker.png" alt="" role="presentation" title="" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; clip: rect(0px, 29px, 42px, 0px); top: 0px; left: 0px; width: 29px; height: 42px;"><img src="https://t1.daumcdn.net/mapjsapi/images/transparent.gif" alt="" role="presentation" draggable="false" usemap="#daum.maps.Marker.Area:5" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; width: 29px; height: 42px;"><map id="daum.maps.Marker.Area:5" name="daum.maps.Marker.Area:5"><area href="javascript:void(0)" alt="" role="presentation" shape="poly" coords="14,39,9,27,4,21,1,16,1,10,4,4,11,0,18,0,25,4,28,10,28,16,25,21,20,27" title="" style="-webkit-tap-highlight-color: transparent;"></map></div></div></div></div><div style="position: absolute; cursor: default; z-index: 1; margin: 0px 6px; height: 19px; line-height: 14px; left: 0px; bottom: 0px; color: rgb(0, 0, 0);"><div style="color: rgb(0, 0, 0); text-align: center; font-size: 10px; float: left;"><div style="float: left; margin: 2px 3px 0px 4px; height: 6px; transition: width 0.1s ease 0s; border-top: none rgb(0, 0, 0); border-right: 2px solid rgb(0, 0, 0); border-bottom: 2px solid rgb(0, 0, 0); border-left: 2px solid rgb(0, 0, 0); border-image: initial; width: 58px;"></div><div style="float: left; margin: 0px 4px 0px 0px; font-family: AppleSDGothicNeo-Regular, 돋움, dotum, sans-serif; font-weight: bold; color: rgb(0, 0, 0);">250m</div></div><div style="margin: 0px 4px; float: left;"><a target="_blank" href="http://map.kakao.com/" title="Kakao 지도로 보시려면 클릭하세요." style="float: left; width: 32px; height: 10px;"><img src="https://t1.daumcdn.net/mapjsapi/images/m_bi_b.png" alt="Kakao 지도로 이동" style="float: left; width: 32px; height: 10px; border: none;"></a><div style="font: 11px / 11px Arial, Tahoma, Dotum, sans-serif; float: left;"></div></div></div><div style="cursor: auto; position: absolute; z-index: 2; left: 0px; top: 0px;"></div></div>
+                                            <div class="custom_zoomcontrol radius_border">
+                                                <span onclick="zoomIn()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>
+                                                <span onclick="zoomOut()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                                            </div>
+                                        </div>
+                                        <div id="rvWrapper" style="width: 100%; height: 240px; position: absolute; top: 0; left: 0;">
+                                            <div id="roadview" style="height: 100%"></div>
+                                            <div id="btnMap" onclick="toggleMap(true)">
+                                                <span>지도</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="add-info-box">
+                                        <p class="store-tit">대구 오토센터</p>
+                                        <p class="store-txt">대구광역시 달서구 월배로 109, iM뱅크 월배영업부 6층</p>
+                                        <ul>
+                                            <li class="addr-tel" aria-label="전화번호"><a href="tel:1566-0050">1566-0050</a></li>
+                                            <li class="addr-fax" aria-label="팩스">0505-047-2050</li>
+                                            <li class="addr-map" aria-label="주소">
+                                                <p><img src="/static/web/img/ui_common/ico_subway03.png" alt="1호선">대구 지하철 1호선 월배역 1번출구에서 384m</p>
+                                                <p><img src="/static/web/img/ui_common/ico_subway03.png" alt="2호선">대구 지하철 1호선 진천역 4번출구에서 319m</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="container" class="map-area view_map">
+                                        <div id="mapWrapper" style="width: 100%; height: 240px; position: relative;">
+                                            <div id="map" style="width: 100%; height: 100%; position: relative; overflow: hidden; background: url(&quot;https://t1.daumcdn.net/mapjsapi/images/bg_tile.png&quot;);"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; touch-action: none; cursor: url(&quot;https://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;) 7 5, url(&quot;https://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;), default;"><div style="position: absolute; left: 11px; top: -129px;"><div style="position: absolute; z-index: 0;"></div><div style="position: absolute; z-index: 1; left: 0px; top: 0px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"></div><div style="position: absolute; z-index: 1;"></div><div style="width: 480px; height: 300px; position: absolute; z-index: 1;"></div><div style="position: absolute; z-index: 1;"><svg version="1.1" style="stroke: none; stroke-dashoffset: 0.5; stroke-linejoin: round; fill: none; transform: translateZ(0px); position: absolute; left: -971px; top: -471px; width: 2400px; height: 1500px;" viewBox="0 0 2400 1500"><defs></defs></svg></div><div style="position: absolute; z-index: 1; width: 100%; height: 0px; transform: translateZ(0px);"><div style="position: absolute; margin: -39px 0px 0px -14px; z-index: 0; left: 240px; top: 149px;"><img draggable="false" src="https://t1.daumcdn.net/mapjsapi/images/marker.png" alt="" role="presentation" title="" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; clip: rect(0px, 29px, 42px, 0px); top: 0px; left: 0px; width: 29px; height: 42px;"><img src="https://t1.daumcdn.net/mapjsapi/images/transparent.gif" alt="" role="presentation" draggable="false" usemap="#daum.maps.Marker.Area:5" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; width: 29px; height: 42px;"><map id="daum.maps.Marker.Area:5" name="daum.maps.Marker.Area:5"><area href="javascript:void(0)" alt="" role="presentation" shape="poly" coords="14,39,9,27,4,21,1,16,1,10,4,4,11,0,18,0,25,4,28,10,28,16,25,21,20,27" title="" style="-webkit-tap-highlight-color: transparent;"></map></div></div></div></div><div style="position: absolute; cursor: default; z-index: 1; margin: 0px 6px; height: 19px; line-height: 14px; left: 0px; bottom: 0px; color: rgb(0, 0, 0);"><div style="color: rgb(0, 0, 0); text-align: center; font-size: 10px; float: left;"><div style="float: left; margin: 2px 3px 0px 4px; height: 6px; transition: width 0.1s ease 0s; border-top: none rgb(0, 0, 0); border-right: 2px solid rgb(0, 0, 0); border-bottom: 2px solid rgb(0, 0, 0); border-left: 2px solid rgb(0, 0, 0); border-image: initial; width: 58px;"></div><div style="float: left; margin: 0px 4px 0px 0px; font-family: AppleSDGothicNeo-Regular, 돋움, dotum, sans-serif; font-weight: bold; color: rgb(0, 0, 0);">250m</div></div><div style="margin: 0px 4px; float: left;"><a target="_blank" href="http://map.kakao.com/" title="Kakao 지도로 보시려면 클릭하세요." style="float: left; width: 32px; height: 10px;"><img src="https://t1.daumcdn.net/mapjsapi/images/m_bi_b.png" alt="Kakao 지도로 이동" style="float: left; width: 32px; height: 10px; border: none;"></a><div style="font: 11px / 11px Arial, Tahoma, Dotum, sans-serif; float: left;"></div></div></div><div style="cursor: auto; position: absolute; z-index: 2; left: 0px; top: 0px;"></div></div>
+                                            <div class="custom_zoomcontrol radius_border">
+                                                <span onclick="zoomIn()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>
+                                                <span onclick="zoomOut()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                                            </div>
+                                        </div>
+                                        <div id="rvWrapper" style="width: 100%; height: 240px; position: absolute; top: 0; left: 0;">
+                                            <div id="roadview" style="height: 100%"></div>
+                                            <div id="btnMap" onclick="toggleMap(true)">
+                                                <span>지도</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <!--20250708 센터 추가-->
+                                <li>
+                                    <div class="add-info-box">
+                                        <p class="store-tit">수원 오토센터</p>
+                                        <p class="store-txt">경기도 수원시 권선구 세화로 17, 1층</p>
+                                        <ul>
+                                            <li class="addr-tel" aria-label="전화번호"><a href="tel:1566-0050">1566-0050</a></li>
+                                            <li class="addr-fax" aria-label="팩스">0505-047-2075</li>
+                                            <li class="addr-map" aria-label="주소">
+                                                <p><img src="/static/web/img/ui_common/ico_subway01.png" alt="1호선">1호선 수원역 3번출구에서 약 1.4Km</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="container" class="map-area view_map">
+                                        <div id="mapWrapper" style="width: 100%; height: 300px; position: relative;">
+                                            <div id="map" style="width: 100%; height: 100%"></div>
+                                            <div class="custom_zoomcontrol radius_border">
+                                                <span onclick="zoomIn()"><img class="no-drag"
+                                                    src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span><span onclick="zoomOut()"><img
+                                                    class="no-drag"
+                                                    src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                                            </div>
+                                        </div>
+                                        <div id="rvWrapper"
+                                            style="width: 100%; height: 300px; position: absolute; top: 0; left: 0;">
+                                            <div id="roadview" style="height: 100%"></div>
+                                            <div id="btnMap" onclick="toggleMap(true)">
+                                                <span>지도</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="add-info-box">
+                                        <p class="store-tit">상용차 금융센터</p>
+                                        <p class="store-txt">서울특별시 중구 남대문로 125, iM금융센터 7층</p>
+                                        <ul>
+                                            <li class="addr-tel" aria-label="전화번호"><a href="tel:1566-0050">1566-0050</a></li>
+                                            <li class="addr-fax" aria-label="팩스">0505-047-2039</li>
+                                            <li class="addr-map" aria-label="주소">
+                                                <p><img src="/static/web/img/ui_common/ico_subway01.png" alt="1호선">1호선 종각역 5번출구에서 약150m</p>
+                                                <p><img src="/static/web/img/ui_common/ico_subway02.png" alt="2호선">2호선 을지로입구 2번출구에서 약190m</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="container" class="map-area view_map">
+                                        <div id="mapWrapper" style="width: 100%; height: 240px; position: relative;">
+                                            <div id="map" style="width: 100%; height: 100%; position: relative; overflow: hidden; background: url(&quot;https://t1.daumcdn.net/mapjsapi/images/bg_tile.png&quot;);"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; touch-action: none; cursor: url(&quot;https://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;) 7 5, url(&quot;https://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;), default;"><div style="position: absolute; left: 11px; top: -129px;"><div style="position: absolute; z-index: 0;"></div><div style="position: absolute; z-index: 1; left: 0px; top: 0px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"></div><div style="position: absolute; z-index: 1;"></div><div style="width: 480px; height: 300px; position: absolute; z-index: 1;"></div><div style="position: absolute; z-index: 1;"><svg version="1.1" style="stroke: none; stroke-dashoffset: 0.5; stroke-linejoin: round; fill: none; transform: translateZ(0px); position: absolute; left: -971px; top: -471px; width: 2400px; height: 1500px;" viewBox="0 0 2400 1500"><defs></defs></svg></div><div style="position: absolute; z-index: 1; width: 100%; height: 0px; transform: translateZ(0px);"><div style="position: absolute; margin: -39px 0px 0px -14px; z-index: 0; left: 240px; top: 149px;"><img draggable="false" src="https://t1.daumcdn.net/mapjsapi/images/marker.png" alt="" role="presentation" title="" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; clip: rect(0px, 29px, 42px, 0px); top: 0px; left: 0px; width: 29px; height: 42px;"><img src="https://t1.daumcdn.net/mapjsapi/images/transparent.gif" alt="" role="presentation" draggable="false" usemap="#daum.maps.Marker.Area:5" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; width: 29px; height: 42px;"><map id="daum.maps.Marker.Area:5" name="daum.maps.Marker.Area:5"><area href="javascript:void(0)" alt="" role="presentation" shape="poly" coords="14,39,9,27,4,21,1,16,1,10,4,4,11,0,18,0,25,4,28,10,28,16,25,21,20,27" title="" style="-webkit-tap-highlight-color: transparent;"></map></div></div></div></div><div style="position: absolute; cursor: default; z-index: 1; margin: 0px 6px; height: 19px; line-height: 14px; left: 0px; bottom: 0px; color: rgb(0, 0, 0);"><div style="color: rgb(0, 0, 0); text-align: center; font-size: 10px; float: left;"><div style="float: left; margin: 2px 3px 0px 4px; height: 6px; transition: width 0.1s ease 0s; border-top: none rgb(0, 0, 0); border-right: 2px solid rgb(0, 0, 0); border-bottom: 2px solid rgb(0, 0, 0); border-left: 2px solid rgb(0, 0, 0); border-image: initial; width: 58px;"></div><div style="float: left; margin: 0px 4px 0px 0px; font-family: AppleSDGothicNeo-Regular, 돋움, dotum, sans-serif; font-weight: bold; color: rgb(0, 0, 0);">250m</div></div><div style="margin: 0px 4px; float: left;"><a target="_blank" href="http://map.kakao.com/" title="Kakao 지도로 보시려면 클릭하세요." style="float: left; width: 32px; height: 10px;"><img src="https://t1.daumcdn.net/mapjsapi/images/m_bi_b.png" alt="Kakao 지도로 이동" style="float: left; width: 32px; height: 10px; border: none;"></a><div style="font: 11px / 11px Arial, Tahoma, Dotum, sans-serif; float: left;"></div></div></div><div style="cursor: auto; position: absolute; z-index: 2; left: 0px; top: 0px;"></div></div>
+                                            <div class="custom_zoomcontrol radius_border">
+                                                <span onclick="zoomIn()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>
+                                                <span onclick="zoomOut()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                                            </div>
+                                        </div>
+                                        <div id="rvWrapper" style="width: 100%; height: 240px; position: absolute; top: 0; left: 0;">
+                                            <div id="roadview" style="height: 100%"></div>
+                                            <div id="btnMap" onclick="toggleMap(true)">
+                                                <span>지도</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="add-info-box">
+                                        <p class="store-tit">산업 금융센터</p>
+                                        <p class="store-txt">서울특별시 중구 남대문로 125, iM금융센터 7층</p>
+                                        <ul>
+                                            <li class="addr-tel" aria-label="전화번호"><a href="tel:1566-0050">1566-0050</a></li>
+                                            <li class="addr-fax" aria-label="팩스">0505-047-2041</li>
+                                            <li class="addr-map" aria-label="주소">
+                                                <p><img src="/static/web/img/ui_common/ico_subway01.png" alt="1호선">1호선 종각역 5번출구에서 약150m</p>
+                                                <p><img src="/static/web/img/ui_common/ico_subway02.png" alt="2호선">2호선 을지로입구 2번출구에서 약190m</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="container" class="map-area view_map">
+                                        <div id="mapWrapper" style="width: 100%; height: 240px; position: relative;">
+                                            <div id="map" style="width: 100%; height: 100%; position: relative; overflow: hidden; background: url(&quot;https://t1.daumcdn.net/mapjsapi/images/bg_tile.png&quot;);"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; touch-action: none; cursor: url(&quot;https://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;) 7 5, url(&quot;https://t1.daumcdn.net/mapjsapi/images/cursor/openhand.cur.ico&quot;), default;"><div style="position: absolute; left: 11px; top: -129px;"><div style="position: absolute; z-index: 0;"></div><div style="position: absolute; z-index: 1; left: 0px; top: 0px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/499/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: 171px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/500/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: -85px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/222.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: -36px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/223.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 220px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"><img src="https://map.daumcdn.net/map_k3f_prod/bakery/image_map_png/PNGSD01/v17_9nwki/5/498/224.png" alt="" role="presentation" draggable="false" style="position: absolute; user-select: none; -webkit-user-drag: none; min-width: 0px; min-height: 0px; max-width: none; max-height: none; left: 476px; top: 427px; opacity: 1; transition-property: opacity; transition-duration: 0.2s; transition-timing-function: ease; width: 256px; height: 256px;"></div><div style="position: absolute; z-index: 1;"></div><div style="width: 480px; height: 300px; position: absolute; z-index: 1;"></div><div style="position: absolute; z-index: 1;"><svg version="1.1" style="stroke: none; stroke-dashoffset: 0.5; stroke-linejoin: round; fill: none; transform: translateZ(0px); position: absolute; left: -971px; top: -471px; width: 2400px; height: 1500px;" viewBox="0 0 2400 1500"><defs></defs></svg></div><div style="position: absolute; z-index: 1; width: 100%; height: 0px; transform: translateZ(0px);"><div style="position: absolute; margin: -39px 0px 0px -14px; z-index: 0; left: 240px; top: 149px;"><img draggable="false" src="https://t1.daumcdn.net/mapjsapi/images/marker.png" alt="" role="presentation" title="" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; clip: rect(0px, 29px, 42px, 0px); top: 0px; left: 0px; width: 29px; height: 42px;"><img src="https://t1.daumcdn.net/mapjsapi/images/transparent.gif" alt="" role="presentation" draggable="false" usemap="#daum.maps.Marker.Area:5" style="min-width: 0px; min-height: 0px; max-width: 99999px; max-height: none; border: 0px; display: block; position: absolute; user-select: none; -webkit-user-drag: none; width: 29px; height: 42px;"><map id="daum.maps.Marker.Area:5" name="daum.maps.Marker.Area:5"><area href="javascript:void(0)" alt="" role="presentation" shape="poly" coords="14,39,9,27,4,21,1,16,1,10,4,4,11,0,18,0,25,4,28,10,28,16,25,21,20,27" title="" style="-webkit-tap-highlight-color: transparent;"></map></div></div></div></div><div style="position: absolute; cursor: default; z-index: 1; margin: 0px 6px; height: 19px; line-height: 14px; left: 0px; bottom: 0px; color: rgb(0, 0, 0);"><div style="color: rgb(0, 0, 0); text-align: center; font-size: 10px; float: left;"><div style="float: left; margin: 2px 3px 0px 4px; height: 6px; transition: width 0.1s ease 0s; border-top: none rgb(0, 0, 0); border-right: 2px solid rgb(0, 0, 0); border-bottom: 2px solid rgb(0, 0, 0); border-left: 2px solid rgb(0, 0, 0); border-image: initial; width: 58px;"></div><div style="float: left; margin: 0px 4px 0px 0px; font-family: AppleSDGothicNeo-Regular, 돋움, dotum, sans-serif; font-weight: bold; color: rgb(0, 0, 0);">250m</div></div><div style="margin: 0px 4px; float: left;"><a target="_blank" href="http://map.kakao.com/" title="Kakao 지도로 보시려면 클릭하세요." style="float: left; width: 32px; height: 10px;"><img src="https://t1.daumcdn.net/mapjsapi/images/m_bi_b.png" alt="Kakao 지도로 이동" style="float: left; width: 32px; height: 10px; border: none;"></a><div style="font: 11px / 11px Arial, Tahoma, Dotum, sans-serif; float: left;"></div></div></div><div style="cursor: auto; position: absolute; z-index: 2; left: 0px; top: 0px;"></div></div>
+                                            <div class="custom_zoomcontrol radius_border">
+                                                <span onclick="zoomIn()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>
+                                                <span onclick="zoomOut()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
+                                            </div>
+                                        </div>
+                                        <div id="rvWrapper" style="width: 100%; height: 240px; position: absolute; top: 0; left: 0;">
+                                            <div id="roadview" style="height: 100%"></div>
+                                            <div id="btnMap" onclick="toggleMap(true)">
+                                                <span>지도</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <footer class="footerwrap">
+        <!-- Mobile_footer -->
+        <div class="mo_footer">
+            <p class="chatbot-btn"><a href="#" target="_blank" title="카카오 새창이동">챗봇</a></p>
+            <div class="footer-inner">
+                <div class="right">
+                    <figure><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+                    <div>
+                        <p>고객센터 : <a href="tel:1566-0050"><strong>1566-0050</strong></a></p>
+                        <span>(평일 오전 9시 ~ 오후6시)</span>
+
+                            <div class="mark-list">
+                                <p class="mark">
+                                    <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=10913" target="_blank" title="웹어워드코리아 평가내역 새창이동">
+                                        <img src="/static/web/img/common/wa2_mb.png" alt="웹어워드코리아 2021 금융분야 최우수상 수상인증마크">
+                                    </a>
+                                </p>
+                                <p class="mark">
+                                    <a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="한국웹접근성인증평가원 새창이동">
+                                        <img src="/static/web/img/common/wa_mb.png?v=20211116001" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)">
+                                    </a>
+                                </p>
+                            </div>
+                    </div>
+                </div>
+                <div class="left">
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a href="#none" class="policy" onclick="goPage('/customer/termsList.do?termId=terms14');">개인정보처리방침</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do');">이용약관</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/customerInfoStep01.do');">고객정보 제공내역 조회</a></li>
+                        </ul>
+                        <ul>
+                            <li>서울특별시 중구 남대문로 125, 8층 (다동), iM금융센터</li>
+                            <li>사업자등록번호 : 220-87-87408</li>
+                        </ul>
+                        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Mobile_footer -->
+
+        <!-- PC_footer -->
+        <div class="pc_footer">
+
+            <p class="home-btn"><a href="#none" class="pc-chatbot-btn" target="_blank" title="챗봇 새창이동">챗봇</a><a href="#none" onclick="goPage('/main.do');">홈</a></p>
+            <div class="footer-inner">
+                <div class="left">
+                    <figure><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do?termId=terms14');" class="policy">개인정보처리방침</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do');">이용약관</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/customerInfoStep01.do');">고객정보 제공내역 조회</a></li>
+                        </ul>
+
+                        <ul>
+                            <li>서울특별시 중구 남대문로 125, 8층(iM금융센터)</li>
+                            <li>사업자등록번호 : 220-87-87408</li>
+                        </ul>
+
+                        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="footer-familysite">
+                        <button>패밀리사이트</button>
+                        <ul>
+                            <li><a href="http://www.dgbfg.co.kr" title="DGB금융지주 사이트 새창열림" target="_blank">DGB금융지주</a></li>
+                            <li><a href="https://www.dgb.co.kr" title="iM뱅크 사이트 새창열림" target="_blank">iM뱅크</a></li>
+                            <li><a href="https://www.hi-ib.com" title="iM증권 사이트 새창열림" target="_blank">iM증권</a></li>
+                            <li><a href="https://www.dgbfnlife.com" title="iM라이프 사이트 새창열림" target="_blank">iM라이프</a></li>
+                            <li><a href="http://www.hi-asset.com" title="iM에셋자산운용 사이트 새창열림" target="_blank">iM에셋자산운용</a></li>
+                            <li><a href="https://www.dgbupay.com" title="iM유페이 사이트 새창열림" target="_blank">iM유페이</a></li>
+                            <li><a href="http://www.dgbds.co.kr" title="iM데이터시스템 사이트 새창열림" target="_blank">iM데이터시스템</a></li>
+                            <li><a href="http://www.dgbci.co.kr" title="iM신용정보 사이트 새창열림" target="_blank">iM신용정보</a></li>
+                            <li><a href="https://www.hi-investment.com" title="iM투자파트너스 사이트 새창열림" target="_blank">iM투자파트너스</a></li>
+                            <li><a href="https://intro.newsystock.com" title="뉴지스탁 사이트 새창열림" target="_blank">뉴지스탁</a></li>
+                            <li><a href="http://www.dgbscf.or.kr" title="DGB사회공헌재단 사이트 새창열림" target="_blank">DGB사회공헌재단</a></li>
+                        </ul>
+                    </div>
+                    <div class="mark-wrap">
+                        <a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="한국웹접근성인증평가원 새창이동">
+                            <img src="/static/web/img/common/wa_pc2.png" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)">
+                        </a>
+                        <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=10913" target="_blank" title="웹어워드코리아 평가내역 새창이동">
+                            <img src="/static/web/img/common/wa2_pc2.png" alt="웹어워드코리아 2021 금융분야 최우수상 수상인증마크">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //PC_footer -->
+    </footer>
+    <!---------- //End : footer ---------->
+
+    <!-- script area -->
+    <script>
+        var flash = false;
+        $(document).ready(function() {
+
+        // 	  var url ="http://get.adobe.com/flashplayer/";
+        // 			window.open(url, "_blank");
+        // 	try {
+        // 		var playerVersion = swfobject.getFlashPlayerVersion();
+        // 		var majorVersion = playerVersion.major;
+
+        // 		flash = true;
+        // 	} catch(e){
+        // 		flash = false;
+        // // 		var url ="http://get.adobe.com/flashplayer/";
+        // // 		window.open(url, "_blank");
+        // 	}
+            try {
+
+                if( new ActiveXObject('ShockwaveFlash.ShockwaveFlash') ) flash = true;
+
+                }catch(e){
+
+                if(navigator.mimeTypes ["application/x-shockwave-flash"] != undefined) flash = true;
+
+            }
+
+
+            // 영업점안내 상세 템플릿 생성
+            $.templates("branchDetailTmpl", "#template-branchDetail");
+
+        });
+
+        var container = "", // 지도와 로드뷰를 감싸고 있는 div 입니다
+        mapWrapper = "", // 지도를 감싸고 있는 div 입니다
+        btnRoadview = "", // 지도 위의 로드뷰 버튼, 클릭하면 지도는 감춰지고 로드뷰가 보입니다
+        btnMap = "", // 로드뷰 위의 지도 버튼, 클릭하면 로드뷰는 감춰지고 지도가 보입니다
+        rvContainer = "", // 로드뷰를 표시할 div 입니다
+        mapContainer = ""; // 지도를 표시할 div 입니다
+        var map = null;
+
+        var branchList = [
+            {    // 0
+                "branchName" : "본점",
+                "addr" : "서울특별시 중구 남대문로 125, 8층 (다동)",
+                "trans" : "1호선 종각역 5번출구 약150M 도보 2분거리 / 2호선 을지로입구 2번출구 약190M 도보 3분거리",
+                "tel" : "1566-0050",
+                "fax" : "0505-047-2034",
+                "coord": {"lat" : 37.5683340, "lng" : 126.9822820},
+                "roadView": {"panoId" : 1094428669, "pan" : 274.20932250265065, "tilt": -15.378285714285719}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 1
+                "branchName" : "경기지점",
+                "addr" : "경기도 안산시 단원구 성곡로 176, 타원TAKRA 2층 213호(성곡동)",
+                "trans" : "수도권 지하철 4호선 안산역 1번출구 / 맞은편 일반버스(20번, 20-1번, 511번 등) 환승 이용",
+                "tel" : "031-8034-7933",
+                "fax" : "0505-047-2053",
+                "coord": {"lat" : 37.3250186, "lng" : 126.7609128},
+                "roadView": {"panoId" : 1076586995, "pan" : 153.29028250265083, "tilt": -4.790857142857128}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 2
+                "branchName" : "대구지점",
+                "addr" : "대구광역시 달서구 월배로 109, 대구은행 월배영업부 6층",
+                "trans" : "대구1호선 월배역 1번출구, 진천역 4번출구",
+                "tel" : "1566-0050",
+                "fax" : "0505-047-2050",
+                "coord": {"lat" : 35.814738, "lng" : 128.526272},
+                "roadView": {"panoId" : 1089643370, "pan" : 339.5692307692308, "tilt": -13.22666666666667}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 3
+                "branchName" : "시너지금융실",
+                "addr" : "대구광역시 달서구 월배로 109, 대구은행 월배영업부 6층",
+                "trans" : "대구1호선 월배역 1번출구, 진천역 4번출구",
+                "tel" : "053-238-8019",
+                "fax" : "0505-047-2060",
+                "coord": {"lat" : 35.814738, "lng" : 128.526272},
+                "roadView": {"panoId" : 1089643370, "pan" : 339.5692307692308, "tilt": -13.22666666666667}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 4
+                "branchName" : "부산지점",
+                "addr" : "부산광역시 부산진구 범일로 181, 사학연금공단 15층",
+                "trans" : "부산 지하철 1호선 범내골역 1번출구",
+                "tel" : "1566-0050",
+                "fax" : "0505-047-2051",
+                "coord": {"lat" : 35.1461970, "lng" : 129.0588940},
+                "roadView": {"panoId" : 1086282137, "pan" : 267.15908250265085, "tilt": -14.847999999999983}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 5 삭제 20200106
+                "branchName" : "부산오토지점",
+                "addr" : "부산광역시 부산진구 범일로 181, 사학연금공단 15층",
+                "trans" : "부산 지하철 1호선 범내골역 1번출구",
+                "tel" : "051-982-8113",
+                "fax" : "0505-047-2076",
+                "coord": {"lat" : 35.1461970, "lng" : 129.0588940},
+                "roadView": {"panoId" : 1086282137, "pan" : 265.440559768157, "tilt": -10.589862376331352}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 6
+                "branchName" : "수원오토지점",
+                "addr" : "경기도 수원시 권선구 권선로 539, 성한빌딩 3층 (세류동)",
+                "trans" : "수도권 지하철 분당선 매교역 3번출구",
+                "tel" : "031-8034-7924",
+                "fax" : "0505-047-2075",
+                "coord": {"lat" : 37.263352, "lng" : 127.010781},
+                "roadView": {"panoId" : 1076449071, "pan" : 12.352986434823663, "tilt": -15.865290947759961}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 7
+                "branchName" : "경인오토지점",
+                "addr" : "경기 부천시 신흥로 167, 신영빌딩 9층(중동)",
+                "trans" : "수도권 지하철 7호선 신중동역 3번출구 신영빌딩 9층",
+                "tel" : "032-214-0008",
+                "fax" : "0505-047-2092",
+                "coord": {"lat" : 37.4985141, "lng" : 126.7769589},
+                "roadView": {"panoId" : 1077112806, "pan" : 261.16962643482356, "tilt": -1.2641480906170823}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 8 삭제 20200106 대전오토지점 -> 중부론센터 20200423
+                "branchName" : "중부론센터",
+                "addr" : "대전광역시 서구 한밭대로 809, 사학연금회관 15층(둔산동)",
+                "trans" : "대전 지하철 정부청사역 4번출구 사학연금회관 15층",
+                "tel" : "042-381-7954",
+                "fax" : "0505-047-2104",
+                "coord": {"lat" : 36.3582323, "lng" : 127.3888779},
+                "roadView": {"panoId" : 1078602518, "pan" : 165.36162643482368, "tilt": -5.835576662045644}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 9
+                "branchName" : "대구오토지점",
+                "addr" : "대구광역시 중구 달구벌대로 2210, 5층(대봉동, 호박타워)",
+                "trans": "2호선 경대병원역 3번출구 약 186M 도보 3분거리",
+                "tel" : "053-238-8013",
+                "fax" : "0505-047-2091",
+                "coord": {"lat" : 35.8623739079504, "lng" : 128.604679965304},
+                "roadView": {"panoId" : 1145880859, "pan" : 359.64855976815704, "tilt": -5.469862376331361}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 10
+                "branchName" : "서울론센터",
+                "addr" : "서울 종로구 창경궁로 136 보령빌딩 14층",
+                "trans" : "1호선 종로5가역 1번출구",
+                "tel" : "02-6441-8241",
+                "fax" : "0505-047-2100",
+                "coord": {"lat" : 37.57451160548914, "lng" : 126.99797934067027},
+                "roadView": {"panoId" : 1094611972, "pan" : 91.51360000000011, "tilt": -3.169142857142855}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 11
+                "branchName" : "영남론센터",
+                "addr" : "대구광역시 중구 달구벌대로 2210, 호박타워 5층 (대봉동)",
+                "trans" : "대구지하철 2호선 경대병원역 3번 출구",
+                "tel" : "053-238-8052",
+                "fax" : "0505-047-2098",
+                "coord": {"lat" : 35.862376, "lng" : 128.604681},
+                "roadView": {"panoId" : 1089851787, "pan" : 197.40202666666656, "tilt": -14.6511999999999994}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 12
+                "branchName" : "글로벌론센터",
+                "addr" : "서울 중구 남대문로 125, 7층",
+                "trans" : "1호선 종각역 5번출구 약 150M 도보 2분거리 / 2호선 을지로입구 2번출구 약 190M 도보 3분거리",
+                "tel" : "1566-0050",
+                "fax" : "0505 047 2093",
+                "coord": {"lat" : 37.5683340, "lng" : 126.9822820},
+                "roadView": {"panoId" : 1094428669, "pan" : 274.20932250265065, "tilt": -15.378285714285719}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 13
+                "branchName" : "고객센터",
+                "addr" : "서울 종로구 창경궁로 136 보령빌딩 14층",
+                "trans" : "1호선 종로5가역 1번출구",
+                "tel" : "1566-0050",
+                "fax" : "0505-047-2034",
+                "coord": {"lat" : 37.5745106144721, "lng" : 126.997984208392},
+                "roadView": {"panoId" : 1139752269, "pan" : 274.20932250265065, "tilt": -15.378285714285719}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 14
+                "branchName" : "PRM시너지센터",
+                "addr" : "대구광역시 달서구 달구벌대로 1568 대구은행 죽전지점 3층(감삼동)",
+                "trans" : "대구 지하철 2호선 죽전역 3번출구",
+                "tel" : "053-238-8019",
+                "fax" : "0505-047-2060",
+                "coord": {"lat" : 35.8503113, "lng" : 128.5386688},
+                "roadView": {"panoId" : 1089846517, "pan" : 156.02094916931753, "tilt": -4.2422857142857}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            },
+            {	// 15
+                "branchName" : "다이렉트론센터",
+                "addr" : "서울특별시 중구 남대문로 125, 10층 (다동)",
+                "trans" : "1호선 종각역 5번출구 약 150M 도보 2분거리 / 2호선 을지로입구역 2번출구 약 190M 도보 3분거리",
+                "tel" : "02-6441-8239",
+                "fax" : "0505-047-2088",
+                "coord": {"lat" : 37.5683340, "lng" : 126.9822820},
+                "roadView": {"panoId" : 1094428669, "pan" : 274.20932250265065, "tilt": -15.378285714285719}		//파노라마ID(panoId), 수평각(pan), 수직각(tilt)
+            }
+        ];
+
+        //지도와 로드뷰를 감싸고 있는 div의 class를 변경하여 지도를 숨기거나 보이게 하는 함수입니다
+        function toggleMap(active) {
+            if (active) {
+                // 지도가 보이도록 지도와 로드뷰를 감싸고 있는 div의 class를 변경합니다
+                container.className = "view_map"
+            } else {
+                container.className = "view_roadview"
+            }
+        }
+
+
+        function fn_open_branchDetail(idx) {
+
+            var branch = branchList[idx];
+        // 	var template = '<h1>{0}</h1>'
+        // 	    + '	<div class="scroll_box">'
+        // 	    + '		<div class="view_box">'
+        // 	    + '			<ul class="pop_place">'
+        // 	    + '				<li class="i01"><span class="place_tit">주소</span>{1}</li>'
+        // 	    + '				<li class="i02"><span class="place_tit">지하철</span>{2}</li>'
+        // 	    + '				<li><span class="i03"><span class="place_tit">전화번호</span><a href="tel:{3}">{3}</a></span><span class="i04"><span class="place_tit">팩스번호</span>{4}</span></li>'
+        // 	    + '			</ul>'
+        // 	    + '		</div>'
+        // 	    + '		<div id="container" class="view_map map_box mt0">'
+        // 	    + '			<div id="mapWrapper" style="width: 100%; height: 300px; position: relative;">'
+        // 	    + '				<div id="map" style="width: 100%; height: 100%"></div>'
+        // 	    + '				<div class="custom_zoomcontrol radius_border">'
+        // 	    + '					<span onclick="zoomIn()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>'
+        // 	    + '					<span onclick="zoomOut()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>'
+        // 	    + '				</div>'
+        // 	    + '				<div id="btnRoadview" onclick="toggleMap(false)">'
+        // 	    + '					<span>로드뷰</span>'
+        // 	    + '				</div>'
+        // 	    + '			</div>'
+        // 	    + '			<div id="rvWrapper" style="width: 100%; height: 300px; position: absolute; top: 0; left: 0;">'
+        // 	    + '				<div id="roadview" style="height: 100%"></div>'
+        // 	    + '				<div id="btnMap" onclick="toggleMap(true)">'
+        // 	    + '					<span>지도</span>'
+        // 	    + '				</div>'
+        // 	    + '			</div>'
+        // 	    + '		</div>'
+        // 	    + '	</div>'
+        // 	    + '	<div class="btn-r">'
+        // 	    + '		<a class="cbtn" href="#"><img src="/static/web/img/common/btn_mobile_menu_close.png" alt="닫기"></a>'
+        // 	    + '	</div>';
+        // 	if(idx == 9){
+        // 		template = '<h1>{0}</h1>'
+        // 		    + '	<div class="scroll_box">'
+        // 		    + '		<div class="view_box">'
+        // 		    + '			<ul class="pop_place">'
+        // 		    + '				<li class="i01"><span class="place_tit">주소</span>{1}</li>'
+        // 		    + '				<li><span class="i03"><span class="place_tit">전화번호</span><a href="tel:{3}">{3}</a></span><span class="i04"><span class="place_tit">팩스번호</span>{4}</span></li>'
+        // 		    + '			</ul>'
+        // 		    + '		</div>'
+        // 		    + '		<div id="container" class="view_map map_box mt0">'
+        // 		    + '			<div id="mapWrapper" style="width: 100%; height: 300px; position: relative;">'
+        // 		    + '				<div id="map" style="width: 100%; height: 100%"></div>'
+        // 		    + '				<div class="custom_zoomcontrol radius_border">'
+        // 		    + '					<span onclick="zoomIn()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대"></span>'
+        // 		    + '					<span onclick="zoomOut()"><img class="no-drag" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>'
+        // 		    + '				</div>'
+        // 		    + '				<div id="btnRoadview" onclick="toggleMap(false)">'
+        // 		    + '					<span>로드뷰</span>'
+        // 		    + '				</div>'
+        // 		    + '			</div>'
+        // 		    + '			<div id="rvWrapper" style="width: 100%; height: 300px; position: absolute; top: 0; left: 0;">'
+        // 		    + '				<div id="roadview" style="height: 100%"></div>'
+        // 		    + '				<div id="btnMap" onclick="toggleMap(true)">'
+        // 		    + '					<span>지도</span>'
+        // 		    + '				</div>'
+        // 		    + '			</div>'
+        // 		    + '		</div>'
+        // 		    + '	</div>'
+        // 		    + '	<div class="btn-r">'
+        // 		    + '		<a class="cbtn" href="#"><img src="/static/web/img/common/btn_mobile_menu_close.png" alt="닫기"></a>'
+        // 		    + '	</div>';
+        // 	}
+
+
+        // 	$("#branchDetailLayer .pop-container").html(String.format(template, branch.branchName, branch.addr, branch.trans, branch.tel, branch.fax));
+
+        // 	layer_open('branchDetailLayer');
+
+
+            var html = $.render.branchDetailTmpl(branch);
+            $("#template-container-branchDetail").html(html);
+
+            uiCommon.openPopup('branchDetailLayer');
+
+            if (GlobalJSConfig.isMobileDevice) {
+                $(".custom_zoomcontrol").css("top", "45px");
+                $(".custom_zoomcontrol").css("right", "5px");
+                $("#btnRoadview").css("top", "5px");
+                $("#btnRoadview").css("right", "5px");
+                $("#btnMap").css("top", "5px");
+                $("#btnMap").css("right", "7px");
+            }
+
+            container = document.getElementById('container'); // 지도와 로드뷰를 감싸고 있는 div 입니다
+            mapWrapper = document.getElementById('mapWrapper'); // 지도를 감싸고 있는 div 입니다
+            btnRoadview = document.getElementById('btnRoadview'); // 지도 위의 로드뷰 버튼, 클릭하면 지도는 감춰지고 로드뷰가 보입니다
+            btnMap = document.getElementById('btnMap'); // 로드뷰 위의 지도 버튼, 클릭하면 로드뷰는 감춰지고 지도가 보입니다
+            rvContainer = document.getElementById('roadview'); // 로드뷰를 표시할 div 입니다
+            mapContainer = document.getElementById('map'); // 지도를 표시할 div 입니다
+
+            //지도와 로드뷰 위에 마커로 표시할 특정 장소의 좌표입니다
+
+            var placePosition = new daum.maps.LatLng(branch.coord.lat, branch.coord.lng);
+
+            //지도 옵션입니다
+            var mapOption = {
+                center: placePosition, // 지도의 중심좌표
+                level: 5 // 지도의 확대 레벨
+            };
+
+            //지도를 표시할 div와 지도 옵션으로 지도를 생성합니다
+            map = new daum.maps.Map(mapContainer, mapOption);
+
+            //지도 중심을 표시할 마커를 생성하고 특정 장소 위에 표시합니다
+            var mapMarker = new daum.maps.Marker({
+                position: placePosition,
+                map: map
+            });
+
+            try{
+                //로드뷰 객체를 생성합니다
+                var roadview = new daum.maps.Roadview(rvContainer);
+
+            //로드뷰의 위치를 특정 장소를 포함하는 파노라마 ID로 설정합니다
+            //로드뷰의 파노라마 ID는 Wizard를 사용하면 쉽게 얻을수 있습니다
+            roadview.setPanoId(branch.roadView.panoId, placePosition);
+
+            //특정 장소가 잘보이도록 로드뷰의 적절한 시점(ViewPoint)을 설정합니다
+            //Wizard를 사용하면 적절한 로드뷰 시점(ViewPoint)값을 쉽게 확인할 수 있습니다
+            roadview.setViewpoint({
+                pan: branch.roadView.pan,
+                tilt: branch.roadView.tilt,
+                zoom: 0
+            });
+
+            //로드뷰 초기화가 완료되면
+            daum.maps.event.addListener(roadview, 'init', function() {
+                // 로드뷰에 특정 장소를 표시할 마커를 생성하고 로드뷰 위에 표시합니다
+                var rvMarker = new daum.maps.Marker({
+                    position: placePosition,
+                    map: roadview
+                });
+            });
+            } catch (e){
+                flash = false;
+        // 		var url ="http://get.adobe.com/flashplayer/";
+        // 		window.open(url, "_blank")
+            }
+
+            // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
+        // 	var zoomControl = new daum.maps.ZoomControl();
+        // 	map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+
+        // 	var aa = new daum.maps.RoadviewClient();
+
+        // 	aa.getNearestPanoId(placePosition, 50, function(panoId){
+        // 		var bb = panoId;
+        // 		console.log(branch.branchName + " : " + bb);
+        // 	});
+        }
+
+        //지도 확대, 축소 컨트롤에서 확대 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+        function zoomIn() {
+            map.setLevel(map.getLevel() - 1);
+        }
+
+        // 지도 확대, 축소 컨트롤에서 축소 버튼을 누르면 호출되어 지도를 확대하는 함수입니다
+        function zoomOut() {
+            map.setLevel(map.getLevel() + 1);
+        }
+    </script>
+    <!-- //script area -->
+
+    <!-- //Start : 퍼블확인용 -->
+    <script>
+        $(document).ready(function(){
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
+

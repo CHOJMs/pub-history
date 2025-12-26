@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>알림톡 관리 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>알림톡 관리</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <h2>알림톡 발송 정보</h2>
+                <table class="data-tbl">
+                    <colgroup>
+                        <col width="50%">
+                        <col width="50%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">고객번호</p>
+                                    <input type="tel" placeholder="" value="" disabled="disabled" class="disabled">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">고객명</p>
+                                    <input type="text" placeholder="" disabled="disabled" class="disabled">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">수신 SMS번호</p>
+                                    <input type="tel" placeholder="" value="" disabled="disabled" class="disabled">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">발신 SMS번호</p>
+                                    <input type="tel" placeholder="" value="" disabled="disabled" class="disabled">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">문서구분</p>
+                                    <div class="inp-area">
+                                        <div class="selectbox">
+                                            <select class="select">
+                                                <option value="">선택</option>
+                                                <option value="">한도조회</option>
+                                                <option value="">전자약정</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="com-inp">
+                                    <p class="tit">직원선택</p>
+                                    <div class="inp-area">
+                                        <div class="selectbox">
+                                            <select class="select">
+                                                <option value="">선택</option>
+                                                <option value="">홍길동</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="com-inp">
+                                    <p class="tit ver-top">문구내용</p>
+                                    <div class="sms-wrap">
+                                        <p class="sms-tx">[iM캐피탈] 한도조회 방법안내</p>
+                                        <ul class="sms-tx-list">
+                                            <li><span>①</span>아래 URL을 접속 후 한도조회를 클릭<br><a href="#">https://www.imcap.co.kr/dsrLodb/main.do?=12345678</a></li>
+                                            <li><span>②</span>약관동의 →  이름, 주민번호, 본인인증 진행<br>※ 본인인증 : 휴대폰, 공동인증서, 카카오, 금융인증서 중 택1</li>
+                                            <li><span>③</span>소득정보 (급여소득자, 개인사업자, 프리랜서, 기타) 선택  → 임대차 현황 입력 → 물건현황 입력<br>※ 임대차현황 : 대출용도, 임대보증금, 월세, 계약예정일, 만기일자입력<br>※ 물건현황 : 물건종류(아파트,연립/빌라 등), 소재지 주소입력, 시세입력 (주소검색시 시세 자동 조회, 시세가 조회되지 않을 경우 직접입력), 선순위설정액, 소유권 취득일자 입력 (선순위설정액 및 소유권 취득일자는 모르실 경우 미 입력가능)</li>
+                                            <li><span>④</span>한도 및 금리 확인</li>
+                                            <li><span>⑤</span>“정상적으로 접수 되었습니다.” 확인</li>
+                                        </ul>
+                                        <ul class="sms-tx-list02">
+                                            <li>담당 모집법인 : </li>
+                                            <li>담당 모집법인 상담사 : </li>
+                                            <li>법인 상담사 연락처 : </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Start : 버튼 -->
+                <div class="btn">
+                    <a href="#">발송</a>
+                </div>
+                <!-- //End : 버튼 -->
+
+                <!-- //End : content -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

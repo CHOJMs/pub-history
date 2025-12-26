@@ -1,0 +1,486 @@
+/**
+ *
+ * 커스텀 셀렉트 팝업
+ *
+ * @param li_index	선택할 li
+ * @param list	li 리스트
+ * 리스트 예)
+ * var selectList = [];
+ * list.push({"val": "val1", "text": "text1"});
+ * list.push({"val": "val2", "text": "text2"});
+ * @param title 팝업 제목
+ * @param callback 함수
+ *
+ * 팝업을 띄워야할 버튼을 셀렉터로 선택 ex : $(셀렉터).customSelectPopup(li_index, list, function(result){});
+ *
+ * result 리턴값 : { "dataIndex" : li index, "dataCode" : 코드 값, "dataText" : 텍스트 값 }
+ */
+$.fn.customSelectPopup = function(li_index, list, title, callback) {
+//	var popupId = $(this).attr("id");
+//	var popupUL = $(this).find("ul");
+	console.log('customSelectPopup li_index : ' + li_index);
+	var popupId = "customSelectPopupLayer";
+
+	var $layer = null;
+
+	return this.each(function(i, item) {
+		appendLayer("/common/customSelectPopup.do");
+	});
+
+	/**
+	 * 레이어 팝업 본문(body) 추가
+	 */
+	function appendLayer(url) {
+		$.get(url, function(result) {
+			$.each($.parseHTML(result), function(i, ele) {
+				if ($(ele).hasClass('popup-layer')) {
+					$layer = $($(ele)[0].outerHTML);
+				}
+			});
+
+			if($('#sessionAlarmLayerPopup').length){
+				// 본문(세션팝업) 위에 레이어 팝업 추가
+				$('#sessionAlarmLayerPopup').before($layer);
+			}else{
+				// 본문(body)에 레이어 팝업 추가
+				$('body').append($layer);
+			}
+
+
+			// 닫기 버튼 클릭 이벤트
+			$layer.find(".popup-close").find('a').click(function() {
+				// 레이어 요소 제거
+				$layer.remove();
+			});
+
+			// UI 초기화
+			initUI();
+
+			// li 클릭 이벤트
+			$("#"+popupId).find("ul").find("li").click(function(e) {
+		        e.preventDefault();
+				$("#"+popupId).find("ul").children().each(function(i){
+					changeCheckItem(false, i);
+				});
+
+				changeCheckItem(true, $(this).find("a").data("index"));
+
+			});
+
+		});
+	}
+
+	function initUI() {
+		var html = [];
+		$("#"+popupId).find("ul").html("");
+
+		if(list[0].text == "선택하세요"){
+			for (var i = 0; i < list.length; i++ ) {
+				html.push('<li>');
+				if(i == 0){
+					html.push('<a href="#none" data-index="'+i+'" data-code="'+list[i].val+'" data-text="'+list[i].text+'" style="display:none;">'+list[i].text+'</a>');
+				}else{
+					html.push('<a href="#none" data-index="'+i+'" data-code="'+list[i].val+'" data-text="'+list[i].text+'">'+list[i].text+'</a>');
+				}
+				html.push('</li>');
+			}
+		}else{
+			for (var i = 0; i < list.length; i++ ) {
+				html.push('<li>');
+				html.push('<a href="#none" data-index="'+i+'" data-code="'+list[i].val+'" data-text="'+list[i].text+'">'+list[i].text+'</a>');
+				html.push('</li>');
+			}
+		}
+
+		$("#"+popupId).find("ul").html(html.join(""));
+
+		uiCommon.openPopup(popupId); // 팝업 open
+
+		$("#titleCustomSelect").text(title);
+		$("#"+popupId).find("ul").children('li:eq("'+li_index+'")').addClass("active"); // 값 선택
+
+		// 웹접근성 적용
+		$("#"+popupId).find("ul").children('li:eq("'+li_index+'")').siblings().find('a').prop('title', '');
+		let _text = $("#"+popupId).find("ul").children('li:eq("'+li_index+'")').find('a').data('text');
+		$("#"+popupId).find("ul").children('li:eq("'+li_index+'")').find('a').prop('title', _text + ' 선택됨');
+	}
+
+	// 선택에 따른 UI 변경
+	function changeCheckItem(check, i) {
+		if(check) {
+			$("#"+popupId).find("ul").children('li:eq("'+i+'")').addClass("active");
+			setTimeout(() => setSelectValue(i),100);
+		} else {
+			$("#"+popupId).find("ul").children('li:eq("'+i+'")').removeClass("active");
+		}
+
+	}
+
+	// 값 선택
+	function setSelectValue(i) {
+		var dataIndex = $("#"+popupId).find("ul").children('li:eq("'+i+'")').find("a").data("index");
+		var dataCode = $("#"+popupId).find("ul").children('li:eq("'+i+'")').find("a").data("code");
+		var dataText = $("#"+popupId).find("ul").children('li:eq("'+i+'")').find("a").data("text");
+
+		resultVo = {
+				"dataIndex"         : dataIndex,
+				"dataCode"         : dataCode,
+				"dataText"   		 : dataText
+		};
+
+		uiCommon.closePopup(popupId); // 팝업 close
+
+		callback(resultVo);
+	}
+
+};
+
+/**
+*
+* 커스텀 셀렉트 팝업 위에 팝업 띄우는 경우...
+*
+* @param li_index	선택할 li
+* @param list	li 리스트
+* 리스트 예)
+* var selectList = [];
+* list.push({"val": "val1", "text": "text1"});
+* list.push({"val": "val2", "text": "text2"});
+* @param title 팝업 제목
+* @param callback 함수
+*
+* 팝업을 띄워야할 버튼을 셀렉터로 선택 ex : $(셀렉터).customSelectPopupIn(li_index, list, function(result){});
+*
+* result 리턴값 : { "dataIndex" : li index, "dataCode" : 코드 값, "dataText" : 텍스트 값 }
+*/
+$.fn.customSelectPopupIn = function(li_index, list, title, callback) {
+//	var popupId = $(this).attr("id");
+//	var popupUL = $(this).find("ul");
+	var popupId = "customSelectPopupLayer";
+
+	var $layer = null;
+
+	return this.each(function(i, item) {
+		appendLayer("/common/customSelectPopup.do");
+	});
+
+	/**
+	 * 레이어 팝업 본문(body) 추가
+	 */
+	function appendLayer(url) {
+		$.get(url, function(result) {
+			$.each($.parseHTML(result), function(i, ele) {
+				if ($(ele).hasClass('popup-layer')) {
+					$layer = $($(ele)[0].outerHTML);
+				}
+			});
+
+			if($('#sessionAlarmLayerPopup').length){
+				// 본문(세션팝업) 위에 레이어 팝업 추가
+				$('#sessionAlarmLayerPopup').before($layer);
+			}else{
+				// 본문(body)에 레이어 팝업 추가
+				$('body').append($layer);
+			}
+
+
+			// 닫기 버튼 클릭 이벤트
+			$layer.find(".popup-close").find('a').click(function() {
+				// 레이어 요소 제거
+				$layer.find(".custom_dim").remove();
+				$layer.remove();
+			});
+
+			// UI 초기화
+			initUI();
+
+			// li 클릭 이벤트
+			$("#"+popupId).find("ul").find("li").click(function(e) {
+
+				$("#"+popupId).find("ul").children().each(function(i){
+					changeCheckItem(false, i);
+				});
+
+				changeCheckItem(true, $(this).find("a").data("index"));
+
+			});
+
+			//커스텀 dim 클릭 이벤트
+			$("#"+popupId).find(".custom_dim").click(function(e) {
+				// 레이어 요소 제거
+				console.log(popupId);
+				$("#"+popupId).find(".custom_dim").remove();
+				uiCommon.closePopup(popupId); // 팝업 close
+			});
+
+		});
+	}
+
+	function initUI() {
+		var html = [];
+
+		$("#"+popupId).prepend("<div class='custom_dim' style='opacity: 1;visibility: visible;position: fixed;left: 0;top: 0; width: 100%;height: 100%;background: rgba(0, 0, 0, 0.2);transition: all 0.3s;'></div>");
+
+		$("#"+popupId).find("ul").html("");
+
+		if(list[0].text == "선택하세요"){
+			for (var i = 0; i < list.length; i++ ) {
+				html.push('<li>');
+				if(i == 0){
+					html.push('<a href="#none" data-index="'+i+'" data-code="'+list[i].val+'" data-text="'+list[i].text+'" style="display:none;">'+list[i].text+'</a>');
+				}else{
+					html.push('<a href="#none" data-index="'+i+'" data-code="'+list[i].val+'" data-text="'+list[i].text+'">'+list[i].text+'</a>');
+				}
+				html.push('</li>');
+			}
+		}else{
+			for (var i = 0; i < list.length; i++ ) {
+				html.push('<li>');
+				html.push('<a href="#none" data-index="'+i+'" data-code="'+list[i].val+'" data-text="'+list[i].text+'">'+list[i].text+'</a>');
+				html.push('</li>');
+			}
+		}
+
+		$("#"+popupId).find("ul").html(html.join(""));
+
+		uiCommon.openPopup(popupId); // 팝업 open
+
+		$("#titleCustomSelect").text(title);
+		$("#"+popupId).find("ul").children('li:eq("'+li_index+'")').addClass("active"); // 값 선택
+
+	}
+
+	// 선택에 따른 UI 변경
+	function changeCheckItem(check, i) {
+
+		if(check) {
+			$("#"+popupId).find("ul").children('li:eq("'+i+'")').addClass("active");
+			setTimeout(() => setSelectValue(i),100);
+		} else {
+			$("#"+popupId).find("ul").children('li:eq("'+i+'")').removeClass("active");
+		}
+
+		$("#"+popupId).find(".custom_dim").remove();
+	}
+
+	// 값 선택
+	function setSelectValue(i) {
+		var dataIndex = $("#"+popupId).find("ul").children('li:eq("'+i+'")').find("a").data("index");
+		var dataCode = $("#"+popupId).find("ul").children('li:eq("'+i+'")').find("a").data("code");
+		var dataText = $("#"+popupId).find("ul").children('li:eq("'+i+'")').find("a").data("text");
+
+		resultVo = {
+				"dataIndex"         : dataIndex,
+				"dataCode"         : dataCode,
+				"dataText"   		 : dataText
+		};
+
+		uiCommon.closePopup(popupId); // 팝업 close
+
+		callback(resultVo);
+	}
+
+};
+
+
+/**
+*
+* 커스텀 셀렉트 팝업 위에 팝업 띄우는 경우, Two Button ( ex. 예, 아니오)
+*
+* @param li_index	선택할 li
+* @param list	li 리스트
+* 리스트 예)
+* var selectList = [];
+* list.push({"val": "val1", "text": "text1"});
+* list.push({"val": "val2", "text": "text2"});
+* @param title 팝업 제목
+* @param callback 함수
+*
+* 팝업을 띄워야할 버튼을 셀렉터로 선택 ex : $(셀렉터).customSelectPopupIn(li_index, list, function(result){});
+*
+* result 리턴값 : { "dataIndex" : li index, "dataCode" : 코드 값, "dataText" : 텍스트 값 }
+*/
+$.fn.customSelectPopupInTwo = function(li_index, list, title, callback) {
+//	var popupId = $(this).attr("id");
+//	var popupUL = $(this).find("ul");
+	var popupId = "customSelectPopupLayer";
+
+	var $layer = null;
+
+	return this.each(function(i, item) {
+		appendLayer("/common/customSelectPopup.do");
+	});
+
+	/**
+	 * 레이어 팝업 본문(body) 추가
+	 */
+	function appendLayer(url) {
+		$.get(url, function(result) {
+			$.each($.parseHTML(result), function(i, ele) {
+				if ($(ele).hasClass('popup-layer')) {
+					$layer = $($(ele)[0].outerHTML);
+				}
+			});
+
+			if($('#sessionAlarmLayerPopup').length){
+				// 본문(세션팝업) 위에 레이어 팝업 추가
+				$('#sessionAlarmLayerPopup').before($layer);
+			}else{
+				// 본문(body)에 레이어 팝업 추가
+				$('body').append($layer);
+			}
+
+
+			// 닫기 버튼 클릭 이벤트
+			$layer.find(".popup-close").find('a').click(function() {
+				// 레이어 요소 제거
+				$layer.find(".custom_dim").remove();
+				$layer.remove();
+			});
+
+			// 초기화
+			initUI();
+
+			// li 클릭 이벤트
+			$("#"+popupId).find("button").click(function(e) {
+				changeCheckItem(true, $(this).data("index"));
+			});
+
+			//커스텀 dim 클릭 이벤트
+			$("#"+popupId).find(".custom_dim").click(function(e) {
+				// 레이어 요소 제거
+				$("#"+popupId).find(".custom_dim").remove();
+				uiCommon.closePopup(e, popupId); // 팝업 close
+			});
+
+		});
+	}
+
+	function initUI() {
+		var html = [];
+
+		$("#"+popupId).prepend("<div class='custom_dim' style='opacity: 1;visibility: visible;position: fixed;left: 0;top: 0; width: 100%;height: 100%;background: rgba(0, 0, 0, 0.2);transition: all 0.3s;'></div>");
+
+		$("#"+popupId).find(".popup-contents").addClass("flex-col pad-small");
+
+		html.push('<div class="fixed-btn-area btn-bg-none">');
+		html.push('<div class="btn-box">');
+		for (var i = 0; i < list.length; i++ ) {
+			html.push('<span class="btn btn-line"><button type="button"data-index="'+i+'" data-code="'+list[i].val+'" data-text="'+list[i].text+'">'+list[i].text+'</button></span>');
+		}
+		html.push('</div>');
+		html.push('</div>');
+
+		$("#"+popupId).find(".popup-contents").html(html.join(""));
+
+		uiCommon.openPopup(popupId); // 팝업 open
+
+		$("#titleCustomSelect").text(title);
+	}
+
+	// 선택에 따른 UI 변경
+	function changeCheckItem(check, i) {
+
+		if(check) {
+			setSelectValue(i);
+		}
+
+		$("#"+popupId).find(".custom_dim").remove();
+	}
+
+	// 값 선택
+	function setSelectValue(i) {
+		var dataIndex =  $("#"+popupId).find(".btn-box").children('span.btn.btn-line:eq("'+i+'")').find("button").data("index");
+		var dataCode  =  $("#"+popupId).find(".btn-box").children('span.btn.btn-line:eq("'+i+'")').find("button").data("code");
+		var dataText  =  $("#"+popupId).find(".btn-box").children('span.btn.btn-line:eq("'+i+'")').find("button").data("text");
+
+		resultVo = {
+				"dataIndex"         : dataIndex,
+				"dataCode"         : dataCode,
+				"dataText"   		 : dataText
+		};
+
+		uiCommon.closePopup(popupId); // 팝업 close
+
+		callback(resultVo);
+	}
+
+};
+
+/**
+* 커스텀 셀렉트 (mobile)
+*
+* @param index - li 선택
+* @param list	li 리스트
+* 리스트 예)
+* var selectList = [];
+* list.push({"val": "val1", "text": "text1"});
+* list.push({"val": "val2", "text": "text2"});
+*/
+$.fn.setSelectPopup = function(index, list) {
+	$(this).data("index", String(index));
+	$(this).next('input').val(list[index].val);
+	$(this).val(list[index].text);
+};
+
+
+/**
+* 커스텀 셀렉트 (불러오는 데이터)
+*
+* @param index - li 선택
+* @param list	li 리스트
+* 리스트 예)
+* var selectList = [];
+* list.push({"val": "val1", "text": "text1"});
+* list.push({"val": "val2", "text": "text2"});
+*/
+$.fn.setSelectPopupforVo = function(value, list) {
+   for(var index in list){
+		if(list[index].val == value){
+			$(this).children('span').text(list[index].text);
+			$(this).children('span').addClass('active');
+			$(this).children("input").val(list[index].val);
+			$(this).data("index", String(index));
+			$(this).focus();
+			/*
+			$(this).data("index", String(index));
+			$(this).next('input').val(list[index].val);
+			$(this).val(list[index].text);
+			*/
+		}
+	}
+};
+
+
+/**
+* 커스텀 셀렉트 (Email)
+*
+* @param index - li 선택
+* @param list	li 리스트
+* 리스트 예)
+* var selectList = [];
+* ex ) hong@ + val
+* list.push({"val": "val1", "text": "text1"});
+* list.push({"val": "val2", "text": "text2"});
+*/
+$.fn.setEmailSelectPopup = function(index, list) {
+	$(this).data("index", String(index));
+	$(this).val().concat(list[index].val);
+};
+
+/**
+* 커스텀 셀렉트 (html 리스트 선언)
+*
+* @param key    hidden input 값
+* @param data	불러올 데이터 값
+* @param popup	불러올 팝업
+* 사용 예)
+* $("#key").setSelectPopupHtml($("#key"), data, $("#popup"));
+*/
+$.fn.setSelectPopupHtml = function(key, data, popup) {
+	$(popup).find("li").find("a").each(function(){
+		if($(this).attr('data-code') == data){
+			$(key).val(data);
+			$(key).next('input').val($(this).attr('data-text'));
+		}
+	});
+};

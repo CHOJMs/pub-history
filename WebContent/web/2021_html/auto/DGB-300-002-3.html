@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중요약정사항 확인</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>중요약정사항 확인</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+
+                <p class="txt-m mb32">약정사항에 체크해 주세요.</p>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="ch01" name="ch01" checked="checked" class="chk" aria-hidden="false" title="중도해지수수료 체크">
+                    <label for="ch01" class="label font22" role="checkbox" aria-checked="true"><b>중도해지수수료</b></label>                    
+                    <span class="icon-tooltip">
+                        <a href="#"><img src="/static/web/img/ico_tooltip.png" alt="기타(특약)사항 내용보기"></a>
+                    </span>
+
+                    <div class="checkbox-text">
+                        <p>(잔여리스료+자동차 잔존가치)X35%</p>
+                        <span class="icon_bullet">
+                            단, 잔여리스료는 (연리스료/365 X 미경과일수)로 하고, 미경과일수는 (총계약일수-계약경과일수)로 하며, 자동차 잔존가치는 고객과 약정한 리스조건의 잔존가치를 의미합니다.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="checkbox line-02">
+                    <input type="checkbox" id="ch02" name="ch02" checked="checked" class="chk" aria-hidden="false" title="규정손해배상금 체크">
+                    <label for="ch02" class="label font22" role="checkbox" aria-checked="true"><b>규정손해배상금</b></label>
+                    <span class="icon-tooltip">
+                        <a href="#"><img src="/static/web/img/ico_tooltip.png" alt="규정손해배상금 내용보기"></a>
+                    </span>
+
+                    <div class="checkbox-text">
+                        <p>미회수원금X규정손해율(10%)</p>
+                        <span class="icon_bullet">
+                            단, 미회수원금은 계약 해지일 시점의 미회수원금으로 합니다.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="checkbox line-02">
+                    <input type="checkbox" id="ch02" name="ch02" checked="checked" class="chk" aria-hidden="false" title="승계수수료 체크">
+                    <label for="ch02" class="label font22" role="checkbox" aria-checked="true"><b>승계수수료</b></label>
+
+                    <div class="checkbox-text">
+                        <p>미회수원금X승계수수료최고요율(1%)
+                            [승계수수료 최소금액 300,000원, 최대금액 1,000,000원]</p>
+                    </div>
+                </div>
+
+                <div class="checkbox line-02">
+                    <input type="checkbox" id="ch03" name="ch03" checked="checked" class="chk" aria-hidden="false" title="반환지연금 체크">
+                    <label for="ch03" class="label font22" role="checkbox" aria-checked="true"><b>반환지연금</b></label>
+
+                    <div class="checkbox-text">
+                        <p>일리스료X경과일수X200%</p>
+                        <span class="icon_bullet">
+                            단, 일리스료는 (연리스료/365)으로 합니다.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="checkbox line-02">
+                    <input type="checkbox" id="ch04" name="ch04" checked="checked" class="chk" aria-hidden="false" title="반환자동차의 평가 및 감가비용 체크">
+                    <label for="ch04" class="label font22" role="checkbox" aria-checked="true"><b>반환자동차의 평가 및 감가비용</b></label>                    
+                    <span class="icon-tooltip">
+                        <a href="#"><img src="/static/web/img/ico_tooltip.png" alt="반환자동차의 평가 및 감가비용 내용보기"></a>
+                    </span>
+
+                    <div class="checkbox-text">
+                        <p>감가금액=반환시점의 자동차의 기대가치(혹은 중고차시세)X감가율의 합</p>
+                        <span class="icon_bullet">
+                            감가비 산정기준은 당사 홈페이지에서 확인하실 수 있습니다.
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="checkbox line-02">
+                    <input type="checkbox" id="ch03" name="ch03" checked="checked" class="chk" aria-hidden="false" title="종료처리조건 체크">
+                    <label for="ch03" class="label font22" role="checkbox" aria-checked="true"><b>종료처리조건</b></label>
+
+                    <div class="checkbox-text">
+                        <p>양도/반납/재리스 선택가능</p>
+                        <span class="icon_bullet">
+                            계약만기시 차량을 인수할 경우 소유권 이전 비용은 고객님이 부담하셔야 합니다.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="checkbox line-02">
+                    <input type="checkbox" id="ch03" name="ch03" checked="checked" class="chk" aria-hidden="false" title="기타(특약)사항 체크">
+                    <label for="ch03" class="label font22" role="checkbox" aria-checked="true"><b>기타(특약)사항</b></label>
+
+                    <div class="checkbox-text">
+                        <p>자동차 장기임대차 약정서 체결이후에 관계법령의 제정, 개정, 폐지 등 임대인의 책임있는 사유가 아닌 사유로 임대료의 변경사유가 발생할 경우 본 ‘상품조건＇상의 월 임대료를 조정하기로 한다.</p>
+                    </div>
+                </div>
+
+                <div class="popup-color-box">
+                    <p><span>리스이용자(임차인) 및 연대보증인</span>은 중요약정 사항을
+                        확인하고 이에 동의합니다.</p>
+                </div>
+
+                <div class="checkbox mt16">
+                    <input type="checkbox" id="ch07" name="ch07" checked="checked" class="chk" aria-hidden="false" title="동의함 체크">
+                    <label for="ch07" class="label" role="checkbox" aria-checked="true">동의함</label>
+                </div>
+                
+                
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

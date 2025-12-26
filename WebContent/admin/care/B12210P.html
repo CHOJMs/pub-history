@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/swiper-bundle.min.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+<script  src="/static/admin/js/swiper-bundle.min.js"></script>
+
+<title>리파이낸싱 등록/수정 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                    <li><a href="#" class="on">사후관리</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#">반납차량</a></li>
+                        <li><a href="#" class="on">리파이낸싱</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <h2>리파이낸싱</h2>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <h3>반납차량정보</h3>
+                    <p class="line-top"></p>
+
+                    <p class="s-tit">기본정보</p>
+                    <!-- Start : 리스트 -->
+                    <table class="bbs-table-view1" style="min-width:1495px"> <!-- 행이 hover인 경우 : tbl-hover 추가 -->
+                        <colgroup>
+                            <col style="width:240px;">
+                            <col>
+                            <col style="width:240px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>국적</th>
+                                <td>한국</td>
+                                <th>제조사</th>
+                                <td>현대</td>
+                            </tr>
+                            <tr>
+                                <th>모델</th>
+                                <td>디올 뉴산타페</td>
+                                <th>세부모델</th>
+                                <td>가솔린 2.5터보 5인승</td>
+                            </tr>
+                            <tr>
+                                <th>연식</th>
+                                <td>2023년 1월</td>
+                                <th>주행거리</th>
+                                <td>3,000km</td>
+                            </tr>
+                            <tr>
+                                <th>중고판매 신고가격</th>
+                                <td>1,230만원</td>
+                                <th>사고정보</th>
+                                <td>무사고</td>
+                            </tr>
+                            <tr>
+                                <th>차량번호</th>
+                                <td colspan="3">123가4567</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 리스트 -->
+
+                    <p class="s-tit">성능점검표 <span class="num">총 <em>20</em>개</span></p>
+                    <table class="file-tbl">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="50%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="s-tit">수리점검표 <span class="num">총 <em>20</em>개</span></p>
+                    <table class="file-tbl">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="50%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>수리완료사진 등록</h3>
+                        <div class="btn">
+                            <a href="#none" class="gray w-80 a-c">저장</a> <!-- 비활성화 : class="gray" / 활성화 : class="blue" -->
+                        </div>
+                    </div>
+                    <p class="line-top"></p>
+
+                    <div class="flex-wrap flex-s-tit mt24"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <p class="s-tit mt0">수리완료사진 <span class="num">등록 <em>0</em>개 / 필수 20개</span></p>
+                        <div class="file-wrap">
+                            <label for="file">파일등록</label>
+                            <input type="file" id="file" class="btn-file">
+                        </div>
+                    </div>
+                    <table class="data-tbl type01">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="50%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="com-inp">
+                                        <p class="tit a-t">이미지 첨부</p>
+                                        <div class="cnt-box">
+                                            <ul class="file-sel-multi">
+                                                <li>
+                                                    <ul> <!-- ul에 최대 2개의 li 추가 가능 -->
+                                                        <li>
+                                                            <div class="f-ico">
+                                                                <a href="#none"  class="file">
+                                                                    글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png
+                                                                </a>
+                                                                <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="f-ico">
+                                                                <a href="#none"  class="file">
+                                                                    글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png
+                                                                </a>
+                                                                <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <ul> <!-- ul에 최대 2개의 li 추가 가능 -->
+                                                        <li>
+                                                            <div class="f-ico">
+                                                                <a href="#none"  class="file">
+                                                                    글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png
+                                                                </a>
+                                                                <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="f-ico">
+                                                                <a href="#none"  class="file">
+                                                                    글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png
+                                                                </a>
+                                                                <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class="none-file">
+                                                            <span>등록된 파일 없음</span>
+                                                            <span class="info-txt">* 이미지 파일은 fig, jpg, jpeg, png 확장자만 가능합니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Start : 관리자 화면 -->
+                    <div class="admin mt80">
+                        <h3>리파이낸싱</h3>
+                        <p class="line-top"></p>
+
+                        <p class="s-tit">리파이낸싱 세팅</p>
+                        <!-- Start : 리스트 -->
+                        <table class="data-tbl type02">
+                            <colgroup>
+                                <col width="50%">
+                                <col width="50%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">렌트 이용자</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="">개인</option>
+                                                        <option value="">개인사업자</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">대물한도</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="">1억</option>
+                                                        <option value="">2억</option>
+                                                        <option value="">3억</option>
+                                                        <option value="">5억</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">의무 사용기간</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="">36개월</option>
+                                                        <option value="">48개월</option>
+                                                        <option value="">60개월</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">도착지</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="">서울</option>
+                                                        <option value="">경기</option>
+                                                        <option value="">인천</option>
+                                                        <option value="">전북</option>
+                                                        <option value="">전남</option>
+                                                        <option value="">충북</option>
+                                                        <option value="">충남</option>
+                                                        <option value="">경북</option>
+                                                        <option value="">경남</option>
+                                                        <option value="">강원</option>
+                                                        <option value="">제주</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">약정기간</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="">60개월</option>
+                                                        <option value="">72개월</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">주행거리</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="">1만km</option>
+                                                        <option value="">2만km</option>
+                                                        <option value="">3만km</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">선납금</p>
+                                            <div class="inp-txt-right">
+                                                <input type="tel" placeholder="" value="" class="a-l">
+                                                <span>%</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">보증금</p>
+                                            <div class="inp-txt-right">
+                                                <input type="tel" placeholder="" value="" class="a-l">
+                                                <span>%</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                            </tbody>
+                        </table>
+                        <!-- //End : 리스트 -->
+
+                        <div class="total-box">
+                            <div class="inner">
+                                <p>최종 월 렌탈료 <span class="price">329,678</span><span>원</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--// End : 관리자 화면 -->
+
+                    <div class="btn-area">
+                        <a href="#none" class="gray">취소</a>
+                        <a href="#none">등록</a>
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/swiper-bundle.min.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+<script  src="/static/admin/js/swiper-bundle.min.js"></script>
+
+<title>리파이낸싱 리스트 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                    <li><a href="#" class="on">사후관리</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#">반납차량</a></li>
+                        <li><a href="#" class="on">리파이낸싱</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <h2>리파이낸싱</h2>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+                    <div class="flex-wrap flex-s-tit">
+                        <h3>차량정보</h3>
+                        <div class="btn">
+                            <a href="#" class="ico-re">초기화</a>
+                            <a href="#" class="blue">조회</a>
+                        </div>
+                    </div>
+
+                    <!-- Start : 리스트 -->
+                    <table class="data-tbl type02">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="50%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">제조사</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">현대</option>
+                                                    <option value="">기아</option>
+                                                    <option value="">KG모빌리티</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">모델</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">펠리세이드</option>
+                                                    <option value="">펠리세이드</option>
+                                                    <option value="">펠리세이드</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">수리완료사진</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">완료</option>
+                                                    <option value="">미완료</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">리파이낸싱 여부</p>
+                                        <div class="inp-area">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="">완료</option>
+                                                    <option value="">미완료</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">현업 담당자</p>
+                                        <input type="text" placeholder="띄어쓰기 없이 입력" value="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">등록일시</p>
+                                        <div class="calendar">
+                                            <input type="tel" placeholder="시작일 선택">
+                                            <span class="dash mr80">-</span>
+                                            <input type="tel" placeholder="종료일 선택"><img src="/static/admin/img/new_common/ico_cal.png">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">차량번호</p>
+                                        <input type="tel" placeholder="차량번호를 입력하세요" value="">
+                                    </div>
+                                </td>
+                        </tbody>
+                    </table>
+                    <!-- //End : 리스트 -->
+
+                    <div class="flex-s-tit mt64"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <span class="num">총 <em>45</em>건</span>
+                    </div>
+
+                    <!-- Start : 리스트 -->
+                    <table class="bbs-table mt16"> <!-- 행이 hover인 경우 : tbl-hover 추가 -->
+                        <colgroup>
+                            <col style="width:8%;">
+                            <col style="width:11%;">
+                            <col style="width:11%;">
+                            <col>
+                            <col style="width:11%;">
+                            <col style="width:11%;">
+                            <col style="width:8%;">
+                            <col style="width:14%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">등록번호</th>
+                                <th scope="col">제조사</th>
+                                <th scope="col">모델</th>
+                                <th scope="col">세부모델</th>
+                                <th scope="col">수리완료 사진 상태</th>
+                                <th scope="col">리파이낸싱 상태</th>
+                                <th scope="col">현업 담당자</th>
+                                <th scope="col">등록일시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1234</td>
+                                <td class="a-l">현대</td>
+                                <td class="a-l">아반떼</td>
+                                <td class="a-l"><a href="#none">2023년형 디젤 2.2 2WD 익스클루시브</a></td>
+                                <td>완료</td>
+                                <td><a href="#none" class="btn-sm blue">완료</a></td>
+                                <td>최명희</td>
+                                <td>2020-08-21 20:09:05</td>
+                            </tr>
+                            <tr>
+                                <td>1234</td>
+                                <td class="a-l">현대</td>
+                                <td class="a-l">아반떼</td>
+                                <td class="a-l"><a href="#none">2023년형 디젤 2.2 2WD 익스클루시브</a></td>
+                                <td><a href="#none" class="btn-sm line">미완료</a></td>
+                                <td>-</td>
+                                <td>최명희</td>
+                                <td>2020-08-21 20:09:05</td>
+                            </tr>
+                            <tr>
+                                <td>1234</td>
+                                <td class="a-l">현대</td>
+                                <td class="a-l">아반떼</td>
+                                <td class="a-l"><a href="#none">2023년형 디젤 2.2 2WD 익스클루시브</a></td>
+                                <td>완료</td>
+                                <td><a href="#none" class="btn-sm red">미완료</a></td>
+                                <td>최명희</td>
+                                <td>2020-08-21 20:09:05</td>
+                            </tr>
+                            <tr>
+                                <td colspan="8" class="nodata"><span>정보가 없습니다.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 리스트 -->
+
+                    <!-- Start : 페이징 -->
+                    <div class="paging-box">
+                        <a href="#none" class="first">맨처음</a>
+                        <a href="#none" class="prev">이전</a>
+                        <a href="#none" class="current">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none" class="next">다음</a>
+                        <a href="#none" class="end">맨마지막</a>
+                    </div>
+                    <!-- //End : 페이징 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

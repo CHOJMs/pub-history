@@ -1,0 +1,28 @@
+.eg-flick-viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.eg-flick-camera {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  z-index: 1;
+}
+.eg-flick-camera>* {
+  flex-shrink: 0;
+}
+
+.eg-flick-viewport.vertical {
+  display: inline-flex;
+}
+.eg-flick-viewport.vertical>.eg-flick-camera {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.flick-viewport.flick-hidden .eg-flick-camera > * {
+  visibility: hidden;
+}

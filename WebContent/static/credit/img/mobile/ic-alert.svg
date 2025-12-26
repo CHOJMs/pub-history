@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+    <g data-name="타원 225" style="fill:#fff;stroke:#707478">
+        <circle cx="8" cy="8" r="8" style="stroke:none"/>
+        <circle cx="8" cy="8" r="7.5" style="fill:none"/>
+    </g>
+    <g data-name="그룹 3003" transform="translate(-20.75 -512.5)">
+        <rect data-name="사각형 1852" width="1.5" height="6" rx=".75" transform="translate(28 516)" style="fill:#707478"/>
+        <rect data-name="사각형 1853" width="1.5" height="2" rx=".75" transform="translate(28 523)" style="fill:#707478"/>
+    </g>
+</svg>

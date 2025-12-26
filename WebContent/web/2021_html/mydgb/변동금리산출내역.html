@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변동금리산출내역</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">    
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>변동금리산출내역</h1>                
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+                
+                <div class="scroll_table2">
+                    <table class="dataType">
+                        <caption>
+                            변동금리산출내역조회, 금리변경일, 기준금리, 가산금리, 조정금리, 변동주기 등으로 나타낸 표
+                        </caption>
+                        <colgroup>
+                            <col width="20%">
+                            <col width="15%">
+                            <col width="15%">
+                            <col width="15%">
+                            <col width="15%">
+                            <col width="20%">
+                            </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">금리변경일</th>
+                                <th scope="col">기준금리</th>
+                                <th scope="col">가산금리</th>
+                                <th scope="col">조정금리</th>
+                                <th scope="col">변동주기</th>
+                                <th scope="col">기준금리종류</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2021-11-08</td>
+                                <td>3.252%</td>
+                                <td>4.4%</td>
+                                <td>0%</td>
+                                <td>12개월</td>
+                                <td class="">최적적용금리고시표<br>기준금리(개인대출)</td>
+                            </tr>
+                            <tr>
+                                <td>2021-11-08</td>
+                                <td>3.252%</td>
+                                <td>4.4%</td>
+                                <td>0%</td>
+                                <td>12개월</td>
+                                <td class="">최적적용금리고시표<br>기준금리(개인대출)</td>
+                            </tr>
+                            <tr>
+                                <td>2021-11-08</td>
+                                <td>3.252%</td>
+                                <td>4.4%</td>
+                                <td>0%</td>
+                                <td>12개월</td>
+                                <td class="">최적적용금리고시표<br>기준금리(개인대출)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" class="noData">조회 결과가 없습니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btn_more">
+                    <a href="#" class="more_btn"><i class="more"></i>더보기</a>
+                </div>
+                
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <!-- <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div> -->
+                <!-- //버튼 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

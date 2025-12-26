@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+<link rel="stylesheet" href="/static/web/js/lib/swiper-bundle.min.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/lib/swiper-bundle.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>채무조정요청권 | iM캐피탈</title>
+
+</head>
+<body>
+    <div class="wrap">
+        <!-- Start : skip_navigation -->
+        <div id="tab_skip">
+            <a href="#common_body">
+                <span>본문 바로가기</span>
+            </a>
+        </div>
+        <!-- //End : skip_navigation -->
+        <h1 class="h1_tl">iM캐피탈</h1>
+
+        <!----------- //모바일 메뉴 시작 ----------->
+
+        <!-- //메인, 서브메인만 추가될 태그, 활성화 시키고 header에 main 추가 -->
+        <!--<div class="sub-line"></div>-->
+        <!-- //메인, 서브메인만 추가될 태그, 활성화 시키고 header에 main 추가 -->
+
+        <header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+                    <!-- <li class="chatbot"><a href="#" target="_blank" title="카카오 새창이동">챗봇</a></li>20221027 : 추가 -->
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+                </ul>
+			</div>
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+
+				<div class="mobile-menu">
+					<!-- <p tabindex="0"><a href="">본인인증</a></p>-->
+					<p tabindex="0">홍길동님 반갑습니다.</p>
+
+                    <!-- 20221027 : 추가// -->
+                    <ul class="mobile-icon-btn">
+						<li class="chatbot"><a href="#" target="_blank" title="카카오 새창이동">챗봇</a></li><!-- 20221027 : 추가 -->
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+						<li class="home"><a href="">home</a></li>
+					</ul>
+                    <!-- //20221027 : 추가 -->
+                    <ul>
+						<li><a href="">공지사항</a></li>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>
+				</div>
+
+				<div class="left left-pc">
+					<ul>
+						<li><a href="">회사소개</a>
+							<ul>
+                                <li class="dep2"><a href="">기업정보</a>
+                                   <ul>
+                                        <li><a href="">회사개요</a></li>
+                                        <li><a href="">CEO 인사말</a></li>
+                                        <li><a href="">영업점 안내</a></li>
+                                        <li><a href="">조직도</a></li>
+                                        <li><a href="">그룹경영이념</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">투자정보</a>
+                                    <ul>
+                                        <li><a href="">경영공시</a></li>
+                                        <li><a href="">결산공고</a></li>
+                                        <li><a href="">재무정보</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">윤리경영</a>
+                                    <ul>
+                                        <li><a href="">윤리경영비전</a></li>
+                                        <li><a href="">윤리경영헌장</a></li>
+                                        <li><a href="">윤리강령</a></li>
+                                        <li><a href="">윤리경영 Q&A</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="" class="ico_openwindow" target="_blank" title="인재채용 새창이동">인재채용</a></li>
+                            </ul>
+						</li>
+						<li><a href="">고객센터</a>
+							<div class="flex-list">
+								<div>
+									<p class="mt0">상담ㆍ문의</p>
+									<ul>
+										<li><a href="">상담문의/민원접수</a></li>
+										<li><a href="">자주하는 질문</a></li>
+									</ul>
+								</div>
+								<div>
+									<p>이용안내</p>
+									<ul>
+										<li><a href="">약관 및 규정</a></li>
+                                        <li class="dep2"><a href="">본인인증안내</a>
+											<ul>
+												<li><a href="">카카오페이</a></li>
+												<li><a href="">금융인증서</a></li>
+												<li><a href="">모바일 웹 공동인증서</a></li>
+												<li><a href="">공동인증서 내보내기<br>(PC → 모바일앱)</a></li>
+												<li><a href="">공동인증서 가져오기<br>(모바일앱 → PC)</a></li>
+											</ul>
+										</li>
+                                        <li><a href="">공지사항</a></li>
+                                        <li><a href="">고객확인의무 안내</a></li>
+                                        <li><a href="">대출인 모집 지급<br>수수료 현황</a></li>
+                                        <li><a href="">금리조회</a></li>
+										<li class="dep2"><a href="">고객정보관리</a>
+											<ul>
+												<li><a href="">개인(신용)정보 수집 &middot;<br>이용 및 제공 관련<br>고객 권리 안내문</a></li>
+												<li><a href="">계열사간 고객정보<br>제공 내역 조회</a></li>
+                                                <li><a href="">개인정보 열람신청</a></li>
+												<li><a href="">개인(신용)정보<br>이용 및 제공내역</a></li>
+												<li><a href="">개인신용정보 삭제</a></li>
+												<li><a href="">개인(신용)정보<br>이용 및 제공내역</a></li>
+												<li><a href="">마케팅목적제공 현황</a></li>
+												<li><a href="">신용정보조회 동의</a></li>
+												<li><a href="">위탁업체 현황</a></li>
+                                                <li><a href="">개인신용평가 결과에<br>대한 설명 및 이의제기<br>신청</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+                        <li><a href="">금융소비자보호</a>
+							<ul>
+                                <li><a href="">금융소비자보호체계</a></li>
+                                <li><a href="">금융소비자보호공시</a></li>
+                                <li><a href="">금융소비자 참고판례</a></li>
+                                <li><a href="">금융소비자 유익정보</a></li>
+                                <li><a href="">금융감독원금융정보</a></li>
+                                <li><a href="">금융소비자권리</a></li>
+                                <li><a href="">적합성적정성원칙확인서</a></li>
+                            </ul>
+						</li>
+                        <li><a href="">클린센터</a></li>
+					</ul>
+				</div>
+
+				<div class="right">
+					<ul>
+						<li class=""><a href="javascript:;">개인금융</a>
+							<ul>
+								<li class="tit"><h2>개인금융</h2></li>
+								<li><a href="">상품소개</a></li>
+								<li><a href="">즉시대출</a></li>
+								<li><a href="">한도조회</a></li>
+								<li><a href="">전자약정</a></li>
+								<li class="dep2"><a href="">온라인서류제출</a>
+									<ul>
+										<li><a href="">소득 서류제출</a></li>
+										<li><a href="">신분증 제출</a></li>
+										<li><a href="">FIND 서류제출</a></li>
+									</ul>
+								</li>
+								<li><a href="">대출계산기</a></li>
+                                <li class="dep2"><a href="">인증서안내</a>
+									<ul>
+										<li><a href="">공동인증서 내보내기<br>(PC → 모바일웹)</a></li>
+										<li><a href="">공동인증서 가져오기<br>(모바일웹 → PC)</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">자동차금융</a>
+							<ul>
+								<li class="tit"><h2>자동차금융</h2></li>
+                                <li><a href="">상품소개</a></li>
+								<li><a href="">신차오토론</a></li>
+								<li><a href="">오토리스</a></li>
+								<li><a href="">중고차오토론</a></li>
+								<li><a href="">장기렌터카</a></li>
+								<li><a href="">전자약정</a></li>
+								<li class="dep2"><a href="">온라인서류제출</a>
+									<ul>
+										<li><a href="">소득 서류제출</a></li>
+										<li><a href="">FIND 서류제출</a></li>
+									</ul>
+								</li>
+                                <li><a href="">내차승계</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">스탁론</a>
+							<ul>
+								<li class="tit"><h2>스탁론</h2></li>
+                                <li><a href="">상품소개</a></li>
+								<li><a href="">대출신청</a></li>
+								<li><a href="">한도변경</a></li>
+								<li><a href="">추가대출</a></li>
+                                <li><a href="">대출상환</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">금융센터</a>
+							<ul>
+								<li class="tit"><h2>금융센터</h2></li>
+								<li><a href="">리스금융</a></li>
+								<li><a href="">할부금융</a></li>
+								<li><a href="">기업금융</a></li>
+								<li><a href="">신기술금융</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">마이</a>
+							<ul>
+								<li class="tit"><h2>마이</h2></li>
+								<li><a href="">신청/이용내역</a></li>
+								<li><a href="">고객정보 변경</a></li>
+								<li><a href="">서류변경</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+                <div class="left left-mob">
+					<ul>
+						<li>
+							<a href="">회사소개</a>
+							<ul>
+								<li class="tit"><h2>회사소개</h2></li>
+                                <li class="dep2"><a href="">기업정보</a>
+                                    <ul>
+                                        <li><a href="">회사개요</a></li>
+                                        <li><a href="">CEO 인사말</a></li>
+                                        <li><a href="">영업점 안내</a></li>
+                                        <li><a href="">조직도</a></li>
+                                        <li><a href="">그룹경영이념</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">투자정보</a>
+                                    <ul>
+                                        <li><a href="">경영공시</a></li>
+                                        <li><a href="">결산공고</a></li>
+                                        <li><a href="">재무정보</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">윤리경영</a>
+                                    <ul>
+                                        <li><a href="">윤리경영비전</a></li>
+                                        <li><a href="">윤리경영헌장</a></li>
+                                        <li><a href="">윤리강령</a></li>
+                                        <li><a href="">윤리경영 Q&A</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="" class="ico_openwindow" target="_blank" title="인재채용 새창이동">인재채용</a></li>
+							</ul>
+						</li>
+						<li><a href="">고객센터</a>
+							<div class="flex-list">
+								<div>
+									<h2 class="tit">고객센터</h2>
+                                    <p>상담ㆍ문의</p>
+									<ul>
+										<li><a href="">상담문의/민원접수</a></li>
+										<li><a href="">자주하는 질문</a></li>
+									</ul>
+								</div>
+								<div>
+									<p>이용안내</p>
+									<ul>
+										<li><a href="">약관 및 규정</a></li>
+                                        <li class="dep2"><a href="">본인인증안내</a>
+											<ul>
+												<li><a href="">카카오페이</a></li>
+												<li><a href="">금융인증서</a></li>
+												<li><a href="">모바일 웹 공동인증서</a></li>
+												<li><a href="">공동인증서 내보내기<br>(PC → 모바일앱)</a></li>
+												<li><a href="">공동인증서 가져오기<br>(모바일앱 → PC)</a></li>
+											</ul>
+										</li>
+                                        <li><a href="">공지사항</a></li>
+										<li><a href="">고객확인의무 안내</a></li>
+										<li><a href="">대출인모집 지급수수료<br>현황</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+                        <li>
+							<a href="">금융소비자보호</a>
+							<ul>
+								<li class="tit"><h2>금융소비자보호</h2></li>
+                                <li><a href="">금융소비자보호체계</a></li>
+                                <li><a href="">금융소비자보호공시</a></li>
+                                <li><a href="">금융소비자 참고판례</a></li>
+                                <li><a href="">금융소비자 유익정보</a></li>
+                                <li><a href="">금융감독원금융정보</a></li>
+                                <li><a href="">금융소비자권리</a></li>
+                                <li><a href="">적합성적정성원칙확인서</a></li>
+							</ul>
+						</li>
+                        <li><a href="">클린센터</a></li>
+					</ul>
+					<div class="mobile-btn-wrap">
+						<div class="btn-half">
+							<a href="">한도조회</a>
+							<a href="">대출계산기</a>
+						</div>
+						<div class="btn-full"><a href="">iM캐피탈 APP 이용하기<span>다운로드</span></a></div>
+						<div class="btn-full_app"><a href="">쉽고 편리한 간편인증<span>등록하기</span></a></div><!--앱일 경우 노츨-->
+
+						<!-- <div class="btn-full btn-color"><a href="">쉽고 편리한 간편인증</a></div> -->
+					</div>
+				</div>
+			</nav>
+		</header>
+        <!----------- //모바일 메뉴 끝 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-contents">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+				<h1>채무조정요청권</h1>
+                <div class="s-contWrap s-conBtn"><!-- 하단버튼이 있는 경우 클래스 추가 : s-conBtn -->
+                    <div class="pro-box">
+                        <!-- Start : 서브 탭 -->
+                        <div class="swipe-shadow-box">
+                            <div class="swipe_tab_box swiper-container qna-tab">
+                                <ul class="swiper-wrapper">
+                                    <li class="swiper-slide"><a href="#" class="on" rel="tab-1" aria-label="개요 선택됨">개요</a></li>
+                                    <li class="swiper-slide"><a href="#" rel="tab-2" aria-label="자체채무조정 선택안됨">자체채무조정</a></li>
+                                    <li class="swiper-slide"><a href="#" rel="tab-3" aria-label="공적채무조정 선택안됨">공적채무조정</a></li>
+                                    <li class="swiper-slide"><a href="#" rel="tab-4" aria-label="정책자금지원기관 안내 선택안됨">정책자금지원기관 안내</a></li>
+                                </ul>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <!-- //End : 서브 탭 -->
+                    
+                        <div class="debt-wrap">
+                            <!-- Start : 개요 -->
+                            <h2 class="txt-hidden">개요</h2>
+                            <div class="tab" id="tab-1">
+                                <div class="cm-gray-box">
+                                    <p class="cm-g-tit"><span>채무조정요청권</span>이란?</p>
+                                    <p class="cm-g-txt">「개인금융채권의 관리 및 개인금융 채무자의 보호에 관한 법률」 제 35조에 따라 개인금융채권을 연체한 채무자는 채권금융 회사에 채무조정을 요청할 수 있습니다. <span class="font-green">다만, 심사결과에 따라 채무조정이 거절될 수도 있습니다.</span></p>
+                                </div>
+
+                                <!-- Start : 채무조정신청하기 버튼 -->
+                                <div class="fixed-btn-area">
+                                    <div class="btn-box mgt-type">
+                                        <span class="btn w-240"><button type="button">채무조정 신청하기</button></span>
+                                    </div>
+                                </div>
+                                <!-- //End : 채무조정신청하기 버튼 -->
+
+                                <ul class="call-box">
+                                    <li>
+                                        <p class="call-tx1"><span>종합 채무 상담</span>이 필요하시다면?</p>
+                                        <p class="call-tx2">신용회복 위원회<a href="tel:1600-5500">1600-5500</a></p>
+                                    </li>
+                                    <li>
+                                        <p class="call-tx1"><span>개인회생, 파산 상담</span>이 필요하시다면?</p>
+                                        <p class="call-tx2">대한법률 구조공단<a href="tel:132">132</a></p>
+                                    </li>
+                                </ul>
+
+                                <div class="horizon-var"></div>
+
+                                <h3 class="s-tl02 mt0">주요사항</h3>
+                                <h4 class="s-tl03">- 요청대상</h4>
+                                <dl class="dl-list">
+                                    <dt>대상자</dt>
+                                    <dd>계좌별 대출원금 3천만원 미만의 개인금융 채권을 연체중인 자</dd>
+                                    <dt>채무조정 요청이 불가한 경우</dt>
+                                    <dd>
+                                        - 채무조정의 합의가 해체된 후 3개월이 지나지 않은 경우
+                                        <br>- 개인금융채권의 존재 여부나 범위에 대하여 소송, 조정 등의 소송 진행중인 경우
+                                        <br>- 신용회복위원회/법원 채무조정 절차가 진행중이거나 채무조정을 이행중인 경우
+                                    </dd>
+                                    <dt>채무조정 요청이 거절될 수 있는 경우</dt>
+                                    <dd>
+                                        - 채무조정 요청 서류에 대한 채권금융회사의 수정 요청에 3회 이상 따르지 않은 경우
+                                        <br>- 채무조정 절차가 끝난 후 변제능력에 현저한 변동이 없음에도 불구하고 채무조정을 다시 요청한 경우
+                                        <br>- 소멸시효가 완성된 대출에 대해 채무조정을 요청하는 경우
+                                    </dd>
+                                </dl>
+
+                                <h4 class="s-tl03">- 요청방법 및 관련서류 <span class="font-green">(내부기준에 따라 다를 수 있음)</span></h4>
+                                <dl class="dl-list">
+                                    <dt>요청방법</dt>
+                                    <dd>1. 영업점 신청 : 영업점 관련 서류 제출을 통한 채무조정 요청
+                                        <br>2. 비대면 신청 : 온라인/앱을 통한 채무조정 요청</dd>
+                                    <dt>필요 서류</dt>
+                                    <dd>
+                                        - 채무조정 요청서
+                                        <br>- 채무조정안
+                                        <br>- 채무자의 변제능력에 관한 자료
+                                        <br>- 개인(신용)정보 조회·수집·이용·제공·동의서
+                                        <br>- 그 밖에 채무조정에 필요한 서류(채권금융회사 채무조정 내부 기준에 따름)
+                                        <br><span class="sm-tx">* 단, 채무조정안을 작성하기 곤란한 경우에는 그 서류제출을 아니할 수 있음</span>
+                                    </dd>
+                                </dl>
+
+                                <h4 class="s-tl03">- 채무조정 내용(예시)</h4>
+                                <dl class="dl-list">
+                                    <dt>상환유예</dt>
+                                    <dd>
+                                        최장 6개월
+                                        <br><span class="sm-tx">* 유예기간 중 정상이자 부과</span>
+                                    </dd>
+                                    <dt>상환기간 연장</dt>
+                                    <dd>최장 3년 이내 (대환 또는 만기연장)</dd>
+                                    <dt>이자율 조정</dt>
+                                    <dd>약정이자율의 최대 30% 범위에서 인하</dd>
+                                    <dt>채무감면</dt>
+                                    <dd>연체이자, 이자감면</dd>
+                                </dl>
+
+                                <h3 class="s-tl02">채무조정 절차</h3>
+                                <ul class="num-box">
+                                    <li>
+                                        <p class="step-tit"><span>1</span>요청</p>
+                                        <div class="step-desc">
+                                            <p><span>채무자</span>채권금융회사에 구비서류 제출과 함께 채무조정을 요청합니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="step-tit"><span>2</span>심사 및 결과통지</p>
+                                        <div class="step-desc">
+                                            <p><span>채권금융회사</span>채무조정 심사 후 결과를 통지합니다. (10영업일 이내)</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="step-tit"><span>3</span>동의</p>
+                                        <div class="step-desc">
+                                            <p><span>채무자</span>채권금융회사에 통지한 채무조정 내용에 대해 동의여부를 결정합니다. (10영업일 이내)</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="step-tit"><span>4</span>채무조정서 작성</p>
+                                        <div class="step-desc">
+                                            <p><span>채권금융회사</span>채무자가 동의한 채무조정내용에 대해 조정서를 작성합니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="step-tit"><span>5</span>합의</p>
+                                        <div class="step-desc">
+                                            <p><span>채무자</span>조정서에 날인하면, 채무조정 합의가 성립됩니다.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <h3 class="s-tl02">채무조정 지원제도 안내</h3>
+                                <h4 class="s-tl03">1. 신용회복위원회 채무조정</h4>
+                                <dl class="dl-list">
+                                    <dt>개요</dt>
+                                    <dd>채무를 정상적으로 상환할 수 없는 과중 채무자를 대상으로 상환기간 연장, 이자율 조정, 채무감면 등을 통해 본인의 상환능력에 맞게 채무를 조정하는 절차</dd>
+                                    <dt>신청방법</dt>
+                                    <dd><p class="call-tx2 font-green">신용회복 위원회<a href="tel:1600-5500" class="font-green">1600-5500</a></p></dd>
+                                </dl>
+
+                                <h4 class="s-tl03">2. 법원의 개인회생</h4>
+                                <dl class="dl-list">
+                                    <dt>개요</dt>
+                                    <dd>채무를 정상적으로 상환할 수 없는 개인 채무자를 대상으로 채권자 등 이해관계의 법률 관계를 조정함으로써 채무자의 효율적 회생과 채권자의 이익을 도모하기 위하여 마련된 절차</dd>
+                                    <dt>신청방법</dt>
+                                    <dd>
+                                        <p class="call-tx2 font-green">대한법률구조공단<a href="tel:132" class="font-green">132</a></p>
+                                        <p class="call-tx2 font-green">신용회복 위원회<a href="tel:1600-5500" class="font-green">1600-5500</a></p>
+                                    </dd>
+                                </dl>
+
+                                <h4 class="s-tl03">3. 법원의 개인파산 및 면책</h4>
+                                <dl class="dl-list">
+                                    <dt>개요</dt>
+                                    <dd>자신의 재산으로 모든 채무를 변제할 수 없는 개인 채무자를 대상으로 법원이 모든 채권자가 평등하게 채권을 변제 받도록 하고 채무자에게는 면책절차를 통하여 남아있는 채무에 대한 변제 책임을 면제하는 절차</dd>
+                                    <dt>신청방법</dt>
+                                    <dd>
+                                        <p class="call-tx2 font-green">대한법률구조공단<a href="tel:132" class="font-green">132</a></p>
+                                        <p class="call-tx2 font-green">신용회복 위원회<a href="tel:1600-5500" class="font-green">1600-5500</a></p>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- //End : 개요 -->
+
+                            <!-- Start : 자체채무조정 -->
+                            <h2 class="txt-hidden">자체채무조정</h2>
+                            <div class="tab" id="tab-2">
+                                <h3 class="s-tl02 mt0">지원 대상(공통)</h3>
+                                <p class="s-tl04">
+                                    ① 연체우려가 있는 차주
+                                    <br>② 연속 연체기간이 90일 미만인 차주
+                                    <br>③ 실직, 폐업 등 재무적 곤란상황에 처한 차주
+                                </p>
+                                <h4 class="s-tl03">- 상세요건</h4>
+                                <dl class="dl-list">
+                                    <dt>주택담보대출</dt>
+                                    <dd>채무조정 신청 시점 주택가격 9억원 이하(1주택 소유)</dd>
+                                    <dt>주택담보대출 외 기타대출</dt>
+                                    <dd>
+                                        채무조정 신청 시점 대출잔액 (한도거래대출은 한도약정액) 1억원 이하
+                                        <br><span class="sm-tx">단, 3,000cc 이상 또는 차량가액기준 4천만원 이상 대상 승용자동차금융(리스,할부,오토론), 신용카드 신용판매 (일시불,할부), 단기카드대출(현금서비스) 제외</span>
+                                    </dd>
+                                    <dt>전세자금대출</dt>
+                                    <dd>
+                                        전세보증금 4억원 이하
+                                        <br><span class="sm-tx">단, 보증기관과 협약개정 등 협의 완료된 경우에 한함</span>
+                                    </dd>
+                                    <dt>제외가능대상</dt>
+                                    <dd>연소득 감소액 또는 추가 발생 비용을 상회하는 퇴직금(명예퇴직금, 퇴직위로금 포함), 보험금 등을 지급받는 경우</dd>
+                                </dl>
+
+                                <h3 class="s-tl02">지원 내용</h3>
+                                <h4 class="s-tl03">- 개인, 개인사업자 주택담보대출 채무조정</h4>
+                                <p class="s-tl04">
+                                    ① 만기연장(개인 · 개인사업자) : 차주의 상환능력 등 평가하여 최대 12개월 이내 월 단위로 여신기간 연장
+                                    <br>② 연체이자 감면 : 채무조정 취급 시 까지의 정상이자를 납부한 경우에 한하여 연체이자 감면
+                                    <br>③ 분할상환으로의 대환 : 주택담보대출 죄장 만기 이내 분활상환방식
+                                </p>
+                                <h4 class="s-tl03">- 개인, 개인사업자 대출 원금상환 유예</h4>
+                                <p class="s-tl04">총 대출 기간 중 최초 유예기간 최대1년 허용 , 단 대출 종류에 따라 기간은 상이함</p>
+
+                                <div class="pro-box division-box">
+                                    <!-- Start : 안내사항 -->
+                                    <div class="accordion-info-box accordion-fine">
+                                        <ul>
+                                            <li>
+                                                <div class="q">
+                                                    <a href="#" class="f-btn">
+                                                        <p class="f-tit">안내사항</p>
+                                                        <span class="ico-arrow">내용 닫기</span>
+                                                    </a>
+                                                </div>
+                                                <div class="a" style="display:block">
+                                                    <ul class="list-dot">
+                                                        <li><span class="point">지원대상에 해당하더라도, 상환능력평가등의 내부 심사절차 이후 지원여부가 확정됩니다.</span></li>
+                                                        <li><span class="point">유예기간 중 기한이익 상실 사유 발생 시 즉시 기한의 이익 상실 처리하고 원금 상환을 요구하게 됩니다. (유예종료)</span></li>
+                                                        <li>채무조정 관련 자세한 내용 상담은 아래 담당자를 통해 문의 바랍니다.</li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="call-box02">
+                                        <p>담당자 연락처</p>
+                                        <div>
+                                            <ul class="list-dot">
+                                                <li>리테일여신관리부 홍세윤 대리 : 02-6441-7881</li>
+                                                <li>리테일여신관리부 이지선 주임 : 02-6441-7849</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- //End : 안내사항 -->
+                                </div>
+                            </div>
+                            <!-- //End : 자체채무조정 -->
+
+                            <!-- Start : 공적채무조정 -->
+                            <h2 class="txt-hidden">공적채무조정</h2>
+                            <div class="tab" id="tab-3">
+                                <h4 class="s-tl05 mt0"><a href="https://www.ccrs.or.kr/main.do" class="link" target="_blank">신용회복위원회</a></h4>
+                                <dl class="dl-list">
+                                    <dt>신속채무조정</dt>
+                                    <dd>연체우려되거나, 연체기간 30일 이하고객<br>6개월 상환유예, 최장 10년분할상환</dd>
+                                    <dt>프리워크아웃</dt>
+                                    <dd>연체기간 30일초과 90일 미만 고객<br>연체이자 면제 및 금리감면(30~70%) 최장 10년 분할상환</dd>
+                                    <dt>개인워크아웃</dt>
+                                    <dd>연체기간 3개월이상고객<br>원금일부 감면, 이자전액 감면, 최장8년분할상환</dd>
+                                </dl>
+                                <p class="txt4">※ 상기 제시된 채무조정의 세부사항은 신용회복 위원회 홈페이지를 통해 확인하시기 바랍니다.</p>
+
+                                <h4 class="s-tl05"><a href="https://www.scourt.go.kr/nm/min_2/min_2_2/min_2_2_1/index.html" class="link" target="_blank">대한민국 법원 '개인회생 / 파산'</a></h4>
+                                <dl class="dl-list">
+                                    <dt>개인회생 제도</dt>
+                                    <dd>대출을 감당하기 어려운 상황에서 소정소득이 있는자에 대하여 3년간 일정한 금액을 변제하면 나머지 채무의 면제를 받을 수 있는 절차</dd>
+                                    <dt>개인파산 제도</dt>
+                                    <dd>대출을 감당하기 어려운 상황에서 소득이 없는경우 스스로 파산신청하여 채무에 대한 변제책임을 면제받아 경제적으로 갱생할 수 있는 기회를 부여하는 제도</dd>
+                                </dl>
+                                <p class="txt4">※ 상기 제시된 채무조정의 세부사항은 대한민국 법원 홈페이지의 '개인회생 / 파산'을 통해 확인하시기 바랍니다.</p>
+
+                                <h4 class="s-tl05"><a href="https://www.newstartfund.or.kr" class="link" target="_blank">새출발기금</a></h4>
+                                <dl class="dl-list">
+                                    <dt>지원대상</dt>
+                                    <dd>코로나 19피해를 입은 개인사업자(최근폐업자포함) 및 소상공인<br>부실차주(연체3개월이상) 또는 부실우려차주(연체3개월미만의 장기연체 발생우려자)</dd>
+                                    <dt>지원방식</dt>
+                                    <dd>
+                                        (1) 부실차주 : <br class="mob">원금조정, 이자및 연체이자감면, 분할상환전환, 거치기간설정(최장12개월) 및 상환기간 (최장10년) 추심 및 강제집행 중단
+                                        <br>(2) 부실우려차주 : <br class="mob">금리감면(기존대출의 연체기간에따라 차등), 분할상환 전환, 거치기간설정(최장12개월)및 상환기간(최장10년), 추심 및 강제집행 중단
+                                    </dd>
+                                </dl>
+                                <p class="txt4">※ 상기 제시된 채무조정의 세부사항은 새출발기금 홈페이지를 통해 확인하시기 바랍니다.</p>
+                            </div>
+                            <!-- //End : 공적채무조정 -->
+
+                            <!-- Start : 정책자금지원기관 안내 -->
+                            <h2 class="txt-hidden">정책자금지원기관 안내</h2>
+                            <div class="tab" id="tab-4">
+                                <h4 class="s-tl05 mt0"><a href="https://www.kinfa.or.kr/financialSupport/productInfo.do?menuCode=01300&amp;menuCategory=00164" class="link" target="_blank">서민금융진흥원 안내</a></h4>
+                                <dl class="dl-list">
+                                    <dt>지원대상</dt>
+                                    <dd>기초수급자 등 사회적 취약계층에 해당하는 고객</dd>
+                                    <dt>지원상품</dt>
+                                    <dd>
+                                        (1) 미소금융 교육비 지원대출 (최대 500만원)
+                                        <br>(2) 미소금융 취약계층자립자금대출 (최대1,200만원)
+                                        <br>(3) 미소금융 취약계층 교육비 대출 (최대 500만원)
+                                    </dd>
+                                </dl>
+                                <p class="txt4">※ 상기 제시된 채무조정의 세부사항은 서민금융진흥원 홈페이지를 통해 확인하시기 바랍니다.</p>
+
+                                <h4 class="s-tl05"><a href="https://www.ccrs.or.kr/finance/repay/loantype/list.do" class="link" target="_blank">신용회복위원회 안내</a></h4>
+                                <dl class="dl-list">
+                                    <dt>지원대상</dt>
+                                    <dd>신용회복 및 법원 개인회생 성실하게 이행 중인 고객</dd>
+                                    <dt>지원상품</dt>
+                                    <dd>
+                                        (1) 신용회복 중 성실상환자에 대한 금융지원 (최대 1,500만원)
+                                        <br>(2) 개인회생론 (최대 700만원)
+                                        <br>(3) 금융사기 등 피해자를 위한 새희망힐링론 (최대 5백만원내에서 피해금액)
+                                    </dd>
+                                </dl>
+                                <p class="txt4">※ 상기 제시된 채무조정의 세부사항은 신용회복 위원회 홈페이지를 통해 확인하시기 바랍니다.</p>
+
+                                <h4 class="s-tl05"><a href="https://welfare.comwel.or.kr/default/page.do?mCode=B010010010" class="link" target="_blank">근로복지공단 안내</a></h4>
+                                <dl class="dl-list">
+                                    <dt>지원대상</dt>
+                                    <dd>임금감소, 임금체불 등으로 생계가 곤란한 고객</dd>
+                                    <dt>지원상품</dt>
+                                    <dd>
+                                        (1) 근로자 생활안정자금 융자 (최대 1,250만원)
+                                        <br>(2) 임금 등 체불 근로자 생계비 융자 (최대 1,000만원)
+                                        <br>(3) 임금감소생계비 (최대 1,000만원 이내에서 임금감소액)
+                                        <br>(4) 소액생계비 (최대 200만원)
+                                    </dd>
+                                </dl>
+                                <p class="txt4">※ 상기 제시된 채무조정의 세부사항은 근로복지공단 홈페이지를 통해 확인하시기 바랍니다.</p>
+                            </div>
+                            <!-- //End : 정책자금지원기관 안내 -->
+                        </div>
+                    </div>
+                </div>
+                <!-- 내용 끝 -->
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+    </div>
+
+    <!---------- Start : footer ---------->
+    <footer class="footerwrap">
+        <!-- Mobile_footer -->
+        <div class="mo_footer">
+            <p class="chatbot-btn"><a href="#" target="_blank" title="카카오 새창이동">챗봇</a></p><!-- 20221027 : 챗봇추가 -->
+            <div class="footer-inner">
+                <div class="right">
+                    <figure><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+                    <div>
+                        <p>고객센터 : <a href="tel:1566-0050"><strong>1566-0050</strong></a></p>
+                        <span>(평일 오전 9시 ~ 오후6시)</span>
+
+                            <div class="mark-list">
+                                <p class="mark">
+                                    <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=10913" target="_blank" title="웹어워드코리아 평가내역 새창이동">
+                                        <img src="/static/web/img/common/wa2_mb.png" alt="웹어워드코리아 2021 금융분야 최우수상 수상인증마크">
+                                    </a>
+                                </p>
+                                <p class="mark">
+                                    <a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="한국웹접근성인증평가원 새창이동">
+                                        <img src="/static/web/img/common/wa_mb.png?v=20211116001" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)">
+                                    </a>
+                                </p>
+                            </div>
+                    </div>
+                </div>
+                <div class="left">
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a href="#none" class="policy" onclick="goPage('/customer/termsList.do?termId=terms14');">개인정보처리방침</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do');">이용약관</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/customerInfoStep01.do');">고객정보 제공내역 조회</a></li>
+                        </ul>
+                        <ul>
+                            <li>서울특별시 중구 남대문로 125, 8층 (다동), iM금융센터</li>
+                            <li>사업자등록번호 : 220-87-87408</li>
+                        </ul>
+                        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Mobile_footer -->
+
+        <!-- PC_footer -->
+        <div class="pc_footer">
+
+            <p class="home-btn"><a href="#" class="pc-chatbot-btn" target="_blank" title="카카오 새창이동">챗봇</a><a href="#none" onclick="goPage('/main.do');">홈</a></p><!-- 20221027 : 챗봇추가 -->
+            <div class="footer-inner">
+                <div class="left">
+                    <figure><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do?termId=terms14');" class="policy">개인정보처리방침</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do');">이용약관</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/customerInfoStep01.do');">고객정보 제공내역 조회</a></li>
+                        </ul>
+
+                        <ul>
+                            <li>서울특별시 중구 남대문로 125, 8층(iM금융센터)</li>
+                            <li>사업자등록번호 : 220-87-87408</li>
+                        </ul>
+
+                        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="footer-familysite">
+                        <button>패밀리사이트</button>
+                        <ul>
+                            <li><a href="http://www.dgbfg.co.kr" title="DGB금융지주 사이트 새창열림" target="_blank">DGB금융지주</a></li>
+                            <li><a href="https://www.dgb.co.kr" title="iM뱅크 사이트 새창열림" target="_blank">iM뱅크</a></li>
+                            <li><a href="https://www.hi-ib.com" title="iM증권 사이트 새창열림" target="_blank">iM증권</a></li>
+                            <li><a href="https://www.dgbfnlife.com" title="iM라이프 사이트 새창열림" target="_blank">iM라이프</a></li>
+                            <li><a href="http://www.hi-asset.com" title="iM에셋자산운용 사이트 새창열림" target="_blank">iM에셋자산운용</a></li>
+                            <li><a href="https://www.dgbupay.com" title="iM유페이 사이트 새창열림" target="_blank">iM유페이</a></li>
+                            <li><a href="http://www.dgbds.co.kr" title="iM데이터시스템 사이트 새창열림" target="_blank">iM데이터시스템</a></li>
+                            <li><a href="http://www.dgbci.co.kr" title="iM신용정보 사이트 새창열림" target="_blank">iM신용정보</a></li>
+                            <li><a href="https://www.hi-investment.com" title="iM투자파트너스 사이트 새창열림" target="_blank">iM투자파트너스</a></li>
+                            <li><a href="https://intro.newsystock.com" title="뉴지스탁 사이트 새창열림" target="_blank">뉴지스탁</a></li>
+                            <li><a href="http://www.dgbscf.or.kr" title="DGB사회공헌재단 사이트 새창열림" target="_blank">DGB사회공헌재단</a></li>
+                        </ul>
+                    </div>
+                    <div class="mark-wrap">
+                        <a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="한국웹접근성인증평가원 새창이동">
+                            <img src="/static/web/img/common/wa_pc2.png" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)">
+                        </a>
+                        <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=10913" target="_blank" title="웹어워드코리아 평가내역 새창이동">
+                            <img src="/static/web/img/common/wa2_pc2.png" alt="웹어워드코리아 2021 금융분야 최우수상 수상인증마크">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //PC_footer -->
+    </footer>
+    <!---------- //End : footer ---------->
+    <!-- script area-->
+   <script>
+        // 모바일 브라우저 가로크기 체크
+        if (document.body.clientWidth < 767) {
+
+            var subNavSwiper = new Swiper('.swipe_tab_box', {
+            slidesPerView: 'auto',
+            direction: 'horizontal',
+            freeMode: true,
+            slidesOffsetAfter: 12,
+            preventClicks: true,
+            preventClicksPropagation: false,
+            observer: true,
+            observeParents: true
+            });
+
+            var $snbSwiperItem = $('.swipe_tab_box .swiper-wrapper .swiper-slide a');
+
+                $snbSwiperItem.click(function(){
+                    var target = $(this);
+                    $snbSwiperItem.removeClass('on')
+                    target.addClass('on');
+                    muCenter(target);
+                });
+
+            function muCenter(target){
+                var snbwrap = $('.swipe_tab_box .swiper-wrapper');
+                var targetPos = target.parent("li").position();
+                var box = $('.swipe_tab_box');
+                var boxHarf = box.width()/2;
+                var pos;
+                var listWidth=0;
+
+                snbwrap.find('.swiper-slide').each(function(){ listWidth += $(this).outerWidth(); })
+
+                var selectTargetPos = targetPos.left + target.outerWidth()/2;
+                if (selectTargetPos <= boxHarf) { // left
+                    pos = 0;
+                }else if ((listWidth - selectTargetPos) <= boxHarf) { //right : target 절반 이후 영역이 boxHarf 보다 작을경우 right 정렬
+                    pos = listWidth-box.width();
+                }else {
+                    pos = selectTargetPos - boxHarf; // 중앙정렬
+                }
+
+                setTimeout(function(){snbwrap.css({
+                    "transform": "translate3d("+ (pos*-1) +"px, 0, 0)",
+                    "transition-duration": "500ms"
+                })}, 100);
+            }
+        }
+    </script>
+    <!-- script area-->
+
+    <script>
+        $(document).ready(function(){
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

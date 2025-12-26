@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>금리변동 및 산출근거 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function textPopupAll() {
+        uiCommon.openPopup("textPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn js-open-popup" onclick="textPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="textPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>금리변동 및 산출근거</h1>
+            </div>
+            <div class="popup-contents flex-col popup-clau">
+                <!-- Start : content //-->
+                <div class="pop-cnt-wrap">
+
+                <!-- Start : 약관내용 -->
+                <div class="tbl-title mt0">□ 금리의 변동 유무</div>
+                <ol class="term-list">
+                    <li>• 고정금리 : 대출성상품이 실행될 때 결정된 금리가 한 번 결정되면, ‘약정기간 동안에 동일하게 적용되는 금리’ 입니다</li>
+                    <li>• 변동금리 : 대출성 상품이 실행될 때 금리가 결정되더라도, 대출성 상품의 약정기간 내에 기준금리가 변경될 경우 ‘일정 주기마다 달라지는 금리’ 입니다. 즉 , 기준금리가 인상될 경우 고객의 부담이 증가 할 수 있습니다. (예 : 코픽스연동금리 , 금융채연동금리 등)
+                        <ul>
+                            <li>※ 일반적으로 향후 시장금리가 내려갈 것으로 예상한다면 변동금리가 고객에게 유리하고 , 올라갈 것으로 예상한다면 고정금리가 고객에게 유리합니다. 다만 시장금리가 상승기라고 해도 , 통상 고정금리가 변동금리보다 높은 상황에서 예상 대출기간이 짧아 단기간 내에 지속적인 금리인상으로 인한 추가 이자부담액이 크지 않을 것으로 예상된다면 변동금리가 유리할 수도 있습니다 . 따라서 대출금리의 유불리를 파악하기 위해서는 예상 대출기간 , 향후 시장금리 전망 , 중도상환 수수료 등이 모두 고려되어야 합니다. (금융감독원 금용소비자정보포탈 참조) </li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="tbl-title">□ 금리의 산출 및 변동근거</div>
+                <ol class="term-list">
+                    <li>• 고객에게 실제 적용되는 약정금리는 ⑴원가요소와 ⑵마진(목표이익률), ⑶조정금리가 반영되어 결정됩니다.
+                        <ul>
+                            <li>- <strong>원가요소</strong>(①)는 신용원가, 업무원가, 조달원가 및 자본원가 등으로 구분되며, 금융회사는 합리적인 기준에 따라 해당 원가들을 산정합니다. </li>
+                            <li>- <strong>기준금리</strong>(①+②)는 이러한 원가요소(①)에 목표이익율(②)을 더하여 산정됩니다.  </li>
+                            <li>- <strong>조정금리</strong>(③)는 프로모션 등에 따른 추가 혜택 등으로 인해 가산되는 금리로, 기준금리에 더해져 실제 약정금리를 결정합니다. </li>
+                        </ul>
+                    </li>
+                    <li>• 결정된 <strong>대출금리(약정금리)</strong>는 개별약정에 의해 별도로 정한 항목(변동금리대출의 기준금리 등)이외에는 대출만기일까지 동일하게 적용됩니다.</li>
+                    <li>※ 기한연장, 채무자변경 등 <strong>‘대출조건이 변경되는 경우’</strong>에는 변경 당시의 원가요소와 마진을 기준으로 <strong>대출금리가 변경될 수 있습니다.</strong></li>
+                </ol>
+                <!-- //End : 약관내용 -->
+
+                </div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

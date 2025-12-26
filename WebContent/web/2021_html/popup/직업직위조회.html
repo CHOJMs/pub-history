@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직업/직위 조회</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>직업/직위 조회</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+                <div class="bg_graybox">
+                    <div class="bg_top">
+                        <div class="form_box">
+                            <p class="h_tit">소득분류</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="소득분류 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="대분류 선택">
+                                        <option>대분류</option>
+                                    </select>
+                                </div>
+                                <span class="dash">-</span>
+                                <div class="selectbox">
+                                    <select class="select" title="중분류 선택">
+                                        <option>중분류</option>
+                                    </select>
+                                </div>
+                                <span class="dash">-</span>
+                                <div class="selectbox">
+                                    <select class="select" title="소분류 선택">
+                                        <option>소분류</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="btn_box mgin">
+                                <span class="btn gray"><button id="">조회</button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_bottom">
+                        <div class="radiobox">
+                            <input type="radio" name="r01" value="" id="r01" class="rchk" aria-hidden="true" title="선택 체크">
+                            <label for="r01" class="rchk-label pl28" role="radio" aria-checked="false"></label>
+                        </div>
+
+                        <div class="t_line_box">
+                            <ul class="list_2">
+                                <li>
+                                    <span class="tit">소득분류명</span>
+                                    <span>급여소득자</span>
+                                </li>
+                                <li>
+                                    <span class="tit">대분류명</span>
+                                    <span></span>
+                                </li>
+                                <li>
+                                    <span class="tit">중분류명</span>
+                                    <span></span>
+                                </li>
+                                <li>
+                                    <span class="tit">소분류명</span>
+                                    <span></span>
+                                </li>
+                                <li>
+                                    <span class="tit">직위명</span>
+                                    <span></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn_more">
+                            <a href="#" class="more_btn"><i class="more"></i>더보기</a>
+                        </div>
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

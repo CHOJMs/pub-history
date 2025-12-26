@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF뷰어 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+<style>
+.popup-contents {position: relative;}
+.page-num {color: #707478; font-size: 16px; width: 56px; height: 40px; display: inline-flex; align-items: center; justify-content: center; position:absolute; right: 24px; top: 24px; background: url('images/bg.png') no-repeat center center; background-size:56px 40px; z-index: 2;}
+.page-num strong {color: #222426;}
+
+.zoom-box {display:flex;position: absolute; left: 24px; top: 45px; z-index: 2;}
+.zoom-box button {width: 40px; height: 40px; border: 1px solid #d3d7dd; border-radius: 8px;background:rgba(255,255,255,.8)}
+.zoom-box button:first-of-type {margin-left:-1px;border-radius: 8px 0 0 8px;}
+.zoom-box button:last-of-type {margin-left:-1px;border-radius: 0 8px 8px 0;}
+.zoom-box img {width: 100%;}
+
+</style>
+
+<a href="javascript:;" class="popup-btn js-open-popup" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc popup-pdf"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small /56 -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>타이틀 두줄일 시 가이드입니다. 타이틀 두줄일 시 가이드입니다. 타이틀 두줄일 시 가이드입니다.</h1>
+                <div class="pdf-down"><a href="#"><img src="/static/web/img/ui_common/ico_pdf_download.png" alt="pdf다운받기"></a></div>
+            </div>
+            <div class="popup-contents flex-col">
+                <!-- Start : content //-->
+
+                <!-- Start : pdf 영역 -->
+                <div class="page-num"><strong>1</strong>/20</div>
+
+                <!-- 2023-11-22 : 확대축소 추가 -->
+                <div class="zoom-box"><button type="button"><img src="/static/web/img/ui_common/ico_zoom_plus.png" alt="확대"></button><button type="button"><img src="/static/web/img/ui_common/ico_zoom_minus.png" alt="축소"></button></div>
+                <!-- 2023-11-22 : 확대축소 추가 -->
+
+                <div class="pdf_view">
+                    PDF 영역<br>
+                </div>
+                <!-- //End : pdf 영역 -->
+
+                <!-- //End : content -->
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-none">
+                    <div class="btn-box w400">
+                        <span class="btn"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

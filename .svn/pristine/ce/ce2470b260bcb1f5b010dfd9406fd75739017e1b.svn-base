@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+<link rel="stylesheet" href="/static/web/js/lib/swiper-bundle.min.css">
+<link rel="stylesheet" href="/static/web/js/lib/slick.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+<script src="/static/web/js/lib/swiper-bundle.min.js"></script>
+
+<script src="/static/web/js/slick.js"></script>
+<script src="/static/web/js/lib/slick.min.js"></script>
+
+
+<title>서비스데스크 메인 홈 | iM캐피탈</title>
+
+</head>
+<body style="overflow-y:hidden"><!-- 팝업이 오픈될때 body에 overflow-y:hidden 추가, 팝업 닫으면 overflow-y:hidden 제거 -->
+    <div class="fixed-ai">
+        <div class="header-sub">
+            <div class="align-left"><button class="btn-page-prev">이전 페이지로 이동</button></div>
+            <p class="tit">서비스데스크 </p>
+            <div class="align-right">
+                <button class="btn-refresh">새로고침</button>
+                <button class="btn-close">닫기</button>
+            </div>
+        </div>
+        <!-- Start : 컨텐츠 영역 -->
+        <div class="service-desk-main">
+            <!-- Start : 상단 배너 -->
+            <div class="sd-top-banner">
+                <p class="top-tx">김단디님,<br>무엇을 도와드릴까요?</p>
+                <a href="#;" class="btn-link">AI에게 물어보세요</a>
+            </div>
+            <!-- //End : 상단 배너 -->
+
+            <!-- Start : 신청중인 서비스 - 로그인 후 보여지는 영역 -->
+            <div class="myinfo-area">
+                <div class="myinfo-tit">
+                    <p class="tit">신청중인 서비스<span>3</span></p>
+                    <a href="#;" class="btn-list-all">전체보기</a>
+                </div>
+                <div class="service-slide-wrap">
+                    <ul class="service-slide">
+                        <!-- 첫번째 슬라이드 -->
+                        <li class="service-slide-li">
+                            <div class="service-cont">
+                                <p class="tit">
+                                    <!-- 서비스별로 클래스명 변경해주세요 __ 증명서 발급 : ico01 / 이용현황 : ico02 / 차량관리 : ico03 / 정보변경 : ico04 / 채무조정문의 : ico05 / 직접문의 : ico06 -->
+                                    <span class="ico01"></span>
+                                    1뎁스 서비스 타이틀
+                                </p>
+                                <div class="sub-cont">
+                                    <p class="sub-tit">최종 서비스 타이틀 영역</p>
+                                    <p class="sub-desc">
+                                        <strong class="tag-type01">홈페이지</strong>
+                                        <span class="date">2025.7.8 10:20 접수</span>
+                                    </p>
+                                    <a href="#;" class="btn-view-detail">상세</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 두번째 슬라이드 -->
+                        <li class="service-slide-li">
+                            <div class="service-cont">
+                                <p class="tit">
+                                    <!-- 서비스별로 클래스명 변경해주세요 __ 증명서 발급 : ico01 / 이용현황 : ico02 / 차량관리 : ico03 / 정보변경 : ico04 / 채무조정문의 : ico05 / 직접문의 : ico06 -->
+                                    <span class="ico04"></span>
+                                    1뎁스 서비스 타이틀 내용이 길어지면 말줄임 예시
+                                </p>
+                                <div class="sub-cont">
+                                    <p class="sub-tit">최종 서비스 타이틀 영역 내용이 길어지면 말줄임 예시</p>
+                                    <p class="sub-desc">
+                                        <strong class="tag-type01">홈페이지</strong>
+                                        <span class="date">2025.7.8 10:20 접수 내용이 길어지면 말줄임 예시</span>
+                                    </p>
+                                    <a href="#;" class="btn-view-detail">상세</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- 세번째 슬라이드 -->
+                        <li class="service-slide-li">
+                            <div class="service-cont">
+                                <p class="tit">
+                                    <!-- 서비스별로 클래스명 변경해주세요 __ 증명서 발급 : ico01 / 이용현황 : ico02 / 차량관리 : ico03 / 정보변경 : ico04 / 채무조정문의 : ico05 / 직접문의 : ico06 -->
+                                    <span class="ico03"></span>
+                                    1뎁스 서비스 타이틀
+                                </p>
+                                <div class="sub-cont">
+                                    <p class="sub-tit">최종 서비스 타이틀 영역</p>
+                                    <p class="sub-desc">
+                                        <strong class="tag-type01">홈페이지</strong>
+                                        <span class="date">2025.7.8 10:20 접수</span>
+                                    </p>
+                                    <a href="#;" class="btn-view-detail">상세</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="dotbox"></div>
+                </div>
+            </div>
+            <!-- //End : 신청중인 서비스 - 로그인 후 보여지는 영역 -->
+
+            <!-- Start : 바로가기 메뉴 -->
+            <div class="quick-menu-area">
+                <ul>
+                    <li class="m1"><a href="#;">즉시결제</a></li>
+                    <li class="m2"><a href="#;">청구내역<br>조회</a></li>
+                    <li class="m3"><a href="#;">서류발급</a></li>
+                    <li class="m4"><a href="#;">중도상환/<br>해지</a></li>
+                    <li class="m5"><a href="#;">과태료/<br>범칙금조회</a></li>
+                    <li class="m6"><a href="#;">결제정보<br>변경</a></li>
+                    <li class="m7"><a href="#;">고객정보<br>변경</a></li>
+                    <li class="m8"><a href="#;">금리인하<br>요구권</a></li>
+                </ul>
+            </div>
+            <!-- //End : 바로가기 메뉴 -->
+
+            <!-- Start : 찾아가는 서비스 -->
+            <div class="service-personal-area">
+                <!-- Step1 -->
+                <div class="personal-box step01 on">
+                    <div class="btn-step-tit"><span class="num">1</span>어떤 업무가 필요하세요?</div>
+                    <div class="personal-list">
+                        <button><span class="ico t1"></span>증명서 발급<strong class="sub-tx">거래/납입내역·기타서류</strong></button>
+                        <button><span class="ico t2"></span>이용현황<strong class="sub-tx">가입중인 상품 확인</strong></button>
+                        <button><span class="ico t3"></span>차량관리<strong class="sub-tx">정비·보험관리·과태료 등</strong></button>
+                        <button><span class="ico t4"></span>정보 변경<strong class="sub-tx">고객·상품 정보 변경</strong></button>
+                        <button><span class="ico t5"></span>채무조정 문의<strong class="sub-tx">신용회복·금리인하 등</strong></button>
+                        <button><span class="ico t6"></span>직접 문의<strong class="sub-tx">상품·서비스 1:1문의</strong></button>
+                    </div>
+                </div>
+
+                <!-- Step2 -->
+                <div class="personal-box step02">
+                    <div class="btn-step-tit"><span class="num">2</span>서비스 유형을 선택하세요</div>
+                    <div class="personal-list" style="display:none">
+                        <button>금융거래내역</button>
+                        <button>납입내역</button>
+                        <button>기타서류</button>
+                    </div>
+                </div>
+
+                <!-- Step3 -->
+                <div class="personal-box step03">
+                    <div class="btn-step-tit"><span class="num">3</span>서비스 상세를 선택하세요</div>
+                    <div class="personal-list" style="display:none">
+                        <a href="#;">납입내역서/입금영수증<strong class="tag-type01">셀프처리</strong></a>
+                        <a href="#;">청구서/납입통지서</a>
+                        <a href="#;">범칙금/과태료 납부확인서<strong class="tag-type01">셀프처리</strong></a>
+                        <a href="#;">오토 승계수수료 영수증<strong class="tag-type01">셀프처리</strong></a>
+                        <a href="#;">완제확인서<strong class="tag-type01">셀프처리</strong></a>
+                        <a href="#;">잔액증증명서</a>
+                    </div>
+                </div>
+
+                <!-- 다시 선택하기 버튼 -->
+                <button class="btn-reset">다시 선택하기</button>
+            </div>
+            <!-- //End : 찾아가는 서비스 -->
+
+            <!-- Start : 하단 바로가기 -->
+            <div class="sd-bottom-area">
+                <div class="btm-link-box">
+                    <a href="#;" class="btn-chat">챗봇 문의</a>
+                    <a href="#;" class="btn-inquiry">1:1 문의</a>
+                </div>
+            </div>
+            <!-- //End : 하단 바로가기 -->
+        </div>
+    </div>
+</body>
+</html>
+

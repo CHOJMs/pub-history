@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 보험관리 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>담보특약 변경신청 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/ins/담보특약변경신청_확인.html">담보특약변경신청_확인.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>담보특약 변경신청 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/ins/담보특약변경신청_상세.html">담보특약변경신청_상세.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>보험갱신 내용 조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/ins/보험갱신내용조회.html">보험갱신내용조회.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>보험 가입 증명서 파일 제출 (신규)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/ins/보험가입증명서제출_신규.html">보험가입증명서제출_신규.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>보험 가입 증명서 파일 제출 (갱신)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/ins/보험가입증명서제출_갱신.html">보험가입증명서제출_갱신.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-00</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>보험 가입 증명서 파일 제출</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/ins/보험가입증명서제출팝업.html">보험가입증명서제출팝업.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

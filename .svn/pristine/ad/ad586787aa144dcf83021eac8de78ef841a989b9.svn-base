@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/ui_gnb.js"></script>
+</head>
+<body>
+<div class="design-sample">
+    <p class="tit mt0">공통</p>
+    <img src="/static/web/img/sample/@sample14.png">
+    <img src="/static/web/img/sample/@sample15.png">
+    <img src="/static/web/img/sample/@sample16.png">
+    <p class="tit">앱설정</p>
+    <img src="/static/web/img/sample/@sample01.png">
+    <img src="/static/web/img/sample/@sample02.png">
+    <img src="/static/web/img/sample/@sample03.png">
+    <img src="/static/web/img/sample/@sample04.png">
+    <img src="/static/web/img/sample/@sample05.png">
+    <img src="/static/web/img/sample/@sample06.png">
+    <img src="/static/web/img/sample/@sample07.png">
+    <img src="/static/web/img/sample/@sample08.png">
+    <img src="/static/web/img/sample/@sample09.png">
+    <img src="/static/web/img/sample/@sample10.png">
+    <img src="/static/web/img/sample/@sample11.png">
+    <img src="/static/web/img/sample/@sample12.png">
+    <img src="/static/web/img/sample/@sample13.png">
+</div>
+</body>
+</html>

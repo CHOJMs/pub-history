@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중요 약정사항 확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>중요 약정사항 확인</h1>
+            </div>
+            <div class="popup-contents flex-col no-scroll"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+                    <div class="col-cnt-type03 bg-gray"><!-- [D]블루배경일 때 : bg-blue / 흰색배경일 때 : bg-white -->
+
+                        <!-- Start : 아코디언 영역 -->
+                        <div class="accordion-list">
+                            <ul>
+                                <li class="show">
+                                    <div class="q">
+                                        <a href="#">
+                                            <div class="agree-box">
+                                                <div class="agree-total-box">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="ch01" name="ch01" class="chk" checked>
+                                                        <label for="ch01" class="label">중도해지 수수료</label>
+                                                        <span>1</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="a">잔여임대료 X 해지위약금율(잔여임대료 = 월임대료(VAT미포함) / 30 X 미경과일수)
+                                        해지위약금율 = 대여기간 2년이하 35%, 3년이하 30%, 3년초과 25% 입니다.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q">
+                                        <a href="#">
+                                            <div class="agree-box">
+                                                <div class="agree-total-box">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                                        <label for="ch01" class="label">승계수수료</label>
+                                                        <span class="on">2</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="a">승계시 수수료 발생됩니다.</div>
+                                </li>
+                                <li>
+                                    <div class="q">
+                                        <a href="#">
+                                            <div class="agree-box">
+                                                <div class="agree-total-box">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                                        <label for="ch01" class="label">반환지원금</label>
+                                                        <span>3</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="a">월임대료(VAT미포함) / 30 X 경과일수 X 200%</div>
+                                </li>
+                                <li>
+                                    <div class="q">
+                                        <a href="#">
+                                            <div class="agree-box">
+                                                <div class="agree-total-box">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                                        <label for="ch01" class="label">종료처리조건</label>
+                                                        <span>4</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="a">인수/반납/재렌탈 선택 선택가능
+                                        <div class="dot">계약만기시 차량을 인수할 경우, 잔존가치 및 소유권 이전 비용은 고객님이 부담하셔야 합니다.</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="q">
+                                        <a href="#">
+                                            <div class="agree-box">
+                                                <div class="agree-total-box">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                                        <label for="ch01" class="label">기타(특약)사항</label>
+                                                        <span>5</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="a">자동차 장기임대차 약정서 체결이후에 관계법령의 제정, 개정, 폐지 등 임대인의 책임있는 사유가 아닌 사유로 임대료의 변경사유가 발생할 경우 본 ‘상품조건＇상의 월 임대료를 조정하기로 한다.</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //End : 아코디언 영역 -->
+
+                        <!-- Start : 최종확약내용 영역 -->
+                        <div class="srt-box">
+                            <p class="tit">최종 확약내용</p>
+                            <p class="txt"><span>렌트이용자(임차인) 및 연대보증인</span>은 중요약정 사항을 확인하고 이에 동의합니다.</p>
+                            <p class="srt-logo"><img src="/static/web/img/imlogo/ci_basic.png" alt="iM캐피탈"></p>
+                        </div>
+                        <!-- //End : 최종확약내용 영역 -->
+
+                    </div>
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">전체 확인하고 동의합니다</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+
+</body>
+</html>

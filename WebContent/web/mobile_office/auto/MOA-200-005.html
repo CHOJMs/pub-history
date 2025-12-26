@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상사 검색/입력</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>상사 검색/입력</h1>
+            </div>
+            <div class="popup-contents no_btn"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+
+                        <p class="icon_bullet mt0">상사명을 입력하여 검색하신 후 상사를 선택해 주세요.</p>
+                        <div class="form_box">
+                            <p class="h_tit">상사명</p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" placeholder="" title="상사명 입력">
+                            </div>
+
+                            <!-- 조회 버튼//-->
+                            <div class="btn_box pt16">
+                                <span class="btn"><button id="">조회</button></span>
+                            </div>
+                            <!-- //조회 버튼-->
+                        </div>
+
+                    </div>
+                    <div class="bg_bottom">
+                        <div class="scroll_table">
+                            <table class="dataType" style="min-width: 700px;">
+                                <colgroup>
+                                    <col width="8%">
+                                    <col width="18%">
+                                    <col width="20%">
+                                    <col width="%">
+                                    <col width="13%">
+                                    <col width="22%">
+                                    </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">상사고객번호</th>
+                                        <th scope="col">상사명</th>
+                                        <th scope="col">상사주소</th>
+                                        <th scope="col">상사대표자명</th>
+                                        <th scope="col">사전승인계좌</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="radiobox">
+                                                <input type="radio" name="r01" value="" id="r01" class="rchk">
+                                                <label for="r01" class="rchk-label pl28"></label>
+                                            </div>
+                                        </td>
+                                        <td>016468</td>
+                                        <td>OK자동차</td>
+                                        <td>(41143)대구 동구 동촌로 109</td>
+                                        <td>김대표</td>
+                                        <td>대구은행 123-45-67890</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="6" class="noData"><p>검색결과가 없습니다.<br>
+                                            검색조건을 다시 입력해 주세요.</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- 버튼 시작//-->
+                        <div class="btn_box mt30 pb0">
+                            <span class="btn"><button id="">선택</button></span>
+                        </div>
+                        <!-- //버튼 끝-->
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

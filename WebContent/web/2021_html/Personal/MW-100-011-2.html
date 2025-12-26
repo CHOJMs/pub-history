@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대출 계산기</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>대출 계산기</h1>
+            </div>
+            <div class="popup-contents no_btn">
+                <!-- content 시작 //-->
+                <div class="bg_graybox">
+                    <div class="bg_top">
+                        
+                        <div class="form_box">
+                            <ul class="form_list">
+                                <li>
+                                    <p class="h_tit">상환 방식</p>
+                                    <div class="text_data">
+                                        <span class="form app_text">
+                                            <input type="text" id="" placeholder="" title="상환금액 입력">
+                                            <span class="txt">원</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">대출금리(년)</p>
+                                    <div class="text_data">
+                                        <span class="form app_text">
+                                            <input type="text" id="" placeholder="" title="대출금리 입력">
+                                            <span class="txt">%</span>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="wid_100">
+                                    <p class="h_tit">상환방법</p>
+                                    <div class="text_data radio-box-type1 grid3">
+                                        <div>
+                                            <input type="radio" name="r31" value="" id="r31" checked="checked" aria-hidden="true" title="원리금균등분할상환 체크">
+                                            <label for="r31" role="radio" aria-checked="true"><span>원리금균등분할상환</span></label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="r31" value="" id="r32" aria-hidden="true" title="원금균등분할상환 체크" role="radio">
+                                            <label for="r32" role="radio" aria-checked="false"><span>원금균등분할상환</span></label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="r31" value="" id="r33" aria-hidden="true" title="만기일시상환 체크" role="radio">
+                                            <label for="r33" role="radio" aria-checked="false"><span>만기일시상환</span></label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="wid_100">
+                                    <p class="h_tit">대출기간(개월)</p>
+                                    <div class="text_data">
+                                        <div class="selectbox">
+                                            <select class="select" title="대출기간(개월) 선택">
+                                                <option>12개월</option>
+                                                <option>24개월</option>
+                                                <option>36개월</option>
+                                                <option>60개월</option>
+                                                <option>72개월</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="btn_box">
+                                <span class="btn"><button id="">계산하기</button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_bottom">
+                        <table class="dataType">
+                            <caption>
+                                대출계산결과 - 회차, 월납부액, 원금상환, 이자, 대출잔액 등으로 나타낸 표
+                            </caption>
+                            <colgroup>
+                                <col width="8%">
+                                <col width="23%">
+                                <col width="23%">
+                                <col width="23%">
+                                <col width="23%">
+                                </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">회차</th>
+                                    <th scope="col">월납부액</th>
+                                    <th scope="col">원금상환</th>
+                                    <th scope="col">이자</th>
+                                    <th scope="col">대출잔액</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="a_r">0</td>
+                                    <td class="a_r">0</td>
+                                    <td class="a_r">0</td>
+                                    <td class="a_r">0</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="5" class="noData"><p>조회 결과가 없습니다.</p></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="unit_txt">단위 : 원</p>
+                        <div class="white_box">
+                            본 계산결과는 대출조건과 신용상태 등에 따라 변경될 수 있습니다.
+                        </div>
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

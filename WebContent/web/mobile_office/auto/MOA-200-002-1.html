@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차량시세 확인하기 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>차량시세 확인하기</h1>
+            </div>
+            <!------------------------------------------------------------------------
+            상단 '차량정보' 추가로 작은 화면에서 하단 검색결과 영역이 짤리는 현상으로 인해
+            '차량시세 확인하기' 페이지에서만 'scroll-type' 클래스 사용 
+            -------------------------------------------------------------------------->
+            <div class="popup-contents scroll-type"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+                    <div class="col-cnt">
+                        <!-- Start : 차량정보 -->
+                        <div class="select-box">
+                            <a href="javascript:;" class="active">차량정보</a>
+                            <div style="display:block">
+                                <ul>
+                                    <li>
+                                        <span>차명</span>
+                                        <p>K5</p>
+                                    </li>
+                                    <li>
+                                        <span>차량세부모델</span>
+                                        <p>세부모델</p>
+                                    </li>
+                                    <li>
+                                        <span>연식</span>
+                                        <p>2022</p>
+                                    </li>
+                                    <li>
+                                        <span>사용연료</span>
+                                        <p>가솔린</p>
+                                    </li>									
+                                    <li>
+                                        <span>배기량</span>
+                                        <p>3,000</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+						<!-- //End : 차량정보 -->
+
+                        <!-- Start : 폼 -->
+                        <div class="form-iem mt24">
+                            <div class="com-inp">
+                                <label for="">차량명</label>
+                                <input type="text" id="" placeholder="2글자 이상 입력해주세요">
+                            </div>
+                            <div class="com-inp">
+                                <label for="">연식</label>
+                                <input type="tel" id="" placeholder="입력해주세요 예)2022" value="2022">
+                            </div>
+
+                            <p class="h_tit">연료구분</p>
+                            <ul class="inline-rchk mt8">
+                                <li>
+                                    <input type="radio" name="r011" value="" id="r011" class="rchk" title="전체 체크">
+                                    <label for="r011" class="rchk-label"><span>전체</span></label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="r011" value="" id="r012" class="rchk" title="가솔린 체크">
+                                    <label for="r012" class="rchk-label"><span>가솔린</span></label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="r011" value="" id="r013" class="rchk" title="디젤 체크">
+                                    <label for="r013" class="rchk-label"><span>디젤</span></label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="r011" value="" id="r014" class="rchk" title="LPG 체크">
+                                    <label for="r014" class="rchk-label"><span>LPG</span></label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="r011" value="" id="r015" class="rchk" title="전기차 체크">
+                                    <label for="r015" class="rchk-label"><span>전기차</span></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //End : 폼 -->
+                        <!-- Start : 버튼 -->
+                        <div class="btn-box">
+                            <span class="btn"><button type="button" id="">차량 조회하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        </div>
+                        <!-- //End : 버튼 -->
+
+                    </div>
+                    <div class="col-cnt-type01 bg-blue hei-type02"><!-- [D]블루배경일 때 : bg-blue / 흰색배경일 때 : bg-white -->
+
+                        <!-- Start : 검색결과 -->
+                        <div class="search-res-box">
+                            <p class="add-tit">검색결과</p>
+                            <!-- Start : nodata -->
+                            <div class="add-nodata">검색결과가 없습니다.</div>
+                            <!-- //End : nodata -->
+                            <!-- Start : 리스트 -->
+                            <ul class="car-list">
+                                <li class="active">
+                                    <div class="in-box">
+                                        <div class="car-area">
+                                            <div class="chk-tit">더 뉴 그랜저 IG 2.5 프리미엄 2022</div>
+                                            <ul>
+                                                <li>
+                                                    <span class="p-tit">가솔린</span>
+                                                    <span class="p-txt">4,800만원</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in-box">
+                                        <div class="car-area">
+                                            <div class="chk-tit">더 뉴 그랜저 IG 2.5 프리미엄 2022</div>
+                                            <ul>
+                                                <li>
+                                                    <span class="p-tit">가솔린</span>
+                                                    <span class="p-txt">4,800만원</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in-box">
+                                        <div class="car-area">
+                                            <div class="chk-tit">더 뉴 그랜저 IG 2.5 프리미엄 2022</div>
+                                            <ul>
+                                                <li>
+                                                    <span class="p-tit">가솔린</span>
+                                                    <span class="p-txt">4,800만원</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in-box">
+                                        <div class="car-area">
+                                            <div class="chk-tit">더 뉴 그랜저 IG 2.5 프리미엄 2022</div>
+                                            <ul>
+                                                <li>
+                                                    <span class="p-tit">가솔린</span>
+                                                    <span class="p-txt">4,800만원</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- //End : 리스트 -->
+                        </div>
+                        <!-- //End : 검색결과 -->
+                        <!-- Start : 더보기 버튼 -->
+                        <div class="btn_more">
+                            <a href="#" class="more_btn"><i class="more"></i>더보기</a>
+                        </div>
+                        <!-- //End : 더보기 버튼 -->
+                    </div>
+                </div>
+
+                <!-- //End : content -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+
+</body>
+</html>

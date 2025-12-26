@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인수론 시뮬레이션 조회 결과 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+    window.addEventListener('load', addrPopupAll);
+</script> 
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc popup-640"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text mo-none"><!-- 모바일에서 안보이는 경우 .mo-none 추가 -->
+                <h1>인수론 시뮬레이션</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content -->
+                <div class="option-simul-tit">
+                    <h2 class="tit">인수론 시뮬레이션<br>조회 결과를 확인하세요</h2>
+                    <p class="tx">고객님님의 신용등급에 따라 대출 금액 및 금리는 변동 될 수 있어요.</p>
+                </div>
+
+                <div class="simul-top-box">
+                    <div>
+                        <p class="tit">대출신청금액</p>
+                        <p class="tx">3,000만원</p>
+                    </div>
+                    <div>
+                        <p class="tit">신청기간</p>
+                        <p class="tx">12개월</p>
+                    </div>
+                </div>
+                <div class="simul-result-box">
+                    <ul class="result-list">
+                        <li>
+                            <p class="left-tx">내부신용등급 1등급</p>
+                            <p class="right-tx">
+                                <span class="tx">월 924,941원</span>
+                                <span class="tx">금리 6.9%</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="left-tx">내부신용등급 2등급</p>
+                            <p class="right-tx">
+                                <span class="tx">월 924,941원</span>
+                                <span class="tx">금리 7.5%</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="left-tx">내부신용등급 3~4등급</p>
+                            <p class="right-tx">
+                                <span class="tx">월 924,941원</span>
+                                <span class="tx">금리 7.9%</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="left-tx">내부신용등급 5등급</p>
+                            <p class="right-tx">
+                                <span class="tx">월 924,941원</span>
+                                <span class="tx">금리 8.5%</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="left-tx">내부신용등급 6등급</p>
+                            <p class="right-tx">
+                                <span class="tx">월 924,941원</span>
+                                <span class="tx">금리 8.9%</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <button class="btn-base-reset">다시 조회하기</button>
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button">대출 신청하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+
+                <!-- //End : content -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

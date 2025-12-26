@@ -1,0 +1,232 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+</head>
+<body>
+
+<!-- 레이어 팝업 -->
+<div class="layer" tabindex="0" style="display: block;">
+	<div class="pop_bg"></div>
+	<div class="layerPop" style="width: 1200px; transform: translate(-50%, -50%);">
+		<h1>소득산출</h1>
+		<div class="Pop_content">
+			<div class="Pop_form-type">				
+				<div class=" scroll_box" style="height:650px;">
+					<div class="tit_area">
+						<h4 class="dl_tb_tit">기본정보</h4>
+					</div>
+					<table class="bbs-table-view mb30" id="tbl_condition">
+						<colgroup>
+							<col width="160px">
+							<col width="19%">
+							<col width="160px">
+							<col width="19%">
+							<col width="160px">
+							<col width="19%">
+						</colgroup>
+						<tbody>
+							<tr>								
+								<th scope="row">고객번호</th>
+								<td>00000</td>
+								<th scope="row">고객명</th>
+								<td>홍길동</td>
+								<th scope="row">상담/신청번호</th>
+								<td>000-0000-0000</td>
+							</tr>
+							<tr>								
+								<th scope="row">고객소득구분</th>
+								<td></td>
+								<th scope="row">업종</th>
+								<td></td>
+								<th scope="row"></th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+
+					<div class="tit_area">
+						<h4 class="dl_tb_tit">산출내역</h4>
+					</div>
+					<div class="scroll_box pd0 mr0" style="overflow-x: auto; height: auto;">
+						<table class="bbs-table" style="width: 1300px;">
+							<colgroup>
+								<col style="width:50px;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+								<col style="width:%;">
+							</colgroup>
+							<thead>
+								<tr>		
+									<th scope="col">선택</th>
+									<th scope="col">소득증빙구분</th>
+									<th scope="col">분류</th>
+									<th scope="col">평균월수입</th>
+									<th scope="col">환산연소득</th>
+									<th scope="col">DSR인정비율</th>
+									<th scope="col">DSR소득인정Cap</th>
+									<th scope="col">DSR인정<br>연소득</th>
+									<th scope="col">기준년도</th>
+									<th scope="col">기준요율</th>
+									<th scope="col">증빙(납입)개월</th>
+									<th scope="col">증빙(납입)금액</th>
+									<th scope="col">소득중빙불가여부</th>
+									<th scope="col">고객번호</th>
+									<th scope="col">고객명</th>
+									<th scope="col">여신거래관리번호</th>
+									<th scope="col">표준산업분류</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="radio" id="" name=""></td>
+									<td>소득예측모형추정</td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>						
+					</div>
+					<p class="a_r mb30 mt15 font14">[조회건수 : <strong>1</strong>건]</p>
+
+					<div class="tit_area ">
+						<h4 class="dl_tb_tit">소득산출</h4>
+						<p class="btn-align-right mt-45 mb10">
+							<a href="#" class="btn h42">초기화</a><a href="#" class="btn h42">산출</a><a href="#" class="btn h42">저장</a>
+						</p>
+					</div>
+					<table class="bbs-table-view mb30" id="tbl_condition">
+						<colgroup>
+							<col width="160px">
+							<col width="19%">
+							<col width="160px">
+							<col width="19%">
+							<col width="160px">
+							<col width="19%">
+						</colgroup>
+						<tbody>
+							<tr>								
+								<th scope="row">기준년도</th>
+								<td>
+									<select id="" style="width: 100%;">
+										<option value="" selected="selected"></option>
+									</select>
+								</td>
+								<th scope="row">소득증빙구분</th>
+								<td>
+									<select id="" style="width: 100%;">
+										<option value="" selected="selected"></option>
+									</select>
+								</td>
+								<th scope="row">기준요율</th>
+								<td>
+									<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="0" style="width:95%;" class="input_right"><span>%</span>
+									</div>
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">증빙(납입)개월</th>
+								<td>
+									<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="0" style="width:95%;" class="input_right"><span>개월</span>
+									</div>
+								</td>
+								<th scope="row">증빙(납입)금액</th>
+								<td>
+									<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="0" style="width:95%;" class="input_right"><span>원</span>
+									</div>
+								</td>
+								<th scope="row">평균 월소득</th>
+								<td>
+									<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="0" style="width:95%;" class="input_right"><span>원</span>
+									</div>
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">환산 연소득</th>
+								<td>
+									<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="0" style="width:95%;" class="input_right"><span>원</span>
+									</div>
+								</td>
+								<th scope="row">DSR 인정비율</th>
+								<td>
+									<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="0" style="width:95%;" class="input_right"><span>%</span>
+									</div>
+								</td>
+								<th scope="row">DSR 소득인정 Cap</th>
+								<td>
+									<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="0" style="width:95%;" class="input_right"><span>원</span>
+									</div>
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">DSR 인정 연소득</th>
+								<td>
+									<div class="form_box">
+										<input type="text" name="" id="" maxlength="" value="0" style="width:95%;" class="input_right"><span>원</span>
+									</div>
+								</td>
+								<th scope="row">증빙불가자 제외</th>
+								<td><input type="checkbox" id="" name=""></td>
+								<th scope="row"></th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+			
+		</div>
+	</div>
+</div>
+<!-- 팝업bg -->
+
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>중고차론 한도조회 상담이력 | iM캐피탈</title>
+
+</head>
+<body>
+    <div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- Start : skip_navigation -->
+        <div id="tab_skip">
+            <a href="#common_body">
+                <span>본문 바로가기</span>
+            </a>
+        </div>
+        <!-- //End : skip_navigation -->
+
+		<!----------- Start : 모바일 메뉴 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">오토 재고금융</a>
+							<ul>
+								<li><a href="">재고금융 신청</a></li>
+								<li><a href="">재고금융 현황</a></li>
+                                <li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+						<li class=""><a href="">중고차 제휴</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">한도조회 신청</a></li>
+                                <li><a href="">한도조회 신청(유선녹취)</a></li>
+                                <li><a href="">한도조회 상담이력</a></li>
+								<li><a href="">자동차 시세확인</a></li>
+								<li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+        <!----------- //End : 모바일 메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <!-- Start : 컨텐츠 영역 -->
+                <h2 class="tl">중고차론 한도조회 상담이력</h2>
+                <div class="box_form scoll mob_nobtn"><!-- 하단에 버튼이 없는경우 : no_btn 클래스명 추가-->
+
+					<div class="form_box">
+						<p class="h_tit">진행상태</p>
+						<div class="text_data">
+							<div class="selectbox">
+								<select class="select" title="진행상태 선택">
+									<option>전체</option>
+								</select>
+							</div>
+						</div>
+
+						<p class="h_tit">심사결과</p>
+						<ul class="inline_chk wid">
+							<li>
+								<input type="radio" name="r011" value="" id="r011" class="rchk" aria-hidden="true" title="전체 체크">
+								<label for="r011" class="rchk-label" role="radio" aria-checked="false"><span>전체</span></label>
+							</li>
+							<li>
+								<input type="radio" name="r011" value="" id="r012" class="rchk" aria-hidden="true" title="승인 체크">
+								<label for="r012" class="rchk-label" role="radio" aria-checked="false"><span>승인</span></label>
+							</li>
+							<li>
+								<input type="radio" name="r011" value="" id="r013" class="rchk" aria-hidden="true" title="지점협의 체크">
+								<label for="r013" class="rchk-label" role="radio" aria-checked="false"><span>지점협의</span></label>
+							</li>
+							<li>
+								<input type="radio" name="r011" value="" id="r014" class="rchk" aria-hidden="true" title="거절 체크">
+								<label for="r014" class="rchk-label" role="radio" aria-checked="false"><span>거절</span></label>
+							</li>
+						</ul>
+
+						<p class="h_tit">신청일자</p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" id="" placeholder="" title="시작일 입력">
+							</span>
+							<span class="dash">-</span>
+							<span class="form">
+								<input type="text" id="" placeholder="" title="종료일 입력">
+							</span>
+						</div>
+
+						<p class="h_tit">고객명</p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" id="" name="" title="고객명 입력">
+							</span>
+						</div>
+
+						<!-- 버튼 시작 -->
+						<div class="btn_box mt16">
+							<span class="btn"><a href="#">조회</a></span>
+						</div>
+						<!-- 버튼 끝 -->
+
+					</div>
+
+					<div class="flex_tl mt40">
+						<p class="h_tit">한도조회결과</p>
+						<span>*최신날짜순 <a href="#"><img src="/static/web/img/ico_refresh.png" alt="새로고침"></a></span>
+					</div>
+
+					<!-- 한도조회결과 시작 -->
+					<div class="view_box">
+						<div class="box">
+							<p class="t_bg">2018-03-19 09:42:48</p>
+							<ul class="list_1">
+								<li>
+									<span>고객명 / 휴대전화</span>
+									<p>박정은 010-0000-0000</p>
+								</li>
+								<li>
+									<span>차종</span>
+									<p>기아 카니발 럭셔리 2015년식</p>
+								</li>
+								<li>
+									<span>대출금액</span>
+									<p>1,000 만원</p>
+								</li>
+								<li>
+									<span>대출기간</span>
+									<p>60개월</p>
+								</li>
+								<li>
+									<span>진행상태</span>
+									<p><strong class="font_blue">심사완료</strong></p>
+								</li>
+							</ul>
+							<p class="font_blue">승인 / 2,000만원 / 50%, 1,000만원 / Y</p>
+
+							<!-- 버튼 시작 -->
+							<div class="btn_box">
+								<span class="btn gray"><button id="">상세내역</button></span>
+							</div>
+							<!-- 버튼 끝 -->
+						</div>
+
+						<!-- 심사이력 보기 시작 -->
+						<div class="select-box type01">
+                            <a href="javascript:;">심사이력</a>
+                            <div>
+                                <ul>
+                                    <li>
+                                        <span>심사일시</span>
+                                        <span>차종</span>
+                                        <span>대출금액</span>
+										<span>대출기간</span>
+										<span>심사결과</span>
+                                    </li>
+                                    <li>
+                                        <span>2018-05-13</span>
+                                        <span>카니발</span>
+										<span>1,000 만원</span>
+                                        <span>60</span>
+                                        <span>승인</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+						<!-- 심사이력 보기 끝 -->
+
+					</div>
+					<!-- 한도조회결과 끝 -->
+
+					<!-- 한도조회결과 시작 -->
+					<div class="view_box">
+						<div class="box">
+							<p class="t_bg">2018-03-19 09:42:48</p>
+							<ul class="list_1">
+								<li>
+									<span>고객명 / 휴대전화</span>
+									<p>박정은 010-0000-0000</p>
+								</li>
+								<li>
+									<span>차종</span>
+									<p>기아 카니발 럭셔리 2015년식</p>
+								</li>
+								<li>
+									<span>대출금액</span>
+									<p>1,000 만원</p>
+								</li>
+								<li>
+									<span>대출기간</span>
+									<p>60개월</p>
+								</li>
+								<li>
+									<span>진행상태</span>
+									<p><strong class="font_red">대출실행</strong></p>
+								</li>
+							</ul>
+							<p class="font_blue">승인 / 2,000만원 / 50%, 1,000만원 / Y</p>
+
+							<!-- 버튼 시작 -->
+							<div class="btn_box">
+								<span class="btn gray"><button id="">한도조회 신청</button></span>
+								<span class="btn gray"><button id="">상세내역</button></span>
+							</div>
+							<!-- 버튼 끝 -->
+						</div>
+
+						<!-- 심사이력 보기 시작 -->
+						<div class="select-box type01">
+                            <a href="javascript:;">심사이력</a>
+                            <div>
+                                <p class="noData">등록된 내용이 없습니다.</p>
+								<ul>
+                                    <li>
+                                        <span>심사일시</span>
+                                        <span>차종</span>
+                                        <span>대출금액</span>
+										<span>대출기간</span>
+										<span>심사결과</span>
+                                    </li>
+                                    <li>
+										<p class="noData">등록된 내용이 없습니다.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+						<!-- 심사이력 보기 끝 -->
+
+					</div>
+					<!-- 한도조회결과 끝 -->
+
+				</div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+</body>
+</html>

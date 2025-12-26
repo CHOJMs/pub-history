@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" viewport-fit="cover"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/lib/swiper-bundle.min.js"></script>
+<script src="/static/web/js/lib/flicking.pkgd.min.js"></script>
+<script src="/static/web/js/lib/jquery.fullPage.js"></script>
+<script src="/static/web/js/lib/scrolloverflow.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<link rel="stylesheet" href="/static/web/js/lib/slick.css">
+<script src="/static/web/js/slick.js"></script>
+<script src="/static/web/js/lib/slick.min.js"></script>
+
+<title>iM브랜치</title>
+<script>
+    $(document).ready(function(){
+        $('footer').load('/web/renewal/footer_inc.html');
+    }); 
+</script>
+</head>
+<body class="digi-main-body">
+<!-- skip_navigation -->
+<div id="tab_skip" >
+	<a href="#common_body">
+		<span>본문 바로가기</span>
+	</a>
+</div>
+<!-- skip_navigation -->
+
+<!-- [D] 모바일에서 하단 플로팅 메뉴 노출시 : 'm-bottom-pad' 클래스 추가 -->
+<div class="m-bottom-pad">
+	<header class="digital-branch">
+		<!-- Start : PC -->
+		<div class="header-pc pc-view">
+			<div class="h-inner">
+				<!-- Start : header 좌측 메뉴(PC) -->
+				<div class="h-left">
+					<div class="h1-logo">
+						<a href="#;">iM캐피탈</a>
+						<div class="h1-link-box">
+							<button class="link">화면 전환</button>
+							<ul class="digi-sub-menu">
+								<li><a href="#;">iM캐피탈 홈페이지</a></li>
+								<li><a href="#;">iM브랜치</a></li>
+							</ul>
+						</div>
+					</div>
+					<ul class="digi-menu-list">
+						<li>
+							<a href="#;">내차사기</a>
+							<ul class="digi-sub-menu">
+								<li><a href="#;">신차</a></li>
+								<li><a href="#;">즉시출고</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#;">마이</a>
+							<ul class="digi-sub-menu">
+								<li><a href="#;">마이 홈</a></li>
+								<li><a href="#;">차량관리</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#;">고객라운지</a>
+							<ul class="digi-sub-menu">
+								<li><a href="#;">공지사항</a></li>
+								<li><a href="#;">이벤트</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- //End : header 좌측 메뉴(PC) -->
+
+				<!-- Start : header 우측 메뉴(PC) -->
+				<div class="h-right">
+					<button class="btn-header-ai">AI 서비스 데스크</button>
+					<a href="#;" class="btn-header-my">
+						<span class="tx" aria-label="마이 홈으로 이동"></span>
+						<!-- <span class="tip-info up">로그인하고 <em>차량관리</em> 받으세요!</span> -->
+					</a>
+				</div>
+				<!-- //End : header 우측 메뉴(PC) -->
+			</div>
+		</div>
+		<!-- //End : PC -->
+		<!-- Start : mobile -->
+		<div class="header-mobile mob-view">
+			<div class="h-inner-m">
+				<div class="h1-logo-m">
+					<a href="#;">im캐피탈</a>
+					<div class="h1-link-box-m">
+						<button class="link">화면 전환</button>
+						<div class="digi-sub-menu-m">
+							<ul>
+								<li class="m1">
+									<a href="#;">
+										<p class="tit">iM캐피탈</p>
+										<p class="tx">iM캐피탈 홈페이지</p>
+									</a>
+								</li>
+								<li class="m2 on">
+									<a href="#;">
+										<p class="tit">iM브랜치</p>
+										<p class="tx">오토전용 상품 플랫폼</p>
+									</a>
+								</li>
+							</ul>
+							<button class="btn-close">닫기</button>
+						</div>
+					</div>
+				</div>
+				<div class="h-right-m">
+					<ul class="menu-list-m">
+						<li><button class="btn-header-ai">ai 서비스 데스크</button></li>
+						<li>
+							<div class="all-menu-m">
+								<button>전체 메뉴</button>
+								<div class="all-menu-wrap-m digi">
+									<div class="all-menu-header-m">
+										<div class="all-menu-left">
+											<h2 class="h-tit-m">전체</h2>
+										</div>
+										<ul class="all-menu-right">
+											<li><button class="btn-header-ai">ai 서비스 데스크</button></li>
+											<li><a href="#;" class="btn-setup">설정</a></li>
+											<li><a href="#;" class="btn-close">전체메뉴 닫기</a></li>
+										</ul>
+									</div>
+								
+									<!-- Start : 메뉴목록 -->
+									<div class="m-digi-all-wrap">
+										<div class="link-area">
+											<a href="#;">공지사항</a>
+											<a href="#;">견적내기</a>
+											<a href="#;">인증센터</a>
+											<a href="#;">이벤트</a>
+										</div>
+										<a href="#;" class="banner-link"><span>대기없는<span class="tag_imme">즉시출고</span>차량 전체보기<span class="arrow"></span></span></a>
+										<div class="digi-title-row">
+											<p class="tit">최근 본 차 👀</p>
+											<button class="btn-remove">전체삭제</button>
+										</div>
+										<div class="car-scroll-cover">
+											<div class="recent-list">
+												<a href="#;">
+													<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car.png" alt=""></span>
+													<span class="car-desc">
+														<span class="name ellipsis">디 올 뉴 팰리세이드 HEV 디 올 뉴 팰리세이드 HEV</span>
+														<span class="price">월 689,000원</span>
+													</span>
+													<button class="btn-remove">목록 삭제</button>
+												</a>
+												<a href="#;">
+													<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car.png" alt=""></span>
+													<span class="car-desc">
+														<span class="name ellipsis">디 올 뉴</span>
+														<span class="price">월 689,000원</span>
+													</span>
+													<button class="btn-remove">목록 삭제</button>
+												</a>
+												<a href="#;">
+													<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car.png" alt=""></span>
+													<span class="car-desc">
+														<span class="name ellipsis">디 올 뉴 팰리세이드</span>
+														<span class="price">월 689,000원</span>
+													</span>
+													<button class="btn-remove">목록 삭제</button>
+												</a>
+											</div>
+										</div>
+										<div class="common-line wide"></div>
+										<div class="all-menu-list">
+											<h2>내차사기</h2>
+											<ul>
+												<li><a href="#;">신차</a></li>
+												<li><a href="#;">즉시출고</a></li>
+											</ul>
+											<h2>마이</h2>
+											<ul>
+												<li><a href="#;">마이 홈</a></li>
+												<li><a href="#;">차량관리</a></li>
+											</ul>
+											<h2>고객라운지</h2>
+											<ul>
+												<li><a href="#;">공지사항</a></li>
+												<li><a href="#;">이벤트</a></li>
+											</ul>
+										</div>
+									</div>
+									<!-- //End : 메뉴목록 -->
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //End : mobile -->
+	</header>
+	
+	<div class="digi-main-wrap">
+		<div id="common_body"></div><!-- 접근성 : 탭으로 본문 컨텐츠 바로가기 기능을 위해 추가  -->
+		<div class="main-search-area">
+			<!-- Start : 상단 검색창 -->
+			<div class="main-search-box">
+				<!-- Start : 검색 input -->
+				<div class="search-bar">
+					<div class="input">
+						<p class="placeholder typing" data-text="찾고 있는 차량이 있으신가요?" data-delay="500"><span class="hidden">찾고 있는 차량이 있으신가요?</span></p>
+						<input type="text" title="차량 검색창" placeholder=" ">
+						<button class="btn-remove">글자 입력값 삭제</button>
+					</div>
+				</div>
+				<!-- //End : 검색 input -->
+
+				<!-- Start : 검색 내용 (pc) -->
+				<div class="search-layer">
+					<div style="display:block">
+						<div class="tab-box6 js-tab"><!-- 슬라이드 : tab-slide 클래스 추가 -->
+							<button>신차<span>3</span><span class="hidden"> 선택됨</span></button>
+							<button class="on">즉시⚡️출고<span>5</span></button>
+						</div>
+						<!-- Start : 검색 목록 없는 경우 -->
+						<div class="no-databox">
+							<div class="nodata-txt">검색하신 차량이 없어요</div>
+						</div>
+						<!-- //End : 검색 목록 없는 경우 -->
+
+
+						<!-- Start : 신차 목록 -->
+						<ul class="car-result-list" style="display:none">
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="price">월 689,000원~</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="price">월 689,000원~</span>
+										<span class="tag-box">
+											
+										</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="price">월 689,000원~</span>
+										<span class="tag-box">
+											<span class="tag02">하이브리드</span>
+										</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //End : 신차 목록 -->
+						
+						<!-- Start : 즉시출고 목록 -->
+						<ul class="car-result-list type" style="display:none">
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="tx">2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD</span>
+										<span class="price">월 689,000원~</span>
+										<span class="tag-box">
+											<span class="tag_imme">즉시출고</span>
+											<span class="tag02">하이브리드</span>
+										</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="tx">2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD</span>
+										<span class="price">월 689,000원~</span>
+										<span class="tag-box">
+											<span class="tag_imme">즉시출고</span>
+										</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="tx">2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD</span>
+										<span class="price">월 689,000원~</span>
+										<span class="tag-box">
+											<span class="tag_imme">즉시출고</span>
+											<span class="tag02">하이브리드</span>
+										</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="tx">2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD</span>
+										<span class="price">월 689,000원~</span>
+										<span class="tag-box">
+											<span class="tag_imme">즉시출고</span>
+											<span class="tag02">하이브리드</span>
+										</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="tx">2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD</span>
+										<span class="price">월 689,000원~</span>
+										<span class="tag-box">
+											<span class="tag_imme">즉시출고</span>
+											<span class="tag02">하이브리드</span>
+										</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //End : 즉시출고 목록 -->
+					</div>
+					<div style="display:none">
+						<!-- Start : 최근 검색어 -->
+						<div class="digi-title-row mt0">
+							<p class="tit">최근 검색어</p>
+							<button class="btn-remove">전체삭제</button>
+						</div>
+						<div class="tag-list">
+							<a href="#;">그랜저<button class="btn-remove">검색어 삭제</button></a>
+							<a href="#;">제네시스<button class="btn-remove">검색어 삭제</button></a>
+							<a href="#;">제네시스<button class="btn-remove">검색어 삭제</button></a>
+							<a href="#;">제네시스<button class="btn-remove">검색어 삭제</button></a>
+							<a href="#;">포르쉐<button class="btn-remove">검색어 삭제</button></a>
+							<a href="#;">BMW<button class="btn-remove">검색어 삭제</button></a>
+							<a href="#;">BMW<button class="btn-remove">검색어 삭제</button></a>
+							<a href="#;">BMW<button class="btn-remove">검색어 삭제</button></a>
+							<a href="#;">BMW<button class="btn-remove">검색어 삭제</button></a>
+						</div>
+						<!-- <p class="none-tx">최근 검색어가 없어요</p> -->
+						<!-- //End : 최근 검색어 -->
+
+						<!-- Start : 인기차량 -->
+						<div class="digi-title-row">
+							<p class="tit">지금 인기 차량</p>
+							<span class="date">25.09.22 기준</span>
+						</div>
+						<ul class="popular-list">
+							<li>
+								<span class="num">1</span>
+								<span class="car">그랜저</span>
+							</li>
+							<li>
+								<span class="num">2</span>
+								<span class="car">팰리세이드</span>
+							</li>
+							<li>
+								<span class="num">3</span>
+								<span class="car">차량명 타이틀은 한줄 이상 시 자동 말줄임</span>
+							</li>
+							<li>
+								<span class="num">4</span>
+								<span class="car">해당영역 128고정입니다.</span>
+							</li>
+							<li>
+								<span class="num">5</span>
+								<span class="car">산타페</span>
+							</li>
+							<li>
+								<span class="num">6</span>
+								<span class="car">GV80</span>
+							</li>
+							<li>
+								<span class="num">7</span>
+								<span class="car">G80</span>
+							</li>
+							<li>
+								<span class="num">8</span>
+								<span class="car">투싼</span>
+							</li>
+							<li>
+								<span class="num">9</span>
+								<span class="car">테슬라</span>
+							</li>
+							<li>
+								<span class="num">10</span>
+								<span class="car">캐스퍼</span>
+							</li>
+						</ul>
+						<!-- //End : 인기차량 -->
+
+						<!-- Start : 추천차량 -->
+						<div class="digi-title-row">
+							<p class="tit">추천 차량</p>
+						</div>
+						<div class="recommend-car">
+							<a href="#;" class="list">
+								<div class="car-img">
+									<span class="tag_imme">즉시출고</span>
+									<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+								</div>
+								<div class="car-desc">
+									<p class="tit ellipsis">1제네시스 G70</p>
+									<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+									<p class="price">월 231,400원~</p>
+								</div>
+							</a>
+							<a href="#;" class="list">
+								<div class="car-img">
+									<span class="tag_imme">즉시출고</span>
+									<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+								</div>
+								<div class="car-desc">
+									<p class="tit ellipsis">2제네시스 G70</p>
+									<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+									<p class="price">월 231,400원~</p>
+								</div>
+							</a>
+							<a href="#;" class="list">
+								<div class="car-img">
+									<span class="tag_imme">즉시출고</span>
+									<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+								</div>
+								<div class="car-desc">
+									<p class="tit ellipsis">3제네시스 G70</p>
+									<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+									<p class="price">월 231,400원~</p>
+								</div>
+							</a>
+							<a href="#;" class="list">
+								<div class="car-img">
+									<span class="tag_imme">즉시출고</span>
+									<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+								</div>
+								<div class="car-desc">
+									<p class="tit ellipsis">4제네시스 G70</p>
+									<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+									<p class="price">월 231,400원~</p>
+								</div>
+							</a>
+							<a href="#;" class="list">
+								<div class="car-img">
+									<span class="tag_imme">즉시출고</span>
+									<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+								</div>
+								<div class="car-desc">
+									<p class="tit ellipsis">5제네시스 G70</p>
+									<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+									<p class="price">월 231,400원~</p>
+								</div>
+							</a>
+							<a href="#;" class="list">
+								<div class="car-img">
+									<span class="tag_imme">즉시출고</span>
+									<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+								</div>
+								<div class="car-desc">
+									<p class="tit ellipsis">6제네시스 G70</p>
+									<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+									<p class="price">월 231,400원~</p>
+								</div>
+							</a>
+							<a href="#;" class="list">
+								<div class="car-img">
+									<span class="tag_imme">즉시출고</span>
+									<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+								</div>
+								<div class="car-desc">
+									<p class="tit ellipsis">7제네시스 G70</p>
+									<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+									<p class="price">월 231,400원~</p>
+								</div>
+							</a>
+						</div>
+						<!-- //End : 추천차량 -->
+					</div>
+				</div>
+				<!-- //End : 검색 내용 (pc) -->
+
+				<!-- Start : 검색 팝업 (mobile) -->
+				<div class="m-search-layer">
+					<div class="search-input-area">
+						<button class="btn-back">메인으로 돌아가기</button>
+						<div class="search-input">
+							<input type="text" placeholder="찾고 있는 차량이 있으신가요?">
+						</div>
+					</div>
+					<div>
+						<div class="tab-box6 js-tab"><!-- 슬라이드 : tab-slide 클래스 추가 -->
+							<button class="on">신차<span>3</span><span class="hidden"> 선택됨</span></button>
+							<button>즉시⚡️출고<span>5</span></button>
+						</div>
+						<!-- Start : 검색 목록 없는 경우 (mobile) -->
+						<div class="no-databox">
+							<div class="nodata-txt">검색하신 차량이 없어요</div>
+						</div>
+						<!-- //End : 검색 목록 없는 경우 (mobile) -->
+
+
+						<!-- Start : 신차 목록 (mobile) -->
+						<ul class="car-result-list" style="display:none">
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="price">월 689,000원~</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car03.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="price">월 689,000원~</span>
+										<span class="tag-box">
+											
+										</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car04.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="price">월 689,000원~</span>
+										<span class="tag-box">
+											<span class="tag02">하이브리드</span>
+										</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //End : 신차 목록 (mobile) -->
+						
+						<!-- Start : 즉시출고 목록 (mobile) -->
+						<ul class="car-result-list type" style="display:none">
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV 디 올 뉴 팰리세이드 HEV</span>
+										<span class="tx">2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD 2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD</span>
+										<span class="price">월 689,000원~</span>
+										<span class="tag-box">
+											<span class="tag_imme">즉시출고</span>
+											<span class="tag02">하이브리드</span>
+										</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car05.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="tx">2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD</span>
+										<span class="price">월 689,000원~</span>
+										<span class="tag-box">
+											<span class="tag_imme">즉시출고</span>
+										</span>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#;">
+									<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car03.png" alt=""></span>
+									<span class="car-desc">
+										<span class="car-name">디 올 뉴 팰리세이드 HEV</span>
+										<span class="tx">2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD</span>
+										<span class="price">월 689,000원~</span>
+										<span class="tag-box">
+											<span class="tag_imme">즉시출고</span>
+											<span class="tag02">하이브리드</span>
+										</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+						<!-- //End : 즉시출고 목록 (mobile) -->
+					</div>
+					<div style="display:none">
+						<!-- Start : 최근 검색어 (mobile) -->
+						<div class="digi-title-row mt0">
+							<p class="tit">최근 검색어</p>
+							<button class="btn-remove">전체삭제</button>
+						</div>
+						<div class="car-scroll-cover">
+							<div class="tag-list">
+								<a href="#;">그랜저<button class="btn-remove">검색어 삭제</button></a>
+								<a href="#;">제네시스<button class="btn-remove">검색어 삭제</button></a>
+								<a href="#;">제네시스<button class="btn-remove">검색어 삭제</button></a>
+								<a href="#;">제네시스<button class="btn-remove">검색어 삭제</button></a>
+								<a href="#;">포르쉐<button class="btn-remove">검색어 삭제</button></a>
+								<a href="#;">BMW<button class="btn-remove">검색어 삭제</button></a>
+								<a href="#;">BMW<button class="btn-remove">검색어 삭제</button></a>
+								<a href="#;">BMW<button class="btn-remove">검색어 삭제</button></a>
+								<a href="#;">BMW<button class="btn-remove">검색어 삭제</button></a>
+							</div>
+						</div>
+						<!-- <p class="none-tx">최근 검색어가 없어요</p> -->
+						<!-- //End : 최근 검색어 (mobile)-->
+
+						<!-- Start : 인기차량 (mobile) -->
+						<div class="digi-title-row">
+							<p class="tit">지금 인기 차량</p>
+							<span class="date">25.09.22 기준</span>
+						</div>
+						<ul class="popular-list">
+							<li>
+								<span class="num">1</span>
+								<span class="car">그랜저</span>
+							</li>
+							<li>
+								<span class="num">2</span>
+								<span class="car">팰리세이드</span>
+							</li>
+							<li>
+								<span class="num">3</span>
+								<span class="car">차량명 타이틀은 한줄 이상 시 자동 말줄임</span>
+							</li>
+							<li>
+								<span class="num">4</span>
+								<span class="car">해당영역 128고정입니다.</span>
+							</li>
+							<li>
+								<span class="num">5</span>
+								<span class="car">산타페</span>
+							</li>
+							<li>
+								<span class="num">6</span>
+								<span class="car">GV80</span>
+							</li>
+							<li>
+								<span class="num">7</span>
+								<span class="car">G80</span>
+							</li>
+							<li>
+								<span class="num">8</span>
+								<span class="car">투싼</span>
+							</li>
+							<li>
+								<span class="num">9</span>
+								<span class="car">테슬라</span>
+							</li>
+							<li>
+								<span class="num">10</span>
+								<span class="car">캐스퍼</span>
+							</li>
+						</ul>
+						<!-- //End : 인기차량 (mobile) -->
+
+						<!-- Start : 추천차량 (mobile) -->
+						<div class="digi-title-row">
+							<p class="tit">추천 차량</p>
+						</div>
+						<div class="car-scroll-cover">
+							<div class="recommend-car">
+								<a href="#;" class="list">
+									<div class="car-img">
+										<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+									</div>
+									<div class="car-desc">
+										<p class="tit ellipsis">1제네시스 G70</p>
+										<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+										<p class="price">월 231,400원~</p>
+									</div>
+								</a>
+								<a href="#;" class="list">
+									<div class="car-img">
+										<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+									</div>
+									<div class="car-desc">
+										<p class="tit ellipsis">2제네시스 G70</p>
+										<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+										<p class="price">월 231,400원~</p>
+									</div>
+								</a>
+								<a href="#;" class="list">
+									<div class="car-img">
+										<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+									</div>
+									<div class="car-desc">
+										<p class="tit ellipsis">3제네시스 G70</p>
+										<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+										<p class="price">월 231,400원~</p>
+									</div>
+								</a>
+								<a href="#;" class="list">
+									<div class="car-img">
+										<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+									</div>
+									<div class="car-desc">
+										<p class="tit ellipsis">4제네시스 G70</p>
+										<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+										<p class="price">월 231,400원~</p>
+									</div>
+								</a>
+								<a href="#;" class="list">
+									<div class="car-img">
+										<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+									</div>
+									<div class="car-desc">
+										<p class="tit ellipsis">5제네시스 G70</p>
+										<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+										<p class="price">월 231,400원~</p>
+									</div>
+								</a>
+								<a href="#;" class="list">
+									<div class="car-img">
+										<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+									</div>
+									<div class="car-desc">
+										<p class="tit ellipsis">6제네시스 G70</p>
+										<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+										<p class="price">월 231,400원~</p>
+									</div>
+								</a>
+								<a href="#;" class="list">
+									<div class="car-img">
+										<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+									</div>
+									<div class="car-desc">
+										<p class="tit ellipsis">7제네시스 G70</p>
+										<p class="tx ellipsis">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+										<p class="price">월 231,400원~</p>
+									</div>
+								</a>
+							</div>
+						</div>
+						<!-- //End : 추천차량 (mobile) -->
+					</div>
+				</div>
+				<!-- //End : 검색 팝업 (mobile) -->
+			</div>
+		</div>
+		<!-- //End : 상단 검색창 -->
+			
+		<!-- Start : 메인 배너 pc -->
+		<div class="main-rolling-wrap">
+			<div class="controler">
+				<button class="play">자동 재생</button>
+				<button class="pause">자동 재생 멈추기</button>
+				<div class="numcount-box">
+					<div class="numcount"><span class="now">1</span><span>/3</span></div>
+				</div>
+			</div>
+			<div class="main-rolling">
+				<a href="#;" class="list">
+					<div class="tx-area">
+						<p class="tx01">더 뉴 팰리세이드 하이브리드</p>
+						<p class="tx02">가장 빛나는 Stage를 경험하세요</p>
+						<p class="tx03">월 260,600원~</p>
+					</div>
+					<img src="/static/web/img/digital_branch/img_main_banner01.png">
+				</a>
+				<a href="#;" class="list">
+					<div class="tx-area">
+						<p class="tx01">더 뉴 팰리세이드 하이브리드</p>
+						<p class="tx02">가장 빛나는 Stage를 경험하세요</p>
+						<p class="tx03">월 260,600원~</p>
+					</div>
+					<img src="/static/web/img/digital_branch/img_main_banner01.png">
+				</a>
+				<a href="#;" class="list">
+					<div class="tx-area">
+						<p class="tx01">더 뉴 팰리세이드 하이브리드</p>
+						<p class="tx02">가장 빛나는 Stage를 경험하세요</p>
+						<p class="tx03">월 260,600원~</p>
+					</div>
+					<img src="/static/web/img/digital_branch/img_main_banner01.png">
+				</a>
+			</div>
+		</div>
+		<!-- //End : 메인 배너 pc-->
+		
+		<!-- Start : 메인 배너 mobile -->
+		<div class="stack-slider-cover">
+			<div class="stack-slider-wrap">
+				<div class="stack-slider">
+					<a href="#;" class="slide">
+						<div class="tx-area">
+							<p class="tx01">더 뉴 팰리세이드 하이브리드</p>
+							<p class="tx02">가장 빛나는 Stage를 경험하세요</p>
+							<p class="tx03">월 260,600원~</p>
+						</div>
+						<img src="/static/web/img/digital_branch/img_main_banner01_mob.png" alt="">
+					</a>
+					<a href="#;" class="slide">
+						<div class="tx-area">
+							<p class="tx01">더 뉴 팰리세이드 하이브리드</p>
+							<p class="tx02">가장 빛나는 Stage를 경험하세요</p>
+							<p class="tx03">월 260,600원~</p>
+						</div>
+						<img src="/static/web/img/digital_branch/img_main_banner01_mob.png" alt="">
+					</a>
+					<a href="#;" class="slide">
+						<div class="tx-area">
+							<p class="tx01">더 뉴 팰리세이드 하이브리드</p>
+							<p class="tx02">가장 빛나는 Stage를 경험하세요</p>
+							<p class="tx03">월 260,600원~</p>
+						</div>
+						<img src="/static/web/img/digital_branch/img_main_banner01_mob.png" alt="">
+					</a>
+					<a href="#;" class="slide">
+						<div class="tx-area">
+							<p class="tx01">더 뉴 팰리세이드 하이브리드</p>
+							<p class="tx02">가장 빛나는 Stage를 경험하세요</p>
+							<p class="tx03">월 260,600원~</p>
+						</div>
+						<img src="/static/web/img/digital_branch/img_main_banner01_mob.png" alt="">
+					</a>
+				</div>
+				<div class="controler">
+					<button class="play">자동 재생</button>
+					<button class="pause">자동 재생 멈추기</button>
+					<div class="numcount-box">
+						<div class="numcount"><span class="now">2</span>/<span class="total-slide">4</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //End : 메인 배너 mobile -->
+		
+		<!-- Start : 바로가기 영역 -->
+		<div class="quick-link-wrap">
+			<a href="#;" class="m1">즉시출고</a>
+			<a href="#;" class="m2">신차찾기</a>
+			<a href="#;" class="m3">인기차량<span class="tag">TOP</span></a>
+			<a href="#;" class="m4">내차등록</a>
+		</div>
+		<!-- //End : 바로가기 영역 -->
+
+		<!-- Start : 내 차 브리핑 -->
+		<div class="mycar-briefing-area">
+			<div class="tit">
+				<strong>123나5678</strong> 내 차 브리핑 
+				<button href="#;">다른 차량 선택</button>
+			</div>
+			<div class="car-scroll-cover">
+				<div class="card-section">
+					<div class="card highlight">
+						<p class="tx">렌트 1대, 리스 1대를<br>보유중이에요 🚙</p>
+						<a href="#;">내역보기</a>
+					</div>
+					<div class="card">
+						<p class="tx">만기일까지 ⏳<br><strong>99일</strong> 남았어요</p>
+						<a href="#;">시뮬레이션하기</a>
+					</div>
+					<div class="card">
+						<p class="tx">이달의 청구금액이<br><strong>99일</strong> 있어요 💰</p>
+						<a href="#;">확인하기</a>
+					</div>
+					<div class="card">
+						<p class="tx">과태료 · 범칙금<br><strong>1건</strong> 부과됐어요</p>
+						<a href="#;">납부하기</a>
+					</div>
+					<div class="card">
+						<p class="tx">보험갱신일이<br>다가와요</p>
+						<a href="#;">확인하기</a>
+					</div>
+					<div class="card">
+						<p class="tx">리콜통지서가<br><strong>1건</strong>있어요</p>
+						<a href="#;">확인하기</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //End : 내 차 브리핑 -->
+
+		<!-- Start : 대기없이 즉시 출고 -->
+		<div class="digi-main-tit">
+			<h3 class="tit"><span class="ico"></span>대기없이 즉시 출고</h3>
+			<p class="desc">지금 가장 빠르게 탈 수 있는 차량이에요</p>
+		</div>
+		<div class="car-scroll-cover car-imme">
+			<div class="car-immediate-list">
+				<a href="#;" class="list">
+					<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+					<span class="car-name ellipsis">디 올 뉴 팰리세이드 HEV</span>
+					<span class="price">월 689,000원~</span>
+					<span class="tag-box">
+						<span class="tag_imme">즉시출고</span>
+					</span>
+				</a>
+				<a href="#;" class="list">
+					<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car03.png" alt=""></span>
+					<span class="car-name ellipsis">디 올 뉴 팰리세이드 HEV</span>
+					<span class="price">월 689,000원~</span>
+					<span class="tag-box">
+						<span class="tag_imme">즉시출고</span>
+					</span>
+				</a>
+				<a href="#;" class="list">
+					<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car04.png" alt=""></span>
+					<span class="car-name ellipsis">디 올 뉴 팰리세이드 HEV</span>
+					<span class="price">월 689,000원~</span>
+					<span class="tag-box">
+						<span class="tag_imme">즉시출고</span>
+					</span>
+				</a>
+				<a href="#;" class="list">
+					<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car05.png" alt=""></span>
+					<span class="car-name ellipsis">디 올 뉴 팰리세이드 HEV</span>
+					<span class="price">월 689,000원~</span>
+					<span class="tag-box">
+						<span class="tag_imme">즉시출고</span>
+						<span class="tag02">하이브리드</span>
+					</span>
+				</a>
+				<a href="#;" class="list">
+					<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+					<span class="car-name ellipsis">디 올 뉴 팰리세이드 HEV</span>
+					<span class="price">월 689,000원~</span>
+					<span class="tag-box">
+						<span class="tag_imme">즉시출고</span>
+					</span>
+				</a>
+				<a href="#;" class="list">
+					<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car05.png" alt=""></span>
+					<span class="car-name ellipsis">디 올 뉴 팰리세이드 HEV</span>
+					<span class="price">월 689,000원~</span>
+					<span class="tag-box">
+						<span class="tag_imme">즉시출고</span>
+					</span>
+				</a>
+				<a href="#;" class="list">
+					<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car03.png" alt=""></span>
+					<span class="car-name ellipsis">디 올 뉴 팰리세이드 HEV</span>
+					<span class="price">월 689,000원~</span>
+					<span class="tag-box">
+						<span class="tag_imme">즉시출고</span>
+						<span class="tag02">하이브리드</span>
+					</span>
+				</a>
+				<a href="#;" class="list">
+					<span class="car-img"><img src="/static/web/img/digital_branch/@sample_car04.png" alt=""></span>
+					<span class="car-name ellipsis">디 올 뉴 팰리세이드 HEV</span>
+					<span class="price">월 689,000원~</span>
+					<span class="tag-box">
+						<span class="tag_imme">즉시출고</span>
+						<span class="tag02">하이브리드</span>
+					</span>
+				</a>
+			</div>
+		</div>
+		<a href="#;" class="btn-more-list">전체보기</a>
+		<!-- //End : 대기없이 즉시 출고 -->
+
+		<!-- Start : 원하는 브랜드로 차량 찾기 -->
+		<div class="digi-main-tit pc-view"><!-- pc 에서만 보여지는 타이틀 -->
+			<h3 class="tit"><span class="ico type01"></span>원하는 브랜드로 차량 찾기</h3>
+			<p class="desc">국산 수입별 브랜드로 원하시는 차량을 찾아보세요</p>
+		</div>
+		<div class="brand-sel-box">
+			<div class="brand-sel-box-mobile">
+				<div class="digi-main-tit mob-view"><!-- mobile 에서만 보여지는 타이틀 -->
+					<h3 class="tit"><span class="ico type01"></span>원하는 브랜드로 차량 찾기</h3>
+					<p class="desc">국산 · 수입별 브랜드로 찾아보세요</p>
+				</div>
+				<!-- Start : 국산/수입 스위치 버튼 -->
+				<div class="switch-group">
+					<button type="button" class="btn-switch-style" aria-label="국산">
+						<span class="txt-left">국산</span>
+						<span class="txt-right">수입</span>
+						<em class="bg"></em>
+					</button>
+				</div>
+			</div>
+			<!-- //End : 국산/수입 스위치 버튼 -->
+			<div class="car-scroll-cover">
+				<div class="brand-sel-list">
+					<a href="#;" class="m1">현대</a>
+					<a href="#;" class="m2">기아</a>
+					<a href="#;" class="m3">제네시스</a>
+					<a href="#;" class="m4">쉐보레</a>
+					<a href="#;" class="m5">르노삼성</a>
+					<a href="#;" class="m6">KG</a>
+					<a href="#;" class="m7">테슬라</a>
+				</div>
+			</div>
+		</div>
+		<!-- //End : 원하는 브랜드로 차량 찾기 -->
+
+		<!-- Start : 내차 담보대출 배너 -->
+		<a href="#;" class="digi-main-banner">
+			<span class="tx01">내게 지금 당장 쓸 자금이 필요하다면?</span>
+			<span class="tx02">내 차를 담보로 대출하기</span>
+		</a>
+		<!-- //End : 내차 담보대출 배너 -->
+
+		<!-- Start : 인기차량 TOP 10 -->
+		<div class="digi-main-tit">
+			<h3 class="tit"><span class="ico type02"></span>인기차량 TOP 10</h3>
+			<p class="desc">최근 한달간 견적내기 최다 차량순이에요</p>
+		</div>
+		<div class="car-scroll-cover">
+			<div class="popular-car-slide">
+				<a href="#;" class="list">
+					<div class="car-img">
+						<span class="num1">1</span>
+						<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+					</div>
+					<div class="car-desc">
+						<p class="tit ellipsis">1제네시스 G70</p>
+						<p class="tx ellipsis-2">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+						<p class="price">월 231,400원~</p>
+					</div>
+				</a>
+				<a href="#;" class="list">
+					<div class="car-img">
+						<span class="num2">2</span>
+						<img src="/static/web/img/digital_branch/@sample_car05.png" alt="">
+					</div>
+					<div class="car-desc">
+						<p class="tit ellipsis">2제네시스 G70 제네시스 G70 제네시스 G70</p>
+						<p class="tx ellipsis-2">차량 부가정보</p>
+						<p class="price">월 231,400원~</p>
+					</div>
+				</a>
+				<a href="#;" class="list">
+					<div class="car-img">
+						<span class="num3">3</span>
+						<img src="/static/web/img/digital_branch/@sample_car04.png" alt="">
+					</div>
+					<div class="car-desc">
+						<p class="tit ellipsis">3제네시스 G70</p>
+						<p class="tx ellipsis-2">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임 차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+						<p class="price">월 231,400원~</p>
+					</div>
+				</a>
+				<a href="#;" class="list">
+					<div class="car-img">
+						<span class="num4">4</span>
+						<img src="/static/web/img/digital_branch/@sample_car03.png" alt="">
+					</div>
+					<div class="car-desc">
+						<p class="tit ellipsis">4제네시스 G70</p>
+						<p class="tx ellipsis-2">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+						<p class="price">월 231,400원~</p>
+					</div>
+				</a>
+				<a href="#;" class="list">
+					<div class="car-img">
+						<span class="num5">5</span>
+						<img src="/static/web/img/digital_branch/@sample_car02.png" alt="">
+					</div>
+					<div class="car-desc">
+						<p class="tit ellipsis">5제네시스 G70</p>
+						<p class="tx ellipsis-2">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+						<p class="price">월 231,400원~</p>
+					</div>
+				</a>
+				<a href="#;" class="list">
+					<div class="car-img">
+						<span class="num6">6</span>
+						<img src="/static/web/img/digital_branch/@sample_car05.png" alt="">
+					</div>
+					<div class="car-desc">
+						<p class="tit ellipsis">6제네시스 G70</p>
+						<p class="tx ellipsis-2">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임 </p>
+						<p class="price">월 231,400원~</p>
+					</div>
+				</a>
+				<a href="#;" class="list">
+					<div class="car-img">
+						<span class="num7">7</span>
+						<img src="/static/web/img/digital_branch/@sample_car03.png" alt="">
+					</div>
+					<div class="car-desc">
+						<p class="tit ellipsis">7제네시스 G70</p>
+						<p class="tx ellipsis-2">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+						<p class="price">월 231,400원~</p>
+					</div>
+				</a>
+				<a href="#;" class="list">
+					<div class="car-img">
+						<span class="num8">8</span>
+						<img src="/static/web/img/digital_branch/@sample_car05.png" alt="">
+					</div>
+					<div class="car-desc">
+						<p class="tit ellipsis">7제네시스 G70</p>
+						<p class="tx ellipsis-2">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+						<p class="price">월 231,400원~</p>
+					</div>
+				</a>
+				<a href="#;" class="list">
+					<div class="car-img">
+						<span class="num9">9</span>
+						<img src="/static/web/img/digital_branch/@sample_car04.png" alt="">
+					</div>
+					<div class="car-desc">
+						<p class="tit ellipsis">7제네시스 G70</p>
+						<p class="tx ellipsis-2">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+						<p class="price">월 231,400원~</p>
+					</div>
+				</a>
+				<a href="#;" class="list">
+					<div class="car-img">
+						<span class="num10">10</span>
+						<img src="/static/web/img/digital_branch/@sample_car03.png" alt="">
+					</div>
+					<div class="car-desc">
+						<p class="tit ellipsis">7제네시스 G70</p>
+						<p class="tx ellipsis-2">차량 부가정보 영역 최대영역 넘어가면 자동 말줄임</p>
+						<p class="price">월 231,400원~</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- //End : 인기차량 TOP 10 -->
+
+		<!-- Start : 내 차 등록 -->
+		<div class="mycar-register-area">
+			<p class="tx">내 차 등록하고 <br class="mob">시세조회&차량관리 받으세요!</p>
+			<div class="animation-box" aria-hidden="true">
+				<div class="tx-box">
+					<p class="placeholder">123가 1234</p>
+					<p class="highlight typing" data-text="123가 1234" data-speed="200"></p>
+				</div>
+			</div>
+			<a href="#;" class="btn-link">내 차 등록하기</a>
+		</div>
+		<!-- //End : 내 차 등록 -->
+	</div>
+	
+	<footer>
+		<div class="footer-in">
+			<div class="footer-top">
+				<ul class="footer-tell">
+					<li>고객센터<span>1566-0050</span></li>
+					<li class="car pc-view">오토리스 · 렌터카 해지 승계센터<span>1566-8808</span></li>
+					<li class="car mob-view">오토 해지 승계센터<span>1566-8808</span></li>
+				</ul>
+				<div class="footer-site">
+					<button title="사이트 보기">DGB 금융그룹</button>
+					<ul style="display: none;">
+						<li><a href="http://www.dgbfg.co.kr" title="DGB금융지주 사이트 새창열림" target="_blank">DGB금융지주</a></li>
+						<li><a href="https://www.dgb.co.kr" title="iM뱅크 사이트 새창열림" target="_blank">iM뱅크</a></li>
+						<li><a href="https://www.hi-ib.com" title="iM증권 사이트 새창열림" target="_blank">iM투자증권</a></li>
+						<li><a href="https://www.dgbfnlife.com" title="iM라이프 사이트 새창열림" target="_blank">iM라이프</a></li>
+						<li><a href="http://www.hi-asset.com" title="iM에셋자산운용 사이트 새창열림" target="_blank">iM에셋자산운용</a></li>
+						<li><a href="http://www.dgbci.co.kr" title="iM신용정보 사이트 새창열림" target="_blank">iM신용정보</a></li>
+						<li><a href="https://www.dgbupay.com" title="iM유페이 사이트 새창열림" target="_blank">iM유페이</a></li>
+						<li><a href="http://www.dgbds.co.kr" title="iM데이터시스템 사이트 새창열림" target="_blank">iM데이터시스템</a></li>
+						<li><a href="https://www.hi-investment.com" title="iM투자파트너스 사이트 새창열림" target="_blank">iM투자파트너스</a></li>
+						<li><a href="https://intro.newsystock.com" title="뉴지스탁 사이트 새창열림" target="_blank">뉴지스탁</a></li>
+						<li><a href="http://www.dgbscf.or.kr" title="DGB사회공헌재단 사이트 새창열림" target="_blank">DGB사회공헌재단</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<ul class="footer-list">
+					<li><a href="#;"><strong>개인정보처리방침</strong></a></li>
+					<li><a href="#;">이용약관</a></li>
+					<li><a href="#;">고객정보 제공내역 조회</a></li>
+				</ul>
+				<ul class="footer-list">
+					<li class="pc-view">서울특별시 중구 남대문로 125 8층, iM금융센터</li>
+					<li class="pc-view">사업자등록번호 220-87-87408</li>
+					<li>ⓒ iM CAPITAL CO.,LTD</li>
+				</ul>
+				<div class="wag-wrap"><a href="#;" target="_blank"><img src="/static/web/img/common/wa_pc2.png" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)"></a></div>
+			</div>
+		</div>
+	</footer>
+</div>
+
+<!-- Start : 모바일 하단 플로팅 메뉴 -->
+<div class="m-bottom-area digital-branch">
+	<ul>
+		<li class="on"><a href="#;">홈</a></li>
+		<li><a href="#;">내차사기</a></li>
+		<li><a href="#;">마이</a></li>
+		<li><a href="#;">전체</a></li>
+	</ul>
+</div>
+<!-- //End : 모바일 하단 플로팅 메뉴 -->
+</body>
+</html>

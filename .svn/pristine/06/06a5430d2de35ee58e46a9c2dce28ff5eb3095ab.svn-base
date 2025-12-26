@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차량반납 시 안내사항 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+    window.addEventListener('load', addrPopupAll);
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half popup-360"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <!--<div class="popup-text">
+                <h1>휴대폰 본인인증</h1>
+            </div>-->
+            <div class="popup-contents flex-col pad-small"><!-- 2022-10-11 : pad-small 추가 -->
+                <!-- Start : content -->
+                <div class="popup-text">
+                    <h1>차량반납 시 안내사항</h1>
+                </div>
+                <ul class="list-dot type">
+                    <li>차량을 IM캐피탈로 반납하고 리스계약을 종결합니다.</li>
+                    <li>반납일에 당사 제휴회사 직원이 현장 방문하여 차량 회수 후 차량평가를 통하여, 가치감가의 사유(원상복구, 사고감가, 약정주행 거리 초과운행 등)가 확인되면 가치 감가비용을 부담하셔야 합니다.</li>
+                    <li>보증금은 가치감가 비용 등을 정산 후 환급해 드립니다.</li>
+                    <li>명의이전이 만기처리 후 15일 이상 지연시 지연 수수료, 과태료가 발생되오니 유의하시기 바랍니다.</li>
+                </ul>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray01"><button type="button">다음에</button></span>
+                        <span class="btn"><button type="button">접수하기</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

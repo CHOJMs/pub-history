@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/swiper-bundle.min.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+<script  src="/static/admin/js/swiper-bundle.min.js"></script>
+
+<title>성능점검 등록/수정 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                    <li><a href="#" class="on">사후관리</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#" class="on">반납차량</a></li>
+                        <li><a href="#">리파이낸싱</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit pb0">
+                    <h2>반납차량</h2>
+
+                    <div class="radio-tab1 type01">
+                        <div class="com-inp">
+                            <input type="radio" id="r02" name="r02">
+                            <label for="r02">차량정보</label>
+                        </div>
+                        <div class="com-inp">
+                            <input type="radio" id="r02-1" name="r02" checked="checked">
+                            <label for="r02-1">성능점검</label>
+                        </div>
+                        <div class="com-inp">
+                            <input type="radio" id="r02-2" name="r02">
+                            <label for="r02-2">수리견적</label>
+                        </div>
+                        <!-- 2024-01-23_삭제 -->
+                        <!-- <div class="com-inp">
+                            <input type="radio" id="r02-3" name="r02">
+                            <label for="r02-3">수리진행여부</label>
+                        </div> -->
+                        <!--// 2024-01-23_삭제 -->
+                    </div>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+                    <div class="tab-cnt-box">
+                        <div class="tab-cnt-list type01">
+
+                            <!-- Start : 차량정보 -->
+                            <div id="tab-1" style="display:none;">
+                                <h3>기본정보</h3>
+                                <table class="data-tbl type02">
+                                    <colgroup>
+                                        <col width="50%">
+                                        <col width="50%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="com-inp">
+                                                    <p class="tit">국적</p>
+                                                    <div class="inp-area a-l">
+                                                        <div class="selectbox">
+                                                            <select class="select">
+                                                                <option value="">선택</option>
+                                                                <option value="">대한민국</option>
+                                                                <option value="">대한민국</option>
+                                                                <option value="">대한민국</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="com-inp">
+                                                    <p class="tit">제조사</p>
+                                                    <div class="inp-area">
+                                                        <div class="selectbox">
+                                                            <select class="select">
+                                                                <option value="">선택</option>
+                                                                <option value="">현대</option>
+                                                                <option value="">기아</option>
+                                                                <option value="">KG모빌리티</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="com-inp">
+                                                    <p class="tit">모델</p>
+                                                    <div class="inp-area">
+                                                        <div class="selectbox">
+                                                            <select class="select">
+                                                                <option value="">선택</option>
+                                                                <option value="">펠리세이드</option>
+                                                                <option value="">펠리세이드</option>
+                                                                <option value="">펠리세이드</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="com-inp">
+                                                    <p class="tit">세부모델</p>
+                                                    <div class="inp-area">
+                                                        <div class="selectbox">
+                                                            <select class="select">
+                                                                <option value="">선택</option>
+                                                                <option value="">2023년형 디젤 2.2 2WD 익스클루시브</option>
+                                                                <option value="">2023년형 디젤 2.2 2WD 익스클루시브</option>
+                                                                <option value="">2023년형 디젤 2.2 2WD 익스클루시브</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="com-inp">
+                                                    <p class="tit">연식</p>
+                                                    <div class="inp-area inp-phone">
+                                                        <div class="selectbox">
+                                                            <select class="select">
+                                                                <option value="">년 선택</option>
+                                                                <option value="">2020년</option>
+                                                                <option value="">2021년</option>
+                                                                <option value="">2022년</option>
+                                                                <option value="">2023년</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="selectbox">
+                                                            <select class="select">
+                                                                <option value="">월 선택</option>
+                                                                <option value="">1월</option>
+                                                                <option value="">2월</option>
+                                                                <option value="">3월</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="com-inp">
+                                                    <p class="tit">주행거리</p>
+                                                    <div class="inp-txt-right">
+                                                        <input type="tel" placeholder="" value="" class="a-l">
+                                                        <span>Km</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="com-inp">
+                                                    <p class="tit">중고판매 신고가격</p>
+                                                    <div class="inp-txt-right">
+                                                        <input type="tel" placeholder="입력" value="" class="a-l">
+                                                        <span>만원</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="com-inp">
+                                                    <p class="tit">사고정보</p>
+                                                    <div class="inp-area">
+                                                        <div class="selectbox">
+                                                            <select class="select">
+                                                                <option value="">선택</option>
+                                                                <option value="">무사고</option>
+                                                                <option value="">외부패널 교환</option>
+                                                                <option value="">사고</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="com-inp">
+                                                    <p class="tit">차량번호</p>
+                                                    <input type="tel" placeholder="차량번호를 입력하세요" value="" class="a-l">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                                    <h3>차량상태 사진등록 <span>(사진 클릭 시 크게보기 가능)</span></h3>
+                                    <div class="file-wrap">
+                                        <label for="file">파일등록</label>
+                                        <input type="file" id="file" class="btn-file">
+                                    </div>
+                                </div>
+                                <table class="data-tbl type01">
+                                    <colgroup>
+                                        <col width="50%">
+                                        <col width="50%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="com-inp">
+                                                    <p class="tit a-t">이미지 첨부</p>
+                                                    <div class="cnt-box">
+                                                        <ul class="file-sel-multi">
+                                                            <li>
+                                                                <ul> <!-- ul에 최대 2개의 li 추가 가능 -->
+                                                                    <li>
+                                                                        <div class="f-ico">
+                                                                            <a href="#none"  class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                                                            <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="f-ico">
+                                                                            <a href="#none"  class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                                                            <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul> <!-- ul에 최대 2개의 li 추가 가능 -->
+                                                                    <li>
+                                                                        <div class="f-ico">
+                                                                            <a href="#none"  class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                                                            <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="f-ico">
+                                                                            <a href="#none"  class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                                                            <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul>
+                                                                    <li class="none-file">
+                                                                        <span>등록된 파일 없음</span>
+                                                                        <span class="info-txt">* 이미지 파일은 fig, jpg, jpeg, png 확장자만 가능합니다.</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <h3>차량상세정보</h3>
+                                <p class="s-tit">- 외관/내장</p>
+                                <table class="chk-tbl">
+                                    <colgroup>
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" checked="checked">
+                                                    <label>선루프</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>루프랙</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>하이패스</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>헤드램프(HD, LED)</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>열선 스티어링 휠</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>파워 도어록</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>파워 전동 트렁크</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>전동 조절 스티어링</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>파워 스티어링 휠</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>고스트 도어 클로징</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>패들 시프트</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>파워 윈도우</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>전동접이 사이드 미러</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>스티어링 휠 리모컨</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>룸미러</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox">
+                                                    <label>알루미늄 휠</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>ECM 룸미러</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p class="s-tit">- 부가사항</p>
+                                <table class="chk-tbl">
+                                    <colgroup>
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>크루즈 컨트롤(일반, 어댑티브)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>레인센서</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>블루투스</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>헤드업 디스플레이(HUD)</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>오토 라이트</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>CD 플레이어</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>전자식 주차브레이크(EPB)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>커튼/블라인드(뒷좌석, 후방)</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>USB 단자</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>자동 에어컨</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>네비게이션</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>AUX 단자</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>스마트키</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>앞좌석 AV 모니터</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>오디오</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>무선도어 잠금장치</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>뒷좌석 AV 모니터</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p class="s-tit">- 시트</p>
+                                <table class="chk-tbl">
+                                    <colgroup>
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>가죽시트</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>열선시트(앞좌석, 뒷좌석)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>통풍시트(뒷좌석)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>전동시트(운전석, 동승석)</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>메모리시트(운전석, 동승석)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>마사지 시트</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>전동시트(뒷좌석)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>통풍시트(운전석, 동승석)</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p class="s-tit">- 프레임</p>
+                                <table class="chk-tbl">
+                                    <colgroup>
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>프론트패널 / 인사이트 패널</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>필러패널(시B) / 대쉬패널 / 플로어패널</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>리어패널 / 트렁크 플로어</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>입훨하우스 / 뒷훨하우스</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>사이트실 패널 / 쿼터 패널</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>사이드멤버 / 루프패널 / 패기지트레이</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p class="s-tit">- 안전</p>
+                                <table class="chk-tbl">
+                                    <colgroup>
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                        <col width="25%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>에어백(운전석, 동승석)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>차체자세 제어장치(ESC)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>후측방 경보 시스템</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>에어백(사이드)</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>타이어 공기압센터(TPMS)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>후방카메라</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>에어백(커튼)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>차선이탈 경보 시스템(LDWS)</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>360도 어라운드 뷰</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>브레이크 잠김 방지(ABS)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>전자제어 서스펜션(ECS)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>자동주행장치</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>미끄럼방지(TCS)</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" >
+                                                    <label>주차감지센서(전방, 후방)</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="btn-area line">
+                                    <a href="#none">차량정보 저장</a>
+                                </div>
+                            </div>
+                            <!--// End : 차량정보 -->
+
+                            <!-- Strat : 성능점검 -->
+                            <div id="tab-2">
+                                <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                                    <h3>성능점검표 등록 <span>(파일 최대 6개 등록)</span></h3>
+                                    <div class="file-wrap">
+                                        <label for="file">파일등록</label>
+                                        <input type="file" id="file" class="btn-file">
+                                    </div>
+                                </div>
+                                <table class="data-tbl type01">
+                                    <colgroup>
+                                        <col width="50%">
+                                        <col width="50%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="com-inp">
+                                                    <p class="tit a-t">파일 등록</p>
+                                                    <div class="cnt-box">
+                                                        <ul class="file-sel-multi">
+                                                            <li>
+                                                                <ul> <!-- ul에 최대 2개의 li 추가 가능 -->
+                                                                    <li>
+                                                                        <div class="f-ico">
+                                                                            <a href="#none"  class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                                                            <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="f-ico">
+                                                                            <a href="#none"  class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                                                            <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul> <!-- ul에 최대 2개의 li 추가 가능 -->
+                                                                    <li>
+                                                                        <div class="f-ico">
+                                                                            <a href="#none"  class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                                                            <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="f-ico">
+                                                                            <a href="#none"  class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                                                            <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul>
+                                                                    <li class="none-file">
+                                                                        <span>등록된 파일 없음</span>
+                                                                        <span class="info-txt">* 문서파일은 pdf만 등록이 가능합니다.</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <h3>특이사항 및 점검자 의견</h3>
+                                <table class="data-tbl">
+                                    <colgroup>
+                                        <col style="width:50%">
+                                        <col style="width:50%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="com-inp line">
+                                                    <p class="tit">최종가격조사 · <br>산정금액</p>
+                                                    <div class="inp-txt-right">
+                                                        <input type="tel" placeholder="" value="">
+                                                        <span>만원</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="com-inp line">
+                                                    <p class="tit">성능 · 상태점검자</p>
+                                                    <input type="text" placeholder="" value="">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="com-inp line">
+                                                    <p class="tit a-t">점검자 의견</p>
+                                                    <textarea>FRP 재질 교환 여부 확인불가로 차량수리도 어렵습니다.</textarea>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="btn-area">
+                                    <a href="#none">성능점검 저장</a>
+                                </div>
+                            </div>
+                            <!--// End : 성능점검 -->
+
+                            <!-- Start : 수리견적 -->
+                            <div id="tab-3" style="display:none;">
+                                <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                                    <h3>수리견적표 등록</h3>
+                                    <div class="file-wrap">
+                                        <label for="file">파일등록</label>
+                                        <input type="file" id="file" class="btn-file">
+                                    </div>
+                                </div>
+
+                                <table class="data-tbl type01">
+                                    <colgroup>
+                                        <col width="50%">
+                                        <col width="50%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="com-inp">
+                                                    <p class="tit a-t">파일 등록</p>
+                                                    <div class="cnt-box">
+                                                        <ul class="file-sel-multi">
+                                                            <li>
+                                                                <ul> <!-- ul에 최대 2개의 li 추가 가능 -->
+                                                                    <li>
+                                                                        <div class="f-ico">
+                                                                            <a href="#none"  class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                                                            <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="f-ico">
+                                                                            <a href="#none"  class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                                                            <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul> <!-- ul에 최대 2개의 li 추가 가능 -->
+                                                                    <li>
+                                                                        <div class="f-ico">
+                                                                            <a href="#none"  class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                                                            <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div class="f-ico">
+                                                                            <a href="#none"  class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                                                            <button><img src="/static/admin/img/new_common/ico_delete02.png"></button>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul>
+                                                                    <li class="none-file">
+                                                                        <span>등록된 파일 없음</span>
+                                                                        <span class="info-txt">* 문서파일은 pdf만 등록이 가능합니다.</span>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="btn-area">
+                                    <a href="#none">수리견적 저장</a>
+                                </div>
+                            </div>
+                            <!--// End : 수리견적 -->
+                        </div>
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

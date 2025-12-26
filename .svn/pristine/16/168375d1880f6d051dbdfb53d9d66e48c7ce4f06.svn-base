@@ -1,0 +1,1444 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 보험 관리 ▣</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>보험가입정보</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/보험가입정보.html">보험가입정보.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-27</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>보험가입정보 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/보험가입정보_상세.html">보험가입정보_상세.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-27</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>보험 변경신청 전 유의사항</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/보험변경신청유의사항.html">보험변경신청유의사항.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>보험 변경신청 (추가운전자 등록시)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/보험변경신청.html">보험변경신청.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>보험 변경신청 (추가운전자 불가시)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/보험변경신청2.html">보험변경신청2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>보험 변경신청 완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/보험변경신청완료.html">보험변경신청완료.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-11-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>보험 변경내용 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/보험변경내용확인.html">보험변경내용확인.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 마이 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>서류발급 및 계약서류조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-310-001.html">MMY-310-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 디자인 변경</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>이용상품 선택 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-310-001-1.html">MMY-310-001-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>서류발급 및 계약서류조회 (정보가 없는 경우)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-310-001-2.html">MMY-310-001-2.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 디자인 변경</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>계약서류조회 발급</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-320-001.html">MMY-320-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>계약서류조회 발급완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-310-900.html">MMY-310-900.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>소비자 보호 안내 (금리인하 요구권)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-330-001.html">MMY-330-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>소비자 보호 안내 (보이스피싱 유의)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-330-002.html">MMY-330-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>소비자 보호 안내 (청약의 철회)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-330-003.html">MMY-330-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>소비자 보호 안내 (수수료 등 비용부담)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-330-004.html">MMY-330-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>소비자 보호 안내 (금리변동 및 산출근거)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-330-005.html">MMY-330-005.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>소비자 보호 안내 (기한이익상실)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-330-006.html">MMY-330-006.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>소비자 보호 안내 (해지의 관한 사항)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-330-007.html">MMY-330-007.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-03</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>소비자 보호 안내 (연체등록 및 연체이자율)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-330-008.html">MMY-330-008.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10"><div class="line">◀ Historty - 2023 ▶</div></th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ MYDGB ▣</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-18</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>추가대출 팝업</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/추가대출팝업.html">추가대출팝업.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-20</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>마이 - 메인</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-001.html">MMY-100-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-20</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>마이 - 메인 (이용상품이 없는경우)</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-001-1.html">MMY-100-001-1.html</a></td>
+                        <td></td>
+                        <td>퍼블 검수용</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-10-04</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>이어하기 하실 상품 선택</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-001-2.html">MMY-100-001-2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>상품 선택 팝업 - 완제, 이용중</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-001-3.html">MMY-100-001-3.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-25</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>신청 상세내역</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-002.html">MMY-100-002.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-25</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>상환방식 안내</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-002-1.html">MMY-100-002-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-25</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>이용 상세내역 - CASE 개인대출</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-003.html">MMY-100-003.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td>2023-10-05</td>
+                        <td>page</td>
+                        <td>이용 상세내역 - CASE 개인대출 (완제일경우)</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-003-1.html">MMY-100-003-1.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-10-05 : 결제정보변경 버튼 삭제</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>이용 상세내역 - CASE 오토리스</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-003-2.html">MMY-100-003-2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>이용 상세내역 - CASE 오토렌탈</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-003-3.html">MMY-100-003-3.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-11-24</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>변동금리산출내역</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-003-4.html">MMY-100-003-4.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>납입내역</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-004.html">MMY-100-004.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-11-13</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>납입내역 - 데이터가 없는 경우</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-004-1.html">MMY-100-004-1.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>청구내역</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-005.html">MMY-100-005.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-18</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>결제일변경 불가팝업</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/결제일변경불가팝업.html">결제일변경불가팝업.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>결제일변경</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MPZ-310-002.html">MPZ-310-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>결제일변경 정보확인</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MPZ-310-003.html">MPZ-310-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>결제일변경 완료</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MPZ-310-004.html">MPZ-310-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>연체내역</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-006.html">MMY-100-006.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>즉시결제</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-007.html">MMY-100-007.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-21</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>결제계좌 선택</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/결제계좌선택.html">결제계좌선택.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>즉시결제 - 결제계좌 입력</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-008.html">MMY-100-008.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>즉시결제 - 신규 결제계좌 입력</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-009.html">MMY-100-009.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-11-08</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>은행선택</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/은행선택.html">은행선택.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-21</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>예금주 불일치</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/예금주불일치.html">예금주불일치.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-21</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>즉시결제 완료</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-010.html">MMY-100-010.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-21</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>즉시결제 처리불가</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-010-1.html">MMY-100-010-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중도상환 - 상환금액 입력</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-011.html">MMY-100-011.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중도상환 - 상환정보 확인 및 동의</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-012.html">MMY-100-012.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-21</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중도상환 완료</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-014.html">MMY-100-014.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-10-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>근저당해지 - 안내사항</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-015.html">MMY-100-015.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-10-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>근저당해지 - 해지방법선택</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-016.html">MMY-100-016html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-21</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>근저당해지 완료</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-100-017.html">MMY-100-017.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-21</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류발급 - 이용상품 선택</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-001.html">MMY-300-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-21</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>이용상품 선택 팝업</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-001-1.html">MMY-300-001-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-25</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류발급 - 금융거래확인서</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-002.html">MMY-300-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류발급 - 납입내역서</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-003.html">MMY-300-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류발급 - 납입영수증</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-004.html">MMY-300-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류발급 - 계약서</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-005.html">MMY-300-005.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td>2023-11-01</td>
+                        <td>page</td>
+                        <td>서류발급 - 청구서</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-006.html">MMY-300-006.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-10-05 : 조회하기 버튼 추가</li>
+                                <li>2023-11-01 : 마크업 수정</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-11-14</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류발급 - 청구서 - 데이터가 없는 경우</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-006-1.html">MMY-300-006-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류발급 - 잔액증명서</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-007.html">MMY-300-007.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류발급 - 미연체사실확인서</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-008.html">MMY-300-008.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류발급 - 상환스케줄표</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-009.html">MMY-300-009.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-26</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류발급 - 과태료/범칙금 납부확인서</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-010.html">MMY-300-010.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-21</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류발급 완료</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-300-011.html">MMY-300-011.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-21</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>개인정보수정</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-200-001.html">MMY-200-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-25</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>우편물수령지 변경 팝업</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-200-002.html">MMY-200-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-25</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>우편물수령지 선택 팝업</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-200-002-1.html">MMY-200-002-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-21</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>자동차세</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-400-011.html">MMY-400-011.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-09-21</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>자동차정기검사</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-400-012.html">MMY-400-012.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-10-17</td>
+                        <td>2024-10-18</td>
+                        <td>page</td>
+                        <td>추가운전자 등록</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-400-013.html">MMY-400-013.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-18 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-10-17</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>추가운전자와의 관계 선택</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-400-013-1.html">MMY-400-013-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>추가운전자 등록 - 이용상품 없는 경우</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MMY-400-013-2.html">MMY-400-013-2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 자동차세 연납안내 서비스 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>자동차세 납부방법안내</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MM-500-000.html">MM-500-000.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>자동차세 연납안내</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MM-500-007.html">MM-500-007.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-04-18 : 안내문구 추가</li>
+                                <li>2023-05-19 : nodata 추가</li>
+                                <li>2023-05-31 : 전자납부 방법 순서 변경</li>
+                                <li>2023-06-01 : 안내문구 수정</li>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 차량관리(오토리스/렌탈) ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-17</td>
+                        <td>2023-05-02</td>
+                        <td>page</td>
+                        <td>차량관리 - 이용상품 선택(오토렌탈)</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/차량관리_오토렌탈.html">차량관리_오토렌탈.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-05-02 : 디자인적용</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-17</td>
+                        <td>2023-05-19</td>
+                        <td>page</td>
+                        <td>차량관리 - 이용상품 선택(오토리스)</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/차량관리_오토리스.html">차량관리_오토리스.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-05-02 : 디자인적용</li>
+                            </ul>
+                        </td>
+                        <td>백그라운드 있는 경우</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-02</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>이용상품 선택</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/이용상품선택.html">이용상품선택.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-02</td>
+                        <td>2023-05-03</td>
+                        <td>page</td>
+                        <td>차량관리 - 상품이 없는 경우</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/차량관리-상품없는경우.html">차량관리-상품없는경우.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-05-03 : h1 클래스명 삭제, 버튼추가, div추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-06-13</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>1차 과태료/범칙금</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/1차과태료범칙금.html">1차과태료범칙금.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-06-14</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>2차 과태료/범칙금</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/2차과태료범칙금.html">2차과태료범칙금.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-06-14</td>
+                        <td>2024-10-14</td>
+                        <td>page</td>
+                        <td>리콜통지서</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/리콜통지서.html">리콜통지서.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-14 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-06-14</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>데이터가 없는경우</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/nodata.html">nodata.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-06-13</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>과태료/범칙금 상세내역</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/과태료범칙금상세내역.html">과태료범칙금상세내역.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-06-13</td>
+                        <td>2023-11-29</td>
+                        <td>pop_full</td>
+                        <td>과태료/범칙금 고지서</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/과태료범칙금고지서.html">과태료범칙금고지서.html</a></td>
+                        <td></td>
+                        <td>다운로드버튼 추가</td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 제3자 위임등록 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/본인인증.html">본인인증.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td>2023-04-18</td>
+                        <td>page</td>
+                        <td>제3자 위임자 등록</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/제3자위임자등록.html">제3자위임자등록.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-04-18 : placeholder 문구수정</li>
+                            </ul>
+                        </td>
+                        <td>셀렉트수정</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>관계 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/관계선택.html">관계선택.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td>2023-05-03</td>
+                        <td>page</td>
+                        <td>위임완료</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/제3자위임자등록완료.html">제3자위임자등록완료.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-05-03 : 버튼명 수정</li>
+                            </ul>
+                        </td>
+                        <td>sub-finish-box 수정</td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 마이본인인증 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>고객구분 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MM-000-001.html">MM-000-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>본인인증 - 개인/개인사업자</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MM-000-003.html">MM-000-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>본인인증 - 법인사업자</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MM-000-002.html">MM-000-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-27</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>인증방법 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MM-000-004.html">MM-000-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-27</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>통신사 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MM-000-005.html">MM-000-005.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-27</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>휴대폰 본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/MM-000-006.html">MM-000-006.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-27</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>앱프리설치</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/앱프리설치.html">앱프리설치.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 마이계좌등록변경 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-18</td>
+                        <td>2024-10-18</td>
+                        <td>page</td>
+                        <td>결제정보 변경</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/결제정보변경.html">결제정보변경.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-10-18 : 이용상품 select 추가</li>
+                            </ul>
+                        </td>
+                        <td>셀렉트 수정, 동의서 이미지 수정</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>결제정보 변경 - 이용상품 없는 경우</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/결제정보변경_이용상품없는경우.html">결제정보변경_이용상품없는경우.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-18</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>출금동의 안내
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/출금동의안내.html">출금동의안내.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-18</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>계좌등록 안내
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/mydgb/계좌등록안내.html">계좌등록안내.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

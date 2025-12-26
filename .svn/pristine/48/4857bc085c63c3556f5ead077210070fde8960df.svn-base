@@ -1,0 +1,105 @@
+<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
+<%@ include file="/admin/inc/common.jsp" %>
+<%-- START : JAVA로직 구현 --%>
+<%
+
+%>
+<%--   END : JAVA로직 구현 --%>
+
+<%-- START : SCRIPT로직 구현 --%>
+<script type="text/javascript">
+
+	$(document).ajaxComplete(function(){
+		$('.layerPop_ui').show();
+		$('body').css('overflow','hidden');
+		
+		$('.layerPop_ui .close').click(function(){
+			$('body').css('overflow','');
+			$(".popScroll").mCustomScrollbar('disable');
+		})
+	})
+</script>
+<%--   END : SCRIPT로직 구현 --%>
+
+<form id="submitForm_memoPop" name="submitForm_memoPop" method="post">
+	<input type="hidden" id="METHOD"              name="METHOD"              value="" />
+	<input type="hidden" id="CUST_NO_MEMO2"       name="CUST_NO_MEMO2"       value="" /> <%-- 고객번호 --%>
+	<input type="hidden" id="LON_CNSL_NO_MEMO2"   name="LON_CNSL_NO_MEMO2"   value="" /> <%-- 여신상담번호 --%>
+	<input type="hidden" id="LON_CNSL_SRNO_MEMO2" name="LON_CNSL_SRNO_MEMO2" value="" /> <%-- 여신상담일련번호 --%>
+	<input type="hidden" id="MEMO_REG_EMNO_MEMO2" name="MEMO_REG_EMNO_MEMO2" value="" /> <%-- 메모등록직원번호 --%>
+	<input type="hidden" id="MEMO_CNTN_MEMO2"     name="MEMO_CNTN_MEMO2"     value="" /> <%-- 여신상담일련번호 --%>
+</form>
+
+<div class="layer_pop" id="popTotalMsg" style="display:block">
+	<div class="layer_pop pop_totalmsg">
+		<h1>통합메시지</h1>
+		<div class="cons">
+			<table class="tbl_row">
+				<caption></caption>
+				<colgroup>
+					<col width="15%" />
+					<col width="" />
+					<col width="20%" />
+				</colgroup>
+				<tbody>
+				<tr>
+					<th>메모 <br /> <span>(0 / 100)</span></th>
+					<td><textarea class="f_textarea" rows="5" id="MEMO_CNTN"></textarea></td>
+					<td><a href="#none" class="btn" onclick="javascript:counselmemo_Reg();">등록</a></td>
+				</tr>
+				</tbody>
+			</table>
+			<h2 class="titH2_pop space">메모이력</h2>
+			<p class="para01">조회건수 <strong>100</strong>건</p>
+			<div class="tbl_scroll">
+				<table class="tbl_col">
+					<caption></caption>
+					<colgroup>
+						<col style="width:60px">
+						<col style="width:140px">
+						<col style="">
+						<col style="width:140px">
+						<col style="width:120px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">등록일시</th>
+							<th scope="col">메모내용</th>
+							<th scope="col">등록직원번호</th>
+							<th scope="col">등록직원명</th>
+						</tr>
+					</thead>
+					<tbody id="tbody_memo">
+
+						<tr> 
+							<td>1</td>
+							<td>yyyy-mm-dd hh:mm</td>
+							<td class="cell_type01">메모내용</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr> 
+							<td></td>
+							<td></td>
+							<td class="cell_type01">메모내용</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr> 
+							<td></td>
+							<td></td>
+							<td class="cell_type01">메모내용</td>
+							<td></td>
+							<td></td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+			<p class="btn_g">
+				<a href="#1" class="btnP01 close" onclick="$('.layerPop_ui').hide()">닫기</a>
+			</p>
+		</div><!-- //cons -->
+	</div><!-- //layer_pop -->
+</div>

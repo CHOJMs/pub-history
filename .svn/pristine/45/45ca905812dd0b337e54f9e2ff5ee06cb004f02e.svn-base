@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		// 뒤로가기 버튼으로 들어올때 값 사라짐 방지
+		if($('#BOARD_ID').val() == "")
+			$('#BOARD_ID').val("BOARD_ID");
+		if($('#PGE_NO').val() == "")
+			$('#PGE_NO').val("iPageNo");
+		if($('#menuNo').val() == "")
+			$('#menuNo').val("3");
+		if($('#subMenuNo').val() == "")
+			$('#subMenuNo').val("SUB_MENU");
+		if($('#INSERT_KEY').val() == "")
+			$('#INSERT_KEY').val("0");
+	});
+
+//window.alert($.fn.jquery);
+	// 조회
+	function goSearch(pageNum){
+
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardListSelect";
+		f.PGE_NO.value = pageNum;
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+
+	//파일다운로드
+	function download(fileName){
+		var path = "upload";
+
+		window.location.href = "/view/common/inc/FILE_DOWNLOAD.jsp?file_name="+fileName+"&file_path="+path;
+	}
+
+
+	//상세보기
+	function notsDtlSubmit(bid, ref){
+// 		var f = document.frm;
+
+// 		f.METHOD.value = "AdminBoardDetail";
+// 		f.B_ID.value   = bid;
+// 		f.REF_ID.value = ref;
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+		
+		location.href = "/admin/board/dgbNoticeBoardMngDtl.jsp"
+	}
+
+	function goWrite(){
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardWrite";
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+
+	}
+
+
+
+</script>
+</head>
+<body>
+	
+<!-- 레이어 팝업 -->
+<div class="layerPop" style="width:580px;">
+	<h1>신용정보동의</h1>
+	<div class="Pop_content">
+		<div class="Pop_form-type">
+			<div class="scroll_box" style="height:385px;">
+				<p>※ 개인(신용)정보 활용의 필수적&middot;선택적 동의 전, 세부내용을 확인해 주시기 바랍니다.</p>
+				<div class="total_check"><p><input type="checkbox" id="" name=""> 전체동의</p></div>
+				<div class="agree_box1">
+					<p class="tl">개인(신용)정보의 필수적&middot;선택적 동의 (전문)</p>
+					<ul>
+						<li><p>- 개인(신용)정보의 필수적 수집&middot;이용 동의</p>
+							<div class="rd_area3">
+								<input type="radio" name="radio6" id="" title="동의함 선택">
+								<label for="" class="mr20">동의함</label>
+								<input type="radio" name="radio61" id="" title="동의하지 않음 선택">
+								<label for="">동의하지 않음</label>
+							</div>
+						</li>
+						<li><p>- 개인(신용)정보의 필수적 조회 동의</p>
+							<div class="rd_area3">
+								<input type="radio" name="radio6" id="" title="동의함 선택">
+								<label for="" class="mr20">동의함</label>
+								<input type="radio" name="radio61" id="" title="동의하지 않음 선택">
+								<label for="">동의하지 않음</label>
+							</div>
+						</li>
+						<li><p>- 개인(신용)정보의 필수적 제공 동의</p>
+							<div class="rd_area3">
+								<input type="radio" name="radio6" id="" title="동의함 선택">
+								<label for="" class="mr20">동의함</label>
+								<input type="radio" name="radio61" id="" title="동의하지 않음 선택">
+								<label for="">동의하지 않음</label>
+							</div>
+						</li>
+						<li><p>- 개인(신용)정보의 선택적 수집&middot;이용 동의</p>
+							<div class="check_all">
+								<ul>
+									<li><input type="checkbox" id="check_4" name="check_4" title="금융상품안내 및 이용권유를 위한 수집&middot;이용 선택"><label for="check_4" >금융상품안내 및 이용권유를 위한 수집&middot;이용</label></li>
+									<li><input type="checkbox" id="check_41" name="check_4" title="금융상품 이외의 부수서비스 안내 등을 위한 수집&middot;이용 선택"><label for="check_41">금융상품 이외의 부수서비스 안내 등을 위한 수집&middot;이용</label></li>
+									<li><input type="checkbox" id="check_42" name="check_4" title="이용&middot;권유 방법 동의 선택"><label for="check_42">이용&middot;권유 방법 동의</label>
+										<ul class="pl20">
+											<li>
+												<span class="check_box_1">
+												 <input type="checkbox" id="check_16" name="check_16" title="전화 선택"><label for="check_16">전화</label>
+												</span>
+												<span class="check_box_1">
+												 <input type="checkbox" id="check_17" name="check_16" title="SMS 선택"><label for="check_17">SMS</label>
+												</span>
+												<span class="check_box_1">
+												 <input type="checkbox" id="check_18" name="check_16" title="E-mail 선택"><label for="check_18">E-mail</label>
+												</span>
+												<span class="check_box_1">
+												 <input type="checkbox" id="check_19" name="check_16" title="서면 선택"><label for="check_19">서면</label>
+												</span>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="rd_area3">
+								<input type="radio" name="radio6" id="" title="동의함 선택">
+								<label for="" class="mr20">동의함</label>
+								<input type="radio" name="radio61" id="" title="동의안함 선택">
+								<label for="">동의안함</label>
+							</div>
+						</li>
+						<li><p>- 개인(신용)정보의 선택적 제공 동의</p>
+							<div class="check_all">
+								<ul>
+									<li><input type="checkbox" id="check_4" name="check_4" title="DGB금융그룹 마케팅을 위한 제공 동의 선택"><label for="check_4" >DGB금융그룹 마케팅을 위한 제공 동의</label></li>
+								</ul>
+							</div>
+							<div class="rd_area3">
+								<input type="radio" name="radio6" id="" title="동의함 선택">
+								<label for="" class="mr20">동의함</label>
+								<input type="radio" name="radio61" id="" title="동의안함 선택">
+								<label for="">동의안함</label>
+							</div>
+						</li>
+					</ul>
+				</div>
+			
+			</div>
+			
+		</div>
+		<p class="btn-align-center">
+			<a href="#none" class="btn h42 wid120">확인</a><a href="#none" class="btn h42 wid120 neg">취소</a>
+		</p>
+		<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+	</div>
+</div>
+<!-- 팝업bg -->
+<div class="PopAll_bg"></div>
+
+</body>
+</html>

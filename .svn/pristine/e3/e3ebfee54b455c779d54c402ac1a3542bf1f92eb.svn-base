@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+<link rel="stylesheet" href="/static/web/js/lib/swiper-bundle.min.css">
+<link rel="stylesheet" href="/static/web/js/lib/slick.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+<script src="/static/web/js/lib/swiper-bundle.min.js"></script>
+
+<script src="/static/web/js/slick.js"></script>
+<script src="/static/web/js/lib/slick.min.js"></script>
+
+
+<title>AI 검색 | iM캐피탈</title>
+
+</head>
+<body>
+    <div>
+        <div class="header-sub">
+            <div class="align-left"><button class="btn-page-prev">이전 페이지로 이동</button></div>
+            <p class="tit ico">AI 검색</p>
+            <div class="align-right">
+                <button class="btn-refresh">새로고침</button>
+                <button class="btn-close">닫기</button>
+            </div>
+        </div>
+        <!-- Start : 컨텐츠 영역 -->
+        <div class="ai-convo-wrap">
+            <!-- Start : 대화창 -->
+            <div class="ai-convo-chat">
+                <!-- Start : AI 답변 -->
+                <div class="chat-answer-box">
+                    <div class="ico-logo"></div><!-- 답변 로고 -->
+                    <p class="answer-tx">안녕하세요!  저는 인공지능 기반의 AI 서비스에요.<br>상품이나 서비스에 관해 궁금한 사항을 질문해주세요.</p>
+                </div>
+                <!-- //End : AI 답변 -->
+            </div>
+            <!-- //End : 대화창 -->
+                
+            <!-- Start : 하단 검색 창 -->
+            <div class="ai-convo-bottom">
+                <div class="ai-convo-input-box">
+                    <div class="ai-convo-input-inner">
+                        <input type="text" id="" name="" placeholder="메시지를 입력하세요" class="mytext">
+                        <button class="btn-ai-search02">검색</button>
+                        <p class="char-count"><span class="current">0</span>/100</p>
+                    </div>
+                </div>
+                <p class="ai-notice-tx">AI가 자동으로 생성한 답변은 부적절하거나 부정확할 수 있어요.</p>
+            </div>
+            <!-- //End : 하단 검색 창 -->
+        </div>
+        <!-- //End : 컨텐츠 영역 -->
+    </div>
+</body>
+</html>

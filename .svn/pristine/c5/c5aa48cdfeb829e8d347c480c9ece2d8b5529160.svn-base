@@ -1,0 +1,202 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+</head>
+<body>
+
+<!-- 레이어 팝업 -->
+<div class="layer" tabindex="0" style="display: block;">
+	<div class="pop_bg"></div>
+	<div class="layerPop" style="width: 1200px; transform: translate(-50%, -50%);">
+		<h1>차량 선택</h1>
+		<div class="Pop_content">
+			<div class="Pop_form-type">
+				<div class="search_p_box2">
+                    <ul>
+                        <li>
+                            <label for="">제조사</label>
+                            <select id="">
+                                <option value="" selected="selected">전체</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="">모델</label>
+                            <select id="">
+                                <option value="" selected="selected">전체</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label for="">모델명</label>
+                            <input type="text" name="" id="" value="모델명 검색">
+                        </li>
+                    </ul>
+
+					<p class="btn-align-center mb15 mt10">
+						<a href="#none" class="btn h42 wid120">조회하기</a>
+					</p>
+				</div>
+
+				<div class="scroll_box pr0" style="max-height: 345px;">
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col style="width:50px;">
+                            <col style="width:10%;">
+                            <col style="width:13%;">
+                            <col style="width:18%;">
+                            <col style="width:10%;">
+                            <col style="width:10%;">
+                            <col style="width:14%;">
+                            <col style="width:8%;">
+                            <col style="width:11%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">선택</th>
+                                <th scope="col">제조사</th>
+                                <th scope="col">모델</th>
+                                <th scope="col">세부모델</th>
+                                <th scope="col">연료</th>
+                                <th scope="col">배기량</th>
+                                <th scope="col">등급</th>
+                                <th scope="col">연형</th>
+                                <th scope="col">판매가격 (만원)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="radio" id="" name=""></td>
+                                <td>현대</td>
+                                <td>그랜저</td>
+                                <td>더 뉴 그랜저 IG</td>
+                                <td>가솔린 2.5</td>
+                                <td>2,497 cc</td>
+                                <td>캘리그래피</td>
+                                <td>2022</td>
+                                <td>4,310</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" id="" name=""></td>
+                                <td>현대</td>
+                                <td>그랜저</td>
+                                <td>더 뉴 그랜저 IG</td>
+                                <td>가솔린 2.5</td>
+                                <td>2,497 cc</td>
+                                <td>캘리그래피</td>
+                                <td>2022</td>
+                                <td>4,310</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" id="" name=""></td>
+                                <td>현대</td>
+                                <td>그랜저</td>
+                                <td>더 뉴 그랜저 IG</td>
+                                <td>가솔린 2.5</td>
+                                <td>2,497 cc</td>
+                                <td>캘리그래피</td>
+                                <td>2022</td>
+                                <td>4,310</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" id="" name=""></td>
+                                <td>현대</td>
+                                <td>그랜저</td>
+                                <td>더 뉴 그랜저 IG</td>
+                                <td>가솔린 2.5</td>
+                                <td>2,497 cc</td>
+                                <td>캘리그래피</td>
+                                <td>2022</td>
+                                <td>4,310</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" id="" name=""></td>
+                                <td>현대</td>
+                                <td>그랜저</td>
+                                <td>더 뉴 그랜저 IG</td>
+                                <td>가솔린 2.5</td>
+                                <td>2,497 cc</td>
+                                <td>캘리그래피</td>
+                                <td>2022</td>
+                                <td>4,310</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" id="" name=""></td>
+                                <td>현대</td>
+                                <td>그랜저</td>
+                                <td>더 뉴 그랜저 IG</td>
+                                <td>가솔린 2.5</td>
+                                <td>2,497 cc</td>
+                                <td>캘리그래피</td>
+                                <td>2022</td>
+                                <td>4,310</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" id="" name=""></td>
+                                <td>현대</td>
+                                <td>그랜저</td>
+                                <td>더 뉴 그랜저 IG</td>
+                                <td>가솔린 2.5</td>
+                                <td>2,497 cc</td>
+                                <td>캘리그래피</td>
+                                <td>2022</td>
+                                <td>4,310</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" id="" name=""></td>
+                                <td>현대</td>
+                                <td>그랜저</td>
+                                <td>더 뉴 그랜저 IG</td>
+                                <td>가솔린 2.5</td>
+                                <td>2,497 cc</td>
+                                <td>캘리그래피</td>
+                                <td>2022</td>
+                                <td>4,310</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--페이징 //-->
+					<div class="paging" id="paging">
+						<a href="#none" class="navi first" onClick="">맨처음</a>
+						<a href="#none" class="navi prev" onClick="" >이전</a>
+						<a href="#none" class="current">1</a>
+						<a href="#none">2</a>
+						<a href="#none">3</a>
+						<a href="#none">4</a>
+						<a href="#none">5</a>
+						<a href="#none">6</a>
+						<a href="#none">7</a>
+						<a href="#none">8</a>
+						<a href="#none">9</a>
+						<a href="#none">10</a>
+						<a href="#none" class="navi next">다음</a>
+						<a href="#none" class="navi end">맨끝으로</a>
+					</div>
+					<!--// 페이징-->
+			</div>
+			<p class="btn-align-center">
+				<a href="#none" class="btn h42 wid120">확인</a><a href="#none" class="btn h42 wid120">취소</a>
+			</p>
+			<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+
+		</div>
+	</div>
+</div>
+<!-- 팝업bg -->
+
+</body>
+</html>

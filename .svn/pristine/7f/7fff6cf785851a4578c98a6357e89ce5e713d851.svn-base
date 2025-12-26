@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DGB 캐피탈 관리자</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page contentType="text/html; charset=euc-kr" language="java" %>
+
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgblocation.js"></script>
+
+<script type="text/javascript">
+//location.href="/admin/dgbLogin.jsp";
+EncLinkNormal(gHomePageUrl('09001000'));
+</script>
+
+</head>
+<body>
+
+<form name="frm">
+	<input type="hidden" name="INIpluginData" />
+	<input type="hidden" name="METHOD" />
+	<input type='hidden' name="LOGIN_SVC" value="N" />
+</form>
+
+</body>
+</html>

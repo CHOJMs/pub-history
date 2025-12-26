@@ -1,0 +1,532 @@
+/**
+\ * 금융결제원 금융인증서 처리 스크립트
+ */
+'use strict';
+var FinCertExt = (function() {
+
+	var initialized = false;
+
+	/**
+	 * 금융인증서 환경 설정 정보   !# TODO 운영정보 세팅 필요
+	 */
+	var config = {
+			fincertjsUrl: "https://4user.yeskey.or.kr/v1/fincert.js",		// 금융인증서 SDK JS 파일 URL
+			apiKey: "73e2a095-b8cf-4109-858d-97a2445cec6f",  				// API KEY (CLIENT ID)
+			orgCode: "RF40090000", 						  					// 이용기관 코드
+			clientOrigin: "",												// 앱 고유 정보 (Only App)
+			uniqVal: "",													// 사용자 연결기기 프로그램에서만 유도할 수 있는 고유값 (Only App)
+			lang: "kor",													// UI에 표시될 언어의 종류
+			encoding: "UTF-8",												// EUC-KR or UTF-8
+			signFormatType: "CMS", 											// 서명 데이터 포맷 CMS, PKCS1
+			algorithm: "RSASSA-PKCS1-v1_5_SHA256" 							// 서명 알고리즘 RSASSA-PKCS1-v1_5_SHA256, RSASSA-PSS_SHA256_MGF_SHA256
+	}
+
+	// 홈페이지 도메인이 아닌경우 테스트 정보 설정
+	if (location.hostname.indexOf("www.dgbcap.co.kr") === -1) {
+		config.fincertjsUrl = "https://t-4user.yeskey.or.kr/v1/fincert.js";	// (테스트) 금융인증서 SDK JS 파일 URL
+		config.apiKey = "4d1a24fc-d16b-4f87-9220-3dfb48ac375b";				// (테스트) API KEY (CLIENT ID)
+		config.orgCode = "DF40090000";										// (테스트) 이용기관 코드
+	}
+
+	/**
+	 * 금융인증서 초기화
+	 *
+	 * @param callback
+	 */
+	function init(callbackFn) {
+
+		var scriptElemId = "fincertSdk";
+
+		if (document.getElementById(scriptElemId)) {
+
+			initFinCertSdk(function () {
+				if (typeof callbackFn === "function") callbackFn();
+			});
+
+		} else {
+
+			// 금융인증서 모듈(SDK) 자바스크립트 로드
+			var fincertjsUrl = config.fincertjsUrl;
+			var scriptElem = document.createElement("script");
+		    scriptElem.src = fincertjsUrl + "?dt=" + getYYYYMMDD();
+		    scriptElem.id =  scriptElemId;
+		    document.querySelector("body").appendChild(scriptElem);
+
+		    // 금융인증서 자바스크립트 로딩 실패 시
+		    scriptElem.onerror = function () {
+		    	alert("금융인증서 로딩에 실패하였습니다.\n잠시후 다시 시도하여 주십시오.");
+		    };
+
+		    // 금융인증서 자바스크립트 로딩 성공시 SDK 초기화
+		    scriptElem.onload = function () {
+		    	initFinCertSdk(function () {
+					if (typeof callbackFn === "function") callbackFn();
+				});
+		    };
+		}
+	}
+
+	/**
+	 * 금융인증서 모듈(SDK) 초기화
+	 *
+	 * @param callbackFunction
+	 */
+	function initFinCertSdk(callbackFn) {
+
+	    var param = {};
+	    param.orgCode = config.orgCode;
+	    param.apiKey = config.apiKey;
+	    param.lang = config.lang;
+
+	    // Only App
+//	    reqParam.clientOrigin = config.clientOrigin;
+//	    reqParam.uniqVal = config.uniqVal;
+//	    reqParam.clientType = "" // 'ANDROID' or 'IOS'
+
+	    // 초기화가 성공적으로 종료되었을때 호출되는 함수
+	    param.success = function() {
+
+    		initialized = true;
+    		console.log(">>> [FINCERT SDK] 초기화가 성공적으로 완료 되었습니다.");
+
+    		// 콜백 함수가 존재하는 경우 함수 호출
+    		if (typeof callbackFn === "function") {
+    			callbackFn();
+    			return false;
+    	    }
+	    };
+
+    	// 초기화 도중에 실패하는 경우 호출되는 함수
+    	param.fail = failCallback;
+
+    	// 금융인증서 모듈 초기화
+    	FinCert.Sdk.init(param);
+	};
+
+	/**
+	 * 에러메세지 커스터마이징
+	 *
+	 * @param errCd 에러코드
+	 * @param errMsg 에러메시지 원본
+	 * @return 커스텀 에러 메시지
+	 */
+	function getErrMsg(errCd, errMsg) {
+
+		var cusErrMsg = {
+				'100008' : '클라우드 연결 중 오류가 발생했습니다.  잠시 후 이용 바랍니다.',
+				'100011' : 'SMS 확인코드 전송 시간이 초과되었습니다. 다시 시도해 주시기 바랍니다.',
+				'200024' : '입력하신 휴대폰번호와 생년월일로 가입된 클라우드 계정이 있습니다. 입력정보를 확인하세요. 계속 진행하시면 이전 클라우드 계정정보는 사라집니다.',
+				'200026' : 'SMS 확인코드가 유효하지 않습니다. 다시 시도해 주시기 바랍니다.',
+				'200027' : 'SMS 확인코드 전송 시간이 초과되었습니다. 다시 시도해 주시기 바랍니다.',
+				'200028' : '클라우드 연결 중 중 오류가 발생했습니다. 다시 시도해 주시기 바랍니다.',
+				'200031' : 'SMS 확인코드 재전송 제한시간(1분)이 지난 후에 이용해 주시기 바랍니다.',
+				'800002' : '비밀번호 10회 잘못입력되어 금융인증서비스를 이용하실 수 없습니다. 금융인증서를 재발급 받으시기 바랍니다.',
+				'900000' : '클라우드 연결 중 중 오류가 발생했습니다. 잠시 후 다시 시도해 주시기 바랍니다. ',
+				'900001' : '지원되지 않는 인터넷환경 입니다. 다른 인터넷 환경에서 이용하시기 바랍니다. (익스플로러 11, 크롬, 파이어폭스)',
+				'200020' : '클라우드 연결이 되지 않았습니다. 잠시 후 이용 바랍니다.',
+				'200021' : '클라우드 연결이 되지 않았습니다. 잠시 후 이용 바랍니다.',
+				'200022' : '클라우드 연결이 되지 않았습니다. 잠시 후 이용 바랍니다.',
+				'200023' : '클라우드 연결이 되지 않았습니다. 잠시 후 이용 바랍니다.',
+				'200025' : '클라우드 연결이 되지 않았습니다. 잠시 후 이용 바랍니다.',
+				'200032' : '인증서 발급이 차단되었습니다. 금융결제원 고객센터에 문의하세요. (1577-5500)',
+				'200973' : '클라우드 연결이 되지 않았습니다. 잠시 후 이용 바랍니다.',
+				'200974' : '클라우드 연결이 되지 않았습니다. 잠시 후 이용 바랍니다.',
+				'200975' : '클라우드 연결이 되지 않았습니다. 잠시 후 이용 바랍니다.',
+				'200976' : '해외 IP 확인 중 오류가 발생했습니다. 잠시 후 이용해 주세요.',
+				'200983' : '정상적으로 처리되지 않았습니다. 다시 시도해 주시기 바랍니다.',
+				'800001' : '클라우드 연결 중 중 오류가 발생했습니다. 잠시 후 다시 시도해 주시기 바랍니다.'
+			};
+			return cusErrMsg[errCd] ? cusErrMsg[errCd] : errMsg;
+
+	}
+
+	// 금융인증서 에러처리 콜백 함수
+	function failCallback(error) {
+
+		var errCd = error.code;
+		var errMsg = error.message;
+
+		// [오류 출력 예외] (800000) 사용자가 금융인증서비스 창을 종료하는 경우
+		if(error.code != '800000') {
+			alert("[" + errCd + "] " + getErrMsg(errCd, errMsg));
+		}
+
+		console.error('failCallBack() Called! (error.message: "' + errMsg + '", error.code: "' + errCd + '")');
+	};
+
+	/**
+	 * 오늘 날짜 정보 가져오기
+	 */
+	function getYYYYMMDD() {
+
+	    var date = new Date();
+	    var year = date.getFullYear();
+	    var month = new String(date.getMonth() + 1);
+	    var day = new String(date.getDate());
+	    var hour = new String(date.getHours());
+	    var minute = new String(date.getMinutes());
+	    var second = new String(date.getSeconds());
+
+	    if (month.length == 1) {
+	      month = "0" + month;
+	    }
+
+	    if (day.length == 1) {
+	      day = "0" + day;
+	    }
+
+	    if (hour.length == 1) {
+	      hour = "0" + hour;
+	    }
+
+	    if (minute.length == 1) {
+	      minute = "0" + minute;
+	    }
+
+	    if (second.length == 1) {
+	      second = "0" + second;
+	    }
+	    // return year + month + day + hour + minute + second;
+	    return year + month + day;
+
+	}
+
+	/**
+	 * 금융인증서 전자서명
+	 *
+	 * - opt.signFormatType
+	 * - opt.signType
+	 * - opt.signSrcData
+	 * - opt.encoding
+	 * - opt.isWithUI
+	 * - opt.ssn
+	 * - opt.success()
+	 */
+	function sign(opt) {
+
+		// 초기화여부 체크
+		if(!initialized) {
+			init(function(){
+				sign(opt);
+			});
+			return false;
+		}
+
+		var signType = opt.signType || '01'	// 사용자 전자서명 거래 종류 ('':미지정, '01' : 로그인, '03' : 금융상품가입/해지, '04' : 전자계약체결/해지(대출, 보험, 펀드 등), '06' : 증명서발급, '99' : 기타)
+
+		// signFormat 설정
+		var signFormat = {};
+		if(typeof opt.signFormatType != "undefined" && opt.signFormatType == "PKCS1"){
+			config.signFormatType = "PKCS1";
+		}
+		signFormat.type = config.signFormatType;
+
+		if (signFormat.type == "CMS") {
+			signFormat.CMSInfo = {};
+			if (opt.ssn) {
+				signFormat.CMSInfo.ssn = opt.ssn;
+			} else {
+				signFormat.CMSInfo.ssn = 'dummy';
+			}
+			signFormat.CMSInfo.time = 'CLIENT';
+			signFormat.CMSInfo.withoutContent = false;
+			signFormat.CMSInfo.includeR = true;
+
+		} else if(signFormat.type == "PKCS1") {
+			signFormat.PKCS1Info = {};
+			signFormat.PKCS1Info.includeR = true;
+		}
+
+		// 원문 값 수정 (단일서명문만 처리)
+		var _arrPlainText = [];
+		var orPlainText = opt.signSrcData;
+		var enableTextViewCheck = false; // 서명 내용 표시 여부 (view.enableTextView) - "":미지정, "false":표시안함, "true":표시함
+		try {
+			_arrPlainText.push(JSON.parse(orPlainText));
+        } catch (err) {
+        	_arrPlainText.push(orPlainText);
+        }
+
+        // content 설정
+        var content = {};
+        content.plainText = {};
+		content.plainText.plainTexts = _arrPlainText;
+		content.plainText.encoding = opt.encoding || config.encoding;
+
+		// 금융결제원 전자서명 실행
+		FinCert.Sdk.sign({
+			signFormat: signFormat,
+		    content: content,
+			algorithms: config.algorithms,
+			view : {
+				enableTextView : enableTextViewCheck,
+				enableTextViewAddInfo : {
+					nameValueSeparator : "=",
+					pairSeparator : "&",
+					nameExclusionRegExp :/^__/
+				}
+			},
+			info: {
+				signType: signType
+			},
+			success: function(result) {
+
+				console.log('sign success() Called!');
+				// console.log('>>>' + JSON.stringify(result));
+
+				// url safe 인코딩 되서 들어오는 값 : 서명값, R값
+				var sigedDataArr = [];
+				result.signedVals.forEach(function(element){
+					//alert('>>>' + element);
+					sigedDataArr.push(element);
+				});
+//				var signedData = sigedDataArr[0];
+                var signedData = sigedDataArr.join("|");
+
+				var data = {};
+				data.type = "finCert";
+				data.certSeqNum = result.certSeqNum;
+
+//				 data.signedData = signedData;  // base64Url 인코딩된 문자열
+				data.signedData = convertBase64UrlToBase64(signedData);  // base64Url -> base64 변환
+
+				if (result.rValue) {
+					var element = result.rValue;
+					data.vidRandom = element;
+				}
+				if (result.certificate){
+					pemCert="-----BEGIN CERTIFICATE-----\n";
+					for(i=0; i<result.certificate.length; i+=64)
+						pemCert+=result.certificate.substr(i,64)+"\n";
+					pemCert+="-----END CERTIFICATE-----\n";
+					data.signer =  TOUCHENEX_UTIL.Base64.encode(pemCert);
+				}
+
+				// 콜백 함수 호출
+	    		if (typeof opt.success === "function") {
+	    			opt.success(data);
+	    	    }
+			},
+			fail: failCallback	// 실패 콜백함수
+		});
+
+	};
+
+	/**
+	 * MO 인증정보 설정
+	 *
+	 * - data.name : 이름 (필수)
+	 * - data.phone : 전화번호 (필수)
+	 * - data.birthday : 생년월일 (8자리) (필수)
+	 * - data.success : 설정 성공 시 호출할 함수 (옵션)
+	 * - data.fail : 설정 실패 시 호출할 함수 (옵션)
+	 */
+	function setAuthData(data) {
+
+		var name = data.name;
+		var phone = data.phone;
+		var birthday = data.birthday;
+		var successFn = data.success;
+		var failFn = data.fail || failCallback; // 사용자정의 fail callback 함수가 없는 경우 default failCallback 함수 사용
+
+		// 초기화여부 체크
+		if(!initialized) {
+			init(function(){
+				setAuthData(data);
+			});
+			return false;
+		}
+
+		// setAuthData param 정의
+		var param = {};
+		param.name = name;
+		param.phone = phone;
+		param.birthday = birthday;
+
+		param.success = function() {
+    		console.log(">>> [FINCERT SDK] [setAuthData] MO 인증 정보 설정 완료");
+
+    		if (typeof successFn === "function") {
+    			successFn();
+    	    }
+    	}
+
+		param.fail = function(error) {
+    		console.log(">>> [FINCERT SDK] [setAuthData]  MO 인증 정보 설정 실패.\n[" + error.code + "] " + error.message);
+
+    		if (typeof failFn === "function") {
+    			failFn();
+    	    }
+    	}
+
+		FinCert.Sdk.setAuthData(param);
+	}
+
+	/**
+	 * 금융결제원 인증서 관리
+	 */
+	function manage() {
+
+		// 초기화여부 체크
+		if(!initialized) {
+			init(manage);
+			return;
+		}
+
+		FinCert.Sdk.manage({
+			success : function() {
+				alert("금융 인증 서비스 관리 기능이 정상 종료되었습니다.");
+			},
+			fail : failCallback
+		});
+	}
+
+	/**
+	 * Base64Url 인코딩된 문자열을 Base64인코딩된 문자열로 변환
+	 */
+	function convertBase64UrlToBase64(base64Url) {
+
+		var X0U, i0U;
+		X0U = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+		i0U = (4 - X0U.length % 4) % 4;
+		for (var e0U = i0U; e0U > 0; e0U--) {
+			X0U += '=';
+		}
+		return X0U;
+	}
+
+	//-----------------------------------------------
+	// public
+	//-----------------------------------------------
+	return {
+		conifg: config,
+		init: init,
+		sign: sign,
+		manage: manage,
+		setAuthData: setAuthData,
+		convertBase64UrlToBase64: convertBase64UrlToBase64
+	};
+})();
+
+
+/**
+ * 외부 호출 용
+ *
+ * - reqVo.
+ */
+function finCertOpen(opt) {
+
+	jQuery.extend(CertificationProcessor.reqData, opt);
+
+	if ($("#signSrcData").val() == "") {
+		var frmData = $("#signedData").closest("form").serialize();
+		$("#signSrcData").val(frmData);
+	}
+	var signSrcData = $("#signSrcData").val();
+
+
+	// 금융인증서 전자서명 실행 함수
+	var fincertSignFn = function() {
+
+		// 금융인증서 전자서명 요청 파라미터 생성
+		var signParam = {};
+
+		// 전자서명 원문
+		signParam.signSrcData = signSrcData;
+
+		// 전자서명 완료시
+		signParam.success = function(result) {
+			$("#signedData").val(result.signedData);
+			$("#vidRandom").val(result.vidRandom);
+
+			mlCallBack("finCert");
+		};
+
+		// 금융인증서 전자서명 바로 실행
+		FinCertExt.sign(signParam);
+	}
+
+
+	// 본인인증 정보가 있는 경우 해당 정보 설정
+	if (opt.name && opt.phoneNum && opt.birthday) {
+
+		// 본인인증 정보 설정 후 전자서명 실행
+		FinCertExt.setAuthData({
+			"name" : opt.name,
+			"phone" : opt.phoneNum,
+			"birthday" : opt.birthday,  // 생년월일 8자리
+			"success" : fincertSignFn,
+			"fail" : fincertSignFn
+		});
+
+	} else {
+
+		// 전자서명 실행
+		fincertSignFn();
+	}
+}
+
+/**
+ * 생년월일 구하기
+ * @param opt
+ * - opt.rrn1
+ * - opt.rrn2
+ * - opt.success
+ */
+function getBirthday(opt) {
+
+	var successCallbackFunc = opt.success;
+
+	if ($.isEmpty(opt.rrn1) || $.isEmpty(opt.rrn2)) {
+		return false;
+	}
+
+	// 요청데이터 생성
+	var reqData = {}
+	reqData.rrn1		= opt.rrn1;
+	reqData.rrn2		= opt.rrn2;
+	if(!(typeof keypadFlag === 'undefined') && keypadFlag == true) {
+		reqData.encData = nFilterEncrypted(); 	// 암호화된 데이터 (encData)
+		reqData.useVitualKeyPad = true;   		// 가상키패드 사용 여부 (useVitualKeyPad)
+	}
+
+	$.ajax({
+		url : '/common/getBirthday.do?enc',
+		data: reqData,
+		global: false,
+		type : 'POST',
+		dataType : 'json',
+		success : function(data) {
+			if (data.RSPCD === "0000") {
+
+//				data.birthday = TOUCHENEX_UTIL.Base64.decode(data.birthday);
+				data.birthday = $.base64.decode(data.birthday);
+
+				if (successCallbackFunc && $.isFunction(successCallbackFunc)) {
+					successCallbackFunc(data);
+				}
+
+			} else if (data.RSPCD === "2005") {
+				alert("주민번호가 올바르지 않습니다.");
+			} else {
+				alert("요청 처리 중 오류가 발생했습니다. [" + data.RSPCD + "]");
+			}
+		},
+		error : function() {
+			alert("요청 처리 중 오류가 발생했습니다.");
+		}
+	});
+}
+
+window.FinCertGetSignCallback = function (jsonData) {
+	console.log("FinCertGetSignCallback : " + toJsonString(jsonData));
+
+	var resultData = getJsonData(toJsonString(jsonData));
+
+//	$("#signedData").val(resultData.RESULT_DATASET.SIGN_VALUE); // 서명된 데이터
+	$("#signedData").val(FinCertExt.convertBase64UrlToBase64(resultData.RESULT_DATASET.SIGN_VALUE)); // 서명된 데이터  (base64Url -> base64 변환)
+	$("#vidRandom").val(resultData.RESULT_DATASET.RVALUE);      // VID
+
+	// cert_common.js의 mlCallBack("finCert"); 호출
+	mlCallBack("finCert");
+};

@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page contentType="text/html; charset=euc-kr" language="java" %>
+
+<title>DGB 캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/commonEncode.js"></script>
+<script type="text/javascript" src="/static/admin/js/common.js"></script>
+
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+	});
+
+
+	function goUpdate(){
+		if(validate()){
+
+			var frm  = document.frm;
+			frm.METHOD.value = "AdminAutoLineupCodeUpd";
+			frm.action = "/admin/AdminCodeAction.do";
+			EncForm(frm);
+			frm.submit();
+		}
+	}
+
+
+	function validate(){
+		var LINE_UP_CD = $("input[name='LINE_UP_CD']").val();
+	
+		if( LINE_UP_CD == '' ){
+			alert("라인업코드를 입력하세요.");
+			$("input[name='LINE_UP_CD']").focus();
+			return false;
+		}
+
+		return true;	
+	}
+
+
+	// 목록
+	function goSearch(){
+
+		var f = document.frm;
+		f.METHOD.value = "AdminAutoLineupCodeList";
+		f.action = "/admin/AdminCodeAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+</script>
+</head>
+
+
+
+
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="2"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="container">
+			<div class="local-menu">
+				<jsp:include page="/admin/inc/leftMenu.jsp" flush="false"> 
+					<jsp:param name="menuNo" value="2"/>
+					<jsp:param name="subMenuNo" value="6"/>
+				</jsp:include>
+			</div> <!--// leftarea -->
+
+
+		<form name="frm" method="post">
+			<input type="hidden" name="METHOD" />
+			<input type="hidden" name="INIpluginData" />
+			<input type="hidden" name="LOGIN_SVC"  value="N"/>
+			<input type="hidden" name="menuNo"	value="2" />
+			<input type="hidden" name="subMenuNo"	value="6" />
+			<input type="hidden" name="LINE_UP_CD_BF"  value="" />
+
+			<!-- 조회 조건 -->
+			<input type="hidden" name="CODEMENU_SELECT"	value="" />
+			<input type="hidden" name="CODE_SELECT"	value="" />
+			<input type="hidden" name="PGE_NO"	value="" />
+			
+			<div class="content-wrap">
+				<h3>코드 관리(오토론-라인업)</h3>
+				<div class="contents">
+					<h4>코드 정보 변경</h4>
+					<p class="align-right"><em>* 필수항목입니다.</em></p>
+					<br>
+					<fieldset class="form-type bbs-form">
+						<div class="dl-type tb">
+							<dl>
+								<dt>
+									<label for="LINE_UP_CD">라인업코드 <em>*</em></label>
+								</dt>
+								<dd><div><input type="text" id="LINE_UP_CD" name="LINE_UP_CD" value="LINE_UP_CD" class="wd2" maxlength="8"></div></dd>
+							</dl>
+							<dl>
+								<dt>
+									<label for="LINE_UP">라인업명<em>*</em></label>
+								</dt>
+								<dd><div><input type="text" id="LINE_UP" name="LINE_UP" value="LINE_UP" class="wd2"></div></dd>
+							</dl>
+							<dl>
+								<dt>
+									<label for="UPPER_CD_FST">제조사코드 <em>*</em></label>
+								</dt>
+								<dd><div><input type="text" id="UPPER_CD_FST" name="UPPER_CD_FST" value="UPPER_CD_FST" class="wd2" maxlength="8"></div></dd>
+							</dl>
+							<dl>
+								<dt>
+									<label for="UPPER_CD_SEC">차종코드 <em>*</em></label>
+								</dt>
+								<dd><div><input type="text" id="UPPER_CD_SEC" name="UPPER_CD_SEC" value="UPPER_CD_SEC" class="wd2" maxlength="8"></div></dd>
+							</dl>
+							<dl>
+								<dt>
+									<label for="BIGO">비고 <em>*</em></label>
+								</dt>
+								<dd><div><input type="text" id="BIGO" name="BIGO" value="BIGO" class="wd2"></div></dd>
+							</dl>
+
+						</div>
+						<br>
+						<br>
+						<p class="align-center">
+							<a href="#none" class="btn h42" onClick="javascript:goUpdate();">수정</a>
+							<a href="#none" class="btn h42 neg" onClick="javascript:goSearch();">목록</a>
+						</p>
+					</fieldset>
+				</div><!--// contents -->
+			</div><!--// content-wrap -->
+			</form>
+
+		</div><!--// container -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+
+<script type="text/javascript" src="/static/admin/js/nProtect.js"></script>
+
+</body>
+</html>

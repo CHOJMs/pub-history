@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<deco> 
+    <fileData filename="ui_contents.css" filepath="/src/main/webapp/static/web/css" ischanged="0" lastversion="63" tstversion="61" realversion="8" dotversion="2" itemid="000000941277" ecmMd5sum="147dee609f1540cb639fa355b886c7c5" ecmTstmd5sum="" lastChangedDate="1681868787000" editor="박현빈-아크로퓨처:63712" lastUser="박현빈-아크로퓨처:63712" filestatus="체크아웃:5" islock="0" isAuthority="1" rsrccd="A2" rsrccdcodename="static" rsrcinfo="0100000000110000000000010000010000000000100000001000000001000000000" jobcd="HP" jobname="홈페이지" syscd="00102" sysmsg="홈페이지" srid="R202303-0114"/> 
+</deco>

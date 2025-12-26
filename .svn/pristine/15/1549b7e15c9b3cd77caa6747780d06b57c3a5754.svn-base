@@ -1,0 +1,209 @@
+<%@ page language="java" contentType="text/html; charset=euc-kr" pageEncoding="euc-kr"%>
+<%-- START : SCRIPT로직 구현 --%>
+<script type="text/javascript">
+	function init_pop(){
+		$('.layerPop_ui .close').click(function(){
+			$('body').css('overflow','');
+			$(".popScroll").mCustomScrollbar('disable');
+		})
+
+		$("#fBizName").focus(); 
+	}
+
+	function srchJob(pageNm){
+		if(!validation()){return;}
+
+		document.submitForm_job.METHOD.value = "srchJob";
+		$("#SRCH_BUSI_NM").val($("#fBizName").val());
+		$("#SRCH_BRNO").val($("#fBizNum").val());
+
+		if(pageNm == null){
+			pageNm = 1;
+		}
+			$("#SRCH_PRSN_NO").val(pageNm)
+
+		var sFrm          = document.sendForm;
+		sendAjaxAction(document.submitForm_job, sFrm, "fAjaxCallBack", "/dsr/dsrActionCommon.do");
+	}
+
+	function fAjaxCallBack(result){
+		var INIpluginData = $(result).find("INIpluginData").attr("value");
+		var decrypt = Idecrypt(INIpluginData);
+		var renderedHtml = $(decrypt).find("htmlCode").attr("value");
+
+		$("#tbl_popjob tbody").html(renderedHtml);
+
+		$("#tbl_popjob tbody tr").each(function(){
+			var targetVal1 = $(this).find("td").eq(2).text();
+			if(targetVal1 != "" && targetVal1.length >= 10){
+				targetVal1 = targetVal1.substring(0, 3) + "-" + targetVal1.substring(3, 5) + "-" + targetVal1.substring(5);
+				$(this).find("td").eq(2).text(targetVal1);
+			}
+
+			var targetVal2 = $(this).find("td").eq(7).text();
+			if(targetVal2 != "" && targetVal2.length >= 11){
+				targetVal2 = targetVal2.substring(0, 6) + "-" + targetVal2.substring(6);
+				$(this).find("td").eq(7).text(targetVal2);
+			}
+
+		});
+
+		ajaxPaging(decrypt, 50);
+
+		onclickSelectTd_job();
+	}
+	
+	function movePage(pageNum){
+		srchJob(pageNum);
+	}
+	
+	function confirm_pop(){
+
+		var trIdx = $("input[name=Jsel]:checked").index('input[name=Jsel]');
+
+		if(trIdx < 0){
+			alert("선택된 값이 없습니다.");
+			return;
+		}
+
+		var selectTd = $("#tbl_popjob tbody tr").eq(trIdx).find("td");
+		
+		if(!field.length+2 > selectTd.length){
+			alert();
+			return;
+		}
+
+		selectTd.each(function(idx){
+			if(idx < 2){return true;}
+			if(field[idx-2] == null || field[idx-2] == ""){return true;}
+			$("#"+field[idx-2]).val($(this).text());
+		});
+
+		popCloseScrollbar();
+	}
+
+	function validation(){
+		if($("#fBizName").val() == "" && $("fBizNum").val() == ""){
+			alert("사업자명이나 사업자등록번호를 입력하세요.");
+			return false;
+		}
+		if($("#fBizName").val() != "" && $("#fBizName").val().length < 2){
+			alert("사업자명을 2글자 이상 입력하세요.");
+			return false;
+		}
+		if($("#fBizNum").val() != "" && $("#fBizNum").val().length != 10){
+			alert("사업자등록번호를 10자리 입력하세요.");
+			return false;
+		}
+
+		return true;
+	}
+
+	function close_pop(){
+		popCloseScrollbar();
+	}
+
+	function onclickSelectTd_job(){
+		$("#tbl_popjob tbody tr").on("click", function(){
+			$("input#fJsel"+$(this).index()).prop("checked", "checked");
+		})
+	} 
+
+	function reset_pop(){
+		$("#tbl_popjob tbody").html("");
+		$(".search_ui input[type=text]").val("");
+		$("#paging").html("");
+		$("#totl_cnt").text("0");
+	}
+
+	function enter_srchJob(e){
+		if(e.keyCode == "13"){
+			srchJob();
+		}
+	}
+</script>
+<%--   END : SCRIPT로직 구현 --%>
+	
+
+
+		<div class="layer_pop pop_job">
+			<h1>사업자번호 조회</h1>
+			<div class="cons">
+				<div class="search_ui">
+					<div class="box">
+						<label for="fBizName" class="tit">사업자명 :&nbsp;</label><input type="text" id="fBizName" maxlength="20" onkeydown="enter_srchJob(event);" />
+						<label for="fBizNum" class="tit">사업자등록번호 :&nbsp;</label>
+						<input type="text" id="fBizNum" maxlength="10" onkeydown="enter_srchJob(event);" />
+						&nbsp;<a href="#" class="btnS01" onclick="srchJob();return false;">조회</a>
+					</div>
+				</div><!-- //search_ui -->
+				<p class="para01">조회건수 <strong><span id="totl_cnt">0</span></strong>건</p>
+				<div class="popScroll05">
+					<table class="tbl_col02" cellpadding="0" cellspacing="0" id="tbl_popjob">
+						<caption>직업지위 조회 결과</caption>
+						<colgroup>
+							<col width="50px" />
+							<col width="40px" />
+							<col width="145px" />
+							<col width="80px" />
+							<col width="80px" />
+							<col width="85px" />
+							<col width="85px" />
+							<col width="145px" />
+						</colgroup>
+						<thead>
+						<tr>
+							<th scope="col">선택</th>
+							<th scope="col">No</th>
+							<th scope="col">주민사업자등록번호</th>
+							<th scope="col">사업자명</th>
+							<th scope="col">대표자명</th>
+							<th scope="col">고객분류</th>
+							<th scope="col">고객원장상태</th>
+							<th scope="col">법인등록번호</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td><span class="chk_radio sel"><input type="radio" id="fJsel01" name="Jsel" /><label for="fJsel01"><span>선택</span></label></span></td>
+							<td>2</td>
+							<td>000-000-0000000</td>
+							<td>사업자명</td>
+							<td>홍길동</td>
+							<td>법인사업자</td>
+							<td>정상고객</td>
+							<td>000000-0000000</td>
+						</tr>
+						</tbody>
+					</table>
+					<div class="paging" id="paging"> 
+						<a href="맨처음" class="first">첫페이지</a> 
+						<a href="이전" class="prev">이전 블럭</a>
+						<ul>
+							<li><strong>1</strong></li>
+							<li><a href="">2</a></li>
+							<li><a href="">3</a></li>
+							<li><a href="">4</a></li>
+							<li><a href="">5</a></li>
+						</ul>
+						<a href="다음" class="next">다음 블럭</a>
+						<a href="맨 마지막" class="last">마지막 페이지</a>
+					</div>
+				</div><!-- //popScroll05 -->
+				<p class="btn_g03">
+					<a href="#0" class="btnP01" onclick="reset_pop();return false;">초기화</a>
+					<a href="#0" class="btnP01" onclick="confirm_pop();return false;">확인</a>
+					<a href="#1" class="btnP01" onclick="close_pop();return false;">닫기</a>
+				</p>
+			</div>
+		</div><!-- //pop_job -->
+
+		
+		<form name="submitForm_job" method="post">
+		<input type="hidden" name="METHOD" />
+		<input type="hidden" name="LOGIN_SVC" id="LOGIN_SVC" value="N" /> <%-- 공통코드조회 비로그인서비스 --%>
+		<input type="hidden" name="SRCH_BUSI_NM" id="SRCH_BUSI_NM" />
+		<input type="hidden" name="SRCH_BRNO" id="SRCH_BRNO" />
+		<input type="hidden" name="SRCH_PRSN_NO" id="SRCH_PRSN_NO" />
+		<input type="hidden" name="TOTL_CNT" id="TOTL_CNT" />
+		</form>

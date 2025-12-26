@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="flex">
+            <a href="javascript:;">
+                <figure><img src="./assets/images/app_top.png" alt=""></figure>
+            </a>
+            <a href="javascript:;" class="more-btn">
+                <figure><img src="./assets/images/more-btn.png" alt=""></figure>
+            </a>
+
+            <a href="./main_04.html" class="action-bar">
+                <figure><img src="./assets/images/action_bar.png" alt="" style="max-width: 108%; transform: translate(-4%, 10%);"></figure>
+            </a>
+        </div>
+
+        <div class="popup">
+            <figure><img src="./assets/images/popup.png" alt="" style="max-width: 108%; transform: translate(-4%, 10%);"></figure>
+        </div>
+        <div class="dim"></div>
+    </div>
+
+    <script>
+        $(function(){
+            $('.more-btn').click(function(){
+                $('.popup').addClass('active');
+                $('.dim').show();
+                return false;
+            });
+
+            $('.popup').click(function(){
+                $(this).removeClass('active');
+                $('.dim').hide();
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>

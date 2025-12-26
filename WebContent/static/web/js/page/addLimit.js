@@ -1,0 +1,495 @@
+/**
+ *
+ * DSR - 주택 소유 여부
+ *
+ * @param callback 함수
+ *
+ * 조회 팝업을 띄워야할 버튼을 셀렉터로 선택 ex : $(셀렉터).homeOwnerShipPopup(function(result){});
+ *
+ * result 리턴값 : { "clickType" : 클릭타입 }
+ */
+$.fn.homeOwnerShipPopup = function(callback) {
+
+    var popupId = "homeOwnerShipPopup";
+    var $layer = null;
+
+    var    resultVo  = null;
+
+    return this.each(function(i, item) {
+        appendLayer("/dsr/addLimitPopup.do");
+    });
+
+    /**
+     * 레이어 팝업 본문(body) 추가
+     */
+    function appendLayer(url) {
+        $.get(url, function(result) {
+            $.each($.parseHTML(result), function(i, ele) {
+                if ($(ele).hasClass('popup-layer')) {
+//                    $layer = $($(ele)[0].outerHTML);
+                    if($(ele).prop("id") == popupId){
+                        $layer = $($(ele)[0].outerHTML);
+                    }
+                }
+            });
+
+            // 본문(body)에 레이어 팝업 추가
+            $('body').append($layer);
+
+            // UI 초기화
+            initUI();
+
+            //아니오 버튼
+            $("#homeOwnerShipNo").click(function() {
+                resultVo = {
+                        "clickType"         : "no"
+                };
+
+                uiCommon.closePopup(popupId); // 팝업 close
+                //$layer.find(".custom_dim").remove();
+                //$layer.remove();
+                callback(resultVo);
+            });
+
+            //예, 소유중입니다 버튼
+            $("#homeOwnerShipYes").click(function() {
+                resultVo = {
+                        "clickType"         : "yes"
+                };
+
+                uiCommon.closePopup(popupId); // 팝업 close
+                //$layer.find(".custom_dim").remove();
+                //$layer.remove();
+                callback(resultVo);
+            });
+
+            //나중에 할께요 버튼
+            $("#homeOwnerShipLater").click(function() {
+                resultVo = {
+                        "clickType"         : "later"
+                };
+
+                uiCommon.closePopup(popupId); // 팝업 close
+                //$layer.find(".custom_dim").remove();
+                //$layer.remove();
+                callback(resultVo);
+            });
+
+        });
+    }
+
+    function initUI() {
+        //dim 중복방지
+        //$("#"+popupId).prepend("<div class='custom_dim' style='opacity: 1;visibility: visible;position: fixed;left: 0;top: 0; width: 100%;height: 100%;background: rgba(0, 0, 0, 0.2);transition: all 0.3s;'></div>");
+        uiCommon.openPopup(popupId, true); // 팝업 open
+
+    }
+
+};
+
+/**
+*
+* 공통 - 주택 소유 여부
+*
+* @param callback 함수
+*
+* 조회 팝업을 띄워야할 버튼을 셀렉터로 선택 ex : $(셀렉터).homeOwnerShipPopup(function(result){});
+*
+* result 리턴값 : { "clickType" : 클릭타입 }
+*/
+$.fn.CommHomeOwnerShipPopup = function(layerUrl, callback) {
+
+    var popupId = "homeOwnerShipPopup";
+    var $layer = null;
+
+    var    resultVo  = null;
+
+    return this.each(function(i, item) {
+        appendLayer(layerUrl);
+    });
+
+    /**
+     * 레이어 팝업 본문(body) 추가
+     */
+    function appendLayer(url) {
+        $.get(url, function(result) {
+            $.each($.parseHTML(result), function(i, ele) {
+                if ($(ele).hasClass('popup-layer')) {
+//                    $layer = $($(ele)[0].outerHTML);
+                    if($(ele).prop("id") == popupId){
+                        $layer = $($(ele)[0].outerHTML);
+                    }
+                }
+            });
+
+            // 본문(body)에 레이어 팝업 추가
+            $('body').append($layer);
+
+            // UI 초기화
+            initUI();
+
+            //아니오 버튼
+            $("#homeOwnerShipNo").click(function() {
+                resultVo = {
+                        "clickType"         : "no"
+                };
+
+//                uiCommon.closePopup(popupId); // 팝업 close
+                $layer.find(".custom_dim").remove();
+                $layer.remove();
+                callback(resultVo);
+            });
+
+            //예, 소유중입니다 버튼
+            $("#homeOwnerShipYes").click(function() {
+                resultVo = {
+                        "clickType"         : "yes"
+                };
+
+//                uiCommon.closePopup(popupId); // 팝업 close
+                $layer.find(".custom_dim").remove();
+                $layer.remove();
+                callback(resultVo);
+            });
+
+            //나중에 할께요 버튼
+            $("#homeOwnerShipLater").click(function() {
+                resultVo = {
+                        "clickType"         : "later"
+                };
+
+//                uiCommon.closePopup(popupId); // 팝업 close
+                $layer.find(".custom_dim").remove();
+                $layer.remove();
+                callback(resultVo);
+            });
+
+        });
+    }
+
+    function initUI() {
+
+        $("#"+popupId).prepend("<div class='custom_dim' style='opacity: 1;visibility: visible;position: fixed;left: 0;top: 0; width: 100%;height: 100%;background: rgba(0, 0, 0, 0.2);transition: all 0.3s;'></div>");
+        uiCommon.openPopup(popupId); // 팝업 open
+
+    }
+
+};
+
+/**
+*
+* 주택 소유 여부 02
+*
+* @param callback 함수
+*
+* 조회 팝업을 띄워야할 버튼을 셀렉터로 선택 ex : $(셀렉터).HomeOwnerShip02Popup(function(result){});
+*
+* result 리턴값 : { "clickType" : 클릭타입 }
+*/
+$.fn.HomeOwnerShip02Popup = function(layerUrl, callback) {
+
+    var popupId = "homeOwnerShip02Popup";
+    var $layer = null;
+
+    var    resultVo  = null;
+
+    return this.each(function(i, item) {
+        appendLayer(layerUrl);
+    });
+
+    /**
+     * 레이어 팝업 본문(body) 추가
+     */
+    function appendLayer(url) {
+        $.get(url, function(result) {
+            $.each($.parseHTML(result), function(i, ele) {
+                if ($(ele).hasClass('popup-layer')) {
+//                    $layer = $($(ele)[0].outerHTML);
+                    if($(ele).prop("id") == popupId){
+                        $layer = $($(ele)[0].outerHTML);
+                    }
+                }
+            });
+
+            // 본문(body)에 레이어 팝업 추가
+            $('body').append($layer);
+
+            // UI 초기화
+            initUI();
+
+            //아니오 버튼
+            $("#homeOwnerShipNo").click(function() {
+                resultVo = {
+                        "clickType"         : "no"
+                };
+
+                uiCommon.closePopup(popupId); // 팝업 close
+                //$layer.find(".custom_dim").remove();
+                //$layer.remove();
+                callback(resultVo);
+            });
+
+            //예, 소유중입니다 버튼
+            $("#homeOwnerShipYes").click(function() {
+                resultVo = {
+                        "clickType"         : "yes"
+                };
+
+                uiCommon.closePopup(popupId); // 팝업 close
+                //$layer.find(".custom_dim").remove();
+                //$layer.remove();
+                callback(resultVo);
+            });
+
+            //나중에 할께요 버튼
+//            $("#homeOwnerShipLater").click(function() {
+//                resultVo = {
+//                        "clickType"         : "later"
+//                };
+//
+////                uiCommon.closePopup(popupId); // 팝업 close
+//                $layer.find(".custom_dim").remove();
+//                $layer.remove();
+//                callback(resultVo);
+//            });
+
+        });
+    }
+
+    function initUI() {
+        uiCommon.openPopup(popupId, true); // 팝업 open
+    }
+
+};
+
+/**
+*
+* 공통 - 차량번호입력
+*
+* @param callback 함수
+*
+* 조회 팝업을 띄워야할 버튼을 셀렉터로 선택 ex : $(셀렉터).vhclNoPopup(function(result){});
+*
+* result 리턴값 : { "clickType" : 클릭타입, "vhclNum" : 차량번호 }
+*/
+$.fn.vhclNoPopup = function(callback) {
+
+    var popupId = "vhclNoPopup";
+    var $layer = null;
+
+    var    resultVo  = null;
+
+    return this.each(function(i, item) {
+        appendLayer("/dsr/addLimitPopup.do");
+    });
+
+    /**
+     * 레이어 팝업 본문(body) 추가
+     */
+    function appendLayer(url) {
+        $.get(url, function(result) {
+            $.each($.parseHTML(result), function(i, ele) {
+                if ($(ele).hasClass('popup-layer')) {
+//                    $layer = $($(ele)[0].outerHTML);
+                    if($(ele).prop("id") == popupId){
+                        $layer = $($(ele)[0].outerHTML);
+                    }
+                }
+            });
+
+            // 본문(body)에 레이어 팝업 추가
+            $('body').append($layer);
+
+            // UI 초기화
+            initUI();
+
+            //다음 버튼
+            $("#vhclNoBtnNext").click(function() {
+                var vhclNum = $("#vhclNum").val();
+                if(!vhclNum.length) {
+                    alert("차량번호를 입력해주세요.");
+                    return;
+                }
+
+                resultVo = {
+                        "clickType"         : "next",
+                        "vhclNum"         : vhclNum
+                };
+
+                //uiCommon.closePopup(popupId); // 팝업 close
+                callback(resultVo);
+            });
+
+            //나중에 할께요 버튼
+            $("#vhclNoBtnLater").click(function() {
+
+                resultVo = {
+                        "clickType"         : "later"
+                };
+
+                uiCommon.closePopup(popupId); // 팝업 close
+                callback(resultVo);
+            });
+
+        });
+    }
+
+    function initUI() {
+
+        uiCommon.openPopup(popupId, true); // 팝업 open
+
+    }
+
+};
+
+/**
+*
+* 공통 - 차량소유여부팝업
+*
+* @param callback 함수
+*
+* 조회 팝업을 띄워야할 버튼을 셀렉터로 선택 ex : $(셀렉터).UsedVhclHoldPopup(function(result){});
+*
+* result 리턴값 : {"clickType" : 클릭타입}
+*/
+$.fn.UsedVhclHoldPopup = function(layerUrl, callback) {
+
+    var popupId = "usedVhclHoldPopup";
+    var $layer = null;
+
+    var    resultVo  = null;
+
+    return this.each(function(i, item) {
+        appendLayer(layerUrl);
+    });
+
+    /**
+     * 레이어 팝업 본문(body) 추가
+     */
+    function appendLayer(url) {
+        $.get(url, function(result) {
+            $.each($.parseHTML(result), function(i, ele) {
+                if ($(ele).hasClass('popup-layer')) {
+//                    $layer = $($(ele)[0].outerHTML);
+                    if($(ele).prop("id") == popupId){
+                        $layer = $($(ele)[0].outerHTML);
+                    }
+                }
+            });
+
+            // 본문(body)에 레이어 팝업 추가
+            $('body').append($layer);
+
+            // UI 초기화
+            initUI();
+
+            //아니오 버튼
+            $("#usedVhclHoldNo").click(function() {
+                resultVo = {
+                        "clickType"         : "no"
+                };
+
+                uiCommon.closePopup(popupId); // 팝업 close
+                callback(resultVo);
+            });
+
+            //예, 소유중입니다 버튼
+            $("#usedVhclHoldYes").click(function() {
+                resultVo = {
+                        "clickType"         : "yes"
+                };
+
+                uiCommon.closePopup(popupId); // 팝업 close
+                callback(resultVo);
+            });
+
+            //나중에 할께요 버튼
+            $("#usedVhclHoldLater").click(function() {
+                resultVo = {
+                        "clickType"         : "later"
+                };
+
+                uiCommon.closePopup(popupId); // 팝업 close
+                callback(resultVo);
+            });
+
+        });
+    }
+
+    function initUI() {
+
+        uiCommon.openPopup(popupId, true); // 팝업 open
+
+    }
+
+};
+
+/**
+*
+* 소유 부동산 정보 확인 팝업
+*
+* @param callback 함수
+*
+* 조회 팝업을 띄워야할 버튼을 셀렉터로 선택 ex : $(셀렉터).HomeOwnerShipConfirmPopup(function(result){});
+*
+*/
+$.fn.HomeOwnerShipConfirmPopup = function(layerUrl, callback) {
+
+    var popupId = "homeOwnerShipConfirmPopup";
+    var $layer = null;
+
+    var    resultVo  = null;
+
+    return this.each(function(i, item) {
+        appendLayer(layerUrl);
+    });
+
+    /**
+     * 레이어 팝업 본문(body) 추가
+     */
+    function appendLayer(url) {
+        $.get(url, function(result) {
+            $.each($.parseHTML(result), function(i, ele) {
+                if ($(ele).hasClass('popup-layer')) {
+                    if($(ele).prop("id") == popupId){
+                        $layer = $($(ele)[0].outerHTML);
+                    }
+                }
+            });
+
+            // 본문(body)에 레이어 팝업 추가
+            $('body').append($layer);
+
+            // UI 초기화
+            initUI();
+
+            //아니오 버튼
+            $("#homeOwnerShipConfirmNo").click(function() {
+                resultVo = {
+                        "clickType"         : "no"
+                };
+
+                uiCommon.closePopup(popupId); // 팝업 close
+                callback(resultVo);
+            });
+
+            //네, 맞아요 버튼
+            $("#homeOwnerShipConfirmYes").click(function() {
+                resultVo = {
+                        "clickType"         : "yes"
+                };
+
+                uiCommon.closePopup(popupId); // 팝업 close
+                callback(resultVo);
+            });
+
+        });
+    }
+
+    function initUI() {
+
+        uiCommon.openPopup(popupId, true); // 팝업 open
+
+    }
+
+};

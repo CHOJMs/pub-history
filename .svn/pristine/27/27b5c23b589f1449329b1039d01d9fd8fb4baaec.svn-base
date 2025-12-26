@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+
+<%@ page import="java.io.*" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.net.InetAddress" %>
+
+
+<%
+	response.setHeader("Cache-Control", "no-store");
+	response.setHeader("Cache-Control", "no-cashe");
+	response.setDateHeader("Expires",   0);
+	response.setHeader("Pragma",        "no-cache");
+
+	if(request.getProtocol().equals("HTTP/1.1"))
+	{
+		response.setHeader("Cache-Control", "no-store");
+	}
+ 
+	//테스트 도메인 : fund-test28
+	InetAddress inet2 = InetAddress.getLocalHost();
+	String sDomain2   = inet2.getHostName();
+	//System.out.println("[common.jsp] sDomain2=["+sDomain2+"]");
+
+
+	//세션정보
+	String sessUserID      = "admin";
+	String sessUserName    = "관리자";
+	String sessUserPerm01  = "Y";
+	String sessUserPerm02  = "Y";
+	String sessUserPerm03  = "Y";
+	String sessUserPerm04  = "Y";
+	String sessUserPerm05  = "Y";
+	String sessUserPerm06  = "Y";
+	String rcagCustNo  = "";
+	String sSeesKey = "SESS_OK";
+	
+	
+%>

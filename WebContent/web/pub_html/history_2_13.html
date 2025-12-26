@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 기업정보 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-08</td>
+                        <td>2024-07-22</td>
+                        <td>page</td>
+                        <td>회사개요</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-000-001.html">MAB-000-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-07-22 : 2023,2024 연혁 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-08</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>CEO 인사말</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-000-002.html">MAB-000-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-11</td>
+                        <td>2025-07-07</td>
+                        <td>page</td>
+                        <td>영업점 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-000-003.html">MAB-000-003.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-07-07 : 본점 8층 삭제, 대구지점 대구은행->iM뱅크로 변경, 대구 오토센터, 수원오토센터, 상용차 금융센터, 산업 금융센터 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-12</td>
+                        <td>2025-07-02</td>
+                        <td>page</td>
+                        <td>조직도</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-000-004.html">MAB-000-004.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-07-02 : 일부 디자인 변경</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-12</td>
+                        <td>2025-04-24</td>
+                        <td>page</td>
+                        <td>그룹경영이념</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-000-005.html">MAB-000-005.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-06-20 : 사명변경 관련 수정(이미지경로,브랜드슬로건)</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-08-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>경영진 소개</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/경영진소개.html">경영진소개.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-08-27</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>사외이사 소개</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/사외이사소개.html">사외이사소개.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 투자정보 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-13</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>경영공시 - 리스트</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-100-001.html">MAB-100-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-14</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>경영공시 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-100-001-1.html">MAB-100-001-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-13</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>결산공고 - 리스트</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-100-002.html">MAB-100-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-14</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>결산공고 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-100-002-1.html">MAB-100-002-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-13</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>재무정보 - 리스트</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-100-003.html">MAB-100-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-14</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>재무정보 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-100-003-1.html">MAB-100-003-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 윤리경영 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-14</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>윤리경영비전</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-200-001.html">MAB-200-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-14</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>윤리경영헌장</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-200-002.html">MAB-200-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-14</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>윤리강령</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-200-003.html">MAB-200-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr class="update">
+                        <td></td>
+                        <td>2023-12-14</td>
+                        <td>2025-11-24</td>
+                        <td>page</td>
+                        <td>올바른소리</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-200-004.html">MAB-200-004.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-11-24 : 이용대상 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-15</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>윤리경영 Q&A</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-200-005.html">MAB-200-005.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>실천프로그램</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-200-006.html">MAB-200-006.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="hold">
+                        <td></td>
+                        <td>2023-12-15</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>내부 제보하기</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-200-004-1.html">MAB-200-004-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="hold">
+                        <td></td>
+                        <td>2023-12-15</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>외부 제보하기</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/MAB-200-004-2.html">MAB-200-004-2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ ESG경영 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-08</td>
+                        <td>2023-05-19</td>
+                        <td>page</td>
+                        <td>ESG 전략</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/ESG-000-001.html">ESG-000-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-05-19 : ESG 전략방향 링크 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-08</td>
+                        <td>2024-07-01</td>
+                        <td>page</td>
+                        <td>E (환경)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/ESG-000-002.html">ESG-000-002.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-07-01 : 녹색경영방침 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-08</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>S (사회)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/ESG-000-003.html">ESG-000-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-08</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>G (지배구조)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/ESG-000-004.html">ESG-000-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-08</td>
+                        <td>2023-05-19</td>
+                        <td>page</td>
+                        <td>ESG 성과</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/about/ESG-000-005.html">ESG-000-005.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-05-19 : 수상내역 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+/**
+ * 가상키패드 사용여부
+ * > 초기 설정 : 모바일 디바이스 true, PC 디바이스 false
+ * > var keypadFlag = navigator.platform.match(/win16|win32|win64|windows|wince|mac|macintel|macintosh|macppc|mac68k/i) == null ? true : false;
+ *
+ */
+var keypadFlag = GlobalJSConfig.isMobileDevice;
+
+/**
+ *  가상 키패드 초기화
+ */
+function initializedNFilter(rrn2_id){
+
+	if(!keypadFlag) return;
+
+
+	// 키패드 초기화 시작
+    nshc.setOnInitStart();
+
+    // 키패드 로딩 완료 후 이벤트 callback
+    nshc.setFinishedCallback(function() {
+   	 console.log("NSHC NFilter 로딩 완료.");
+//   	 $(document).on("focus", "#rrn2", function (e){
+//   	     nshc.inputEvent("rrn2", e);
+//
+//   	 });
+//   	 alert("키패드 로딩 완료");
+    });
+
+     // CSRF 관련 metatag 추가 함수
+     //nshc.setCsrfToken("oqoghq304hg09reg09q3j409gj49jgsd9rjg093409jg");
+
+     // 키패드 멀티 더미 설정
+     // nshc.setMultiDummy(2);
+
+     // 랜덤 숫자키패드 설정
+     // nshc.setRandomNumKpd();
+
+     // 키패드 배경 사용중지 설정
+     nshc.setBgNotUse();
+
+     // 재배열 기능 사용중지 설정
+     // nshc.setRenewNotUse();
+
+     // text 필드에서 입력 값이 plantext로만 나오게 설정
+     // nshc.setPlanTextChangeNotUse();
+
+     // 키 입력시 making 색상 변경 (코드사용시 # 입력 필수)
+     // nshc.setMaskingColor('#0aa200');
+
+     // 키패드 언어 세팅 (언어 추가시 키패드 이미지 네임 suffix로 '_언어코드' 추가)
+     // nshc.setLanguage("en");
+
+     // PC일때, 숫자키패드 사이즈 설정 (기본값 width 400px)
+     // nshc.setPcNumKpdWidth(200);
+
+     // 키패드 하단 픽스 기능 (모바일 모드에만 사용)
+     nshc.setKpdBottomFix();
+
+     // 입력 Formatting 설정 (input type text only)
+     // nshc.setViewFormatting("formatting1=-;4;2^2*;4*;4|formatting2=,");
+
+     // 키패드 닫기 버튼 사용중지 설정
+     // nshc.setKpdCloseNotUse();
+
+     // 키패드 초기화 버튼 비활성화 설정
+     // nshc.setKpdAllClearNotUse();
+
+     // 키패드 사이즈 설정 (width 값 전달, PC/모바일 구분 없음)
+     // nshc.setKpdSize(500);
+
+     // 입력값 maxlength 도달시 자동 enter 기능 비활성화
+     //nshc.setAutoEnterDisabled();
+
+     // ScreenReader에서 키패드 입력값이 읽혀짐 여부 설정
+     //nshc.setScreenReaderUse(false);
+
+     // 동적 키패드 이미지 설정
+     //nshc.setKpdImage("site");
+
+
+
+     // 키패드 설정
+     /*
+      - Keypad_mode :
+      	  	pcCKpd : PC 문자키패드
+			mCKpd : 모바일 문자키패드
+			nAKpd : 3x4 숫자키패드
+			nBKpd : 4x3 숫자키패드
+			nCKpd : 2x6 숫자키패드
+     */
+     var id = rrn2_id;
+     if(rrn2_id == "" || rrn2_id == "undefined" || rrn2_id == null) {
+    	 id = "rrn2";
+     }
+
+     if ($("#" + id).length > 0) {
+		 nshc.setCommon(document.getElementById(id), "mode=nCKpd");		// 숫자, typeC (2x6 숫자키패드)
+	 }
+
+
+     /*****************************************
+     - 웹접근성 추가
+     ******************************************/
+     // [MutationObserver] 가상키패드 disabled 속성 감지 실행
+     //const observer = new MutationObserver(function (mutationsList) {
+    //	 for (let mutation of mutationsList) {
+    //		 if (mutation.type === "attributes" && mutation.attributeName === "disabled") {
+    //			 if($("#" + id).prop("disabled")) {
+    //				 //실행
+    //			 } else {
+    //				 nextFocus();
+    //			 }
+    //		 }
+    //	 }
+     //});
+
+     //감지 관찰대상 옵션 설정
+     //observer.observe($("#" + id)[0], {attributes: true, attributeFilter: ["disabled"] });
+
+     //다음 요소로 이동...수정필요함
+     //function nextFocus() {
+    //	 $("#common_body").find("#btnNext, select")[0].focus();
+     //}
+
+//     nshc.ownCallback = function (msg, inputID) {
+//         console.log(msg);
+//         console.log(inputID);
+//         // msg : open, enter, close 세가지 경우의 이벤트를 체크합니다.
+//         // inputID : 현재 사용되고 있는 키패드의 input ID 입니다.
+//         if(msg == "enter") {
+//             $("#common_body").find("#btnNext, select")[0].focus();
+//         }
+//      }
+     /*****************************************
+     - 웹접근성 추가 END
+     ******************************************/
+
+     /*****************************************
+     - 안드로이드 다른 input 클릭 시 키패드 닫기 추가
+     ******************************************/
+     const inputs = document.querySelectorAll("[data-check]");
+     inputs.forEach(element => {
+         element.addEventListener("click", (e) => {
+             let nfilterDocument = document.getElementById("nfilter_document");
+             if (keypadFlag && "none" != nfilterDocument.style.display) {
+                 nshc.closeKpd("close", e.target);
+             }
+         });
+     });
+     /*****************************************
+     - 안드로이드 다른 input 클릭 시 키패드 닫기 END
+     ******************************************/
+     // Open Web nFilter 레이아웃 초기화
+     nshc.setInit();
+}
+
+/**
+ * NSHC 가상키패드 암호화된 데이터 (encData) 가져오기
+ * @returns
+ */
+function nFilterEncrypted() {
+	return nshc.encrypted();
+}

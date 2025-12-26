@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/chatbot.css">
+
+
+<title>본인인증 완료 | iM캐피탈</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contaier">
+
+            <!-- centents 영역 -->
+            <div class="contents">
+
+                <div class="finish_box f-ico-comp">
+                    <div class="fini-tit">홍길동님 리스신청이 완료되었습니다.</div>
+
+                    <!-- Start : 리스트 -->
+                    <ul class="list-1 line">
+                        <li>
+                            <span class="tit">고객명</span>
+                            <span>홍길동</span>
+                        </li>
+                        <li>
+                            <span class="tit">인증방법</span>
+                            <span>휴대폰 인증</span>
+                        </li>
+                    </ul>
+                    <!-- //End : 리스트 -->
+                </div>
+
+            </div>
+            <!-- Start : 이용문의 -->
+            <div class="fixed-call-area">
+                <div class="call_phone">
+                    <span class="c-info">이용문의</span><span class="c-tel">1566-0050</span><span class="c-text">(평일 오전 9시~오후 6시)</span>
+                </div>
+            </div>
+            <!-- //End : 이용문의 -->
+            <!-- //centents 영역 -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+    </div>
+</body>
+</html>

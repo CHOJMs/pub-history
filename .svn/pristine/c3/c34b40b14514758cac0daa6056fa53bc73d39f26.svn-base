@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		// 뒤로가기 버튼으로 들어올때 값 사라짐 방지
+		if($('#BOARD_ID').val() == "")
+			$('#BOARD_ID').val("BOARD_ID");
+		if($('#PGE_NO').val() == "")
+			$('#PGE_NO').val("iPageNo");
+		if($('#menuNo').val() == "")
+			$('#menuNo').val("3");
+		if($('#subMenuNo').val() == "")
+			$('#subMenuNo').val("SUB_MENU");
+		if($('#INSERT_KEY').val() == "")
+			$('#INSERT_KEY').val("0");
+	});
+
+//window.alert($.fn.jquery);
+	// 조회
+	function goSearch(pageNum){
+
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardListSelect";
+		f.PGE_NO.value = pageNum;
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+
+	//파일다운로드
+	function download(fileName){
+		var path = "upload";
+
+		window.location.href = "/view/common/inc/FILE_DOWNLOAD.jsp?file_name="+fileName+"&file_path="+path;
+	}
+
+
+	//상세보기
+	function notsDtlSubmit(bid, ref){
+// 		var f = document.frm;
+
+// 		f.METHOD.value = "AdminBoardDetail";
+// 		f.B_ID.value   = bid;
+// 		f.REF_ID.value = ref;
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+		
+		location.href = "/admin/board/dgbNoticeBoardMngDtl.jsp"
+	}
+
+	function goWrite(){
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardWrite";
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+
+	}
+
+
+
+</script>
+</head>
+<body>
+	
+<!-- 레이어 팝업 -->
+<div class="layerPop" style="width:850px;">
+	<h1>표준사업분류</h1>
+	<div class="Pop_content">
+		<div class="Pop_form-type">
+			<!-- 검색 시작 -->
+			<div class="search_p_box2">
+				<label for="">분류코드</label><input type="text" id="" name="" value="" placeholder="" style="width:610px;" title="분류코드 입력" />
+				<label for="">분류명</label><input type="text" id="" name="" value="" placeholder="" style="width:610px;" title="분류명 입력" />
+				<p class="btn-align-center mb15 mt20">
+					<a href="#none" class="btn h42 wid100 wid120">조회</a>
+				</p>
+			</div>
+			<!-- 검색 끝 -->
+			<p class="search_number">[조회 건수 : <span>0건</span>]</p>
+			<div class="scroll_box1">
+				<table class="bbs-table" style="width:1200px;">
+					<colgroup>
+						<col style="width:8%;">
+						<col style="width:8%;">
+						<col style="width:8%;">
+						<col style="width:12%;">
+						<col style="width:8%;">
+						<col style="width:12%;">
+						<col style="width:12%;">
+						<col style="width:12%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>대분류</th>
+							<th>대분류명</th>
+							<th>중분류</th>
+							<th>중분류명</th>
+							<th>소분류</th>
+							<th>소분류명</th>
+							<th>표준산업분류</th>
+							<th>표준산업분류명</th>
+							<th>은행산업분류</th>
+							<th>은행산업분류명</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>								
+							<td>K64</td>
+							<td>금융업</td>
+							<td>K641</td>
+							<td>은행 및 저축기관</td>
+							<td>K6412</td>
+							<td>일반은행</td>
+							<td>K64122</td>
+							<td>외국은행</td>
+							<td>C64</td>
+							<td>금융</td>
+						</tr>
+						<tr class="active">								
+							<td>K64</td>
+							<td>금융업</td>
+							<td>K641</td>
+							<td>은행 및 저축기관</td>
+							<td>K6412</td>
+							<td>일반은행</td>
+							<td>K64122</td>
+							<td>외국은행</td>
+							<td>C64</td>
+							<td>금융</td>
+						</tr>
+						<tr>								
+							<td>K64</td>
+							<td>금융업</td>
+							<td>K641</td>
+							<td>은행 및 저축기관</td>
+							<td>K6412</td>
+							<td>일반은행</td>
+							<td>K64122</td>
+							<td>외국은행</td>
+							<td>C64</td>
+							<td>금융</td>
+						</tr>
+						<tr>								
+							<td>K64</td>
+							<td>금융업</td>
+							<td>K641</td>
+							<td>은행 및 저축기관</td>
+							<td>K6412</td>
+							<td>일반은행</td>
+							<td>K64122</td>
+							<td>외국은행</td>
+							<td>C64</td>
+							<td>금융</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="btn_more mt15 border_top_line"><a href="#">더보기<span class="icon_acco"></span></a></div>
+			<div class="s_noData_box">
+				분류코드 혹은 분류명을 입력해 조회해 주세요.
+			</div>
+			<p class="btn-align-center">
+				<a href="#none" class="btn h42 wid120">확인</a><a href="#none" class="btn h42 wid120 neg">취소</a>
+			</p>
+			<div class="standard_box">
+				고객으로부터 상호부금형태로 조성된 자금을 고객에게 자금을 대출하는 은행이외의 여신기관을 말한다.<br>
+				<예시> 신용협동조회 마을금고 상호금융 상호신용금고
+			</div>
+			
+		</div>
+		
+		<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+	</div>
+</div>
+<!-- 팝업bg -->
+<div class="PopAll_bg"></div>
+
+</body>
+</html>

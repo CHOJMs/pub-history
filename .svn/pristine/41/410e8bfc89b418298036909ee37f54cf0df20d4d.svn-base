@@ -1,0 +1,469 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/WEB-INF/jsp/web/inc/incCommon.jsp"%>
+<%@ include file="/WEB-INF/jsp/web/inc/incMeta.jsp"%>
+<%@ include file="/WEB-INF/jsp/web/inc/incHpgResource.jsp"%>
+<script type="text/javascript" src="<c:url value="/static/web/js/crypto.js?v=20230807"/>"></script>  <!-- 비밀번호 유효성 체크 js  -->
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+</head>
+
+<style type="text/css">
+<style>
+@font-face {
+  font-family: 'pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-display: SWAP;
+  src: url('/static/common/css/font/Pretendard-Regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/static/common/css/font/Pretendard-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/static/common/css/font/Pretendard-Regular.woff2') format('font-woff2'), /* Super Modern Browsers */
+       url('/static/common/css/font/Pretendard-Regular.woff') format('woff'), /* Modern Browsers */
+       url('/static/common/css/font/Pretendard-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/static/common/css/font/Pretendard-Regular.svg#Pretendard') format('svg'); /* Legacy iOS */
+}
+
+/* Pretendard-500 - latin_korean */
+@font-face {
+  font-family: 'pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-display: SWAP;
+  src: url('/static/common/css/font/Pretendard-Medium.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('/static/common/css/font/Pretendard-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/static/common/css/font/Pretendard-Medium.woff2') format('font-woff2'), /* Super Modern Browsers */
+  url('/static/common/css/font/Pretendard-Medium.woff') format('woff'), /* Modern Browsers */
+  url('/static/common/css/font/Pretendard-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('/static/common/css/font/Pretendard-Medium.svg#Pretendard') format('svg'); /* Legacy iOS */
+}
+/* 공통 */
+* {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+    html, body {margin: 0; padding: 0; width: 100%; height: 100%; font-family: "pretendard", "SemiBold", "나눔 고딕", Dotum,
+    "droid sans fallback", "AppleSDGothicNeo", sans-serif; font-size: 10px; letter-spacing: -0.01em; color: rgb(34, 36, 38); min-width: 320px; background: transparent; line-height: 1.5;}
+    body {text-align: left; margin: 0; padding: 0; font-family: "pretendard", "SemiBold", "droid sans fallback",
+    "AppleSDGothicNeo", sans-serif, "돋움", Dotum; -webkit-text-size-adjust: none; -ms-text-size-adjust: none; word-break: keep-all;}
+    .videoCapture {display: none;}
+
+ @media screen and (max-width: 1280px){
+
+    .videoCapture {position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow-y: auto; min-height: 100%; padding: 0px 20px; background: rgb(34, 36, 38,0.8); z-index: 200; display: block;}
+    .btn-close {position: absolute; right: 20px; top: 20px; width: 32px; height: 32px;}
+    .btn-close img {width: 32px; height: 32px;}
+    .camera-box {width: 100%; position: relative; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);}
+    .camera-box .photo { width: 341px; height: 246px;}
+    .fixed-btn-area { width: 100%;}
+    .btn_box {display: table; width: 100%; table-layout: fixed; text-align: center; position: fixed; left: 0; bottom: 0; padding: 150px 20px 20px 20px; background: url('/static/web/img/ui_common/camera_i05.png') no-repeat center center; background-size: 335px 150px;}
+    .btn_box .btn {display: table-cell; vertical-align: top;}
+    .btn_box button {width: 100%; height: 56px; color: #fff; font-size: 16px; text-align: center; font-weight: 500; font-family: "pretendard"; background: #1571eb ; border-radius: 8px; border: none;}
+    .txt {font-size: 16px; color: #fff; width: 100%; text-align: center; margin-bottom: 21px; margin-top: 0;}
+    .camera {position: relative; height: 250px; display: block; margin: 0 20px; overflow: hidden;}
+    .camera::before {content: ''; width: 41px; height: 41px; display: inline-flex; background: url('/static/web/img/ui_common/camera_i01.png') no-repeat 0 0; background-size: 41px 41px;}
+    .camera::after {content: ''; position: absolute; right: 0; top: 0; width: 41px; height: 41px; display: inline-flex; background: url('/static/web/img/ui_common/camera_i02.png') no-repeat 0 0; background-size: 41px 41px;}
+    .camera div::before {content: ''; position: absolute; left: 0; bottom: 0; width: 41px; height: 41px; display: inline-flex; background: url('/static/web/img/ui_common/camera_i04.png') no-repeat 0 0; background-size: 41px 41px;}
+    .camera div::after {content: ''; position: absolute; right: 0; bottom: 0; width: 41px; height: 41px; display: inline-flex; background: url('/static/web/img/ui_common/camera_i03.png') no-repeat 0 0; background-size: 41px 41px;}
+ }
+
+</style>
+
+</style>
+
+	<body>
+		<div class="videoCapture">
+			<main id="camera-box">
+				<p class="txt">신분증을 파란 선 안에 맞춰주세요</p>
+				<div class="camera">
+					<video id="videoElement" class="videoElement" style="width:100%; height:80%;" autoplay playsinline>
+					</video>
+					<img id="snapshot" style="display:none; width:100%; height:70%; margin-top:10%; margin-bottom:10%; pointer-events:none;"></img>
+				</div>
+			</main>
+
+
+	        <!-- Start : 버튼 -->
+	        <div class="btn_box">
+	            <span class="btn">
+	            	<button type="button" id="captureButton">촬영하기</button>
+	            </span>
+	        </div>
+
+			<form id="idCardRegFrm" name="idCardRegFrm" method="post" enctype="multipart/form-data">
+				<input type="hidden" id="lonMngNo" name="lonMngNo"/> <!-- 여신관리번호 -->
+				<input type="file" name="file" accept="image/*" id="fileInput" style="display:none;">
+			</form>
+
+	        <!-- //End : 버튼 -->
+	        <div class="btn-close"><a href="#"><img src="/static/web/img/ui_common/camera_close.png" alt="닫기"></a></div>
+		</div>
+	</body>
+
+
+ 	<div class="popup-layer" id="IdCardStep02Layer">
+		<div class="popup popup-01 popup-half"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+			<div class="inner">
+				<div class="popup-contents flex-col pad-small"> <!-- 2022-10-11 : pad-small 추가 -->
+					<!--Start : content //-->
+
+					<!--Start : 인증완료-->
+					<div class="pop-finish f-ico-errow"><!--[D]오류인 경우 : f-ico-errow / 정상인 경우 : f-ico-comp-->
+						<div class="popup-text">
+							<h1>신분증 인식 실패</h1>
+							<p>사유를 확인하신 후 재촬영을 진행해주세요.<br>신분증 인식 불가시 1566-0050 으로 문의바랍니다.</p>
+				 		</div>
+						<div class="f-info-box">
+							<div class="list-dot">
+								<ul>
+									<li>빛이 반사되어 인식이 어려운 경우</li>
+									<li>신분증 훼손이 심한 경우</li>
+									<li>너무 멀리 찍는 등 기타사유로 인식이 어려운 경우</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--//End : 인증완료-->
+
+					<!--//End : content-->
+
+					<!--Start : 버튼-->
+					<div class="fixed-btn-area">
+						<div class="btn-box">
+							<span class="btn"><button type="button" id="btnClose" onclick="uiCommon.closePopup('IdCardStep02Layer'); return false;">닫기</button></span>
+							<span class="btn line"><button type="button" id="btnReFile" onclick="uiCommon.closePopup('IdCardStep02Layer');snapshotToggle();return false;">재촬영하기</button></span>
+						</div>
+					</div>
+					<!--//End : 버튼-->
+				</div>
+			</div>
+		</div>
+	</div>
+    <!---------- Start : 셀렉트박스 선택용 팝업 ---------->
+
+</html>
+
+<script>
+
+	var videoElement = document.getElementById("videoElement");
+	var captureButton = $("#captureButton");
+	var fileInput = $("#fileInput");
+
+	$(document).ready(function(){
+
+		async function getBestBackCameraStream() {
+		    try {
+		        // 카메라 목록 가져오기
+		        const devices = await navigator.mediaDevices.enumerateDevices();
+
+				if(isMobile.IOS()){
+			     	// 카메라 목록 필터링 아이폰
+			        const cameras = devices.filter(device => device.kind === 'videoinput');
+
+			        $("#testlog").text(JSON.stringify(cameras));
+
+			        if (cameras.length === 0) {
+			            console.error('카메라를 찾을 수 없습니다.');
+			            return;
+			        }
+
+
+			        //후면 카메라 선택
+			        const constraints = {
+				        video: {
+		            		facingMode: { exact: 'environment' },
+		            		focusMode: { exact: 'continuous' },
+		            	},
+	            		audio: false
+	            	};
+
+		            const stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+			        return stream;
+				}else{
+
+					// 후면 카메라 목록 필터링 안드로이드
+	 		        var backCameras = devices.filter(device => device.kind === 'videoinput' && device.label.toLowerCase().includes('back'));
+
+			        if(backCameras.length === 0){
+				     	// 카메라 목록 필터링 아이폰
+				        const cameras = devices.filter(device => device.kind === 'videoinput');
+
+				        $("#testlog").text(JSON.stringify(cameras));
+
+				        if (cameras.length === 0) {
+				            console.error('카메라를 찾을 수 없습니다.');
+				            return;
+				        }
+
+
+				        //후면 카메라 선택
+				        const constraints = {
+					        video: {
+			            		facingMode: { exact: 'environment' },
+			            		focusMode: { exact: 'continuous' },
+			            	},
+		            		audio: false
+		            	};
+
+			            const stream = await navigator.mediaDevices.getUserMedia(constraints);
+
+				        return stream;
+			        }else{
+
+				        $("#testlog").text(JSON.stringify(backCameras));
+
+				        // 가장 화질이 좋은 후면 카메라 선택
+				        let bestCamera = null;
+				        let bestResolution = 0;
+
+				        for (const camera of backCameras) {
+				            const stream = await navigator.mediaDevices.getUserMedia({
+				            	video: {
+				            		deviceId: { exact: camera.deviceId },
+				            		facingMode: { exact: 'environment' },
+				            		focusMode: { exact: 'continuous' },
+				            	},
+				            	audio: false
+				            });
+				            const track = stream.getVideoTracks()[0];
+				            const capabilities = track.getCapabilities();
+				            const maxWidth = capabilities.width.max;
+				            const maxHeight = capabilities.height.max;
+
+				            // 해상도가 같은 경우 더 좋은 카메라를 선택합니다.
+				            if ( maxWidth * maxHeight >= bestResolution && capabilities.focusMode.includes('continuous')){
+				                bestResolution = maxWidth * maxHeight;
+				                bestCamera = camera;
+				            }
+
+				            stream.getTracks().forEach(track => track.stop());
+				        }
+
+				        if(bestCamera) {
+					        // 선택한 카메라로 비디오 스트림 시작
+					        const stream = await navigator.mediaDevices.getUserMedia({
+				            	video: {
+				            		deviceId: { exact: bestCamera.deviceId },
+				            		facingMode: { exact: 'environment' },
+				            		focusMode: { exact: 'continuous' },
+				            	},
+				            	audio: false
+				            });
+					        return stream;
+				        } else {
+				        	console.error('가장 높은 해상도 카메라 찾기 오류');
+				        	return null;
+				        }
+
+			        }
+
+				}
+
+
+		    } catch (error) {
+		        alert("오류");
+		    	console.error('카메라 액세스 오류:', error);
+		        return null;
+		    }
+		}
+
+		// getBestBackCameraStream 함수를 호출하여 스트림을 가져옴
+		getBestBackCameraStream().then(stream => {
+		    if (stream) {
+		        // 스트림을 화면의 비디오 요소에 연결
+		        videoElement.srcObject = stream;
+		    }
+		});
+
+
+// 		$(".cpatureFrame").css({"width": $("#videoElement").innerWidth() - 10,"height":$("#videoElement").innerHeight() - 10,"border":"1px solid red", "position": "absolute", "margin" : "5px"});
+
+
+		captureButton.click(function(){
+			videoElement.classList.add('snapshot-animation');
+
+			setTimeout(function() {
+				var canvas = document.createElement("canvas");
+
+				var context = canvas.getContext("2d");
+				canvas.width = 3024;
+				canvas.height = 4032;
+
+				context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+
+				canvas.toBlob(function(blob){
+					var jpgFile = new File([blob], "snapshot.jpg", {type:"image/jpeg"});
+					fileInput.files = [jpgFile];
+				}, "image/jpeg");
+
+				const imageData = canvas.toDataURL('image/jpeg');
+				$("#snapshot").attr('src', imageData);
+
+				snapshotToggle();
+
+				videoElement.classList.remove('snapshot-animation');
+			}, 200);
+
+			setTimeout(function() {
+				checkFileInputValue();
+			}, 1400);
+
+
+		});
+
+
+		$("#btnClose").click(function(){
+			$("#snapshot").attr('src', '');
+			snapshotToggle();
+		});
+
+		$("#btnReFile").click(function(){
+			$("#snapshot").attr('src', '');
+			snapshotToggle();
+		});
+
+		function snapshotToggle(){
+			$("#videoElement").toggle();
+			$("#snapshot").toggle();
+		}
+
+		function checkFileInputValue(){
+			var selectedFile = fileInput.files;
+
+			if(selectedFile){
+				changeFiles(selectedFile);
+			}else{
+				alert("not files");
+			}
+		}
+
+		var fileMaxSize = 20; 												// 업로드 가능한 개별 파일의 최대 용량 (MB)
+		var allowExtensions = ["jpeg", "jpg", "gif", "bmp", "tif"];			// 업로드 가능한 파일 확장자
+
+		function changeFiles(){
+			var files = fileInput.files;
+			if (files.length == 0) {
+				return false;
+			}
+
+			// 파일 정보 추출
+			var name = files[0].name;
+			var type = files[0].type;
+			var size = files[0].size;
+
+			var format = type ? type.split('/', 1).toString().toLowerCase() : '';
+			var extension = name.indexOf('.') != -1 ? name.split('.').pop().toLowerCase() : '';
+
+			// 파일 확장자 체크
+			if (allowExtensions != null
+					&& $.inArray(extension, allowExtensions) == -1
+					&& !allowExtensions.filter(function(val) {return type.length && (val.indexOf(type) > -1 || val.indexOf(format + '/*') > -1)}).length) {
+				alert("\"JPG, JPEG ,GIF, BMP, TIF\" 이미지 파일만 업로드 가능합니다.");
+				$("#fileInput").val('');
+				return false;
+			}
+
+			// 파일 용량 체크
+			if (fileMaxSize != null && size > (fileMaxSize * 1024 * 1024)) {
+				alert("업로드 가능한 최대 용량(" + fileMaxSize + "MB)을 초과하였습니다.");
+				$("#fileInput").val('');
+				return false
+			}
+
+			var reader = new FileReader();
+
+			reader.onload = function(event){
+				var base64Image = event.target.result;
+				fileUpload(base64Image, name, type);
+			};
+
+			if (fileInput.files[0]){
+				reader.readAsDataURL(fileInput.files[0]);
+			}else{
+				console.log("error !! ");
+			}
+
+			if (files.length == 0) {
+				return false;
+			}
+
+			$("#fileInput").val('');
+		}
+
+
+		function fileUpload(base64Image, fileName, fileType) {
+
+			var key = "dgbcap"; //암호화 key
+			var encrypt = CryptoJS.AES.encrypt(base64Image, key,{
+						mode: CryptoJS.mode.CBC,
+						padding: CryptoJS.pad.Pkcs7
+					}).toString();
+
+			// Create an FormData object
+			var data = new FormData();
+			data.set("fileName", fileName);
+			data.set("fileType", fileType);
+			data.set("encrypt", encrypt);
+
+			$.ajax({
+				url: "/personal/personalContractAjax.do?idcdRcgn",
+				type: "POST",
+				data: data,
+				processData: false,
+				contentType: false,
+				cache: false,
+				timeout: 5 * 60 * 1000,  // ms
+				success: function (data) {
+					if (data.resultCode == "0000") {
+						if (data.rcgnRsltCd == "Y") {
+							// 인식 성공
+							post_to_url("/personal/personalContract.do?S0301");
+						} else {
+							// 인식불가 및 재촬영 안내 레이어 팝업 열기
+							openIdCardRcgnFailPopup();
+						}
+
+					} else if (data.resultCode == "1000") {
+						alert("필수입력 항목이 입력되지 않았습니다.\n필수 입력항목을 모두 입력 하신 후 진행하세요.");
+					} else if (data.resultCode == "2002") {
+						alert("입력정보로 고객정보가 조회되지 않았습니다.\n입력항목을 확인 하신 후 진행하세요.");
+					} else if (data.resultCode == "2004") {
+
+						if (!GlobalJSConfig.isMobileDevice) {
+							alert("신분증 주민등록번호와 입력하신 주민등록번호가 같지 않습니다.\n신분증 업로드후 진행하세요.");
+						} else {
+							alert("신분증 주민등록번호와 입력하신 주민등록번호가 같지 않습니다.\n신분증 재촬영후 진행하세요.");
+						}
+
+					} else {
+						alert("Error");
+					}
+				},
+				error: function (e) {
+					alert("ERROR : ", e);
+					alert( "요청 처리 중 에러가 발생했습니다. 잠시 후 다시 시도해 주세요." );
+				}
+			});
+
+			return false;
+		}
+	});
+
+
+	function openIdCardRcgnFailPopup() {
+		uiCommon.openPopup('IdCardStep02Layer');
+		return false;
+	}
+
+
+</script>

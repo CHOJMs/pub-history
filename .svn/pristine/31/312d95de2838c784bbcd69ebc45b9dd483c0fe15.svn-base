@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page contentType="text/html; charset=euc-kr" language="java" %>
+<title>DGB 캐피탈 &lt; IFS 시스템 &lt; 로그인</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/ifs_admin.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+<!-- SecureFrame Start-->
+
+<!-- SecureFrame End-->
+
+<%
+	//사업자등록번호
+	String BRGRGTNBR = "";
+	String RemoteAddr = request.getRemoteAddr();
+%>
+
+</head>
+<body>
+<div class="login-wrap">
+	<div class="topLogo">
+		<h1><a href="#none" title="asd" onclick="javascript:forwardSendForm()"><img src="../../static/admin/img/ifs_admin/h1_logo.jpg" alt="DGB금융그룹 DGB캐피탈 로고"></a></h1>
+		<h2>IFS 시스템</h2>
+	</div>
+	<fieldset class="login-form">
+		<legend>로그인</legend>
+		<p class="txt"><strong>DGB캐피탈 IFS 시스템 전용 페이지로<br>
+사업자등록번호와 공인인증서가 있어야 이용이 가능합니다.</strong></p>
+		<p class="sub">사업자등록번호를 입력해 주세요.</p>
+		<form name="frm" method="post">
+			<input type="hidden" name="INIpluginData" />
+			<input type="hidden" name="LOGIN_SVC" value="N" />
+			<input type="hidden" name="METHOD" />
+			<input type="hidden" name="CUSTMRNAME" value="" /> 
+
+			<div class="login">
+				<dl>
+					<dt style="width:120px;"><label for="BRGRGTNBR">사업자등록번호 <em>*</em></label></dt>
+					<dd style="margin-top:4px;">
+						<div><input type="password" id="BRGRGTNBR" name="BRGRGTNBR" value="<%=BRGRGTNBR%>" style="ime-mode:disabled;" maxlength="13" onkeypress="javascript:number();" /></div>
+					</dd>
+				</dl>
+				<input type="button" value="공인인증서 로그인" onclick="javascript:ifsLogin_Submit();" />
+				
+			<!--	 <input type="button" value="로그인" onclick="javascript:forwardSendForm();" />  TEST -->
+				
+			</div>
+		</form>
+	</fieldset>
+</div>
+
+<!--//////스크립트////////-->
+<script type="text/javascript" src="/static/admin/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/commonEncode.js"></script>
+<script type="text/javascript" src="/static/admin/js/common.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$('#BRGRGTNBR').keydown(function(e) {
+		if(e.which == 13) {
+			ifsLogin_Submit();
+		}
+	});
+
+});
+
+function validate(){
+	var isSuccess = true;
+	var BRGRGTNBR = $('#BRGRGTNBR').val();
+
+	if(BRGRGTNBR == ''){
+		alert("사업자등록번호를 입력하세요.");
+		$('#BRGRGTNBR').focus();
+		isSuccess = false;
+		return false;
+	}
+
+	if (!isSuccess) return false;
+	return true;	
+}	
+
+//공인인증서 로그인
+function ifsLogin_Submit(){
+
+   var frm = document.frm;
+   var sendForm = document.sendForm;
+
+   if(validate()){
+
+	    frm.METHOD.value = 'IfsLogin';
+		InitCache();
+
+		//공인인증서
+		if (EncFormVerify2(frm, sendForm)) {
+			sendForm.action = '/admin/ifs/CertVIDCheck.jsp';
+			sendForm.submit();
+			return true;
+		}
+	  return false; 
+	}
+
+}
+
+function forwardSendForm(){
+	var frm = document.frm;
+	var sendForm = document.sendForm;
+
+	if("61.85.70.40" == '<%=RemoteAddr%>'){
+		alert("DGB관리자");
+	}else if("118.219.55.7" == '<%=RemoteAddr%>'){
+		alert("이니텍1");
+	}else if("118.219.55.2" == '<%=RemoteAddr%>'){
+		alert("이니텍2");
+	}else if("172.20.24.173" == '<%=RemoteAddr%>' || "172.20.24.241" == '<%=RemoteAddr%>' ){
+		alert("이니텍test");
+	}else{
+		return;
+	}
+
+	if(validate()){
+		
+		frm.METHOD.value = 'IfsLogin';
+		frm.action = '/admin/IfsAction.do';
+		sendAjaxAction(frm, sendForm, 'fAjaxCallBack', frm.action);
+   }
+
+}
+
+ // ie8인 경우 find가 안되므로 getString으로 변경
+ function getData(xmlData, dataName) {
+	var data = $(xmlData).find(dataName).attr('value');
+	if(typeof data == 'undefined') {
+		data = getString(xmlData, dataName);
+	}
+	
+	return data;
+}
+///////////////
+
+function fAjaxCallBack(result) {
+	var frm = document.frm;
+
+	var INIpluginData = getData(result, 'INIpluginData');
+	//alert(INIpluginData);
+
+	var ResDoc = Idecrypt(INIpluginData);
+	//alert("decryptAjax(), decrypt=["+ResDoc+"]");
+
+	//응답결과
+	var rspcd = getData(ResDoc, 'RSPCD');				//응답코드
+	var custmrname = getData(ResDoc, 'CUSTMRNAME');		//거래처명
+	
+	if(rspcd == '0000'){
+		frm.CUSTMRNAME.value = custmrname;
+		frm.METHOD.value = 'SignListPg';
+		EncForm(frm);
+		frm.submit();
+
+	}else{
+		alert("로그인 오류 - 고객센터에 문의바랍니다.");
+	
+	}
+	
+}
+
+//숫자만 입력
+function number(){
+	var ua = navigator.userAgent;
+	var keyCode = event.keyCode;
+	var Trident_7 = ua.indexOf('Trident/7.0');
+
+	if((keyCode < 48) || (keyCode > 57)){
+		if(Trident_7 != -1){
+			event.preventDefault();
+		}else{
+			event.returnValue = false;
+		}
+	}		
+}
+
+</script>
+<!-- ///////////////////////-->
+
+</body>
+</html>

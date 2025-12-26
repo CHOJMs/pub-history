@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>DGB캐피탈 IFS시스템</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page contentType="text/html; charset=euc-kr" language="java" %>
+
+<!-- SecureFrame Start-->
+
+<!-- SecureFrame End-->
+
+
+
+</head>
+<body>
+<script type="text/javascript" src="/static/admin/js/dgblocation.js"></script>
+<script type="text/javascript">
+EncLinkNormal(gHomePageUrl('09002000'));
+</script>
+
+</body>
+</html>

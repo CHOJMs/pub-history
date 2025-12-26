@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NICE 시세조회</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">   
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>NICE 시세조회</h1>
+            </div>
+            <div class="popup-contents no_btn"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+                        
+                        <div class="form_box">
+                            <p class="h_tit">대표자명</p>
+                            <div class="text_data block">
+                                <span class="form">
+                                    <input type="text" id="" placeholder="" title="대표자명 입력">
+                                </span>
+                            </div>
+
+                            <p class="h_tit">모델명</p>
+                            <div class="text_data block">
+                                <span class="form">
+                                    <input type="text" id="" placeholder="" title="모델명 입력">
+                                </span>
+                            </div>
+
+                            <p class="h_tit">연식</p>
+                            <div class="text_data block">
+                                <span class="form">
+                                    <input type="text" id="" placeholder="" title="연식 입력">
+                                </span>
+                            </div>
+
+                            <div class="btn_box pt24">
+								<span class="btn"><a href="#">조회</a></span>
+							</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg_bottom">
+                        <div class="scroll_table">
+                            <table class="dataType" style="min-width: 650px;">
+                                <caption>NICE시세조회 - 기존일자, 대표자명, 차명, 모델명, 연식, 시세 등으로 나타낸 표</caption>
+                                <colgroup>
+                                    <col width="8%">
+                                    <col width="18%">
+                                    <col width="15%">
+                                    <col width="20%">
+                                    <col width="20%">
+                                    <col width="12%">
+                                    <col width="20%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">기존일자</th>
+                                        <th scope="col">대표자명</th>
+                                        <th scope="col">차명</th>
+                                        <th scope="col">모델명</th>
+                                        <th scope="col">연식</th>
+                                        <th scope="col">시세</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="radiobox">
+                                                <input type="radio" name="r01" value="" id="r01" class="rchk" aria-hidden="true" title="선택">
+                                                <label for="r01" class="rchk-label pl28" role="radio" aria-checked="false"></label>
+                                            </div>
+                                        </td>
+                                        <td>2021-05-25</td>
+                                        <td>소나타</td>
+                                        <td>YG소나타</td>
+                                        <td>ROYAL</td>
+                                        <td>2021</td>
+                                        <td>200,000,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td  colspan="7" class="noData"><p>조회결과가 없습니다.</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- 버튼 시작//-->
+                        <div class="btn_box pb0 pt24">
+                            <span class="btn"><button id="">선택</button></span>
+                        </div>
+                        <!-- //버튼 끝-->
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

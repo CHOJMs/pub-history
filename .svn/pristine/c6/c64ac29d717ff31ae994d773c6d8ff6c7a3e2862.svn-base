@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		// 뒤로가기 버튼으로 들어올때 값 사라짐 방지
+		if($('#BOARD_ID').val() == "")
+			$('#BOARD_ID').val("BOARD_ID");
+		if($('#PGE_NO').val() == "")
+			$('#PGE_NO').val("iPageNo");
+		if($('#menuNo').val() == "")
+			$('#menuNo').val("3");
+		if($('#subMenuNo').val() == "")
+			$('#subMenuNo').val("SUB_MENU");
+		if($('#INSERT_KEY').val() == "")
+			$('#INSERT_KEY').val("0");
+	});
+
+//window.alert($.fn.jquery);
+	// 조회
+	function goSearch(pageNum){
+
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardListSelect";
+		f.PGE_NO.value = pageNum;
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+	}
+
+
+	//파일다운로드
+	function download(fileName){
+		var path = "upload";
+
+		window.location.href = "/view/common/inc/FILE_DOWNLOAD.jsp?file_name="+fileName+"&file_path="+path;
+	}
+
+
+	//상세보기
+	function notsDtlSubmit(bid, ref){
+// 		var f = document.frm;
+
+// 		f.METHOD.value = "AdminBoardDetail";
+// 		f.B_ID.value   = bid;
+// 		f.REF_ID.value = ref;
+// 		f.action = "/admin/AdminBoardAction.do";
+// 		EncForm(f);
+// 		f.submit();
+		
+		location.href = "/admin/board/dgbNoticeBoardMngDtl.jsp"
+	}
+
+	function goWrite(){
+		var f = document.frm;
+		f.METHOD.value = "AdminBoardWrite";
+		f.action = "/admin/AdminBoardAction.do";
+		EncForm(f);
+		f.submit();
+
+	}
+
+
+
+</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="3"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="container bg_none">
+
+			<div class="content-wrap">
+				<h3>오토리스 관리</h3>
+				<div class="contents">
+					
+					<!-- //고객정보 -->
+					<div class="tit_area">
+						<h4 class="dl_tb_tit">고객정보</h4>
+					</div>
+					<table class="bbs-table-view">
+						<caption>
+							고객명, 주민등록번호, 생년월일, 접수일시 / 접수방법의 정보를 입력하는 고객정보입니다
+						</caption>
+						<colgroup>
+							<col style="width:200px;">
+							<col style="width:35%;">
+							<col style="width:200px;">
+							<col style="width:17%;">
+							<col style="width:18%;">
+						</colgroup>
+						<tbody>
+							<tr>								
+								<th scope="row">고객명</th>
+								<td>홍길동</td>
+								<th scope="row">주민등록번호</th>
+								<td colspan="2">801123</td>
+							</tr>
+							<tr>								
+								<th scope="row">생년월일</th>
+								<td>930125</td>
+								<th scope="row">접수일시 / 접수방법</th>
+								<td>20180320 15:17</td>
+								<td class="left_line">인터넷(카카오인증)</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //고객정보 -->
+					
+					<!-- //견적상세 -->
+					<div class="tit_area mt50">
+						<h4 class="dl_tb_tit">견적상세</h4>
+					</div>
+					<table class="bbs-table-view">
+						<caption>
+							리스차종, 배기량, 하이브리드 유무, 차세분, 차량가격, 등록비용, 총구매비용, 리스기간, 보증금, 잔존가치, 선납금, 승인요청액, 약정주행거리, 월 리스료의 정보를 입력하는 견적상세입니다
+						</caption>
+						<colgroup>
+							<col style="width:200px;">
+							<col style="width:17%;">
+							<col style="width:18%;">
+							<col style="width:200px;">
+							<col style="width:17%;">
+							<col style="width:18%;">
+						</colgroup>
+						<tbody>
+							<tr>								
+								<th scope="row">리스 차종</th>
+								<td colspan="2">현대 그랜저 IG</td>
+								<th scope="row">배기량</th>
+								<td colspan="2">2,359 cc</td>
+							</tr>
+							<tr>								
+								<th scope="row">하이브리드 유무</th>
+								<td colspan="2">O</td>
+								<th scope="row">차세분</th>
+								<td>43,270</td>
+								<td class="left_line">포함</td>
+							</tr>
+							<tr>								
+								<th scope="row">차량가격(고객입력항목)</th>
+								<td colspan="2">51,800,540</td>
+								<th scope="row">등록비용</th>
+								<td colspan="2">5,144,540</td>
+							</tr>
+							<tr>								
+								<th scope="row">총구매비용</th>
+								<td colspan="2">85,044,540</td>
+								<th scope="row">리스기간</th>
+								<td colspan="2">60개월</td>
+							</tr>
+							<tr>								
+								<th scope="row">보증금 | %</th>
+								<td>20,720,000</td>
+								<td class="left_line">40%</td>
+								<th scope="row">잔존가치 | %</th>
+								<td>14,504,000</td>
+								<td class="left_line">35%</td>
+							</tr>
+							<tr>								
+								<th scope="row">선납금(수입차만) | %</th>
+								<td>10,000,000</td>
+								<td class="left_line">10%</td>
+								<th scope="row">승인요청액</th>
+								<td colspan="2">60,000,000</td>
+							</tr>
+							<tr>								
+								<th scope="row">약정주행거리</th>
+								<td colspan="2">30,000 km</td>
+								<th scope="row">월 리스료</th>
+								<td colspan="2" class="bg_blue">995,540</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class="bbs-table mt15">
+						<caption>
+							<p class="blind">원리금, 차세, 월 리스료, 장기선납금, 실납입액 등으로 나타낸 테이블</p>
+						</caption>
+						<colgroup>
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+							<col style="width:auto;">
+						</colgroup>
+						<thead>
+							<tr>		
+								<th scope="col">원리금</th>
+								<th scope="col">차세</th>
+								<th scope="col">월 리스료</th>
+								<th scope="col">장기선납금</th>
+								<th scope="col">실납입액</th>
+							</tr>
+						</thead>
+						<tbody>
+								<tr>
+									<td>445,000</td>	
+									<td>43,270</td>
+									<td>995,540</td>
+									<td>-1,000,000</td>
+									<td class="bg_blue">890,000</td>
+								</tr>
+						</tbody>
+					</table>
+					<!-- //견적상세 -->
+					
+					<!-- //상담완료 유무 -->
+					<div class="tit_area mt50">
+						<h4 class="dl_tb_tit">상담완료 유무</h4>
+					</div>
+					<table class="bbs-table-view">
+						<caption>
+							상담사, 상담완료, 상담완료 일의 정보를 입력하는 상담완료입니다
+						</caption>
+						<colgroup>
+							<col style="width:220px;">
+							<col style="width:%;">
+						</colgroup>
+						<tbody>
+							<tr>								
+								<th scope="row">상담사</th>
+								<td><input type="text" name="" id="" maxlength="" value="" style="width:350px;" title="상담사 입력"></td>
+							</tr>
+							<tr>								
+								<th scope="row">상담완료</th>
+								<td>
+									<div class="rd_area3">
+										<input type="radio" name="radio1" id="" title="완료 선택">
+										<label for="" class="mr20">완료</label>
+										<input type="radio" name="radio1" id="" title="미완료 선택">
+										<label for="" class="mr20">미완료</label>
+									</div>
+								</td>
+							</tr>
+							<tr>								
+								<th scope="row">상담완료 일</th>
+								<td>20180321 10:38</td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //상담완료 유무 -->
+					<p class="mt20">※ 고객과 상담이 완료되었을 경우에 ‘완료＇에 체크해 주시고, 아래 확인 버튼을 누르셔야 현재시각 기준으로 상담완료일에 기록됩니다.</p>
+					<p class="btn-align-right">
+						<a href="#" class="btn h42">상담완료</a><a href="#" class="btn h42 neg">목록</a>
+					</p>
+					
+				</div><!--// contents -->
+			</div><!--// content-wrap -->
+		</div><!--// container -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+
+<!-- 에러 레이어 -->
+<span id='errorLayer' class="layerpop" style="position:absolute; left:300px; top:200px; z-index:3; display:none;"></span>
+
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인(신용)정보 수집 이용 필수 동의서 (신분증 안면인식 서비스) | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function textPopupAll() {
+        uiCommon.openPopup("textPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn js-open-popup" onclick="textPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="textPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>개인(신용)정보 수집 이용 필수 동의서</h1>
+            </div>
+            <div class="popup-contents flex-col popup-clau">
+                <!-- Start : content //-->
+                <div class="pop-cnt-wrap">
+
+                <!-- Start : 개인(신용)정보 필수적 동의서 -->
+                <div class="term-head mt0">신분증 안면인식 서비스</div>
+
+                <div class="term-cont">
+                    <div class="term-title">1. 수집·이용에 관한 사항</div>
+                    <table class="viewType tbl-view">
+                        <caption>데이터 제공에 대한 테이블</caption>
+                        <colgroup>
+                            <col width="25%">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">수집·이용 목적</th>
+                                <td>
+                                    - 본인확인 : 고객의 신분증 사진과 신분증 제출 시점의 고객의 얼굴사진(실시간 촬영) 비교 
+                                    <br>- 민원 및 상담 : 고객상담, 분쟁 조정 및 민원 처리
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">보유 및 이용기간</th>
+                                <td>
+                                    (일반개인정보) 거래 종료일로부터 5년 <br>(단, 다른 관련 법령에 해당하는 경우 해당 법령상의 보존기간을 따름)
+                                    <p class="desc">보유 기간에서의 거래 종료일이란 당사와의 모든 계약 해지 및 채권 · 채무 관계가 소멸된 날 또는 관계 법령 등 계약에 대한 사항이 철회/만기/취소 등 그 밖에 사유로 종료된 일자를  말한다.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">거부 권리 및 <br class="mob">불이익</th>
+                                <td>귀하는 아래 개인(신용)정보 수집 및 이용에 대하여 거부할 수 있으나, iM 캐피탈에 대한 기본적인 서비스는 이용할 수 있습니다. 다만, 신분증 안면인식 서비스 이용을 위한 필수적 사항으로 동의 거부시 연관된 서비스 이용이 어렵습니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="tbl-title">■ 수집·이용 항목</div>
+                    <table class="viewType tbl-view">
+                        <caption>수집·이용 항목에 대한 테이블</caption>
+                        <colgroup>
+                            <col width="25%">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">민감정보</th>
+                                <td>
+                                    사진 특징정보 (생체정보) 
+                                    <br>- 사진으로부터 추출(생성)한 생체인식 특징정보를 활용하여 안면인식 서비스 처리를 수행함.
+                                </td>
+                            </tr>
+                            <tr class="tbl-agree">
+                                <th></th>
+                                <td>
+                                    <p>위 민감정보 수집·이용에 <br class="mob">동의하십니까?</p>
+                                    <div class="agree-li mt8">
+                                        <span>□ 동의하지 않음</span>
+                                        <span>□ 동의함</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">개인(신용)정보</th>
+                                <td></td>
+                            </tr>
+                            <tr class="sub">
+                                <th scope="row">└ 일반개인정보</th>
+                                <td>
+                                    신분증 사진(증명사진, 성명, 생년월일, 발급일자, 발급기관) 얼굴사진 
+                                    <br>- 신분증 사진은 촬영시 최소한의 정보만 수집될 수 있도록 "주민등록번호 뒷자리, 상세주소" 를 비식별화 합니다
+                                </td>
+                            </tr>
+                            <tr class="tbl-agree">
+                                <th></th>
+                                <td>
+                                    <p>위 개인(신용)정보 수집 ·이용에 <br class="mob">동의하십니까?</p>
+                                    <div class="agree-li mt8">
+                                        <span>□ 동의하지 않음</span>
+                                        <span>□ 동의함</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="term-txt">
+                        ※ 서비스 이용에 대한 문의사항이 있을 경우 아래 대표전화 및 홈페이지를 통해 확인하실 수 있습니다<br>
+                        (대표전화 : <a href="tel:1566-0050">1566-0050</a> / 홈페이지 : <a href="https://www.imcap.co.kr/" target="_blank" title="iM캐피탈 새창이동 ">www.imcap.co.kr</a> )
+                    </div>
+
+                    <div class="term-sign">
+                        <span>년</span>
+                        <span>월</span>
+                        <span>일</span>
+                        <span class="name">본인성명</span>
+                        <span>서명/인</span>
+                    </div>
+                </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

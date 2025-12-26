@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직장명 검색</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/css/loan.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">    
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>직장명 검색</h1>                
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+                        <p class="h_tit">직장명</p>
+                        <div class="text_data">
+                            <span class="form" style="position: relative;">
+                                <input type="text" id="id_corp_name" placeholder="직장명 검색" title="직장명 검색">
+                                <button class="btn-clear d-none"></button>
+                                <button class="btn-search"></button>
+                            </span>
+                            <div class="btn_cont">
+                                <button id="">직접 입력</button>
+                            </div>
+                        </div>
+                        <p class="txt_small" style="padding: .4rem 0 0 0; color: #999;">검색결과에 없다면 직접 입력해 주세요</p>
+                    </div>
+                    <!-- 입력, 리스트 중간의 회색 나눔선 -->
+                    <div class="divider"></div>
+                    
+                    <div class="bg_bottom">
+                        <div class="corp_box">
+                            <li class="c_list">
+                                <a href="#">
+                                    <p class="c_title"><em>디지비</em>신용정보</p>
+                                    <div class="col">
+                                        <span class="col_name">사업자번호</span>
+                                        <span class="col_desc">123-45-67890</input>
+                                    </div>
+                                    <div class="col" style="margin-top: .4rem;">
+                                        <span class="col_name">직장주소</span>
+                                        <span class="col_desc">대구 달서로 183</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="c_list">
+                                <a href="#">
+                                    <p class="c_title"><em>디지비</em>신용정보</p>
+                                    <div class="col">
+                                        <span class="col_name">사업자번호</span>
+                                        <span class="col_desc">123-45-67890</input>
+                                    </div>
+                                    <div class="col" style="margin-top: .4rem;">
+                                        <span class="col_name">직장주소</span>
+                                        <span class="col_desc">대구 달서로 183</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="c_list">
+                                <a href="#">
+                                    <p class="c_title"><em>디지비</em>신용정보</p>
+                                    <div class="col">
+                                        <span class="col_name">사업자번호</span>
+                                        <span class="col_desc">123-45-67890</input>
+                                    </div>
+                                    <div class="col" style="margin-top: .4rem;">
+                                        <span class="col_name">직장주소</span>
+                                        <span class="col_desc">대구 달서로 183</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="c_list">
+                                <a href="#">
+                                    <p class="c_title"><em>디지비</em>신용정보</p>
+                                    <div class="col">
+                                        <span class="col_name">사업자번호</span>
+                                        <span class="col_desc">123-45-67890</input>
+                                    </div>
+                                    <div class="col" style="margin-top: .4rem;">
+                                        <span class="col_name">직장주소</span>
+                                        <span class="col_desc">대구 달서로 183</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <p class="nodata">조회 결과가 없습니다.</p>
+                            </li>
+                        </div>
+                        <div class="btn_more">
+                            <a href="#" class="more_btn"><i class="more"></i>더보기</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!--// content 끝-->
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+    <script type="text/javascript">
+        $('.text_data').on('click', '.form input + .btn-clear', function(e) {
+            e.preventDefault();
+            $(this).prev('input').val('');
+            $(this).toggleClass('d-none');
+        });
+        $('#id_corp_name').on('focus blur keyup', function(e) {
+            e.preventDefault();
+            if ($(this).val().length) {
+                $('.btn-clear').removeClass('d-none');
+            }
+            else {
+                $('.btn-clear').addClass('d-none');
+            }
+        });
+    </script>
+</div>
+</body>
+</html>

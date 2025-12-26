@@ -1,0 +1,549 @@
+// 받아온 값 세팅
+var name;
+var telNo;
+var telComCd;
+var birthday;
+var sexCd;
+
+//세션 시간 체크
+var timer = null;
+var isRunning = false;
+var flag = false;
+
+// sms 인증코드 추출 여부
+var getAuthCode = false;
+
+//getDateSuccess 여부
+var getDateSuccess = false;
+
+function setAuthTimeOut(){
+	var outTime = 180;
+	if(isRunning){
+		clearInterval(timer);
+	}
+	startAuthTime(outTime);
+}
+
+function startAuthTime(outTime){
+	setTimeFormat(outTime);
+	timer = setInterval(function(){
+		--outTime;
+		if(outTime < 0){
+			clearInterval(timer);
+			isRunning = false;
+			alert("인증시간이 초과 되었습니다.\n다시 재요청버튼을 누른 후 인증 해주십시오.");
+		} else {
+			setTimeFormat(outTime);
+
+			if (!getAuthCode) {
+				getSmsAuthNumber("");
+			}
+
+		}
+	},1000);
+
+	isRunning = true;
+}
+
+function setTimeFormat(outTime){
+	var hh = Math.floor(outTime / 60 / 60);
+	var mm = Math.floor((outTime - (hh * 60 * 60))/60);
+	var ss = (outTime - (hh * 60 * 60) - (mm * 60)) ;
+
+	if(mm<10) mm = "0" + mm;
+	if(ss<10) ss = "0" + ss;
+
+	var txt = mm + ":" + ss;
+	var auth = document.getElementById('authTime');
+
+	if(auth){
+		auth.innerHTML = txt;
+	}
+}
+
+
+function getSmsAuthNumber(regist) {
+
+	if ((typeof GlobalJSConfig === "undefined")
+					|| !(GlobalJSConfig.isApp && GlobalJSConfig.isAndroid)) return;
+
+	Native.getSmsAuthNumber(regist, "getSmsAuthNumberCallback");
+}
+
+function getSmsAuthNumberCallback(jsonData) {
+	console.log("getSmsAuthNumberCallback : ");
+
+	var resultJsonData = getJsonData(toJsonString(jsonData));
+	if (resultJsonData.RESULT_CODE == "0000") {
+		var val = resultJsonData.RESULT_DATASET.SMS;
+		if(val != null && val != undefined && val != "") {
+			getAuthCode = true;
+			$("#OTP_NO").val(val).change();
+		}
+	}
+};
+function getGender(j2) {
+	var gender = "";
+
+    var checkNum = j2.substring(0,1);
+
+	if (checkNum == "1" || checkNum == "3" || checkNum == "5" || checkNum == "7" || checkNum == "9") {
+    	gender = "M"; 	// 남자
+    } else {
+    	gender = "F";	// 여자
+    }
+
+	return gender;
+}
+function getEncRlNmNo(j1, j2) {
+    // TODO 고객 실명번호 Encode?
+    return j1 + j2;
+}
+
+function getBirth(j1, j2) {
+    var birth = "";
+
+    var checkNum = j2.substring(0,1);
+
+    if (checkNum == "3" || checkNum == "4" || checkNum == "7" || checkNum == "8") {
+    	birth += "20"+j1.substring(0,2);
+    } else if (checkNum == "9" || checkNum == "0") {
+    	birth += "18"+j1.substring(0,2);
+    } else {
+    	birth += "19"+j1.substring(0,2);
+    }
+
+    birth += j1.substring(2,4);
+    birth += j1.substring(4);
+
+    return birth;
+}
+
+
+
+/*
+ * 코드 요청
+ * check : true 재요청, false 요청
+ */
+function phoneAuthCode(check){
+
+	getAuthData({
+		"rrn1" : $("#rrn1").val(),
+		"rrn2" : $("#rrn2").val(),
+		"success" : function(data) {
+			$("#SEX_CD").val(data.sexCd);
+		}
+	});
+
+	$("#NAME").val($("#name").val());
+	$("#BIRTHDAY").val(getBirth($("#rrn1").val(), $("#rrn2").val()));				// !# TODO 가상키패드로 입력된 경우 확인 필요?
+	$("#CUST_RL_NM_NO").val(getEncRlNmNo($("#rrn1").val(), $("#rrn2").val()));	// !# TODO 가상키패드로 입력된 경우 확인 필요?
+	$("#TEL_COM_CD").val($("#telComCd").val());
+	$("#TEL_NO").val($("#telNo").val());
+
+	// 휴대폰 본인인증 데이터 검증
+	if(!phoneAuthInfoValid(true)) {
+		return false;
+	}
+	if(check){
+		$("#SMS_RESEND_YN").val("Y");
+	} else {
+		// SMS 인증번호 추출 시작
+		getSmsAuthNumber("Y");
+	}
+
+	$.ajax({
+		type : "POST",
+		cache : false,
+        url:'/common/phoneAuthCode.do',
+        global: false,
+        data: $("#phoneFrm").serialize(),
+        success:function(data){
+			if(data.RSPCD == "B000"){
+				if(!check){
+					$("#authDiv1").hide();
+					$("#authDiv2").show();
+				}
+
+				setInterval(function(){
+					$("#pAuthAgreeAll").prop('checked', true);
+					$('input:checkbox[name="agree"]').each(function(){
+						this.checked = true;
+					});
+				}, 100);
+
+				$("#authNum").text("재요청")
+				getAuthCode = false;
+
+				$("#OTP_NO").val("").keyup();
+				setAuthTimeOut();
+			}else{
+				alert(data.RTMSG);
+			}
+        },
+		error : function(request, status, error) {
+			alert("요청 처리 중 에러가 발생 했습니다");
+			alert("code : " + request.status + "\nmessage : " + request.responseText + "\nerror : " + error);
+			// alert("[fn_mydgbLogin] code : " + request.status + "\nmessage : " + request.responseText + "\nerror : " + error);
+		}
+    });
+
+}
+
+// 코드 인증
+function phoneAuthCodeCheck(){
+
+	// 휴대폰 본인인증 데이터 검증
+	if(!phoneAuthInfoValid(true)) {
+		return false;
+	};
+
+	var otpNo = $("#OTP_NO").val().trim();
+	$.ajax({
+		type : "POST",
+		cache : false,
+        url:'/common/phoneAuthCodeCheck.do',
+        data: {"OTP_NO" : otpNo},
+        success:function(data){
+        	if(data.RSPCD == "B000") {
+        		selfAuthPass();
+			} else if(data.RSPCD == "B131") {
+				alert("인증번호가 틀렸습니다.");
+				document.getElementById("phoneAuthChkBtn").disabled = false;
+			} else {
+				alert(data.RTMSG);
+				document.getElementById("phoneAuthChkBtn").disabled = false;
+			}
+
+        }, error: function (err) {
+			alert("요청 처리 중 에러가 발생 했습니다");
+			document.getElementById("phoneAuthChkBtn").disabled = false;
+		}
+    });
+
+}
+
+
+function kakaoAuth() {
+
+		// 휴대폰 본인인증 데이터 검증
+		if(!phoneAuthInfoValid(false)) {
+			return false;
+		};
+
+		kakaoInAppSignExc({
+			"#title": "챗봇 최초본인인증",
+			"name": $("#name").val(),
+			"phone_no": $("#telNo").val(),
+			"birthday":  $("#rrn1").val()
+		});
+
+}
+
+function kakaoAuthPC() {
+
+	// 휴대폰 본인인증 데이터 검증
+	if(!phoneAuthInfoValid(false)) {
+		return false;
+	};
+
+	kakaoSimpleAuthExc({
+		"#title": "챗봇 최초본인인증",
+		"name": $("#name").val(),
+		"phone_no": $("#telNo").val(),
+		"birthday":  $("#rrn1").val()
+	});
+
+}
+
+
+// 휴대폰 본인인증 데이터 검증
+function phoneAuthInfoValid(type) {
+
+	// 가상키패드를 사용할 경우 가상키패드 사용여부와 암호화된 데이터 설정
+	if($("#name").val() == "") {
+		alert("고객명을 입력해주세요.");
+		$("#name").focus();
+		return false;
+	}
+	if($("#telComCd").val() == "00") {
+		alert("통신사를 선택해주세요.");
+		$("#telComCd").focus();
+		return false;
+	}
+	if($("#telNo").val() == "") {
+		alert("휴대폰 번호를 선택해주세요.");
+		$("#telNo").focus();
+		return false;
+	}
+	if(!$util.validTelNum($("#telNo").val())) {
+		alert("형식에 맞지않는 번호입니다.");
+		$("#telNo").val("");
+		$("#telNo").focus();
+		return false;
+	}
+
+	var rrn1Val = $("#rrn1").val();
+	if (rrn1Val == "") {
+		alert("주민등록번호 앞자리를 입력해 주세요.");
+		$("#rrn1").focus();
+		return false;
+	}
+	if (!$util.isNum(rrn1Val) || rrn1Val.length != 6) {
+		alert("주민등록번호 앞자리를 확인 후 다시 입력해 주세요.");
+		$("#rrn1").focus().select();
+		return false;
+	}
+
+	var rrn2Val = $("#rrn2").val();
+	if (rrn2Val == "") {
+		alert("주민등록번호 뒷자리를 입력해 주세요.");
+		$("#rrn2").focus();
+		return false;
+	}
+	if (!keypadFlag && (!$util.isNum(rrn2Val) || rrn2Val.length != 7) ) {
+		alert("주민등록번호 뒷자리를 확인 후 다시 입력해 주세요.");
+		$("#rrn2").focus();
+		return false;
+	}
+
+	if(type){
+		// 유의사항 및 약관 동의여부 체크
+		if (!checkAuthKcbPhoneAgree()) {
+			return false;
+		}
+	}
+
+
+	return true;
+}
+
+
+
+/**
+ * KCB 약관동의 체크
+ */
+function checkAuthKcbPhoneAgree() {
+
+	if ($("#pAuthAgree1").is(":checked") === false) {
+		alert("개인정보 수집 이용 제공 동의에 동의해 주십시오.");
+		$("#pAuthAgree1").focus();
+		return false;
+	}
+
+	if ($("#pAuthAgree2").is(":checked") === false) {
+		alert("고유식별정보 처리 동의에 동의해 주십시오.");
+		$("#pAuthAgree2").focus();
+		return false;
+	}
+
+	if ($("#pAuthAgree3").is(":checked") === false) {
+		alert("서비스 이용약관 동의에 동의해 주십시오.");
+		$("#pAuthAgree3").focus();
+		return false;
+	}
+
+	if ($("#pAuthAgree4").is(":checked") === false) {
+		alert("통신사 이용약관 동의에 동의해 주십시오.");
+		$("#pAuthAgree4").focus();
+		return false;
+	}
+
+	return true;
+}
+
+
+
+function openAuthKcbPhoneAgreeLayerPopup(agreeNo) {
+
+	// 통신사 선택
+	if($("#telComCd").val() == "00") {
+		alert("통신사를 선택해주세요.");
+		$("#telComCd").focus();
+		return false;
+	}
+
+	var telComCd = $("#telComCd").val();
+
+	// 고유식별정보처리 동의 (개별) : https://safe.ok-name.co.kr/eterms/kcb_agrmt_hs_info.jsp
+	// 본인확인서비스 이용약관 (개별) : https://safe.ok-name.co.kr/eterms/kcb_agrmt_hs_tos.jsp
+
+	// [SKT][SKTM]
+	// 개인정보 수집/이용/취급 위탁동의 : https://safe.ok-name.co.kr/eterms/kcb_agrmt_hs_info_skt.jsp
+	// 통신사이용약관 : https://safe.ok-name.co.kr/eterms/kcb_agrmt_hs_tos_skt.jsp
+
+	// [KT][KTM]
+	// 개인정보 수집/이용/취급 위탁동의 : https://safe.ok-name.co.kr/eterms/kcb_agrmt_hs_info_kt.jsp
+	// 통신사이용약관 : https://safe.ok-name.co.kr/eterms/kcb_agrmt_hs_tos_kt.jsp
+
+	// [LG][LGM]
+	// 개인정보 수집/이용/취급 위탁동의 : https://safe.ok-name.co.kr/eterms/kcb_agrmt_hs_info_lgu.jsp
+	// 통신사이용약관 : https://safe.ok-name.co.kr/eterms/kcb_agrmt_hs_tos_lgu.jsp
+
+	// [KTM][LGM]
+	// [KTM] 개인정보 제3자 제공 동의 : https://safe.ok-name.co.kr/eterms/kcb_agrmt_hs_offer_ktmvno.jsp
+	// [LGM] 개인정보 제3자 제공 동의 : https://safe.ok-name.co.kr/eterms/kcb_agrmt_hs_offer_lgumvno.jsp
+
+	var agreePath = "";
+	var agreeTitle = "";
+	var agreeTelComNm = "";
+
+	switch (telComCd) {
+	case "01":
+	case "04":
+		agreeTelComNm = "skt";
+		break;
+	case "02":
+	case "05":
+		agreeTelComNm = "kt";
+		break;
+	case "03":
+	case "06":
+		agreeTelComNm = "lgu";
+		break;
+	}
+
+	if (agreeNo == "1") {
+
+		// 개인정보 수집/이용 동의 (통신사별)
+		agreeTitle = "개인정보 수집 이용 제공 동의";
+		agreePath = "kcb_agrmt_hs_info" + "_" + agreeTelComNm;
+
+	} else if (agreeNo == "2") {
+
+		// 고유 식별 정보 처리 동의 (공통)
+		agreeTitle = "고유 식별 정보 처리 동의";
+		agreePath = "kcb_agrmt_hs_info";
+
+	} else if (agreeNo == "3") {
+
+		// 서비스 이용 약관 (공통)
+		agreeTitle = "서비스 이용 약관";
+		agreePath = "kcb_agrmt_hs_tos";
+
+	} else if (agreeNo == "4") {
+
+		// 통신사 이용 약관 (통신사별)
+		agreeTitle = "통신사 이용 약관";
+		agreePath = "kcb_agrmt_hs_tos" + "_" + agreeTelComNm;
+	}
+
+	// 약관 URL
+	var url = "https://safe.ok-name.co.kr/eterms/" + agreePath + ".jsp";
+
+    // 약관동의서 내용 불러오기 !# iframe 스타일 확인 요청
+    $("#authKcbPhoneAgreeLayerPopup").find(".js-title").text(agreeTitle);
+    $("#authKcbPhoneAgreeLayerPopup").find("#agreePopIframe").attr("src", url);
+    $("#authKcbPhoneAgreeLayerPopup").find("#agreePopIframe").attr("title", agreeTitle); // title 속성 지정 "웹접근성 관련"
+
+    // 약관 팝업 노출
+    uiCommon.openPopup("#authKcbPhoneAgreeLayerPopup");
+}
+
+
+/**
+ * @Deprecated
+ * 휴대전화 통신사 코드 값 구하기
+ */
+function getTelComCd(mcpCd) {
+	var telComCd = "";
+
+	switch(mcpCd){
+		case "PL0510":
+			telComCd = "01";
+			break;
+		case "PL0520":
+			telComCd = "02";
+			break;
+		case "PL0530":
+			telComCd = "03";
+			break;
+		case "PL0550":
+			telComCd = "04";
+			break;
+		case "PL0560":
+			telComCd = "05";
+			break;
+		case "PL0570":
+			telComCd = "06";
+			break;
+	}
+
+	return telComCd;
+}
+
+function otpNoKeyupEvent(obj, e) {
+
+	if(e) {
+		var val = $(obj).val().length;
+
+		if(val == 6) {
+			$("#phoneAuthChkBtn").removeClass("gray");
+		} else {
+			$("#phoneAuthChkBtn").addClass("gray");
+		}
+	}
+}
+
+//setSexCd
+function getAuthData(opt) {
+
+	var successCallbackFunc = opt.success;
+
+	if ($util.isEmpty(opt.rrn1) || $util.isEmpty(opt.rrn2)) {
+		return false;
+	}
+
+	// 요청데이터 생성
+	var reqData = {}
+	reqData.rrn1 = opt.rrn1;
+	reqData.rrn2 = opt.rrn2;
+
+	if ($util.isNum(reqData.rrn2) && reqData.rrn2.length == 7) {
+		// 가상키패드 사용 여부 (useVitualKeyPad) 비활성화
+		reqData.useVitualKeyPad = false;
+	} else {
+		// 가상키패드
+		if(!(typeof keypadFlag === 'undefined') && keypadFlag == true) {
+
+			reqData.encData = nFilterEncrypted(); 	// 암호화된 데이터 (encData)
+			reqData.useVitualKeyPad = true;   		// 가상키패드 사용 여부 (useVitualKeyPad)
+		}
+	}
+
+	$.ajax({
+		url : '/common/getAuthData.do?enc',
+		data: reqData,
+		global: false,
+		async: false,
+		type : 'POST',
+		dataType : 'json',
+		success : function(data) {
+
+			if (data.RSPCD === "0000") {
+
+//				data.birthday = TOUCHENEX_UTIL.Base64.decode(data.birthday);
+				data.birthday = $util.base64.decode(data.birthday);
+
+				if (successCallbackFunc && $.isFunction(successCallbackFunc)) {
+					successCallbackFunc(data);
+				}
+
+				getDateSuccess = true;
+
+			} else if (data.RSPCD === "2005") {
+				alert("주민번호가 올바르지 않습니다.");
+				return false;
+			} else {
+				alert("요청 처리 중 오류가 발생했습니다. [" + data.RSPCD + "]");
+				return false;
+			}
+		},
+		error : function(request, status, error) {
+			alert("요청 처리 중 에러가 발생했습니다");
+			console.log("code : " + request.status + "\nmessage : " + request.responseText + "\nerror : " + error);
+			return false;
+			// alert("[fn_mydgbLogin] code : " + request.status + "\nmessage : " + request.responseText + "\nerror : " + error);
+		}
+	});
+}

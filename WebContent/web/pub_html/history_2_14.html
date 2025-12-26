@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 고객 재확인 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-15</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>고객정보 재확인 이행 안내문 동의</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-000-001.html">EDD-000-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td>버튼 btn-full-width삭제</td>
+                    </tr>
+                    <tr class="hold">
+                        <td></td>
+                        <td>2023-05-15</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>고객정보 재확인 이행 안내문 동의</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-000-001-1.html">EDD-000-001-1.html</a></td>
+                        <td></td>
+                        <td>프로세스화면 적용</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-200-001.html">EDD-200-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>통신사 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-200-002.html">EDD-200-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>휴대폰 본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-200-003.html">EDD-200-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신분증 촬영</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-800-001.html">EDD-800-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>신분증 인식 실패</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-800-002.html">EDD-800-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신분증 정보확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-800-003.html">EDD-800-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="hold">
+                        <td></td>
+                        <td>2023-05-15</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>고객정보 재확인 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-600-001.html">EDD-600-001.html</a></td>
+                        <td></td>
+                        <td>셀렉트수정, 주소수정</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-15</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>고객정보 재확인 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-600-001-1.html">EDD-600-001-1.html</a></td>
+                        <td></td>
+                        <td>해당 버전으로 배포</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>거래자금 원천</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-600-002.html">EDD-600-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>거래목적</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-600-003.html">EDD-600-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>직업유형</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-600-004.html">EDD-600-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>직장명 검색</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-620-002.html">EDD-620-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>주소 검색</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-620-003.html">EDD-620-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>주소 검색 결과</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-620-004.html">EDD-620-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>상세주소 입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-620-005.html">EDD-620-005.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>고객정보 재확인 등록완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/reconfirm/EDD-999-001.html">EDD-999-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

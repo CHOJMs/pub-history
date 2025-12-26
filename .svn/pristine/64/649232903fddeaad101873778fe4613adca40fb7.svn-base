@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+
+<%
+	String menuNo = request.getParameter("menuNo");
+	String[] menuClass = {"", "", "", "", ""};
+	
+	if(menuNo.equals("1"))
+		menuClass[0] = " class=\"on\"";
+	else if(menuNo.equals("2"))
+		menuClass[1] = " class=\"on\"";
+%>
+<%@ include file="/admin/inc/common.jsp" %>
+<div>
+	<h1><img src="/static/admin/img/h1_logo_sub.png" alt="iM캐피탈"></h1>
+	<div class="gnb-area">
+		<p><%=sessUserName %> 님 환영합니다. <a href="/admin/dgbLogout.jsp">LOGOUT</a></p>
+		<ul class="gnb">
+			<li><a href="/admin/dgbAdmin001.jsp"<%=menuClass[0]%>>접수내역</a></li>
+			<li><a href="/admin/dgbAdmin004.jsp"<%=menuClass[1]%>>상품매칭</a></li>
+		</ul>
+	</div>
+</div>

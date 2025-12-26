@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대출사기방지 확인 안내 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>대출사기 방지 확인</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+
+                    <!-- Start : 안내문구 -->
+                    <div class="grp-cont">
+                        <div class="head-tit">대출사기 사례 안내</div>
+                        <div class="tbl-txt">신청하고자 하는 계약과 별개로 다른 사람과 이면계약을 체결하거나 타인에게 명의를 대여하여 금융사기를 당하는 피해 사례가 다수 발생하고 있습니다.<br>
+                            계약 신청과 관련하여 다른 사람에게 명의를 대여하셨거나 월납입금 대납, 렌터카 운영 등 수익제공, 대환대출 등 본인이 직접 차량을 운행하는 목적 외에 제 3자와 별도로 계약 또는 약정한 사실이 있으면 당사와의 대출계약 신청은 철회하여 주시기 바랍니다.</div>
+
+                    </div>
+                    <div class="grp-cont">
+                        <div class="head-tit">신청인의 책임 안내</div>
+                        <div class="tbl-txt">먄약 고객님께 제3자와 구두 또는 서면 방식으로 별도 계약을 체결하거나 약정한 사실이 있는 경우, 고객님이 대출금액 전체에 대한 최종적인 상환 책임을 부담하여, 형사책임도 부담할 수 있을을 알려드립니다.</div>
+
+                    </div>
+                    <div class="grp-cont">
+                        <div class="head-tit">사실 확인</div>
+                        <div class="tbl-txt">당사로 대출계약을 신청함에 있어서 다른 사람에게 명의 대여하셨거나, 월 납입금 대납, 렌터카 운영 등 수익제공, 대환대출 등 본인이 직접 차량을 운행하는 목적 외의 다른 제 3자와 별도로 계약 또는 약정한 사실이 있습니까?</div>
+                    </div>
+                    <!-- //End : 안내문구 -->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none">
+                    <div class="btn-box">
+                        <span class="btn gray"><button type="button" id="">위 내용을 확인 후 사실이 없음에 동의합니다</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

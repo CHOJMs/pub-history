@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page contentType="text/html; charset=euc-kr" language="java" %>
+
+<title>DGB 캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/autolease.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+<%@ include file="/admin/inc/common.jsp" %>
+
+<!-- SecureFrame Start-->
+
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/commonEncode.js"></script>
+<script type="text/javascript" src="/static/admin/js/common.js"></script>
+
+<script type="text/javascript">
+
+
+	// 저장하기
+	function onSave(kind){
+		
+	}
+
+	function init() {
+		$('#METHOD').val('');
+		$('#DBQUERY').val('');
+		$('#CAR_CD').val('');
+		$('#UPPER_CD_FST').val('');
+		$('#UPPER_CD_SEC').val('');
+		$('#LINE_UP_CD').val('');
+	}
+
+
+
+
+function cashBackChange(){
+	
+	var amt = $("#SDJSINS14").val().replaceAll(",","");
+	var rate = $('#cashBack').val();
+	var newAmt = 0;
+
+	if(rate == "IC40999"){	// 없음
+		newAmt = 0;
+	}else if(rate == "IC40010"){	// 0.1%
+		newAmt = amt * 0.001;
+	}else if(rate == "IC40020"){	// 0.2%
+		newAmt = amt * 0.002;
+	}else if(rate == "IC40030"){	// 0.3%
+		newAmt = amt * 0.003;
+	}else if(rate == "IC40040"){	// 0.4%
+		newAmt = amt * 0.004;
+	}else if(rate == "IC40050"){	// 0.5%
+		newAmt = amt * 0.005;
+	}else if(rate == "IC40060"){	// 0.6%
+		newAmt = amt * 0.006;
+	}else if(rate == "IC40070"){	// 0.7%
+		newAmt = amt * 0.007;
+	}else if(rate == "IC40080"){	// 0.8%
+		newAmt = amt * 0.008;
+	}else if(rate == "IC40090"){	// 0.9%
+		newAmt = amt * 0.009;
+	}else if(rate == "IC40100"){	// 1%
+		newAmt = amt * 0.01;
+	}
+
+	var newAmt_coma = newAmt.addComma();
+	var cashBack = $('#cashBack').val();
+	var cashBackAmt = $('#cashBackAmt').val();
+
+	$("#cashBackAmt").val(newAmt_coma);
+	$('#SDJSINS24').val(cashBack);
+	$('#SDJSINS25').val(cashBackAmt);
+
+	// 버튼 컨트롤 
+	buttonDisplayCon();
+
+}
+
+function goList(){
+	var f  = document.frm;
+	f.METHOD.value = "AdminContract";
+	f.action = "/admin/AdminAction.do";
+	EncForm(f);
+	f.submit();
+}
+
+</script>
+
+</head>
+
+
+<body>
+
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header_new.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="1"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<form name="frm" name="post">
+			<input type="hidden" id="INIpluginData" name="INIpluginData" />
+			<input type="hidden" id="METHOD" name="METHOD" /> 
+			<input type="hidden" id="LOGIN_SVC" name="LOGIN_SVC" value="N" />
+			<input type="hidden" id="menuNo" name="menuNo"value="1" />
+
+
+		<div class="contents ad_contents">
+			<div class="con_tit_area">
+				<h2>접수정보</h2>
+				<p class="txt_required">* 수정 입력 가능 항목</p>
+			</div>
+			
+			<fieldset class="form-type">
+				<!-- 고객정보 -->
+				<div class="tit_area">
+					<h3 class="dl_tb_tit">고객정보</h3>
+				</div>
+				
+				<div class="dl_tb colorG">
+					<dl>
+						<dt><label for="NAME">성명</label></dt>
+						<dd>
+							<div>
+								<input type="text" id="NAME" class="wd2" value="홍길동" readonly >
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><label for="JUMIN1">주민등록번호</label></dt>
+						<dd>
+							<div>
+								<input type="text" id="JUMIN1" value="821205" readonly >
+								<span class="spc">-</span>
+								<input type="text" id="JUMIN2" value="1065618" readonly >
+							</div>
+						</dd>
+					</dl>
+					<dl class="input-phone">
+						<dt><label for="SDJSINS02">휴대전화번호 <em>*</em></label></dt>
+						<dd>
+							<div>
+								<select id="SDJSINS02" name="SDJSINS02" >
+								<option value="PL0510">SKT</option>
+								<option value="PL0520">KT</option>
+								<option value="PL0530">LGU+</option>
+								<option value="PL0570">LGU+알뜰폰</option>
+								<option value="PL0550">SKT알뜰폰</option>
+								<option value="PL0560">KT알뜰폰</option>
+								
+								</select>
+								<input type="text" name="SDJSSCH05_01" id="SDJSSCH05_01" maxlength="3" value="" />
+								<span class="spc">-</span>
+								<input type="text" name="SDJSSCH05_02" id="SDJSSCH05_02" maxlength="4" value="" />
+								<span class="spc">-</span>
+								<input type="text" name="SDJSSCH05_03" id="SDJSSCH05_03" maxlength="4" value="" />
+								<input type="hidden" name="SDJSINS03" id="SDJSINS03" value="" />
+								
+								<div class="rd_area3" id="rd_area_per_yn" style="margin-left:20px">
+									<input type="radio" id="PER_Y" name="PER" value="PL0601" checked="checked" > <label for="PER_Y">본인명의</label>
+									<input type="radio" id="PER_N" name="PER" value="PL0603"> <label for="PER_N">타인명의</label>
+									<input type="hidden" id="PER_YN" name="PER_YN" value="PL0601"/>
+								</div>
+							</div>
+						</dd>
+						<!-- 
+						<dt style="width:200px;"><label for="SDJSINS04">본인명의여부 <em>*</em></label></dt>
+						<dd style="width:200px;">
+							<div>
+								<select id="SDJSINS04" name="SDJSINS04">
+								<option value="PL0601">예</option>
+								<option value="PL0603">아니오</option>
+								</select>
+							</div>
+						</dd>
+						 -->
+					</dl>
+					<dl>
+						<dt><span>소득구분 <em>*</em></span></dt>
+						<dd>
+							<div>
+								<div class="rd_area3">
+									<input type="radio" name="SDJSINS05" id="SDJSINS05_01" value="CA051" onClick="javascript:buttonDisplayCon();" />
+									<label for="SDJSINS05_01">급여소득자</label>
+									<input type="radio" name="SDJSINS05" id="SDJSINS05_02" value="CA052" onClick="javascript:buttonDisplayCon();" />
+									<label for="SDJSINS05_02">개인사업자</label>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><label for="JNS_NAME">직장(사업장)명</label></dt>
+						<dd>
+							<div>
+								<input type="text" id="JNS_NAME" class="wd2" value="DGB" readonly />
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><label for="SDJSSCH09">재직(사업)기간</label></dt>
+						<dd>
+							<div>
+								<select id="SDJSSCH09" class="wd2" disabled>
+								<option value="ICB801" >3개월 미만</option>
+								<option value="ICB802" >3개월 이상</option>
+								<option value="ICB803" >6개월 이상</option>
+								<option value="ICB804" >1년 이상</option>
+								<option value="ICB805" >2년 이상</option>
+								<option value="ICB806" >3년 이상</option>
+								<option value="ICB807" >4년 이상</option>
+								<option value="ICB808" >5년 이상</option>
+								<option value="ICB809" >6년 이상</option>
+								<option value="ICB810" >7년 이상</option>
+								<option value="ICB811" >8년 이상</option>
+								<option value="ICB812" >9년 이상</option>
+								<option value="ICB813" >10년 이상</option>
+								<option value="ICB814" >15년 이상</option>
+								</select>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><span>직장의료보험 가입 여부 <em>*</em></span></dt>
+						<dd>
+							<div>
+								<div class="rd_area3">
+									<input type="radio" name="SDJSINS06" id="SDJSINS06_01" value="Y" onClick="javascript:buttonDisplayCon();" />
+									<label for="SDJSINS06_01">가입</label>
+									<input type="radio" name="SDJSINS06" id="SDJSINS06_02" value="N" onClick="javascript:buttonDisplayCon();" />
+									<label for="SDJSINS06_02">미가입</label>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><span>결혼여부</span></dt>
+						<dd>
+							<div>
+								<div class="rd_area3">
+									<input type="radio" name="SDJSSCH11" id="SDJSSCH11_01" value="Y" disabled /><label for="SDJSSCH11_01">기혼</label>
+									<input type="radio" name="SDJSSCH11" id="SDJSSCH11_02" value="N" disabled /><label for="SDJSSCH11_02">미혼</label>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl class="ad_memo">
+						<dt><label for="MEMO">메모사항</label></dt>
+						<dd>
+							<div>
+								<textarea class="textarea" id="MEMO" style="height:150px;" readonly>메모내용</textarea>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<!-- //고객정보 -->
+				
+				<!-- 차량정보 -->
+				<div class="tit_area">
+					<h3 class="dl_tb_tit">차량정보</h3>
+				</div>
+				<div class="dl_tb colorG">
+					<dl>
+						<dt><label for="IMP_DIV1">제조회사 <em>*</em></label></dt>
+						<dd>
+							<div>
+								<select id="IMP_DIV1" name="IMP_DIV1" onchange="getManufacturerAjax('E');" title="제조회사" >
+								<option value="LF0901">국산승용차</option>
+								<option value="LF0902">수입승용차</option>
+								</select>
+								<!--<label for="COMP_NM"><span class="blind">제조사별 차종</span></label>-->
+								<select id="COMP_NM" name="COMP_NM" title="제조사별 차종" class="w200" onchange="getCarModelAjax('E');">
+								</select>
+								<!--
+								<select name="SDJSINS07" id="SDJSINS07">
+								<option value="">벤츠</option>
+								</select> 
+										
+								<select>
+								<option value="">S클래스 620</option>
+								</select>
+								-->
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><label for="CAR_TYPE">차종 <em>*</em></label></dt>
+						<dd>
+							<div>
+								<select id="CAR_TYPE" name ="CAR_TYPE" title="차종" class="wd2 brd_green" onchange="getLineupAjax('E');">
+								</select>
+								<!--
+								<select class"wd2" name="SDJSINS08" id="SDJSINS08">
+								<option value=""></option>
+								</select>
+								-->
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><label for="LINEUP">라인업 <em>*</em></label></dt>
+						<dd>
+							<div>
+								<select id="LINEUP" name="LINEUP" title="라인업" class="wd2 brd_green" onchange="getModelAjax('E');">
+								</select>
+								<!--
+								<select class"wd2" id="SDJSINS10" name="SDJSINS10">
+								<option value=""></option>
+								</select>
+								-->
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><label for="MODEL_NM">모델 <em>*</em></label></dt>
+						<dd>
+							<div>
+								<select id="MODEL_NM" name="MODEL_NM" title="모델" class="wd2">
+								</select>
+								<!--
+								<select class"wd2" id="SDJSINS09" name="SDJSINS09">
+								<option value=""></option>
+								</select>
+								-->
+							</div>
+						</dd>
+					</dl>
+					<input type="hidden" name="SDJSINS07" id="SDJSINS07" value="" />
+					<input type="hidden" name="SDJSINS08" id="SDJSINS08" value="" />
+					<input type="hidden" name="SDJSINS10" id="SDJSINS10" value="" />
+					<input type="hidden" name="SDJSINS09" id="SDJSINS09" value="" />
+					<input type="hidden" name="SDJSINS26" id="SDJSINS26" />
+					<dl>
+						<dt><label for="SDJSINS11">차량가격 <em>*</em></label></dt>
+						<dd>
+							<div>
+								<input type="text" name="SDJSINS11" id="SDJSINS11" class="wd2" style="text-align: right;" onKeyUp = "javascript:buttonDisplayCon();" value="2,000,000" /> 원
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><span>매매계약 여부 <em>*</em></span></dt>
+						<dd>
+							<div>
+								<div class="rd_area3">
+									<input type="radio" name="SDJSINS12" id="SDJSINS12_01" value="IC3701" />
+									<label for="SDJSINS12_01">계약 전</label>
+									<input type="radio" name="SDJSINS12" id="SDJSINS12_02" value="IC3702" />
+									<label for="SDJSINS12_02">계약 후</label>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><span>차량등록 조건 <em>*</em></span></dt>
+						<dd>
+							<div>
+								<div class="rd_area3">
+									<input type="radio" name="SDJSINS13" id="SDJSINS13_01" value="ICZ701" />
+									<label for="SDJSINS13_01">신청인 단독명의 </label>
+									<input type="radio" name="SDJSINS13" id="SDJSINS13_02" value="ICZ702" />
+									<label for="SDJSINS13_02">신청인+가족 공동명의</label>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<!-- //차량정보 -->
+				
+				<!-- 대출정보 -->
+				<div class="tit_area">
+					<h3 class="dl_tb_tit">대출정보</h3>
+				</div>
+				<div class="dl_tb colorG">
+					<dl>
+						<dt><label for="SDJSINS14">신청금액 <em>*</em></label></dt>
+						<dd>
+							<div>
+								<input type="text" id="SDJSINS14" name="SDJSINS14" class="wd2" style="text-align: right;"  value="" onKeyUp="javascript:cashBackChange();" /> 원 
+								<span class="exp" style="margin-left:35px">※ 최소 대출금액은 500만원입니다.</span><!-- [D pjw] 리뉴얼 디자인 시안에 없는 문구임 -->
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><label for="SDJSINS15">대출기간 <em>*</em></label></dt>
+						<dd>
+							<div>
+								<!--<input type="text" name="SDJSINS15" id="SDJSINS15" class="wd2" style="text-align: right;" value="" onKeyUp = "javascript:buttonDisplayCon();" > 개월 -->
+								<select id="SDJSINS15" name="SDJSINS15" onChange="javascript:buttonDisplayCon();" >
+								<option value="12" >12</option>
+								<option value="24" >24</option>
+								<option value="36" >36</option>
+								<option value="48" >48</option>
+								<option value="60" >60</option>
+								</select>
+								개월
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><span>장기선납금(SAVE) <em>*</em></span></dt>
+						<dd>
+							<div>
+								<div class="rd_area3">
+									<input type="radio" name="SDJSINS16" id="SDJSINS16_01" value="IC32999" onClick="javascript:buttonDisplayCon();" />
+									<label for="SDJSINS16_01">없음</label>
+									<input type="radio" name="SDJSINS16" id="SDJSINS16_05" value="IC32005" onClick="javascript:buttonDisplayCon();" />
+									<label for="SDJSINS16_05">5%</label>
+									<input type="radio" name="SDJSINS16" id="SDJSINS16_03" value="IC32010" onClick="javascript:buttonDisplayCon();" />
+									<label for="SDJSINS16_03">10%</label>
+									<input type="radio" name="SDJSINS16" id="SDJSINS16_02" value="IC32015" onClick="javascript:buttonDisplayCon();" />
+									<label for="SDJSINS16_02">15%</label>
+									<input type="radio" name="SDJSINS16" id="SDJSINS16_04" value="IC32020" onClick="javascript:buttonDisplayCon();" />
+									<label for="SDJSINS16_04">20%</label>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>
+							<span>적용상품</span>
+							<input type="hidden" name="SDJSINS17" id="SDJSINS17" value="" />
+						</dt>
+						<dd>
+							<div>
+								<div name="SDJSINS17_TEXT" id="SDJSINS17_TEXT">온라인오토론(국산/일반/SAVE)</div>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt>
+							<span>적용금리</span>
+							<input type="hidden" name="SDJSINS18" id="SDJSINS18" value="0" />
+						</dt>
+						<dd>
+							<div>
+								<div name="SDJSINS18_TEXT" id="SDJSINS18_TEXT" >
+									<strong class="strong">0%</strong>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><span>월납부금</span></dt>
+						<dd>
+							<div>
+								<div name="MONTH_MONEY" id="MONTH_MONEY" >
+									<strong class="strong">0</strong>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<!-- //대출정보 -->
+				
+				<!-- 심사정보 -->
+				<div class="tit_area">
+					<h3 class="dl_tb_tit">심사정보</h3>
+				</div>
+				<div class="dl_tb colorR">
+					<dl>
+						<dt><span>접수일시</span></dt>
+						<dd>
+							<div></div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><span>심사일시</span></dt>
+						<dd>
+							<div>2017.02.20 17:00:00</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><span>심사결과</span></dt>
+						<dd>
+							<div><strong></strong></div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><span>저당설정</span></dt>
+						<dd>
+							<div>
+								<strong>0 (대출금액의 0%)</strong>								
+							</div>
+						</dd>
+					</dl>
+					<dl class="ad_memo">
+						<dt><label for="MEMO2">심사내용</label></dt>
+						<dd>
+							<div><textarea class="textarea" id="MEMO2" rows="6" style="height:150px;" readonly>심사내용</textarea></div>
+						</dd>
+					</dl>
+				</div>
+				<!-- //심사정보 -->
+				
+				<!-- 상담정보 -->
+				<div class="tit_area">
+					<h3 class="dl_tb_tit">상담정보</h3>
+				</div>
+				<div class="dl_tb colorG">
+					<dl>
+						<dt><label for="SDJSINS23">담당자</label></dt>
+						<dd>
+							<div>
+								<input type="text" id="SDJSINS23" name="SDJSINS23" class="wd2" value="<%=sessUserName %>" readonly />
+								<input type="hidden" id="SDJSINS22" name="SDJSINS22" value="<%=sessUserID %>" />
+							</div>
+						</dd>
+					</dl>
+					<dl id="prdcd1" class="product">
+						<dt><span>상품변경 <em>*</em></span></dt>
+						<dd>
+							<div>
+								<input type="hidden" id="SDJSINS19" name="SDJSINS19" value="" />
+								<div class="rd_area3">
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_01" onClick="handleClick(this);" value="K00" /><label for="SDJSINS19_01">변동없음</label>							
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_02" onClick="handleClick(this);" value="K22" /><label for="SDJSINS19_02">일반1</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_03" onClick="handleClick(this);" value="K23" /><label for="SDJSINS19_03">일반2</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_04" onClick="handleClick(this);" value="K24" /><label for="SDJSINS19_04">일반3</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_05" onClick="handleClick(this);" value="K25" /><label for="SDJSINS19_05">저리일반</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_08" onClick="handleClick(this);" value="K28" /><label for="SDJSINS19_08">저리선수1</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_21" onClick="handleClick(this);" value="K29" /><label for="SDJSINS19_21">저리선수2</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_22" onClick="handleClick(this);" value="K05" /><label for="SDJSINS19_22">임직원특판</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_23" onClick="handleClick(this);" value="K08" /><label for="SDJSINS19_23">은행연계</label>
+
+
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_40" onClick="handleClick(this);" value="K30" /><label for="SDJSINS19_40">기본1</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_41" onClick="handleClick(this);" value="K31" /><label for="SDJSINS19_41">기본2</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_42" onClick="handleClick(this);" value="K32" /><label for="SDJSINS19_42">기본3</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_43" onClick="handleClick(this);" value="K33" /><label for="SDJSINS19_43">기본4</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_44" onClick="handleClick(this);" value="K34" /><label for="SDJSINS19_44">기본5</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_45" onClick="handleClick(this);" value="K35" /><label for="SDJSINS19_45">기본이손1</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_46" onClick="handleClick(this);" value="K36" /><label for="SDJSINS19_46">기본이손2</label>
+									
+								
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl id="prdcd2" style="display:none;">
+						<dt><span>상품변경 <em>*</em></span></dt>
+						<dd>
+							<div>
+								<div class="rd_area3">
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_18" onClick="handleClick(this);" value="F00"/><label for="SDJSINS19_18">변동없음</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_11" onClick="handleClick(this);" value="F22" checked /><label for="SDJSINS19_11">일반1</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_12" onClick="handleClick(this);" value="F23"/><label for="SDJSINS19_12">일반2</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_13" onClick="handleClick(this);" value="F24"/><label for="SDJSINS19_13">일반3</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_16" onClick="handleClick(this);" value="F25"/><label for="SDJSINS19_16">저리일반</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_17" onClick="handleClick(this);" value="F28"/><label for="SDJSINS19_17">저리선수1</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_19" onClick="handleClick(this);" value="F29"/><label for="SDJSINS19_19">저리선수1</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_31" onClick="handleClick(this);" value="F06"/><label for="SDJSINS19_31">대환</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_32" onClick="handleClick(this);" value="F07"/><label for="SDJSINS19_32">은행연계</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_33" onClick="handleClick(this);" value="F03"/><label for="SDJSINS19_33">임직원특판</label>
+
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_47" onClick="handleClick(this);" value="F30"/><label for="SDJSINS19_47">기본1</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_48" onClick="handleClick(this);" value="F31"/><label for="SDJSINS19_48">기본2</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_49" onClick="handleClick(this);" value="F32" /><label for="SDJSINS19_49">기본3</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_50" onClick="handleClick(this);" value="F33"/><label for="SDJSINS19_50">기본4</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_51" onClick="handleClick(this);" value="F34"/><label for="SDJSINS19_51">기본5</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_52" onClick="handleClick(this);" value="F35"/><label for="SDJSINS19_52">기본이손1</label>
+									<input type="radio" name="SDJSINS19_RADIO" id="SDJSINS19_53" onClick="handleClick(this);" value="F36"/><label for="SDJSINS19_53">기본이손2</label>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl>
+						<dt><label for="cashBack">당사 제공 고객 캐쉬백</label></dt>
+						<dd>
+							<div>
+								<select name="cashBack" id="cashBack" onchange="javascript:cashBackChange();" disabled >
+								<option value="IC40999" >	없음 </option>
+								<option value="IC40010" >	0.1% </option>
+								<option value="IC40020" >	0.2% </option>
+								<option value="IC40030" >	0.3% </option>
+								<option value="IC40040" >	0.4% </option>
+								<option value="IC40050" >	0.5% </option>
+								<option value="IC40060" >	0.6% </option>
+								<option value="IC40070" >	0.7% </option>
+								<option value="IC40080" >	0.8% </option>
+								<option value="IC40090" >	0.9% </option>
+								<option value="IC40100" >	1.0% </option>
+								</select>
+								<!--<span style="visibility:hidden;"><label for="cashBackAmt">캐쉬백 금액</label></span>-->
+								<span class="exp"><input type="text" id="cashBackAmt" name="cashBackAmt" style="text-align: right;" readonly value="0" /></span> 
+								<input type="hidden" name="SDJSINS25" id="SDJSINS25" value="" />
+								<input type="hidden" name="SDJSINS24" id="SDJSINS24" value="" />
+							</div>
+						</dd>
+					</dl>
+					<dl class="ad_memo2">
+						<dt><label for="SDJSINS20">상담내용<em>*</em></label></dt>
+						<dd>
+							<div><textarea class="textarea" name="SDJSINS20" id="SDJSINS20" rows="6" maxlength="1000" style="height:200px;">상담내용</textarea></div>
+						</dd>
+					</dl>
+				</div>
+				<!-- //상담정보 -->
+				
+			</fieldset>
+			<br>
+			<br>
+			<p class="align-center">
+<!--
+				<div id="div01" name = "div01" align="center" >
+					<input type="button" value="저장" onClick="javascript:onSave('S');" />
+					<input type="button" value="목록" onClick="javascript:goList();" />
+				</div>
+
+				<div id="div02" name = "div02" align="center"  style="display:none"> 
+					<input type="button" value="재심사요청" onClick="javascript:onSave('R');" />
+					<input type="button" value="목록" onClick="javascript:goList();" />
+				</div>
+-->
+				<div id="div01" name = "div01" align="center"   >
+					<input type="button" value="저장" onClick="javascript:onSave('S');" />
+					<input type="button" value="목록" onClick="javascript:goList();" />
+				</div>
+			</p>
+
+		</div><!--// contents -->
+</form>
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+
+<!-- 로딩바 시작-->
+<%--<div id="loadingLayer" class="mwinow open" style="display:none">
+	<div class="bg"></div>
+	<div id="loading">
+		<div class="loadingBar"><img src="/static/admin/img/common/loading2.gif" alt="로딩중 데이터처리중입니다.. 잠시만 기다려 주십시오." /></div>
+	</div>
+</div>
+<!--// 로딩바 끝-->
+
+
+<!-- 에러 레이어 -->
+<span id='errorLayer' class="layerpop" style="position:absolute; left:300px; top:200px; z-index:3; display:none;"></span>--%>
+
+</body>
+</html>

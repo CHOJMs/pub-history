@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인(신용)정보 필수 · 동의 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;" aira-haspopup="dialog">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D] 작은 팝업인 경우 : 클래스 popup-small 추가 -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>개인(신용)정보 필수 · 동의</h1>
+            </div>
+            <div class="popup-contents flex-col popup-clau">
+
+                <!-- Start : content -->
+                <div class="pop-cnt-wrap">
+
+                    <!-- Start : 개인(신용)정보 필수 · 동의 -->
+                    <div class="term-head mt0">개인(신용)정보 필수적 동의서<span>부동산 시세조회</span></div>
+                    <div class="term-cont">
+                        <div class="term-title">1. 수집·이용에 관한 사항</div>
+                        <table class="viewType tbl-view">
+                            <caption>데이터 수집 및 이용에 대한 테이블</caption>
+                            <colgroup>
+                                <col width="25%">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">목적</th>
+                                    <td>본인명의 부동산의 시세를 조회하여 제공하기 위함</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">보유 및 <br class="mob">이용기간</th>
+                                    <td>수집·이용 동의일로부터 개인(신용)정보 수집·이용 목적을 달성할 때까지</td>
+                                </tr>
+                            </tbody>
+                        </table>
+    
+                        <div class="tbl-title">■ 수집 항목</div>
+                        <table class="viewType tbl-view">
+                            <caption>데이터 수집·이용 항목에 대한 테이블</caption>
+                            <colgroup>
+                                <col width="25%">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">고유식별정보</th>
+                                    <td>성명, 주민번호, 휴대폰 번호, 부동산 주소</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="term-title mt40">2. 제공에 관한 사항</div>
+                        <table class="viewType tbl-view">
+                            <caption>제공에 대한 테이블</caption>
+                            <colgroup>
+                                <col width="25%">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">제공받는 자</th>
+                                    <td>(주)빅테크플러스</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="term-line-box mt40">고객님은 동의를 거부할 권리가 있으며 동의 거부시,<br>부동산 시세조회 서비스 제공은 불가합니다.</p>
+                    <div class="term-sign">
+                        <span>년</span>
+                        <span>월</span>
+                        <span>일</span>
+                        <span class="name">본인성명</span>
+                        <span>서명/인</span>
+                    </div>
+                    <!-- //End : 개인(신용)정보 필수 · 동의 -->
+                </div>
+                <!-- //End : content -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

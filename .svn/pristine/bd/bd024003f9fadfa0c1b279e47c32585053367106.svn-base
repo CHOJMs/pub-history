@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%@ page contentType="text/html; charset=euc-kr" language="java" %>
+<title>DGB 캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+<script language="javascript">
+
+$(document).ready(function(){
+	
+});
+
+</script>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<jsp:include page="/admin/inc/header.jsp" flush="false"> 
+				<jsp:param name="menuNo" value="5"/> 
+			</jsp:include>
+		</div> <!--// header -->
+
+		<div class="contents">
+			<h2>사용자 등록 신청서</h2>
+			<br>
+			<div class="register">
+				<h3>(주)DGB캐피탈 <span>귀중</span></h3>
+				<br>
+				<p>아래 사용자에 대한 귀사의 “온라인오토론” 관리자 페이지 사용자 등록을 신청하며, 「고객 신용정보 보안관리 약정」 상의 제 규정을 준수할 것임을 확약합니다.</p>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<p class="align-center">- 아 래 -</p>
+				<br>
+				<br>
+				<br>
+				<table class="data-table">
+					<colgroup>
+						<col style="width:50px; border-right:1px solid #ccc;  border-left:1px solid #ccc;">
+						<col style="width:auto; border-right:1px solid #ccc;">
+						<col style="width:auto; border-right:1px solid #ccc;">
+						<col style="width:auto; border-right:1px solid #ccc;">
+						<col style="width:auto; border-right:1px solid #ccc;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">NO.</th>
+							<th scope="col">사용자 성명</th>
+							<th scope="col">생년월일</th>
+							<th scope="col">MAC Address</th>
+							<th scope="col">IP</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<br>
+				<br>
+				<br>
+				<p class="date"><span></span>년<span></span>월<span></span>일</p>
+				<br>
+				<br>
+				<br>
+				<p class="align-center"><strong class="fs14">신청인</strong> <span class="name"></span></p>
+			</div>
+		</div><!--// contents -->
+
+		<div class="footer">
+			<jsp:include page="/admin/inc/footer.jsp" flush="false"></jsp:include>
+		</div><!--// footer -->
+	</div><!--// wrapper -->
+</body>
+</html>

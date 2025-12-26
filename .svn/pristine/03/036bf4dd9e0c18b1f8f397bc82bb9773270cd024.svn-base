@@ -1,0 +1,1074 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:15%">
+                    <col style="width:8%">
+                    <col style="width:13%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 메인 ▣</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-01</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>이미지 참고용 (메인/신차/즉시출고)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/sample/참고이미지.html">참고이미지.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-01</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>메인 (통합본)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/main.html">main.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-05</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[개발참고용] 알림팝업 상태별 디자인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/main06.html">main06.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-01</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 로그인 전</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/main02.html">main02.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-01</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 상단 검색창 - 신차</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/main03.html">main03.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-01</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 상단 검색창 - 즉시출고</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/main04.html">main04.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-01</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 상단 검색창 - 검색 내용 없음</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/main05.html">main05.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 내차사기 ▣</th>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-12-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신차 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-N-200-001.html">DBM-N-200-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-12-00</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>즉시출고 목록 (필터 선택 후)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch//DBM-N-200-001-2.html">DBM-N-200-001-2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-12-00</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>신차/즉시출고 필터 선택 팝업 - 선택 전</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/차량검색필터팝업.html">차량검색필터팝업.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-12-00</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>신차/즉시출고 필터 선택 팝업 - 선택 후</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/차량검색필터팝업2.html">차량검색필터팝업2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-12-00</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>신차/즉시출고 세부모델 선택 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/차량세부모델선택.html">차량세부모델선택.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[신차] 견적내기 - 01_견적방법</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-N-201-001.html">DBM-N-201-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[신차] 견적내기 - 02_세부모델</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-N-202-001.html">DBM-N-202-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[신차] 견적내기 - 03_추가옵션</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-N-203-001.html">DBM-N-203-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[신차] 견적내기 - 04_색상옵션</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-N-204-001.html">DBM-N-204-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[신차] 견적내기 - 05_견적확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-N-205-001.html">DBM-N-205-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[신차] 견적내기 - 06_견적계산(렌트)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-N-206-001-1.html">DBM-N-206-001-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[신차] 견적내기 - 06_견적계산(할부)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-N-206-001-2.html">DBM-N-206-001-2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[즉시출고] - 01_견적확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBP-I-301-001.html">DBP-I-301-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[즉시출고] - 02_견적계산</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBP-I-302-001.html">DBP-I-302-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>옵션 선택불가 팝업(추가옵션)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/옵션선택불가.html">옵션선택불가.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>옵션 선택불가 팝업(색상옵션)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/옵션선택불가2.html">옵션선택불가2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>진행상태 초기화 알림 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/진행상태초기화알림.html">진행상태초기화알림.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-18</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>차량 용품 선택 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/차량용품선택.html">차량용품선택.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 마이 홈 ▣</th>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-10-23</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>마이 홈</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-100-001.html">DBM-MY-100-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-23</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 마이 홈 - 계약차량 (차량 없는 경우 / 로그인전)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-100-001_2.html">DBM-MY-100-001_2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-23</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 마이 홈 - 등록차량</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-100-001_3.html">DBM-MY-100-001_3.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-23</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 마이 홈 - 등록차량 (차량 없는 경우)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-100-001_4.html">DBM-MY-100-001_4.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-23</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>내차 등록하기</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-230-001.html">DBM-MY-230-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-23</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>내차 등록 완료 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/내차등록완료.html">내차등록완료.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-23</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>내차 등록 실패 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/내차등록실패.html">내차등록실패.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>차량관리 > 계약관리(탭)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-001_1.html">DBM-MY-200-001_1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>차량관리 > 차량관리(탭)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-001_2.html">DBM-MY-200-001_2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>차량관리 > 보험관리(탭)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-001_3.html">DBM-MY-200-001_3.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>차량관리 등록차량</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DMB-MY-200-001-1.html">DMB-MY-200-001-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-23</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>내 차량 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DMB-MY-200-002.html">DMB-MY-200-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-23</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>내 차량 선택 - 차량 목록 없는 경우</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DMB-MY-200-002_2.html">DMB-MY-200-002_2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>차량관리 계약차량 상세보기</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-003.html">DBM-MY-200-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>차량관리 등록차량 상세보기</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-003-1.html">DBM-MY-200-003-1.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>자동차 등록증 신청안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-004.html">DBM-MY-200-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>승계 신청하기 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-006.html">DBM-MY-200-006.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>보험가입 증명서 신청안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-007.html">DBM-MY-200-007.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>오토리스 보험갱신</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-008.html">DBM-MY-200-008.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-05</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>서비스 준비중 안내 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-200-900.html">DBM-MY-200-900.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>만기 선택옵션별 시뮬레이션</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DMB-MY-220-001.html">DMB-MY-220-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>멤버십 가입 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DMB-MY-201-001.html">DMB-MY-201-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-10</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>디지털 키 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DMB-MY-201-002.html">DMB-MY-201-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 마이 :: 중도해지/만기/인수론 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-02</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>중도해지 예약안내 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-210-000.html">DBM-MY-210-000.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-02</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>만기연장 예약안내 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-221-001.html">DBM-MY-221-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-02</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>만기인수 예약안내 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-221-002.html">DBM-MY-221-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-02</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>만기반납 예약안내 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-221-003.html">DBM-MY-221-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중도해지 진입 - step01 확인 및 입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-210-001.html">DBM-MY-210-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중도해지 진입 - step02 금액확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-210-002.html">DBM-MY-210-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>중도해지 신청안내 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-210-003.html">DBM-MY-210-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>중도해지 진행 불가 시 안내팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-210-004.html">DBM-MY-210-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>중도해지 완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-210-090.html">DBM-MY-210-090.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-03</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>법인 사업자 만기연장 신청 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-100.html">DBM-MY-220-100.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>만기연장 리스기간 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-101.html">DBM-MY-220-101.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>만기연장 심사결과 승인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-102.html">DBM-MY-220-102.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>만기연장 심사결과 부결</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-103.html">DBM-MY-220-103.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>만기연장 신청완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-190.html">DBM-MY-220-190.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>만기 후 차량인수 - step01 정보입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-201.html">DBM-MY-220-201.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>만기 후 차량인수 - step02 금액확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-202.html">DBM-MY-220-202.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>만기 후 차량인수 금액확인 안내팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-203.html">DBM-MY-220-203.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>만기 후 차량인수 신청완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-290.html">DBM-MY-220-290.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>만기 후 차량반납 - step01 정보입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-301.html">DBM-MY-220-301.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>만기 후 차량반납 - step02 금액확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-302.html">DBM-MY-220-302.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>만기 후 차량반납 안내 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-303.html">DBM-MY-220-303.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>만기 후 차량반납 신청완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-390.html">DBM-MY-220-390.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>인수론 상품안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-401.html">DBM-MY-220-401.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>인수론 상품안내 시뮬레이션 (예상금액확인)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-402.html">DBM-MY-220-402.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>인수론 상품안내 시뮬레이션 (조회결과확인)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-403.html">DBM-MY-220-403.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-03</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>법인 사업자 만기 인수론 신청 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-000.html">DBM-MY-220-000.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>인수론 심사결과 승인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-404.html">DBM-MY-220-404.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>인수론 심사결과 부결</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-405.html">DBM-MY-220-405.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-11-24</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>인수론 신청완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-MY-220-490.html">DBM-MY-220-490.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 고객라운지 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공지사항 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-B-700-001.html">DBM-B-700-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-12-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공지사항 목록 - 목록 없는 경우</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-B-700-001-2.html">DBM-B-700-001-2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공지사항 상세 (이미지형)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-B-701-001.html">DBM-B-701-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공지사항 상세 (텍스트형)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-B-701-001-2.html">DBM-B-701-001-2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>이벤트 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-E-600-001.html">DBM-E-600-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-12-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>이벤트 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/digital_branch/DBM-E-601-001.html">DBM-E-601-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

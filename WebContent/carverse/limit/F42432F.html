@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>적합성 체크 신청정보 확인 | iM캐피탈 카버스</title>
+
+    <link rel="stylesheet" href="/static/carverse/css/style.css">
+    <link rel="stylesheet" href="/static/carverse/css/carverse.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>(필수)신청정보 확인</h1>
+            </div>
+            <div class="popup-contents bg-gray"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="pop-tit-info">아래 필수 신청정보를<br>확인해주세요</div>
+                <div class="popup-cnt">
+
+                    <!-- Start : 차량정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">차량정보</h2>
+                        <div class="box-white">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">브랜드</span>
+                                    <span class="p-txt">제네시스</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차량모델</span>
+                                    <span class="p-txt">A6 40 TDI Premium</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차량기본가</span>
+                                    <span class="p-txt">49,500,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">옵션가격</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">외장색상</span>
+                                    <span class="p-txt"></span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">내장색상</span>
+                                    <span class="p-txt"></span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">총차량가</span>
+                                    <span class="p-txt">49,5000,000원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 차량정보 -->
+
+                    <!-- Start : 정비상품 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">정비상품</h2>
+                        <div class="box-white">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">정비상품</span>
+                                    <span class="p-txt">Slef</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 정비상품 -->
+
+                    <!-- Start : 계약정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">계약정보</h2>
+                        <div class="box-white">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">대여기간</span>
+                                    <span class="p-txt">60개월</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">보증금</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">선납임대료</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">상계방법</span>
+                                    <span class="p-txt">안분</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">월임대료(VAT)포함</span>
+                                    <span class="p-txt">828,510원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">지연배상금율</span>
+                                    <span class="p-txt">(연)24%</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">계약주행거리</span>
+                                    <span class="p-txt">연 20,000km</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">km당 초과운영료</span>
+                                    <span class="p-txt">4000원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 계약정보 -->
+
+                    <!-- Start : 보험정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">보험정보</h2>
+                        <div class="box-white">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">운전자연령</span>
+                                    <span class="p-txt">만 26세 이상<br>(운전면허 취득 1년이상 경과)</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">임직원한정운정특약</span>
+                                    <span class="p-txt">가입/미가입</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">운전자범위</span>
+                                    <span class="p-txt">[개인] 본인, 배우자, 직계가족<br>(사업자는 임직원 포함)<br>
+                                        [법인] 임직원 또는 등기임직원<br>(임직원 전용 특약가입)</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">의무가입사항</span>
+                                    <span class="p-txt">대인배상(책임, 무한) 무한,<br> 무보험차 상해(1억원) 2억,<br> 긴급출동 연5회</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">필수가입사항</span>
+                                    <span class="p-txt">대물배상(1사고당) 1억,<br> 자기신체사고(1인당) 1억,<br> 자기차량손해(자기부담금) 1만원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 보험정보 -->
+
+                    <!-- Start : 과태료/범칙금 -->
+                    <div class="grp-cont">
+                        <p class="head-tit">과태료/범칙금</p>
+                        <div class="box-white">
+                            <p class="txt">1차 사전통지서는 카카오톡 또는 문자로 알려드리며 과태료 또는 범칙금 미납시 다음달 렌탈료에 포함되어 청구됩니다.</p>
+                        </div>
+                    </div>
+                    <!-- //End : 과태료/범칙금 -->
+
+                    <ul class="list-dot mt20">
+                        <li>사고 발생시 고객센터 : 1833-8756</li>
+                        <li>추가운전자 신청시 고객센터 : 1566-0050</li>
+                    </ul>
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/carverse/img/common2/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>은행 선택 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;" >팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+    <div class="popup-layer" id="addrPopup">
+        <div class="popup popup-01 popup-half popup-560"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+            <div class="inner">
+                <div class="popup-text">
+                    <h1>은행 선택</h1>
+                </div>
+                <div class="popup-contents popup-bank">
+                    <!-- content 시작 //-->
+
+                    <!-- Start : 은행선택 탭 -->
+                    <div class="bank-tab type01">
+                        <ul>
+                            <li class="active"><a href="javascript:;" rel="tab-1">은행</a></li>
+                            <li><a href="javascript:;" rel="tab-2">기타</a></li>
+                        </ul>
+                        <div class="bank-list">
+                            <h2 class="txt-hidden">은행</h2>
+                            <ul id="tab-1">
+                                <li><a href=""><img src="/static/web/img/bank/bank_dgb.png" alt="대구은행">대구은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_ibk.png" alt="IBK기업은행">IBK기업은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_nh.png" alt="NH농협은행">NH농협은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_kb.png" alt="KB국민은행">KB국민은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_shinhan.png" alt="신한은행">신한은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_hana.png" alt="하나은행">하나은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_woori.png" alt="우리은행">우리은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_sc.png" alt="스탠다드차드 은행">스탠다드차드 은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_citi.png" alt="씨티은행">씨티은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_kdb.png" alt="KDB산업은행">KDB산업은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_kakao.png" alt="카카오뱅크">카카오뱅크</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_k.png" alt="케이뱅크">케이뱅크</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_keb.png" alt="KEB외환은행">KEB외환은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_nh2.png" alt="농협회원조합">농협회원조합</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_kn.png" alt="경남은행">경남은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_jb.png" alt="전북은행">전북은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_gj.png" alt="광주은행">광주은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_bs.png" alt="부산은행">부산은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_jj.png" alt="제주은행">제주은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_sm.png" alt="새마을금고연합회">새마을금고연합회</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_epost.png" alt="우체국">우체국</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_shin.png" alt="신협중앙회">신협중앙회</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_soo.png" alt="수협중앙회">수협중앙회</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_san.png" alt="산림조합중앙회">산림조합중앙회</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_sb.png" alt="상호저축은행">상호저축은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_america.png" alt="뱅크오브아메리카">뱅크오브아메리카</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_china.png" alt="중국공상은행">중국공상은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_hongkong.png" alt="홍콩상하이은행">홍콩상하이은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_deutsche.png" alt="도이치은행">도이치은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_ufj.png" alt="미쓰비시도쿄UFJ은행">미쓰비시도쿄UFJ은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_mizuho.png" alt="미즈호은행">미즈호은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_jp.png" alt="JP모간체이스은행">JP모간체이스은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/bank_bnp.png" alt="BNP파리바은행">BNP파리바은행</a></li>
+                            </ul>
+
+                            <h2 class="txt-hidden">기타</h2>
+                            <ul id="tab-2">
+                                <li><a href=""><img src="/static/web/img/bank/etc_01.png" alt="서울보증보험">서울보증보험</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_02.png" alt="한국정책금융공사">한국정책금융공사</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_03.png" alt="한국주택금융공사">한국주택금융공사</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_04.png" alt="기술보증기금">기술보증기금</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_05.png" alt="신용보증기금">신용보증기금</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_06.png" alt="신한금융투자">신한금융투자</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_07.png" alt="교보증권">교보증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_08.png" alt="대신증권">대신증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_09.png" alt="대우증권">대우증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_10.png" alt="DB금융투자">DB금융투자</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_11.png" alt="유안타증권">유안타증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_12.png" alt="리딩투자증권">리딩투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_13.png" alt="메리츠종금증권">메리츠종금증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_14.png" alt="부국증권">부국증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_15.png" alt="BS투자증권">BS투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_16.png" alt="BNP파리바증권">BNP파리바증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_17.png" alt="삼성증권">삼성증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_18.png" alt="신영증권">신영증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_19.png" alt="IBK투자증권">IBK투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_20.png" alt="IM투자증권">IM투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_21.png" alt="SK증권">SK증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_22.png" alt="HMC투자증권">HMC투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_23.png" alt="NH농협증권">NH농협증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_24.png" alt="LIG투자증권">LIG투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_25.png" alt="우리투자증권">우리투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_26.png" alt="유진투자증권">유진투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_27.png" alt="유화증권">유화증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_28.png" alt="이베스트투자증권">이베스트투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_29.png" alt="KB투자증권">KB투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_30.png" alt="KTB투자증권">KTB투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_31.png" alt="키움증권">키움증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_32.png" alt="토러스투자증권">토러스투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_33.png" alt="하나금융투자">하나금융투자</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_34.png" alt="iM증권">iM증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_35.png" alt="스탠다드차드증권">스탠다드차드증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_36.png" alt="한국투자증권">한국투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_37.png" alt="한양증권">한양증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_38.png" alt="한화투자증권">한화투자증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_39.png" alt="KB증권">KB증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_40.png" alt="홍콩상하이증권">홍콩상하이증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_41.png" alt="흥국증권">흥국증권</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_42.png" alt="금융결제원">금융결제원</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_43.png" alt="한국예탁결제원">한국예탁결제원</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_44.png" alt="신협">신협</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_45.png" alt="한국은행">한국은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_46.png" alt="한국수출입은행">한국수출입은행</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_47.png" alt="한국거래소">한국거래소</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_48.png" alt="한국전자금융">한국전자금융</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_49.png" alt="경찰청">경찰청</a></li>
+                                <li><a href=""><img src="/static/web/img/bank/etc_50.png" alt="기타">기타</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 은행선택 탭 -->
+
+                    <!-- //content 끝 -->
+                </div>
+            </div>
+            <div class="popup-close pc-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+        </div>
+    </div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

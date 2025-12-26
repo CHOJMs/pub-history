@@ -1,0 +1,565 @@
+$(function(){
+
+	//console.log('GlobalJSConfig.isApplyWA : ' + GlobalJSConfig.isApplyWA);
+    const slideText1 = ['<h3>개인신용대출</h3>', '<h3>자동차 금융</h3>', '<h3>담보대출</h3>'];
+    const slideText2 = ['똑똑하고 친절한 개인금융 서비스', '빠르고 편리한 자동차금융 서비스', '똑똑하고 친절한 개인금융'];
+    const mainVisual = new Swiper('.main-visual-wrap.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+        // 웹접근성 자동롤링 처리
+        autoplay: GlobalJSConfig.isApplyWA ? false : { delay: 5000 },
+        speed: 600,
+        pagination: {
+        el: '.main-visual-wrap.swiper-container .swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<div class="' + className + '">' + (slideText1[index]) + '<span>' + (slideText2[index]) + '</span></div>';
+            },
+        },
+    });
+
+    const mainBackground = new Swiper('.main-visual-bg.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+    });
+
+//    mainVisual.controller.control = mainBackground;
+//    mainBackground.controller.control = mainVisual;
+
+    const smallBanner = new Swiper('.small-banner-wrap.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+        // 웹접근성 자동롤링 처리
+        autoplay: GlobalJSConfig.isApplyWA ? false : { delay: 5000 },
+        speed: 600,
+        // If we need pagination
+        pagination: {
+            el: '.small-banner-wrap.swiper-container .swiper-pagination',
+            clickable: true,
+        },
+    });
+
+    const mydgbSmallBanner = new Swiper('.mydgb-small-banner.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+     // 웹접근성 자동롤링 처리
+        autoplay: GlobalJSConfig.isApplyWA ? false : { delay: 5000 },
+        speed: 600,
+        // If we need pagination
+        pagination: {
+        el: '.mydgb-small-banner.swiper-container .swiper-pagination',
+        clickable: true,
+        },
+    });
+
+    const mydgbSwiper = new Swiper('.mydgb-swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+        // If we need pagination
+        pagination: {
+        el: '.mydgb-swiper .swiper-pagination',
+        clickable: true,
+        },
+    });
+
+    $('.side-bar').click(function(){
+        $(this).addClass('active');
+        $('.mydgb-wrap, .mydgb-close').addClass('active');
+        $('body').css({'overflow':'hidden'});
+    });
+
+    $('.mydgb-close > a').click(function(){
+        $('.side-bar, .mydgb-wrap, .mydgb-close').removeClass('active');
+        $('body').css({'overflow':'auto'});
+        return false;
+    });
+
+    if($(window).innerWidth() > 1024){
+
+	}
+    else if($(window).innerWidth() <= 1024){
+
+//		const flicking = new eg.Flicking("#flicking > div", {
+//			align: "center",
+//			defaultIndex: 0,
+//			overflow: true,
+//			circular: false,
+//			bound: true,
+//			bounce: 0,
+//			duration: 700,
+//			adaptive: false,
+//			renderOnlyVisible: false,
+//			hanger: "",
+//			anchor: "",
+//		});
+
+		//웹접근성에서 오류임 - 탭키이동이 안됨
+        //debounce(fullpageInit(), 500);
+
+        // 공지사항 팝업 + 풀페이지 스크롤 제어
+        if($('#noticePopup.active').length){
+            $.fn.fullpage.setMouseWheelScrolling(false);
+			$.fn.fullpage.setAllowScrolling(false);
+        }
+
+        $('#noticePopup .popup-close > a').click(function(){
+            debounce($.fn.fullpage.destroy('all'), 500);
+            $.fn.fullpage.setMouseWheelScrolling(true);
+            $.fn.fullpage.setAllowScrolling(true);
+            debounce(fullpageInit(), 100);
+        });
+
+//		const EVENTS = eg.Flicking.EVENTS;
+//		flicking.on(EVENTS.MOVE, function(e){
+//			const index = e.index;
+//
+//			if(flicking.getStatus().position == 0){
+//				$('.mobile-mydgb').addClass('active');
+//
+//                $.fn.fullpage.setMouseWheelScrolling(true);
+//                $.fn.fullpage.setAllowScrolling(true);
+//
+//			}else if(flicking.getStatus().position > 0){
+//				$('.mobile-mydgb').removeClass('active');
+//
+//				$.fn.fullpage.setMouseWheelScrolling(false);
+//				$.fn.fullpage.setAllowScrolling(false);
+//			}
+//
+//            if(flicking.getStatus().position == 0){
+//				$('.slide-arrow').addClass('active');
+//
+//                $.fn.fullpage.setMouseWheelScrolling(true);
+//                $.fn.fullpage.setAllowScrolling(true);
+//
+//			}else if(flicking.getStatus().position > 0){
+//				$('.slide-arrow').removeClass('active');
+//
+//				$.fn.fullpage.setMouseWheelScrolling(false);
+//				$.fn.fullpage.setAllowScrolling(false);
+//			}
+//		});
+
+	}
+
+    var isAction = false;
+    $(window).resize(function(){
+        if($(this).innerWidth() > 1024){
+
+            isAction = false;
+            if($.fn.fullpage != undefined && $('.fp-enabled').length){
+                debounce($.fn.fullpage.destroy('all'), 500);
+            }
+
+        }
+//        else if($(this).innerWidth() <= 1024 && isAction == false){
+//            debounce(flickingInit(), 500);
+//            debounce(fullpageInit(), 100);
+//
+//            isAction = true;
+//        }
+    });
+
+    /*$('.mobile-mydgb > div').not('.mydgb-01').click(function(){
+		$(this).parent('.mobile-mydgb').addClass('view');
+        $('.mobile-mydgb-dim').addClass('view');
+        $('.mobile-mydgb .my-arrow').text('마이 홈 닫기');
+        $.fn.fullpage.setMouseWheelScrolling(false);
+        $.fn.fullpage.setAllowScrolling(false);
+	});*/
+
+	$('.mobile-mydgb-dim').click(function(){
+		$(this).removeClass('view');
+		$('.mobile-mydgb').removeClass('view');
+        $('.mobile-mydgb > .my-arrow').text('마이 홈 열기');
+        $.fn.fullpage.setMouseWheelScrolling(true);
+        $.fn.fullpage.setAllowScrolling(true);
+	});
+
+    $('.mobile-mydgb .my-arrow').click(function(){
+        $('.mobile-mydgb-dim').toggleClass('view');
+        $(this).closest('.mobile-mydgb').toggleClass('view');
+        if($(this).closest('.mobile-mydgb').hasClass('view')){
+            $(this).text('마이 홈 닫기');
+            $.fn.fullpage.setMouseWheelScrolling(false);
+            $.fn.fullpage.setAllowScrolling(false);
+        }else{
+            $(this).text('마이 홈 열기');
+            $.fn.fullpage.setMouseWheelScrolling(true);
+            $.fn.fullpage.setAllowScrolling(true);
+        }
+
+    });
+
+//	function flickingInit(){
+//		if($(window).innerWidth() <= 1024){
+//			const flicking = new eg.Flicking("#flicking > div", {
+//				align: "center",
+//				defaultIndex: 0,
+//				overflow: true,
+//				circular: false,
+//				bound: true,
+//				bounce: 0,
+//				duration: 700,
+//				adaptive: false,
+//				renderOnlyVisible: false,
+//				hanger: "",
+//				anchor: "",
+//                autoResize: true,
+//                touchSensitivity: 10,
+//			});
+//		}
+//	}
+
+	function fullpageInit(){
+		if($(window).innerWidth() <= 1024){
+			const fullpage = $('#fullpage').fullpage({
+				navigation: false,
+				fitToSectionDelay: 0,
+				scrollingSpeed: 800,
+				scrollOverflow: false,
+				fixedElements: '.mobile-mydgb, .mobile-mydgb-dim, .slide-arrow, #noticePopup',
+				'afterLoad': function(anchorLink, index){
+                    if(index == '1'){
+                        //console.log('1')
+                    }
+                    if(index == '2'){
+                        //console.log('2')
+                    }
+                    if(index == '3'){
+                        //console.log('2')
+                    }
+				},
+			});
+
+            $('.section-02 .slide-text').css({'display':'block'});
+            $('.section-03 .slide-text').css({'display':'block'});
+		}
+	}
+
+	function debounce(fn, delay) {
+		var timer;
+		return function(){
+			clearTimeout(timer);
+			timer = setTimeout(function(){
+				fn.apply(this);
+			}, delay);
+		}
+	}
+
+});
+
+
+// 메인 PC-작은배너  - 20211105 추가
+$(function(){
+	var VisualLength = $('.bann_list > div').length;
+	if(VisualLength>1){
+		$('.pc_btn .auto').addClass('play').text('정지');
+	} else{
+		$('.pc_btn .auto').addClass('pause').text('재생');
+	};
+
+	$('.banner_area .bann_list').slick({
+		swipe : true,
+		draggable : true,
+		slidesToShow : 1,
+		slidesToScroll: 1,
+		vertical : false,
+		autoplay : true,
+		infinite: true,
+		dots : true,
+		appendDots: $('.pc_btn .dotbox'),
+		prevArrow : false,
+		nextArrow : false,
+		accessibility: true
+	});
+
+	// Slick 버튼에 대한 초기 aria-label 및 title 값을 부여 (2023 웹접근성)
+	let _pList = $('.banner_area .bann_list .slick-slide:not(.slick-cloned) a > p');
+	let _btn = $('.banner_area .slick-dots li > button');
+	for (let i = 0; i < _pList.length; i++) {
+		_btn.eq(i).prop('title', _pList.eq(i).text());
+		_btn.eq(i).text(_pList.eq(i).text());
+	}
+
+	$('.banner_area .slick-dots button').on('click', function(){
+		$('.banner_area .bann_list').slick('slickPause');
+		$('.banner_area .pc_btn button.auto').removeClass('play').addClass('pause').text('정지');
+
+		// 웹 접근성 대응. 20221026 이종범
+		var idx = $(this).val() - 1;
+
+		var sGetTitle = $('.banner_area .bann_list .slick-slide:not(.slick-cloned) a').eq(idx).children('p').text();
+		let areptTitle = $('.banner_area .bann_list .slick-slide.slick-active a').prop('title').replace(/ 선택됨/g, '');
+		$('.banner_area .bann_list .slick-slide.slick-active a').prop('title', areptTitle);
+		$('.banner_area .bann_list .slick-slide:not(.slick-cloned) a').eq(idx).prop('title', sGetTitle+' 선택됨');
+
+		let ariaTitle = $('.banner_area .slick-dots li.slick-active button').attr('aria-label').replace(/ 선택됨/g, '');
+		$('.banner_area .slick-dots li.slick-active button').attr('aria-label', ariaTitle);
+		$(this).attr('aria-label', sGetTitle + ' 선택됨');
+
+		let repTitle = $('.banner_area .slick-dots li.slick-active button').prop('title').replace(/ 선택됨/g, '');
+		$('.banner_area .slick-dots li.slick-active button').prop('title', repTitle);
+		$(this).prop('title', sGetTitle + ' 선택됨');
+
+		$(this).text(sGetTitle);
+	});
+
+	$('.banner_area .bann_list').on('swipe', function(event, slick, direction){
+		$('.banner_area .bann_list').slick('slickPause');
+		$('.banner_area .pc_btn button.auto').removeClass('play').addClass('pause').text('재생');
+	});
+
+	$('.banner_area .pc_btn button.auto').click(function(){
+		var NowPlaying = $(this).is('.play');
+		if(NowPlaying==true){
+			$('.banner_area .bann_list').slick('slickPause');
+			$(this).removeClass('play').addClass('pause').text('재생');
+		} else if(NowPlaying==false){
+			$('.banner_area .bann_list').slick('slickPlay');
+			$(this).removeClass('pause').addClass('play').text('정지');
+		};
+	});
+
+	var $VisualPopupList = $('.bann_list .slick-slide');
+	$VisualPopupList.each(function(){
+		var $VisualPopupLink = $(this).children('a'),
+			VisualPopupHref = $VisualPopupLink.attr('href');
+		$VisualPopupLink.on('click', function(){
+			if(!VisualPopupHref){
+				return false;
+			};
+		});
+	});
+});
+
+// 메인 모바일-작은배너  - 20211105 추가
+$(function(){
+	var VisualLength = $('.bann_list > div').length;
+	if(VisualLength>1){
+		$('.mobile_btn .auto').addClass('play').text('정지');
+	} else{
+		$('.mobile_btn .auto').addClass('pause').text('재생');
+	};
+
+	$('.mobile_area .bann_list').slick({
+		swipe : true,
+		draggable : true,
+		slidesToShow : 1,
+		slidesToScroll: 1,
+		vertical : false,
+		autoplay : true,
+		infinite: true,
+		dots : true,
+		appendDots: $('.mobile_btn .dotbox'),
+		prevArrow : false,
+		nextArrow : false,
+		accessibility: true
+	});
+
+	$('.mobile_area .slick-dots button').on('click', function(){
+		$('.mobile_area .bann_list').slick('slickPause');
+		$('.mobile_area .mobile_btn button.auto').removeClass('play').addClass('pause').text('정지');
+
+		// 웹 접근성 대응. 20221026 이종범
+		var idx = $(this).val() - 1;
+
+		//$('.mobile_area .slick-dots li.slick-active button').prop('title', repTitle);
+		//$('.mobile_area .bann_list .slick-slide:not(.slick-cloned) a').prop('title', repTitle);
+		var sGetTitle = $('.mobile_area .bann_list .slick-slide:not(.slick-cloned) a').eq(idx).children('p').text();
+		let areptTitle = $('.mobile_area .bann_list .slick-slide.slick-active a').prop('title').replace(/ 선택됨/g, '');
+		$('.mobile_area .bann_list .slick-slide.slick-active a').prop('title', areptTitle);
+		$('.mobile_area .bann_list .slick-slide:not(.slick-cloned) a').eq(idx).prop('title', sGetTitle+' 선택됨');
+
+		let ariaTitle = $('.mobile_area .slick-dots li.slick-active button').attr('aria-label').replace(/ 선택됨/g, '');
+		$('.mobile_area .slick-dots li.slick-active button').attr('aria-label', ariaTitle);
+		$(this).attr('aria-label', sGetTitle + ' 선택됨');
+
+		let repTitle = $('.mobile_area .slick-dots li.slick-active button').prop('title').replace(/ 선택됨/g, '');
+		$('.mobile_area .slick-dots li.slick-active button').prop('title', repTitle);
+		$(this).prop('title', sGetTitle + ' 선택됨');
+
+		$(this).text(sGetTitle);
+	});
+
+	$('.mobile_area .bann_list').on('swipe', function(event, slick, direction){
+		$('.mobile_area .bann_list').slick('slickPause');
+		$('.mobile_area .mobile_btn button.auto').removeClass('play').addClass('pause').text('재생');
+	});
+
+	$('.mobile_area .mobile_btn button.auto').click(function(){
+		var NowPlaying = $(this).is('.play');
+		if(NowPlaying==true){
+			$('.mobile_area .bann_list').slick('slickPause');
+			$(this).removeClass('play').addClass('pause').text('재생');
+		} else if(NowPlaying==false){
+			$('.mobile_area .bann_list').slick('slickPlay');
+			$(this).removeClass('pause').addClass('play').text('정지');
+		};
+	});
+
+	var $VisualPopupList = $('.bann_list .slick-slide');
+	$VisualPopupList.each(function(){
+		var $VisualPopupLink = $(this).children('a'),
+			VisualPopupHref = $VisualPopupLink.attr('href');
+		$VisualPopupLink.on('click', function(){
+			if(!VisualPopupHref){
+				return false;
+			};
+		});
+	});
+});
+
+//**
+//   2022년 모바일 UI 변경
+//**
+$(function(){
+    var swiper = new Swiper(".mob-visual-Swiper", {
+        slidesPerView: 1,
+        // 웹접근성 자동롤링 처리, GlobalJSConfig.isApplyWA=true (웹접근성 적용)
+        autoplay: !GlobalJSConfig.isApplyWA,
+        autoplaySpeed: 2000,
+        speed: 300,
+        loop: !GlobalJSConfig.isApplyWA,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        a11y: {
+            prevSlideMessage: '이전 슬라이드',
+            nextSlideMessage: '다음 슬라이드',
+            slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+
+});
+
+//2024-10 리뉴얼
+$(function(){
+	$('.main-banner-wrap').on('init afterChange', function (event, slick, currentSlide) {
+		const index = (currentSlide !== undefined ? currentSlide : 0) + 1;
+		$('.main-banner-wrap .numcount').html(
+			"<span class='now'>" + index + "</span><span>/" + slick.slideCount + "</span>"
+		);
+	});
+	//main - 상단 롤링배너
+	$('.main-banner').slick({
+		arrows: false,
+		dots: false,
+		infinite: true,
+		speed: 800,
+		autoplay: true,
+		fade: true
+	});
+	$('.main-banner-wrap .btn-banner-next').on('click', function () {
+		$('.main-banner').slick('slickNext');
+	});
+	$('.main-banner-wrap .play').click(function(){
+		$('.main-banner').slick('slickPlay');
+		$(this).siblings('.pause').css('visibility', 'visible');
+			$(this).css('visibility', 'hidden');
+	}); 
+	$('.main-banner-wrap .pause').click(function(){
+		$('.main-banner').slick('slickPause');
+		$(this).siblings('.play').css('visibility', 'visible');
+		$(this).css('visibility', 'hidden');
+	});
+	
+	/* main - 바로가기 슬라이드 */
+	$('.main-menu-slide > ul').slick({
+		slidesToShow: 4.3,
+		mobileFirst: true,
+		accessibility: true,
+		infinite: false,
+		slidesToScroll: 4,
+		arrows: false,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: "unslick"
+			}
+		],
+	});
+	$(window).on('load resize', function() {
+        $('.main-menu-slide > ul').slick('resize');
+		$('.main-menu-slide li,.main-menu-slide a').removeAttr('tabindex');
+    });
+
+	/* main - 내게 맞는 대출 찾기 슬라이드 */
+	$('.loan-prod-ul').slick({
+		slidesToShow: 3,
+		slidesToScroll: 3,
+		accessibility: true,
+		infinite: false,
+		arrows: true,
+		draggable: false,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: "unslick"
+			}
+		]
+	});
+	$(window).on('load resize', function() {
+        $('.loan-prod-ul').slick('resize');
+		$('.loan-prod-li,.loan-prod-li a').removeAttr('tabindex');
+    });
+
+	$('.main-loan-btn button').click(function(){
+		var $this = $(this);
+		var index = $this.index();
+
+		$this.addClass('on');
+		$this.siblings('button.on').removeClass('on');
+
+		var $outer = $this.closest('.main-loan-product');
+		var $current = $outer.find('.loan-slide-wrap.on');
+		var $post = $outer.find('.loan-slide-wrap').eq(index);
+
+		$current.removeClass('on');
+		$post.addClass('on');
+		// 위의 코드는 탭메뉴 코드입니다.
+
+		$('.loan-prod-ul').slick('setPosition');
+	});
+
+	/* 쉬운 홈 체크박스 */
+	$('.toggle-simple').click(function(){
+		if($(this).children('input').is(':checked')){
+			$('.main-content').addClass('easy')
+		}else{
+			$('.main-content').removeClass('easy')
+		}
+
+	});
+
+	$(window).scroll( function(){
+        $('.service-ul .tx1,.service-ul .tx2,.service-ul > li > a .img').each(function(i){
+			var $this = $(this);
+
+			var bottom_of_element = $this.offset().top + $this.outerHeight();
+			var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+			if(bottom_of_window > bottom_of_element) {
+				$this.css({
+					opacity: 1,
+					transform: 'translateY(0)'
+				});
+			}
+		});
+    });
+});

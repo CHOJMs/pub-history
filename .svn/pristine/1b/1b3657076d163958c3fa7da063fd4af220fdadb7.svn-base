@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>완료 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap"><!--bg이미지 진행 width값-->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+
+		<!-- //메인, 서브메인만 추가될 태그, 활성화 시키고 header에 main 추가
+		<div class="main-line-dsr"></div>
+		 //메인, 서브메인만 추가될 태그, 활성화 시키고 header에 main 추가 -->
+
+		<header id="header" class="sub dsr_gnb"> <!-- main -->
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+			<div class="mobile-logo"><a href=""><img src="/static/web/img/imlogo/ci_basic.png" alt="iM캐피탈"></a></div>
+			<!--<div class="mobile-btn">
+				<ul>
+					<li><a href=""><img src="/static/web/img/ico_home.png" alt=""></a></li>
+					<li><a href=""><img src="/static/web/img/ico_alram.png" alt=""></a></li>
+				</ul>
+			</div>-->
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+
+				<div class="mobile-menu">
+					<p tabindex="0"><img src="/static/web/img/imlogo/ci_basic.png" alt="iM캐피탈"></p>
+					<ul>
+						<li class="home"><a href="">홈</a></li>
+					</ul>
+				</div>
+
+				<div class="left">
+				</div>
+
+				<div class="right">
+					<ul>
+						<li class=""><a href="">상품안내</a>
+							<ul>
+								<li><a href="">일반신용대출</a></li>
+								<li><a href="">소호아파트론</a></li>
+							</ul>
+						</li>
+						<li><a href="">전자약정</a></li>
+						<li><a href="">빠른상담신청</a></li>
+						<li><a href="">한도조회</a></li>
+						<li><a href="">대출계산기</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-process">
+
+            <!-- Start : centents -->
+            <div class="contents cont-type02">
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="finish-box f-ico-comp">
+                    <div class="f-type01">
+                        <div>
+                            <div class="fini-tit">정상적으로 접수되었어요!</div>
+
+                            <!-- Start : 완료 -->
+                            <div class="dsr-counsel-box">
+                                <div class="counsel-box">
+                                    <ul>
+                                        <li>
+                                            <p class="name">황준규<span>대출상담사</span></p>
+                                            <p class="tel">010-4788-1179</p>
+                                            <p class="number">3401DGBC00005422</p>
+                                        </li>
+                                        <li class="dsr-photo"><span><img src="/static/web/img/ui_common/dsr_bg.png" alt="iM캐피탈 대출상담사"></span></li>
+                                    </ul>
+                                    <div class="dsr-logo"><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></div>
+                                </div>
+                                <p class="ico-info">여신금융협회 대출모집인 조회 www.loanconsultant.or.kr</p>
+                            </div>
+
+                            <!-- //End : 완료 -->
+                        </div>
+
+                        <!-- Start : 이용문의 -->
+                        <div class="fixed-call-area">
+                            <div class="call-phone">
+                                <span class="c-info">이용문의</span><span class="c-tel">1566-0050<span class="c-text">(평일 오전 9시~오후 6시)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //End : 이용문의 -->
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn btn-full-width"><button type="button" id="">메인으로 이동</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+</body>
+</html>

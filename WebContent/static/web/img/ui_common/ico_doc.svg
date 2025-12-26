@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00a88b;
+      }
+
+      .cls-2 {
+        fill: #0b6f5e;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="ic_보험가입조건" transform="translate(-5)">
+    <g id="그룹_9312" data-name="그룹 9312" transform="translate(3)">
+      <path id="패스_9345" data-name="패스 9345" class="cls-1" d="M23,15.583V6.667L16.783,0H8.259A3.383,3.383,0,0,0,5,3.495v13.01A3.383,3.383,0,0,0,8.259,20H19.741A3.383,3.383,0,0,0,23,16.505Z" transform="translate(-3)"/>
+      <path id="패스_9346" data-name="패스 9346" class="cls-2" d="M72.964,6.52,66.444,0V4.961A1.559,1.559,0,0,0,68,6.52Z" transform="translate(-52.964)"/>
+    </g>
+    <g id="그룹_9311" data-name="그룹 9311" transform="translate(6.721 8.694)">
+      <path id="패스_9347" data-name="패스 9347" class="cls-3" d="M29.043,50.19H18.958a.987.987,0,0,1-.973-.9.977.977,0,0,1,.933-1.1H29a.987.987,0,0,1,.973.9.978.978,0,0,1-.933,1.1" transform="translate(-16.701 -45.883)"/>
+      <path id="패스_9348" data-name="패스 9348" class="cls-3" d="M22.967,32.2H19.037a1.038,1.038,0,0,1-1.052-.9,1,1,0,0,1,1.009-1.1h3.929a1.038,1.038,0,0,1,1.052.9,1.006,1.006,0,0,1-1.009,1.1" transform="translate(-16.701 -31.893)"/>
+    </g>
+  </g>
+</svg>

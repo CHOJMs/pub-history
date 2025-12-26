@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상담 전 확인사항</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>상담 전 확인사항</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+
+                <h2>공공 · 민간임대용</h2>
+                <p class="txt-m mb32">전세자금대출 상담 전에 확인해 주세요!</p>
+
+                <p class="h_tit">혹시 신용관리 대상자 이신가요?</p>
+                <div class="list-type-dash">
+                    <ul>
+                        <li>개인회생 인가결정, 신용회복 확정, 파산면책 결정자도 신청가능합니다.</li>
+                        <li>단, 대출(예상)한도는 변경될 수 있습니다.</li>
+                    </ul>
+                </div>
+
+                <p class="h_tit">현재 타 금융사에 전세자금대출을 이용 중 이신가요?</p>
+                <div class="list-type-dash">
+                    <ul>
+                        <li>전세자금대출은 중복으로 신청 불가합니다.</li>
+                    </ul>
+                </div>
+
+                <p class="h_tit">타 금융사에서 당사 전세자금대출로 대환 목적이신가요?</p>
+                <div class="list-type-dash">
+                    <ul>
+                        <li>대환 대출이실 경우 당사에서 사용 중이신 타 금융사로 직접 송금해드립니다.</li>
+                    </ul>
+                </div>             
+                
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

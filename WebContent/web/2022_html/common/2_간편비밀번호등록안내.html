@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간편 비밀번호 등록 안내 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-app">
+        <div class="inner">
+            <div class="popup-text mb16">
+                <h1 tabindex="0">간편 비밀번호 등록 안내</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- Start : content //-->
+
+                <!-- Start : 비밀번호 등록 안내 -->
+                <div class="app_cen_box">
+                    <p class="app_txt">본인인증 후 간편 비밀번호를 등록하시면 한도조회, 대출상담, 대출관리까지 iM캐피탈의 모든 서비스를 더 빠르게 이용하실 수 있어요</p>
+                    <div class="app-list mt16">
+                        <ul>
+                            <li>
+                                <span><img src="/static/web/img/ico_new06.png" alt="간편 비밀번호"></span>
+                                <div>
+                                    <p>간편 비밀번호</p>
+                                    기본 본인인증 수단으로 사용 가능
+                                </div>
+                            </li>
+                            <li>
+                                <span><img src="/static/web/img/ico_new07.png" alt="Face ID"></span>
+                                <div>
+                                    <p>Face ID</p>
+                                    추가 등록 후 기본 본인인증 수단으로 사용 가능
+                                </div>
+                            </li>
+                            <li>
+                                <span><img src="/static/web/img/ico_new08.png" alt="지문 인증"></span>
+                                <div>
+                                    <p>지문 인증</p>
+                                    추가 등록 후 기본 본인인증 수단으로 사용 가능
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //End : 비밀번호 등록 안내 -->
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray01 wid94"><button type="button">나중에</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        <span class="btn black"><button type="button">등록하기</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <!--<div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>-->
+    </div>
+
+</div>
+
+</body>
+</html>

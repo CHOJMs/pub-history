@@ -1,0 +1,624 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 신분증 안면인식 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-14</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>신분증 안면인식 서비스 동의</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/신분증안면인식_서비스동의.html">신분증안면인식_서비스동의.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-14</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>개인(신용)정보 수집 이용 필수 동의서</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/신분증안면인식_필수동의서.html">신분증안면인식_필수동의서.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-20</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>얼굴촬영 안내</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/얼굴촬영안내.html">얼굴촬영안내.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-20</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>얼굴촬영</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/얼굴촬영.html">얼굴촬영.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-20</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 얼굴촬영 - 카메라 작동중</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/얼굴촬영2.html">얼굴촬영2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-20</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 얼굴촬영 - 카메라 작동중</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/얼굴촬영3.html">얼굴촬영3.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-20</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 얼굴촬영 - 인식 오류</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/얼굴촬영4.html">얼굴촬영4.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-20</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 얼굴촬영 - 인식 오류2</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/얼굴촬영5.html">얼굴촬영5.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-20</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 얼굴촬영 - 정상 인식</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/얼굴촬영6.html">얼굴촬영6.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-20</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 얼굴촬영 - 비교중</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/얼굴촬영7.html">얼굴촬영7.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-20</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>[검수용] 얼굴촬영 - 확인 완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/얼굴촬영8.html">얼굴촬영8.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-10-20</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>얼굴촬영 및 안면인식 실패</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/안면인식실패.html">안면인식실패.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-20</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>추가인증 방법 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/추가인증방법선택2.html">추가인증방법선택2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 로딩 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-08-07</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>마이데이터 - 부동산시세조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/마이데이터_시세조회.html">마이데이터_시세조회.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 레이아웃 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-08-06</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>footer</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/footer.html">footer.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 본인인증 공통 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-09-25</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>모바일 신분증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/모바일신분증.html">모바일신분증.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>[모바일용] 모바일 신분증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/모바일신분증_모바일용.html">모바일신분증_모바일용.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>[모바일용] 모바일 신분증 예시 - 앱 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/모바일신분증_모바일용02.html">모바일신분증_모바일용02.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>[모바일용] 모바일 신분증 예시 - 인증 요청중</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/모바일신분증_모바일용03.html">모바일신분증_모바일용03.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>[모바일용] 모바일 신분증 예시 - 약관 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/모바일신분증_모바일용04.html">모바일신분증_모바일용04.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-10-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>[모바일용] 모바일 신분증 예시 - 약관 팝업(PC랑 동일한 구조 사용)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/모바일신분증_모바일용05.html">모바일신분증_모바일용05.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>약관동의 - 전체동의</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPA-100-001.html">MPA-100-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>이용약관 전체동의서</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPC-100-002.html">MPC-100-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>[필수]개인(신용)정보의 필수적 동의서</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPC-100-003.html">MPC-100-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>개인(신용) 정보의 선택적 동의서</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPC-100-004.html">MPC-100-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPC-200-001.html">MPC-200-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-04-29</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>안내팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/안내팝업.html">안내팝업.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>인증방법 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPA-100-006.html">MPA-100-006.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td>2025-04-29</td>
+                        <td>pop</td>
+                        <td>통신사 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPC-200-002.html">MPC-200-002.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-04-29 : 목록 비활성화 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-04-13</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>휴대폰 본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPC-200-003.html">MPC-200-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 1원 송금 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-07</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>추가인증 방법 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/추가인증방법선택.html">추가인증방법선택.html</a></td>
+                        <td></td>
+                        <td>셀렉트 수정</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-07</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>추가인증 방법 선택 - 팝업</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/추가인증방법선택-팝업.html">추가인증방법선택-팝업.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-07</td>
+                        <td>2024-07-26</td>
+                        <td>page</td>
+                        <td>계좌정보입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/계좌정보입력.html">계좌정보입력.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-05-17 : 안내문구 추가</li>
+                                <li>2024-07-26 : 안내문구 수정</li>
+                            </ul>
+                        </td>
+                        <td>셀렉트 수정</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-07</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>숫자4자리입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/숫자4자리입력.html">숫자4자리입력.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-05-17</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>숫자4자리입력 ver2</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/숫자4자리입력-ver2.html">숫자4자리입력-ver2.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 신분증진위확인 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-28</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신분증 촬영결과</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPC-800-003.html">MPC-800-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-08-28</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신분증 촬영</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/신분증촬영.html">신분증촬영.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-07-08</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신분증 촬영2</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/common/신분증촬영2.html">신분증촬영2.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-07-08 : 개발솔루션화면에 맞춰 작업</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 고객 문서업로드 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-21</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>유효기간 안내</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPZ-100-004.html">MPZ-100-004.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-10-11</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류목록</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPZ-100-001.html">MPZ-100-001.html</a></td>
+                        <td></td>
+                        <td>셀렉트 수정</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-10-11</td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>서류제출 첨부팝업</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPZ-100-002.html">MPZ-100-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-10-11</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>서류제출 완료</td>
+                        <td>신규</td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/personal/MPZ-100-003.html">MPZ-100-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 개인정보처리방침 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-12-13</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>개인정보처리방침</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/customer/개인정보처리방침.html">개인정보처리방침.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상담등록</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">   
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>상담등록</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+                        
+                        <h2>여신번호</h2>
+                        <div class="white_box mt12">
+                            <p class="a_c">1901-028000-0-000</p>
+                        </div>
+
+                        <h2 class="pb16 mt40">상담유형</h2>
+                        <div class="form_box">
+                            <p class="h_tit">상담대상 선택</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="상담대상 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="h_tit">대분류 선택</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="대분류 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="h_tit">소분류 선택</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="소분류 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <h2 class="pb16 mt40">상담 내용</h2>
+                            <span class="textarea_box">
+                                <textarea id="" placeholder="" title="상담 내용 입력" style="height:100px;"></textarea>
+                            </span>
+
+                            <!-- 2021-07-22 추가-->
+                            <p class="h_tit">약속일자</p>
+                            <div class="text_data">
+                                <span class="form">
+                                  <input type="tel" id="" placeholder="1981-01-25" title="약속일자 입력">
+                                  <button id="" class="calender">달력보기</button>
+                                </span>					
+                            </div>
+
+                            <p class="h_tit">금액</p>
+                            <div class="text_data">
+                                <span class="form form_text">
+                                    <input type="tel" id="" placeholder="0" title="금액 입력" class="a_r">
+                                </span>
+                                <span class="txt">원</span>
+                            </div>
+
+                            <p class="h_tit">입금인</p>
+                            <div class="text_data">
+                                <span class="form ">
+                                    <input type="tel" id="" placeholder="0" title="입금인 입력">
+                                </span>
+                            </div>
+                            <!-- 2021-07-22 추가-->
+                        </div>
+                    </div>                    
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn gray"><button id="">취소</button></span>
+                        <span class="btn"><button id="">등록</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

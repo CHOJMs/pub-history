@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부동산시세조회</title>
+
+	<link rel="stylesheet" href="/static/web/js/lib/swiper-bundle.min.css">
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/lib/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>부동산시세조회</h1>
+                <p>시세조회를 위해 주소를 입력해주세요.</p>
+            </div>
+            <div class="popup-contents no_btn1">
+                <!-- content 시작 //-->
+                <div class="bg_graybox pb0">
+
+                    <!-- 검색 시작 //-->
+                    <div class="bg_top">
+                        <div class="bg_radio_box">
+                            <div>
+                                <input type="radio" name="r31" value="" id="r31" checked="checked" aria-hidden="true" title="도로명주소 체크">
+                                <label for="r31" role="radio" aria-checked="false"><span>도로명주소</span></label>
+                            </div>
+                            <div>
+                                <input type="radio" name="r31" value="" id="r32" aria-hidden="true" title="지번주소 인증 체크" role="radio">
+                                    <label for="r32" role="radio" aria-checked="false"><span>지번주소</span></label>
+                            </div>
+                        </div>
+
+                        <div class="form_box">
+                            <!-- //도로명주소-->
+                            <ul class="form_list">
+                                <li>
+                                    <p class="h_tit">부동산 구분<em>*<span>필수</span></em></p>
+                                    <div class="text_data">
+                                        <div class="selectbox">
+                                            <select class="select" title="부동산구분 선택">
+                                                <option>선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">주택 구분<em>*<span>필수</span></em></p>
+                                    <div class="text_data">
+                                        <div class="selectbox">
+                                            <select class="select" title="주택구분 선택">
+                                                <option>선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">시/도<em>*<span>필수</span></em></p>
+                                    <div class="text_data">
+                                        <div class="selectbox">
+                                            <select class="select" title="시/도 선택">
+                                                <option>선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">시/군/구<em>*<span>필수</span></em></p>
+                                    <div class="text_data">
+                                        <div class="selectbox">
+                                            <select class="select" title="시/군/구 선택">
+                                                <option>선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">도로명</p>
+                                    <div class="text_data">
+                                        <input type="text" name="" id="" class="" placeholder="도로명 입력" title="도로명주소 입력">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">도로명 건물번호</p>
+                                    <div class="text_data">
+                                        <input type="number" name="" id="" class="" placeholder="건물번호 입력" title="도로명 건물번호 입력">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">동</p>
+                                    <div class="text_data">
+                                        <input type="number" name="" id="" class="" placeholder="동 입력" title="동 입력">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">호</p>
+                                    <div class="text_data">
+                                        <input type="number" name="" id="" class="" placeholder="호 입력" title="호 입력">
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 도로명주소// -->
+                            <!-- //지번주소 -->
+                            <ul class="form_list jibun_list"><!-- 지번주소 검색할 때 class="jibun_list" 추가 // -->
+                                <li>
+                                    <p class="h_tit">부동산 구분<em>*<span>필수</span></em></p>
+                                    <div class="text_data">
+                                        <div class="selectbox">
+                                            <select class="select" title="부동산구분 선택">
+                                                <option>선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">주택 구분<em>*<span>필수</span></em></p>
+                                    <div class="text_data">
+                                        <div class="selectbox">
+                                            <select class="select" title="주택구분 선택">
+                                                <option>선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">시/도<em>*<span>필수</span></em></p>
+                                    <div class="text_data">
+                                        <div class="selectbox">
+                                            <select class="select" title="시/도 선택">
+                                                <option>선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">시/군/구<em>*<span>필수</span></em></p>
+                                    <div class="text_data">
+                                        <div class="selectbox">
+                                            <select class="select" title="시/군/구 선택">
+                                                <option>선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">도로명</p>
+                                    <div class="text_data">
+                                        <input type="text" name="" id="" class="" placeholder="도로명 입력" title="도로명주소 입력">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">도로명 건물번호</p>
+                                    <div class="text_data">
+                                        <input type="number" name="" id="" class="" placeholder="건물번호 입력" title="도로명 건물번호 입력">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">동</p>
+                                    <div class="text_data">
+                                        <input type="number" name="" id="" class="" placeholder="동 입력" title="동 입력">
+                                    </div>
+                                </li>
+                                <li>
+                                    <p class="h_tit">호</p>
+                                    <div class="text_data">
+                                        <input type="number" name="" id="" class="" placeholder="호 입력" title="호 입력">
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- 지번주소// -->
+                            <div class="btn_box">
+                                <span class="btn"><button id="">조회</button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 검색 끝 //-->
+
+                    <!-- 부동산 시세조회 결과 시작 //-->
+                    <div class="bg_bottom">
+                        <h2 class="h2_tit">부동산 시세조회 결과</h2>
+                        <div class="nodata pb32">
+                            부동산시세를 조회해 주세요.
+                        </div>
+
+                        <div>
+                            <div class="linebox">
+                                <div class="radiobox">
+                                    <input type="radio" name="r01" value="" id="r01" class="rchk" aria-hidden="true" title="선택 체크">
+                                    <label for="r01" class="rchk-label" role="radio" aria-checked="false">부동산 고유번호 : 1234567</label>
+                                </div>
+                                <div class="t_line_box">
+                                    <ul class="list_2">
+                                        <li>
+                                            <span class="tit">부동산 구분</span>
+                                            <span></span>
+                                        </li>
+                                        <li>
+                                            <span class="tit">소재지</span>
+                                            <span>내용이 2줄로 떨어지는 예시입니다. 내용이 2줄로 떨어지는 예시입니다. 내용이 2줄로 떨어지는 예시</span>
+                                        </li>
+                                        <li>
+                                            <span class="tit">도로명소재지</span>
+                                            <span>남대문로 125</span>
+                                        </li>
+                                        <li>
+                                            <span class="tit">소유자</span>
+                                            <span>홍**</span>
+                                        </li>
+                                        <li>
+                                            <span class="tit">상태</span>
+                                            <span>현행</span>
+                                        </li>
+                                        <li>
+                                            <span class="tit">PDF최종발급일</span>
+                                            <span>2021-05-28</span>
+                                        </li>
+                                        <li>
+                                            <span class="tit">발급이후변동여부</span>
+                                            <span>없음</span>
+                                        </li>
+                                        <li>
+                                            <span class="tit">전자발급요청번호</span>
+                                            <span>1234567</span>
+                                        </li>
+                                    </ul>                                
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 버튼// -->
+                        <div class="btn_box">
+                            <span class="btn"><button id="">시세조회</button></span>
+                        </div>
+                        <!-- //버튼 -->
+                    </div>
+                    <!-- 부동산 시세조회 결과 끝 //-->
+                    <p class="white_linebox"></p>
+                    <!-- KB아파트 시세 시작 //-->
+                    <div class="bg_bottom">
+                        <h2 class="h2_tit">KB아파트 시세</h2>
+                        <div class="nodata pb32">
+                            부동산시세를 조회해 주세요.
+                        </div>
+
+                        <div>
+                            <div class="linebox">
+                                <div class="radiobox">
+                                    <input type="radio" name="r01" value="" id="r01" class="rchk" aria-hidden="true" title="선택 체크">
+                                    <label for="r01" class="rchk-label" role="radio" aria-checked="false">기준일자 : 20221-05-17</label>
+                                </div>
+                                <div class="t_line_box">
+                                    <ul class="list_2">
+                                        <li>
+                                            <span class="tit">매매일반평균가</span>
+                                            <span>1,000,000,000</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="linebox">
+                                <div class="radiobox">
+                                    <input type="radio" name="r01" value="" id="r01" class="rchk" aria-hidden="true" title="선택 체크">
+                                    <label for="r01" class="rchk-label" role="radio" aria-checked="false">기준일자 : 20221-05-17</label>
+                                </div>
+                                <div class="t_line_box">
+                                    <ul class="list_2">
+                                        <li>
+                                            <span class="tit">매매일반평균가</span>
+                                            <span>1,000,000,000</span>
+                                        </li>
+                                    </ul>                                
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 버튼// -->
+                        <div class="btn_box">
+                            <span class="btn"><button id="">시세등록</button></span><!-- 수정 -->
+                        </div>
+                        <!-- //버튼 -->
+                    </div>
+                    <!-- KB아파트 시세 끝 //-->
+
+                </div>
+                <!--// content 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>마케팅활용동의 조회/변경 | iM캐피탈</title>
+<script>
+    $(document).ready(function(){
+        $('header').load('/web/renewal/header_sub_inc.html');
+        $('footer').load('/web/renewal/footer_inc.html');
+    }); 
+</script>
+</head>
+<body>
+    <header></header>
+    <div class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-contents">
+            <!-- Start : 페이지 인디케이터 -->
+            <div class="indicator">
+                <ul>
+                    <li>홈</li>
+                    <li>고객센터</li>
+                    <li>고객정보관리</li>
+                    <li aria-label="현재 화면">마케팅활용동의 조회/변경</li>
+                </ul>
+            </div>
+            <!-- //End : 페이지 인디케이터 -->
+             
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <h1>마케팅활용동의 조회/변경</h1>
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+                    <div class="pro-box">
+                        <!-- 금융상품 안내 및 이용 권유 동의 -->
+                        <div class="box-gray toggle-align line1">
+                            <p class="p-tit">금융상품 안내 및 이용 권유 동의</p>
+                            <div class="toggle-box">
+                                <input type="checkbox" id="chk1" checked>
+                                <label for="chk1"></label>
+                            </div>
+                        </div>
+
+                        <!-- 부수서비스 안내 동의 -->
+                        <div class="box-gray toggle-align line1">
+                            <p class="p-tit">부수서비스 안내 동의</p>
+                            <div class="toggle-box">
+                                <input type="checkbox" id="chk2">
+                                <label for="chk2"></label>
+                            </div>
+                        </div>
+
+                        <!-- DGB금융그룹 내 자회사 제공 -->
+                        <div class="box-gray toggle-align line1">
+                            <p class="p-tit">DGB금융그룹 내 자회사 제공</p>
+                            <div class="toggle-box">
+                                <input type="checkbox" id="chk3">
+                                <label for="chk3"></label>
+                            </div>
+                        </div>
+
+                        <!-- 광고성 혜택정보 수신(이용·권유) 채널 -->
+                        <div class="box-gray toggle-align">
+                            <p class="p-tit">광고성 혜택정보 수신(이용·권유) 채널</p>
+                            <ul class="toggle-list">
+                                <li>
+                                    <span>전화</span>
+                                    <div class="toggle-box">
+                                        <input type="checkbox" id="chk4" checked>
+                                        <label for="chk4"></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>문자</span>
+                                    <div class="toggle-box">
+                                        <input type="checkbox" id="chk5">
+                                        <label for="chk5"></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>이메일</span>
+                                    <div class="toggle-box">
+                                        <input type="checkbox" id="chk6">
+                                        <label for="chk6"></label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>우편</span>
+                                    <div class="toggle-box">
+                                        <input type="checkbox" id="chk7">
+                                        <label for="chk7"></label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="fixed-btn-area mt48">
+                            <div class="btn-box">
+                                <span class="btn w-160"><button type="button" id="">변경하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <footer></footer>
+    <!---------- //End : footer ---------->
+    <script type="text/javascript">
+        $(function(){
+            $("div .ka-accordion ul li a").on("click", function(){
+
+                setTimeout(() => {
+                    var offset = $(this).offset(); // 선택한 태그의 위치를 반환
+                    $("html, body").stop().animate({scrollTop : offset.top - 100}, 300);
+                }, "400");
+            });
+        });
+    </script>
+</body>
+</html>
+

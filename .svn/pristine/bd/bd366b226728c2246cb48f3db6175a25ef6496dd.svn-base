@@ -1,0 +1,101 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+</head>
+<body>
+
+<!-- 레이어 팝업 -->
+<div class="layer" tabindex="0" style="display: block;">
+	<div class="pop_bg"></div>
+	<div class="layerPop" style="width: 850px; transform: translate(-50%, -50%);">
+		<h1>차량옵션 선택</h1>
+		<div class="Pop_content">
+			<div class="Pop_form-type">
+				<div class="search_p_box2">
+                    <ul>
+                        <li>
+                            <label for="">옵션</label>
+                            <select id="">
+                                <option value="" selected="selected">전체</option>
+                            </select>
+                        </li>
+                    </ul>
+
+					<p class="btn-align-center mb15 mt10">
+						<a href="#none" class="btn h42 wid120">조회하기</a>
+					</p>
+				</div>
+
+				<p class="mb10 font14">옵견가격 합계 (만원) : <strong>110</strong></p>
+                <div class="scroll_box pr0" style="max-height: 345px;">
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col style="width:50px;">
+                            <col style="width:22%;">
+                            <col style="width:50%;">
+                            <col style="width:20%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">선택</th>
+                                <th scope="col">구분</th>
+                                <th scope="col">선택 품목</th>
+                                <th scope="col">옵션가격 (만원)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" id="" name=""></td>
+                                <td class="a_l">외장색상</td>
+                                <td class="a_l">녹턴 그레이 메탈릭</td>
+                                <td class="a_r">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--페이징 //-->
+					<div class="paging" id="paging">
+						<a href="#none" class="navi first" onClick="">맨처음</a>
+						<a href="#none" class="navi prev" onClick="" >이전</a>
+						<a href="#none" class="current">1</a>
+						<a href="#none">2</a>
+						<a href="#none">3</a>
+						<a href="#none">4</a>
+						<a href="#none">5</a>
+						<a href="#none">6</a>
+						<a href="#none">7</a>
+						<a href="#none">8</a>
+						<a href="#none">9</a>
+						<a href="#none">10</a>
+						<a href="#none" class="navi next">다음</a>
+						<a href="#none" class="navi end">맨끝으로</a>
+					</div>
+					<!--// 페이징-->
+			</div>
+			<p class="btn-align-center">
+				<a href="#none" class="btn h42 wid120">확인</a><a href="#none" class="btn h42 wid120">취소</a>
+			</p>
+			<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+
+		</div>
+	</div>
+</div>
+<!-- 팝업bg -->
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+<link rel="stylesheet" href="/static/web/js/lib/swiper-bundle.min.css">
+<link rel="stylesheet" href="/static/web/js/lib/slick.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+<script src="/static/web/js/lib/swiper-bundle.min.js"></script>
+
+<script src="/static/web/js/slick.js"></script>
+<script src="/static/web/js/lib/slick.min.js"></script>
+
+
+<title>서비스데스크 내역 | iM캐피탈</title>
+</head>
+<script>
+    $(document).ready(function(){
+        $('header').load('/web/renewal/header_sub_inc.html');
+        $('footer').load('/web/renewal/footer_inc.html');
+    }); 
+</script>
+<body>
+   <header></header>
+    <div class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-contents">
+                
+            <!-- Start : centents -->
+            <div class="contents bak-gray">
+                <h1>서비스 데스크 내역</h1><!-- 모바일에서 왼쪽에 위치하는 타이틀인 경우 : left 클래스 추가 -->
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+                    <div class="pro-box">
+                        <!-- Start : 내역 탭 -->
+                        <div class="tab-box6 js-tab pt24">
+                            <button class="on" aria-label="선택됨">전체<span>4</span></button>
+                            <button>진행중</button>
+                            <button>완료</button>
+                            <button>취소</button>
+                        </div>
+                        <!-- //End : 내역 탭 -->
+
+                        <!-- Start : 목록 -->
+                        <div class="service-list-wrap">
+                            <div class="list-top-info">
+                                <p class="info-tx">최근 3개월 내역만 확인하실 수 있어요</p>
+                                <p class="tx">접수일순</p>
+                            </div>
+                            <ul class="service-list">
+                                <li>
+                                    <!-- Start : 첫번째 내역 -->
+                                    <div class="service-cont">
+                                        <p class="tit">
+                                            <!-- [D] 서비스별로 클래스명 변경해주세요 __ 증명서 발급 : ico01 / 이용현황 : ico02 / 차량관리 : ico03 / 정보변경 : ico04 / 채무조정문의 : ico05 / 직접문의 : ico06 / 1:1문의 : ico07 -->
+                                            <span class="ico01"></span>
+                                            증명서 발급
+                                        </p>
+                                        <div class="sub-cont">
+                                            <p class="sub-tit">고객이 작성한 제목 영역 가이드이며 최대 한줄입니다. 564너비 고정, 이상일 시 자동 말줄임표 됩니다.</p>
+                                            <p class="sub-desc">
+                                                <strong class="tag-type01">홈페이지</strong>
+                                                <strong class="tag-type01">셀프서비스</strong>
+                                                <span class="date">2025.7.8 10:20 접수</span>
+                                            </p>
+                                        </div>
+                                        <div class="progress-bar-wrap">
+                                            <div class="progress-bar-fill"></div>
+                                            <!-- [D] 현재 상태인 li에 current 클래스 추가(current 이전 li는 자동으로 done 클래스 추가 됨.) -->
+                                            <ul class="progress-bar">
+                                                <li>접수</li>
+                                                <li>진행중</li>
+                                                <li class="current">처리완료</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- //End : 첫번째 내역 -->
+                                </li>
+                                <li>
+                                    <!-- Start : 두번째 내역 -->
+                                    <div class="service-cont">
+                                        <p class="tit">
+                                            <!-- [D] 서비스별로 클래스명 변경해주세요 __ 증명서 발급 : ico01 / 이용현황 : ico02 / 차량관리 : ico03 / 정보변경 : ico04 / 채무조정문의 : ico05 / 직접문의 : ico06 / 1:1문의 : ico07 -->
+                                            <span class="ico03"></span>
+                                            1뎁스 서비스 타이틀
+                                        </p>
+                                        <div class="sub-cont">
+                                            <p class="sub-tit">최종 서비스 타이틀 영역</p>
+                                            <p class="sub-desc">
+                                                <strong class="tag-type01">고객센터</strong>
+                                                <span class="date">2025.7.8 10:20 접수</span>
+                                            </p>
+                                        </div>
+                                        <div class="progress-bar-wrap">
+                                            <div class="progress-bar-fill"></div>
+                                            <!-- [D] 현재 상태인 li에 current 클래스 추가(current 이전 li는 자동으로 done 클래스 추가 됨.) -->
+                                            <ul class="progress-bar">
+                                                <li>접수</li>
+                                                <li class="current">진행중</li>
+                                                <li>처리완료</li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-service-area">
+                                            <a href="#;" class="btn-type">접수 취소</a>
+                                            <a href="#;" class="btn-type">문의</a>
+                                        </div>
+                                    </div>
+                                    <!-- //End : 두번째 내역 -->
+                                </li>
+                                <li>
+                                    <!-- Start : 세번째 내역 -->
+                                    <div class="service-cont cancel"><!-- [D] 취소된 내역인 경우 cancel 클래스 추가 -->
+                                        <div class="flex-tit03">
+                                            <p class="tit">
+                                                <!-- [D] 서비스별로 클래스명 변경해주세요 __ 증명서 발급 : ico01 / 이용현황 : ico02 / 차량관리 : ico03 / 정보변경 : ico04 / 채무조정문의 : ico05 / 직접문의 : ico06 / 1:1문의 : ico07 -->
+                                                <span class="ico02"></span>
+                                                고객상품 정보 변경
+                                            </p>
+                                            <p class="tag-type01 gray">취소</p>
+                                        </div>
+                                        <div class="sub-cont">
+                                            <p class="sub-tit">보증인 변경</p>
+                                            <p class="sub-desc">
+                                                <strong class="tag-type01">고객센터</strong>
+                                                <span class="date">2025.7.8 10:20 접수</span>
+                                            </p>
+                                        </div>
+                                        <div class="btn-service-area">
+                                            <a href="#;" class="btn-type">재신청</a>
+                                        </div>
+                                    </div>
+                                    <!-- //End : 세번째 내역 -->
+                                </li>
+                                <li>
+                                    <!-- Start : 네번째 내역 -->
+                                    <div class="service-cont">
+                                        <p class="tit">
+                                            <!-- [D] 서비스별로 클래스명 변경해주세요 __ 증명서 발급 : ico01 / 이용현황 : ico02 / 차량관리 : ico03 / 정보변경 : ico04 / 채무조정문의 : ico05 / 직접문의 : ico06 / 1:1문의 : ico07 -->
+                                            <span class="ico07"></span>
+                                            1:1 문의
+                                        </p>
+                                        <div class="sub-cont">
+                                            <p class="sub-tit">고객이 작성한 제목이 길어지면 자동 말줄임처리 되도록 되어있습니다.</p>
+                                            <p class="sub-desc">
+                                                <strong class="tag-type01">보이는ARS</strong>
+                                                <span class="date">2025.7.8 10:20 접수</span>
+                                            </p>
+                                        </div>
+                                        <div class="progress-bar-wrap">
+                                            <div class="progress-bar-fill"></div>
+                                            <!-- [D] 현재 상태인 li에 current 클래스 추가(current 이전 li는 자동으로 done 클래스 추가 됨.) -->
+                                            <ul class="progress-bar">
+                                                <li class="current">접수</li>
+                                                <li>진행중</li>
+                                                <li>처리완료</li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-service-area">
+                                            <a href="#;" class="btn-type">접수 취소</a>
+                                            <a href="#;" class="btn-type">문의</a>
+                                        </div>
+                                    </div>
+                                    <!-- //End : 네번째 내역 -->
+                                </li>
+                                <li>
+                                    <!-- Start : 다섯번째 내역 -->
+                                    <div class="service-cont">
+                                        <p class="tit">
+                                            <!-- [D] 서비스별로 클래스명 변경해주세요 __ 증명서 발급 : ico01 / 이용현황 : ico02 / 차량관리 : ico03 / 정보변경 : ico04 / 채무조정문의 : ico05 / 직접문의 : ico06 / 1:1문의 : ico07-->
+                                            <span class="ico03"></span>
+                                            차량관리
+                                        </p>
+                                        <div class="sub-cont">
+                                            <p class="sub-tit">중도해지 인수 신청</p>
+                                            <p class="sub-desc">
+                                                <strong class="tag-type01">홈페이지</strong>
+                                                <strong class="tag-type01">셀프서비스</strong>
+                                                <span class="date">2025.7.8 10:20 접수</span>
+                                            </p>
+                                        </div>
+                                        <div class="progress-bar-wrap">
+                                            <div class="progress-bar-fill"></div>
+                                            <!-- [D] 현재 상태인 li에 current 클래스 추가(current 이전 li는 자동으로 done 클래스 추가 됨.) -->
+                                            <ul class="progress-bar">
+                                                <li>접수</li>
+                                                <li>진행중</li>
+                                                <li class="current">처리완료</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- //End : 다섯번째 내역 -->
+                                </li>
+                            </ul>
+                            <div class="btn_more02 type">
+                                <a href="#;" class="more_btn"><i class="more"></i>더보기</a>
+                            </div>
+                        </div>
+                        <!-- //End : 목록 -->
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+        
+        <footer></footer>
+    </div>
+    <script>
+        $(document).ready(function(){
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

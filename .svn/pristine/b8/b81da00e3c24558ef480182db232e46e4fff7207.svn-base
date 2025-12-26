@@ -1,0 +1,193 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>iM캐피탈 관리자</title>
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin_new.css">
+<link rel="shortcut icon" type="image/x-icon" href="/static/admin/img/common/dgb.ico" />
+
+
+<!-- SecureFrame Start-->
+<!-- SecureFrame End-->
+
+<script type="text/javascript" src="/static/admin/js/dgbjquery-1.11.1.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.easing.js"></script>
+<script type="text/javascript" src="/static/admin/js/css_browser_selector.min.js"></script>
+
+</head>
+<body>
+
+<!-- 레이어 팝업 -->
+<div class="layer" tabindex="0" style="display: block;">
+	<div class="pop_bg"></div>
+	<div class="layerPop" style="width: 1200px; transform: translate(-50%, -50%);">
+		<h1>차량원부조회</h1>
+		<div class="Pop_content">
+			<div class="Pop_form-type">				
+				<div class="search_p_box2">
+					<label for="">차량번호</label>
+					<input type="text" id="" name="" value="" placeholder="">
+					<p class="btn-align-center mb15 mt10">
+						<a href="#none" class="btn h42 wid120">조회하기</a>
+					</p>
+				</div>
+				<table class="bbs-table-view mb30" id="tbl_condition">
+					<colgroup>
+						<col width="160px">
+						<col width="%">
+						<col width="160px">
+						<col width="%">
+						<col width="160px">
+						<col width="%">
+						<col width="160px">
+						<col width="%">
+					</colgroup>
+					<tbody>
+						<tr>								
+							<th scope="row">차량번호</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+							<th scope="row">차명</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+							<th scope="row">연식</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+							<th scope="row">유종</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+						</tr>
+						<tr>								
+							<th scope="row">인승</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+							<th scope="row">차종</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+							<th scope="row">용도</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+							<th scope="row">차대번호</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+						</tr>
+						<tr>								
+							<th scope="row">최초등록일</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+							<th scope="row">최종등록일</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+							<th scope="row">압류건수</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+							<th scope="row">저당건수</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+						</tr>
+						<tr>								
+							<th scope="row">주민(법인)<br>등록번호</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+							<th scope="row">최종소유자</th>
+							<td>
+								<div class="form_box">
+									<input type="text" name="" id="" maxlength="" value="">
+								</div>
+							</td>
+							<th scope="row"></th>
+							<td></td>
+							<th scope="row"></th>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table class="bbs-table">
+					<colgroup>
+						<col style="width:50px;">
+						<col style="width:10%;">
+						<col style="width:12%;">
+						<col style="width:%;">
+						<col style="width:15%;">
+						<col style="width:13%;">
+						<col style="width:13%;">
+					</colgroup>
+					<thead>
+						<tr>		
+							<th scope="col">선택</th>
+							<th scope="col">구분</th>
+							<th scope="col">등록(설정)일자</th>
+							<th scope="col">내용</th>
+							<th scope="col">저당권자염</th>
+							<th scope="col">을부번호</th>
+							<th scope="col">설정금액</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="radio" id="" name=""></td>
+							<td></td>
+							<td>2021-05-02</td>
+							<td></td>
+							<td>(주)iM캐피탈</td>
+							<td>0000-0000-0000</td>
+							<td>5,000,000</td>
+						</tr>
+					</tbody>
+				</table>
+				<p class="a_r mb30 mt15 font14">[조회건수 : <strong>1</strong>건]</p>
+			</div>
+			<p class="btn-align-center">
+				<a href="#none" class="btn h42 wid120">초기화</a><a href="#none" class="btn h42 wid120">확인</a>
+			</p>
+			<p class="closeBtn"><a href="#" class="cbtn"><img src="/static/admin/img/btn_close.png" alt="닫기"></a></p>
+			
+		</div>
+	</div>
+</div>
+<!-- 팝업bg -->
+
+</body>
+</html>

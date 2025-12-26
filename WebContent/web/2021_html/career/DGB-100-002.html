@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>본인인증 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/career/styles.css">
+    
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/ui_gnb.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">    
+    <div class="popup popup-01 popup-career"><!-- 작은 팝업 클래스 추가 -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>본인인증</h1>
+            </div>
+            <div class="popup-contents">
+                
+                <!-- content 시작 //-->
+                <div class="pop_cont">
+                    
+                    <!-- 탭 시작 -->	
+					<div class="swipe_tab_box tab_box mo_tab">
+						<ul>
+							<li><a href="#" class="on" rel="tab-1" aria-label="휴대폰인증 선택됨">휴대폰 인증</a></li>
+							<li><a href="#" rel="tab-2" aria-label="카카오페이인증 선택안됨">카카오페이 인증</a></li>
+						</ul>
+					</div>
+					<!-- 탭 끝 -->
+
+                    <!-- tab-1// -->
+					<div id="tab-1" class="tab-1 tab">
+                        <div class="form_box">
+                            <div>
+                                <label for="ID">이름</label>
+                                <div class="text_data">
+                                    <span class="form">
+                                        <input type="text" id="" placeholder="이름을 입력하세요" title="이름 입력">
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="ID">주민등록번호</label>
+                                <div class="text_data">
+                                    <span class="form">
+                                        <input type="tel" id="" placeholder="생년월일" title="주민등록번호 앞 6자리 입력">
+                                    </span>
+                                    <span class="dash">-</span>
+                                    <span class="form">
+                                        <input type="tel" id="" placeholder="뒷자리 7자리" title="주민등록번호 뒤 7자리 입력">
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="ID">휴대폰번호</label>
+                                <div class="text_data">
+                                    <div class="selectbox">
+                                        <select class="select" title="통신사 선택">
+                                            <option>SK</option>
+                                        </select>
+                                    </div>
+                                    <span class="dash">-</span>
+                                    <span class="form">
+                                        <input type="tel" id="" placeholder="'-'제외하고 입력" title="휴대폰번호 입력">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //tab-1 -->
+
+                    <!-- tab-2// -->
+					<div id="tab-2" class="tab-1 tab">
+                        <div class="form_box">
+                            <div>
+                                <label for="ID">이름</label>
+                                <div class="text_data">
+                                    <span class="form">
+                                        <input type="text" id="" placeholder="이름을 입력하세요" title="이름 입력">
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="ID">주민등록번호</label>
+                                <div class="text_data">
+                                    <span class="form">
+                                        <input type="tel" id="" placeholder="생년월일" title="주민등록번호 앞 6자리 입력">
+                                    </span>
+                                    <span class="dash">-</span>
+                                    <span class="form">
+                                        <input type="tel" id="" placeholder="뒷자리 7자리" title="주민등록번호 뒤 7자리 입력">
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="ID">휴대폰번호</label>
+                                <div class="text_data">
+                                    <div class="selectbox">
+                                        <select class="select" title="통신사 선택">
+                                            <option>SK</option>
+                                        </select>
+                                    </div>
+                                    <span class="dash">-</span>
+                                    <span class="form">
+                                        <input type="tel" id="" placeholder="'-'제외하고 입력" title="휴대폰번호 입력">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //tab-2 -->
+
+                </div>
+                <!--// content 끝-->
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+</div>
+
+</body>
+</html>

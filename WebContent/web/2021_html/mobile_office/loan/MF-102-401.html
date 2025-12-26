@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>법무이력 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+            
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+				
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>					
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">여신</a>
+							<ul>
+								<li><a href="">연체현황/명세</a></li>
+								<li><a href="">관리채권 내역조회</a></li>
+                                <li><a href="">외부활동 내역관리</a></li>
+                                <li><a href="">외부활동 경로관리</a></li>
+							</ul>
+						</li>
+						<li class=""><a href="">검수</a>
+							<ul>
+								<li><a href="">사전검수 요청명세</a></li>
+								<li><a href="">실행물건 검수명세</a></li>
+                                <li><a href="">물건검수 등록</a></li>
+                                <li><a href="">관리채권 내역조회</a></li>
+							</ul>
+						</li>
+                        <li class=""><a href="">오토</a>
+							<ul>
+								<li><a href="">재고금융현황(차량실사)</a></li>
+								<li><a href="">신규 딜러/모집인 등록안내(SMS) 발송</a></li>
+                                <li><a href="">중고차 제휴 공지사항</a></li>
+							</ul>
+						</li>
+                        <li class=""><a href="">기업금융</a>
+							<div class="flex-list">
+								<div>
+									<ul>
+										<li><a href="">물건평가</a></li>
+										<li><a href="">물건평가 등록</a></li>
+										<li><a href="">물건평가 조회/수정</a></li>
+                                        <li class="dep2"><a href="">상담신청</a>
+											<ul>
+												<li><a href="">신규 고객 본인인증 SMS 발송</a></li>
+												<li><a href="">기본 고객등록</a></li>
+												<li><a href="">고객별 정보조회</a></li>
+												<li><a href="">한도조회 (여신통합조회)</a></li>
+												<li><a href="">정보제공 (NICE정보)</a></li>
+												<li><a href="">부동산 등기부등본 조회</a></li>
+											</ul>
+										</li>
+                                        <li><a href="">결재 현황</a></li>
+                                        <li><a href="">결재 진행 현황</a></li>
+									</ul>
+								</div>								
+							</div>
+						</li>
+                        <li class=""><a href="">전세자금(개인)</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">신용조회</a></li>
+								<li><a href="">신청관리</a></li>
+								<li><a href="">만기관리</a></li>
+							</ul>
+						</li>
+						<li><a href="">전세자금(공공)</a>
+                            <ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">신용조회</a></li>
+								<li><a href="">신청관리</a></li>
+								<li><a href="">만기관리</a></li>
+							</ul>
+                        </li>
+                        <li><a href="">결재</a>
+                            <ul>
+								<li><a href="">결재 요청 현황</a></li>
+							</ul>
+                        </li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+				<h2 class="tl">상담내역</h2>
+                <div class="box_form scoll mob_nobtn"><!-- 하단에 버튼이 없는경우 : mob_nobtn 클래스명 추가-->
+					
+					<div class="flex-btn">
+						<h3 class="txt">여신번호</h3>
+						<span class="btn btn-blk">
+							<a href="#">여신조회</a>
+						</span>
+					</div>
+					<div class="white_box mb24">
+						<P class="a_c">1901-028000-0-000</P>
+					</div>
+
+					<div class="box_viewType mb30">
+						<dl>
+							<dt>고객번호</dt>
+							<dd>1901-028000-0-000</dd>
+							<dt>고객명</dt>
+							<dd><span>홍길동</span>
+								<div class="btn_table">
+									<a href="#" class="btn">고객정보</a>
+								</div>
+							</dd>
+						</dl>
+					</div>
+					
+					<!-- 탭 시작// -->
+					<div class="tabwrap">
+						<div class="tab_navi">
+							<ul>
+								<li><a href="#" aria-label="여신정보 선택안됨">여신정보</a></li>
+								<li><a href="#" aria-label="거래정보 선택안됨">거래정보</a></li>
+								<li><a href="#" aria-label="상담내역 선택안됨">상담내역</a></li>
+								<li><a href="#" class="on" aria-label="법무이력 선택됨">법무이력</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //탭 끝 -->
+
+					<div class="scroll_table">
+						<table class="dataType">
+							<caption>상담내역 - No, 진행상태, 진행상세상태, 법무구분, 법무종류, 법원, 사건번호, 사건명, 신청일자, 법무관리 담당자, 법무사 등으로 나타낸 표</caption>
+							<colgroup>
+								<col width="4%">
+								<col width="6%">
+								<col width="9%">
+								<col width="9%">
+								<col width="9%">
+								<col width="9%">
+								<col width="9%">
+								<col width="9%">
+								<col width="9%">
+								<col width="7%">
+								<col width="7%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">No</th>
+									<th scope="col">진행상태</th>
+									<th scope="col">진행상세상태</th>
+									<th scope="col">법무구분</th>
+									<th scope="col">법무종류</th>
+									<th scope="col">법원</th>
+									<th scope="col">사건번호</th>
+									<th scope="col">사건명</th>
+									<th scope="col">신청일자</th>
+									<th scope="col">법무관리 담당자</th>
+									<th scope="col">법무사</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>2</td>
+									<td>진행</td>
+									<td>상세상태명</td>
+									<td>법무구분명</td>
+									<td>법무종류명</td>
+									<td>서울지방법원</td>
+									<td>111222</td>
+									<td>사건명</td>
+									<td>2021-05-30</td>
+									<td>김길동</td>
+									<td>김길동</td>
+								</tr>
+								<tr>
+									<td  colspan="11" class="noData"><p>법무이력이 없습니다.</p></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- paging 시작 -->
+					<div class="paging" id="paging">
+						<a href="#" class="first">맨처음페이지</a><a href="#" class="prev">이전페이지</a><a href="#" class="current">1</a><a href="#" class="">2</a><a href="#" class="next">다음페이지</a><a href="#" class="end">맨마지막페이지</a>
+					</div>
+					<!-- paging 끝 -->
+
+				</div>
+                <!-- 내용 끝 -->				
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+</body>
+</html>

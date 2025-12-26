@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Google Tag Manager -->
+<!--
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KD5B4X2');
+</script>
+ -->
+<!-- End Google Tga Manager -->
+
+<script type="text/javaScript">
+
+	var errorMap = {"1000":"시스템 오류 관리자에게 문의하세요/최신3\n데이터 불일치 관리자에게 문의하세요/최신1\n요청 데이터 부재 관리자에게 문의하세요/최신2","2001":"데이터 불일치 관리자에게 문의하세요/최신1","2000":"요청 데이터 부재 관리자에게 문의하세요/최신2"};
+
+	var GlobalJSConfig = {};
+	GlobalJSConfig.contextPath = "";
+	GlobalJSConfig.siteUrl     = "https://dev.imcap.co.kr:8890";
+	GlobalJSConfig.ocrLicense  = "FPkTBAL0CvCYkhB4TXCHfjMhN0lcQLoLQNyTjRD7viw6e1vm/+cNKgQFb1DSlSB2tCwjAhrN0Fo2D/jGNANkRjLln43tjbAv3n/BrP07ptMvw0wg=";
+	GlobalJSConfig.mobileIdSvcCode  = "dgbcap.2";
+	GlobalJSConfig.mobileIdSvcCodeDri  = "dgbcap.2";
+	GlobalJSConfig.mobileIdSvcCodeIde  = "dgbcap.3";
+	GlobalJSConfig.isTestMode  = true;
+	GlobalJSConfig.isAictTestMode = false;
+	GlobalJSConfig.isApplyWA  = false;
+	GlobalJSConfig.isMobileDevice = navigator.platform.match(/win16|win32|win64|windows|wince|mac|macintel|macintosh|macppc|mac68k/i) == null || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 4) /* iPad OS 13 */ ? true : false;
+	GlobalJSConfig.isWindowDevice = navigator.platform.match(/win16|win32|win64|windows|wince|/i) != null ? true : false;
+	GlobalJSConfig.isLocal = GlobalJSConfig.isTestMode && (["localhost", "127.0.0.1"].indexOf(location.hostname) > -1);
+	GlobalJSConfig.currentDate = "20250523";
+
+	var __USER_AGENT = navigator.userAgent;
+
+	GlobalJSConfig.isAndroid = (/ANDROID/i).test(__USER_AGENT);
+	GlobalJSConfig.isIos = (/IOS|iPhone|iPad/i).test(__USER_AGENT) || ((/Macintosh/i).test(__USER_AGENT) && navigator.maxTouchPoints > 4) /* iPad OS 13 */;
+	// GlobalJSConfig.isApp = (GlobalJSConfig.isAndroid || GlobalJSConfig.isIos) && (/DGBCAP/i).test(__USER_AGENT);
+	GlobalJSConfig.isMobile = ("false" === "true");
+	GlobalJSConfig.isApp = ("false" === "true") ;
+
+</script>
+
+<!-- common ico -->
+<link rel="shortcut icon" type="image/x-icon" href="/static/web/img/common/favicon.ico?v=20240610001">
+
+<!-- lib js -->
+<script type="text/javascript" src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/static/web/js/lib/jquery-ui-1.12.1.min.js"></script>
+<script type="text/javascript" src="/static/web/js/lib/spin.umd.js"></script>
+
+<!--  datePicker  -->
+<link rel="stylesheet" type="text/css" href="/static/admin/css/jquery-ui.css"/>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/jquery-ui-timepicker-addon.min.css"/>
+<script type="text/javascript" src="/static/admin/js/jquery-ui-sliderAccess.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery-ui-timepicker-addon.min.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery-ui-datepicker-ko.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery-ui-timepicker-ko.js"></script>
+<!--  datePicker  -->
+
+<!-- common js -->
+<script type="text/javascript" src="/static/web/js/dgbc-exjs.util.js?v=20230330001"></script>
+<script type="text/javascript" src="/static/web/js/common-web.js"></script>
+<script type="text/javascript" src="/static/web/js/common-loanInsp.js"></script>
+<script type="text/javascript" src="/static/web/js/lib/lottie.min.js"></script>
+<script type="text/javascript" src="/static/web/js/ui_common.js"></script>
+<script type="text/javascript" src="/static/web/pdfjs/js/pdfobject.js"></script>
+
+<script type="text/javascript" src="/static/web/js/page/dealer/common.js?v=20230330001"></script>
+
+<!-- common css -->
+<link rel="stylesheet" href="/static/web/js/lib/spin.css?v=20230330001">
+<link rel="stylesheet" href="/static/web/css/dealer/2022/normalize.css?v=20230330001">
+<link rel="stylesheet" href="/static/web/css/dealer/2022/style.css?v=20230330001">
+<link rel="stylesheet" href="/static/web/css/dealer/2022/popup.css?v=20230330001">
+
+<!-- tableExport -->
+<script type="text/javascript" src="/static/web/js/lib/xlsx.core.min.js"></script>
+<script type="text/javascript" src="/static/web/js/lib/FileSaver.js"></script>
+<script type="text/javascript" src="/static/web/js/lib/tableexport.js"></script>
+
+<title>대출상환관리 | iM캐피탈</title>
+</head>
+<body>
+	<div class="wrap">
+		<!-- Left 메뉴 -->
+        
+        <!-- left -->
+            <div class="snb">
+            <h1><a href="/">iM캐피탈</a></h1>
+            <ul class="nav">
+                <li>
+                    <a href="/usedautoloan/dealer/dealerLoanMgtMain.do"><i class="ic-nav01"></i>대출신청관리</a>
+                </li>
+                <li>
+                    <a href="/usedautoloan/dealer/dealerRepayMgtMain.do"><i class="ic-nav02"></i>대출상환관리</a>
+                </li>
+            </ul>
+            <div class="footer">
+                <p>&copy; iM CAPITAL</p>
+            </div>
+        </div>
+        <!-- //left -->
+
+		<!-- centents 시작 -->
+		<div class="container contents" id="common_body">
+			<div class="cont-head">
+                <div class="head-tp">
+                    <h2>대출상환관리</h2>
+                </div>
+            </div>
+		    <div id="template-container-dashLayer" class="cont-summ"></div>
+			<script id="template-dashLayer" type="text/x-jsrender">
+
+                <div class="summ-box type1">
+                    <dl>
+                        <dt>매매상사</dt>
+                        <dd>
+                        {{if data.dealRgarNm != ''}}
+                            <span>{{:data.dealRgarNm}}</span>님의 <br>
+                        {{/if}}
+                                                                대출현황입니다.
+                        </dd>
+                    </dl>
+                    <button class="btn-logout" onclick="fn_logout();"><span class="blind">로그아웃</span></button>
+                </div>
+
+                <div class="summ-box type2">
+                    <dl>
+                        <dt>총 한도</dt>
+                        <dd class="total">
+                            <span>{{maskComma:data.tlmtAmt}}</span>원
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>대출금액</dt>
+                        <dd>
+                            <span>{{maskComma:data.lonAmt}}</span>원
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>잔여한도</dt>
+                        <dd>
+                            <span>{{maskComma:data.rmanLmtAmt}}</span>원
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>한도시작일자</dt>
+                        <dd><span>{{maskDate_yyyymmdd:data.lmtStrnDt}}</span></dd>
+                    </dl>
+                    <dl>
+                        <dt class="mgb0">한도종료일자</dt>
+                        <dd>
+                            <span>{{maskDate_yyyymmdd:data.lmtEndDt}}</span>
+                            <em class="d-day">{{diffDay:data.lmtEndDt}}</em>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="summ-box type3">
+                    <div class="summ-title">
+                        총 한도의 <span>{{:rate}}%</span>인 <span>{{maskComma:data.lonAmt}}원</span>을<br>
+                        대출하셨습니다.
+                    </div>
+                    <div class="chart-wrap">
+                        <div class="chart-tooltip" style="left:{{:rate}}%;"><i></i>{{:rate}}%</div>
+                        <div class="bar-bg"><div class="bar" style="width:{{:rate}}%;"></div></div>
+                        <div class="chart-axis-x">
+                            <span class="current" style="left:{{:rate}}%">대출금액</span>
+                            <span class="from">0</span>
+                            <span class="to">총한도</span>
+                        </div>
+                    </div>
+                </div>
+			</script>
+
+<script type="text/javascript" src="/static/web/js/lib/jsrender.min.js"></script>
+<script type="text/javascript" src="/static/web/js/lib/jsrender.formatter.js"></script>
+<script>
+//TODO 테스트 편의를 위해 계정 세팅 ================================================
+$(document).ready(function(){
+
+	// 임시로 빈값 표시
+	var noData = new Object();
+	noData.dealRgarNm	= '매매상사';	// 매매상사명
+	noData.tlmtAmt		= ''; 	// 한도금액
+	noData.lonCcnt		= ''; 	// 대출건수
+	noData.lonAmt		= ''; 	// 대출금액
+	noData.rmanLmtAmt	= '';	// 잔여한도금액
+	noData.lmtStrnDt	= ''; 	// 한도시작일자
+	noData.lmtEndDt		= ''; 	// 한도종료일자
+	fn_drawDashLayer(noData, 0);
+
+	fn_dashSync();
+});
+var masDate = $util.dateFormat(new Date(), "yyyy-MM-dd");
+
+function fn_drawDashLayer(data, rate, callbackFn) {
+	$.templates("dashLayerTmpl", "#template-dashLayer");
+
+	var params = {
+			data: data,
+			rate: rate
+			};
+
+	var html = $.render.dashLayerTmpl(params);
+	$("#template-container-dashLayer").html(html);
+
+	// callback 함수 호출
+    if (typeof callbackFn === "function") callbackFn();
+}
+
+function fn_diffDay() {
+    var masTime = new Date(masDate);
+    var todayTime = new Date();
+
+//     var diff = masTime - todayTime;
+
+//     var diffDay = Math.floor(diff / (1000 * 60 * 60 *24));
+    var diff = masTime.getTime() - todayTime.getTime();
+
+    var diffDay = Math.ceil(diff / (1000 * 60 * 60 *24));
+    console.log("D-" + diffDay);
+//     $("#dDay").text("D-" + diffDay);
+}
+
+function fn_logout() {
+    location.href = "/usedautoloan/dealer/dealerLogout.do";
+}
+
+</script>
+            <div class="cont-title">
+                <h3>대출상환 조회</h3>
+                <button class="btn-reset" onclick="fn_reset();return false;">초기화</button>
+            </div>
+            <form id="dealerSearchFrm" name="dealerSearchFrm" method="post" onSubmit="return false;">
+            <div class="cont-search row">
+				<input type="hidden" id="srchPrsnNo" name="srchPrsnNo" value="1"/>
+                <div class="search-l">
+                    <div class="col">
+                        <label for="">신청일자</label>
+                        <div class="inputbox">
+                            <input type="text" name="srchStrnDt" id="srchStrnDt" maxlength="10" formatter="date" value="2025-05-23" title="신청 시작일자 입력" placeholder="YYYY-MM-DD" readonly="readonly">
+                        </div>
+                    </div>
+
+                    <div class="tilde"><span></span></div>
+
+                    <div class="col">
+                        <label for="" class="blind">신청일자</label>
+                        <div class="inputbox">
+                            <input type="text" name="srchEndDt" id="srchEndDt" maxlength="10" formatter="date" value="2025-05-23" title="신청 종료일자 입력" placeholder="YYYY-MM-DD" readonly="readonly">
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <label for="">차량번호</label>
+                        <div class="inputbox">
+                            <input type="text" name="srchVhclNo" id="srchVhclNo" value="" maxlength="10"  title="차량번호 입력" placeholder="예)12가1234">
+                            <button class="btn-clear"></button>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <label for="">진행상태</label>
+                        <div class="selectbox">
+                            <select name="srchPrgsStepDvcd" id="srchPrgsStepDvcd" title="진행상태 선택">
+                                <option value="">전체</option>
+                                <option value="MLBH01" >차량조회요청</option>
+                                <option value="MLBH02" >대출신청</option>
+                                <option value="MLBH03" >반려</option>
+                                <option value="MLBH04" >승인</option>
+                                <option value="MLBH05" >대출실행</option>
+                                <option value="MLBH06" >대출완제</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="">상환처리상태</label>
+                        <div class="selectbox">
+                            <select name="srchRpyTrttSts" id="srchRpyTrttSts" title="상환처리상태 선택">
+                                <option value="">전체</option>
+                                <option value="MLHB01" >연장신청</option>
+                                <option value="MLHB02" >연장완료</option>
+                                <option value="MLHB03" >상환신청</option>
+                                <option value="MLHB04" >상환완료</option>
+                                <option value="MLHB05" >입금예약</option>
+                                <option value="MLHB06" >상환취소</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <label for="">납입회차</label>
+                        <div class="inputbox">
+                            <input type="text" name="" id="" value="" maxlength="10"  title="납입회차" placeholder="예)3">
+                            <button class="btn-clear"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-r type"><!-- 버튼이 2개인 경우 : type 클래스 추가 -->
+                    <button type="button" class="btn-search" onclick="fn_search();return false;">조회</button>
+                    <button type="button" class="btn-search" onclick="fn_search();return false;">엑셀저장</button>
+                </div>
+            </div>
+            </form>
+
+            <div class="cont-table scroll-css">
+                <table class="tbl-list" style="min-width: 2500px;">
+                    <thead>
+                        <tr>
+                            <th scope="col">NO</th>
+                            <th scope="col">차량번호</th>
+                            <th scope="col">실행번호</th>
+                            <th scope="col">진행상태</th>
+                            <th scope="col">대출구분</th>
+                            <th scope="col">연체여부</th>
+                            <th scope="col">실행일자</th>
+                            <th scope="col">대출만기일자</th>
+                            <th scope="col">대출기간</th>
+                            <th scope="col">납입회차</th>
+                            <th scope="col">대출금액</th>
+                            <th scope="col">대출잔액</th>
+                            <th scope="col">가상계좌</th>
+                            <th scope="col">상환처리상태</th>
+                            <th scope="col">저당해지여부</th>
+                            <th scope="col">담당지점</th>
+                            <th scope="col">상환신청 및 대출연장신청</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <!-- paging navigation -->
+            <div class="paging" id="paging">
+                <ul>
+                    <li><button class="on">1</li>
+                </ul>
+            </div>
+            <!-- paging navigation -->
+		</div>
+        
+<!-- 팝업 -->
+<div class="popup-layer alert type-confirm">
+    <div class="popup alert">
+        <div class="inner">
+            <div class="alert-content">
+                <p class="alertMsg"></p>
+            </div>
+        </div>
+        <div class="popup-btn">
+            <button type="button" class="btn-cancel">취소</button>
+            <button type="button" class="btn-confirm">확인</button>
+        </div>
+    </div>
+    <!-- // popup-->
+</div>
+<div class="popup-layer alert type-alert">
+    <div class="popup alert">
+        <div class="inner">
+            <div class="alert-content">
+                <p class="alertMsg"></p>
+            </div>
+        </div>
+        <div class="popup-btn">
+            <button type="button" class="btn-confirm">확인</button>
+        </div>
+    </div>
+    <!-- // popup-->
+</div>
+<!-- // 팝업 -->
+
+
+<script type="text/javascript" >
+/**
+ *  alert, confirm 대용 팝업 메소드 정의 <br/>
+ *  timer : 애니메이션 동작 속도 <br/>
+ *  alert : 경고창 <br/>
+ *  confirm : 확인창 <br/>
+ *  open : 팝업 열기 <br/>
+ *  close : 팝업 닫기 <br/>
+ */
+var action_popup = {
+    timer: 300,
+    confirm: function (txt, callback, data) {
+        $(".type-confirm button").unbind("click");
+        if (txt == null || txt.trim() == "") {
+            console.warn("confirm message is empty.");
+            return;
+        } else if (callback == null || typeof callback != 'function') {
+            console.warn("callback is null or not function.");
+            return;
+        } else {
+            $(".type-confirm .btn-confirm").on("click", function () {
+                $(this).unbind("click");
+                action_popup.close(this);
+
+                callback(true, data);
+            });
+            $(".type-confirm .btn-cancel").on("click", function () {
+                $(this).unbind("click");
+                action_popup.close(this);
+
+                callback(false, data);
+            });
+            this.open("type-confirm", txt);
+        }
+    },
+
+    alert: function (txt, callback, data) {
+        $(".type-alert button").unbind("click");
+        if (txt == null || txt.trim() == "") {
+            console.warn("confirm message is empty.");
+            return;
+        } else {
+            $(".type-alert .btn-confirm").on("click", function () {
+                $(this).unbind("click");
+                action_popup.close(this);
+
+                if (typeof callback === 'function') {
+                    callback(data);
+                }
+            });
+            this.open("type-alert", txt);
+        }
+    },
+
+    open: function (type, txt) {
+        var $popup = $("." + type);
+        $popup.find(".alertMsg").html(txt);
+        // popup
+        var popupTitleHeight = $popup.find('.popup-text').innerHeight();
+        $popup.find('.alert-content').css({'height':'calc(100% - ' + popupTitleHeight + 'px)'});
+        $popup.addClass("active");
+        action_popup.dimdFn();
+
+        // 팝업 내 타이틀로 focus 이동
+        setTimeout(function() {
+            if ($popup.find("alert-content").length > 0) {
+                $popup.find("p").eq(0).attr('tabindex', '0').focus();
+            } else {
+                // 팝업 내 타이틀이 없는 경우 팝업 본문 컨텐츠 영역으로 focus 이동
+                $popup.find(".popup").eq(0).attr('tabindex', '0').focus();
+            }
+        }, 200);
+    },
+
+    close: function (target) {
+        var $popup = $(target).closest(".popup-layer");
+        $popup.removeClass("active");
+        action_popup.dimdFn("off");
+    },
+    /**
+     * dimd 표시 / 숨김
+    *
+    * @param act dim on or off
+    * @example
+    *      uiCommon.dimdFn()       // dimd 표시
+    *      uiCommon.dimdFn("off")  // dimd 숨김
+    */
+   dimdFn: function(act) {
+        var $dim = $(".alertDim");
+        var $loc = $('body');
+
+        if ("off" === act) {
+            // dim 요소 비활성(제거)
+            $dim.removeClass("active");
+            setTimeout(function() { $dim.remove(); }, 200);
+        } else {
+            // dim 요소 활성(on)
+            if (!$dim.length) {
+                // dim 요소가 없는 경우 해당 위치에 신규 생성
+                $loc.append('<div class="alertDim"></div>');
+                $dim = $(".alertDim");
+            }
+            $dim.addClass("active");
+        }
+    },
+}
+</script>
+
+
+        <div class="popup-layer" id="dealerLayer"></div>
+	</div>
+    <!-- // wrap -->
+
+<!-- script area -->
+<script type="text/javascript" src="/static/web/js/lib/jsrender.min.js"></script>
+<script type="text/javascript" src="/static/web/js/lib/jsrender.formatter.js"></script>
+
+<script>
+
+//검색 값 VO
+var srchVo = {};
+srchVo.srchStrnDt			= '20250523'; 			//검색_시작일자
+srchVo.srchEndDt			= '20250523';  			//검색_종료일자
+srchVo.srchVhclNo			= ''; 			//검색_차량번호
+srchVo.srchPrgsStepDvcd		= ''; 		//검색_진행상태
+srchVo.srchRpyTrttSts		= ''; 		//검색_상환처리상태
+srchVo.srchPrsnNo			= "1";   			//검색_현재페이지
+
+var mdrpAmt;	// 상환금액
+var mdrpTrttYn;	// 일부상환 여부
+
+$(document).ready(function(){
+    $(".nav li:last-child a").addClass("on");
+});
+
+function fn_openLayer(layer, val1, val2, val3, val4, val5) {
+    var reqData = {};
+
+    console.log(layer);
+    reqData.layer = layer;
+
+    if(layer == "overduePopup"){
+        reqData.lonNo = val1;
+        reqData.dacoLoanPropMngNo = val2;
+    }else if(layer == "repayApplicationPopup" || layer == "extensionPopup"){
+        reqData.lonNo = val1;
+        reqData.newExctDt = val2;
+        reqData.vhclNo = val3;
+        reqData.loanAmt = val4;
+        reqData.loanBlnc = val5;
+    }
+
+    $.ajax({
+        url : "/usedautoloan/dealer/openDealerPopup.do"
+        , dataType : 'html'
+        , type : 'post'
+        , data : reqData
+        , success : function(data) {
+            $('#dealerLayer').html(data);
+
+            layer_open('dealerLayer');
+        }
+    });
+
+	return false;
+}
+
+//페이징 처리 함수
+function fn_select_linkPage(pageNo){
+	var actionUrl = "/usedautoloan/dealer/dealerRepayMgtMain.do";
+	srchVo.srchPrsnNo = pageNo;
+
+   	post_to_url(actionUrl, srchVo);
+}
+
+function fn_search() {
+	var f = document.dealerSearchFrm;
+	f.srchPrsnNo.value= "1";
+	f.srchStrnDt.value= $("#srchStrnDt").val().replaceAll("-","");	//검색_시작일자
+	f.srchEndDt.value= $("#srchEndDt").val().replaceAll("-","");	//검색_종료일자
+	f.action = "/usedautoloan/dealer/dealerRepayMgtMain.do";
+	f.submit();
+}
+
+
+</script>
+<!-- //script area -->
+
+</body>
+</html>

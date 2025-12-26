@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리스차량 사고 확인서</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>리스차량 사고 확인서</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+
+                <h2>보험금 지급내역</h2>
+                <div class="t_line_box1">
+                    <ul class="list_1">
+                        <li>
+                            <span class="tit">고객명</span>
+                            <span>최명옥(소망종합공사, 천안방송망)</span>
+                        </li>
+                        <li>
+                            <span class="tit">리스차량</span>
+                            <span>BMW 5 Series 520i Luxury</span>
+                        </li>
+                        <li>
+                            <span class="tit">차량번호</span>
+                            <span>200라 2261</span>
+                        </li>
+                        <li>
+                            <span class="tit">보험회사</span>
+                            <span>삼성화재해상봇험</span>
+                        </li>
+                        <li>
+                            <span class="tit">보험금액</span>
+                            <span>2,403,250 원</span>
+                        </li>
+                    </ul>
+                </div>    
+                
+                <h2>리스차량 감가적용</h2>                
+                <p class="txt">사과에 따른 리스차량의 가치하락이 예상됨에 따라 차량반납시 자동차 리스약관 제 26조 제1항에 의거, 감가비용이 청구됨을 확인하며, 차량인수 시에는 청구되지 않습니다.</p>
+                <span class="icon_bullet mb0 mt0">리스차량 감가 기준은 당사 홈페이지 참조 <br>
+                    &rarr; iM캐피탈 홈페이지 > 자동차금융 > 오토리스 > 반환자동차 감가율표</span>
+
+
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <!--<div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>-->
+    </div>
+
+</div>
+</body>
+</html>

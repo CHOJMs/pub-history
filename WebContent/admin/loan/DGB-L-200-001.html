@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>담보대출 접수관리 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#" class="on">담보대출</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#">담보대출 접수현황</a></li>
+                        <li><a href="#" class="on">담보대출 접수관리</a></li>
+                        <li><a href="#">담보대출 만기현황</a></li>
+                        <li><a href="#">담보대출 실행현황</a></li>
+                        <li><a href="#">부동산 권리변동 현황</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <div class="flex-wrap"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h2>담보대출 접수관리</h2>
+                        <div class="btn">
+                            <a href="#" class="ico-re">초기화</a><a href="#" class="black-line">알림톡 관리</a><a href="#" class="black-line">대출모집유입 경로확인서</a><a href="#" class="blue">수정</a><a href="#" class="black">접수</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <!-- Start : 접수정보 -->
+                    <h3>접수정보</h3>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">접수일자</p>
+                                        <input type="tel" placeholder="" value="2023-02-14" class="disabled" disabled="disabled">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">권유자</p>
+                                        <input type="text" placeholder="" value="홍길동 ">
+                                        <a href="#" class="ico-search"><img src="/static/admin/img/new_common/ico_search.png"></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">자서여부</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>Y</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">실사여부</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>N</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit"><br>담당자</p>
+                                        <input type="text" placeholder="" value="이율곡" class="disabled" disabled="disabled">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">최종<br>수정일자</p>
+                                        <input type="tel" placeholder="" value="2023-02-14" class="disabled" disabled="disabled">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">접수상태</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>접수</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">진행상태</p>
+                                        <input type="text" placeholder="" value="상태값" class="disabled" disabled="disabled">
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- 240624 추가 -->
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">전입세대<br>열람</p>
+                                        <input type="text" placeholder="" value="열람완료" class="disabled" disabled="disabled">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">전입세대열람<br>완료(예정)일</p>
+                                        <input type="tel" placeholder="" value="2024-02-14" class="disabled" disabled="disabled">
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- //240624 추가 -->
+                        </tbody>
+                    </table>
+                    <!-- //End : 접수정보 -->
+
+                    <!-- Start : 고객정보 -->
+                    <h3>고객정보</h3>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">고객명</p>
+                                        <input type="text" placeholder="" value="홍길동 ">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">생년월일</p>
+                                        <input type="tel" placeholder="" value="2023-02-14">
+                                    </div>
+                                </td>
+                                <td colspan="2">
+                                    <div class="com-inp">
+                                        <p class="tit">휴대폰</p>
+                                        <div class="inp-area inp-phone">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">통신사 선택</option>
+                                                    <option value="" selected>SK</option>
+                                                    <option value="">KT</option>
+                                                </select>
+                                            </div>
+                                            <input type="tel" placeholder="‘-‘제외하고 입력" value="">
+                                            <div class="c-btn">
+                                                <a href="#">신용정보동의</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">이메일주소</p>
+                                        <input type="text" placeholder="" value="gildong@naver.com">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">신용정보<br>동의일자</p>
+                                        <input type="tel" placeholder="" value="2023-02-14">
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 고객정보 -->
+
+                    <!-- Start : 시스템판정 -->
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>시스템판정(*시스템판정결과는 심사 후 변경될 수 있음 에 유의)</h3>
+                        <div class="btn">
+                            <a href="#" class="ico-inquiry">담당자 문의</a><!-- 240617 추가 -->
+                            <a href="#" class="blue">CSS결과</a>
+                        </div>
+                    </div>
+                    <table class="bbs-table-view1">
+                        <colgroup>
+                            <col width="160px">
+                            <col width="%">
+                            <col width="160px">
+                            <col width="%">
+                        </colgroup>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>시스템판정결과</th>
+                                <td>승인</td>
+                                <th>시스템한도</th>
+                                <td>150,000,000 원</td>
+                            </tr>
+                            <tr>
+                                <th>시스템금리</th>
+                                <td>14%</td>
+                                <th>산출일시</th>
+                                <td>2023-07-17 16:34:11</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 시스템판정 -->
+
+                    <!-- Start : 신청정보 -->
+                    <h3>신청정보</h3>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">상품명</p>
+                                        <input type="text" placeholder="" value="개인_임차보증금대출">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">취급구분</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>신규</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">임차보증금<br>대출용도</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>입주자금</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">대출<br>신청금액</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="120,000,000">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">대출금리</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="12">
+                                            <span>%</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">상환방식</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>만기일시상환</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">대출기간</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="24">
+                                            <span>개월</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">납입일</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="15">
+                                            <span>일</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">채권보전</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>전세권부근저당설정</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">대출실행<br>예정일</p>
+                                        <input type="tel" placeholder="" value="2023-08-05">
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 신청정보 -->
+
+                    <!-- Start : 물건(담보물)현황 -->
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>물건(담보물)현황</h3>
+                        <div class="btn">
+                            <a href="#" class="ico-re">초기화</a><a href="#" class="blue">부동산조회</a>
+                        </div>
+                    </div>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">물건종류</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>아파트</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">대표<br>(소유자명)</p>
+                                        <input type="text" placeholder="" value="신사임당">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">소유권<br>이전일자</p>
+                                        <input type="tel" placeholder="" value="2021-11-03">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">소유구분</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="com-inp">
+                                        <p class="tit">소재지</p>
+                                        <input type="text" placeholder="" disabled="disabled" class="disabled">
+                                        <a href="#" class="ico-search"><img src="/static/admin/img/new_common/ico_search.png"></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">상세주소</p>
+                                        <input type="text" placeholder="입력">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">취득경과기간<br>(일수)</p>
+                                        <div class="inp-txt inp-col5">
+                                            <p>10</p>
+                                            <span>년</span>
+                                            <p>20</p>
+                                            <span>개월</span>
+                                            <span>(455일)</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">가격</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="500,000,000">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">시가<br>추정기준</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>KB_매매일반평균가</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">선순위<br>설정액</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="300,000,000">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">선순위<br>임대보증금</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="0">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">담보 LTV</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="25.2">
+                                            <span>%</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 물건(담보물)현황 -->
+
+                    <!-- Start : 임대차현황 -->
+                    <h3>임대차현황(*임대차상품일 경우만 노출)</h3>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">임대보증금</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="100,000,000">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">월세</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="0">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">보증금<br>검증기준</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>KB_전세상한가</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">보증금<br>검증가격</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="90,000,000">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">보증금<br>감정가액</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="90,000,000">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">임대인구분</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>개인</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">계약(예정)<br>일자</p>
+                                        <input type="tel" placeholder="" value="2023-01-05">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">만기일자</p>
+                                        <input type="tel" placeholder="" value="2023-01-05">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">입주<br>경과기간</p>
+                                        <div class="inp-txt">
+                                            <p>0</p>
+                                            <span>개월</span>
+                                            <p>0</p>
+                                            <span>일</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">잔여기간(월)</p>
+                                        <div class="inp-txt">
+                                            <p>24</p>
+                                            <span>개월</span>
+                                            <p>0</p>
+                                            <span>일</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">미등기여부</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>N</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">전세 LTV</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="66.6">
+                                            <span>%</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">매매가대비<br>보증금비율</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="25.2">
+                                            <span>%</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 임대차현황 -->
+
+                    <!-- Start : 재직/사업정보 -->
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>재직/사업정보</h3>
+                        <div class="btn">
+                            <a href="#" class="blue">사업자 정보 업데이트</a><!-- 240628 추가 -->
+                            <a href="#" class="blue">마이데이터 업데이트</a><!-- 240628 추가 -->
+                            <a href="#" class="blue">마이데이터 조회</a><!-- 240628 추가 -->
+                        </div>
+                    </div>
+                    <table class="data-tbl">
+                        <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">소득구분</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>급여소득자</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">직장명</p>
+                                        <input type="text" placeholder="" value="iM캐피탈">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">(본사)사업자<br>번호</p>
+                                        <input type="tel" placeholder="" value="220-11-12345">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">입사/사업자<br>등록일자</p>
+                                        <input type="tel" placeholder="" value="2023-07-12">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="com-inp">
+                                        <p class="tit">직장주소</p>
+                                        <input type="text" placeholder="" disabled="disabled" class="disabled">
+                                        <a href="#" class="ico-search"><img src="/static/admin/img/new_common/ico_search.png"></a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">상세주소</p>
+                                        <input type="text" placeholder="입력">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">연락처</p>
+                                        <input type="tel" placeholder="" value="02-1234-5678">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">소득증빙구분</p>
+                                        <div class="inp-area"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>건강보험료</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">(연)소득</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="5,000">
+                                            <span>만원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 재직/사업정보 -->
+
+                    <!-- Start : 관련인정보 -->
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>관련인정보</h3>
+                        <div class="btn">
+                            <a href="#" class="black-line">Fraud 체크리스트</a><a href="#" class="ico-plus1">행추가</a><a href="#" class="ico-minus">행삭제</a>
+                        </div>
+                    </div>
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col width="60px">
+                            <col width="90px">
+                            <col width="80px">
+                            <col width="120px">
+                            <col width="120px">
+                            <col width="120px">
+                            <col width="80px">
+                            <col width="100px">
+                            <col width="120px">
+                            <col width="120px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+								<th scope="col">선택</th>
+								<th scope="col">고객분류</th>
+								<th scope="col">성명</th>
+								<th scope="col">주민번호</th>
+								<th scope="col">법인번호</th>
+								<th scope="col">사업자번호</th>
+								<th scope="col">관계</th>
+								<th scope="col">물상보증인여부</th>
+								<th scope="col">연락처</th>
+								<th scope="col">신용정보동의일자</th>
+							</tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="checkbox single">
+                                        <input type="checkbox" checked="checked">
+                                        <label></label>
+                                    </div>
+                                </td>
+                                <td>개인</td>
+                                <td>김배우</td>
+                                <td>801010-1234567</td>
+                                <td>111111-1234567</td>
+                                <td>220-10-12345</td>
+                                <td>임대인</td>
+                                <td>Y</td>
+                                <td>010-1234-5678
+                                    <p class="mt4"><a href="#" class="btn black">신용정보동의</a></p>
+                                </td>
+                                <td>2023-07-19</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="checkbox single">
+                                        <input type="checkbox">
+                                        <label></label>
+                                    </div>
+                                </td>
+                                <td>개인</td>
+                                <td>김배우</td>
+                                <td>801010-1234567</td>
+                                <td>111111-1234567</td>
+                                <td>220-10-12345</td>
+                                <td>임대인</td>
+                                <td>Y</td>
+                                <td>010-1234-5678
+                                    <p class="mt4"><a href="#" class="btn black">신용정보동의</a></p>
+                                </td>
+                                <td>2023-07-19</td>
+                            </tr>
+                            <tr class="tbl-inp"><!-- [D]입력필드인 경우 : 클래스 tbl-inp 추가 -->
+                                <td></td>
+                                <td>
+                                    <div class="inp-area sel-small"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                        <div class="selectbox">
+                                            <select class="select">
+                                                <option value="">선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><input type="text" placeholder="입력" value=""></td>
+                                <td><input type="tel" placeholder="‘-‘제외하고 입력" value=""></td>
+                                <td><input type="tel" placeholder="‘-‘제외하고 입력" value=""></td>
+                                <td><input type="tel" placeholder="‘-‘제외하고 입력" value=""></td>
+                                <td>
+                                    <div class="inp-area sel-small"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                        <div class="selectbox">
+                                            <select class="select">
+                                                <option value="">선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="inp-area sel-small"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                        <div class="selectbox">
+                                            <select class="select">
+                                                <option value="">선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td><input type="tel" placeholder="‘-‘제외하고 입력" value=""></td>
+                                <td></td>
+                            </tr>
+                            <tr class="bor-line">
+                                <td colspan="10" class="nodata"><span>정보가 없습니다.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 관련인정보 -->
+
+                    <!-- Start : 서류제출 -->
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>서류제출</h3>
+                        <div class="btn">
+                            <a href="#" class="ico-plus1">행추가</a><a href="#" class="ico-minus">행삭제</a>
+                        </div>
+                    </div>
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col width="50px">
+                            <col width="20%">
+                            <col width="60%">
+                            <col width="100px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">선택</th>
+                                <th scope="col">서류구분</th>
+                                <th scope="col">파일명</th>
+                                <th scope="col">등록일시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="checkbox single">
+                                        <input type="checkbox" checked="checked">
+                                        <label></label>
+                                    </div>
+                                </td>
+                                <td>주민등록등본</td>
+                                <td><a href="#">주민등록등본.jpg</a></td>
+                                <td>2023-07-19</td>
+                            </tr>
+                            <tr class="tbl-inp"><!-- [D]입력필드인 경우 : 클래스 tbl-inp 추가 -->
+                                <td></td>
+                                <td>
+                                    <div class="inp-area sel-small"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                        <div class="selectbox">
+                                            <select class="select">
+                                                <option value="">선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <ul class="file-sel"><!-- [D]파일선택이 여러개인 경우 : ul 추가 -->
+                                        <li>
+                                            <span>선택된 파일 없음</span>
+                                            <div class="filebox">
+                                                <label for="file">파일 선택</label>
+                                                <input type="file" id="file" class="btn-file">
+                                            </div>
+                                            <span class="txt-right">* 이미지 파일은 gif, jpg, jpeg, png 확장자만 가능합니다.</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="bor-line">
+                                <td colspan="4" class="nodata"><span>정보가 없습니다.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 서류제출 -->
+
+                    <!-- Start : 녹음파일 -->
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>녹음파일</h3>
+                        <div class="btn">
+                            <a href="#" class="ico-plus1">행추가</a><a href="#" class="ico-minus">행삭제</a>
+                        </div>
+                    </div>
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col width="50px">
+                            <col width="20%">
+                            <col width="60%">
+                            <col width="100px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">선택</th>
+                                <th scope="col">구분</th>
+                                <th scope="col">파일명</th>
+                                <th scope="col">등록일시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="checkbox single">
+                                        <input type="checkbox" checked="checked">
+                                        <label></label>
+                                    </div>
+                                </td>
+                                <td>임대인</td>
+                                <td><a href="#">임대인 녹음.mp3</a></td>
+                                <td>2023-07-19</td>
+                            </tr>
+                            <tr class="tbl-inp"><!-- [D]입력필드인 경우 : 클래스 tbl-inp 추가 -->
+                                <td></td>
+                                <td>
+                                    <div class="inp-area sel-small"><!-- [D]disabled인 경우 : 클래스 disabled 추가 -->
+                                        <div class="selectbox">
+                                            <select class="select">
+                                                <option value="">선택</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <ul class="file-sel"><!-- [D]파일선택이 여러개인 경우 : ul 추가 -->
+                                        <li>
+                                            <div class="f-ico">
+                                                <span class="file">파일명.mp3<a href="#"><img src="/static/admin/img/new_common/ico_delete.png"></a></span>
+                                            </div>
+                                            <div class="filebox">
+                                                <label for="file">파일 선택</label>
+                                                <input type="file" id="file" class="btn-file">
+                                            </div>
+                                            <span class="txt-right">* 이미지 파일은 gif, jpg, jpeg, png 확장자만 가능합니다.</span>
+                                        </li>
+                                    </ul>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="bor-line">
+                                <td colspan="4" class="nodata"><span>정보가 없습니다.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 녹음파일 -->
+
+                    <!-- Start : 메모 -->
+                    <div class="flex-wrap flex-s-tit"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h3>메모</h3>
+                        <div class="btn">
+                            <a href="#" class="ico-plus1">행추가</a><a href="#" class="ico-minus">행삭제</a>
+                        </div>
+                    </div>
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col width="80px">
+                            <col width="%">
+                            <col width="15%">
+                            <col width="15%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">선택</th>
+                                <th scope="col">메모</th>
+                                <th scope="col">등록자</th>
+                                <th scope="col">등록일시</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="checkbox single">
+                                        <input type="checkbox" checked="checked">
+                                        <label></label>
+                                    </div>
+                                </td>
+                                <td class="a-l">2023년 7월 19일  서류 업데이트 진행</td>
+                                <td>신사임당</td>
+                                <td>2023-07-19</td>
+                            </tr>
+                            <tr class="tbl-inp"><!-- [D]입력필드인 경우 : 클래스 tbl-inp 추가 -->
+                                <td></td>
+                                <td colspan="3">
+                                    <input type="text" placeholder="메모를 입력해 주세요 . (100자 이내)" value="">
+                                </td>
+                            </tr>
+                            <tr class="bor-line">
+                                <td colspan="4" class="nodata"><span>정보가 없습니다.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 메모 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+
