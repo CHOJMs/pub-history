@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>약관 및 동의서 문서 목록 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#" class="on">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#" class="on">약관관리</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <h2>약관 및 동의서 문서</h2>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <!-- Start : 검색 -->
+                    <div class="search-wrap flex-wrap"><!-- [D]좌우 정렬인 경우 : flex-wrap 추가 -->
+                        <div class="inp-area">
+                            <div class="selectbox w-240">
+                                <select class="select">
+                                    <option value="" selected>서식 문서 종류 선택</option>
+                                    <option value="">(D10)약관</option>
+                                    <option value="">(D20)약정서</option>
+                                    <option value="">(D30)동의서</option>
+                                    <option value="">(D40)계좌운용규칙</option>
+                                    <option value="">(D50)설명서</option>
+                                    <option value="">(D99)기타</option>
+                                </select>
+                            </div>
+                            <div class="selectbox w-240">
+                                <select class="select">
+                                    <option value="" selected>서비스 선택</option>
+                                    <option value="">(S10)개인금융</option>
+                                    <option value="">(S20)DSR</option>
+                                    <option value="">(S30)다이렉트 오토</option>
+                                    <option value="">(S40)다이렉트 중고승용</option>
+                                    <option value="">(S50)오토리스</option>
+                                    <option value="">(S60)중고승용(제휴/매매)</option>
+                                    <option value="">(S70)스탁론</option>
+                                    <option value="">(S80)고객센터</option>
+                                    <option value="">(S82)클린센터</option>
+                                    <option value="">(S83)설명서</option>
+                                    <option value="">(S90)산업금융(리스/할부)</option>
+                                    <option value="">(S99)공통(개인/오토/스탁)</option>
+                                </select>
+                            </div>
+                            <div class="selectbox w-240">
+                                <select class="select">
+                                    <option value="" selected>서식 파일 선택</option>
+                                    <option value="">(F01)[필수] 개인(신용)정보의 필수적 수집ㆍ이용 동의</option>
+                                    <option value="">(F02)[필수] 개인(신용)정보의 필수적 조회 동의</option>
+                                    <option value="">(F03)[필수] 제 3자 제공 개인(신용)정보의 필수적 제공 동의</option>
+                                    <option value="">(F04)[선택] 개인(신용)정보의 선택적 수집ㆍ이용 동의</option>
+                                    <option value="">(F05)[선택] 개인(신용)정보의 선택적 제공 동의</option>
+                                    <option value="">(F06)오토론 약관</option>
+                                    <option value="">(F07)선납금 특별 약관</option>
+                                    <option value="">(F08)자동이체 약관</option>
+                                    <option value="">(F09)자동차저당설정 약관</option>
+                                    <option value="">(F10)계좌운용규칙</option>
+                                    <option value="">(F11)주식매입자금대출 약정서</option>
+                                    <option value="">(F12)여신거래기본 약관동의</option>
+                                    <option value="">(F13)전자금융거래 약관동의</option>
+                                    <option value="">(F14)자동계좌이체 약관동의</option>
+                                    <option value="">(F15)질권설정약정서</option>
+                                    <option value="">(F16)주식매입자금대출 약관</option>
+                                    <option value="">(F17)개인신용대출 약정서</option>
+                                    <option value="">(F18)CMS출금이체 신청서</option>
+                                    <option value="">(F19)타사대출 상환 위임장</option>
+                                    <option value="">(F20)자동이체약관</option>
+                                    <option value="">(F21)고객정보취급방침</option>
+                                    <option value="">(F22)금융상품 설명 이해 확인서</option>
+                                    <option value="">(F23)자동차근저당설정계약서</option>
+                                    <option value="">(F24)여신거래기본 약관</option>
+                                    <option value="">(F25)리스약관</option>
+                                    <option value="">(F26)할부금융약관</option>
+                                    <option value="">(F27)담보대출약관</option>
+                                    <option value="">(F28)오토할부금융약관</option>
+                                    <option value="">(F29)중고차 오토론 표준약관</option>
+                                    <option value="">(F30)오토리스 약관</option>
+                                    <option value="">(F31)개인신용대출약관</option>
+                                    <option value="">(F32)표준 전자금융거래기본약관</option>
+                                    <option value="">(F33)여신거래 약정서</option>
+                                    <option value="">(F34)리스약정서</option>
+                                    <option value="">(F35)할부금융약정서</option>
+                                    <option value="">(F36)담보대출약정서</option>
+                                    <option value="">(F37)신차 오토론(할부) 약정서</option>
+                                    <option value="">(F38)중고차 오토론 약정서</option>
+                                    <option value="">(F39)개인정보처리방침</option>
+                                    <option value="">(F40)개인(신용)정보 동의서</option>
+                                    <option value="">(F41)신용정보 활용체제</option>
+                                    <option value="">(F42)고객권리 안내문</option>
+                                    <option value="">(F43)계좌운용규칙_상상인플러스</option>
+                                    <option value="">(F44)계좌운용규칙_스탁링크</option>
+                                    <option value="">(F45)계좌운용규칙_에스엔씨</option>
+                                    <option value="">(F46)계좌운용규칙_이머니</option>
+                                    <option value="">(F47)계좌운용규칙_팍스넷</option>
+                                    <option value="">(F48)계좌운용규칙_팍스넷(키움)</option>
+                                    <option value="">(F49)리스기본약관</option>
+                                    <option value="">(F50)특약사항(기본)</option>
+                                    <option value="">(F51)특약사항(비대칭)</option>
+                                    <option value="">(F52)채권추심업무 처리절차 안내문</option>
+                                    <option value="">(F53)불법채권추심 대응요령</option>
+                                    <option value="">(F54)개인(신용)정보 필수 동의서</option>
+                                    <option value="">(F55)[필수] 개인(신용)정보 필수적 수집ㆍ이용 동의</option>
+                                    <option value="">(F56)전세자금대출약관</option>
+                                    <option value="">(F57)계좌운용규칙_팍스넷(하이투자)</option>
+                                    <option value="">(F58)외국인대출 신용정보조회동의(네팔)</option>
+                                    <option value="">(F59)외국인대출 신용정보조회동의(미얀마)</option>
+                                    <option value="">(F60)외국인대출 신용정보조회동의(베트남)</option>
+                                    <option value="">(F61)외국인대출 신용정보조회동의(캄보디아)</option>
+                                    <option value="">(F62)외국인대출 신용정보조회동의(스리랑카)</option>
+                                    <option value="">(F63)개인신용정보동의_전세대출</option>
+                                    <option value="">(F64)개인 가계대출(신용담보)</option>
+                                    <option value="">(F65)개인 가계대출(오토론)</option>
+                                    <option value="">(F66)개인 가계대출(전세자금대출)</option>
+                                    <option value="">(F67)개인 스탁론</option>
+                                    <option value="">(F68)공통 금융리스</option>
+                                    <option value="">(F69)공통 운용리스</option>
+                                    <option value="">(F70)공통 할부금융</option>
+                                    <option value="">(F71)기업대출(신용담보)</option>
+                                    <option value="">(F72)기업대출(오토론)</option>
+                                    <option value="">(F73)개인(신용)정보 동의서(간편서류등록 포함)</option>
+                                    <option value="">(F74)임직원 가계대출</option>
+                                    <option value="">(F75)외국인대출 신용정보조회동의(필리핀)</option>
+                                    <option value="">(F76)운전자 범위 안내사항</option>
+                                    <option value="">(F77)운전자격 확인사항</option>
+                                    <option value="">(F78)추가운전자 확인사항</option>
+                                    <option value="">(F79)딜러등록신청서(신규)</option>
+                                    <option value="">(F80)딜러등록신청서(중고)</option>
+                                    <option value="">(F81)소개업무협약서</option>
+                                    <option value="">(F82)금융리스(오토)</option>
+                                    <option value="">(F83)기업(금융리스_오토)</option>
+                                    <option value="">(F84)자동차 장기임대차 거래약관</option>
+                                    <option value="">(F85)오토리스 차량반납시유의사항</option>
+                                    <option value="">(F86)신용정보조회 동의서</option>
+                                    <option value="">(F87)외국인대출 신용정보조회동의(캄보디아)_연계캠캐피탈</option>
+                                    <option value="">(F88)공통 운영리스</option>
+                                    <option value="">(F89)신용정보제공동의(근저당해지)</option>
+                                    <option value="">(F90)신용정보제공동의(즉시출금)</option>
+                                    <option value="">(F91)외국인대출 신용정보조회동의</option>
+                                    <option value="">(F92)외국인대출 신용정보 필수.선택 제공 동의(한도조회)</option>
+                                    <option value="">(F93)신용정보 필수.선택-마이데이터-간편서류조회 동의</option>
+                                    <option value="">(F94)공통 운영리스</option>
+                                    <option value="">(F95)개인 대출이동서비스</option>
+                                    <option value="">(F96)중고 오토론</option>
+                                    <option value="">(F97)대환대출 서비스 이용약관</option>
+                                </select>
+                            </div>
+                            <a href="#" class="btn-search">조회</a>
+                        </div>
+                        <div class="btn">
+                            <a href="#" class="blue">등록</a>
+                        </div>
+                    </div>
+                    <!-- //End : 검색 -->
+
+                    <!-- Start : 리스트 -->
+                    <table class="bbs-table tbl-hover"><!-- 행이 hover인 경우 : tbl-hover 추가 -->
+                        <colgroup>
+                            <col width="80px">
+                            <col width="120px">
+                            <col width="200px">
+                            <col width="%">
+                            <col width="120px">
+                            <col width="120px">
+                            <col width="120px">
+                            <col width="120px">
+                            <col width="100px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">번호</th>
+                                <th scope="col">서식 문서</th>
+                                <th scope="col">대상 서비스</th>
+                                <th scope="col">서식 파일</th>
+                                <th scope="col">등록일</th>
+                                <th scope="col">등록자</th>
+                                <th scope="col">제·개정일</th>
+                                <th scope="col">제·개정 대상</th>
+                                <th scope="col">삭제</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>동의서</td>
+                                <td>공통(개인/오토/스탁)</td>
+                                <td class="a-l">[필수] 개인(신용)정보의 필수적 조회 동의 (D30-S99-F02-27)</td>
+                                <td>2021-10-07</td>
+                                <td>admin</td>
+                                <td>2021-10-07</td>
+                                <td>N</td>
+                                <td><a href="#" class="btn">삭제</a></td>
+                            </tr>
+                            <tr class="bor-line">
+                                <td colspan="9" class="nodata"><span>정보가 없습니다.</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 리스트 -->
+                    <!-- Start : 페이징 -->
+                    <div class="paging-box">
+                        <a href="#none" class="first">맨처음</a>
+                        <a href="#none" class="prev">이전</a>
+                        <a href="#none" class="current">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none" class="next">다음</a>
+                        <a href="#none" class="end">맨마지막</a>
+                    </div>
+                    <!-- //End : 페이징 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

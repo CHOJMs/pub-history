@@ -1,0 +1,1117 @@
+//$('.loading').addClass('active');
+var click = true;
+var num=0;
+var lastTargetPopupId;
+
+$(function(){
+
+	$.fn.hasScrollBar = function() {
+		return (this.prop('scrollHeight') == 0 && this.prop('clientHeight') == 0) ||
+			(this.prop('scrollHeight') > this.prop('clientHeight'));
+	}
+
+//	popupOpen('sample');
+
+	var thisHref,
+	dim = document.querySelector('.dim'),
+	popupLayer = document.querySelector('.popup-layer'),
+	popupTextHeight = 0;
+
+	//팝업
+//    $('.popup-btn').click(function(){
+//    	thisHref = $(this).attr('href');
+//    	popupTextHeight = $(''+thisHref+'.popup-layer').find('.popup-text').innerHeight();
+//    	$(''+thisHref+'.popup-layer').find('.popup-contents').css({'height':'calc(100% - '+popupTextHeight+'px)'});
+//		$(''+thisHref+'.popup-layer').addClass('active').find('h1').attr("tabindex", "0").focus().closest('html').find('.dim').addClass('active');
+//        return false;
+//    });
+
+    var popupNumber = 1;
+    $('.btn-next').click(function(){
+        popupNumber++;
+        $('.popup-0'+popupNumber+'').addClass('active');
+        return false;
+    });
+
+//    $('.popup-close > a').click(function(){
+//        $('.popup-layer').removeClass('active').find('h1').removeAttr("tabindex");
+//        $('.popup').removeClass('active');
+//        $('.dim').removeClass('active');
+//        popupNumber = 1;
+//
+//        return false;
+//    });
+
+
+    $('.agree_box ul li .q a').click(function(){
+    	$(this).closest('li').toggleClass('show').children('.q').next('.a').slideToggle();
+
+    	if($(this).closest('li').hasClass('show')){
+    		$(this).children('.icon_acco').text('내용 닫기');
+    	}else{
+    		$(this).children('.icon_acco').text('내용 열기');
+    	}
+    	return false;
+    })
+
+    // 20211026 주석 처리
+//    $(document).on("click","label",function(){
+//        if($(this).attr("role") == "checkbox"){
+//            $("label").attr("aria-checked","false");
+//            $(this).attr("aria-checked","true");
+//        }
+//    });
+
+    /* 라디오버튼 title */
+    $(document).on("click","label",function(){
+        if($(this).attr("role") == "radio"){
+            $("label").attr("aria-checked","false");
+            $(this).attr("aria-checked","true");
+        }
+    });
+
+	/* 라디오버튼 title */
+    $(function() {
+        $(document).on("click","input:radio.rchk", function(e) {
+
+			var name = $(this).attr("name");
+			var $r = $("input:radio.rchk").filter("[name='" + name + "']");
+
+			if ($(this).is(":checked")) {
+                $(this).attr({"title":$(this).next(".rchk-label").text()+" 체크 됨"});
+            }
+
+			$.each($r, function(idx, el) {
+				if(!$(this).is(":checked")){
+					$(el).attr({"title":$(el).next(".rchk-label").text()+" 체크 안 됨"});
+				}
+			});
+        });
+    });
+
+    // select box, input - focus 효과
+    $('body').on({
+		'focus' : function(){
+			$(this).addClass('focus')
+		},
+		'blur' : function(){
+			$(this).removeClass('focus')
+		}
+	},'.text_data input')
+
+	$('body').on({
+	    'focus' : function () {
+	        $(this).parent().addClass('focus');
+	    },
+	    'blur' : function () {
+	        $(this).parent().removeClass('focus');
+	    }
+	},'.selectbox select');
+
+	// select-box-01
+	$('.select-box > a').click(function(){
+		$(this).toggleClass('active');
+		$(this).next('div').slideToggle();
+		return false;
+	});
+
+	// 인증박스
+	$('.certify-box ul li').click(function(){
+		$(this).siblings('li').removeClass('active').find('a').removeAttr('tabindex');
+		$(this).addClass('active').find('a').attr('tabindex','0').focus();
+		return false;
+	});
+
+	if($('#sortable').length){
+		// MF-104-001 box_column
+		$( "#sortable" ).sortable({
+			handle: ".dr_icon",
+			draggable: '.drag_box',
+			cursor: "pointer",
+		});
+
+		var sortHeight = $('#sortable').height();
+		$('body').css({'min-height':'100vh'});
+		$('#sortable').css({'min-height': sortHeight + 'px'});
+		/*$( "#sortable" ).draggable({
+			connectToSortable: "#sortable"
+		});*/
+	}
+//    function popupOpen (thisHref) {
+//    	const popupTextHeight = $('#'+thisHref+'.popup-layer').find('.popup-text').innerHeight();
+//    	$('#'+thisHref+'.popup-layer').find('.popup-contents').css({'height':'calc(100% - '+popupTextHeight+'px)'});
+//		$('#'+thisHref+'.popup-layer').addClass('active').closest('html').find('.dim').addClass('active');
+//    	return false;
+//    }
+
+});
+
+// dependency "/static/web/js/lib/swiper-bundle.min.js"
+if (typeof Swiper !== 'undefined') {
+
+	const officeMain = new Swiper('.office-main .swiper-container', {
+	    // Optional parameters
+	    direction: 'horizontal',
+	    loop: true,
+	    slidesPerView: 1,
+
+	    // If we need pagination
+	    pagination: {
+	      el: '.office-main .swiper-pagination',
+	      renderBulvar: function (index, className) {
+	        return '<span class="' + className + '">' + (index + 1) + '</span>';
+	      }
+	    },
+	});
+}
+
+
+//==========================================================================================
+//UI 제어 스크립트
+//==========================================================================================
+// - uiCommon.dimdFn() or uiCommon.dimdFn("off")
+// - uiCommon.openPopup() or uiCommon.openPopup(popupId)
+// - uiCommon.closePopup()
+// - uiCommon.showLoading()
+// - uiCommon.hideLoading()
+//==========================================================================================
+
+$(function () {
+
+	uiCommon = {
+
+		$window: null,
+		$body: null,
+		ST: null,			// scrollTop 값
+		layerOrderArr: [],
+		init: function () {
+
+			this.set();
+			this.evtBinding();		// 기본 이벤트 바인딩
+			this.initLoading();		// 로딩 영역 초기화
+
+		},
+
+		/**
+		 * dimd 표시 / 숨김
+		 *
+		 * @param act dim on or off
+		 * @example
+		 * 		uiCommon.dimdFn() 		// dimd 표시
+		 * 		uiCommon.dimdFn("off") 	// dimd 숨김
+		 */
+		dimdFn: function(act) {
+
+
+			var dimClassName = "dim";
+			var $dim = $("." + dimClassName);
+			var $loc = $('body');
+
+	        if ("off" === act) {
+	        	// dim 요소 비활성(제거)
+	        	$dim.removeClass("active");
+	        	setTimeout(function() { $dim.remove(); }, 200);
+
+	        } else {
+	        	// dim 요소 활성(on)
+
+	        	if (!$dim.length) {
+	        		// dim 요소가 없는 경우 해당 위치에 신규 생성
+	        		$loc.append('<div class="' + dimClassName + '"></div>');
+	        		$dim = $("." + dimClassName);
+	        		$(".popup-layer.active").addClass("openPopCheck");
+
+	            }
+	        	// n개 이상의 팝업 오픈시,
+	        	else{
+	            	$dim.remove();
+	            	$dim.removeClass("active");
+
+					// 오픈 된 팝업이 n개 일 경우,
+					if(this.layerOrderArr.length > 1){
+
+						// 2개 오픈된 팝업이 있을경우,
+						if($(".popup-layer.active").length < 3){
+
+							// 이전에 오픈된 팝업 찾아서 dim요소 추가
+							for(var i=0; i<$(".popup-layer.active").length ;i++){
+								if($(".popup-layer.active").eq(i).hasClass("openPopCheck")){
+									$(".popup-layer.active").eq(i).prepend('<div class="' + dimClassName + '"></div>');
+									$dim = $("." + dimClassName);
+								}
+							}
+
+		            	}else  {
+		            		//창이 2개 이상일때
+		            		var cnt =0;
+		            		for(var i=0; i < this.layerOrderArr.length; i++){
+		            			if($("#" + this.layerOrderArr[i]).hasClass("openPopCheck")){
+		            				$("#" + this.layerOrderArr[i]).removeClass("openPopCheck");
+		            				cnt = i;
+		            			}
+		            		}
+		            		$(".popup-layer.active").eq(cnt+1).addClass("openPopCheck");
+
+			            	for(var i=0; i < $(".popup-layer.active").length ;i++){
+			            		// 이전에 오픈된 팝업 찾기.
+			            		if($(".popup-layer.active").eq(i).hasClass("openPopCheck")){
+			            			$(".popup-layer.active").eq(i).prepend('<div class="' + dimClassName + '"></div>');
+			    	        		$dim = $("." + dimClassName);
+
+			            		}
+			            	}
+		            	}
+					}
+	        	}
+	            // dim 활성
+	        	$dim.addClass("active");
+	        }
+		},
+
+		/**
+		 * 로딩 초기화
+		 */
+		initLoading : function () {
+
+			var loadingId = "loading";
+
+			if ($('#' + loadingId).length == 0) {
+				var loadingHtml = '<div class="loading" id="loading"><div><div id="spin"></div></div></div>';
+				$body.append(loadingHtml);
+			}
+
+			bodymovin.loadAnimation({
+				container: $("#" + loadingId).find("#spin")[0], // Required
+				path : '/static/web/json/loading_type01.json', // 파일 경로
+				renderer: 'svg', // Required
+				loop: true, // Optional
+				autoplay: true // Optional
+			});
+		},
+
+		/**
+		 * 로딩 표시
+		 */
+		showLoading : function (isInAjax) {
+
+			console.log(">>> uiCommon.showLoading (isInAjax=" + isInAjax + ")")
+
+			var $loading = $("#loading");
+
+			if (isInAjax) { $loading.addClass("inAjax"); }
+
+			$loading.addClass("active");
+
+			return false;
+		},
+
+		/**
+		 * 로딩 숨김
+		 */
+		hideLoading : function (opt) {
+
+
+			var $loading = $("#loading");
+
+			console.log(">>> uiCommon.hideLoading (isInAjax=" + $loading.hasClass("inAjax") + ")")
+
+			if ($loading.hasClass("inAjax")) return;
+
+			$loading.removeClass("active");
+			$loading.removeClass("inAjax");
+
+			return false;
+		},
+
+
+		/**
+		 * 풀팝업 열기
+		 */
+		openPopup: function (popup, dimdNotClose) {
+			var $loading = $("#loading");
+
+			var $popup = null
+			  , $openBtn = null
+			  , targetPopupId = null;
+
+			// 클릭한 객체 구하기
+			$openBtn = $("a, button, input[type=button]").filter(":focus");
+
+	        if (typeof popup === "string" && popup.length > 0) {
+
+	        	// open by id
+	        	targetPopupId = popup;
+
+	        } else {
+
+	        	// open by click event
+	        	if (event !== undefined || event.type === 'click') {
+
+	        	    var $btnTarget = $(event.currentTarget);
+		            targetPopupId = $btnTarget.data("targetPopup"); //  data-target-popup 속성에 지정된 popup id (#popupId)
+
+		            if (!targetPopupId
+		            		&& $btnTarget[0].tagName === "A"
+		            		&& /^#.+/.test( $btnTarget.attr('href'))) {
+
+		            	targetPopupId = $btnTarget.attr('href');
+		            }
+	        	}
+	        }
+
+	        if (!targetPopupId) return false;
+
+	       	targetPopupId = targetPopupId.replace('#', '');
+	        $popup = $('#' + targetPopupId);				// 대상 레이어 팝업 요소
+	        $popup.data("eventTarget", $openBtn);			// 이벤트 발생 요소 저장
+	        if(!this.layerOrderArr.includes(targetPopupId)){ //배열중복 제거
+	        	this.layerOrderArr.push(targetPopupId);
+	        }
+
+
+	        // dim
+//	        uiCommon.dimdFn();
+
+	        // popup
+	        var popupTitleHeight = $popup.find('.popup-text').innerHeight();
+	        $popup.find('.popup-contents').css({'height':'calc(100% - ' + popupTitleHeight + 'px)'});
+	        $popup.addClass("active");
+
+	        lastTargetPopupId = targetPopupId;
+
+	        // dim
+	        uiCommon.dimdFn();
+
+
+
+	    	// 팝업 내 타이틀로 focus 이동
+	    	setTimeout(function() {
+				if (targetPopupId === "pdfView") { // pdfView 팝업인 경우
+					$popup.find('.popup-close > a').eq(0).focus();
+
+					$popup.find('.popup-close > a').on("keydown", function(event){
+						if(event.shiftKey && (event.keyCode || event.which) === 9) {
+							event.preventDefault();
+							console.log("shift + tab preventDefault");
+						}
+					});
+
+				} else {
+					if ($popup.find("h1").length > 0) {
+						$popup.find("h1").eq(0).attr('tabindex', '0').focus();
+					} else {
+						// 팝업 내 타이틀이 없는 경우 팝업 본문 컨텐츠 영역으로 focus 이동
+						$popup.find(".popup").eq(0).attr('tabindex', '0').focus();
+					}
+				}
+				//$loading.removeClass("active");
+	    	}, 200);
+
+	    	// 팝업 오픈 전 스크롤 위치 저장
+	    	this.getScrollTop();
+
+	    	// 팝업 내 스크롤 위치 초기화
+	    	if($popup.find('.popup-contents').length) {
+	    		$popup.find('.popup-contents').scrollTop(0);
+	    	}
+
+			// body 스크롤 막기
+			$('body').css({'overflow':'hidden'});
+
+	    	// 팝업 닫기 버튼 이벤트 적용
+	    	$popup.find('.popup-close > a').off("click.cbtn").on("click.cbtn", function(e) {
+
+	    		// 팝업 닫기
+	    		uiCommon.closePopup();
+
+	    		// 클릭한 링크(a) 포커스 이동
+	    	    if($openBtn.length) {
+	    	    	$openBtn.focus();
+	    	    }
+
+	    		e.preventDefault();
+	    	});
+
+
+	    	if(dimdNotClose){
+
+	    	}else{
+
+	            // dim 클릭시 팝업 닫기
+	            $('.dim').on('click', function(e) {
+
+	                // body 스크롤 풀기, 메인에선 항상 oveflow: hidden
+	                if($('#noticePopup').length){
+	                    // 공지 팝업 딤 클릭 막기
+	                    return false;
+	                }else{
+	                    $('body').css({'overflow':'auto'});
+	                }
+
+	                // 팝업 닫기
+	                uiCommon.closePopup();
+
+
+	            });
+	    	}
+//			$loading.addClass("active");
+
+			return false;
+		},
+
+		/**
+		 * 풀팝업 닫기
+		 */
+		closePopup: function (e, id) {
+
+			// 팝업 오픈 전 스크롤 위치 설정
+			this.setScrollTop();
+
+			if(id){
+                var $popup = $("#" + id);
+//                $popup.removeClass('active');
+			}else{
+				// 오픈 된 팝업이 n개 일 경우,
+				if(this.layerOrderArr.length > 1){
+
+					// n개이상 오픈된 팝업이 있을경우,
+					if($(".popup-layer.active").length > 1){
+
+						//인증번호 카운트 종료
+						if(this.layerOrderArr[this.layerOrderArr.length-1] === "authKcbPhoneLayerPopup"){
+							phoneAuthClose();
+						}
+
+						//휴대폰 이용약정 팝업창
+						if(this.layerOrderArr[this.layerOrderArr.length-1] === "authKcbPhoneAllAgreeLayerPopup"){
+							$("#authKcbPhoneAllAgreeLayerPopup").removeClass("active");
+							$("body .dim").remove();
+							for(var i=0; i < this.layerOrderArr.length; i++){
+
+								if($("#" + this.layerOrderArr[i]).hasClass("openPopCheck") ){
+									$("#" + this.layerOrderArr[i]).removeClass("openPopCheck");
+									$dimpop = $("#" + this.layerOrderArr[i-1]);
+
+			        				var dimClassName = "dim";
+				        			var $dim = $("." + dimClassName);
+									$dimpop.prepend('<div class="' + dimClassName + '"></div>');
+									$dimpop.find(".dim").addClass("active");
+
+									//dim클릭시 팝업닫기
+				        			$('.dim').on('click',function(e){
+				        				uiCommon.closePopup();
+				        			});
+
+								}
+
+							}
+							this.layerOrderArr.pop();
+
+
+						} else if(this.layerOrderArr[this.layerOrderArr.length-1] === "dsrFileManagePop"){//파일선택 팝업창
+							$("#dsrFileManagePop").removeClass("active");
+
+							$("body .dim").remove();
+
+							var dimClassName = "dim";
+							var $dim = $("." + dimClassName);
+							$(".popup-layer.active.openPopCheck").removeClass("openPopCheck");
+							$("#dsrCrifOfrAgrPop").addClass("openPopCheck");
+							$('body').append('<div class="' + dimClassName + '"></div>');
+							$("body .dim").addClass("active");
+
+							//dim클릭시 팝업닫기
+		        			$('.dim').on('click',function(e){
+		        				uiCommon.closePopup();
+		        			});
+
+							this.layerOrderArr.pop();
+
+						} else if(this.layerOrderArr[this.layerOrderArr.length-1] === "cserLayerPopup"){//파일선택 팝업창
+							$("#cserLayerPopup").removeClass("active");
+
+							$("body .dim").remove();
+
+							var dimClassName = "dim";
+							var $dim = $("." + dimClassName);
+							$(".popup-layer.active.openPopCheck").removeClass("openPopCheck");
+							$("#selectAuthLayerPop").addClass("openPopCheck");
+							$('body').append('<div class="' + dimClassName + '"></div>');
+							$("body .dim").addClass("active");
+
+							//dim클릭시 팝업닫기
+		        			$('.dim').on('click',function(e){
+		        				uiCommon.closePopup();
+		        			});
+
+							this.layerOrderArr.pop();
+
+						}else if(this.layerOrderArr[this.layerOrderArr.length-1] === "pdfView2"){//(DSR)부동산등기부등본 팝업창
+							$("#pdfView2").removeClass("active");
+
+							$("body .dim").remove();
+
+							var dimClassName = "dim";
+							var $dim = $("." + dimClassName);
+							$(".popup-layer.active.openPopCheck").removeClass("openPopCheck");
+							$("#srchLandPriceLayerPop").addClass("openPopCheck");
+							$('body').append('<div class="' + dimClassName + '"></div>');
+							$("body .dim").addClass("active");
+
+							//dim클릭시 팝업닫기
+		        			$('.dim').on('click',function(e){
+		        				uiCommon.closePopup();
+		        			});
+
+							this.layerOrderArr.pop();
+
+						}
+						else {
+							this.layerOrderArr.length =0;
+							$(".popup-layer.active").removeClass("active");
+							$("body .dim").remove();
+						}
+
+					}
+					// 1개의 오픈된 팝업이 있을경우,
+					else{
+						var $popup = $("#" + this.layerOrderArr.pop());
+						$(".popup-layer.active").removeClass("active");
+					}
+
+				}
+				// 오픈 된 팝업이 1개 일 경우,
+				else{
+					var $popup = $("#" + this.layerOrderArr.pop());
+					$popup.removeClass('active');
+				}
+
+			}
+			// 현재 팝업 id 구하기
+			var $popup = $("#" + id);
+			$popup.removeClass('active');
+//			if ($(".popup-layer.active").length == 0) {
+//				// dim off
+//				uiCommon.dimdFn("off");
+//			}
+
+			if($popup.attr("id") === "customSelectPopupLayer" || $popup.attr("id") === "searchNewCorpNamePopup" || $popup.attr("id") === "searchAddrPopup" || $popup.attr("id") === "searchAddrDetailPopup"){
+				if($popup.attr("id") === "searchAddrPopup"){
+					$("#searchAddrPopup").remove();
+					$("#searchAddrDetailPopup").remove();
+				}else if($popup.attr("id") === "searchNewCorpNamePopup"){
+					$("#searchNewCorpNamePopup").remove();
+				}else{
+					$("#customSelectPopupLayer").remove();
+				}
+			}
+
+            // body 스크롤 풀기, 메인에선 항상 oveflow: hidden
+            if($('#noticePopup').length && $('.fp-enabled').length){
+
+            }else if ($(".popup-layer.active").length == 0){
+                $('body').css({'overflow':'auto'});
+              // dim off
+              uiCommon.dimdFn("off");
+            }else if ($(".popup-layer.active").length > 0){
+	            $('body').css({'overflow':'auto'});
+	            // dim off
+//	            uiCommon.dimdFn("off");
+          }
+		},
+
+		/**
+		 * 풀팝업 닫기
+		 */
+		activeObserverPopup: function (id, callback) {
+
+			var targetNode = document.querySelector('#'+id);
+			// MutationObserver 생성
+			var observer = new MutationObserver(function(mutations) {
+			  mutations.forEach(function(mutation) {
+			    if (mutation.attributeName === 'class') {
+			      $(mutation.target).trigger('classChange');
+			    }
+			  });
+			});
+
+			// 옵션 설정 및 Observer 시작
+			var config = { attributes: true, childList: false, characterData: false };
+			observer.observe(targetNode, config);
+
+			// classChange 이벤트 핸들러 등록
+			$('#'+id).on('classChange', function() {
+			  if ($(this).hasClass('active')) {
+				  callback(true);
+			  } else {
+				  callback(false);
+			  }
+			});
+
+		},
+
+		/**
+		 * scroll top 값 가져오기
+		 */
+		getScrollTop: function () {
+			this.ST = $(window).scrollTop();
+		},
+
+		/**
+		 * scroll top 위치로 보내기
+		 */
+		setScrollTop: function () {
+			$(window).scrollTop(this.ST);
+		},
+
+		/**
+		 * 프로그래스바(progress) 값 설정 (진행률 변경 %)
+		 *
+		 * [매개변수가 1개일 경우]
+		 * @param value	진행률(%)
+		 *
+		 * [매개변수가 2개일 경우]
+		 * @param currentStep 현재 STEP
+		 * @param totalStep   총 STEP
+		 *
+		 * ** 마지막 매개변수 타입이 Boolean 일 경우 CSS Transition 효과 적용 여부
+		 *
+		 * ex)
+		      uiCommon.setProgressValue(10)  		 // progress 진행률 10% 채움
+		      uiCommon.setProgressValue(2, 5)   	 // progress 진행률 10% 채움
+		      uiCommon.setProgressValue(10, false)   // progress 진행률 10% 채움, progress 채울 시 CSS Transition 효과 미 적용
+		      uiCommon.setProgressValue(2, 5, false) // progress 진행률 10% 채움, progress 채울 시 CSS Transition 효과 미 적용
+		 *
+		 */
+		setProgressValue: function (value) {
+
+			var arglen = arguments.length;	// 매개변수 갯수
+			var isTransition = true; 		// CSS Transition 효과 적용 여부, 기본값 true
+			var v = 0;
+
+			if (arglen > 1) {
+
+				var isLastArgBoolType = $util.type(arguments[arglen - 1]) === "Boolean";
+
+				if (isLastArgBoolType) {
+					isTransition = arguments[arglen - 1];
+					arglen = arglen - 1;
+				}
+
+				if (arglen === 2) {
+					var currentStep = arguments[0];		// 현재 STEP
+					var totalStep = arguments[1];		// 총 STEP
+					v = parseInt(currentStep) / parseInt(totalStep) * 100;
+				} else {
+					 v = parseFloat(arguments[0]);
+				}
+
+			} else {
+				v = parseFloat(value);
+			}
+
+			$targetWrap = $("#common_body.sub_process").closest("div.wrap");
+			if ($targetWrap.length > 0) {
+
+				if (isTransition) {
+					$targetWrap.css("transition", ".3s");
+				} else {
+
+					$targetWrap.css("transition", ".0s");
+				}
+
+				$targetWrap.css("background-size", v + "% auto");
+			}
+		},
+
+		/**
+		 * IOS APP 노치 관련 처리
+		 */
+		setIosNotch: function(offset) {
+
+			var offsetVal = offset || exjs.cookie.get("SAFE_AREA_OFFSET"); // IOS APP에서 쿠키에 노치정보 저장
+
+			// IOS APP 인지 확인
+			if ((typeof GlobalJSConfig === "undefined")
+					|| !(GlobalJSConfig.isApp && GlobalJSConfig.isIos)) return;
+
+			// offset 0이상인 경우만 스타일 변경
+			if ($util.toNumber(offsetVal) > 0){
+
+				console.log(">>> setIosNotch : " + offsetVal);
+
+				document.documentElement.style.setProperty("--ios", offsetVal + "px");
+				document.querySelector("body").classList.add('ios');
+			}
+		},
+
+		/**
+		 * UI 이벤트 바인딩
+		 */
+		evtBinding: function () {
+
+			// input - focus 효과
+		    $('body').on({
+				'focus' : function(){
+					$(this).addClass('focus')
+				},
+				'blur' : function(){
+					$(this).removeClass('focus')
+				}
+			},'.text_data input')
+
+			// select box - focus 효과
+			$('body').on({
+			    'focus' : function () {
+			        $(this).parent().addClass('focus');
+			    },
+			    'blur' : function () {
+			        $(this).parent().removeClass('focus');
+			    }
+			},'.selectbox select');
+
+
+		    // POPUP 열기 이벤트 자동 등록
+		    $('.js-open-popup').on('click', function (e) {
+				uiCommon.openPopup();
+			});
+
+		    // POPUP 닫기 이벤트 자동 등록 ??????
+			$('.js-close-popup').on('click', function (e) {
+				uiCommon.closePopup();
+			});
+
+		},
+
+		set: function () { // 기본 돔 및 변수 셋팅
+			$window = $(window);
+			$body = $('body');
+
+			// IOS APP 노치 정보 설정
+			// uiCommon.setIosNotch();
+		},
+
+		// 스크롤링 후 다음 버튼
+		scrollNextBtn: function (btn, clickFnc) {
+
+			var sTop = null, diffH = null;
+
+			var scTxt = "아래로 스크롤하기";
+			var nxtTxt = "다음";
+
+			$(".process-wrap").append("<div id='checkEl'></div>");
+
+
+			if (typeof btn.scrollText === "string" && btn.scrollText.length > 0) { scTxt = btn.scrollText; }
+			if (typeof btn.nextText === "string" && btn.nextText.length > 0) { nxtTxt = btn.nextText; }
+
+			var SnextBtn = $('#'+String(btn.btnId));
+
+			if($('html').hasScrollBar()) {
+				sTop = Math.ceil($(window).scrollTop());
+				diffH = $(document).height() - $(window).height();
+
+				// 초기 페이지 로드 시 위치가 스크롤 최하단일 경우 처리
+				(sTop == diffH || Math.abs(sTop-diffH) <= 1 || checkVisible($("#checkEl"))) ? SnextBtn.text(nxtTxt) : SnextBtn.text(scTxt);
+
+				// 스크롤 이벤트 처리
+				$(window).scroll(function(){
+//					console.log("visible -> "+checkVisible($("#checkEl")));
+					sTop = Math.ceil($(window).scrollTop());
+					diffH = $(document).height() - $(window).height();
+					// 스크롤이 끝에 도달했을 경우
+					(sTop == diffH || Math.abs(sTop-diffH) <= 1 || checkVisible($("#checkEl"))) ? SnextBtn.text(nxtTxt) : SnextBtn.text(scTxt);
+				});
+			}
+			else {
+				SnextBtn.text(nxtTxt);
+			}
+
+			if (clickFnc && $.isFunction(clickFnc)) {
+				// 사용자 정의 액션
+				SnextBtn.click(function(){
+					sTop = Math.ceil($(window).scrollTop());
+					diffH = $(document).height() - $(window).height();
+
+					$('html, body').animate({scrollTop: $(document).height()});
+					// 버튼이 스크롤 최하단 위치 할 경우 실행
+					if(sTop == diffH || Math.abs(sTop-diffH) <= 1 || checkVisible($("#checkEl"))) {
+						clickFnc();
+					}
+				});
+
+			}
+		}
+
+	};
+
+	uiCommon.init();
+
+	// MW-991-001
+	if($('.mySwiper.swiper-container').length){
+		const mySwiper = new Swiper('.mySwiper.swiper-container', {
+			direction: 'horizontal',
+			loop: true,
+			slidesPerView: 2,
+			spaceBetween: 20,
+			pagination: {
+			el: '.mySwiper .swiper-pagination',
+				clickable: true,
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 8,
+				},
+				640: {
+					slidesPerView: 1,
+					spaceBetween: 8
+				},
+				1024: {
+					slidesPerView: 1,
+					spaceBetween: 8
+				},
+			}
+		})
+	}
+
+	//은행선택
+	$('.bank-tab ul li').click(function(){
+		var thisRel = $(this).children('a').attr('rel');
+
+		console.log(thisRel);
+
+		$(this).siblings().removeClass('active');
+		$(this).addClass('active');
+
+		$('.bank-list > ul').removeClass('active');
+		$('#'+thisRel+'').addClass('active');
+	});
+
+	$('.bank-tab ul li:eq(0)').trigger('click');
+
+	if($('.footerwrap').length && $('.home-btn').length){
+		var scrollTop = $(document).scrollTop();
+		var btnTop = $('.home-btn').offset().top + $('.home-btn > a').innerHeight();
+		var footerTop = $('.footerwrap').offset().top + 1;
+
+		if (btnTop+120 >= footerTop) {
+			$('.home-btn').css({
+				"position": 'absolute',
+				"top": footerTop - $('.home-btn > a').innerHeight() - 120,
+				"animation": '1s ease-in-out fixedBtn',
+				"animation-fill-mode": 'both'
+			})
+		}
+
+		if (footerTop > scrollTop + $(window).height()) {
+			$('.home-btn').css({
+				"position": 'fixed',
+				"top": 'auto',
+				"animation": 'none'
+			});
+		}
+	}
+
+	// 홈 버튼 픽시드
+	if($('.footerwrap').length && $('.home-btn').length){
+		$(window).scroll(function(){
+			scrollTop = $(document).scrollTop();
+			btnTop = $('.home-btn').offset().top + $('.home-btn > a').innerHeight();
+			footerTop = $('.footerwrap').offset().top + 1;
+
+			//console.log(btnTop, footerTop, scrollTop + $(window).height())
+
+			if (btnTop+120 >= footerTop) {
+				$('.home-btn').css({
+					"position": 'absolute',
+					"top": footerTop - $('.home-btn > a').innerHeight() - 120,
+					"animation": '1s ease-in-out fixedBtn',
+					"animation-fill-mode": 'both'
+				})
+			}
+
+			if (footerTop > scrollTop + $(window).height()) {
+				$('.home-btn').css({
+					"position": 'fixed',
+					"top": 'auto',
+					"animation": 'none'
+				});
+			}
+		});
+	}
+
+	// 프로세스 다음버튼
+	if($('.sub_process').length){
+		$('.sub_process').append('<div class="scroll-arrow">내용 더보기<div class="arrow"><span class="arrow-img"></span><span class="arrow-img"></span></div></div>');
+	}
+
+	scrollArrow();
+
+	$(window).resize(function(){
+		ww = $(this).innerWidth();
+		if(ww > 1280){
+
+		}else if(ww <= 1280){
+			scrollArrow();
+		}
+
+	});
+
+	// 프로세스 다음버튼
+	function scrollArrow(){
+		if($('.sub_process').length){
+			var processBottom = $('.sub_process').scrollTop() + $('.sub_process').innerHeight() - 162;
+			var btnBottom = $('.scroll-arrow').offset().top + $('.scroll-arrow').innerHeight();
+
+			if(processBottom <= btnBottom){
+				$('.sub_process').removeClass('more');
+			}else if(processBottom > btnBottom){
+				$('.sub_process').addClass('more');
+			}
+
+			//console.log(processBottom, btnBottom);
+
+			$(window).scroll(function(){
+				btnBottom = $('.scroll-arrow').offset().top + $('.scroll-arrow').innerHeight();
+
+				if(processBottom <= btnBottom){
+					$('.sub_process').removeClass('more');
+				}else if(processBottom > btnBottom){
+					$('.sub_process').addClass('more');
+				}
+
+			});
+		}
+	}
+
+	// 모바일 헤이트 100vh
+	var vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty("--vh", ""+vh+"px");
+
+
+    // ===========  2022 추가 =============
+
+    // 20221027 챗봇 버튼 픽시드
+	if($('.footerwrap').length && $('.chatbot-btn').length){
+		$(window).scroll(function(){
+			scrollTop = $(document).scrollTop();
+			btnTop = $('.chatbot-btn').offset().top + $('.chatbot-btn > a').innerHeight();
+			footerTop = $('.footerwrap').offset().top + 1;
+
+			//console.log(btnTop, footerTop, scrollTop + $(window).height())
+
+			if (btnTop+120 >= footerTop) {
+				$('.chatbot-btn').css({
+					"position": 'absolute',
+					"top": footerTop - $('.chatbot-btn > a').innerHeight() - 120,
+					"animation": '1s ease-in-out fixedBtn',
+					"animation-fill-mode": 'both'
+				})
+			}
+
+			if (footerTop > scrollTop + $(window).height()) {
+				$('.chatbot-btn').css({
+					"position": 'fixed',
+					"top": 'auto',
+					"animation": 'none'
+				});
+			}
+		});
+	}
+
+    // 20221012 주소검색결과
+    $('.post-box ul li .q a').click(function(){
+    	$(this).closest('li').toggleClass('show').children('.q').next('.a').slideToggle();
+
+    	if($(this).closest('li').hasClass('show')){
+    		$(this).children('.icon_acco').text('내용 닫기');
+    	}else{
+    		$(this).children('.icon_acco').text('내용 열기');
+    	}
+    	return false;
+    })
+
+    // 20221012 유의사항
+    $('.accordion-info-box ul li .q a').click(function(){
+    	$(this).closest('li').toggleClass('show').children('.q').next('.a').slideToggle();
+
+    	if($(this).closest('li').hasClass('show')){
+    		$(this).children('.icon_acco').text('내용 닫기');
+    	}else{
+    		$(this).children('.icon_acco').text('내용 열기');
+    	}
+    	return false;
+    })
+
+
+    // 20230509 카카오인증 이용안내 아코디언
+    $('.ka-accordion > ul > li').each(function(){
+		$(this).children('a').attr('title','메뉴 열기');
+		$(this).children('a').attr('href','javascript:;');
+	})
+    $('.ka-accordion > ul > li > a').click(function(){
+
+		if(!$(this).parent('li').hasClass('active')){
+			$('.ka-accordion > ul > li').each(function(){
+				$(this).removeClass('active');
+				$(this).children('div').removeClass('active').slideUp();
+			})
+		}
+
+        $(this).parent('.ka-accordion > ul > li').toggleClass('active');
+		$(this).siblings('div').slideToggle();
+
+        $.each($(".ka-accordion > ul > li"), function(){
+            if($(this).hasClass('active')){
+			    $(this).children('a').attr('title','내용 닫기');
+		    }else{
+			    $(this).children('a').attr('title','내용 열기');
+		    }
+        });
+		return false;
+	});
+
+    $('.toolbar .arrow a').click(function(){
+
+        const contId = this.dataset['contId'];
+        $(`#${contId}`).slideToggle();
+
+        this.closest(".arrow").classList.toggle("show");
+//        document.getElementById(`${contId}`).scrollIntoView({ behavior:"smooth",block:"start"});
+
+        return false;
+    });
+
+});
+
+function alertMessage(message, callback) {
+
+	var opts = {message : message}
+	if (callback && $.isFunction(callback)) {
+		opts.callback = callback
+	}
+	// 알림 팝업 호출
+	Message.alert(opts);
+}
+
+function checkVisible(elm, eval) {
+	eval = eval || "object visible";
+	var viewportHeight = $(window).height(),
+	scrolltop = $(window).scrollTop(),
+	y=$(elm).offset().top,
+	elementHeight = $(elm).height();
+
+	if(eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+	if(eval == "above") return ((y < (viewportHeight + scrolltop)));
+}
+
+/*
+ * 신청완료 페이지(모바일)의 경우
+ * 상단의 "<" 버튼 및 home 버튼, 모바일 메뉴 버튼을 안보이게 처리한다.
+ */
+$(function() {
+	if ($('div.finish-box').length > 0) {
+		$("#header").hide();
+	}
+});

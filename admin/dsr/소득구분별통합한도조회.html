@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>소득구분별 통합한도 조회 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-full-1"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>소득구분별 통합한도 조회</h1>
+            </div>
+            <div class="popup-contents h-fixed"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <div class="flex-item-top">
+                    <div class="item-cnt">
+                        <table class="data-tbl">
+                            <colgroup>
+                                <col>
+                                <col width="25%">
+                                <col width="25%">
+                                <col width="25%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="checkbox bold"><!-- label 굵고 크게 설정할 때 'bold' 클래스 추가 -->
+                                            <input type="checkbox" checked="checked">
+                                            <label>급여소득자</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox bold"><!-- label 굵고 크게 설정할 때 'bold' 클래스 추가 -->
+                                            <input type="checkbox" checked="checked">
+                                            <label>개인사업자</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox bold"><!-- label 굵고 크게 설정할 때 'bold' 클래스 추가 -->
+                                            <input type="checkbox">
+                                            <label>인적용역제공자</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox bold"><!-- label 굵고 크게 설정할 때 'bold' 클래스 추가 -->
+                                            <input type="checkbox" checked="checked">
+                                            <label>기타소득 (무직)</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">소득</p>
+                                            <div class="inp-txt-right">
+                                                <input type="tel" placeholder="">
+                                                <span>원</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">소득</p>
+                                            <div class="inp-txt-right">
+                                                <input type="text" placeholder="" class="disabled" disabled>
+                                                <span>원</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">소득</p>
+                                            <div class="inp-txt-right">
+                                                <input type="tel" placeholder="">
+                                                <span>원</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">소득</p>
+                                            <div class="inp-txt-right">
+                                                <input type="text" placeholder="" class="disabled" disabled>
+                                                <span>원</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">입사일</p>
+                                            <div class="calendar">
+                                                <input type="tel" value="2022-12-15"><img src="/static/admin/img/new_common/ico_cal.png">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">개업일</p>
+                                            <div class="calendar">
+                                                <input type="tel"><img src="/static/admin/img/new_common/ico_cal.png">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">입사일</p>
+                                            <div class="calendar">
+                                                <input type="tel"><img src="/static/admin/img/new_common/ico_cal.png">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp disabled">
+                                            <p class="tit">입사일</p>
+                                            <div class="calendar">
+                                                <input type="tel" value="2024-10-17" disabled><img src="/static/admin/img/new_common/ico_cal.png">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">직업/지위</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">직업/지위</p>
+                                            <input type="tel" placeholder="" value="자영업자" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">직업/지위</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">직업/지위</p>
+                                            <input type="tel" placeholder="" value="기타소득자" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">고용형태</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="">선택</option>
+                                                        <option value="">정규직</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">고용형태</p>
+                                            <input type="tel" placeholder="" value="기타직" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">고용형태</p>
+                                            <input type="tel" placeholder="" value="계약직" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">고용형태</p>
+                                            <input type="tel" placeholder="" value="기타직" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">직군</p>
+                                            <input type="tel" placeholder="" value="1군">
+                                            <div class="c-btn">
+                                                <a href="#">직군산출</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">직군</p>
+                                            <input type="tel" placeholder="" value="5군" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">직군</p>
+                                            <input type="tel" placeholder="" value="5군" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">직군</p>
+                                            <input type="tel" placeholder="" value="5군" class="disabled" disabled>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Start : 버튼 -->
+                        <div class="btn">
+                            <a href="#">소득구분별 통합한도 조회</a>
+                            <a href="#" class="line a-r">초기화</a>
+                        </div>
+                        <!-- //End : 버튼 -->
+                    </div>
+                </div>
+
+                <!-- Start : 한도산출 결과 요약 -->
+                <div class="mt40"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                    <h2>한도산출 결과 요약</h2>
+                </div>
+                <table class="bbs-table">
+                    <colgroup>
+                        <col width="70px">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">선택</th>
+                            <th scope="col">고객소득구분</th>
+                            <th scope="col">상품명</th>
+                            <th scope="col">한도</th>
+                            <th scope="col">금리</th>
+                            <th scope="col">시스템판정</th>
+                            <th scope="col">승인/결합등급</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="radiobox single">
+                                    <input type="radio" id="r01" name="r01" checked="checked">
+                                    <label for="r01"></label>
+                                </div>
+                            </td>
+                            <td>급여소득자</td>
+                            <td>리치론</td>
+                            <td>100,000,000</td>
+                            <td>17.4 %</td>
+                            <td>자동거절</td>
+                            <td>5/6</td>
+                        </tr>
+                        <tr><!-- [D]마지막 합계가 있는 경우 클래스 : bor-none 추가로 라인 삭제함 -->
+                            <td colspan="7"><span>정보가 없습니다.</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Start : 버튼 -->
+                <div class="btn">
+                    <a href="#">결과등록</a>
+                </div>
+                <!-- //End : 버튼 -->
+                <!-- //End : 한도산출 결과 요약 -->
+
+                <!-- Start : 상담단계 한도/조회 이력 확인 -->
+                <!-- Start : 한도산출 결과 요약 -->
+                <div class="mt40"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                    <h2>상담단계 한도/조회 이력 확인 <span>(*최초 상담일로부터 5일간 조회 내역입니다)</span></h2>
+                </div>
+                <table class="bbs-table">
+                    <colgroup>
+                        <col width="70px">
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">순번</th>
+                            <th scope="col">조회일시</th>
+                            <th scope="col">상품명</th>
+                            <th scope="col">소득구분</th>
+                            <th scope="col">한도</th>
+                            <th scope="col">금리</th>
+                            <th scope="col">시스템판정</th>
+                            <th scope="col">승인/결합등급</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2024-07-22 8:55</td>
+                            <td>중고차론</td>
+                            <td>기타소득(무직)</td>
+                            <td>30,000,000</td>
+                            <td>12.3 %</td>
+                            <td>정상승인</td>
+                            <td>5/6</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- //End : 상담단계 한도/조회 이력 확인 -->
+
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

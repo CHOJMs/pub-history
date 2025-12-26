@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중고차론 한도조회 상세내역</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>중고차론 한도조회 상세내역</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+
+                        <h2 class="h2_line">접수정보</h2>
+                        <ul class="list_1">
+                            <li>
+                                <span>진행상태</span>
+                                <p class="font_red">대출실행</p>
+                            </li>
+                            <li>
+                                <span>한도조회일시</span>
+                                <p>2018-03-19 09:42:48</p>
+                            </li>
+                            <li>
+                                <span>전자약정일시</span>
+                                <p>2018-03-19 09:42:48</p>
+                            </li>
+                            <li>
+                                <span>실행일자</span>
+                                <p>2018-03-20</p>
+                            </li>
+                        </ul>
+
+                        <h2 class="h2_line">고객정보</h2>
+                        <ul class="list_1">
+                            <li>
+                                <span>고객명</span>
+                                <p>박정은</p>
+                            </li>
+                            <li>
+                                <span>생년월일</span>
+                                <p>910101</p>
+                            </li>
+                            <li>
+                                <span>휴대전화번호</span>
+                                <p>010-1234-5678</p>
+                            </li>
+                            <li>
+                                <span>차종</span>
+                                <p>기아 카니발 럭셔리/2015</p>
+                            </li>
+                            <li>
+                                <span>차량가격</span>
+                                <p>원</p>
+                            </li>
+                            <li>
+                                <span>신청금액</span>
+                                <p>원</p>
+                            </li>
+                            <li>
+                                <span>대출기간</span>
+                                <p>개월</p>
+                            </li>
+                            <li>
+                                <span>적용금리</span>
+                                <p>%</p>
+                            </li>
+                            <li>
+                                <span>월납입금</span>
+                                <p>원</p>
+                            </li>
+                            <li>
+                                <span>인지대</span>
+                                <p>원</p>
+                            </li>
+                            <li>
+                                <span>전결 NEGO</span>
+                                <p></p>
+                            </li>
+                            <li>
+                                <span>차감 NEGO</span>
+                                <p></p>
+                            </li>
+                        </ul>
+
+                        <div class="flex_tl mt40">
+                            <p class="h_tit">한도조회결과</p>
+                            <span><a href="#"><img src="/static/web/img/ico_refresh.png" alt="새로고침"></a></span>
+                        </div>
+
+                        <!-- 한도조회결과 시작 -->
+                        <div class="view_box">
+                            <div class="box">
+                                <p class="t_bg">2018-03-19 09:42:48</p>
+                                <ul class="list_1">
+                                    <li>
+                                        <span>심사결과</span>
+                                        <p>승인</p>
+                                    </li>
+                                    <li>
+                                        <span>신청금액</span>
+                                        <p>1,000 만원</p>
+                                    </li>
+                                    <li>
+                                        <span>저달설정</span>
+                                        <p>50% | 15,000,000 원</p>
+                                    </li>
+                                    <li>
+                                        <span>서류간소화</span>
+                                        <p>Y</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- 심사이력 보기 시작 -->
+                            <div class="select-box type01">
+                                <a href="javascript:;">심사이력</a>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <span>심사일시</span>
+                                            <span>차종</span>
+                                            <span>대출금액</span>
+                                            <span>대출기간</span>
+                                            <span>심사결과</span>
+                                        </li>
+                                        <li>
+                                            <span>2018-05-13</span>
+                                            <span>카니발</span>
+                                            <span>1,000 만원</span>
+                                            <span>60</span>
+                                            <span>승인</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 심사이력 보기 끝 -->
+                        </div>
+                        <!-- 한도조회결과 끝 -->
+
+                        <!-- 장기선수금율 시작//-->
+                        <h2 class="pt8">장기선수금율에 따른 금리</h2>
+                        <div class="form_box">
+                            <p class="h_tit">장기선수금율</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="장기선수금율 선택">
+                                        <option>전체</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <p class="h_tit">장기선수금 입금유형</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" name="" class="disabled" disabled="disabled" title="장기선수금 입금유형 입력">
+                                </span>
+                            </div>
+
+                            <!-- 조회 버튼//-->
+                            <div class="btn_box pt16">
+                                <span class="btn"><button id="">조회</button></span>
+                            </div>
+                            <!-- //조회 버튼-->
+                        </div>
+                        <table class="dataType mt24">
+                            <caption>장기선수금 입금유형 - 장기선수금액, 금리, 대출신청금액, 월할부금 등으로 나타낸 표</caption>
+                            <colgroup>
+                                <col width="25%">
+                                <col width="25%">
+                                <col width="25%">
+                                <col width="25%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">장기선수금액</th>
+                                    <th scope="col">금리</th>
+                                    <th scope="col">대출신청금액</th>
+                                    <th scope="col">월할부금</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="a_r">0원</td>
+                                    <td>11.9%</td>
+                                    <td class="a_r">11,000,000원</td>
+                                    <td class="a_r">2,000,000원</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- //장기선수금율 끝-->
+
+                        <!-- 차량조회결과 시작//-->
+                        <h2 class="mt40">차량조회결과</h2>
+                        <div class="form_box">
+                            <p class="h_tit">차량번호</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" name="" title="차량조회결과 입력">
+                                </span>
+                            </div>
+
+                            <!-- 조회 버튼//-->
+                            <div class="btn_box pt16">
+                                <span class="btn"><button id="">조회</button></span>
+                            </div>
+                            <!-- //조회 버튼-->
+                        </div>
+                        <table class="viewType mt24">
+                            <caption>
+                                차량조회결과 - 차량번호, 조회결과 등으로 나타낸 표
+                            </caption>
+                            <colgroup>
+                                <col width="130px">
+                                <col width="%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">차량번호</th>
+                                    <td>00가0000</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">조회결과</th>
+                                    <td>진행가능</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- //차량조회결과 끝-->
+
+                        <!-- 추가정보입력 시작//-->
+                        <h2 class="mt40">추가정보입력</h2>
+                        <p class="icon_bullet">추가정보를 입력하셔야 “약정신청 문자발송＂이 가능합니다.</p>
+                        <div class="form_box">
+                            <p class="h_tit">판매자(매매상사)</p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" placeholder="" title="판매자(매매상사) 입력">
+                            </div>
+
+                            <p class="h_tit">판매자(매매상사) 주소</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" class="disabled" disabled="disabled" placeholder="" title="주소 입력">
+                                </span>
+                                <div class="btn_cont">
+                                    <button id="">우편번호 검색</button>
+                                </div>
+                            </div>
+                            <div class="text_data">
+                                <input type="text" name="" id="" placeholder="" title="상세주소 입력">
+                            </div>
+
+                            <p class="h_tit">판매직원</p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" placeholder="" title="판매직원 입력">
+                            </div>
+
+                            <p class="h_tit">차량 인도시기</p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" placeholder="" title="차량 인도시기 입력">
+                            </div>
+
+                            <p class="h_tit">실제차량구매금액</p>
+                            <div class="text_data">
+                                <span class="form form_text">
+                                    <input type="text" id="" name="" class="disabled" disabled="disabled" title="실제차량구매금액 입력">
+                                </span>
+                                <span class="txt">만원</span>
+                            </div>
+                        </div>
+                        <!-- //추가정보입력 끝-->
+
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn gray"><button id="">저장</button></span>
+                        <span class="btn"><button id="">약정신청 문자발송</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

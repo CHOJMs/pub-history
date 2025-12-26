@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <style>
+        @font-face {
+            font-family: 'pretendard';
+            font-style: normal;
+            font-weight: 400;
+            font-display: SWAP;
+            src: url('/static/common/css/font/Pretendard-Regular.eot');
+            /* IE9 Compat Modes */
+            src: local(''),
+                url('/static/common/css/font/Pretendard-Regular.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('/static/common/css/font/Pretendard-Regular.woff2') format('font-woff2'),
+                /* Super Modern Browsers */
+                url('/static/common/css/font/Pretendard-Regular.woff') format('woff'),
+                /* Modern Browsers */
+                url('/static/common/css/font/Pretendard-Regular.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+                url('/static/common/css/font/Pretendard-Regular.svg#Pretendard') format('svg');
+            /* Legacy iOS */
+        }
+
+        /* Pretendard-500 - latin_korean */
+        @font-face {
+            font-family: 'pretendard';
+            font-style: normal;
+            font-weight: 500;
+            font-display: SWAP;
+            src: url('/static/common/css/font/Pretendard-Medium.eot');
+            /* IE9 Compat Modes */
+            src: local(''),
+                url('/static/common/css/font/Pretendard-Medium.eot?#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('/static/common/css/font/Pretendard-Medium.woff2') format('font-woff2'),
+                /* Super Modern Browsers */
+                url('/static/common/css/font/Pretendard-Medium.woff') format('woff'),
+                /* Modern Browsers */
+                url('/static/common/css/font/Pretendard-Medium.ttf') format('truetype'),
+                /* Safari, Android, iOS */
+                url('/static/common/css/font/Pretendard-Medium.svg#Pretendard') format('svg');
+            /* Legacy iOS */
+        }
+
+        /* 공통 */
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: "pretendard", "SemiBold", "나눔 고딕", Dotum,
+                "droid sans fallback", "AppleSDGothicNeo", sans-serif;
+            font-size: 10px;
+            letter-spacing: -0.01em;
+            color: rgb(34, 36, 38);
+            min-width: 320px;
+            background: transparent;
+            line-height: 1.5;
+        }
+
+        body {
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            font-family: "pretendard", "SemiBold", "droid sans fallback",
+                "AppleSDGothicNeo", sans-serif, "돋움", Dotum;
+            -webkit-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            word-break: keep-all;
+        }
+
+        .videoCapture {
+            display: none;
+        }
+
+        @media screen and (max-width: 1280px) {
+
+            .videoCapture {
+                position: fixed;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow-y: auto;
+                min-height: 100%;
+                background-size: auto 100%;
+                display: block;
+
+            }
+
+            .popup-text {
+                position: fixed;
+                top:0;
+                left:0;
+                z-index: 1;
+                height: 64px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .popup-text h1 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                text-align: center;
+                font-size: 18px;
+                font-weight: 500;
+                padding-right: 0;
+                margin: 0;
+                color: #fff
+            }
+
+            .btn-close {
+                position: absolute;
+                right: 20px;
+                top: 16px;
+                width: 32px;
+                height: 32px;
+            }
+
+            .btn-close img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .camera-box {
+                width: 100%;
+                position: absolute;
+                top: 118px;
+                left: 50%;
+                transform: translateX(-50%);
+                width:320px;
+            }
+            .gradient{
+                position:absolute;
+                top:0;
+                left:0;
+                border-radius:50%;
+                width: 320px;
+                height: 320px;
+                margin: 0 0 46px;
+                background-image: linear-gradient(to bottom, #d9d9d9, #0a0a0a);
+            }
+
+            .fixed-btn-area {
+                width: 100%;
+            }
+
+            .btn_box {
+                display: table;
+                width: 100%;
+                table-layout: fixed;
+                text-align: center;
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                padding: 150px 20px 20px 20px;
+                background: url('/static/web/img/ui_common/camera_i05.png') no-repeat center 56px;
+                background-size: 335px 150px;
+            }
+
+            .btn_box .btn {
+                display: table-cell;
+                vertical-align: top;
+            }
+
+            .btn_box button {
+                width: 100%;
+                height: 56px;
+                color: #fff;
+                font-size: 16px;
+                text-align: center;
+                font-weight: 500;
+                font-family: "pretendard";
+                background: #1571eb;
+                border-radius: 8px;
+                border: none;
+            }
+
+            .txt {
+                font-size: 24px;
+                line-height: 1.42;
+                color: #fff;
+                width: 100%;
+                text-align: center;
+                margin-top: 0;
+                position: absolute;
+                top: 366px;
+                left: 0;
+            }
+
+            .camera {
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 320px;
+                height: 320px;
+                border-radius: 50%;
+                position: relative;
+                background-color:#dfdfdf;
+                /* 안쪽이 비치도록 마스크 (테두리 효과) */
+                mask: radial-gradient(farthest-side, transparent calc(100% - 8px), black 0);
+                -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 8px), black 0);
+            }
+            .camera-box.green .camera{
+                background: conic-gradient(from 0deg, #009a7f, #33de81, #009a7f);
+                animation: spin 2s linear infinite;
+            }
+            .camera-box.red .camera{
+                background-color: #ef4040;
+            }
+            .camera-box.ing .camera {
+                background: conic-gradient(
+                    from 0deg,
+                    #dfdfdf 0deg,
+                    #efefef 220deg,
+                    #33de81 280deg,
+                    #00c5a2 360deg
+                );
+                animation: spinGradient 2s linear infinite;
+            }
+            .camera-box.check .camera{
+                background: conic-gradient(from 0deg, #009a7f, #33de81, #009a7f);
+                animation: spin 2s linear infinite;
+            }
+            .camera-box.check .cover{
+                animation:scale .7s ease-out;
+                width:100%;
+                height:100%;
+                background:#fff;
+                border-radius:50%;
+            }
+            .checkmark {
+                display:flex;
+                justify-content:center;
+                align-items: center;
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+            }
+            .check-svg{
+                width:80px;
+                height:80px;
+                animation: bounce 0.6s ease forwards;
+                transform-origin: center;
+            }
+            .checked{
+                stroke-dasharray: 60;
+                stroke-dashoffset: 60;
+                animation: drawCheck 0.6s ease forwards;
+                animation-delay: 0.4s;
+            }
+            @keyframes bounce {
+                0% {
+                    transform: translateY(0);
+                }
+                30% {
+                    transform: translateY(12px);
+                }
+                60% {
+                    transform: translateY(-8px);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
+            /* 체크가 그려지는 애니메이션 */
+            @keyframes drawCheck {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+            @keyframes spinGradient {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+           @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            @keyframes scale {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(.5);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+            .camera-inner {
+                width: 100%;
+            }
+            .cover{overflow:hidden}
+
+        }
+    </style>
+
+    <title>얼굴 촬영 | iM캐피탈</title>
+
+</head>
+
+<body>
+    <div class="videoCapture">
+        <!-- Start : 촬영 영역 -->
+        <div data-useb-ocr="ocr" id="ocr_div">
+            <svg data-useb-ocr="maskBoxWrap" fill="none" xmlns="http://www.w3.org/2000/svg"
+                style="position: absolute; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; margin: 0px auto; overflow: hidden;">
+                <svg id="maskBoxContainer" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <mask id="mask-rect" style="display:block">
+                        <rect width="100%" height="100%" fill="white"></rect>
+                        <svg x="50%" y="122" overflow="visible">
+                            <rect id="maskBoxInner" width="310" height="310" x="-155" y="0" rx="160" ry="160"
+                                fill="black" stroke="black"></rect>
+                        </svg>
+                    </mask>
+                    <rect id="maskBoxOuter" x="0" y="0" width="100%" height="100%" fill="black"
+                        mask="url(#mask-rect)"></rect>
+                </svg>
+            </svg>
+
+            <!-- [D] 기본 : 클래스없음 / 카메라작동중 : green / 인식오류 : red / 비교중 : ing / 확인완료 : check -->
+            <div class="camera-box green">
+                <!-- [D] 카메라가 켜지면 gradient div는 display:none -->
+                <div class="gradient" style="display:none"></div>
+                <div class="cover">
+                    <div data-useb-ocr="middleUI" class="camera"></div>
+                </div>
+                <!-- [D] 확인완료인 경우 display:block -->
+                <div class="checkmark" style="display:none">
+                    <svg class="check-svg" viewBox="0 0 80 80">
+                        <circle class="circle" cx="40" cy="40" r="40" fill="#00a88b" />
+                        <path class="checked" d="M25 40 L36 51 L55 31" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+                <p class="txt">눈코입이 다 보이게<br>정면을 바라봐주세요</p>
+            </div>
+            
+        </div>
+        <!-- //End : 촬영 영역 -->
+        <div class="popup-text">
+            <h1>얼굴 촬영</h1>
+            <div class="btn-close"><a href="#"><img src="/static/web/img/ui_common/camera_close.png" alt="닫기"></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

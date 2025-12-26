@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>통합메세지관리 SMS | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>통합메세지관리 SMS</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <div class="tab-box">
+                    <ul>
+                        <li class="active"><a href="javascript:;" rel="tab-1">SMS발송</a></li>
+                        <li><a href="javascript:;" rel="tab-2">SMS수신</a></li>
+                        <li><a href="javascript:;" rel="tab-3">페이스북발송</a></li>
+                    </ul>
+
+                    <div class="tab-list">
+                        <div id="tab-1" class="sms-box">
+                            <h2>발송의뢰정보</h2>
+                            <table class="data-tbl">
+                                <colgroup>
+                                    <col width="50%">
+                                    <col width="50%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">고객번호</p>
+                                                <input type="tel" placeholder="" value="" disabled="disabled" class="disabled">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">고객명</p>
+                                                <input type="text" placeholder="" disabled="disabled" class="disabled">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">수신SMS번호</p>
+                                                <input type="tel" placeholder="" value="" disabled="disabled" class="disabled">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">발신SMS번호</p>
+                                                <input type="tel" placeholder="" value="" disabled="disabled" class="disabled">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">문서구분</p>
+                                                <div class="inp-area">
+                                                    <div class="selectbox">
+                                                        <select class="select">
+                                                            <option value="">선택</option>
+                                                            <option value="">문서구분</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">SMS요청일자</p>
+                                                <div class="calendar disabled">
+                                                    <input type="tel" value="2022-11-15" disabled="disabled"><img src="/static/admin/img/new_common/ico_cal.png">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="com-inp">
+                                                <p class="tit ver-top">SMS내용<em>*</em></p>
+                                                <textarea style="height: 112px;" placeholder="문구를 입력하세요"></textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- Start : 버튼 -->
+                            <div class="btn">
+                                <a href="#">발송</a>
+                            </div>
+                            <!-- //End : 버튼 -->
+
+                            <h2>발송이력</h2>
+                            <!-- Start : 발송이력(SMS발송) -->
+                            <table class="bbs-table">
+                                <colgroup>
+                                    <col width="120px">
+                                    <col width="150px">
+                                    <col width="150px">
+                                    <col width="150px">
+                                    <col width="%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">고객명</th>
+                                        <th scope="col">수신고객번호</th>
+                                        <th scope="col">수신번호</th>
+                                        <th scope="col">요청일자</th>
+                                        <th scope="col">문구내용</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>홍길동</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5" class="nodata"><span>정보가 없습니다.</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- //End : 발송이력(SMS발송) -->
+                        </div>
+
+                        <div id="tab-2" class="sms-box">
+                            <h2>발송의뢰정보</h2>
+                            <table class="data-tbl">
+                                <colgroup>
+                                    <col width="50%">
+                                    <col width="50%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">고객번호</p>
+                                                <input type="tel" placeholder="" value="" disabled="disabled" class="disabled">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">고객명</p>
+                                                <input type="text" placeholder="" disabled="disabled" class="disabled">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">기준일자</p>
+                                                <div class="calendar disabled">
+                                                    <input type="tel" value="2022-11-15" disabled="disabled"><img src="/static/admin/img/new_common/ico_cal.png">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="com-inp">
+                                                <p class="tit ver-top">SMS내용<em>*</em></p>
+                                                <textarea style="height: 112px;" placeholder="문구를 입력하세요"></textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- Start : 버튼 -->
+                            <div class="btn">
+                                <a href="#">발송</a>
+                            </div>
+                            <!-- //End : 버튼 -->
+
+                            <h2>발송이력</h2>
+                            <!-- Start : 발송이력(SMS수신) -->
+                            <div class="x-scrollBox">
+                                <table class="bbs-table" style="min-width: 1000px;">
+                                    <colgroup>
+                                        <col width="80px">
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="110px">
+                                        <col width="%">
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="130px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">번호</th>
+                                            <th scope="col">수신일자</th>
+                                            <th scope="col">수신시간</th>
+                                            <th scope="col">종류</th>
+                                            <th scope="col">메세지</th>
+                                            <th scope="col">이미지</th>
+                                            <th scope="col">이미지</th>
+                                            <th scope="col">이미지</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="8" class="nodata"><span>정보가 없습니다.</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- //End : 발송이력(SMS수신) -->
+                        </div>
+
+                        <div id="tab-3" class="sms-box">
+                            <h2>발송의뢰정보</h2>
+                            <table class="data-tbl">
+                                <colgroup>
+                                    <col width="50%">
+                                    <col width="50%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">고객번호</p>
+                                                <input type="tel" placeholder="" value="" disabled="disabled" class="disabled">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">고객명</p>
+                                                <input type="text" placeholder="" disabled="disabled" class="disabled">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">문서구분</p>
+                                                <div class="inp-area">
+                                                    <div class="selectbox">
+                                                        <select class="select">
+                                                            <option value="">선택</option>
+                                                            <option value="">문서구분</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">요청일자</p>
+                                                <div class="calendar disabled">
+                                                    <input type="tel" value="2022-11-15" disabled="disabled"><img src="/static/admin/img/new_common/ico_cal.png">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">수신SMS번호</p>
+                                                <input type="tel" placeholder="" value="" disabled="disabled" class="disabled">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">발신SMS번호</p>
+                                                <input type="tel" placeholder="" value="" disabled="disabled" class="disabled">
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="com-inp">
+                                                <p class="tit ver-top">SMS내용<em>*</em></p>
+                                                <textarea style="height: 112px;" placeholder="문구를 입력하세요"></textarea>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- Start : 버튼 -->
+                            <div class="btn">
+                                <a href="#">발송</a>
+                            </div>
+                            <!-- //End : 버튼 -->
+
+                            <h2>발송이력</h2>
+                            <!-- Start : 발송이력(페이스북발송) -->
+                            <div class="x-scrollBox">
+                                <table class="bbs-table" style="min-width: 1300px;">
+                                    <colgroup>
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="%">
+                                        <col width="%">
+                                        <col width="%">
+                                        <col width="%">
+                                        <col width="%">
+                                        <col width="%">
+                                        <col width="%">
+                                        <col width="%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">고객번호</th>
+                                            <th scope="col">여신번호</th>
+                                            <th scope="col">요청일자</th>
+                                            <th scope="col">문구구분</th>
+                                            <th scope="col">발송 성공여부</th>
+                                            <th scope="col">에러코드</th>
+                                            <th scope="col">에러서브코드</th>
+                                            <th scope="col">에러메세지</th>
+                                            <th scope="col">메신져ID</th>
+                                            <th scope="col">요청번호</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="10" class="nodata"><span>정보가 없습니다.</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- //End : 발송이력(페이스북발송) -->
+                        </div>
+                    </div>
+
+                </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

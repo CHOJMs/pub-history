@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/swiper-bundle.min.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+<script  src="/static/admin/js/swiper-bundle.min.js"></script>
+
+<title>리파이낸싱 보기 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                    <li><a href="#" class="on">사후관리</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#">반납차량</a></li>
+                        <li><a href="#" class="on">리파이낸싱</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+                <div class="head-tit care">
+                    <div class="tit-left">
+                        <h2>리파이낸싱</h2>
+                    </div>
+                    <div class="btn-area">
+                        <a href="#none" class="line">삭제</a>
+                        <a href="#none">수정</a>
+                        <a href="#none" class="black">목록</a>
+                    </div>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <h3>반납차량정보</h3>
+                    <p class="line-top"></p>
+
+                    <p class="s-tit">기본정보</p>
+                    <!-- Start : 리스트 -->
+                    <table class="bbs-table-view1"> <!-- 행이 hover인 경우 : tbl-hover 추가 -->
+                        <colgroup>
+                            <col style="width:240px;">
+                            <col>
+                            <col style="width:240px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>국적</th>
+                                <td>한국</td>
+                                <th>제조사</th>
+                                <td>현대</td>
+                            </tr>
+                            <tr>
+                                <th>모델</th>
+                                <td>디올 뉴산타페</td>
+                                <th>세부모델</th>
+                                <td>가솔린 2.5터보 5인승</td>
+                            </tr>
+                            <tr>
+                                <th>연식</th>
+                                <td>2023년 1월</td>
+                                <th>주행거리</th>
+                                <td>3,000km</td>
+                            </tr>
+                            <tr>
+                                <th>중고판매 신고가격</th>
+                                <td>1,230만원</td>
+                                <th>사고정보</th>
+                                <td>무사고</td>
+                            </tr>
+                            <tr>
+                                <th>차량번호</th>
+                                <td colspan="3">KMHEL13CPYA000222</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 리스트 -->
+
+                    <p class="s-tit">성능점검표 <span class="num">총 <em>20</em>개</span></p>
+                    <table class="file-tbl">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="50%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="s-tit">수리견적표 <span class="num">총 <em>20</em>개</span></p>
+                    <table class="file-tbl">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="50%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="f-ico">
+                                        <a href="#none" class="file">글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기글쓰기.png</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>수리완료사진</h3>
+                    <p class="line-top"></p>
+                    <p class="s-tit">수리완료사진 <span class="num">총 <em>20</em>개</span></p>
+                    <div class="photo-wrap">
+                        <ul class="list">
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="/static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#none">
+                                    <img src="../../static/admin/img/common/car_sample.jpg">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3>리파이낸싱</h3>
+                    <p class="line-top"></p>
+
+                    <p class="s-tit">기본정보</p>
+                    <!-- Start : 리스트 -->
+                    <table class="bbs-table-view1"> <!-- 행이 hover인 경우 : tbl-hover 추가 -->
+                        <colgroup>
+                            <col style="width:240px;">
+                            <col>
+                            <col style="width:240px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>렌트 이용자</th>
+                                <td>개인</td>
+                                <th>대물한도</th>
+                                <td>1억</td>
+                            </tr>
+                            <tr>
+                                <th>모델</th>
+                                <td>디올 뉴산타페</td>
+                                <th>도착지</th>
+                                <td>서울</td>
+                            </tr>
+                            <tr>
+                                <th>연식</th>
+                                <td>2023년 1월</td>
+                                <th>주행거리</th>
+                                <td>1만 km</td>
+                            </tr>
+                            <tr>
+                                <th>중고판매 신고가격</th>
+                                <td>30%</td>
+                                <th>보증금</th>
+                                <td>30%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 리스트 -->
+
+                    <div class="total-box">
+                        <div class="inner">
+                            <p>최종 월 렌탈료 <span class="price">329,678</span><span>원</span></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<deco> 
+    <fileData filename="itemInspRegister.js" filepath="/src/main/webapp/static/web/js/page/insp" ischanged="0" lastversion="3" tstversion="0" realversion="1" dotversion="2" itemid="000000931038" ecmMd5sum="2434de568225a25d5bb1fdf65555efdb" ecmTstmd5sum="" lastChangedDate="1638426945000" editor="최세근:10136" lastUser="최세근:10136" filestatus="운영중:0" islock="1" isAuthority="1" rsrccd="A2" rsrccdcodename="static" rsrcinfo="0100000000110000000000010000010000000000100000001000000001000000000" jobcd="HP" jobname="홈페이지" syscd="00102" sysmsg="홈페이지" srid=""/> 
+</deco>

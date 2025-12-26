@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우편물 수령지 변경</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text mb10">
+                <h1>우편물 수령지 변경</h1>
+                <p>대출 받으신 상품 별로 우편물 수령지를 변경하실 수 있습니다.</p>
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+
+                <div class="pop_cont">
+
+                    <p class="h_tit mb10">개인신용대출_직장인론(000000000000)</p>
+                    <div class="text_data radio-box-type1 grid3">
+                        <div>
+                            <input type="radio" name="r31" value="" id="r31" checked="checked" aria-hidden="true" title="자택 체크">
+                            <label for="r31" role="radio" aria-checked="true"><span>자택</span></label>
+                        </div>
+                        <div>
+                            <input type="radio" name="r31" value="" id="r312" aria-hidden="true" title="직장 체크">
+                            <label for="r32" role="radio" aria-checked="false"><span>직장</span></label>
+                        </div>
+                        <div>
+                            <input type="radio" name="r31" value="" id="r33" aria-hidden="true" title="이메일 체크">
+                            <label for="r33" role="radio" aria-checked="false"><span>이메일</span></label>
+                        </div>
+                    </div>
+                    <div class="text_data radio-box-type1 grid3">
+                        <div>
+                            <input type="radio" name="r31" value="" id="r34" aria-hidden="true" title="기타 체크">
+                            <label for="r34" role="radio" aria-checked="false"><span>기타</span></label>
+                        </div>
+                        <div>
+                            <input type="radio" name="r31" value="" id="r35" aria-hidden="true" title="수령하지않음 체크">
+                            <label for="r35" role="radio" aria-checked="false"><span>수령하지않음</span></label>
+                        </div>
+                        <div></div>
+                    </div>
+
+                    <p class="h_tit mb10">신차오토론(000000000000)</p>
+                    <div class="text_data radio-box-type1 grid3">
+                        <div>
+                            <input type="radio" name="r41" value="" id="r41" checked="checked" aria-hidden="true" title="자택 체크">
+                            <label for="r41" role="radio" aria-checked="true"><span>자택</span></label>
+                        </div>
+                        <div>
+                            <input type="radio" name="r41" value="" id="r42" aria-hidden="true" title="직장 체크">
+                            <label for="r42" role="radio" aria-checked="false"><span>직장</span></label>
+                        </div>
+                        <div>
+                            <input type="radio" name="r41" value="" id="r43" aria-hidden="true" title="이메일 체크">
+                            <label for="r43" role="radio" aria-checked="false"><span>이메일</span></label>
+                        </div>
+                    </div>
+                    <div class="text_data radio-box-type1 grid3">
+                        <div>
+                            <input type="radio" name="r41" value="" id="r44" aria-hidden="true" title="기타 체크">
+                            <label for="r44" role="radio" aria-checked="false"><span>기타</span></label>
+                        </div>
+                        <div>
+                            <input type="radio" name="r41" value="" id="r45" aria-hidden="true" title="수령하지않음 체크">
+                            <label for="r45" role="radio" aria-checked="false"><span>수령하지않음</span></label>
+                        </div>
+                        <div></div>
+                    </div>
+
+                    <p class="h_tit mb10">스탁론(000000000000)</p>
+                    <div class="text_data radio-box-type1 grid3">
+                        <div>
+                            <input type="radio" name="r51" value="" id="r51" checked="checked" aria-hidden="true" title="자택 체크">
+                            <label for="r51" role="radio" aria-checked="true"><span>자택</span></label>
+                        </div>
+                        <div>
+                            <input type="radio" name="r51" value="" id="r52" aria-hidden="true" title="직장 체크">
+                            <label for="r52" role="radio" aria-checked="false"><span>직장</span></label>
+                        </div>
+                        <div>
+                            <input type="radio" name="r51" value="" id="r53" aria-hidden="true" title="이메일 체크">
+                            <label for="r53" role="radio" aria-checked="false"><span>이메일</span></label>
+                        </div>
+                    </div>
+                    <div class="text_data radio-box-type1 grid3">
+                        <div>
+                            <input type="radio" name="r51" value="" id="r54" aria-hidden="true" title="기타 체크">
+                            <label for="r54" role="radio" aria-checked="false"><span>기타</span></label>
+                        </div>
+                        <div>
+                            <input type="radio" name="r51" value="" id="r55" aria-hidden="true" title="수령하지않음 체크">
+                            <label for="r55" role="radio" aria-checked="false"><span>수령하지않음</span></label>
+                        </div>
+                        <div></div>
+                    </div>
+
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">변경하기</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

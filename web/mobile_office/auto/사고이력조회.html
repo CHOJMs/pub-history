@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>차량정보확인 사고이력조회 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">오토 재고금융</a>
+							<ul>
+								<li><a href="">재고금융 신청</a></li>
+								<li><a href="">재고금융 현황</a></li>
+                                <li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+						<li class=""><a href="">중고차 제휴</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">한도조회 신청</a></li>
+                                <li><a href="">한도조회 신청(유선녹취)</a></li>
+                                <li><a href="">한도조회 상담이력</a></li>
+								<li><a href="">자동차 시세확인</a></li>
+								<li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+				<h2 class="tl">차량정보 확인</h2>
+                <div class="box_form scoll mob_nobtn"><!-- 하단에 버튼이 없는경우 : mob_nobtn 클래스명 추가-->
+
+					<!-- 탭 시작// -->
+					<div class="tabwrap">
+						<div class="tab_navi">
+							<ul>
+								<li><a href="#" class="on" aria-label="사고이력 조회 선택됨">사고이력 조회</a></li>
+								<li><a href="#" aria-label="자동차원부조회 선택안됨">자동차 원부조회</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //탭 끝 -->
+
+					<div class="form_box">
+						<p class="h_tit">차량번호</p>
+						<div class="text_data">
+							<span class="form">
+							  <input type="tel" id="" placeholder="1981-01-25" title="차량번호 입력">
+							</span>
+						</div>
+						<div class="btn_box mt16">
+							<span class="btn"><a href="#">조회</a></span>
+						</div>
+					</div>
+
+					<div class="select-box sel_view a_r t_line mt40">
+						<ul>
+							<li>
+								<span>차량번호</span>
+								<p>111가1111</p>
+							</li>
+							<li>
+								<span>최초등록일</span>
+								<p>2009-01-02</p>
+							</li>
+							<li>
+								<span>색상</span>
+								<p>흰색</p>
+							</li>
+							<li>
+								<span>연식</span>
+								<p>2002</p>
+							</li>
+							<!-- 240703 추가 -->
+							<li class="type">
+								<span>차명</span>
+								<div class="add_area">
+									<div class="btn_table">
+										<a href="#" class="btn">차량 시세확인하기</a>
+									</div>
+									<p>싼타페(SANTAFE)</p>
+								</div>
+							</li>
+							<!-- //240703 추가 -->
+							<li>
+								<span>차량세부모델</span>
+								<p>세부모델</p>
+							</li>
+                            <li>
+								<span>사용연료</span>
+								<p>휘발유</p>
+							</li>
+                            <li>
+								<span>배기량</span>
+								<p>1,968</p>
+							</li>
+                            <li>
+								<span>전손이력</span>
+								<p>0회</p>
+							</li>
+                            <li>
+								<span>도난이력</span>
+								<p>0회</p>
+							</li>
+                            <li>
+								<span>침수이력</span>
+								<p>0회</p>
+							</li>
+                            <li>
+								<span>내차피해횟수</span>
+								<p>0회</p>
+							</li>
+                            <li>
+								<span>대여용도 사용이력</span>
+								<p>N</p>
+							</li>
+                            <li>
+								<span>영업용도 사용이력</span>
+								<p>N</p>
+							</li>
+                            <li>
+								<span>관용용도 사용이력</span>
+								<p>N</p>
+							</li>
+                            <li>
+								<span>내차피해보험금</span>
+								<p>0원</p>
+							</li>
+                            <li>
+								<span>미확정여부</span>
+								<p>N</p>
+							</li>
+                            <li>
+								<span>미확정건수</span>
+								<p>0회</p>
+							</li>
+                            <li>
+								<span>미확정금액</span>
+								<p>0원</p>
+							</li>
+                            <li>
+								<span>총내차피해금액</span>
+								<p>0원</p>
+							</li>
+                            <li>
+								<span>주행거리정보 유무</span>
+								<p>N</p>
+							</li>
+                            <li>
+								<span>주행거리 수집일</span>
+								<p>2009-01-02</p>
+							</li>
+                            <li>
+								<span>주행거리 제공처</span>
+								<p>ABC</p>
+							</li>
+                            <li>
+								<span>주행거리</span>
+								<p>200,000</p>
+							</li>
+						</ul>
+					</div>
+
+					<p class="call_phone1 mt0"><span class="tit">문의전화</span> <span class="phone">1566-0050</span> (평일 오전 9시 ~ 오후 6시)</p>
+
+				</div>
+                <!-- 내용 끝 -->
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+</body>
+</html>

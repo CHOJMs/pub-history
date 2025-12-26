@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>즉시출고차량 목록 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#" class="on">즉시출고차량</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#" class="on">즉시출고차량 관리</a></li>
+                        <li><a href="#">나의차량 조회</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <h2>즉시출고차량</h2>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <!-- Start : 검색 -->
+                    <div class="search-wrap flex-wrap"><!-- [D]좌우 정렬인 경우 : flex-wrap 추가 -->
+                        <div class="inp-area">
+                            <div class="selectbox w-160">
+                                <select class="select">
+                                    <option value="" selected>제조사 전체</option>
+                                    <option value="">현대</option>
+                                    <option value="">기아</option>
+                                    <option value="">외산</option>
+                                </select>
+                            </div>
+                            <div class="selectbox w-160">
+                                <select class="select">
+                                    <option value="" selected>모델 전체</option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div class="selectbox w-180">
+                                <select class="select">
+                                    <option value="" selected>차량상태 전체</option>
+                                    <option value="">준비</option>
+                                    <option value="">예시</option>
+                                    <option value="">배정</option>
+                                    <option value="">출고</option>
+                                    <option value="">인도</option>
+                                </select>
+                            </div>
+                            <div class="selectbox w-180">
+                                <select class="select">
+                                    <option value="" selected>계약상태 전체</option>
+                                    <option value="">준비</option>
+                                    <option value="">공개</option>
+                                    <option value="">선점요청</option>
+                                    <option value="">선점확정</option>
+                                    <option value="">계약</option>
+                                    <option value="">완료</option>
+                                </select>
+                            </div>
+                            <input type="text" placeholder="모델명 검색">
+                            <div class="calendar">
+                                <input type="tel" value="2022-11-15"><img src="/static/admin/img/new_common/ico_cal.png">
+                                <span class="dash">-</span>
+                                <input type="tel" value="2022-12-15"><img src="/static/admin/img/new_common/ico_cal.png">
+                            </div>
+                            <a href="#" class="btn-search">조회</a>
+                        </div>
+                        <div class="btn">
+                            <a href="#" class="blue">등록</a>
+                        </div>
+                    </div>
+                    <!-- //End : 검색 -->
+
+                    <!-- Start : 리스트 -->
+                    <div class="x-scrollBox">
+                        <table class="bbs-table tbl-hover" style="min-width: 2800px;"><!-- 행이 hover인 경우 : tbl-hover 추가 -->
+                            <colgroup>
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="10%">
+                                <col width="100px">
+                                <col width="100px">
+                                <col width="100px">
+                                <col width="100px">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="10%">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="8%">
+                                <col width="8%">
+                                <col width="6%">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="130px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">계약번호</th>
+                                    <th scope="col">발주일자</th>
+                                    <th scope="col">상품구분</th>
+                                    <th scope="col">차량모델명</th>
+                                    <th scope="col">출고방식</th>
+                                    <th scope="col">전시차</th>
+                                    <th scope="col">차량상태</th>
+                                    <th scope="col">계약상태</th>
+                                    <th scope="col">예시일</th>
+                                    <th scope="col">배정일</th>
+                                    <th scope="col">옵션내역</th>
+                                    <th scope="col">기본가격</th>
+                                    <th scope="col">옵션금액</th>
+                                    <th scope="col">탁송료</th>
+                                    <th scope="col">최종차량가격</th>
+                                    <th scope="col">외장</th>
+                                    <th scope="col">내장</th>
+                                    <th scope="col">메모</th>
+                                    <th scope="col">차량등록직원</th>
+                                    <th scope="col">출고지점</th>
+                                    <th scope="col"></th>
+                                  </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AA-123456</td>
+                                    <td>2022-12-29</td>
+                                    <td>리스</td>
+                                    <td>아이오닉 아이오닉 6 롱레인지 익스클루시브 2WD (18인치)</td>
+                                    <td>특판줄고</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td style="color: red;">선점요청</td>
+                                    <td>2022-12-29</td>
+                                    <td>2022-12-29</td>
+                                    <td>빌트인 캠(보조배터리 포함),와이드 선루프,현대 스마트센스</td>
+                                    <td>59,693,249</td>
+                                    <td>2,930,000</td>
+                                    <td></td>
+                                    <td>62,623,249</td>
+                                    <td>세레니티 화이트 펄</td>
+                                    <td></td>
+                                    <td>전기차</td>
+                                    <td>노송록(건우모터스)</td>
+                                    <td>현대특판_리스</td>
+                                    <td><a href="#" class="btn">선점요청</a></td>
+                                </tr>
+                                <tr class="bor-line">
+                                    <td colspan="21" class="nodata"><span>정보가 없습니다.</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //End : 리스트 -->
+                    <!-- Start : 페이징 -->
+                    <div class="paging-box">
+                        <a href="#none" class="first">맨처음</a>
+                        <a href="#none" class="prev">이전</a>
+                        <a href="#none" class="current">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none" class="next">다음</a>
+                        <a href="#none" class="end">맨마지막</a>
+                    </div>
+                    <!-- //End : 페이징 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

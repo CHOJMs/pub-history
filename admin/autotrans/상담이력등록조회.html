@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>메모등록조회 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+
+    <script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>상담이력등록조회</h1>
+            </div>
+            <div class="popup-contents flex-col-btm"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <div class="flex-item-top">
+                    <div class="item-cnt">
+                        <table class="data-tbl">
+                            <colgroup>
+                                <col width="100%">
+                            </colgroup>
+                            <tbody>
+                                <!--20250717 상담유형, 상담분류 필드 추가-->
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">상담유형</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="" selected>선택</option>
+                                                        <option value="">심사결과요청</option>
+                                                        <option value="">입금확인요청</option>
+                                                        <option value="">전자약정요청</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit">상담분류</p>
+                                            <div class="inp-area">
+                                                <div class="selectbox">
+                                                    <select class="select">
+                                                        <option value="" selected>선택</option>
+                                                        <option value="">심사결과요청</option>
+                                                        <option value="">입금확인요청</option>
+                                                        <option value="">전자약정요청</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <!--20250717 상담이력 -> 상담내용 텍스트 변경-->
+                                    <td>
+                                        <div class="com-inp">
+                                            <p class="tit ver-top">상담내용<span class="s-txt">1 / 100</span></p><!-- 2023-08-08 수정 -->
+                                            <textarea style="height: 112px;" placeholder="내용을 입력하세요 (100자 이내)"></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Start : 버튼 -->
+                        <div class="btn">
+                            <a href="#">등록</a>
+                        </div>
+                        <!-- //End : 버튼 -->
+                    </div>
+                </div>
+
+                <div class="flex-item-btm">
+                    <h2>상담이력</h2>
+                    <!-- 20250718 class="x-scrollBox" 추가,bbs-table에 style="min-width: 1600px;" 추가, col width 사이즈 수정 -->
+                    <div class="x-scrollBox">
+                        <table class="bbs-table" style="min-width: 1400px;">
+                            <colgroup>
+                                <col width="50px">
+                                <col width="7%">
+                                <col width="7%">
+                                <col width="8%">
+                                <col width="8%">
+                                <col width="%">
+                                <col width="8%">
+                                <col width="8%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">등록일</th>
+                                    <th scope="col">등록시간</th>
+                                    <!--20250717상담유형 상담분류 필드추가, 상담이력->상담내용 텍스트 변경-->
+                                    <th scope="col">상담유형</th>
+                                    <th scope="col">상담분류</th>
+                                    <th scope="col">상담내용</th>
+                                    <th scope="col">등록직원번호</th>
+                                    <th scope="col">등록직원명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2023-12-12</td>
+                                    <td>17:41</td>
+                                    <td>test</td>
+                                    <!--20250717 내용 추가-->
+                                    <!--20250718 class="a-l" 삭제-->
+                                    <td>test</td>         
+                                    <!--20250718 class="a-l" 추가-->                       
+                                    <td class="a-l">이 고정형 영상정보처리기기 운영·관리방침은 2013년 03월 11일에 제정되었으며 법령·정책 또는 보안 기술의 변경에 따라 추가·삭제 및 수정이 있을 시에는 시행하기 최소 7일 전 본 기관 홈페이지를 통해 변경사유 및 내용 등을 공지하도록 하겠습니다.</td>
+                                    <td>EX9999</td>
+                                    <td>나승자</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>2023-12-12</td>
+                                    <td>17:41</td>
+                                    <!--20250718 class="a-l" 삭제-->
+                                    <td>test</td>
+                                    <!--20250717 내용 추가-->
+                                    <td>test</td>
+                                    <!--20250718 class="a-l" 추가-->
+                                    <td class="a-l">test</td>
+                                    <td>EX9999</td>
+                                    <td>나승자</td>
+                                </tr>
+                                <tr class="bor-line">
+                                    <!--20250717 colspan="6" -> colspan="8" 변경-->
+                                    <td colspan="8" class="nodata"><span>수신된 데이터가 없습니다.</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

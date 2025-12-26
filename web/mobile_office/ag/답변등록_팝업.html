@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>답변 등록 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>답변 등록</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+						<div class="form_box">
+                            <p class="h_tit">답변 내용</p>
+                            <span class="textarea_box">
+                                <textarea id="" placeholder="" title="내용 입력" style="height:100px;"></textarea>
+                            </span>
+                            <div class="flex-btn mt32">
+                                <p class="h_tit">파일첨부</p>
+                                <span class="btn btn-blk">
+                                    <a href="#" type="button">파일첨부</a>
+                                </span>
+                            </div>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" class="disabled" disabled="disabled" placeholder="" title="">
+                                </span>					
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn gray"><button id="">취소</button></span>
+                        <span class="btn"><button id="">등록</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

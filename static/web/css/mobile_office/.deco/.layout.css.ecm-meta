@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<deco> 
+    <fileData filename="layout.css" filepath="/src/main/webapp/static/web/css/mobile_office" ischanged="0" lastversion="2" tstversion="0" realversion="1" dotversion="1" itemid="000000930487" ecmMd5sum="f9003bec2df2b13874f219d1acad910f" ecmTstmd5sum="" lastChangedDate="1663115960000" editor="박현빈-아크로퓨처:63712" lastUser="박현빈-아크로퓨처:63712" filestatus="운영중:0" islock="1" isAuthority="1" rsrccd="A2" rsrccdcodename="static" rsrcinfo="0100000000110000000000010000010000000000100000001000000001000000000" jobcd="HP" jobname="홈페이지" syscd="00102" sysmsg="홈페이지" srid=""/> 
+</deco>

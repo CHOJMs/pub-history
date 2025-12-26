@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+
+<title>크롬 브라우저로 열기 | iM캐피탈</title>
+
+<style>
+@font-face {
+  font-family: 'pretendard';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/static/common/css/font/Pretendard-Regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('./static/common/css/font/Pretendard-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/static/common/css/font/Pretendard-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/static/common/css/font/Pretendard-Regular.woff') format('woff'), /* Modern Browsers */
+       url('/static/common/css/font/Pretendard-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/static/common/css/font/Pretendard-Regular.svg#Pretendard') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'pretendard';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/static/common/css/font/Pretendard-Bold.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/static/common/css/font/Pretendard-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/static/common/css/font/Pretendard-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/static/common/css/font/Pretendard-Bold.woff') format('woff'), /* Modern Browsers */
+       url('/static/common/css/font/Pretendard-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/static/common/css/font/Pretendard-Bold.svg#Pretendard') format('svg'); /* Legacy iOS */
+}
+html,
+body {margin: 0; padding: 0; width: 100%; height: 100%; font-family: "pretendard", "SemiBold", "나눔 고딕", Dotum, "droid sans fallback", "AppleSDGothicNeo", sans-serif; font-size: 10px; letter-spacing: -0.01em; color: rgb(34, 36, 38); min-width: 320px; background: transparent; line-height: 1.5;} /* 20180710 : color:#666; -> #333으로 변경 */
+.wrap {width: 100%; min-height: 100%;}
+
+button {border-radius: 4px; border: none;}
+
+/* 크롬브라우저 열기 */
+.chrome-wrap {padding-top: 138px; text-align: center;}
+.chrome-wrap .img-chrome {width: 220px; height: 120px; margin: 0 auto 40px; background: url('/static/web/img/ui_common/img_chrome.png') center top no-repeat; background-size:220px 120px;}
+.chrome-wrap .chr-tl {font-size: 24px; font-weight: 700; margin-bottom: 16px;}
+.chrome-wrap .chr-txt {font-size: 16px; font-weight: 400; margin-bottom: 16px; color: #707478;}
+.pc-fixed-btn {margin-top: 220px; position: relative;}
+
+/* fixed : 버튼 */
+.fixed-btn-area {position: fixed; left: 50%; bottom: 200px; width: 560px;  padding-bottom: 4rem; transform: translatex(-50%); box-sizing: border-box; z-index: 2; background: linear-gradient(180deg, #ffffff2e 8%, #ffffff 100%); padding: 0 2rem 2.4rem 2rem;}
+.btn-box {display: table; width: 100%; table-layout: fixed; text-align: center;}
+.btn-box .btn {display: table-cell; padding-left: 5px; vertical-align: top;}
+.btn-box .btn button {width: 100%; height: 56px; color: #fff; background: rgb(21, 113, 235); border-radius: 8px; font-size: 16px; text-align: center; font-weight: 500;}
+
+@media screen and (max-width: 1280px){
+    .fixed-btn-area {width: 100%; bottom: 0;}
+}
+</style>
+</head>
+<body>
+    <div class="wrap">
+
+        <!-- centents 시작 -->
+        <div class="chrome-wrap">
+            <p class="img-chrome"></p>
+            <div class="chr-tl">안전하고 원활한 서비스를 위해<br> 크롬 브라우저로 이동합니다</div>
+            <div class="chr-txt">iM캐피탈 홈페이지는 크롬 브라우저에<br> 최적화되어 있어 현재 접속중인 모바일 브라우저는<br> 서비스 이용 시 오류가 발생할 가능성이 있습니다.</div>
+        </div>
+        <!-- 내용 끝 -->
+
+        <!-- Start : 버튼 -->
+        <div class="fixed-btn-area">
+            <div class="btn-box">
+                <span class="btn"><button type="button">크롬 브라우저로 열기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+            </div>
+        </div>
+        <!-- //End : 버튼 -->
+        <!-- centents 끝 -->
+
+    </div>
+</body>
+</html>

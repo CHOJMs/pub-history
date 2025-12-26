@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 오토승계 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td>2025-06-19</td>
+                        <td>page</td>
+                        <td>진행현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/진행현황.html">진행현황.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-06-19 : 조회내역 테이블에 여신상담번호,여신신청번호 항목 위치변경</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td>2025-07-25 </td>
+                        <td>page</td>
+                        <td>승계상담 상세(리스)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/승계상담_상세(리스).html">승계상담_상세(리스).html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-06-10 : 안내장 발송 셀렉트 2개로 변경</li>
+                                <li>2025-06-19 : 항목 수정 및 순서 재배치</li>
+                                <li>2025-07-10 : 중도해지 시뮬레이션, 신청이동 버튼 추가</li>
+                                <li>2025-07-10 : 가상계좌 iM뱅크, 총 입금액, 입금 예상금액 항목 추가</li>
+                                <li>2025-07-10 : 메모 -> 유형, 담당자 알림, 담당자, 담당자 확인, 담당자 확인내용 항목추가</li>
+                                <li>2025-07-10 : 상담이력추가</li>
+                                <li>2025-07-10 : 타이틀 삼당이력 -> 심사의견 변경</li>
+                                <li>2025-07-17 : 약정방식 및 법인/승계전 차주 정보 -> 필드들 위치및 텍스트변경  가상계좌 인풋 변경, 메모 -> 메모유형, 메모 위치 변경 및 필드 내용 (메모-> 메모유형, 유형->메모) 변경 </li>
+                                <li>2025-07-18 : 20250718 class="x-scrollBox" 추가,bbs-table에 style="min-width: 1600px;" 추가, col width 사이즈 수정 </li>
+                                <li>2025-07-22 : 추가운행부담금표시 추가</li>
+                                <li>2025-07-24 : 추가운행부담금표시 툴팁으로 변경, 양도자,양수자가상계좌에 따른 필드 추가</li>
+                                <li>2025-07-25 : 안내장 발송 타이틀->안내장 및 근보증서 발송 텍스트 변경, 셀렉 옵션추가</li>
+                                <li>2025-07-29 : 초과 운행 부담금 텍스트 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td>2025-07-25</td>
+                        <td>page</td>
+                        <td>승계상담 상세(렌탈)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/승계상담_상세(렌탈).html">승계상담_상세(렌탈).html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-06-10 : 안내장 발송 셀렉트 2개로 변경</li>
+                                <li>2025-06-19 : 항목 수정 및 순서 재배치</li>
+                                <li>2025-07-10 : 중도해지 시뮬레이션, 신청이동 버튼 추가</li>
+                                <li>2025-07-10 : 가상계좌 iM뱅크, 총 입금액, 입금 예상금액 항목 추가</li>
+                                <li>2025-07-10 : 메모 -> 유형, 담당자 알림, 담당자, 담당자 확인, 담당자 확인내용 항목추가</li>
+                                <li>2025-07-10 : 상담이력추가</li>
+                                <li>2025-07-10 : 타이틀 삼당이력 -> 심사의견 변경</li>
+                                <li>2025-07-17 : 약정방식 및 법인/승계전 차주 정보 -> 필드들 위치및 텍스트변경  가상계좌 인풋 변경, 메모 -> 메모유형, 메모 위치 변경 및 필드 내용 (메모-> 메모유형, 유형->메모) 변경 </li>
+                                <li>2025-07-18 : 20250718 class="x-scrollBox" 추가,bbs-table에 style="min-width: 1600px;" 추가, col width 사이즈 수정 </li>
+                                <li>2025-07-22 : 추가운행부담금표시 추가</li>
+                                <li>2025-07-24 : 추가운행부담금표시 툴팁으로 변경, 양도자,양수자가상계좌에 따른 필드 추가</li>
+                                <li>2025-07-25 : 안내장 발송 타이틀->안내장 및 근보증서 발송 텍스트 변경, 셀렉 옵션추가</li>
+                                <li>2025-07-29 : 초과 운행 부담금 텍스트 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td>2025-07-24</td>
+                        <td>page</td>
+                        <td>승계신청 상세(리스)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/승계신청_상세(리스).html">승계신청_상세(리스).html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-06-19 : 항목 수정 및 순서 재배치</li>
+                                <li>2025-07-10 : 가상계좌 iM뱅크, 총 입금액, 입금 예상금액 항목 추가</li>
+                                <li>2025-07-10 : 메모 추가</li>
+                                <li>2025-07-10 : 서류제출 우측 서류등록 버튼 추가</li>
+                                <li>2025-07-17 : 약정방식 및 법인/승계전 차주 정보 -> 필드들 위치및 텍스트변경  가상계좌 인풋 변경, 메모 -> 메모유형, 메모 위치 변경 및 필드 내용 (메모-> 메모유형, 유형->메모) 변경 </li>
+                                <li>2025-07-18 : 20250718 class="x-scrollBox" 추가,bbs-table에 style="min-width: 1600px;" 추가, col width 사이즈 수정 </li>
+                                <li>2025-07-24 : 양도자,양수자가상계좌에 따른 필드 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td>2025-07-24</td>
+                        <td>page</td>
+                        <td>승계신청 상세(렌탈)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/승계신청_상세(렌탈).html">승계신청_상세(렌탈).html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-06-19 : 항목 수정 및 순서 재배치</li>
+                                <li>2025-07-10 : 가상계좌 iM뱅크, 총 입금액, 입금 예상금액 항목 추가</li>
+                                <li>2025-07-10 : 메모 추가</li>
+                                <li>2025-07-10 : 서류제출 우측 서류등록 버튼 추가</li>
+                                <li>2025-07-17 : 약정방식 및 법인/승계전 차주 정보 -> 필드들 위치및 텍스트변경  가상계좌 인풋 변경, 메모 -> 메모유형, 메모 위치 변경 및 필드 내용 (메모-> 메모유형, 유형->메모) 변경 </li>
+                                <li>2025-07-18 : 20250718 class="x-scrollBox" 추가,bbs-table에 style="min-width: 1600px;" 추가, col width 사이즈 수정 </li>
+                                <li>2025-07-24 : 양도자,양수자가상계좌에 따른 필드 추가</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr class="update">
+                        <td></td>
+                        <td>2025-09-04</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>중도해지 시뮬레이션</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/중도해지시뮬레이션.html">중도해지시뮬레이션.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-07-17</td>
+                        <td>2025-07-18</td>
+                        <td>pop</td>
+                        <td>상담이력등록조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/상담이력등록조회.html">상담이력등록조회.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-07-17 : 상담유형 상담분류 필드추가, 상담이력->상담내용 텍스트 변경</li>
+                                <li>2025-07-18 : 20250718 class="x-scrollBox" 추가,bbs-table에 style="min-width: 1600px;" 추가, col width 사이즈 수정 </li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-07-11</td>
+                        <td>2025-07-17</td>
+                        <td>pop</td>
+                        <td>알림톡관리</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/알림톡관리.html">알림톡관리.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-07-17 : 필드 위치 및 텍스트 변경</li>
+                            </ul>
+                        </td>
+                        <td>2025-07-11 : 상담/신청 알림톡 필드내용 모두 이 페이지에 넣어둠</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td>2025-07-18</td>
+                        <td>pop</td>
+                        <td>메모등록조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/메모등록조회.html">메모등록조회.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-07-10 : 유형선택 추가, 담당자 알림 기본  N 선택으로 변경</li>
+                                <li>2025-07-18 : 20250718 class="x-scrollBox" 추가,bbs-table에 style="min-width: 1600px;" 추가, col width 사이즈 수정 </li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-28</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>담당자 변경</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/담당자변경.html">담당자변경.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td>2025-07-24</td>
+                        <td>page</td>
+                        <td>실행현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/실행현황.html">실행현황.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-07-10 : 담당자 필드 추가, 테이블 담당자 항목 추가</li>
+                                <li>2025-07-24 : 테이블 width 사이즈 변경</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-28</td>
+                        <td>2025-07-18</td>
+                        <td>page</td>
+                        <td>메모관리</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/메모관리.html">메모관리.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-07-10 : 상담번호 필드 텍스트 차량번호로 변경, 테이블 상담번호->차량번호로 텍스트 변경, 메모항목 추가</li>
+                                <li>2025-07-17 : 테이블 항목 위치 변경</li>
+                                <li>2025-07-18 : 20250718 class="x-scrollBox" 추가,bbs-table에 style="min-width: 1600px;" 추가, col width 사이즈 수정 </li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-05-23</td>
+                        <td>2025-08-22</td>
+                        <td>page</td>
+                        <td>만기안내 대상</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/만기안내대상.html">만기안내대상.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2025-07-10 : 통화결과 필드 추가, 테이블 통화결과/통화결과 확인하기 항목 추가</li>
+                                <li>2025-07-24 : 필드 위치 수정 width사이즈 수정, 테이블 width 사이즈 변경 통화결과변경및메모, 통화내용 테이블 내용추가, 통화내용 길어지는 거 대비해서 팝업으로 볼수있게 버튼추가</li>
+                                <li>2025-07-30 : 테이블 내용삭제 후 간격 수정</li>
+                                <li>2025-08-22 : 필드 내용 변경 및 추가, 테이블 내용 위치변경, 삭제 추가 등의 수정</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-07-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>메모내용상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/메모내용상세.html">메모내용상세.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2025-07-24</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>통화결과변경및메모</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/통화결과변경및메모.html">통화결과변경및메모.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="hold">
+                        <td></td>
+                        <td>2025-07-10</td>
+                        <td></td>
+                        <td>pop</td>
+                        <td>통화결과 변경</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/autotrans/통화결과변경.html">통화결과 변경.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

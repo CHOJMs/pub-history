@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>개인(신용)정보 열람 신청 | iM캐피탈</title>
+<script>
+    $(document).ready(function(){
+        $('header').load('/web/renewal/header_sub_inc.html');
+        $('footer').load('/web/renewal/footer_inc.html');
+    }); 
+</script>
+</head>
+<body>
+    <header></header>
+    <div class="wrap">
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-process">
+            <!-- Start : 페이지 인디케이터 -->
+            <div class="indicator">
+                <ul>
+                    <li>홈</li>
+                    <li>고객센터</li>
+                    <li>고객정보관리</li>
+                    <li aria-label="현재 화면">개인(신용)정보 열람 신청</li>
+                </ul>
+            </div>
+            <!-- //End : 페이지 인디케이터 -->
+            <!-- Start : centents -->
+            <div class="contents cont-type02">
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="process-wrap">
+                    <div class="pro-box">
+                        <div class="tit-info">개인(신용)정보 열람 항목과<br>약관을 확인해주세요</div>
+
+                        <h2 class="mt0">열람하실 항목 <span class="sm-tx">(중복선택 가능)</span></h2>
+                        <ul class="inp-list02">
+                            <li>
+                                <div class="input-type02">
+                                    <input type="checkbox" id="ck01-1" name="ck01" checked>
+                                    <label for="ck01-1">개인정보의 항목 및 내용</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-type02">
+                                    <input type="checkbox" id="ck01-2" name="ck01">
+                                    <label for="ck01-2">개인정보 수집·이용목적</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-type02">
+                                    <input type="checkbox" id="ck01-3" name="ck01">
+                                    <label for="ck01-3">개인정보 보유 및 이용기간</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-type02">
+                                    <input type="checkbox" id="ck01-4" name="ck01">
+                                    <label for="ck01-4">개인정보의 제 3자 제공현황</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="input-type02">
+                                    <input type="checkbox" id="ck01-5" name="ck01">
+                                    <label for="ck01-5">개인정보처리에 동의한 사실 및 내용</label>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h2>신청정보</h2>
+                        <!-- Start : 신청정보 -->
+                        <div class="form-iem">
+                            <div class="com-inp">
+                                <div class="label">열람지점</div>
+                                <a href="#" id="" class="ico-select alink">
+                                    <span class="placeholder">선택해주세요</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                                </a>
+                            </div>
+                            <div class="com-inp">
+                                <div class="label">방문가능일</div>
+                                <a href="#" id="" class="ico-select alink">
+                                    <span class="placeholder">선택해주세요</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                                </a>
+                            </div>
+                            <div class="com-inp">
+                                <div class="add-tit">자택주소</div>
+                                <a class="add-txt ico-arrow">서울특별시 중구 남대문로 125, 8층 (다동), iM금융센터</a>
+                            </div>
+                        </div>
+                        <!-- //End : 신청정보 -->
+
+                        <!-- Start : 약관동의 -->
+                        <h2>약관동의</h2>
+                        <div class="cont-txt3">「개인정보보호법」 제35조·제36조, 「신용정보의 이용 및 보호에 관한 법률」 제 38조에 따라 아래와 같이 요구합니다.</div>
+                        <div class="agree-box mt24">
+                            <div class="agree-total-box">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                    <label for="ch01" class="label"><span class="c-blue">(필수)</span> 개인(신용)정보 수집·이용 동의서</label>
+                                    <a href="#" class="wa-arrow"><img src="/static/web/img/ui_common/ico_arrow_mob.png" alt="동의서 보기" class="agr-mob"><img src="/static/web/img/ui_common/ico_arrow.png" alt="동의서 보기" class="agr-pc"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //End : 약관동의 -->
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">접수하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <script>
+        $(document).ready(function(){
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

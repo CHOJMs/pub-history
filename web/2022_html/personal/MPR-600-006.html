@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대출계산기 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>대출계산기</h1>
+            </div>
+            <div class="popup-contents flex-col no-scroll"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+                    <div class="col-cnt">
+
+                        <!-- Start : 폼 -->
+                        <div class="form-iem mt16"><!-- 20221114 mt16 클래스 추가 -->
+                            <div class="com-inp">
+                                <label for="">대출신청금액</label>
+                                <input type="text" id="" placeholder="" value="3,000" class="a_r" readonly="readonly">
+                                <span>만원</span>
+                            </div>
+                            <div class="com-inp">
+                                <label for="">대출금리(년)</label>
+                                <a href="#"><input type="text" id="" placeholder="" value="9.5%" readonly="readonly"></a>
+                            </div>
+                            <div class="com-inp">
+                                <label for="">상환방식</label>
+                                <a href="#"><input type="text" id="" placeholder="" value="원리금 균등 분할상환" readonly="readonly"></a>
+                            </div>
+                            <div class="com-inp">
+                                <label for="">대출기간</label>
+                                <a href="#"><input type="text" id="" placeholder="" value="24개월" readonly="readonly"></a>
+                            </div>
+                        </div>
+                        <!-- //End : 폼 -->
+
+                        <!-- Start : 버튼 -->
+                        <div class="btn-box">
+                            <span class="btn"><button type="button" id="">계산하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        </div>
+                        <!-- //End : 버튼 -->
+
+                    </div>
+                    <div class="col-cnt-type01">
+                        <!-- Start : 검색결과 -->
+                        <div class="step-box01">
+                            <ul>
+                                <li>
+                                    <span>1</span>
+                                    <div class="c-box">
+                                        <p class="c-tit">월 <strong>1,377,435원</strong></p><!-- 20221114 strong 추가 -->
+                                        <p class="c-txt">원금 1,139,935원 + 이자 237,500원</p>
+                                        <p class="c-total"><em>잔액</em><em class="f-bule">28,860,065원</em></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>2</span>
+                                    <div class="c-box">
+                                        <p class="c-tit">월 <strong>1,377,435원</strong></p><!-- 20221114 strong 추가 -->
+                                        <p class="c-txt">원금 1,139,935원 + 이자 237,500원</p>
+                                        <p class="c-total"><em>잔액</em><em class="f-bule">28,860,065원</em></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>3</span>
+                                    <div class="c-box">
+                                        <p class="c-tit">월 <strong>1,377,435원</strong></p><!-- 20221114 strong 추가 -->
+                                        <p class="c-txt">원금 1,139,935원 + 이자 237,500원</p>
+                                        <p class="c-total"><em>잔액</em><em class="f-bule">28,860,065원</em></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>4</span>
+                                    <div class="c-box">
+                                        <p class="c-tit">월 <strong>1,377,435원</strong></p><!-- 20221114 strong 추가 -->
+                                        <p class="c-txt">원금 1,139,935원 + 이자 237,500원</p>
+                                        <p class="c-total"><em>잔액</em><em class="f-bule">28,860,065원</em></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>5</span>
+                                    <div class="c-box">
+                                        <p class="c-tit">월 <strong>1,377,435원</strong></p><!-- 20221114 strong 추가 -->
+                                        <p class="c-txt">원금 1,139,935원 + 이자 237,500원</p>
+                                        <p class="c-total"><em>잔액</em><em class="f-bule">28,860,065원</em></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span>6</span>
+                                    <div class="c-box">
+                                        <p class="c-tit">월 <strong>1,377,435원</strong></p><!-- 20221114 strong 추가 -->
+                                        <p class="c-txt">원금 1,139,935원 + 이자 237,500원</p>
+                                        <p class="c-total"><em>잔액</em><em class="f-bule">28,860,065원</em></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //End : 검색결과 -->
+
+                        <!-- Start : 더보기 버튼 -->
+                        <div class="btn_more">
+                            <a href="#" class="more_btn"><i class="more"></i>더보기</a>
+                        </div>
+                        <!-- //End : 더보기 버튼 -->
+                    </div>
+                </div>
+
+                <!-- //End : content -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

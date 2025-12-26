@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>[공공/민간] 공지사항 등록 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap">
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header id="header" class="sub rent_gnb"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+			<div class="mobile-btn">
+				<ul>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알림"></a></li>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+				</ul>
+			</div>
+
+			<nav class="header-inner">
+				<div class="mobile-logo"><a href=""><img src="/static/web/img/mobile_office/logo_pc_rent.png" alt="iM캐피탈 에이전트시스템"></a></div>
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+				
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>					
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">전세자금(개인)</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">신용조회</a></li>
+								<li><a href="">신청관리</a></li>
+								<li><a href="">만기관리</a></li>
+							</ul>
+						</li>
+						<li><a href="">전세자금(공공)</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">신용조회</a></li>
+								<li><a href="">신청관리</a></li>
+								<li><a href="">만기관리</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="right">
+					<div class="pc_user_wrap">
+						<div class="selectbox">
+							<select class="select" title="권한 선택">
+								<option>공공/민간임대</option>
+							</select>
+						</div>
+						<div class="user_box">
+							<span class="font_blue">이영희</span>님<a href="#">로그아웃</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+				<div class="box_form">
+					<h2 class="tl">[공공/민간] 공지사항 등록</h2>
+					
+					<div class="form_box">
+						<p class="h_tit">제목<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" id="" name="" title="제목 입력">
+							</span>
+						</div>
+						<span class="textarea_box mt24 mb40">
+							<textarea id="" placeholder="" title="내용 입력" style="height:200px;"></textarea>
+						</span>
+						
+						<p class="h_tit">공개 대상<em>*<span>필수</span></em></p>
+						<div class="text_data">
+							<div class="selectbox">
+								<select class="select" title="공개 대상 선택">
+									<option>공공/민간임대</option>
+								</select>
+							</div>
+						</div>
+						
+					</div>
+
+				 </div>
+                <!-- 내용 끝 -->
+				<!-- 버튼 시작 -->
+				<div class="btn_bbs_box btn_fixed_box">
+					<div class="a_r"><a href="#" class="btn">등록</a></div>
+				</div>
+				<!-- 버튼 끝 -->
+
+            </div>
+			<!-- centents 끝 -->			
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+	<footer class="footerwrap">
+        <!-- PC_footer -->
+		<div class="pc_footer">
+			<div class="pc_f_logo"><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></div>
+			<div class="pc_f_address">
+				<ul>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">약관 및 금융관련 법규</a></li>
+					<li><a href="#">계열사간 고객정보 제공내역조회</a></li>
+				</ul>
+				<ul class="address">
+					<li>서울특별시 중구 남대문로 125, 8층 (다동)</li>
+					<li>ⓒ iM CAPITAL Corp. All Rights Reserved.</li>
+				</ul>
+				<p class="mark">
+					<img src="/static/web/img/m_wa.png" alt="WA 미래창조과학부 WEB ACCESSIBILITY">
+				</p>
+				<!--<div class="sbHolder familySite2">
+					<a href="javascript:;" class="sbToggle btnFamily2" title="사이트 보기/닫기">DGB 패밀리 사이트</a>
+				</div>-->
+			</div>
+		</div>
+		<!-- //PC_footer -->
+    </footer>
+</body>
+</html>

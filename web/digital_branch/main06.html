@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" viewport-fit="cover"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/lib/swiper-bundle.min.js"></script>
+<script src="/static/web/js/lib/flicking.pkgd.min.js"></script>
+<script src="/static/web/js/lib/jquery.fullPage.js"></script>
+<script src="/static/web/js/lib/scrolloverflow.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+
+<title>iM브랜치</title>
+<style>
+.product-alert-area{position:relative;top:0;left:0;transform:none;}
+.m-cover{position:absolute;top:0;left:450px}
+.m-product-alert-area{position:relative;top:0;bottom:auto;left:0;right:auto;transform:none;width:450px}
+
+</style>
+</head>
+<body style="overflow:hidden">
+<!-- Start : pc 안내 팝업 -->
+<div class="product-alert-area" style="display:block !important">
+	<div class="product-alert">
+		<div class="items">
+			<div class="items-inner">
+				<span class="ico"></span>
+				<span class="tx01">전자약정 상품이 <strong>3건</strong> 있어요</span>
+				<span class="tx02"><span class="tag">오토금융</span>상품명은 최대 한줄표시입니다.</span>
+				<a href="#;" class="btn-link">상세보기</a>
+			</div>
+		</div>
+	</div>
+	<button class="btn-close">알림 팝업 닫기</button>
+</div>
+
+<div class="product-alert-area" style="display:block !important">
+	<div class="product-alert">
+		<div class="items">
+			<div class="items-inner">
+				<span class="ico"></span>
+				<span class="tx01">차량 만기까지 <strong>40일</strong> 남았어요</span>
+				<span class="tx02"><span class="tag">123가1234</span>상품명은 최대 한줄표시입니다.</span>
+				<a href="#;" class="btn-link">상세보기</a>
+			</div>
+		</div>
+	</div>
+	<button class="btn-close">알림 팝업 닫기</button>
+</div>
+
+<div class="product-alert-area" style="display:block !important">
+	<div class="product-alert">
+		<div class="items">
+			<div class="items-inner">
+				<span class="ico type"></span>
+				<span class="tx01">고객님은 <strong>추가대출</strong>이 가능해요!</span>
+				<span class="tx02"><span class="tag type">예상한도</span><span class="bold">1,000만원</span></span>
+				<a href="#;" class="btn-link">상세보기</a>
+			</div>
+		</div>
+	</div>
+	<button class="btn-close">알림 팝업 닫기</button>
+</div>
+
+<div class="product-alert-area" style="display:block !important">
+	<div class="product-alert">
+		<div class="items">
+			<div class="items-inner">
+				<span class="ico"></span>
+				<span class="tx01">차량이 <strong>탁송중</strong>이에요</span>
+				<span class="tx02"><span class="tag">123가1234</span>상품명은 최대 한줄표시입니다.</span>
+				<a href="#;" class="btn-link">상세보기</a>
+			</div>
+		</div>
+	</div>
+	<button class="btn-close">알림 팝업 닫기</button>
+</div>
+<!-- //End : pc 안내 팝업 -->
+
+<!-- Start : 모바일 안내 팝업 -->
+<div class="m-cover">
+	<div class="m-product-alert-area" style="display:block !important">
+		<div class="m-product-alert">
+			<div class="items">
+				<div class="items-inner">
+					<div class="tx-area">
+						<span class="ico"></span>
+						<span class="tx01">전자약정 상품이 <strong>3건</strong> 있어요</span>
+						<span class="tx02"><span class="tag">오토금융</span>상품상세명은 최대 한줄표시입니다.</span>
+					</div>
+					<div class="link-area">
+						<button class="btn-close">닫기</button>
+						<a href="#;" class="btn-link">상세</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-product-alert-area" style="display:block !important">
+		<div class="m-product-alert">
+			<div class="items">
+				<div class="items-inner">
+					<div class="tx-area">
+						<span class="ico"></span>
+						<span class="tx01">차량 만기까지 <strong>40일</strong> 남았어요</span>
+						<span class="tx02"><span class="tag">123가1234</span>오토비대칭리스</span>
+					</div>
+					<div class="link-area">
+						<button class="btn-close">닫기</button>
+						<a href="#;" class="btn-link">상세</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-product-alert-area" style="display:block !important">
+		<div class="m-product-alert">
+			<div class="items">
+				<div class="items-inner">
+					<div class="tx-area">
+						<span class="ico type"></span>
+						<span class="tx01">고객님은 <strong>추가대출</strong>이 가능해요!</span>
+						<span class="tx02"><span class="tag type">예상한도</span><span class="bold">최대 1,000만원</span></span>
+					</div>
+					<div class="link-area">
+						<button class="btn-close">닫기</button>
+						<a href="#;" class="btn-link">상세</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-product-alert-area" style="display:block !important">
+		<div class="m-product-alert">
+			<div class="items">
+				<div class="items-inner">
+					<div class="tx-area">
+						<span class="ico"></span>
+						<span class="tx01">차량이 <strong>탁송중</strong>이에요</span>
+						<span class="tx02"><span class="tag">123가1234</span>오토비대칭리스</span>
+					</div>
+					<div class="link-area">
+						<button class="btn-close">닫기</button>
+						<a href="#;" class="btn-link">상세</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-product-alert-area" style="display:block !important">
+		<div class="m-product-alert">
+			<div class="items">
+				<div class="items-inner">
+					<div class="tx-area">
+						<span class="ico"></span>
+						<span class="tx01">차량이 <strong>계약완료</strong> 상태에요</span>
+						<span class="tx02"><span class="tag">123가1234</span>오토비대칭리스</span>
+					</div>
+					<div class="link-area">
+						<button class="btn-close">닫기</button>
+						<a href="#;" class="btn-link">상세</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-product-alert-area" style="display:block !important">
+		<div class="m-product-alert">
+			<div class="items">
+				<div class="items-inner">
+					<div class="tx-area">
+						<span class="ico"></span>
+						<span class="tx01">차량이 <strong>생산중</strong>이에요</span>
+						<span class="tx02"><span class="tag">123가1234</span>오토비대칭리스</span>
+					</div>
+					<div class="link-area">
+						<button class="btn-close">닫기</button>
+						<a href="#;" class="btn-link">상세</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-product-alert-area" style="display:block !important">
+		<div class="m-product-alert">
+			<div class="items">
+				<div class="items-inner">
+					<div class="tx-area">
+						<span class="ico"></span>
+						<span class="tx01">차량이 <strong>출고대기</strong> 상태에요</span>
+						<span class="tx02"><span class="tag">123가1234</span>오토비대칭리스</span>
+					</div>
+					<div class="link-area">
+						<button class="btn-close">닫기</button>
+						<a href="#;" class="btn-link">상세</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-product-alert-area" style="display:block !important">
+		<div class="m-product-alert">
+			<div class="items">
+				<div class="items-inner">
+					<div class="tx-area">
+						<span class="ico"></span>
+						<span class="tx01">차량이 <strong>탁송중</strong>이에요</span>
+						<span class="tx02"><span class="tag">123가1234</span>오토비대칭리스</span>
+					</div>
+					<div class="link-area">
+						<button class="btn-close">닫기</button>
+						<a href="#;" class="btn-link">상세</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="m-product-alert-area" style="display:block !important">
+		<div class="m-product-alert">
+			<div class="items">
+				<div class="items-inner">
+					<div class="tx-area">
+						<span class="ico"></span>
+						<span class="tx01">차량이 <strong>인도완료</strong> 상태에요</span>
+						<span class="tx02"><span class="tag">123가1234</span>오토비대칭리스</span>
+					</div>
+					<div class="link-area">
+						<button class="btn-close">닫기</button>
+						<a href="#;" class="btn-link">상세</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //End : 모바일 안내 팝업 -->
+</body>
+</html>

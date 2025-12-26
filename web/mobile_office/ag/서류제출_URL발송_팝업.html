@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부동산 추가정보 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>서류제출 URL발송</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt pb32">
+
+                    <div class="tit-info">필요한 서류를 선택하여<br>서류제출 URL을 발송할 수 있습니다.</div>
+
+                    <!-- Start : 폼 -->
+                    <div class="inp-total-list">
+                        <div class="inp-total-item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                <label for="ch01" class="label">주민등록등본</label>
+                            </div>
+                        </div>
+                        <div class="inp-total-item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="ch02" name="ch02" class="chk">
+                                <label for="ch02" class="label">재직증명서</label>
+                            </div>
+                        </div>
+                        <div class="inp-total-item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="ch03" name="ch03" class="chk">
+                                <label for="ch03" class="label">건강보험득실확인서</label>
+                            </div>
+                        </div>
+                        <div class="inp-total-item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="ch04" name="ch04" class="chk">
+                                <label for="ch04" class="label">근로소득원천징수영수증</label>
+                            </div>
+                        </div>
+                        <div class="inp-total-item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="ch05" name="ch05" class="chk">
+                                <label for="ch05" class="label">건강보험료 납부확인서</label>
+                            </div>
+                        </div>
+                        <div class="inp-total-item">
+                            <div class="checkbox">
+                                <input type="checkbox" id="ch06" name="ch06" class="chk">
+                                <label for="ch06" class="label">서류의 이름이 여러줄일경우 길경우일때 서류의 이름이 여러줄일경우 길경우일때 서류의 이름이 여러줄일경우 길경우일때 서류의 이름이 여러줄일경우 길경우일때서류의 이름이 여러줄일경우 길경우일때 서류의 이름이 여러줄일경우 길경우일때서류의 이름이 여러줄일경우 길경우일때 서류의 이름이 여러줄일경우 길경우일때</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //End : 폼 -->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray01"><button type="button" id="">취소</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        <span class="btn"><button type="button" id="">발송</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

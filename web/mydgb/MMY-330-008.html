@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연체등록 및 연체이자율 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function textPopupAll() {
+        uiCommon.openPopup("textPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn js-open-popup" onclick="textPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="textPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>연체등록 및 연체이자율</h1>
+            </div>
+            <div class="popup-contents flex-col popup-clau">
+                <!-- Start : content //-->
+                <div class="pop-cnt-wrap">
+
+                <!-- Start : 약관내용 -->
+                <ol class="term-list">
+                    <li>□ 대출원금, 이자 등을 3개월 이상 「장기연체」한 경우 원금 또는 이자를 상환하기로 한 약정기일의 다음날로부터 3개월이 되는 날을 등록사유발생일로 하여, 그때로부터 7영업일 이내 '연체정보등'이 등록됩니다.
+                        <ul>
+                            <li>• 「일반신용정보관리규약」개정으로 ‘연체정보등’ 등록 기준이 변경될 수 있습니다. </li>
+                            <li>• ‘연체정보등’이 등록되면, 금융거래제약 등 불이익을 받을 수 있습니다. </li>
+                        </ul>
+                    </li>
+                    <li>□ '연체기간 5영업일 이상, 연체금 10만원 이상' 「단기연체」한 경우 신용정보회사를 통해 연체정보가 등록되어 신용카드 사용정지 등 금융거래가 제한될 수 있습니다.  </li>
+                    <li>□ 신용정보집중기관에 장기연체가 등록하는 경우에는 신용정보집중기관이 제3자에게 정보를 제공함으로써 신용정보주체가 불이익을 받을 수 있으며, 개인신용평점이 하락하고 금리가 상승하는 등의 영향이 발생할 수 있습니다.
+                        <div class="box-gray">
+                            <p class="dot">아래의 신용정보들은 한국신용정보원 「일반신용정보관리규약」에 따라 종합신용정보집중기관인 한국신용정보원에 제공 집중, 활용됩니다.</p>
+                            ①개인식별정보(성명, 주민등록번호 등), ②‘연체정보 등’ 정보(연체사실 등), ③신용거래정보(대출, 보증현황 등)
+                        </div>
+                    </li>
+                    <li>※ 정보 등록 후 연체금을 상환하여도 신용점수가 일정기간 회복되지 아니할 수 있으며, 일정기간 동안 해당 기록이 보관될 수 있습니다.</li>
+                    <li>□ <strong>연체이자율은 [대출이자율 + 연체가산이자율]로 적용되며, 법정최고금리인 20% 이내로 적용됩니다.(연체가산이율은 연 3%) 다만 상품에 따라 연체이자율이 일부 달라지는 경우가 있으므로, 유의하여 주시기 바랍니다. </strong></li>
+                    <li>□ 연체이자(지연배상금)를 내셔야 하는 경우</li>
+                    <li>• 「이자를 납입하기로 약정한 날」에 납입하지 아니한 때
+                        <ul>
+                            <li>이자를 납입하여야 할 날의 다음날부터 30일까지는 내셔야 할 약정이자에 대해 연체이자가 적용되고, 30일이 경과하면 기한이익상실로 인하여 대출원금에 연체이율을 곱한 연체 이자를 내셔야 합니다. </li>
+                        </ul>
+                    </li>
+                    <li>• 「원금을 상환하기로 약정한 날」에 상환하지 아니한 때
+                        <ul>
+                            <li>원금을 상환하여야 할 날의 다음날부터는 대출원금에 대한 연체이자를 내셔야 합니다.</li>
+                        </ul>
+                    </li>
+                    <li>• 「분할상환금(또는 분할상환 원리금)을 상환하기로 한 날」에 상환하지 아니한 때
+                        <ul>
+                            <li>분할상환금(또는 분할상환원리금)을 상환하여야 할 날의 다음날부터는 해당 분할상환금(또는 분할 상환원리금)에 대한 연체이자를, 2회 이상 연속하여 지체한 때에는 기한이익상실로 인하여 대출원금잔액에 대한 연체이자를 내셔야 합니다.</li>
+                        </ul>
+                    </li>
+                    <li>• 기타 여신거래기본약관 제8조에서 정한 대출기한 전의 채무변제의무 사유에 해당되어 기한의 이익이 상실된 때
+                        <ul>
+                            <li>기한의 이익이 상실 된 때에는 그 다음 날부터 대출원금에 대한 연체이자를 내셔야 합니다.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="term-last-box">
+                    <ul class="list-info">
+                        <li>(예시) 원금 1억2천만원(월 1백만원 분할상환), 약정이자율 연 5%, 연체가산이자율 연 3%인 신용대출의 분할상환금(1백만원) 및 이자(50만원)를 미납하여 연체가 발생하고, 연체발생후 2개월 시점에 납부할 경우 연체이자 </li>
+                    </ul>
+                    <table class="viewType tbl-list">
+                        <caption></caption>
+                        <colgroup>
+                        <col style="width:100px">
+                        <col>
+                        <col style="width:100px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>연체기간</th>
+                                <th>연체이자 계산방법</th>
+                                <th>연체이자</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>연체발생 ~30일분</td>
+                                <td>지체된 분할상환금 및 약정이자<br>(150만원)× 연<br>8%(5%+3%)×30/365</td>
+                                <td>9,863원</td>
+                            </tr>
+                            <tr>
+                                <td>연체31일~60일분</td>
+                                <td>원금(1억2천만원)× 연<br>8%(5%+3%)×30/365</td>
+                                <td>789,041원</td>
+                            </tr>
+                            <tr>
+                                <td>계</td>
+                                <td></td>
+                                <td>798,904원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="term-txt mt8">* 분할상환금 및 기한이익상실전 발생한 약정이자는 별도</div>
+                    <div class="term-txt mt8">※ 위 내용은 이해를 돕기 위해 연체이자만을 1개월을 30일로 보고 단순하게 계산한 예시입니다. 연체이자는 대출조건, 이자일수계산, 대출종류 등에 따라 달라질 수 있으며, 실제 납부금액은 연체이자에 약정이자 및 분할상환금을 포함하여 계산됩니다. </div>
+                    <div class="term-txt mt8">이자납입 연체로 인하여 대출잔액에 연체이율이 적용되었을 경우, 연체이자 전액을 납입하지 않고 일부연체이자를 납입하는 경우에도 연체이자 전액을 납입하기 전까지 대출잔액에 연체이율이 적용됩니다.</div>
+                </div>
+               <!-- //End : 약관내용 -->
+
+                </div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

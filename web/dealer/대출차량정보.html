@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+
+<!-- common ico -->
+<link rel="shortcut icon" type="image/x-icon" href="/static/web/img/common/favicon.ico?v=20240610001">
+
+<!-- common css -->
+<link rel="stylesheet" href="/static/web/js/lib/spin.css?v=20230330001">
+<link rel="stylesheet" href="/static/web/css/dealer/2022/normalize.css?v=20230330001">
+<link rel="stylesheet" href="/static/web/css/dealer/2022/style.css?v=20230330001">
+<link rel="stylesheet" href="/static/web/css/dealer/2022/popup.css?v=20230330001">
+
+<title>대출차량정보 | iM캐피탈</title>
+</head>
+<body>
+<div class="dim active"></div>
+<div class="popup-layer active" id="dealerLayer">
+    <div class="popup">
+        <div class="inner">
+            <div class="popup-head popup-text">
+                <h1 tabindex="0">대출 차량 정보</h1>
+            </div>
+            <div class="popup-close">
+                <a href="javascript:;"><span class="blind">닫기</span></a>
+            </div>
+            <div class="popup-content">
+                <div class="row">
+                    <div class="cont-table">
+                        <table class="tbl-list view" style="width:100%;">
+                            <caption>대출신청일자, 진행상태, 실행번호, 대출구분, 차종 , 연식, 차량번호, 차량DB, 대출신청금액, 대출기간, 금리, 상환방법, 중도상환수수료, 연체이자율 등으로 나타낸 테이블</caption>
+		                    <colgroup>
+		                        <col style="width:15%;">
+		                        <col style="width:35%;">
+		                        <col style="width:15%;">
+		                        <col style="width:35%;">
+		                    </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>차량번호</th>
+                                    <td>261오1518</td>
+                                    <th>차량명</th>
+                                    <td>스포티지</td>
+                                </tr>
+
+                                <tr>
+                                    <th>차종</th>
+                                    <td>스포티지 더 볼드</td>
+                                    <th>제조사</th>
+                                    <td>기아</td>
+                                </tr>
+
+                                <tr>
+                                    <th>세부차종</th>
+                                    <td>1.6 디젤 2WD</td>
+                                    <th>유종</th>
+                                    <td>디젤</td>
+                                </tr>
+                                <tr>
+                                    <th>배기량</th>
+                                    <td>1,592</td>
+                                    <th>저당건수</th>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <th>차량연식</th>
+                                    <td>2022</td>
+                                    <th>압류건수</th>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <th>신청 가능금액</th>
+                                    <td colspan="3">27,700,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-btn">
+            <button type="button" class="btn-confirm">대출 정보 입력</button>
+            <button type="button" class="btn-confirm disabled">비활성화인 경우</button><!-- 비활성화인 경우 : disabled 클래스 추가 -->
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

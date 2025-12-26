@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부동산등기부등본 신청</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>부동산등기부등본 신청</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+                        
+                        <div class="form_box mb40">
+                            
+                            <div class="flex-btn">
+                                <h3 class="txt">고객번호</h3>
+                                <span class="btn btn-blk">
+                                    <a href="#">고객번호 조회</a>
+                                </span>
+                            </div>
+                            <div class="white_box mb24">
+                                <P class="a_c">1901-028000-0-000</P>
+                            </div>
+                            
+                            <p class="h_tit">고객명</p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" class="" placeholder="" title="고객명 입력">
+                            </div>
+                            
+                            <p class="h_tit">주민사업자번호</p>
+                            <div class="text_data">
+                                <span class="form">
+                                <input type="text" id="" class="disabled" disabled="disabled" placeholder="" title="주민사업자번호 입력">
+                                </span>					
+                            </div>
+                        </div>
+
+                        <!-- 탭 시작// -->
+                        <div class="bg_radio_box">
+                            <div>
+                                <input type="radio" name="r31" value="" id="r31" checked="checked" aria-hidden="true" title="간편검색 체크">
+                                <label for="r31" role="radio" aria-checked="false"><span>간편검색</span></label>
+                            </div>
+                            <div>
+                                <input type="radio" name="r31" value="" id="r32" checked="checked" aria-hidden="true" title="도로명주소 체크">
+                                <label for="r32" role="radio" aria-checked="false"><span>도로명주소</span></label>
+                            </div>
+                            <div>
+                                <input type="radio" name="r31" value="" id="r33" aria-hidden="true" title="지번주소 체크">
+                                <label for="r33" role="radio" aria-checked="false"><span>지번주소</span></label>
+                            </div>
+                        </div>
+                        <!-- //탭 끝 -->
+                        
+                        <!-- 간편검색 시작// -->
+                        <div class="form_box">
+                            <p class="h_tit">부동산구분</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="부동산구분 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <p class="h_tit">시/도</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="시/도 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <p class="h_tit">주소</p>
+                            <div class="text_data">
+                                <span class="form">
+                                <input type="text" id="" placeholder="" title="주소 입력">
+                                </span>					
+                            </div>
+                            <p class="caution mt12">자유롭게 주소를 입력하되 적어도 <span class="font_red">동 이름과 지번, 도로명과 건물번호를 포함</span>하여 검색하시기 바랍니다.<br>(예: 서초동 967, 서초대로 219)</p>
+                            <p class="caution mt8">도로명주소가 병기되지 않은 부동산 등기사항 증명서는 <span class="font_red">도로명주소</span>로 검색되지 않을 수 있으니 검색되지 않는 등시사항증명서는 <span class="font_red">소재지번</span>을 입력하여 주시기 바랍니다.</p>
+                        </div>
+                        <!-- //간편검색 시작 -->
+
+                        <!-- 도로명주소//-->
+                        <div class="form_box">
+                            <p class="h_tit">부동산 구분<em>*<span>필수</span></em></p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="부동산구분 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <p class="h_tit">주택 구분<em>*<span>필수</span></em></p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="주택구분 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <p class="h_tit">시/도<em>*<span>필수</span></em></p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="시/도 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <p class="h_tit">시/군/구<em>*<span>필수</span></em></p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="시/군/구 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <p class="h_tit">도로명</p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" class="" placeholder="도로명 입력" title="도로명주소 입력">
+                            </div>
+                            
+                            <p class="h_tit">도로명 건물번호</p>
+                            <div class="text_data">
+                                <input type="number" name="" id="" class="" placeholder="건물번호 입력" title="도로명 건물번호 입력">
+                            </div>
+                        
+                            <p class="h_tit">동</p>
+                            <div class="text_data">
+                                <input type="number" name="" id="" class="" placeholder="동 입력" title="동 입력">
+                            </div>
+                            
+                            <p class="h_tit">호</p>
+                            <div class="text_data">
+                                <input type="number" name="" id="" class="" placeholder="호 입력" title="호 입력">
+                            </div>
+                        </div>
+                        <!-- //도로명주소-->
+
+                        <!-- //지번주소 -->
+                        <div class="form_box">
+                            <p class="h_tit">부동산 구분<em>*<span>필수</span></em></p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="부동산구분 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <p class="h_tit">주택 구분<em>*<span>필수</span></em></p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="주택구분 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <p class="h_tit">시/도<em>*<span>필수</span></em></p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="시/도 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <p class="h_tit">시/군/구<em>*<span>필수</span></em></p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="시/군/구 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <p class="h_tit">도로명</p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" class="" placeholder="도로명 입력" title="도로명주소 입력">
+                            </div>
+                        
+                            <p class="h_tit">도로명 건물번호</p>
+                            <div class="text_data">
+                                <input type="number" name="" id="" class="" placeholder="건물번호 입력" title="도로명 건물번호 입력">
+                            </div>
+                            
+                            <p class="h_tit">동</p>
+                            <div class="text_data">
+                                <input type="number" name="" id="" class="" placeholder="동 입력" title="동 입력">
+                            </div>
+                        
+                            <p class="h_tit">호</p>
+                            <div class="text_data">
+                                <input type="number" name="" id="" class="" placeholder="호 입력" title="호 입력">
+                            </div>
+                        </div>
+                        <!-- 지번주소// -->
+                        
+                        <!-- 조회 버튼//-->
+                        <div class="btn_box pt24">
+                            <span class="btn"><button id="">조회</button></span>
+                        </div>
+                        <!-- //조회 버튼-->
+
+                        <div class="scroll_table mt40">
+                            <table class="dataType" style="min-width: 1500px;">
+                                <caption>부동산등기부등본조회 - 서비스번호, 부동산구분, 상세내용(PDF), 부동산고유번호, 부동산소재지, 부동산도로명소재지, 소유자, 상태, PDF최종발급일, 담보/전세목록, 매매목록조회, 전산폐쇄조회, 말소사항조회 등으로 나타낸 표</caption>
+                                <colgroup>
+                                    <col width="5%">
+                                    <col width="9%">
+                                    <col width="7%">
+                                    <col width="7%">
+                                    <col width="16%">
+                                    <col width="16%">
+                                    <col width="16%">
+                                    <col width="7%">
+                                    <col width="7%">
+                                    <col width="10%">
+                                    <col width="9%">
+                                    <col width="9%">
+                                    <col width="9%">
+                                    <col width="9%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">서비스번호</th>
+                                        <th scope="col">부동산구분</th>
+                                        <th scope="col">상세내용(PDF)</th>
+                                        <th scope="col">부동산고유번호</th>
+                                        <th scope="col">부동산소재지</th>
+                                        <th scope="col">부동산도로명소재지</th>
+                                        <th scope="col">소유자</th>
+                                        <th scope="col">상태</th>
+                                        <th scope="col">PDF최종발급일</th>
+                                        <th scope="col">담보/전세목록</th>
+                                        <th scope="col">매매목록조회</th>
+                                        <th scope="col">전산폐쇄조회</th>
+                                        <th scope="col">말소사항조회</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="radiobox">
+                                                <input type="radio" name="r01" value="" id="r01" class="rchk" aria-hidden="true" title="선택">
+                                                <label for="r01" class="rchk-label pl28" role="radio" aria-checked="false"></label>
+                                            </div>
+                                        </td>
+                                        <td>100</td>
+                                        <td>토지</td>
+                                        <td>
+                                            <div class="btn_table">
+                                                <a href="#" class="btn">보기</a>
+                                            </div>
+                                        </td>
+                                        <td>1000-0000-000000</td>
+                                        <td>서울특별시 서초구 OO로 OOO</td>
+                                        <td>서울특별시 서초구 OO로 OOO</td>
+                                        <td>홍길돌</td>
+                                        <td>폐쇄</td>
+                                        <td>2020-01-01</td>
+                                        <td>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="ch01" name="ch01" class="chk" aria-hidden="false" title="">
+                                                <label for="ch01" class="label pl28" role="checkbox"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="ch011" name="ch011" class="chk" aria-hidden="false" title="">
+                                                <label for="ch011" class="label pl28" role="checkbox"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="ch012" name="ch012" class="chk" aria-hidden="false" title="">
+                                                <label for="ch012" class="label pl28" role="checkbox"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="ch013" name="ch013" class="chk" aria-hidden="false" title="">
+                                                <label for="ch013" class="label pl28" role="checkbox"></label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td  colspan="14" class="noData"><p>조회된 항목이 없습니다.</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>                    
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작 -->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><a href="#">신청</a></span>
+                    </div>
+                </div>
+                <!-- 버튼 끝 -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

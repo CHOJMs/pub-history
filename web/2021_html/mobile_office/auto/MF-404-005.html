@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회사 선택</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>회사 선택</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+                <div class="bg_graybox">
+                    <div class="bg_top">
+                        <div class="form_box">
+                            <p class="h_tit">회사명</p>
+                            <div class="text_data block">
+                                <span class="form">
+                                    <input type="text" id="" placeholder="" title="회사명 입력">
+                                </span>
+                            </div>
+                            <div class="btn_box pt24">
+                                <span class="btn gray"><button id="">조회</button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_bottom">
+                        <div class="scroll_table2">
+                            <table class="dataType">
+                                <caption>
+                                    회사선택 - 시업자번호, 회사명, 회사대표자명,  등으로 나타낸 표
+                                </caption>
+                                <colgroup>
+                                    <col width="8%">
+                                    <col width="15%">
+                                    <col width="20%">
+                                    <col width="12%">
+                                    <col width="%">
+                                    </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">시업자번호</th>
+                                        <th scope="col">회사명</th>
+                                        <th scope="col">회사대표자명</th>
+                                        <th scope="col">회사주소</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="radiobox">
+                                                <input type="radio" name="r013" value="" id="r013" class="rchk" aria-hidden="true" title="선택 체크">
+                                                <label for="r013" class="rchk-label pl28" role="radio" aria-checked="false"></label>
+                                            </div>
+                                        </td>
+                                        <td>0000000</td>
+                                        <td>충북상사(홍길동)</td>
+                                        <td>홍길동</td>
+                                        <td class="a_l">00000 충청북도 충주시 OO길 OO로</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5" class="noData"><p>조회 결과가 없습니다.</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="btn_more">
+                            <a href="#" class="more_btn"><i class="more"></i>더보기</a>
+                        </div>
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">선택</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

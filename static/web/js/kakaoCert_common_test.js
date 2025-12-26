@@ -1,0 +1,287 @@
+var pollingComplete = false;	// 처리 완료 플래그
+var intervalHandle = null;		// interval
+
+var kakaoReqType = 1;			// 1: 간편인증, 2: 전자서명
+
+var retryCount = 36;			// 폴링 재시도 횟수 디폴트 값
+var retryInterval = 5;			// 폴링 재시도 interval 디폴트값
+
+var kakaoReqVo = {};			// 카카오 요청 시 필요한 요청 정보를 가지고 있는 엘리먼트 저장  ( title, name, birthday, phone_no, contents )
+
+var isAuthOfKakao = "";
+
+const AUTHTYPE_OF_KAKAO = "PLA34";
+
+/**
+ * [카카오페이인증] 간편인증_S315
+ * var rqVo = { "title":"메시지명칭(40자)", "name":"고객성명", "phone_no":"핸드폰번호", "birthday":"생년월일(화면단 필드 rr1로 고정)" }
+ */
+function kakaoSimpleAuthExc(reqVo) {  // title, name, phone_no
+	isAuthOfKakao = "Y";
+	kakaoReqType = 1;
+	kakaoReqVo = reqVo;
+
+	if (!kakaoReqVo.title) kakaoReqVo.title = "iM캐피탈 본인인증";
+
+	kakaoReqVo.rrn1 = $("#rrn1").val();	// 주민번호 앞자리
+	kakaoReqVo.rrn2 = $("#rrn2").val();	// 주민번호 뒷자리
+
+	if(keypadFlag) {
+		kakaoReqVo.encData = nFilterEncrypted(); // 암호화된 데이터
+		kakaoReqVo.useVitualKeyPad = keypadFlag; // 가상키패드 사용 여부
+	}
+
+	$.ajax({
+		type : "POST",
+		cache : false,
+        url:'/common/requestKakaoSimpleAuth.do',
+        global: false,
+        data: kakaoReqVo,
+        success:function(data){
+
+        	if (data.result == "0000") {
+        		showKakaoLoading();
+        		$("#tx_id").val(data.tx_id);
+        	} else if(data.result == "8888"){
+        		alert("보안상의 세션제한 시간이 초과 하였습니다. 처음부터 다시 진행하여 주십시요.");
+                location.reload();
+        	} else {
+        		if (data.resultMsg) {
+    				alert(data.resultMsg);
+    			} else {
+    				alert("카카오페이 인증이 실패했습니다.\n인증을 다시 진행해 주세요.");
+    			}
+        	}
+        },
+        error: function (err) {
+			alert("요청 처리 중 에러가 발생 했습니다");
+		}
+    });
+}
+
+/**
+ * [카카오페이인증] 간편전자서명_S310
+ * var rqVo = { "title":"메시지명칭(40자)", "name":"고객성명", "phone_no":"핸드폰번호", "birthday":"생년월일(화면단 필드 rr1로 고정)", token="서명내용(500자)" }
+ */
+function kakaoSignExc(reqVo){  // title, name, phone_no, contents
+
+	isAuthOfKakao = "N";
+	kakaoReqType = 2;
+	kakaoReqVo = reqVo;
+
+	if (!kakaoReqVo.title)    kakaoReqVo.title = "iM캐피탈 전자서명";
+	if (!kakaoReqVo.name)     kakaoReqVo.name = "";
+	if (!kakaoReqVo.phone_no) kakaoReqVo.phone_no = "";
+	if (!kakaoReqVo.birthday) kakaoReqVo.birthday = "";
+
+	var token = kakaoReqVo.token;
+	if (token.length > 500) {
+		token = token.substr(0,499);
+	}
+
+	if(keypadFlag) {
+		kakaoReqVo.encData = nFilterEncrypted(); // 암호화된 데이터
+		kakaoReqVo.useVitualKeyPad = keypadFlag; // 가상키패드 사용 여부
+	}
+	kakaoReqVo.rrn1 = $("#rrn1").val();		// 주민번호 앞자리
+	kakaoReqVo.rrn2 = $("#rrn2").val();		// 주민번호 뒷자리
+
+	$.ajax({
+		type : "POST",
+		cache : false,
+        url:'/common/requestKakaoSign.do',
+        global: false,
+        data:{
+        	title: kakaoReqVo.title,
+        	name: kakaoReqVo.name,
+        	phone_no: kakaoReqVo.phone_no,
+        	birthday: kakaoReqVo.birthday,
+        	encData: kakaoReqVo.encData,
+        	useVitualKeyPad: kakaoReqVo.useVitualKeyPad,
+        	token: token,
+        	rrn1: kakaoReqVo.rrn1,
+        	rrn2: kakaoReqVo.rrn2,
+        	idnCertFlag: kakaoReqVo.idnCertFlag
+        },
+        success:function(data){
+        	if (data.result == "0000") {
+        		$("#tx_id").val(data.tx_id);
+        		showKakaoLoading();
+        	} else if(data.result == "8888"){
+        		alert("보안상의 세션제한 시간이 초과 하였습니다. 처음부터 다시 진행하여 주십시요.");
+                location.reload();
+        	} else {
+
+        		if (data.resultMsg) {
+    				alert(data.resultMsg);
+    			} else {
+    				alert("카카오페이 인증이 실패했습니다.\n인증을 다시 진행해 주세요.");
+    			}
+        	}
+        },
+        error: function (err) {
+        	alert("요청 처리 중 에러가 발생 했습니다");
+		}
+    });
+}
+
+function updateKakaoCertResult(data) {
+
+	var signData = data.SignedContent;
+
+
+	// 요청 데이터 셋
+	var reqData = {}
+
+	// certVO
+    reqData.signData = signData;
+
+    $.ajax({
+    	type : "POST",
+		cache : false,
+        dataType:'json',
+        url:'/common/kakaoCertResult.do',
+        global: false,
+        data: reqData,
+        success:function(data){
+        	//data.name = custNm;
+			//data.birth = rrn1Val;
+
+			if(keypadFlag) {
+
+				var frm = $("#signSrcData").closest("form")[0];
+				if (frm) {
+					$.createHiddenField(frm, "useVitualKeyPad", keypadFlag);
+					$.createHiddenField(frm, "encData", nFilterEncrypted());
+				}
+			}
+
+			if(isAuthOfKakao == "Y") {
+				data.authType = AUTHTYPE_OF_KAKAO;
+			}
+
+			forwardSendForm(data);
+        },
+        error: function (err) {
+        	alert("요청 처리 중 에러가 발생 했습니다");
+		}
+    });
+}
+
+function kakaoResultClick() {
+	pollKakaoResult($("#tx_id").val());
+}
+
+function pollKakaoResult(tx_id) {
+
+	$.ajax({
+    	type : "POST",
+		cache : false,
+        dataType:'json',
+        url:'/common/srchKakaoResult.do',
+        global: false,
+        data: {
+        	tx_id: tx_id
+        },
+        success:function(data){
+
+        	pollingComplete = true;
+
+        	if (data.result == "0000") {
+
+        		// 성공
+        		if (data.status == "COMPLETE") {
+    				updateKakaoCertResult(data); // certVO 생성
+    				hideKakaoLoading();
+        		}
+        		// 기간 만료
+        		else if (data.status == "EXPIRED") {
+
+        			if (data.resultMsg) {
+        				alert(data.resultMsg);
+        			} else {
+        				alert("카카오페이 인증이 실패했습니다.\n인증을 다시 진행해 주세요.");
+        			}
+        		}
+        		// 기간 만료
+        		else if (data.status != "COMPLETE" && data.status != "EXPIRED") {
+        			data.status = "EXPIRED";
+        			data.resultMsg = "인증 요청 대기 시간 만료";
+
+        			alert("카카오페이 인증이 완료된 후에 인증완료 버튼을 눌러주세요.");
+        		}
+        		else {
+        			pollingComplete = false;
+        		}
+        	}
+        	else if(data.result == "9999"){
+        		hideKakaoLoading();
+        	}
+        	else {
+
+        		if (data.resultMsg) {
+    				alert(data.resultMsg);
+    			} else {
+    				alert("카카오페이 인증이 실패했습니다.\n인증을 다시 진행해 주세요.");
+    			}
+
+         	}
+        },
+        error: function (err) {
+        	alert("요청 처리 중 에러가 발생 했습니다");
+		}
+    });
+
+}
+
+/**
+ * [카카오페이인증] 간편전자서명_S320
+ * var rqVo = { "title":"메시지명칭(40자)", "name":"고객성명", "phone_no":"핸드폰번호", "birthday":"생년월일(화면단 필드 rr1로 고정)", token="서명내용(500자)" }
+ */
+function kakaoInAppSignExc(reqVo) {  // title, name, phone_no
+	isAuthOfKakao = "Y";
+	kakaoReqType = 1;
+	kakaoReqVo = reqVo;
+
+	if (!kakaoReqVo.title) kakaoReqVo.title = "iM캐피탈 본인인증";
+
+	kakaoReqVo.rrn1 = $("#rrn1").val();	// 주민번호 앞자리
+	kakaoReqVo.rrn2 = $("#rrn2").val();	// 주민번호 뒷자리
+
+	if(keypadFlag) {
+		kakaoReqVo.encData = nFilterEncrypted(); // 암호화된 데이터
+		kakaoReqVo.useVitualKeyPad = keypadFlag; // 가상키패드 사용 여부
+	}
+
+	$.ajax({
+		type : "POST",
+		cache : false,
+        url:'/common/requestInAppKakaoSimpleAuth.do',
+        global: false,
+        data: kakaoReqVo,
+        success:function(data){
+
+        	if (data.result == "0000") {
+        		showKakaoLoading();
+        		$("#tx_id").val(data.tx_id);
+        		location.href="kakaotalk://kakaopay/cert/sign?tx_id="+data.tx_id
+        	} else if(data.result == "8888"){
+        		alert("보안상의 세션제한 시간이 초과 하였습니다. 처음부터 다시 진행하여 주십시요.");
+                location.reload();
+        	} else {
+        		if (data.resultMsg) {
+    				alert(data.resultMsg);
+    			} else {
+    				alert("카카오페이 인증이 실패했습니다.\n인증을 다시 진행해 주세요.");
+    			}
+        	}
+        },
+        error: function (err) {
+			alert("요청 처리 중 에러가 발생 했습니다");
+		}
+    });
+}
+
+
+
+

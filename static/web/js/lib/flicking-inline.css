@@ -1,0 +1,38 @@
+.eg-flick-viewport {
+  position: relative;
+  overflow: hidden;
+}
+.eg-flick-viewport:not(.vertical) {
+  width: 100%;
+  height: 100%;
+}
+.eg-flick-camera {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.eg-flick-camera>* {
+  display: inline-block;
+  white-space: normal;
+  vertical-align: top;
+}
+.eg-flick-viewport.vertical,
+.eg-flick-viewport.vertical > .eg-flick-camera {
+  display: inline-block;
+}
+.eg-flick-viewport.vertical.middle > .eg-flick-camera > * {
+  vertical-align: middle;
+}
+.eg-flick-viewport.vertical.bottom > .eg-flick-camera > * {
+  vertical-align: bottom;
+}
+.eg-flick-viewport.vertical > .eg-flick-camera > * {
+  display: block;
+}
+.eg-flick-viewport.eg-flick-hidden > .eg-flick-camera > * {
+  visibility: hidden;
+}

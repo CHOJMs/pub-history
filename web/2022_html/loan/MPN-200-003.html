@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휴대폰 본인인증</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+        <div class="inner">
+            <div class="popup-text">
+                <h1>휴대폰 본인인증</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+
+                <div class="white_box">
+                    <ul class="list_1">
+                        <li>
+                            <span class="tit">고객명</span>
+                            <span>홍길동</span>
+                        </li>
+                        <li>
+                            <span class="tit">통신사</span>
+                            <span>SK</span>
+                        </li>
+                        <li>
+                            <span class="tit">휴대폰번호</span>
+                            <span><em class="number">010-1234-5678</em></span>
+                        </li>
+                        <li>
+                            <span class="tit">생년월일</span>
+                            <span>1988년 12월 05일</span>
+                        </li>
+                        <li>
+                            <span class="tit">성별</span>
+                            <span>남자</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 전체 유의사항 및 약관 동의// -->
+                <div class="form_box mt40">
+                    <div class="checkbox">
+                        <input type="checkbox" id="ch01" name="ch01" class="chk" aria-hidden="false" title="전체 유의사항 및 약관 동의">
+                        <label for="ch01" class="label font22" role="checkbox">전체 유의사항 및 약관 동의</label>
+                    </div>
+                </div>
+                <p class="line"></p>
+                <div class="form_box">
+                    <div class="checkbox">
+                        <input type="checkbox" id="ch021" name="ch021" class="chk chk_1">
+                        <label for="ch021" class="label">개인정보 수집 이용 제공동의</label>
+                        <span class="img">
+                            <a href="#">보기</a>
+                        </span>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="ch022" name="ch021" class="chk chk_1">
+                        <label for="ch022" class="label">고유식별정보 처리동의</label>
+                        <span class="img">
+                            <a href="#">보기</a>
+                        </span>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="ch023" name="ch021" class="chk chk_1">
+                        <label for="ch023" class="label">서비스 이용약관 동의</label>
+                        <span class="img">
+                            <a href="#">보기</a>
+                        </span>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="ch024" name="ch021" class="chk chk_1">
+                        <label for="ch024" class="label">통신사 이용약관 동의</label>
+                        <span class="img">
+                            <a href="#">보기</a>
+                        </span>
+                    </div>
+                </div>
+                <!-- 전체 유의사항 및 약관 동의// -->
+
+                <!-- //인증번호 요청 -->
+                <div class="btn_box mt24">
+                    <span class="btn btn_gray"><a href="#">인증번호 요청</a></span>
+                </div>
+                <div class="text_data auth_t pb24">
+                    <span class="form">
+                        <input type="text" id="" placeholder="인증번호 6자리" title="인증번호 6자리 입력">
+                        <span class="time">02:59</span>
+                    </span>
+                    <div class="btn_cont">
+                        <button id="">재요청</button>
+                    </div>
+                </div>
+                <!-- 인증번호 요청// -->
+                <!--// content 끝-->
+                <!-- Start : 버튼 -->
+                <div class="btn-area mt0">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

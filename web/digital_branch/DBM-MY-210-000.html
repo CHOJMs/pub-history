@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중도해지 예약안내 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/slick.js"></script>
+    <script src="/static/web/js/lib/slick.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+    window.addEventListener('load', addrPopupAll);
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <!--<div class="popup-text">
+                <h1>휴대폰 본인인증</h1>
+            </div>-->
+            <div class="popup-contents flex-col pad-small"><!-- 2022-10-11 : pad-small 추가 -->
+                <!-- Start : content -->
+                <div class="popup-text type">
+                    <h1>이미 신청하신 중도해지 예약 건이 있어요.<br>기존 예약 건을 취소하고 새로 진행할까요?</h1>
+                </div>
+                <div class="pop-cont-txt a_l">새로 신청하실 경우, 기존 예약 건은 자동 취소돼요.</div>
+                <div class="box-gray05 mt32">
+                    <div class="drop-list-style active">
+                        <button class="btn-toggle">기존 예약 건 <strong>2025-11-20</strong></button>
+                        <ul class="list-1">
+                            <li>
+                                <span class="tit">상품명</span>
+                                <span class="txt"><리스>오토(비대칭리스)</p>
+                            </li>
+                            <li>
+                                <span class="tit">기본정산금(A)</span>
+                                <span class="txt">58,156,066원</p>
+                            </li>
+                            <li>
+                                <span class="tit">특별정산금(B)</span>
+                                <span class="txt">0원</p>
+                            </li>
+                            <li>
+                                <span class="tit">고객반환금(C)</span>
+                                <span class="txt">22,420,000원</p>
+                            </li>
+                            <li>
+                                <span class="tit">입금하실 총 금액<br>(A+B-C)</span>
+                                <span class="txt">35,736,066원</p>
+                            </li>
+                            <li>
+                                <span class="tit">수납가상계좌</span>
+                                <span class="txt">아이엠뱅크 98500123</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray01"><button type="button">취소</button></span>
+                        <span class="btn"><button type="button">네, 새로 신청할게요</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

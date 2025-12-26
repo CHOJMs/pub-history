@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서류제출 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>비밀번호 변경</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+                <div class="form-iem">
+                    <div class="com-inp w-type"><!-- 팝업에서 label width값이 넓은 경우 w-type 추가 -->
+                        <label for="inpTx1">기존 비밀번호</label>
+                        <input type="password" id="inpTx1" placeholder="입력해주세요">
+                    </div>
+                    <div class="com-inp w-type"><!-- 팝업에서 label width값이 넓은 경우 w-type 추가 -->
+                        <label for="inpTx2">새 비밀번호</label>
+                        <input type="password" id="inpTx2" placeholder="입력해주세요">
+                    </div>
+                    <div class="com-inp w-type"><!-- 팝업에서 label width값이 넓은 경우 w-type 추가 -->
+                        <label for="inpTx3">새 비밀번호 확인</label>
+                        <input type="password" id="inpTx3" placeholder="입력해주세요">
+                    </div>
+                    
+                    <ul class="list-dot type mt16">
+                        <li>특수기호를 포함하여 10자리 이상으로 조합하여 입력해주세요. </li>
+                        <li>* ' " \ | 특수기호는 사용하실 수 없어요.</li>
+                    </ul>
+                </div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray01"><button type="button" id="">취소</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        <span class="btn"><button type="button" id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function(){
+        $(window).on("resize", function() {
+            footerHide();
+        });
+        footerHide();
+        function footerHide() {
+            var screenWidth = $(window).width();
+            if (screenWidth < 1024) {
+                // 화면 너비가 1024px보다 작을 때 실행할 코드
+                $("footer").hide();
+                $("body").show();
+            }else{
+                $("body").hide();
+            }
+        }
+    });
+</script>
+</body>
+</html>

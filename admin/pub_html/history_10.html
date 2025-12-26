@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 즉시출고차량 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-16</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>즉시출고차량 관리 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/del/DGB-DEL-100-001.html">DGB-DEL-100-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-16</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>즉시출고차량 관리 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/del/DGB-DEL-100-002.html">DGB-DEL-100-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-16</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>즉시출고차량 관리 - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/del/DGB-DEL-100-003.html">DGB-DEL-100-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-16</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>나의차량 조회 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/del/DGB-DEL-200-001.html">DGB-DEL-200-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-16</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>나의차량 조회 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/del/DGB-DEL-200-002.html">DGB-DEL-200-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-16</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>나의차량 조회 - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/del/DGB-DEL-200-003.html">DGB-DEL-200-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-07-17</td>
+                        <td>2023-08-08</td>
+                        <td>pop</td>
+                        <td>차량선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/del/차량선택.html">차량선택.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-07-17</td>
+                        <td>2023-08-08</td>
+                        <td>pop</td>
+                        <td>차량옵션선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/del/차량옵션선택.html">차량옵션선택.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

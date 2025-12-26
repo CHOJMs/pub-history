@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:140px">
+                    <col>
+                    <col style="width:250px">
+                    <col style="width:100px">
+                    <col style="width:250px">
+                    <col style="width:120px">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 외국인신용대출 한도조회 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>국적 선택</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-000-001.html">MPN-000-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>약관동의</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-100-001.html">MPN-100-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>본인확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-200-001.html">MPN-200-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>본인인증 방법</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-200-002.html">MPN-200-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>pop_full</td>
+                        <td>휴대폰 본인인증</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-200-003.html">MPN-200-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>고객정보입력 (CSS 조회용)</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-300-001.html">MPN-300-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>고객정보 입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-300-002.html">MPN-300-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>대출한도조회</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-600-001.html">MPN-600-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신청완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-990-001.html">MPN-990-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="s-tit">
+                        <th colspan="10">▣ 외국인대출 전자약정 ▣</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>외국인 등록번호 입력</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-210-001.html">MPN-210-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>적합성 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-700-001.html">MPN-700-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>적합성 유형 체크</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-710-002.html">MPN-710-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>신청완료</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/web/2022_html/loan/MPN-990-002.html">MPN-990-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>상환스케줄</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="loan/MPN-990-003.html">MPN-990-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

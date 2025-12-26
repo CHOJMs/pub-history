@@ -1,0 +1,11 @@
+# ❌ 제외할 폴더
+WEB-INF/
+prototype/
+carverse/
+
+# ❌ 서버 파일
+*.jsp
+
+# ❌ OS 파일
+.DS_Store
+Thumbs.db

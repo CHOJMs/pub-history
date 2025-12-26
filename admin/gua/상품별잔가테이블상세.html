@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>상품별 잔가 테이블 상세 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                    <li><a href="#" class="on">잔가보장사관리</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#">잔가보장확약서</a></li>
+                        <li><a href="#">잔가 수수료 확인</a></li>
+                        <li><a href="#">브랜드별 고잔가 현황</a></li>
+                        <li><a href="#" class="on">상품별 잔가 테이블</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <div class="flex-wrap"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h2>상품별 잔가 테이블 상세</h2>
+                        <div class="btn">
+                            <a href="#" class="black">목록</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+                    <!-- Start : 잔가보장사 및 실행기간 -->
+                    <h3>잔가보장사 및 실행기간</h3>
+                    <table class="bbs-table-view">
+                        <colgroup>
+                            <col width="240px">
+                            <col>
+                        </colgroup>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>잔가보장사</th>
+                                <td>㈜ 에스엔케이모터스</td>
+                            </tr>
+                            <tr>
+                                <th>실행기간</th>
+                                <td>2024.07.01 ~ 2024.07.31</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 잔가보장사 및 실행기간 -->
+
+                    <!-- Start : 상품별 잔가 테이블 -->
+                    <h3>상품별 잔가 테이블</h3>
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col width="120px">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>제조사</th>
+                                <th>I</th>
+                                <th>L</th>
+                                <th>N</th>
+                                <th>O</th>
+                                <th>Q</th>
+                                <th>R</th>
+                                <th>T</th>
+                                <th>U</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>    
+                                <td>현대</td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>싼타페 디젤 2.2</li>
+                                        <li>싼타페 하이브리드 1.6</li>
+                                        <li>디올 뉴 그랜져 가솔린 2.5</li>
+                                        <li>디올 뉴 그랜져하이브리드 1.6</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>쏘나타 가솔린 2.0</li>
+                                        <li>아반떼 가솔린 1.6</li>
+                                        <li>아반떼 하이브리드 1.6</li>
+                                        <li>디올 뉴 그랜저 가솔린 3.5</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>투싼 디젤 2.0</li>
+                                        <li>투싼 라이브리드 1.6</li>
+                                        <li>아반떼 가솔린 1.6 터보 (N라인)</li>
+                                        <li>팰리세이드 전모델</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>캐스퍼</li>
+                                        <li>스타리아 D 2,2 투어러 (9/11인승), 라운지캠퍼 (4/11인승), 카고 (3/5인승),  킨더 (11/14인승)</li>
+                                        <li>스타리아 3.5 LPi</li>
+                                        <li>스타리아 특장차</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>쏘나타 가솔린 1.6 터보 (센추어스)</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>포터 Ⅱ</li>
+                                        <li>코나 가솔린</li>
+                                        <li>코나 1.6 (N라인)</li>
+                                        <li>쏘나타 하이브리드</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>코나 하이브리드</li>
+                                        <li>아이오닉5 (롱레인지, 스탠다드, 영업용)</li>
+                                        <li>아이오닉 6 (롱레인지, 스탠다드)</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>아반떼 1.6 LPi</li>
+                                        <li>쏘나타 LPi</li>
+                                        <li>디 올뉴 그랜져 LPi</li>
+                                        <li>넥쏘</li>
+                                        <li>싼타페 2.5T 가솔린</li>
+                                        <li>넥베뉴쏘</li>
+                                        <li>싼타클루즈</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>제네시스</td>
+                                <td></td>
+                                <td></td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>G80 2.5T (스포츠 포함)</li>
+                                        <li>GV70 2.5T</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>GV70 2.2 디젤</li>
+                                        <li>GV80 3.0 디젤</li>
+                                        <li>GV80 (2.5, 3.5) 가솔린</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>GV70 3.5T</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>G80 3.5T</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>G90 3.5</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>G70</li>
+                                        <li>G70 3.3T SPORT</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>기아</td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>쏘렌토 디젤 2.2</li>
+                                        <li>쏘렌토 하이브리드 1.6</li>
+                                        <li>카니발 디젤 2.2 (9인승,7인승)</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>K8 가솔린 2.5</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>스포티지 디젤 2.0 </li>
+                                        <li>스포티지 하이브리드 1.6</li>
+                                        <li>카니발 디젤 2,2(11인승)</li>
+                                        <li>쏘렌토 가솔린 2.5 터보</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>K3 GT 가솔린 1.6 터보</li>
+                                        <li>K5 2.0 가솔린</li>
+                                        <li>모닝 1.0 가솔린</li>
+                                        <li>레이 1.0 가솔린</li>
+                                        <li>K8 가솔린 3.5</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>니로 PHEV 카파 1.6GDI</li>
+                                        <li>K5 하이브리드</li>
+                                        <li>K3 가솔린 1.6</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>모하비 3.0 디젤</li>
+                                        <li>K5 1.6 가솔린 터보</li>
+                                        <li>K8 1.6 가솔린 터보</li>
+                                        <li>스포티지 LPG 2.0</li>
+                                        <li>스팅어 가솔린 2.5</li>
+                                        <li>봉고 3</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>카니발 하이리무진 (7인승, 9인승, 11인승)</li>
+                                        <li>카니발 9인승 아웃도어</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>K5 2.0 LPI</li>
+                                        <li>K8 3.5 LPI</li>
+                                        <li>니로 EV</li>
+                                        <li>K9 3.8 GDI</li>
+                                        <li>K9 3.3 T-GDI</li>
+                                        <li>스팅어 3.3 터보</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>쉐보레</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>스파크</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>타호</li>
+                                        <li>스파크 승용밴</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>쌍용</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>토레스 가솔린 터보 1.5</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>티볼리 가솔린 1.5</li>
+                                        <li>렉스턴 디젤 2.2 5인승</li>
+                                        <li>렉스턴 디젤 2.2 7인승</li>
+                                    </ul>
+                                </td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>렉스턴 스포츠 칸 디젤 2.2</li>
+                                    </ul>
+                                </td>
+                                <td></td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>코란도 가솔린 터보 1.5</li>
+                                        <li>코란도 디젤 1.6</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>르노삼성</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="v-t">
+                                    <ul class="list-dot-type">
+                                        <li>QM6 가솔린 2.0</li>
+                                        <li>QM6 디젤 2.0</li>
+                                        <li>SM6 가솔린 터보 (1.3 , 1.8)</li>
+                                        <li>XM3 가솔린 터보 1.3</li>
+                                        <li>XM3 가솔린 하이브리드 1.6</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 상품별 잔가 테이블 -->
+
+                    <!-- Start : 국산차 기간별 잔가율 요약 -->
+                    <h3>국산차 기간별 잔가율 요약 (2만 km/년 기준)</h3>
+                    <table class="bbs-table">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>I</th>
+                                <th>L</th>
+                                <th>N</th>
+                                <th>O</th>
+                                <th>Q</th>
+                                <th>R</th>
+                                <th>T</th>
+                                <th>U</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>12개월</td>
+                                <td>70%</td>
+                                <td>68%</td>
+                                <td>66%</td>
+                                <td>65%</td>
+                                <td>63%</td>
+                                <td>62%</td>
+                                <td>60%</td>
+                                <td>59%</td>
+                            </tr>
+                            <tr>
+                                <td>24개월</td>
+                                <td>63%</td>
+                                <td>60%</td>
+                                <td>58%</td>
+                                <td>57%</td>
+                                <td>55%</td>
+                                <td>54%</td>
+                                <td>52%</td>
+                                <td>51%</td>
+                            </tr>
+                            <tr>
+                                <td>36개월</td>
+                                <td>54%</td>
+                                <td>51%</td>
+                                <td>49%</td>
+                                <td>48%</td>
+                                <td>46%</td>
+                                <td>45%</td>
+                                <td>43%</td>
+                                <td>42%</td>
+                            </tr>
+                            <tr>
+                                <td>48개월</td>
+                                <td>46%</td>
+                                <td>43%</td>
+                                <td>41%</td>
+                                <td>40%</td>
+                                <td>38%</td>
+                                <td>37%</td>
+                                <td>35%</td>
+                                <td>35%</td>
+                            </tr>
+                            <tr>
+                                <td>60개월</td>
+                                <td>40%</td>
+                                <td>37%</td>
+                                <td>35%</td>
+                                <td>34%</td>
+                                <td>32%</td>
+                                <td>31%</td>
+                                <td>29%</td>
+                                <td>28%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 국산차 기간별 잔가율 요약 -->
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

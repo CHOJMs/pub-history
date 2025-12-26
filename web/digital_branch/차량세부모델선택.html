@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차량 세부모델 선택 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+    window.addEventListener('load', addrPopupAll);
+</script> 
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc popup-640"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text"><!-- 모바일에서 안보이는 경우 .mo-none 추가 -->
+                <h1>세부모델 선택</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content -->
+                <div class="pop-car-fixed">
+                    <div class="pop-car-card">
+                        <p class="tx">더 뉴 스포티지 HEV</p>
+                        <span class="car-img"><img src="/static/web/img/digital_branch/@sample_car02.png" alt=""></span>
+                        <span class="logo t1">현대</span>
+                        <span class="tag">즉시출고</span>
+                    </div>
+                </div>
+
+                <div class="car-sel-type">
+                    <div class="input-wrap">
+                        <input type="radio" id="rdo01" name="rdoOption">
+                        <label for="rdo01">
+                            <span class="name">2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD 2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD</span>
+                            <span class="price">월 1,689,000원~</span>
+                        </label>
+                    </div>
+                    <div class="input-wrap">
+                        <input type="radio" id="rdo02" name="rdoOption">
+                        <label for="rdo02">
+                            <span class="name">2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD</span>
+                            <span class="price">월 1,689,000원~</span>
+                        </label>
+                    </div>
+                    <div class="input-wrap">
+                        <input type="radio" id="rdo03" name="rdoOption">
+                        <label for="rdo03">
+                            <span class="name">2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD</span>
+                            <span class="price">월 1,689,000원~</span>
+                        </label>
+                    </div>
+                    <div class="input-wrap">
+                        <input type="radio" id="rdo04" name="rdoOption">
+                        <label for="rdo04">
+                            <span class="name">2025년형 가솔린 2.5터보 5인승 익스클루시브 2WD</span>
+                            <span class="price">월 1,689,000원~</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button">해당 차량으로 견적내기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+
+                <!-- //End : content -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

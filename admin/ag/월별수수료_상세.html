@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>AG영업관리 | iM캐피탈 관리자</title>
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#" class="on">AG영업관리</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#">대시보드</a></li>
+                        <li><a href="#">견적내기</a></li>
+                        <li><a href="#">진행현황</a></li>    
+                        <li><a href="#">발주현황</a></li>    
+                        <li><a href="#" class="on">월별수수료</a></li>
+                        <li><a href="#">게시판</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <div class="flex-wrap"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h2>월별수수료</h2>
+                        <div class="btn">
+                            <a href="#" class="black">목록</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <table class="data-tbl mb64">
+                        <colgroup>
+                            <col width="23%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">에이전트</p>
+                                        <p class="com-txt">에이전트명</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">기준</p>
+                                        <div class="calendar">
+                                            <input type="tel" value="2024-07" id="" class=""><img src="/static/admin/img/new_common/ico_cal.png">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">렌트 건수</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="0">
+                                            <span>건</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">리스 건수</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="0">
+                                            <span>건</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">실행금액 합계</p>
+                                        <div class="inp-txt-right">
+                                            <input type="tel" placeholder="" value="">
+                                            <span>원</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="com-inp">
+                                        <p class="tit">상품구분</p>
+                                        <div class="inp-area disabled">
+                                            <div class="selectbox">
+                                                <select class="select">
+                                                    <option value="">선택</option>
+                                                    <option value="" selected>전체</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td colspan="2">
+                                    <div class="com-inp">
+                                        <p class="tit">지급여부</p>
+                                        <div class="cnt-box">
+                                            <div class="inp-radio">
+                                                <div class="radiobox">
+                                                    <input type="radio" id="r01" name="r01" checked="checked">
+                                                    <label for="r01">전체</label>
+                                                </div>
+                                                <div class="radiobox">
+                                                    <input type="radio" id="r02" name="r01">
+                                                    <label for="r02">Y</label>
+                                                </div>
+                                                <div class="radiobox">
+                                                    <input type="radio" id="r03" name="r01">
+                                                    <label for="r03">N</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 발주현황 -->
+
+
+                    <div class="flex-s-tit flex-wrap mt64"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <span class="num">총 <em>45</em>건</span>
+                        <div class="btn">
+                            <a href="#" class="ico-excel">엑셀다운로드</a>
+                        </div>
+                    </div>
+                    <!-- Start : 리스트 -->
+                    <div class="x-scrollBox">
+                        <table class="bbs-table mt16" style="min-width: 1800px"><!-- 행이 hover인 경우 : tbl-hover 추가 -->
+                            <colgroup>
+                                <col width="70px">
+                                <col width="80px">
+                                <col width="200px">
+                                <col width="120px">
+                                <col width="*">
+                                <col width="150px">
+                                <col width="150px">
+                                <col width="80px">
+                                <col width="80px">
+                                <col width="150px">
+                                <col width="150px">
+                                <col width="150px">
+                                <col width="150px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">상품구분</th>
+                                    <th scope="col">계약번호</th>
+                                    <th scope="col">고객구분</th>
+                                    <th scope="col">고객명</th>
+                                    <th scope="col">실행금액</th>
+                                    <th scope="col">차량금액</th>
+                                    <th scope="col">지급여부</th>
+                                    <th scope="col">수수료율</th>
+                                    <th scope="col">기본수수료</th>
+                                    <th scope="col">추가수수료</th>
+                                    <th scope="col">프로모션</th>
+                                    <th scope="col">실 지급액</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>5</td>
+                                    <td>렌트</td>
+                                    <td>2404-009408-4-001</td>
+                                    <td>개인사업자</td>
+                                    <td>이*지(에스제이줄넘기세상)</td>
+                                    <td>15,483,888</td>
+                                    <td>37,696,198</td>
+                                    <td>Y</td>
+                                    <td>4.28</td>
+                                    <td>846,678</td>
+                                    <td>10,000,000</td>
+                                    <td>-</td>
+                                    <td>10,888,000</td>
+                                </tr>
+                                <tr class="bor-none"><!-- [D]마지막 합계가 있는 경우 클래스 : bor-none 추가로 라인 삭제함 -->
+                                    <td colspan="13" class="nodata"><span>정보가 없습니다.</span></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="bg">
+                                    <td colspan="3">실행금액 합계</td>
+                                    <td colspan="10">0 원</td>
+                                </tr>
+                                <tr class="bg">
+                                    <td colspan="3">볼륨인센티브</td>
+                                    <td colspan="10">0 원</td>
+                                </tr>
+                                <tr class="bg">
+                                    <td colspan="3">지급수수료(실지급금액 합계 +  볼륨인센티브)</td>
+                                    <td colspan="10">0 원</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- //End : 리스트 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보험가입증명서 신청 안내 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+    window.addEventListener('load', addrPopupAll);
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;" >팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+    <div class="popup-layer" id="addrPopup">
+        <div class="popup popup-01 popup-half"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+            <div class="inner">
+                <div class="popup-text">
+                    <h1>보험가입증명서 신청 안내</h1>
+                </div>
+                <div class="popup-contents flex-col pad-small">
+                    <!-- Start : content -->
+
+                    <div class="pop-cont-txt">등록된 이메일로 정상적으로 신청되었습니다.</div>
+                    <div class="list-line-box1">
+                        <ul class="list-2">
+                            <li>
+                                <span class="p-tit">이메일</span>
+                                <span class="p-txt">adf@naver.com</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- //End : content -->
+
+                    <!-- Start : 버튼 -->
+                    <div class="fixed-btn-area">
+                        <div class="btn-box">
+                            <span class="btn"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        </div>
+                    </div>
+                    <!-- //End : 버튼 -->
+                </div>
+            </div>
+            <div class="popup-close pc-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+        </div>
+    </div>
+
+</body>
+</html>

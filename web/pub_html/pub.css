@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+html, body {margin: 0; padding: 0; font-size: 10px; width: 100%;}
+ul, li {list-style: none; margin: 0; padding: 0;}
+
+a {color: #0f7ec2; text-decoration: none;}
+a:hover,
+a:focus {text-decoration: underline;}
+
+#page-wrapper {position: fixed; top: 79px; bottom: 5px; width: 100%;}
+.row {height: 100%; margin: 0;}
+.row iframe {min-height:100%;}
+
+#nav {position: relative; width: 100%; font-size: 12px;}
+#nav h1 {font-size: 18px; margin: 0 auto; padding: 10px 20px; color: #112261; text-decoration: none; font-weight: bold; line-height: 22px; background-color: #fff; text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);}
+#nav h1 a {color: #333; text-decoration: none; font-weight: normal; font-size: 15px; border: 1px solid #b5b5b5; padding: 3px 8px; border-radius: 5px; margin-left: 8px;}
+#nav .top-area {position: relative; overflow: hidden; background-color: #1297ef;}
+#nav .top-area:after {content: ''; display: block; clear: both;}
+#nav ul {margin: auto; padding: 0; list-style: none; line-height: 16px;}
+#nav ul::after {content: ''; display: block; clear: both; border-top: 1px solid #fff;}
+#nav ul li {float: left; white-space: nowrap; font-size: 12px; line-height: 24px;}
+#nav ul a {color: #fff; text-decoration: none; display: inline-block; padding: 5px 10px; font-size: 13px; font-weight: bold;}
+#nav ul a:hover,
+#nav ul a:focus,
+#nav ul a:active {background-color: #0d72b6;}
+#nav ul a.on {background-color: #0f7ec2;}
+
+#nav ul li.on a {background-color: #222b4f; color: #fff;}
+#nav ul li.tit {border-right: 1px solid #fff; border-left: 1px solid #fff; background-color: #112261; color: #fff; min-width: 90px; padding: 5px 10px;     font-weight: bold; font-size: 13px;}
+#nav ul li.dis a {background-color: transparent; cursor: default; opacity: .5;}
+
+.ux-cont{overflow-x:hidden}
+table {width: 100%; border-collapse: collapse; table-layout: fixed;}
+table th {padding: 3px 0 4px; font-size: 13px; font-weight: normal; background: #555; color: #fff; border-left: 1px solid #fff; letter-spacing: -1px; position: sticky; top: 0; z-index: 2;}
+
+table td {text-align: center; font-size: 13px; padding: 5px 4px; line-height: 18px; border: 1px solid #ddd; word-break: break-all;}
+table td.align-center {text-align: center;}
+table td:nth-child(4),
+table td:nth-child(5),
+table td:nth-child(6),
+table td:nth-child(7),
+table td:nth-child(8),
+table td:nth-child(10) {text-align: left;}
+table tr:hover {background: #e2f3f3;}
+/*table tr.ing {background: rgba(0, 0, 255, 0.1); opacity: .8;}*/
+table tr.ing {background: #f3fff8; opacity: 1;}
+table tr.ing:hover a {background-color: transparent; cursor: default;}
+table tr.ing td:nth-child(4)::after {content: '- 작업중'; display: inline-block;}
+table tr.insp {background: #eef5fd; opacity: 1;}
+table tr.insp:hover a {background-color: transparent; cursor: default;}
+table tr.insp td:nth-child(4)::after {content: '- 디자인검수중'; display: inline-block;}
+table tr.dis {background: #fcf5c6; opacity: .6; /*text-decoration: line-through;*/}
+table tr.dis td:nth-child(4)::after {content: '- 디자인요청'; display: inline-block;}
+table tr.dis:hover a {background-color: transparent; cursor: default;}
+table tr.del {background: rgba(255, 0, 0, 0.2); opacity: .5;}
+table tr.del td:last-child::after {content: '삭제'; display: inline-block; color: #f00; font-weight: bold;}
+table tr.hold {background: rgba(0, 0, 0, 0.1); opacity: .4;}
+table tr.hold:hover a {background-color: transparent; cursor: default;}
+table tr.hold td:nth-child(4)::after {content: ''; display: inline-block;}
+table tr.hold1 {background: #fff1df; opacity: 1}
+table tr.hold1:hover a {background-color: transparent; cursor: default;}
+table tr.hold1 td:nth-child(4)::after {content: '- 추후작업예정'; display: inline-block;}
+table tr.update td {background: #b8fdda;}
+table tr.sample td {background: #eaeaea;}
+/* table tr.update td:nth-child(4)::after {content: '- 웹접근성'; display: inline-block;} */
+
+table thead tr:hover {background: #fff;}
+.subtit {font-weight: bold; text-align: left; font-size: 14px; padding: 8px;}
+
+/* 테이블 넘버링 */
+tbody>tr {counter-increment: aaa;}
+tbody>tr>td:first-child:before {content: counter(aaa) " ";}
+
+table tr.s-tit th {background: #fff; color: #333; font-weight: bold; padding: 8px; font-size: 14px; line-height: 18px; text-align: left; border-bottom: 1px solid #ddd; z-index: 1; position: inherit; border-right: 1px solid #ddd; border-left: 1px solid #ddd;}
+table tr.s-tit:first-child:before {content: counter(aaa) ":: ";}
+table tr.s-tit th .line {margin-top: 25px; padding: 5px 0 7px 8px; /*border-top: double #c1c1c1;*/ color: #fff; background: #555; margin-bottom: -8px; margin-left: -8px; width: calc(100% + 8px); letter-spacing: 0; opacity: .6;}
+
+/* 작업내역 */
+.workMemoWrap {position: relative; padding: 4px 8px;}
+.modify+ul {display: none; position: absolute; left: 0; top: 30px; z-index: 2; width: 300px; padding: 5px; border: 1px solid #333; background: #fefefe; border-radius: 3px; cursor: pointer;}
+.modify+ul li {list-style: decimal inside; padding: 0; line-height: 17px; text-align: left;}
+.modify+ul li table td {text-align: left;}

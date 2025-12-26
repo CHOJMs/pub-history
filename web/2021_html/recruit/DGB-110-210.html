@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+
+<title>부동산 시세 조회 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap" style="background-size: 20% auto;"><!--bg이미지 진행 width값-->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header>
+			<div class="gnb">
+				<!--// 모바일용 GNB 메뉴 -->
+				<p class="menu_icon">
+                    <a href="#" class="mobile_back_btn" title="뒤로가기"></a>
+                    <a href="#" class="mobile_menu_btn" title="모바일 메뉴"></a>
+                </p>
+				<!-- 모바일용 GNB 메뉴// -->
+
+				<!-- //웹용 GNB 메뉴 -->
+				<div id="nav">
+					<div id="blind"></div>
+					<div class="pc_menu">
+						<ul>
+							<li class="menu1">
+								<a href="#" class="on"><span>회사소개</span></a>
+							</li>
+							<li class="menu2">
+								<a href="#"><span>고객센터</span></a>
+							</li>
+							<li class="menu3">
+								<a href="#"><span>개인금융</span></a>
+							</li>
+							<li class="menu4">
+								<a href="#"><span>자동차금융</span></a>
+							</li>
+							<li class="menu5">
+								<a href="#"><span>스탁론</span></a>
+							</li>
+							<li class="menu6">
+								<a href="#"><span class="Koho700">마이</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 웹용 GNB 메뉴// -->
+			</div>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_process">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+                <div class="process_wrap">
+					<div class="pro_box">
+
+						<div class="pro_txt_box">
+							<div class="tit_info">본인명의 주택 및 차량이 있는 경우<br>추가한도 부여가 가능합니다.
+								<p class="txt_num"><span>1</span>/ 7</p>
+							</div>
+						</div>
+
+						<p class="h_tit">주택명의 구분</p>
+						<div class="text_data radio-box-type1">
+							<div>
+								<input type="radio" name="r11" value="" id="r11" checked="checked" aria-hidden="true" title="본인명의">
+								<label for="r11" role="radio" aria-checked="true"><span>본인명의</span></label>
+							</div>
+							<div>
+								<input type="radio" name="r11" value="" id="r12" aria-hidden="true" title="부부 공동명의">
+								<label for="r12" role="radio" aria-checked="false"><span>부부 공동명의</span></label>
+							</div>
+							<div>
+								<input type="radio" name="r11" value="" id="r13" aria-hidden="true" title="배우자 명의">
+								<label for="r13" role="radio" aria-checked="false"><span>배우자 명의</span></label>
+							</div>
+							<div>
+								<input type="radio" name="r11" value="" id="r14" aria-hidden="true" title="자택(가족공동명의)">
+								<label for="r14" role="radio" aria-checked="false"><span>자택(가족공동명의)</span></label>
+							</div>
+							<div>
+								<input type="radio" name="r11" value="" id="r15" aria-hidden="true" title="전세">
+								<label for="r15" role="radio" aria-checked="false"><span>전세</span></label>
+							</div>
+							<div>
+								<input type="radio" name="r11" value="" id="r16" aria-hidden="true" title="월세">
+								<label for="r16" role="radio" aria-checked="false"><span>월세</span></label>
+							</div>
+							<div>
+								<input type="radio" name="r11" value="" id="r17" aria-hidden="true" title="기타(무소유)">
+								<label for="r17" role="radio" aria-checked="false"><span>기타(무소유)</span></label>
+							</div>
+						</div>					
+										
+						<p class="h_tit">주거종류</p>
+						<div class="text_data">
+							<div class="selectbox">
+								<select class="select" title="주거종류 선택">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+
+						<p class="h_tit">부동산 가격</p>
+						<div class="text_data">
+							<span class="form app_text">
+								<input type="tel" id="" placeholder="숫자만 입력해 주세요" title="부동산가격 입력">
+								<span class="txt">만원</span>
+							</span>					
+						</div>
+						<div class="btn_box mt16">
+							<span class="btn btn_gray"><a href="#">KB시세 조회</a></span>
+							<span class="btn btn_gray"><a href="#">부동산 시세조회</a></span>
+						</div>
+						
+						<p class="h_tit">선순위 설정액</p>
+						<div class="text_data">
+							<span class="form app_text">
+								<input type="tel" id="" placeholder="숫자만 입력해 주세요" title="선순위 설정액 입력">
+								<span class="txt">만원</span>
+							</span>					
+						</div>
+
+						<p class="h_tit">선순위 임대보증금</p>
+						<div class="text_data">
+							<span class="form app_text">
+								<input type="tel" id="" placeholder="숫자만 입력해 주세요" title="선순위 임대보증금 입력">
+								<span class="txt">만원</span>
+							</span>					
+						</div>
+
+						<p class="h_tit">실거주여부</p>
+						<div class="text_data">
+							<div class="selectbox">
+								<select class="select" title="실거주여부 선택">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+
+					</div>
+                </div>
+                <!-- 내용 끝 -->
+
+                <!-- 버튼 시작 -->
+                <div class="btn_fixed">
+                    <div class="btn_box">
+                        <span class="btn_step btn_pre">
+							<button id="">이전</button>
+						</span>
+                        <span class="btn_step bnt_next black"><!-- 활성버튼: class="black" / 비활성버튼: class="disabled" / 기본버튼: class="black" 삭제 -->
+							<p class="txt_num"><span>1</span>/ 7</p>
+							<button id="">다음</button>
+						</span>
+                    </div>
+                </div>
+             <!-- 버튼 끝 -->
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직장명 검색 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>직장명 검색</h1>
+            </div>
+            <div class="popup-contents flex-col no-scroll"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+                    <div class="col-cnt">
+
+                        <!-- Start : 검색 영역 -->
+                        <div class="search-box">
+                            <div class="sch-cnt">
+                                <input type="text" id="" placeholder="직장명 검색" value="" title="직장명 입력">
+                                <button type="button" class="btn-del">삭제</button>
+                                <button type="button" class="btn-search">검색</button>
+                            </div>
+                        </div>
+                        <!-- //End : 검색 영역 -->
+
+                    </div>
+                    <div class="col-cnt-type01 bg-blue hei-type01"><!-- [D]블루배경일 때 : bg-blue / 흰색배경일 때 : bg-white -->
+
+                        <!-- Start : 직접입력 -->
+                        <div class="post-box">
+                            <ul>
+                                <li>
+                                    <div class="q">
+                                        <a href="#">
+                                            <p class="post-tit">직접입력<span>직장명이 없을 경우 직접 입력해주세요</span></p><!-- 20221109 : 문구수정-->
+                                            <span class="ico-arrow">내용 열기</span>
+                                        </a>
+                                    </div>
+                                    <div class="a">
+                                        <!-- Start : 폼 -->
+                                        <div class="form-iem">
+                                            <div class="com-inp">
+                                                <label for="">직장명</label>
+                                                <input type="text" id="" placeholder="직접입력하세요" value="">
+                                            </div>
+                                            <div class="com-inp">
+                                                <label for="">사업자번호</label>
+                                                <input type="tel" id="" placeholder="선택하세요" value="">
+                                            </div>
+                                        </div>
+                                        <!-- //End : 폼 -->
+                                        <!-- Start : 버튼 -->
+                                        <div class="btn-cont">
+                                            <button type="button" id="">등록하기</button>
+                                        </div>
+                                        <!-- //End : 버튼 -->
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //End : 직접입력 -->
+
+                        <!-- Start : 검색결과 -->
+                        <div class="search-res-box">
+                            <p class="add-tit">검색결과</p>
+                            <!-- Start : nodata -->
+                            <div class="add-nodata">
+                                검색결과가 없습니다.<br>
+                                철자와 띄어쓰기를 확인해보세요!
+                            </div>
+                            <!-- //End : nodata -->
+                            <ul>
+                                <li><a href="#">
+                                    (주)디지비캐피탈
+                                    <p class="mt8">220-87-87408</p><!-- 20221127 추가 -->
+                                    <p>서울특별시 중구 다동 85 iM금융센터</p>
+                                    </a>
+                                </li>
+                                <li><a href="#">
+                                    도로명주소 2줄일 경우 예시입니다. 도로명주소 2줄일 경우 예시입니다.
+                                    <p>서울특별시 중구 다동 85 iM금융센터</p></a>
+                                </li>
+                                <li><a href="#">
+                                    도로명주소 2줄일 경우 예시입니다. 도로명주소 2줄일 경우 예시입니다.
+                                    <p>서울특별시 중구 다동 85 iM금융센터</p></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //End : 검색결과 -->
+                        <!-- Start : 더보기 버튼 -->
+                        <div class="btn_more">
+                            <a href="#" class="more_btn"><i class="more"></i>더보기</a>
+                        </div>
+                        <!-- //End : 더보기 버튼 -->
+                    </div>
+                    <div class="col-cnt-type01 bg-blue hei-type01"><!-- [D]블루배경일 때 클래스 추가 : bg-blue -->
+                        <!-- Start : 검색안내문구 -->
+                        <div class="sch-info">
+                            <p class="s-txt">이렇게 검색해보세요!</p>
+                            <ul>
+                                <li>
+                                    건물명이 있는 경우
+                                    <span>대치동 아이파크</span>
+                                </li>
+                                <li>
+                                    도로명 및 지번의 경우
+                                    <span>남대문로 124</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //End : 검색안내문구 -->
+
+                        <!-- Start : 검색결과 -->
+                        <div class="search-res-box">
+                            <p class="add-tit">검색결과</p>
+                            <ul>
+                                <li><a href="#">
+                                    도로명주소 2줄일 경우 예시입니다. 도로명주소 2줄일 경우 예시입니다.
+                                    <p>서울특별시 중구 다동 85 iM금융센터</p></a>
+                                </li>
+                                <li><a href="#">
+                                    도로명주소 2줄일 경우 예시입니다. 도로명주소 2줄일 경우 예시입니다.
+                                    <p>서울특별시 중구 다동 85 iM금융센터</p></a>
+                                </li>
+                                <li><a href="#">
+                                    도로명주소 2줄일 경우 예시입니다. 도로명주소 2줄일 경우 예시입니다.
+                                    <p>서울특별시 중구 다동 85 iM금융센터</p></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //End : 검색결과 -->
+                    </div>
+                </div>
+
+                <!-- //End : content -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+
+</body>
+</html>

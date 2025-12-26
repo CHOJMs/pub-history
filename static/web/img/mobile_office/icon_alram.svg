@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <style>
+            .cls-3{stroke:#000;stroke-width:1.5px;fill:none}
+        </style>
+    </defs>
+    <g id="icon_alram" transform="translate(1)">
+        <g id="확장알림" transform="translate(-289 -11.003)">
+            <path id="Shape_668" fill="#fff" stroke="#000" stroke-linecap="round" stroke-width="1.5px" d="M0 0h20" transform="translate(294 32.502)"/>
+            <path id="Ellipse_48" d="M307 33.5a3 3 0 1 1-6 0" class="cls-3" transform="translate(0.002 -0.498)"/>
+            <path id="Rounded_Rectangle_19" d="M296.007 32.5v-5.336c0-4.784 3.582-8.662 8-8.662s8 3.878 8 8.662V32.5" class="cls-3" transform="translate(-0.006)"/>
+            <path id="선_1" fill="none" stroke="#000" stroke-linecap="round" stroke-width="2px" d="M0 0L0 1" transform="translate(304 17.003)"/>
+        </g>
+    </g>
+</svg>

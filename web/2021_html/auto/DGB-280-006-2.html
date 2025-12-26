@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일등록</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>파일등록</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+
+                        <div class="box_file">
+                            <div class="btn_file_box">
+                                <!--<a href="#" class="btn_file">파일 추가</a>-->
+                                <button type="button" class="btn gray">파일 추가</button>
+                                <input type="file" name="file_1" class="file_input_hidden" title="파일명 입력">
+                            </div>
+                            <div class="num">
+                                <p><span>3</span>개의 파일이 추가되었습니다.</p>
+                                <!-- 파일첨부갯수 -->
+                                <div class="">
+                                    <ul>
+                                        <li>20201019_120201019_120201019_120201019_120201019_120201019_1.jpg <a href="#" class="file_delete"><img src="/static/web/img/icon_delete.png" alt="파일삭제"></a></li>
+                                        <li>20201019_2.jpg <a href="#" class="file_delete"><img src="/static/web/img/icon_delete.png" alt="파일삭제"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">파일첨부</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

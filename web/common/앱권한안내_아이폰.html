@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>앱 사용을 위한 권한 안내 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-app01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1 tabindex="0">앱 사용을 위한 권한 안내</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- Start : content //-->
+
+                <!-- Start : 앱권한 안내 -->
+                <div class="app-cen-box">
+                    <div class="app-list01">
+                        <ul>
+                            <li>
+                                <span><img src="/static/web/img/ico_new01.png" alt="전화"></span>
+                                <div>
+                                    <p>전화(필수)</p>
+                                    기본 본인인증 수단으로 사용
+                                </div>
+                            </li>
+                            <li>
+                                <span><img src="/static/web/img/ico_new02.png" alt="저장공간"></span>
+                                <div>
+                                    <p>저장공간(필수)</p>
+                                    공동인증서 보관 및 보안매체 접근 등
+                                </div>
+                            </li>
+                            <li>
+                                <span><img src="/static/web/img/ico_new03.png" alt="카메라"></span>
+                                <div>
+                                    <p>카메라(선택)</p>
+                                    신분증 촬영 등
+                                </div>
+                            </li>
+                            <li>
+                                <span><img src="/static/web/img/ico_new04.png" alt="사진"></span>
+                                <div>
+                                    <p>사진(선택)</p>
+                                    이미지 업로드 등
+                                </div>
+                            </li>
+                            <li>
+                                <span><img src="/static/web/img/ico_new05.png" alt="알림"></span>
+                                <div>
+                                    <p>알림(선택)</p>
+                                    필수 안내사항, 유용한 정보제공 등
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <ul>
+                    <li class="dot">특정 기능 이용 시 허용이 필요하며 허용하지 않아도 해당 기능 외의 서비스를 이용하실 수 있어요.</li>
+                    <li class="dot">휴대폰 ‘설정 > iM캐피탈 > 권한’에서도 접근 권한 변경을 하실 수 있어요.</li>
+                </ul>
+                <!-- //End : 앱권한 안내 -->
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button">확인</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <!--<div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>-->
+    </div>
+
+</div>
+
+</body>
+</html>

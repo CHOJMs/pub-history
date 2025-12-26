@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+
+<style>
+@font-face {
+  font-family: 'pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-display: SWAP;
+  src: url('/static/common/css/font/Pretendard-Regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('/static/common/css/font/Pretendard-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/static/common/css/font/Pretendard-Regular.woff2') format('font-woff2'), /* Super Modern Browsers */
+       url('/static/common/css/font/Pretendard-Regular.woff') format('woff'), /* Modern Browsers */
+       url('/static/common/css/font/Pretendard-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('/static/common/css/font/Pretendard-Regular.svg#Pretendard') format('svg'); /* Legacy iOS */
+}
+
+/* Pretendard-500 - latin_korean */
+@font-face {
+  font-family: 'pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-display: SWAP;
+  src: url('/static/common/css/font/Pretendard-Medium.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('/static/common/css/font/Pretendard-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/static/common/css/font/Pretendard-Medium.woff2') format('font-woff2'), /* Super Modern Browsers */
+  url('/static/common/css/font/Pretendard-Medium.woff') format('woff'), /* Modern Browsers */
+  url('/static/common/css/font/Pretendard-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('/static/common/css/font/Pretendard-Medium.svg#Pretendard') format('svg'); /* Legacy iOS */
+}
+/* 공통 */
+* {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+
+    html, body {margin: 0; padding: 0; width: 100%; height: 100%; font-family: "pretendard", "SemiBold", "나눔 고딕", Dotum,
+    "droid sans fallback", "AppleSDGothicNeo", sans-serif; font-size: 10px; letter-spacing: -0.01em; color: rgb(34, 36, 38); min-width: 320px; background: transparent; line-height: 1.5;}
+    body {text-align: left; margin: 0; padding: 0; font-family: "pretendard", "SemiBold", "droid sans fallback",
+    "AppleSDGothicNeo", sans-serif, "돋움", Dotum; -webkit-text-size-adjust: none; -ms-text-size-adjust: none; word-break: keep-all;}
+    .videoCapture {display: none;}
+
+ @media screen and (max-width: 1280px){
+
+    .videoCapture {position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow-y: auto; min-height: 100%; padding: 0px 20px; background: rgb(34, 36, 38,0.8); z-index: 200; display: block;}
+    .btn-close {position: absolute; right: 20px; top: 20px; width: 32px; height: 32px;}
+    .btn-close img {width: 32px; height: 32px;}
+    .camear-box {width: 100%; position: relative; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 0 20px;}
+    .camear-box .photo { width: 341px; height: 246px;}
+    .fixed-btn-area { width: 100%;}
+    .btn_box {display: table; width: 100%; table-layout: fixed; text-align: center; position: fixed; left: 0; bottom: 0; padding: 150px 20px 20px 20px; background: url('/static/web/img/ui_common/camera_i05.png') no-repeat center 56px; background-size: 335px 150px;}
+    .btn_box .btn {display: table-cell; vertical-align: top;}
+    .btn_box button {width: 100%; height: 56px; color: #fff; font-size: 16px; text-align: center; font-weight: 500; font-family: "pretendard"; background: #1571eb ; border-radius: 8px; border: none;}
+    .txt {font-size: 16px; color: #fff; font-weight: 500; width: 100%; text-align: center; margin-top: 0; position: absolute; top: -64px; left: 0;}
+    .camear {position: relative; width: 100%; height: 250px; display: block; margin: 0 auto; overflow: hidden; border-radius: 18px;}
+
+    .videoElement {display: flex; width: 100%; height: 100%; margin: auto; position: relative; background-size: cover; overflow: hidden; border-radius: 18px;}
+
+    .popup-text h1 {font-size: 18px; font-weight: 500; color: #fff; margin: 20px auto 0; text-align: center;}
+
+ }
+
+</style>
+
+<title>신분증 촬영 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="videoCapture">
+        <div class="popup-text">
+            <h1>신분증 촬영</h1>
+        </div>
+        <!-- Start : 촬영 영역 -->
+        <main class="camear-box">
+            <p class="txt">신분증을 영역 안에 꽉 차도록 맞추면<br>자동으로 촬영됩니다</p>
+            <div class="camear">
+                <video id="videoElement" class="videoElement" autoplay playsinline poster="/static/web/img/ui_common/camera_bg.png"></video>
+            </div>
+        </main>
+
+        <!-- //End : 촬영 영역 -->
+        <div class="btn-close"><a href="#"><img src="/static/web/img/ui_common/camera_close.png" alt="닫기"></a></div>
+	</div>
+</body>
+</html>

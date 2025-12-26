@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CSS 결과 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+
+    <script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-full"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>CSS 결과</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+
+                <!-- Start : 시스템판정 -->
+                <div class="flex-wrap"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                    <h2>시스템판정</h2>
+                    <div class="btn">
+                        <a href="#">결과등록</a><a href="#" class="black">CSS재산출</a>
+                    </div>
+                </div>
+                <table class="bbs-table-view1">
+                    <colgroup>
+                        <col width="160px">
+                        <col width="%">
+                        <col width="160px">
+                        <col width="%">
+                    </colgroup>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>대출상품명</th>
+                            <td>개인_임차보증금대출</td>
+                            <th>산출일시</th>
+                            <td>2023-07-17 16:34:11</td>
+                        </tr>
+                        <tr>
+                            <th>시스템판정결과</th>
+                            <td>정상승인</td>
+                            <th>시스템한도</th>
+                            <td>150,000,000원</td>
+                        </tr>
+                        <tr>
+                            <th>시스템금리</th>
+                            <td>14%</td>
+                            <th>Filtering 적중 건
+                                Pre Screen / Risk Policy</th>
+                            <td>0건 / 1건</td>
+                        </tr>
+                        <tr>
+                            <th>DSR결과</th>
+                            <td>45.78%</td>
+                            <th>차주별DSR제한여부</th>
+                            <td>N</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- //End : 시스템판정 -->
+
+                <!-- Start : Filtering 결과 -->
+                <h2 class="mt40">Filtering 결과</h2>
+                <table class="bbs-table">
+                    <colgroup>
+                        <col width="40%">
+                        <col width="60%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">구분</th>
+                            <th scope="col">항목명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pre Screen / Risk Policy </td>
+                            <td class="a-l">(최대 5개 까지만)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- //End : Filtering 결과 -->
+
+                <!-- Start : 시스템 조정 금리 -->
+                <h2>시스템 조정 금리</h2>
+                <table class="bbs-table">
+                    <colgroup>
+                        <col width="%">
+                        <col width="%">
+                        <col width="20%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">구분</th>
+                            <th scope="col">항목명</th>
+                            <th scope="col">해당값</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>(인하/가산)</td>
+                            <td>전세권부근저당설정</td>
+                            <td>0.5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- //End : 시스템 조정 금리 -->
+
+                <!-- Start : 사전판정 -->
+                <h2>사전판정(*만기연장, 플랫폼 제휴 시에만 활성화)</h2>
+                <table class="bbs-table-view1">
+                    <colgroup>
+                        <col width="160px">
+                        <col width="%">
+                        <col width="160px">
+                        <col width="%">
+                    </colgroup>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>대출상품명</th>
+                            <td>개인_임차보증금대출</td>
+                            <th>산출일시</th>
+                            <td>2023-07-17 16:34:11</td>
+                        </tr>
+                        <tr>
+                            <th>시스템판정결과</th>
+                            <td>정상승인</td>
+                            <th>사전한도</th>
+                            <td>150,000,000원</td>
+                        </tr>
+                        <tr>
+                            <th>사전금리</th>
+                            <td>14%</td>
+                            <th>Filtering 적중 건
+                                Pre Screen / Risk Policy </th>
+                            <td>0건 / 1건</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- //End : 사전판정 -->
+
+                <!-- Start : 사전 Filtering 결과 -->
+                <h2>사전 Filtering 결과(*만기연장, 플랫폼 제휴 시에만 활성화)</h2>
+                <table class="bbs-table">
+                    <colgroup>
+                        <col width="40%">
+                        <col width="60%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col">구분</th>
+                            <th scope="col">항목명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pre Screen / Risk Policy </td>
+                            <td class="a-l">(최대 5개 까지만)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- //End : 사전 Filtering 결과 -->
+
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

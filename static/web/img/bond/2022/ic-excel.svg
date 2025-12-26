@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="26" viewBox="0 0 28 26">
+    <defs>
+        <filter id="we138v131a" x="6" y="13" width="14" height="13" filterUnits="userSpaceOnUse">
+            <feOffset dy="2"/>
+            <feGaussianBlur stdDeviation="1" result="blur"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="7d5slcpyeb" x="14" y="13" width="14" height="13" filterUnits="userSpaceOnUse">
+            <feOffset dy="2"/>
+            <feGaussianBlur stdDeviation="1" result="blur-2"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite operator="in" in2="blur-2"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <filter id="f881i38c0c" x="0" y="2" width="20" height="21" filterUnits="userSpaceOnUse">
+            <feOffset dy="2"/>
+            <feGaussianBlur stdDeviation="1" result="blur-3"/>
+            <feFlood flood-opacity=".4"/>
+            <feComposite operator="in" in2="blur-3"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g data-name="그룹 2674">
+        <g style="filter:url(#we138v131a)">
+            <path data-name="사각형 1622" d="M0 0h8v7H2a2 2 0 0 1-2-2V0z" transform="translate(9 14)" style="fill:#195c37"/>
+        </g>
+        <path data-name="사각형 1619" d="M2 0h6v7H0V2a2 2 0 0 1 2-2z" transform="translate(9)" style="fill:#20a366"/>
+        <path data-name="사각형 1623" d="M0 0h6a2 2 0 0 1 2 2v5H0V0z" transform="translate(17)" style="fill:#32c381"/>
+        <g style="filter:url(#7d5slcpyeb)">
+            <path data-name="사각형 1625" d="M0 0h8v5a2 2 0 0 1-2 2H0V0z" transform="translate(17 14)" style="fill:#147c41"/>
+        </g>
+        <path data-name="사각형 1620" transform="translate(9 7)" style="fill:#137b40" d="M0 0h8v7H0z"/>
+        <path data-name="사각형 1624" transform="translate(17 7)" style="fill:#20a366" d="M0 0h8v7H0z"/>
+    </g>
+    <g data-name="그룹 2678">
+        <g style="filter:url(#f881i38c0c)">
+            <rect data-name="사각형 1627" width="14" height="15" rx="2" transform="translate(3 3)" style="fill:#117032"/>
+        </g>
+        <text transform="translate(10 14)" style="fill:#fff;font-size:12px;font-family:NotoSansCJKkr-Bold,Noto Sans CJK KR;font-weight:700;letter-spacing:-.05em" data-name="구성 요소 1 – 24"><tspan x="-3.372" y="0">x</tspan></text>
+    </g>
+</svg>

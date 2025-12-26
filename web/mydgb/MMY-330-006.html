@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기한이익상실 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function textPopupAll() {
+        uiCommon.openPopup("textPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn js-open-popup" onclick="textPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="textPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>기한이익상실</h1>
+            </div>
+            <div class="popup-contents flex-col popup-clau">
+                <!-- Start : content //-->
+                <div class="pop-cnt-wrap">
+
+                <!-- Start : 약관내용 -->
+                <div class="term-last-box mt0">
+                    <p class="tit">기한의 이익이란?</p>
+                    <ul class="list-info">
+                        <li>기한의 존재로 말미암아 당사자가 받는 이익을 말하며, 금융회사와의 대출거래에서 채무자인 고객은 당초 약정한 대출기한까지는 대출금을 상환하지 않아도 되므로 그 기간 동안 채무자인 고객이 가지는 이익을 기한의 이익이라 합니다. </li>
+                    </ul>
+
+                    <p class="tit">기한의 이익이 상실되면?</p>
+                    <ul class="list-info">
+                        <li>모든 대출금(또는 해당 대출금)을 즉시 상환<br>연체이자 부담<br>일정기간 경과 후 신용도판단정보 등록 등</li>
+                    </ul>
+                </div>
+                
+                <div class="tbl-title">□ 채무자가 제공한 담보재산에 대하여 압류명령이나 체납처분 압류통지가 도달된 때 또는 기타의 방법에 의한 강제집행 개시나 체납처분 착수가 있는 때 등 (여신거래기본약관 제8조제1항에서 정한 사유) </div>
+                <ol class="term-list">
+                    <li>• 모든 대출금(또는 해당 대출금)의 기한이익을 즉시 상실하며, 금융회사는 기한의 이익 상실 사유 발생 즉시 기한이익을 상실하였다는 사실을 서면통지 합니다. </li>
+                </ol>
+
+                <div class="tbl-title">□ 대출기한이 도래되었거나 기한이익이 상실된 대출을 하나라도 상환하지 아니한 때 등 (여신거래기본약관 제8조제2항, 제3항, 제4항에서 정한 사유) </div>
+                <ol class="term-list">
+                    <li>• 금융회사의 서면통지가 도달한 날부터 일정 시일이 경과하면 기한이익을 상실하며, 모든 대출금(또는 해당 대출금)을 대출기한이 도래하기 전임에도 불구하고 곧 상환하셔야 합니다.</li>
+                    <li>
+                        예) 주요 기한이 이익 상실 사유 
+                        <ul>
+                            <li>- 여신거래와 관련하여 허위, 위변조 또는 고의로 부실자료를 제출하여 회사의 채권보전에 중대한 손실을 유발한 때</li>
+                            <li>- 이자등을 지급하기로 한 때부터 계속하여 30일간 지체한 경우</li>
+                            <li>- 분할상환금 또는 분할상환 원리금의 지급을 2회 이상 연속하여 지체한 때</li>
+                        </ul>
+                    </li>
+                </ol>
+               <!-- //End : 약관내용 -->
+
+                </div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

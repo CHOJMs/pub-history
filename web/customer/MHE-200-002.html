@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>상담문의 접수 | iM캐피탈</title>
+<script>
+    $(document).ready(function(){
+        $('header').load('/web/renewal/header_sub_inc.html');
+        $('footer').load('/web/renewal/footer_inc.html');
+    }); 
+</script>
+</head>
+<body>
+    <header></header>
+    <div class="wrap">
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-process">
+            <!-- Start : 페이지 인디케이터 -->
+            <div class="indicator">
+                <ul>
+                    <li>홈</li>
+                    <li>고객센터</li>
+                    <li>상담 및 문의</li>
+                    <li aria-label="현재 화면">상담문의 접수</li>
+                </ul>
+            </div>
+            <!-- //End : 페이지 인디케이터 -->
+             
+            <!-- Start : centents -->
+            <div class="contents cont-type02">
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="process-wrap">
+                    <div class="pro-box">
+                        <div class="tit-info">상담문의에 필요한 내용을<br>확인하신 후 입력해주세요</div>
+
+                        <h2 class="mt0">고객정보</h2>
+                        <!-- Start : 폼 -->
+                        <div class="form-iem">
+                            <div class="com-inp">
+                                <label for="i01">이메일</label>
+                                <input type="text" id="i01" placeholder="입력해주세요" value="">
+                            </div>
+                            <div class="com-inp">
+                                <label for="i02">휴대폰번호</label>
+                                <input type="tel" id="i02" placeholder="입력해주세요" value="010-1234-5678">
+                            </div>
+                        </div>
+                        <!-- //End : 폼 -->
+                        <div class="box-green3">
+                            <p class="ico-info">상담이 필요한 경우 담당부서 또는 고객센터에서<br class="mob"> 입력하신 휴대폰번호로 연락드립니다.<br class="mob">(고객센터 : 평일 오전 9시~오후 6시)</p>
+                        </div>
+                    </div>
+
+                    <div class="pro-box division-box">
+                        <h2 class="mt0">민원사항</h2>
+                        <!-- Start : 폼 -->
+                        <div class="form-iem">
+                            <div class="com-inp">
+                                <div class="label">민원종류</div>
+                                <!--<input type="text" id="i01" placeholder="선택해주세요" value="기타 상담문의" class="disabled" disabled="disabled" title="민원종류 입력"> [D] disabled일 경우 input로 보여줌-->
+                                <a href="#" id="" class="ico-select alink">
+                                    <span class="placeholder active">여신상품관련 민원</span><!--[D] : 데이터값이 있는 경우 : 클래스 active 추가 -->
+                                </a>
+                            </div>
+                            <div class="com-inp">
+                                <label for="i04">제목</label>
+                                <input type="text" id="i04" placeholder="입력해주세요" value="">
+                            </div>
+                            <div class="com-inp">
+                                <label for="i05" class="label-textarea">내용<br><p class="font12">2000자이내</p></label>
+                                <textarea id="i05" placeholder="입력해주세요" class="hei-textarea"></textarea>
+                            </div>
+                        </div>
+                        <!-- //End : 폼 -->
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray01 pc-btn"><button type="button" id="">이전</button></span><!-- [D]PC에서 보여지는 버튼 : 클래스 pc-btn 추가 -->
+                        <span class="btn gray"><button type="button" id="">다음</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <script>
+        $(document).ready(function(){
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

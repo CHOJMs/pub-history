@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<!-- <script src="/static/web/js/ui_gnb.js"></script> -->
+<script src="/static/web/js/mobile_office_ui_gnb.js"></script><!-- 2024-10-10 리뉴얼 -->
+
+<title>에이전트 실적 현황 | iM캐피탈</title>
+
+</head>
+<body>
+    <div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- Start : skip_navigation -->
+        <div id="tab_skip">
+            <a href="#common_body">
+                <span>본문 바로가기</span>
+            </a>
+        </div>
+        <!-- //End : skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header class="header">
+			<a href="" class="back">뒤로가기</a>
+			
+			<!-- <h1 class="logo-partner">Mobile Office</h1> -->
+			
+			<div class="header-setting-list">					
+				<a href="" class="alram"><i>4</i>알람</a>
+				<button type="button" class="header-all-btn">모바일 메뉴 버튼</button>
+			</div>
+
+			<!-- Start: 전체메뉴 -->
+			<nav class="total-menu-open">
+				<div class="total-menu-titleWrap">
+					<p class="total-menu-title">전체</p>
+					<div class="total-menu-setting">
+						<a href="" class="home">홈</a>
+						<a href="" class="alram"><i>4</i>알람</a>
+						<a href="" class="setting">설정</a>
+						<button type="button" class="total-menu-close">닫기</button>
+					</div>
+				</div>
+				
+				<div class="total-menu-innerWrap">
+					<div class="user-wrap mt16">
+						<div class="avater"></div>
+						<div class="user">
+							<p class="user-name">김단디디</p>
+							<div class="user-info">
+								<span class="badge">직원</span>
+								<span class="partner-txt">오토금융지원부</span>
+							</div>
+						</div>
+						<button type="button" class="logout">로그아웃</button>
+					</div>
+
+					<div class="total-noti-list mt24">
+						<a href="" class="total-noti-item">공지사항</a>
+						<a href="" class="total-noti-item">결재</a>
+						<a href="" class="total-noti-item">인증센터</a>
+					</div>
+
+					<div class="total-menu-wrap">
+						<div class="total-menu-box">
+							<div class="total-menu-tit">
+								<span class="ico"><img src="/static/web/img/mobile_office/ico_menutit_01.svg" alt=""></span>
+								여신
+							</div>
+							<ul class="total-menu-list">
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">연체현황/명세</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">관리채권 내역조회</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">외부활동 내역관리</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">외부활동 경로관리</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="total-menu-box">
+							<div class="total-menu-tit">
+								<span class="ico"><img src="/static/web/img/mobile_office/ico_menutit_02.svg" alt=""></span>
+								검수
+							</div>
+							<ul class="total-menu-list">
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">사전검수 요청명세</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">검수명세</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">물건검수 등록</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">관리채권 내역조회</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="total-menu-box">
+							<div class="total-menu-tit">
+								<span class="ico"><img src="/static/web/img/mobile_office/ico_menutit_03.svg" alt=""></span>
+								오토금융
+							</div>
+							<ul class="total-menu-list">
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">재고금융 현황(차량실사)</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">신규 딜러/모집인/중고차 할부 제휴 등록 안내<br>SMS 발송</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">한도조회 SMS 발송</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="total-menu-box">
+							<div class="total-menu-tit">
+								<span class="ico"><img src="/static/web/img/mobile_office/ico_menutit_04.svg" alt=""></span>
+								매매상사 딜러
+							</div>
+							<ul class="total-menu-list">
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">재고금융 신청</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">재고금융 현황</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">차량정보 확인</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="total-menu-box">
+							<div class="total-menu-tit">
+								<span class="ico"><img src="/static/web/img/mobile_office/ico_menutit_05.svg" alt=""></span>
+								중고차제휴
+							</div>
+							<ul class="total-menu-list">
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">공지사항</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">한도조회 신청</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">한도조회 신청(유선녹취)</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">한도조회 상담이력</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">자동차 시세확인</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">차량정보 확인</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">에이전트 실적 현황</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">할부협약매매상사 확인</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="total-menu-box">
+							<div class="total-menu-tit">
+								<span class="ico"><img src="/static/web/img/mobile_office/ico_menutit_06.svg" alt=""></span>
+								AG 영업관리 포털
+							</div>
+							<ul class="total-menu-list">
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">견적내기</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">진행현황</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">발주현황</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">즉시출고/선구매</div>
+									</a>
+								</li>
+								<li class="total-menu-item">
+									<a href="" class="total-menu-cover">
+										<div class="total-menu-cont">게시판</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<!-- //End: 전체메뉴 -->
+			
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <!-- Start : 컨텐츠 영역 -->
+                <h2 class="tl">에이전트 실적 현황</h2>
+                <div class="box_form scoll mob_nobtn"><!-- 하단에 버튼이 없는경우 : no_btn 클래스명 추가-->
+                    <div class="form_box">
+                        <p class="h_tit">에이전트 담당자 명</p>
+						<!-- [D] 기본 노출되는 입력폼 -->
+                        <div class="text_data">
+                            <span class="form">
+                                <input type="text" class="disabled" disabled="disabled" title="에이전트 담당자" value="홍길동">
+                            </span>
+                        </div>
+
+						<!-- [D] 당사직원이 진입 시 노출되는 입력폼 -->
+						<div class="text_data">
+                            <span class="form">
+                                <input type="text" title="에이전트 담당자" value="홍길동">
+                            </span>
+							<div class="btn_cont">
+								<button>검색</button>
+							</div>
+                        </div>
+
+						<p class="h_tit">조회기간</p>
+						<div class="text_data">
+							<span class="form">
+							  <input type="tel" id="" placeholder="1981-01-25" title="결재요청일자 입력">
+							  <button id="" class="calender">달력보기</button>
+							</span>
+							<span class="dash">-</span>
+							<span class="form">
+							  <input type="tel" id="" placeholder="1981-01-25" title="결재요청일자 입력">
+							  <button id="" class="calender">달력보기</button>
+							</span>							
+						</div>
+
+						<!-- Start : 조회 버튼 -->
+						<div class="btn_box pt16">
+							<span class="btn"><button id="">조회</button></span>
+						</div>
+						<!-- //End : 조회 버튼 -->
+
+						<!-- Start : 실적현황 -->
+						<div>
+							<h3 class="pb8">실적 현황</h3>
+							<table class="viewType mb30">
+								<caption>실적 및 대출건수를 나타낸 표</caption>
+								<colgroup>
+								<col width="130px">
+								<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">실적</th>
+										<td>1,500,000원</td>
+									</tr>
+									<tr>
+										<th scope="row">대출건수</th>
+										<td>3 건</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- [D] 조회 결과 없는 경우 -->
+							<div class="gray_box">검색결과가 없습니다.<br>검색조건을 다시 입력해 주세요.</div>
+						</div>
+						<!-- //End : 실적현황 -->
+					</div>
+				</div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+</body>
+</html>

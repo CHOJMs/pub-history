@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>진행현황 | iM캐피탈</title>
+</head>
+<body>
+    <div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- Start : skip_navigation -->
+        <div id="tab_skip">
+            <a href="#common_body">
+                <span>본문 바로가기</span>
+            </a>
+        </div>
+        <!-- //End : skip_navigation -->
+
+		<!----------- Start : 모바일 메뉴 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li class="home"><a href="">home</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">AG영업관리포털</a>
+							<ul>
+								<li><a href="">견적내기</a></li>
+								<li><a href="">진행현황</a></li>
+								<li><a href="">발주현황</a></li>
+								<li><a href="">즉시출고/선구매</a></li>
+								<li><a href="">게시판</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+        <!----------- //End : 모바일 메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <!-- Start : 컨텐츠 영역 -->
+                <h2 class="tl">진행현황</h2>
+				<div class="box_form scoll mob_nobtn"><!-- 하단에 버튼이 없는경우 : mob_nobtn 클래스명 추가-->
+					<!-- Start : 고객정보 -->
+					<div class="select-box bdt">
+						<a href="javascript:;" class="active">고객정보</a>
+						<div style="display:block">
+
+							<ul class="titcaption-list widtit120"><!-- [D] 타이틀이 글자수가 긴경우 클래스 추가 widtit120 -->
+								<li class="titcaption-item">
+									<div class="titcaption-tit">계약자<span class="essential">*</span></div>
+									<div class="titcaption-txt">홍*동</div>
+								</li>
+								<li class="titcaption-item">
+									<div class="titcaption-tit">계약자 연락처<span class="essential">*</span></div>
+									<div class="titcaption-txt">010-1234-5678</div>
+								</li>
+								<li class="titcaption-item">
+									<div class="titcaption-tit">연대보증인<span class="essential">*</span></div>
+									<div class="titcaption-txt"></div>
+								</li>
+								<li class="titcaption-item">
+									<div class="titcaption-tit">연대보증인 연락처<span class="essential">*</span></div>
+									<div class="titcaption-txt"></div>
+								</li>
+								<li class="titcaption-item">
+									<div class="titcaption-tit">차량계약번호<span class="essential">*</span></div>
+									<div class="titcaption-txt"></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="btn_box mt20">
+						<span class="btn"><a href="#">전자약정 URL 발송</a></span>
+					</div>
+					<!-- //End : 고객정보 -->
+
+					<!-- Start : 제출서류정보 -->
+					<div class="select-box bdt mt40">
+						<a href="javascript:;" class="active">제출서류정보<span class="count">(<strong>3</strong>/5)</span></a>
+						<div style="display:block">
+							<table class="viewType a_c">
+								<caption>제출서류정보</caption>
+								<colgroup>
+									<col width="30%">
+									<col width="%">
+									<col width="20%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">최종 제출일시</th>
+										<th scope="col">제출서류</th>
+										<th scope="col">서류확인</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>2024-07-17 10:30:00</td>
+										<td>
+											주민등록등본(1)
+										</td>
+										<td><a href="#n">보기</a></td>
+									</tr>
+									<tr>
+										<td>2024-07-17 10:30:00</td>
+										<td>
+											건강보험득실확인서(2)
+										</td>
+										<td><a href="#n">보기</a></td>
+									</tr>
+									<tr>
+										<td colspan="3">제출된 서류가 없습니다.</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="btn_box mt20">
+						<span class="btn"><a href="#">서류제출</a></span>
+						<span class="btn"><a href="#">서류제출 URL발송</a></span>
+					</div>
+					<!-- //End : 제출서류정보 -->
+
+					<!-- Start : 차량정보 -->
+					<div class="select-box">
+						<a href="javascript:;" class="active">차량정보</a>
+						<div style="display:block">
+							<ul class="titcaption-list"><!-- [D] 타이틀이 글자수가 긴경우 클래스 추가 widtit120 -->
+								<li class="titcaption-item">
+                                    <div class="titcaption-tit">차종</div>
+                                    <div class="titcaption-txt">현대 팰리세이드 2024년형 가솔린</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">유종</div>
+                                    <div class="titcaption-txt">가솔린</div>
+                                </li>
+								<li class="titcaption-item">
+                                    <div class="titcaption-tit">옵션명</div>
+									<div class="titcaption-txt">파킹 어시스트 플러스 현대스마트 센트</div>
+                                </li>
+                                <li class="titcaption-item">
+									<div class="titcaption-tit">외부색상</div>
+                                    <div class="titcaption-txt">크리미 화이트 펄</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">내부색상</div>
+                                    <div class="titcaption-txt">블랙 원톤</div>
+                                </li>
+                                <li class="titcaption-item">
+									<div class="titcaption-tit">판매사 탁송료</div>
+                                    <div class="titcaption-txt"></div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">차량가격</div>
+                                    <div class="titcaption-txt">44,260,000원</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">옵션가</div>
+                                    <div class="titcaption-txt">0원</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">합계</div>
+                                    <div class="titcaption-txt">44,260,000원</div>
+                                </li>
+                            </ul>
+						</div>
+					</div>
+					<!-- //End : 차량정보 -->
+
+					<!-- Start : 상품조건 -->
+					<div class="select-box">
+						<a href="javascript:;" class="active">상품조건</a>
+						<div style="display:block">
+
+							<ul class="titcaption-list"><!-- [D] 타이틀이 글자수가 긴경우 클래스 추가 widtit120 -->
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">대여기간</div>
+                                    <div class="titcaption-txt"></div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">월대여료</div>
+                                    <div class="titcaption-txt">100,000원</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">보증금</div>
+                                    <div class="titcaption-txt">10,000원</div>
+                                </li>
+								<li class="titcaption-item">
+                                    <div class="titcaption-tit">주행거리</div>
+                                    <div class="titcaption-txt">년 20,000km</div>
+                                </li>
+								<li class="titcaption-item">
+                                    <div class="titcaption-tit">잔존가치</div>
+                                    <div class="titcaption-txt">10,00,000원</div>
+                                </li>
+								<li class="titcaption-item">
+                                    <div class="titcaption-tit">선수금</div>
+                                    <div class="titcaption-txt">100,000원</div>
+                                </li>
+                            </ul>
+						</div>
+					</div>
+					<!-- //End : 상품조건 -->
+
+					<!-- Start : 용품신청정보 -->
+					<div class="select-box">
+						<a href="javascript:;" class="active">용품신청정보</a>
+						<div style="display:block">
+							<table class="viewType a_c">
+								<caption>용품신청정보</caption>
+								<colgroup>
+									<col width="130px">
+									<col span="2">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">측/후면 썬팅농도<em>*</em></th>
+										<td>15%, 버텍스300</td>
+										<td>232,000원</td>
+									</tr>
+									<tr>
+										<th scope="row">전면 썬팅농도<em>*</em></th>
+										<td>15%, 버텍스300</td>
+										<td>232,000원</td>
+									</tr>
+									<tr>
+										<th scope="row">블랙박스<em>*</em></th>
+										<td>딥플라이 DF9</td>
+										<td>0원</td>
+									</tr>
+									<tr></tr>
+										<th scope="row">추가비용<em>*</em></th>
+										<td>해당없음</td>
+										<td>0원</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th scope="row">총합계</th>
+										<td></td>
+										<td>386,000원</td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+					<!-- //End : 용품신청 -->
+
+					<!-- Start : 배송정보 -->
+					<div class="select-box">
+						<a href="javascript:;" class="active">배송정보</a>
+						<div style="display:block">
+
+							<ul class="titcaption-list"><!-- [D] 타이틀이 글자수가 긴경우 클래스 추가 widtit120 -->
+								<li class="titcaption-item">
+									<div class="titcaption-tit">탁송방법<span class="essential">*</span></div>
+									<div class="titcaption-txt"></div>
+								</li>
+								<li class="titcaption-item">
+									<div class="titcaption-tit">탁송지<span class="essential">*</span></div>
+									<div class="titcaption-txt"></div>
+								</li>
+								<li class="titcaption-item">
+									<div class="titcaption-tit">인수자<span class="essential">*</span></div>
+									<div class="titcaption-txt"></div>
+								</li>
+								<li class="titcaption-item">
+									<div class="titcaption-tit">연락처(1)<span class="essential">*</span></div>
+									<div class="titcaption-txt"></div>
+								</li>
+								<li class="titcaption-item">
+									<div class="titcaption-tit">연락처(2)</div>
+									<div class="titcaption-txt"></div>
+								</li>
+                            </ul>
+						</div>
+					</div>
+					<!-- //End : 배송정보 -->
+
+					<!-- Start : 여신담당 -->
+					<div class="select-box">
+						<a href="javascript:;" class="active">여신담당</a>
+						<div style="display:block">
+							<table class="viewType a_c">
+								<caption>여신담당</caption>
+								<colgroup>
+									<col width="130px">
+									<col>
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">구분</th>
+										<th scope="col">이름</th>
+										<th scope="col">수수료율</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">여신담당</th>
+										<td></td>
+										<td></td>
+									</tr>
+									<tr>
+										<th scope="row">CM<em>*</em></th>
+										<td></td>
+										<td>0.000%</td>
+									</tr>
+									<tr>
+										<th scope="row">AG<em>*</em></th>
+										<td></td>
+										<td>0.000%</td>
+									</tr>
+									<tr>
+										<th scope="row">AG연락처</th>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- //End : 여신담당 -->
+
+					<!-- Start : 기타 특이사항 -->
+					<div class="select-box">
+						<a href="javascript:;" class="active">기타 특이사항</a>
+						<div style="display:block">
+							<ul class="titcaption-list"><!-- [D] 타이틀이 글자수가 긴경우 클래스 추가 widtit120 -->
+								<li class="titcaption-item">
+									<div class="titcaption-tit">특이사항<span class="essential">*</span></div>
+									<div class="titcaption-txt">self</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- //End : 기타 특이사항 -->
+
+					<!-- Start : 버튼 시작 -->
+					<div class="btn_box mt30">
+						<span class="btn gray_1"><button id="">실행요청서 업데이트</button></span><!-- [D]버튼 비활성화 클래스 disabled -->
+						<span class="btn gray_1"><button id="">실행요청서 제출</button></span><!-- [D]버튼 비활성화 클래스 disabled -->
+
+						<!-- 제출완료 후 버튼
+						<span class="btn gray"><button id="" class="disabled">실행요청서 업데이트</button></span>
+						<span class="btn gray"><button id="" class="disabled">실행요청서 제출완료</button></span>
+						-->
+						<span class="btn"><button id="">목록</button></span>
+					</div>
+					<!-- //End : 버튼 끝 -->
+
+				</div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+</body>
+</html>

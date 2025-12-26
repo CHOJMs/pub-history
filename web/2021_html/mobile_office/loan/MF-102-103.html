@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객 SMS 발송</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">   
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>고객 SMS 발송</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+                        <div class="form_box">
+                            <p class="h_tit">업무구분</p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" class="disabled" disabled="disabled" placeholder="채권" title="업무구분 입력">
+                            </div>
+                            <p class="h_tit">문구구분</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="문구구분 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="h_tit">수신SMS번호</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" name="" class="disabled" disabled="disabled" title="수신SMS번호 입력">
+                                </span>
+                            </div>
+                            <!--<div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="수신SMS번호 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>-->
+                            <p class="h_tit">발신SMS번호</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" name="" class="disabled" disabled="disabled" title="발신SMS번호 입력">
+                                </span>
+                            </div>
+                            <p class="h_tit">SMS 내용<em>*<span>필수</span></em></p>
+                            <span class="textarea_box">
+                                <textarea id="" placeholder="" title="내용 입력" style="height:100px;"></textarea>
+                            </span>
+                        </div>
+                    </div>                    
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn gray"><button id="">취소</button></span>
+                        <span class="btn"><button id="">발송</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

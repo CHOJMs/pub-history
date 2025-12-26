@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+
+<title>고객정보 입력 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap" style="background-size: 20% auto;"><!--bg이미지 진행 width값-->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header>
+			<div class="gnb">
+				<!--// 모바일용 GNB 메뉴 -->
+				<p class="menu_icon">
+                    <a href="#" class="mobile_back_btn" title="뒤로가기"></a>
+                    <a href="#" class="mobile_menu_btn" title="모바일 메뉴"></a>
+                </p>
+				<!-- 모바일용 GNB 메뉴// -->
+
+				<!-- //웹용 GNB 메뉴 -->
+				<div id="nav">
+					<div id="blind"></div>
+					<div class="pc_menu">
+						<ul>
+							<li class="menu1">
+								<a href="#" class="on"><span>회사소개</span></a>
+							</li>
+							<li class="menu2">
+								<a href="#"><span>고객센터</span></a>
+							</li>
+							<li class="menu3">
+								<a href="#"><span>개인금융</span></a>
+							</li>
+							<li class="menu4">
+								<a href="#"><span>자동차금융</span></a>
+							</li>
+							<li class="menu5">
+								<a href="#"><span>스탁론</span></a>
+							</li>
+							<li class="menu6">
+								<a href="#"><span class="Koho700">마이</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 웹용 GNB 메뉴// -->
+			</div>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_process">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+                <div class="process_wrap">
+					<div class="pro_box">
+
+						<div class="pro_txt_box">
+							<div class="tit_info">한도 산출을 위한<br>직장/소득정보를 입력해주세요
+								<p class="txt_num"><span>1</span>/ 7</p>
+							</div>
+						</div>
+
+						<p class="icon_bullet">개인정보 확인 후 한도 확인이 가능하며, 실제 정보와 다를 경우 대출이 거절될 수 있습니다.</p>
+
+						<p class="h_tit">소득구분</p>
+						<div class="text_data radio-box-type1">
+							<div>
+								<input type="radio" name="r11" value="" id="r11" checked="checked" aria-hidden="true" title="급여소득자">
+								<label for="r11" role="radio" aria-checked="true"><span>급여소득자</span></label>
+							</div>
+							<div>
+								<input type="radio" name="r11" value="" id="r12" aria-hidden="true" title="개인사업자" role="radio">
+								<label for="r12" role="radio" aria-checked="false"><span>개인사업자</span></label>
+							</div>
+							<div>
+								<input type="radio" name="r11" value="" id="r13" aria-hidden="true" title="전문직 개인사업자" role="radio">
+								<label for="r13" role="radio" aria-checked="false"><span>전문직 개인사업자</span></label>
+							</div>
+							<div>
+								<input type="radio" name="r11" value="" id="r14" aria-hidden="true" title="인적 용역 제공자" role="radio">
+								<label for="r14" role="radio" aria-checked="false"><span>인적 용역 제공자</span></label>
+							</div>
+							<div>
+								<input type="radio" name="r11" value="" id="r15" aria-hidden="true" title="기타 소득" role="radio">
+								<label for="r15" role="radio" aria-checked="false"><span>기타 소득</span></label>
+							</div>
+						</div>
+
+						<div id="uiTNPT2">
+							<p class="h_tit">직군</p>
+							<div class="text_data radio-box-type1">
+								<div>
+									<input type="radio" name="r21" value="" id="r21" checked="checked" aria-hidden="true" title="대&middot;중소기업/공공기관 체크">
+									<label for="r21" role="radio" aria-checked="true"><span>대&middot;중소기업/공공기관</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r21" value="" id="r22" aria-hidden="true" title="공무원 및 법조계 체크" role="radio">
+									<label for="r22" role="radio" aria-checked="false"><span>공무원 및 법조계</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r21" value="" id="r23" aria-hidden="true" title="교수/교사/교직원 체크" role="radio">
+									<label for="r23" role="radio" aria-checked="false"><span>교수/교사/교직원</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r21" value="" id="r24" aria-hidden="true" title="자영업자 체크" role="radio">
+									<label for="r24" role="radio" aria-checked="false"><span>자영업자</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r21" value="" id="r25" aria-hidden="true" title="기타소득자/무직자 체크" role="radio">
+									<label for="r25" role="radio" aria-checked="false"><span>기타소득자/무직자</span></label>
+								</div>
+							</div>
+							
+							<div>
+								<p class="h_tit">직장명</p>
+								<div class="text_data">
+									<span class="form">
+										<input type="text" class="" id="" placeholder="" title="직장명 입력">
+									</span>
+									<div class="btn_cont">
+										<button id="">직장 조회</button>
+									</div>
+								</div>
+
+								<p class="h_tit">직장 주소</p>
+								<div class="text_data">
+									<span class="form">
+										<input type="text" id="" placeholder="" title="주소 입력">
+									</span>
+									<div class="btn_cont">
+										<button id="">우편번호 검색</button>
+									</div>
+								</div>
+								<div class="text_data">
+									<span class="form">
+										<input type="text" id="" placeholder="" title="상세주소 입력">
+									</span>
+								</div>
+								
+								<p class="h_tit">직장 연락처</p>
+								<div class="text_data">
+									<span class="form">
+										<input type="text" class="" id="" placeholder="'-' 제외하고 입력" title="연락처 입력">
+									</span>
+								</div>
+							</div>
+
+							<p class="h_tit">고용형태</p>
+							<div class="text_data radio-box-type1 grid3">
+								<div>
+									<input type="radio" name="r31" value="" id="r31" checked="checked" aria-hidden="true" title="정규직 체크">
+									<label for="r31" role="radio" aria-checked="true"><span>정규직</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r31" value="" id="r32" aria-hidden="true" title="계약직 체크" role="radio">
+									<label for="r32" role="radio" aria-checked="false"><span>계약직</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r31" value="" id="r33" aria-hidden="true" title="파견직 체크" role="radio">
+									<label for="r33" role="radio" aria-checked="false"><span>파견직</span></label>
+								</div>
+							</div>
+
+							<div>
+								<p class="h_tit">표준산업분류</p>
+								<div class="text_data">
+									<span class="form">
+										<input type="text" class="" id="" placeholder="" title="표준산업분류 입력">
+									</span>
+								</div>
+								<div class="btn_box mt16">
+									<span class="btn btn_gray"><a href="#">조회</a></span>
+								</div>
+
+								<p class="h_tit">사업자소유구분</p>
+								<div class="text_data radio-box-type1">
+									<div>
+										<input type="radio" name="r211" value="" id="r211" checked="checked" aria-hidden="true" title="자가(본인)">
+										<label for="r211" role="radio" aria-checked="true"><span>자가(본인)</span></label>
+									</div>
+									<div>
+										<input type="radio" name="r211" value="" id="r212" aria-hidden="true" title="임차">
+										<label for="r212" role="radio" aria-checked="false"><span>임차</span></label>
+									</div>
+									<div>
+										<input type="radio" name="r211" value="" id="r213" aria-hidden="true" title="가족/임원/과점주주">
+										<label for="r213" role="radio" aria-checked="false"><span>가족/임원/과점주주</span></label>
+									</div>
+									<div>
+										<input type="radio" name="r211" value="" id="r214" aria-hidden="true" title="관계사">
+										<label for="rr21414" role="radio" aria-checked="false"><span>관계사</span></label>
+									</div>
+									<div>
+										<input type="radio" name="rr21111" value="" id="r215" aria-hidden="true" title="기타">
+										<label for="r215" role="radio" aria-checked="false"><span>기타</span></label>
+									</div>
+								</div>
+
+								<p class="h_tit">보증금</p>
+								<div class="text_data">
+									<span class="form app_text">
+										<input type="tel" id="" class="a_r" placeholder="숫자만 입력해주세요" title="보증금 입력">
+										<span class="txt">만원</span>
+									</span>								
+								</div>
+
+								<p class="h_tit">월세</p>
+								<div class="text_data">
+									<span class="form app_text">
+										<input type="tel" id="" class="a_r" placeholder="숫자만 입력해주세요" title="월세 입력">
+										<span class="txt">만원</span>
+									</span>								
+								</div>
+
+								<p class="h_tit">최근년도연매출</p>
+								<div class="text_data">
+									<span class="form app_text">
+										<input type="tel" id="" class="a_r" placeholder="0" title="최근년도연매출 입력">
+										<span class="txt">원</span>
+									</span>								
+								</div>
+								<span class="small-text">만원</span>
+							</div>
+
+							<div>
+								<p class="h_tit">직장 의료보험 가입 여부</p>
+								<div class="text_data radio-box-type1">
+									<div>
+										<input type="radio" name="r321" value="" id="r321r21" aria-hidden="true" title="가입 체크">
+										<label for="r321" role="radio" aria-checked="false"><span>가입</span></label>
+									</div>
+									<div>
+										<input type="radio" name="r321" value="" id="r322" aria-hidden="true" title="미가입 체크">
+										<label for="r322" role="radio" aria-checked="false"><span>미가입</span></label>
+									</div>
+								</div>
+							</div>
+
+							<p class="h_tit">입사년월</p>
+							<div class="text_data">
+								<div class="selectbox">
+									<select class="select" title="입사년도 선택">
+										<option>년 선택</option>
+									</select>
+								</div>
+								<div class="selectbox">
+									<select class="select" title="입사 월 선택">
+										<option>월 선택</option>
+									</select>
+								</div>
+							</div>
+
+							<p class="h_tit">연소득</p>
+							<div class="text_data">
+								<span class="form app_text">
+									<input type="tel" name="" id="" class="a_r" placeholder="0" title="입력">
+									<span class="txt">원</span>
+								</span>							
+							</div>
+							<span class="small-text">만원</span>
+						</div>
+
+					</div>
+                </div>
+                <!-- 내용 끝 -->
+
+                <!-- 버튼 시작 -->
+                <div class="btn_fixed">
+                    <div class="btn_box">
+                        <span class="btn_step btn_pre">
+							<button id="">이전</button>
+						</span>
+                        <span class="btn_step bnt_next disabled"><!-- 활성버튼: class="black" / 비활성버튼: class="disabled" / 기본버튼: class="black" 삭제 -->
+							<p class="txt_num"><span>1</span>/ 7</p>
+							<button id="">다음</button>
+						</span>
+                    </div>
+                </div>
+             <!-- 버튼 끝 -->
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+</body>
+</html>

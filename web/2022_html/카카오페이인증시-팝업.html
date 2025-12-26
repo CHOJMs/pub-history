@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카카오페이인증시 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-small"><!-- 작은 팝업 클래스 추가 -->
+        <div class="inner pt40">
+            <div class="popup-contents">
+                <!-- Start : content-->
+                <div class="kakao_cen_box">
+                    <div class="ka_tit">카카오페이 인증 진행중입니다.</div>
+                    <div class="ka_txt">휴대폰에서 인증요청 알림을 확인해주세요.</div>
+                    <div class="img-kakao"></div>
+
+                    <!--  Start : 버튼 영역 -->
+                    <div class="btn_box">
+                        <span class="btn gray wid120"><button id="">취소</button></span>
+                        <span class="btn"><button id="">인증 완료</button></span>
+                    </div>
+                    <!-- //End : 버튼 영역 -->
+
+                </div>
+                <!-- //End : content-->
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

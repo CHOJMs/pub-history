@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/admin/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 게시판 관리 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-03</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>자주하는 질문 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-100-001.html">DGB-A-100-001.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>자주하는 질문 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-100-002.html">DGB-A-100-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>자주하는 질문 - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-100-003.html">DGB-A-100-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공지사항 및 안내 (홈페이지) - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-200-001.html">DGB-A-200-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공지사항 및 안내 (홈페이지) - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-200-002.html">DGB-A-200-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-04</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공지사항 및 안내 (홈페이지) - 등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-200-003.html">DGB-A-200-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공지사항 및 안내 (모바일오피스) - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-300-001.html">DGB-A-300-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공지사항 및 안내 (모바일오피스) - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-300-002.html">DGB-A-300-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>page</td>
+                        <td>공지사항 및 안내 (모바일오피스) - 등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-300-003.html">DGB-A-300-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>윤리경영 Q&A - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-400-001.html">DGB-A-400-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>윤리경영 Q&A - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-400-002.html">DGB-A-400-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>윤리경영 Q&A - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-400-003.html">DGB-A-400-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>채용 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-500-001.html">DGB-A-500-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>채용 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-500-002.html">DGB-A-500-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>채용 - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-500-003.html">DGB-A-500-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>경영공시 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-600-001.html">DGB-A-600-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>경영공시 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-600-002.html">DGB-A-600-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>경영공시 - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-600-003.html">DGB-A-600-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>결산공고 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-700-001.html">DGB-A-700-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>결산공고 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-700-002.html">DGB-A-700-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>결산공고 - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-700-003.html">DGB-A-700-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>금융소비자보호공시 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-800-001.html">DGB-A-800-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>금융소비자보호공시 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-800-002.html">DGB-A-800-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>금융소비자보호공시 - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-800-003.html">DGB-A-800-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>금융소비자 참고판례 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-900-001.html">DGB-A-900-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>금융소비자 참고판례 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-900-002.html">DGB-A-900-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>금융소비자 참고판례 - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-900-003.html">DGB-A-900-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>금융소비자 유익정보 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1001-001.html">DGB-A-1001-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>금융소비자 유익정보 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1001-002.html">DGB-A-1001-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>금융소비자 유익정보 - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1001-003.html">DGB-A-1001-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>위탁업체 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1002-001.html">DGB-A-1002-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>위탁업체 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1002-002.html">DGB-A-1002-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>위탁업체 - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1002-003.html">DGB-A-1002-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>제3자 제공현황 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1003-001.html">DGB-A-1003-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>제3자 제공현황 - 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1003-002.html">DGB-A-1003-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>제3자 제공현황 - 수정/등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1003-003.html">DGB-A-1003-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td>2023-08-08</td>
+                        <td>page</td>
+                        <td>연혁 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1004-001.html">DGB-A-1004-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>연혁 - 수정</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1004-002.html">DGB-A-1004-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-12</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>연혁 - 등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1004-003.html">DGB-A-1004-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-15</td>
+                        <td>2023-08-08</td>
+                        <td>page</td>
+                        <td>판매중단 상품안내 - 목록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1005-001.html">DGB-A-1005-001.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-15</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>판매중단 상품안내 - 수정</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1005-002.html">DGB-A-1005-002.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2023-05-15</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>판매중단 상품안내 - 등록</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/board/DGB-A-1005-003.html">DGB-A-1005-003.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

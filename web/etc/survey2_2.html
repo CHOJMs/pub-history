@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/static/web/css/common.css">
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <title>iM캐피탈</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- Start : 컨텐츠 영역 -->
+        <div class="contents">
+            <div class="survey_wrap">
+                <img src="../../static/web/img/img_sur_top.png" alt="iM캐피탈 고객만족도 조사">
+                <div class="survey_cont">
+                    <!-- Start : 6번 문항 -->
+                    <p class="survey_tit"><span>6</span>추천하고 싶지 않으시다면 그 이유는 무엇인가요?</p>
+                    <div class="sur_textarea">
+                        <textarea id="textarea1" rows="3" placeholder="입력해 주세요." style="height:80px"></textarea>
+                        <p><span id="chk_byte1">0</span>/300자</p>
+                    </div>
+                    <!-- //End : 6번 문항 -->
+
+                    <!-- Start : 7번 문항 -->
+                    <p class="survey_tit"><span>7</span>당사 서비스를 이용하시면서 만족 또는 개선이 필요한 부분이 있으시면 의견을 작성해주세요.</p>
+                    <div class="sur_textarea">
+                        <textarea id="textarea2" rows="3" placeholder="입력해 주세요." style="height:60px"></textarea>
+                        <p><span id="chk_byte2">0</span>/300자</p>
+                    </div>
+                    <!-- //End : 7번 문항 -->
+
+                    <div class="fixed-btn-area">
+                        <div class="btn-box">
+                            <span class="btn gray01"><button type="button" id="">이전</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                            <span class="btn"><button type="button" id="">다음</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        </div>
+                    </div>
+                    <!-- <div class="btn_survey_wrap">
+                        <button class="btn_survey gray">이전</button>
+                        <button class="btn_survey">제출하기</button>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- //End : 컨텐츠 영역 -->
+    </div>
+</body>
+<script>
+$(document).ready(function() {
+    $('.sur_textarea').each(function(index) {
+        var $container = $(this);
+        var $textarea = $container.find('#textarea' + (index+1));
+        var $byteSpan = $container.find('#chk_byte' + (index+1));
+
+        var oldVal = $textarea.val();
+
+        $textarea.on("propertychange change keyup paste input", function() {
+            var currentVal = $(this).val();
+            if(currentVal === oldVal) {
+                return;
+            }
+            oldVal = currentVal;
+            
+            onch_Byte($byteSpan);
+        });
+
+        function onch_Byte($byteSpan) {
+            var str = $textarea.val();
+            var byteCount = str.length;
+            $byteSpan.text(byteCount);
+
+            if (0 < byteCount && byteCount <= 300) {
+                $byteSpan.css("color", "#707478");
+            } else if (byteCount == 0) {
+                $byteSpan.css("color", "#bcc0c5");
+            }
+        }
+    });
+});
+</script>
+</html>

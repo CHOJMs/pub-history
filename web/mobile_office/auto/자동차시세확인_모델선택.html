@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>자동차 시세확인 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+            
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+				
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>					
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">오토 재고금융</a>
+							<ul>
+								<li><a href="">재고금융 신청</a></li>
+								<li><a href="">재고금융 현황</a></li>
+                                <li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+						<li class=""><a href="">중고차 제휴</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">한도조회 신청</a></li>
+                                <li><a href="">한도조회 신청(유선녹취)</a></li>
+                                <li><a href="">한도조회 상담이력</a></li>
+								<li><a href="">자동차 시세확인</a></li>
+								<li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+				<h2 class="tl">자동차 시세확인</h2>
+                <div class="box_form scoll mob_nobtn"><!-- 하단에 버튼이 없는경우 : no_btn 클래스명 추가-->
+					<div class="tabwrap">
+						<div class="tab_navi">
+							<ul>
+								<li><a href="#" aria-label="차량번호로 선택안됨">차량번호로 조회</a></li>
+								<li><a href="#" class="on" aria-label="모델 선택으로 선택됨">모델 선택으로 조회</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="form_wrap">
+						<div class="box_form pt20 pt10">
+							<p class="caution">모델명과 연식을 입력하여 차량을 검색하신 후, 차량을 선택해 주세요.</p>
+						</div>
+						<span class="no_tit"></span>
+						<div class="form_box">
+							<p class="h_tit">차명(한글)</p>
+							<div class="text_data">
+								<span class="form">
+								<input type="tel" id="" placeholder="예) 아반떼" title="차명 입력">
+								</span>
+							</div>
+
+							<p class="h_tit">모델명</p>
+							<div class="text_data">
+								<span class="form">
+								<input type="tel" id="" placeholder="1글자 이상 입력해주세요" title="모델명 입력">
+								</span>
+							</div>
+
+							<p class="h_tit">연식</p>
+							<div class="text_data">
+								<span class="form">
+								<input type="tel" id="" placeholder="예) 2015" title="연식 입력">
+								</span>
+							</div>
+							<div class="btn_box mt16">
+								<button type="button" id="btnSearchCarmodelInfo">차량 조회</button>
+							</div>
+
+							<p class="border_top_line mt20 pb20"></p>
+
+							<p class="a_r pb5" id="unit">(단위 : 만원)</p>
+							<div class="scroll_table1">
+								<table class="dataType" id="tblCarmodelInfoResult">
+									<caption>
+											차명, 모델명, 차량엔진형식, 연식, 가격(시세) 등으로 나타낸 테이블
+									</caption>
+									<colgroup>
+									<col width="20%">
+									<col width="20%">
+									<col width="13%">
+									<col width="13%">
+									<col width="13%">
+									<col width="20%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">차명</th>
+											<th scope="col">모델명</th>
+											<th scope="col">차량엔진형식</th>
+											<th scope="col">미션</th>
+											<th scope="col">연식</th>
+											<th scope="col">가격(시세)</th>
+										</tr>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+								<div class="btn_more border_t_line mt25" style="display:none"><a href="#" class="more-btn" >더보기<span class="icon_acco"></span></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+                <!-- 내용 끝 -->			
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+</body>
+</html>

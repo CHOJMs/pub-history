@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전자약정 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">    
+    <div class="popup popup-01 popup-small"><!-- 작은 팝업 클래스 추가 -->
+        <div class="inner">
+            <div class="popup-contents flex-column">
+                <!-- content 시작 //-->
+                <p class="a_c">
+                    위임정보 확인을 위해 신청인의 이름 및 휴대폰정보를 iM캐피탈에 제공할 예정입니다.<br><br>
+                        동의하시겠습니까?
+                    
+                </p>
+
+                <div>
+                    <!-- 버튼 시작//-->
+                    <div class="btn-area">
+                        <div class="btn_box">
+                            <span class="btn gray"><button id="">취소</button></span>
+                            <span class="btn"><button id="">확인</button></span>
+                        </div>
+                    </div>
+                    <!-- //버튼 끝-->
+                </div>
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중요약정사항 확인</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>신청정보 확인</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+
+                <h2>신청내역</h2>
+                <div class="t_line_box1">
+                    <ul class="list_1">
+                        <li>
+                            <span class="tit">신청일자</span>
+                            <span>2021-05-26</span>
+                        </li>
+                        <li>
+                            <span class="tit">구입차종</span>
+                            <span>차종 (연식)</span>
+                        </li>
+                        <li>
+                            <span class="tit">신청금액</span>
+                            <span>30,000,000원</span>
+                        </li>
+                        <li>
+                            <span class="tit">대출기간</span>
+                            <span>24개월</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="box_cauinfo">
+                    <p class="tl">대출제한안내</p>
+                    <ul>
+                        <li>대출 실행시점에 신용도 변동, 타 금융기관 대출 발생 시 대출이 제한될 수 있습니다.</li>
+                        <li>동일 차종에 타 금융기고나의 중복대출 신청이 확인될 경우 대출이 취소될 수 있습니다.</li>
+                        <li>신청내용 변경은 상담원을 통해 가능 여부를 먼저 확인하시기 바랍니다.</li>
+                    </ul>
+                </div>
+                <p class="call_phone1"><span class="tit">대출상담</span> <span class="phone">1566-0050</span> (평일 오전 9시 ~ 오후 6시)</p>
+
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지문 등록 안내 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <!--<div class="popup-text">
+                <h1>휴대폰 본인인증</h1>
+            </div>-->
+            <div class="popup-contents flex-col pad-small"><!-- 2022-10-11 : pad-small 추가 -->
+                <!-- Start : content -->
+                <div class="popup-text mb32">
+                    <h1>지문 등록 안내</h1>
+                </div>
+                <div class="box-gray type">
+                    <ul class="list-dot type">
+                        <li>iM캐피탈은 지문 정보를 저장하지 않아요.</li>
+                        <li>생체인식이 가능한 스마트폰에 지문이 미리 등록되어 있어야 합니다.</li>
+                        <li>기기를 변경하거나 앱을 다시 설치할 때 또는 연속으로 5회 인증 실패 시 지문을 재등록해야 합니다.</li>
+                    </ul>
+                </div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray01"><button type="button">취소</button></span>
+                        <span class="btn"><button type="button">등록하기</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function(){
+        $(window).on("resize", function() {
+            footerHide();
+        });
+        footerHide();
+        function footerHide() {
+            var screenWidth = $(window).width();
+            if (screenWidth < 1024) {
+                // 화면 너비가 1024px보다 작을 때 실행할 코드
+                $("footer").hide();
+                $("body").show();
+            }else{
+                $("body").hide();
+            }
+        }
+    });
+</script>
+</body>
+</html>

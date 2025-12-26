@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중요약정사항 확인</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>신청정보 확인</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+
+                <h2>금융상품 신청내역</h2>
+                <div class="t_line_box1">
+                    <ul class="list_1">
+                        <li>
+                            <span class="tit">진행상품</span>
+                            <span>신차 오토론</span>
+                        </li>
+                        <li>
+                            <span class="tit">등록명의</span>
+                            <span>고객</span>
+                        </li>
+                    </ul>
+                </div>    
+                
+                <h2>견적정보확인</h2>
+                <div class="t_line_box1">
+                    <ul class="list_1">
+                        <li>
+                            <span class="tit">브랜드</span>
+                            <span>현대</span>
+                        </li>
+                        <li>
+                            <span class="tit">구입차량</span>
+                            <span>차종 (연식)</span>
+                        </li>
+                        <li>
+                            <span class="tit">차량가격</span>
+                            <span>30,000,000원</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <h2>대출내역확인</h2>
+                <div class="t_line_box1">
+                    <ul class="list_1">
+                        <li>
+                            <span class="tit">대출금액</span>
+                            <span>20,000,000원</span>
+                        </li>
+                        <li>
+                            <span class="tit">대출기간</span>
+                            <span>60개월</span>
+                        </li>
+                        <li>
+                            <span class="tit">약정금리</span>
+                            <span>5.284%</span>
+                        </li>
+                        <li>
+                            <span class="tit">월납부금</span>
+                            <span>
+                                234,234원 <br/>
+                                (1회차는 결제일에 따라 변동)
+                            </span>
+                        </li>
+                        <li>
+                            <span class="tit">상환방법</span>
+                            <span>원리금균등상환방법</span>
+                        </li>
+                        <li>
+                            <span class="tit">연체이자율</span>
+                            <span>
+                                8.284% <br/>
+                                <span>약정금리+3%p(법정 최고금리 이내)<br/></span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="tit">중도상환수수료
+                            </span>
+                            <span>
+                                2% <br/>
+                                <span>중도상환원금 x 1%(부대비용) + 중도상환원금 X (중도상환수수료율% - 1%) X 잔존기간 ÷ (대출기간-30일)</span> <br>
+                                <span class="icon_bullet font_red mt0">30일 미만 상환시에는 ‘대출사용기간’을 30일로 간주합니다</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="tit">인지대</span>
+                            <span>
+                                당사(50%) 200,000원 <br/>
+                                고객(50%) 200,000원
+                            </span>
+                        </li>
+                    </ul>
+                </div> 
+
+                <p class="icon_bullet">인지세는 채무자 50%, 금융회사 50% 부담 입니다.</p>
+                <p class="icon_bullet mb0">인지세기준 : 5천만원이하 : 면제 / 1억이하 : 7만원 / 10억이하 : 15만원 / 10억초과 : 35만원</p>
+
+                <h2>추가계약정보</h2>
+                <div class="t_line_box1">
+                    <ul class="list_1">
+                        <li>
+                            <span class="tit">장기선납금</span>
+                            <span>20,000,000원</span>
+                        </li>
+                        <li>
+                            <span class="tit">상계방법</span>
+                            <span>12회차, 후납<br>
+                                <span class="icon_bullet mt0">상세 납부내용은 상환스케줄 서류를 통해 참고바랍니다.</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="tit">이손금</span>
+                            <span>10,000,000원</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <h2>연대보증 정보</h2>
+                <div class="t_line_box1">
+                    <ul class="list_1">
+                        <li>
+                            <span class="tit">채무자명</span>
+                            <span>홍길동</span>
+                        </li>
+                        <li>
+                            <span class="tit">연대보증인명</span>
+                            <span>김영희</span>
+                        </li>
+                        <li>
+                            <span class="tit">입보자격</span>
+                            <span>대표이사/주주</span>
+                        </li>
+                        <li>
+                            <span class="tit">보증종류</span>
+                            <span>특정근보증</span>
+                        </li>
+                        <li class="pb0">
+                            <span class="tit">보증내용</span>
+                            <span></span>
+                        </li>
+                        <li class="pb0">
+                            <span class="tit">- 보증채무최고액</span>
+                            <span>신청인(차주)의 채무금액과 동일</span>
+                        </li>
+                        <li>
+                            <span class="tit">- 보증기간</span>
+                            <span>신청인(차주)의 채무종료일과 동일</span>
+                        </li>
+                    </ul>
+                </div> 
+
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

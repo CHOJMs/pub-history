@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>중고차론 한도조회 신청 | iM캐피탈</title>
+
+</head>
+<body>
+    <div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- Start : skip_navigation -->
+        <div id="tab_skip">
+            <a href="#common_body">
+                <span>본문 바로가기</span>
+            </a>
+        </div>
+        <!-- //End : skip_navigation -->
+
+		<!----------- Start : 모바일 메뉴 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">오토 재고금융</a>
+							<ul>
+								<li><a href="">재고금융 신청</a></li>
+								<li><a href="">재고금융 현황</a></li>
+                                <li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+						<li class=""><a href="">중고차 제휴</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">한도조회 신청</a></li>
+                                <li><a href="">한도조회 신청(유선녹취)</a></li>
+                                <li><a href="">한도조회 상담이력</a></li>
+								<li><a href="">자동차 시세확인</a></li>
+								<li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+        <!----------- //End : 모바일 메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <!-- Start : 컨텐츠 영역 -->
+                <h2 class="tl">중고차론 한도조회 신청</h2>
+                <div class="box_form scoll mob_nobtn"><!-- 하단에 버튼이 없는경우 : no_btn 클래스명 추가-->
+
+                    <h3 class="txt">고객정보</h3>
+                    <div class="form_box">
+                        <p class="h_tit">이름</p>
+                        <div class="text_data">
+                            <span class="form">
+                                <input type="text" title="이름 입력">
+                            </span>
+                        </div>
+
+						<p class="h_tit">주민등록번호</p>
+						<div class="text_data">
+							<span class="form">
+								<input type="tel" placeholder="생년월일" title="주민등록번호 앞 6자리 입력">
+							</span>
+							<span class="dash">-</span>
+							<span class="form">
+								<input type="tel" placeholder="뒷자리 7자리" title="주민등록번호 뒤 7자리 입력">
+							</span>
+						</div>
+						<div class="btn_box mt16">
+							<span class="btn btn_gray"><a href="#">실명인증</a></span>
+						</div>
+						<p class="icon_bullet mt24">KCB(코리아크레딧뷰로) ‘신용조회차단서비스＇를 이용 중이신 경우 해제 후 신청 바랍니다.<br>(KCB전화 02-708-1001)</p>
+					</div>
+
+					<h3 class="txt">상품정보</h3>
+					<div class="form_box">
+						<p class="h_tit">상품명</p>
+						<div class="text_data">
+							<div class="selectbox">
+								<select class="select" title="상품명 선택">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<h3 class="txt">차량정보</h3>
+					<div class="form_box">
+						<p class="h_tit">구매차량</p>
+						<div class="btn_box mt16">
+							<span class="btn btn_gray"><a href="#">구매 차량 선택</a></span>
+						</div>
+
+						<p class="h_tit">선택차종</p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" class="disabled" disabled="disabled" title="선택차종 입력">
+							</span>
+						</div>
+
+						<p class="h_tit">가격</p>
+						<div class="text_data">
+							<span class="form form_text">
+								<input type="tel" class="disabled" disabled="disabled" title="가격 입력">
+							</span>
+							<span class="txt">만원</span>
+						</div>
+
+						<p class="h_tit">차량번호</p>
+						<div class="text_data">
+							<span class="form">
+								<input type="text" title="차량번호 입력">
+							</span>
+						</div>
+
+					</div>
+
+					<h3 class="txt">대출정보</h3>
+					<div class="form_box">
+						<p class="h_tit">신청금액</p>
+						<div class="text_data">
+							<span class="form form_text">
+								<input type="tel" title="신청금액 입력">
+							</span>
+							<span class="txt">만원</span>
+						</div>
+
+                        <p class="h_tit">대출기간(개월)</p>
+						<div class="text_data">
+							<div class="selectbox">
+								<select class="select" title="대출기간(개월) 선택">
+									<option>선택</option>
+								</select>
+							</div>
+						</div>
+						<ul class="list_bull mt10">
+							<li>해당 모델, 연식 및 대출기간에 따라 가능한도가 변경됩니다.</li>
+							<li>신청금액이 1,000만원 미만인 경우에는 최대 48개월까지 선택 가능합니다.</li>
+							<li>84개월은 1,000만원 이상, 최근 7년이내 차량 시 선택 가능합니다.</li>
+						</ul>
+
+						<p class="h_tit">지점차감한도</p>
+						<div class="text_data">
+							<span class="form form_text">
+								<input type="tel" title="지점차감한도 입력">
+							</span>
+							<span class="txt">만원</span>
+						</div>
+
+						<p class="h_tit">휴대전화번호</p>
+						<div class="text_data">
+							<div class="selectbox">
+								<select class="select" title="통신사 선택">
+									<option>SK</option>
+								</select>
+							</div>
+							<span class="dash">-</span>
+							<span class="form wid45">
+								<input type="tel" id="" placeholder="'-'제외하고 입력" title="휴대폰번호 입력">
+							</span>
+						</div>
+
+						<p class="h_tit">휴대전화 명의구분</p>
+						<ul class="inline_rchk list">
+							<li>
+								<input type="radio" name="r021" value="" id="r021" class="rchk">
+								<label for="r021" class="rchk-label"><span>본인명의</span></label>
+							</li>
+							<li>
+								<input type="radio" name="r021" value="" id="r022" class="rchk">
+								<label for="r022" class="rchk-label"><span>타인명의</span></label>
+							</li>
+						</ul>
+
+						<!-- 버튼 시작 -->
+						<div class="btn_box mt30">
+							<span class="btn"><a href="#">본인인증 요청하기</a></span>
+						</div>
+						<!-- 버튼 끝 -->
+					</div>
+
+				</div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+</body>
+</html>

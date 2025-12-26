@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>승계 신청하기 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+    window.addEventListener('load', addrPopupAll);
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half popup-360"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <!--<div class="popup-text">
+                <h1>휴대폰 본인인증</h1>
+            </div>-->
+            <div class="popup-contents flex-col pad-small"><!-- 2022-10-11 : pad-small 추가 -->
+                <!-- Start : content -->
+                <div class="popup-text">
+                    <h1>승계 신청하기</h1>
+                </div>
+                <ul class="list-dot type">
+                    <li>승계 신청 및 접수는 전용 상담센터(대표번호 : 1566-8808)에서 진행 됩니다.</li>
+                    <li>승계시 보증금/선납금 정산, 미납 과태료/범칙금, 승계수수료, 오토리스 자동차세 등 비용 및 정산 진행이 필요할 수 있습니다. </li>
+                    <li>승계시 차량 상태(정비, 사고, 하자, 외관 등)는 당사자인 양도인, 양수인 간에 확인 후 승계 진행 여부를 결정하시길 바랍니다.</li>
+                    <li>승계시 차량 상태, 차량 인도 여부 등은 당사자인 양도인, 양수긴 간에 확인 후 합의할 내용이며 이에 대하여 당사는 법적 책임이 없습니다.</li>
+                </ul>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button">상담 신청하기</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,391 @@
+//StringBuffer 설정
+let StringBuffer = function() {
+	this.buffer = new Array();
+};
+
+StringBuffer.prototype.append = function(str) {
+	this.buffer[this.buffer.length] = str;
+};
+
+StringBuffer.prototype.toString = function(s) {
+	return this.buffer.join((s || ''));
+};
+
+let TRX_CODE = '';  // 거래코드
+let MOBILE_TYPE = '';  // 거래코드
+let testMode = (typeof GlobalJSConfig !== "undefined") ? GlobalJSConfig.isTestMode : false;
+
+function mobileIdSuccStep(){
+	fnGetTrxsts({
+        "success" :function(data) {
+        	fnMobileIdSuccCallBack(data);
+        }
+    });
+}
+
+function mobileIdVpDataAjax(param) {
+	param.url = "/common/mobileIdVpDataAjax.do";
+	param.dataType = "json";
+	param.contentType = "application/json; charset=utf-8";
+	param.type = "POST";
+	param.success = function(data) {
+		if(data.RSPCD == "0000" && data.RSLT == "Y") {
+			fnNextStep();
+		} else if(data.RSPCD == "4009") {
+			alert("고객정보 불일치(CI)\n다시 시도해주세요.");
+		}
+		else {
+			alert("모바일신분증 제출에 실패했습니다.\n다시 시도해주세요.[" + data.RSPCD + "]");
+		}
+		uiCommon.closePopup('qrmobidpopup');
+	};
+	param.error = function(jqXHR, textStatus, errorThrown) {
+		alert("처리 중 오류가 발생했습니다.");
+	};
+
+	$.ajax(param);
+}
+
+// 거래상태 조회
+function fnGetTrxsts(opt) {
+	let trxcode = TRX_CODE;
+	let type = MOBILE_TYPE;
+
+	let _url = '/mip/trxsts';
+//	if(type == 'IDE') {
+//		_url = '/mip/trxsts/new';
+//	}
+
+	let errMsg = new StringBuffer();
+
+	if((trxcode || '') == '') {
+		errMsg.append('거래코드가 없습니다.');
+	}
+
+	if(errMsg.toString() != '') {
+		alert(errMsg.toString('\n'));
+
+		return;
+	}
+
+	let param = {
+		  url: _url
+		, dataType: 'json'
+		, data: JSON.stringify({'data': mBase64.encode(JSON.stringify({'trxcode': trxcode}))})
+		, contentType: "application/json; charset=utf-8"
+		, type: 'POST'
+		, success: function(data) {
+			if((data.errcode || '') == '') {
+				let trxinfo = JSON.parse(mBase64.decode(data.data));
+				let trxStsCodeVal = {
+					  '0001': '서비스 요청'
+					, '0002': 'profile 요청'
+					, '0003': 'VP 검증 요청'
+					, '0004': 'VP 검증 완료'
+					, '0005': 'VP 검증 오류'
+				};
+
+//				console.log('trxcodeTag = ' + trxinfo.trxcode);
+//				console.log('trxStsCodeTag = ' + trxStsCodeVal[trxinfo.trxStsCode] + '(' + trxinfo.trxStsCode + ')');
+//				console.log('vpVerifyResultTag = ' + trxinfo.vpVerifyResult);
+//				console.log('regDtTag = ' + trxinfo.regDt);
+//				console.log('profileSendDtTag = ' + trxinfo.profileSendDt);
+//				console.log('vpReceptDtTag = ' + trxinfo.vpReceptDt);
+//				console.log('imgSendDtTag = ' + trxinfo.imgSendDt);
+//				console.log('udtDtTag = ' + trxinfo.udtDt || trxinfo.regDt);
+
+				let vp = trxinfo.vp;
+//				console.log('vp = ' + vp);
+
+				if(trxinfo.trxStsCode == '0004' && trxinfo.vpVerifyResult == 'Y') {
+					var successCallbackFunc = opt.success;
+					if (successCallbackFunc && $.isFunction(successCallbackFunc)) {
+						successCallbackFunc(data.data);
+					}
+				} else {
+					alert("모바일신분증 앱의 인증이 완료된 후에 인증완료 버튼을 눌러주세요.");
+				}
+
+			} else {
+				alert(data.errmsg);
+			}
+		}
+		, error: function(jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR, textStatus, errorThrown);
+		}
+	};
+
+	$.ajax(param);
+}
+
+function fnMobileIdReq(type) {
+
+	MOBILE_TYPE = type;
+
+	// MOBILE
+	if (GlobalJSConfig.isMobileDevice) {
+		if(GlobalJSConfig.isAndroid) {
+			fnM200Req('AOS', type);
+		} else {
+			fnM200Req('IOS', type);
+		}
+	}
+	// PC
+	else {
+		fnQrInfoReq(type);
+	}
+}
+
+// QR 정보요청
+function fnQrInfoReq(type) {
+	let _cmd = '510';
+	let _mode = 'direct';
+	let _svcCode = GlobalJSConfig.mobileIdSvcCodeDri;
+	let _branchName = '';
+	let _deviceId = window.location.href;
+	let _url = '/qrmpm/start';
+
+	// 주민등록증 일 경우
+	if(type == 'IDE') {
+		_svcCode = GlobalJSConfig.mobileIdSvcCodeIde;
+		//_url = '/qrmpm/start/new';
+	}
+
+	TRX_CODE = '';
+
+	let param = {
+		  url: _url
+		, dataType: 'json'
+		, data: JSON.stringify({
+			  'cmd': _cmd
+			, 'mode': _mode
+			, 'svcCode': _svcCode
+//			, 'branchName': _branchName
+//			, 'deviceId': _deviceId
+		})
+		, contentType: "application/json; charset=utf-8"
+		, type: 'POST'
+		, success: function(data) {
+			if((data.errmsg || '') == '') {
+				$('#qrmobid').empty();
+
+				TRX_CODE = JSON.parse(mBase64.decode(data.m200Base64)).trxcode;
+
+				let qrCodeArea = document.getElementById("qrmobid");
+				let width = qrCodeArea.clientWidth;
+				let size = width > 300 ? 300:width;
+
+				new QRCode(qrCodeArea, {
+					  width: size
+					, height: size
+					, text: data.m200Base64
+				});
+
+				//fnGetTrxsts();
+			} else {
+				alert(data.errmsg);
+			}
+		}
+		, error: function(jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR, textStatus, errorThrown);
+		}
+	};
+
+	$.ajax(param);
+}
+
+
+//M200 요청
+function fnM200Req(os, type) {
+	let cmd = '530';
+	let mode = 'direct';
+	let includeProfile = 'true';
+	let svcCode = GlobalJSConfig.mobileIdSvcCodeDri;
+	let url = '/app2app/start';
+
+	// 주민등록증 일 경우
+	if(type == 'IDE') {
+		svcCode = GlobalJSConfig.mobileIdSvcCodeIde;
+		//url = '/app2app/start/new';
+	}
+
+	let errMsg = new StringBuffer();
+
+	if(svcCode.trim() == '') {
+		errMsg.append('서비스 코드를 입력해주세요.');
+	}
+
+	if(errMsg.toString() != '') {
+		alert(errMsg.toString('\n'));
+
+		return;
+	}
+
+	let param = {
+		  url: url
+		, dataType: 'json'
+		, data: JSON.stringify({
+			  "cmd": cmd
+			, "mode": mode
+//			, "includeProfile": includeProfile
+			, "svcCode": svcCode
+		})
+		, contentType: "application/json; charset=utf-8"
+		, type: 'POST'
+		, success: function(data) {
+			if((data.errmsg || '') == '') {
+				TRX_CODE = JSON.parse(mBase64.decode(data.m200Base64)).trxcode;
+
+				let url = '';
+				if(testMode == true) {
+					if (os == 'AOS') {
+						if(type == 'IDE') {
+							url = 'tmobileid://verify?data_type=byte&mode=direct&data=' + data.m200Base64 + '&clientScheme=';
+						} else {
+							url = 'mobileid://verify?data_type=byte&mode=direct&data=' + data.m200Base64 + '&clientScheme=';
+						}
+					} else {
+						if(type == 'IDE') {
+							if(IS_APP) {
+								url = 'https://mobileid.go.kr/verify.html?mode=direct&data=' + data.m200Base64 + '&clientScheme=';
+							} else {
+								url = 'tMobileID://verify?data_type=byte&mode=direct&data=' + data.m200Base64 + '&clientScheme=';
+							}
+						} else {
+							url = 'https://mobileid.go.kr/verify.html?mode=direct&data=' + data.m200Base64 + '&clientScheme=';
+						}
+					}
+				} else {
+					if (os == 'AOS') {
+						url = 'mobileid://verify?data_type=byte&mode=direct&data=' + data.m200Base64 + '&clientScheme=';
+
+						//url = 'mobileid://verify?data_type=byte&mode=direct&data=' + data.m200Base64 + '&clientScheme=';
+						// Intent 방식 사용
+						//url = 'intent://mobileid://verify?data_type=byte&mode=direct&data=' + data.m200Base64 + '&clientScheme=/#Intent;package=kr.go.mobileid;scheme=mobileid;end';
+					} else {
+						if(IS_APP) {
+							url = 'https://mobileid.go.kr/verify.html?mode=direct&data=' + data.m200Base64 + '&clientScheme=';
+						} else {
+							url = 'MobileID://verify?data_type=byte&mode=direct&data=' + data.m200Base64 + '&clientScheme=';
+						}
+
+						//url = 'MobileID://verify?data_type=byte&mode=direct&data=' + data.m200Base64 + '&clientScheme=';
+						// Universal Link방식
+						//url = 'https://mobileid.go.kr/verify.html?mode=direct&data=' + data.m200Base64 + '&clientScheme=';
+
+					}
+				}
+				console.log(url);
+				window.setTimeout(function() {
+					//window.location.href = url;
+					window.open(url);
+				}, 500);
+			} else {
+				alert(data.errmsg);
+			}
+
+			//fnGetTrxsts();
+		}
+		, error: function(jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR, textStatus, errorThrown);
+		}
+	};
+
+	$.ajax(param);
+}
+
+// VP복호화 요청
+function fnMipVpData(vp) {
+
+	let param = {
+		  url: '/mip/vpdata'
+		, dataType: 'json'
+		, data: JSON.stringify({
+			'data': mBase64.encode(JSON.stringify({'vp': vp}))
+		})
+		, contentType: "application/json; charset=utf-8"
+		, type: 'POST'
+		, success: function(data) {
+			console.log(data);
+
+			if((data.errorMsg || '') == '') {
+				let msg = '';
+
+				msg = mBase64.decode(data.data);
+
+				$('#resultTag').text(msg);
+			} else {
+				alert(data.errorMsg);
+			}
+		}
+		, error: function(jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR, textStatus, errorThrown);
+		}
+	};
+
+	$.ajax(param);
+}
+
+//CI 조회
+function fnMipCI(vp) {
+
+	let param = {
+		  url: '/mip/ci'
+		, dataType: 'json'
+		, data: JSON.stringify({
+			'data': mBase64.encode(JSON.stringify({'vp': vp}))
+		})
+		, contentType: "application/json; charset=utf-8"
+		, type: 'POST'
+		, success: function(data) {
+			console.log(data);
+
+			if((data.errorMsg || '') == '') {
+				let msg = '';
+
+				msg = mBase64.decode(data.data);
+
+				$('#resultTag').text(msg);
+			} else {
+				alert(data.errorMsg);
+			}
+		}
+		, error: function(jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR, textStatus, errorThrown);
+		}
+	};
+
+	$.ajax(param);
+}
+
+// 전화번호 조회
+function fnMipTelNo(vp) {
+
+	let param = {
+		  url: '/mip/telno'
+		, dataType: 'json'
+		, data: JSON.stringify({
+			'data': mBase64.encode(JSON.stringify({'vp': vp}))
+		})
+		, contentType: "application/json; charset=utf-8"
+		, type: 'POST'
+		, success: function(data) {
+			console.log(data);
+
+			if((data.errorMsg || '') == '') {
+				let msg = '';
+
+				msg = mBase64.decode(data.data);
+
+				$('#resultTag').text(msg);
+			} else {
+				alert(data.errorMsg);
+			}
+		}
+		, error: function(jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR, textStatus, errorThrown);
+		}
+	};
+
+	$.ajax(param);
+}

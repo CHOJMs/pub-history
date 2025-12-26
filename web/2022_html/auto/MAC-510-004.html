@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일 첨부 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>파일 첨부</h1>
+            </div>
+            <div class="popup-contents flex-col no-scroll"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+                    <div class="col-cnt-type02 bg-blue"><!-- [D]블루배경일 때 : bg-blue / 흰색배경일 때 : bg-white -->
+
+                        <!-- Start : 첨부파일버튼 -->
+                        <div class="btn-box">
+                            <span class="btn line btn-file"><button type="button" id="">첨부하기</button></span>
+                        </div>
+                        <!-- //End : 첨부파일버튼 -->
+
+                        <!-- Start : 첨부파일 -->
+                        <div class="file-box">
+                            <!-- Start : 안내문구 -->
+                            <p class="f-txt">‘등록하기’ 버튼을 선택 후<br> 첨부하실 파일을 추가해주세요.</p>
+                            <!-- //End : 안내문구 -->
+
+                            <p class="f-tit">첨부된 파일<span>3</span></p>
+
+                            <!-- Start : 리스트 -->
+                            <ul class="file-list">
+                                <li>파일명.jpg<a href="#" class="btn-clear">삭제</a></li>
+                                <li>파일명.jpg<a href="#" class="btn-clear">삭제</a></li>
+                                <li>파일명.jpg<a href="#" class="btn-clear">삭제</a></li>
+                            </ul>
+                            <!-- //End : 리스트 -->
+                        </div>
+                        <!-- //End : 첨부파일 -->
+                    </div>
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">완료</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+
+</body>
+</html>

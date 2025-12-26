@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신청정보 확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>신청정보 확인</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+
+                    <!-- Start : 상품 신청내역 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">상품 신청내역</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">신청일자</span>
+                                    <span class="p-txt">2022.09.02 10:50</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">구입차종</span>
+                                    <span class="p-txt">현대 더 뉴 그랜저 IG 2022</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">신청금액</span>
+                                    <span class="p-txt">40,160,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">대출기간</span>
+                                    <span class="p-txt">84개월</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 상품 신청내역 -->
+
+                    <!-- Start : 대출 제한안내 -->
+                    <div class="grp-cont">
+                        <p class="head-tit">대출 제한안내</p>
+                        <ul class="list-dot">
+                            <li>대출 실행시점에 신용도 변동, 타 금융기관 대출 발생시 대출이 제한될 수 있습니다.</li>
+                            <li>동일 차등에 타 금융기관의 중복대출 신청이 확인될 경우 대출이 취소될 수 있습니다.</li>
+                            <li>신청내용 변경은 상담원을 통해 가능 여부를 먼저 확인하시기 바랍니다.</li>
+                        </ul>
+                    </div>
+                    <!-- //End : 대출 제한안내 -->
+
+                    <!-- Start : 대출상담 -->
+                    <div class="fixed-call-area">
+                        <div class="call-phone">
+                            <span class="c-info">대출상담</span><span class="c-tel">1566-0050<span class="c-text">(평일 오전 9시~오후 6시)</span></span>
+                        </div>
+                    </div>
+                    <!-- //End : 대출상담 -->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none">
+                    <div class="btn-box">
+                        <span class="btn gray"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

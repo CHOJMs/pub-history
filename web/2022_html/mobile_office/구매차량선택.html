@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구매차량 선택 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>구매차량 선택</h1>
+            </div>
+            <div class="popup-contents flex-col no-scroll"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+                    <div class="col-cnt">
+
+                        <!-- Start : 폼 -->
+                        <div class="form-iem">
+                            <div class="com-inp">
+                                <label for="">차량명</label>
+                                <input type="text" id="" placeholder="입력해주세요" value="그랜저">
+                            </div>
+                            <div class="com-inp">
+                                <label for="">연식</label>
+                                <input type="tel" id="" placeholder="입력해주세요" value="2022">
+                            </div>
+                        </div>
+                        <!-- //End : 폼 -->
+                        <!-- Start : 버튼 -->
+                        <div class="btn-box">
+                            <span class="btn"><button type="button" id="">차량 조회하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        </div>
+                        <!-- //End : 버튼 -->
+
+                    </div>
+                    <div class="col-cnt-type01 bg-blue hei-type02"><!-- [D]블루배경일 때 : bg-blue / 흰색배경일 때 : bg-white -->
+
+                        <!-- Start : 검색결과 -->
+                        <div class="search-res-box">
+                            <p class="add-tit">검색결과</p>
+                            <!-- Start : nodata -->
+                            <div class="add-nodata">검색결과가 없습니다.</div>
+                            <!-- //End : nodata -->
+                            <!-- Start : 리스트 -->
+                            <ul class="car-list">
+                                <li class="active">
+                                    <div class="in-box">
+                                        <div class="car-area">
+                                            <div class="chk-tit">더 뉴 그랜저 IG 2.5 프리미엄 2022</div>
+                                            <ul>
+                                                <li>
+                                                    <span class="p-tit">가계대출·담보대출-보금자리론</span>
+                                                    <span class="p-txt">4,800만원</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in-box">
+                                        <div class="car-area">
+                                            <div class="chk-tit">더 뉴 그랜저 IG 2.5 프리미엄 2022</div>
+                                            <ul>
+                                                <li>
+                                                    <span class="p-tit">가계대출·담보대출-보금자리론</span>
+                                                    <span class="p-txt">4,800만원</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in-box">
+                                        <div class="car-area">
+                                            <div class="chk-tit">더 뉴 그랜저 IG 2.5 프리미엄 2022</div>
+                                            <ul>
+                                                <li>
+                                                    <span class="p-tit">가계대출·담보대출-보금자리론</span>
+                                                    <span class="p-txt">4,800만원</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="in-box">
+                                        <div class="car-area">
+                                            <div class="chk-tit">더 뉴 그랜저 IG 2.5 프리미엄 2022</div>
+                                            <ul>
+                                                <li>
+                                                    <span class="p-tit">가계대출·담보대출-보금자리론</span>
+                                                    <span class="p-txt">4,800만원</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- //End : 리스트 -->
+                        </div>
+                        <!-- //End : 검색결과 -->
+                        <!-- Start : 더보기 버튼 -->
+                        <div class="btn_more">
+                            <a href="#" class="more_btn"><i class="more"></i>더보기</a>
+                        </div>
+                        <!-- //End : 더보기 버튼 -->
+                    </div>
+                </div>
+
+                <!-- //End : content -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+
+<title>빠른상담신청 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap" style="background-size: 20% auto;"><!--bg이미지 진행 width값-->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header>
+			<div class="gnb">
+				<!--// 모바일용 GNB 메뉴 -->
+				<p class="menu_icon">
+                    <a href="#" class="mobile_back_btn" title="뒤로가기"></a>
+                    <a href="#" class="mobile_menu_btn" title="모바일 메뉴"></a>
+                </p>
+				<!-- 모바일용 GNB 메뉴// -->
+
+				<!-- //웹용 GNB 메뉴 -->
+				<div id="nav">
+					<div id="blind"></div>
+					<div class="pc_menu">
+						<ul>
+							<li class="menu1">
+								<a href="#" class="on"><span>회사소개</span></a>
+							</li>
+							<li class="menu2">
+								<a href="#"><span>고객센터</span></a>
+							</li>
+							<li class="menu3">
+								<a href="#"><span>개인금융</span></a>
+							</li>
+							<li class="menu4">
+								<a href="#"><span>자동차금융</span></a>
+							</li>
+							<li class="menu5">
+								<a href="#"><span>스탁론</span></a>
+							</li>
+							<li class="menu6">
+								<a href="#"><span class="Koho700">마이</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- 웹용 GNB 메뉴// -->
+			</div>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_process">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+                <div class="process_wrap bottom_0">
+					<div class="pro_box">
+						
+						<div class="form_box mt10">
+							<p class="h_tit">대출금액</p>
+							<div class="text_data">
+								<span class="form app_text">
+									<input type="tel" id="" placeholder="0" title="대출금액 입력">
+									<span class="txt">원</span>
+								</span>				
+							</div>							
+							
+							<p class="h_tit">대출금리(년)</p>
+							<div class="text_data">
+								<span class="form app_text">
+									<input type="tel" id="" placeholder="0" title="대출금리(년) 입력">
+									<span class="txt">%</span>
+								</span>					
+							</div>
+							
+							<p class="h_tit">상환방법</p>
+							<div class="text_data radio-box-type1">
+								<div>
+									<input type="radio" name="r311" value="" id="r311" checked="checked" aria-hidden="true" title="원리금 균등 분할상환 체크">
+									<label for="r311" role="radio" aria-checked="true"><span>원리금 균등 분할상환</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r311" value="" id="r312" aria-hidden="true" title="원금 균등 분할상환 체크">
+									<label for="r312" role="radio" aria-checked="false"><span>원금 균등 분할상환</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r311" value="" id="r313" aria-hidden="true" title="만기 일시상환 체크">
+									<label for="r313" role="radio" aria-checked="false"><span>만기 일시상환</span></label>
+								</div>
+							</div>
+
+							<p class="h_tit">대출기간(개월)</p>
+							<div class="text_data radio-box-type1">
+								<div>
+									<input type="radio" name="r21" value="" id="r21" checked="checked" aria-hidden="true" title="12개월 체크">
+									<label for="r21" role="radio" aria-checked="true"><span>12개월</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r21" value="" id="r22" aria-hidden="true" title="24개월 체크">
+									<label for="r22" role="radio" aria-checked="false"><span>24개월</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r21" value="" id="r23" aria-hidden="true" title="36개월 체크">
+									<label for="r23" role="radio" aria-checked="false"><span>36개월</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r21" value="" id="r24" aria-hidden="true" title="48개월 체크">
+									<label for="r24" role="radio" aria-checked="false"><span>48개월</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r21" value="" id="r25" aria-hidden="true" title="60개월 체크">
+									<label for="r25" role="radio" aria-checked="false"><span>60개월</span></label>
+								</div>
+								<div>
+									<input type="radio" name="r21" value="" id="r26" aria-hidden="true" title="72개월 체크">
+									<label for="r26" role="radio" aria-checked="false"><span>72개월</span></label>
+								</div>
+							</div>
+							<div class="btn_box btn_box_margin">
+								<span class="btn"><button id="">계산하기</button></span>
+							</div>
+
+							<div class="form_box">
+								<p class="h_tit">대출조회결과</p>
+								<table class="dataType">
+									<caption>조회결과 - 회차, 월납부액, 원금상환, 이자, 대출잔액 등으로 나타낸 표</caption>
+									<colgroup>
+									  <col width="8%">
+									  <col width="23%">
+									  <col width="23%">
+									  <col width="23%">
+									  <col width="23%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">회차</th>
+											<th scope="col">월납부액</th>
+											<th scope="col">원금상환</th>
+											<th scope="col">이자</th>
+											<th scope="col">대출잔액</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td class="a_r">0</td>
+											<td class="a_r">0</td>
+											<td class="a_r">0</td>
+											<td class="a_r">0</td>
+										</tr>
+										<tr>
+											<td colspan="5" class="noData"><p>조회결과가 없습니다.</p></td>
+										</tr>
+									</tbody>
+								</table>
+								<p class="unit_txt">단위 : 원</p>
+								<p class="icon_bullet">본 계산결과는 대출조건과 신용상태 등에 따라 변경될 수 있습니다.</p>
+							</div>
+
+						</div>						
+						
+					</div>
+                </div>
+                <!-- 내용 끝 -->
+
+                <!-- 버튼 시작 
+                <div class="btn_fixed">
+                    <div class="btn_box">
+                        <span class="btn_step btn_pre">
+							<button id="">이전</button>
+						</span>
+                        <span class="btn_step bnt_next black"><!-- 활성버튼: class="black" / 비활성버튼: class="disabled" / 기본버튼: class="black" 삭제 
+							<p class="txt_num"><span>1</span>/ 7</p>
+							<button id="">다음</button>
+						</span>
+                    </div>
+                </div>
+             버튼 끝 -->
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+</body>
+</html>

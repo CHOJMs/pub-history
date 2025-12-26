@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        opacity: 0;
+      }
+
+      .cls-2 {
+        fill: #ccc;
+      }
+
+      .cls-3 {
+        fill: #487cff;
+      }
+    </style>
+  </defs>
+  <g id="ic_담보" transform="translate(-0.082 -0.082)">
+    <rect id="area" class="cls-1" width="20" height="20" transform="translate(0.082 0.082)"/>
+    <g id="그룹_8250" data-name="그룹 8250" transform="translate(0.827 2.48)">
+      <g id="그룹_9210" data-name="그룹 9210">
+        <path id="패스_9123" data-name="패스 9123" class="cls-2" d="M2.237,28.065A2.3,2.3,0,0,1,0,25.7V20.667a2.3,2.3,0,0,1,2.237-2.362,2.3,2.3,0,0,1,2.237,2.362V25.7a2.3,2.3,0,0,1-2.237,2.362" transform="translate(0 -13.187)"/>
+        <path id="패스_9124" data-name="패스 9124" class="cls-3" d="M26.684,14.877a2.3,2.3,0,0,1-2.237-2.362V2.362a2.24,2.24,0,1,1,4.474,0V12.516a2.3,2.3,0,0,1-2.237,2.362" transform="translate(-17.592 0)"/>
+        <path id="패스_9125" data-name="패스 9125" class="cls-2" d="M51.13,34.15a2.3,2.3,0,0,1-2.237-2.362V29.114a2.24,2.24,0,1,1,4.474,0v2.675A2.3,2.3,0,0,1,51.13,34.15" transform="translate(-35.183 -19.273)"/>
+      </g>
+    </g>
+  </g>
+</svg>

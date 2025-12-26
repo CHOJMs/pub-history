@@ -1,0 +1,613 @@
+var CERT_METHOD_LOGIN;
+var AUTH_POPUP_TYPE;
+var USE_SIMPLE_AUTH_YN;
+var PHONE_PASS_AUTH_YN;
+
+var OPT_VAL;
+
+/**
+ * 레이어 팝업 직접 열기 함수
+ *
+ * */
+function authMethodLayerPopup() {
+	authMethodLayerPopup.open(function(result){ });
+}
+
+/**
+ * [APP] fileData로 부터 고객번호 조회
+ */
+window.cmmGetFileDataCallback = function (jsonData) {
+	console.log("cmmGetFileDataCallback : " + toJsonString(jsonData));
+
+	CERT_METHOD_LOGIN = "";
+
+	var resultJsonData = getJsonData(toJsonString(jsonData));
+	if (resultJsonData.RESULT_CODE == "0000") {
+		var val = resultJsonData.RESULT_DATASET.VALUE;
+		if(val != null && val != undefined && val != "") {
+			var infoArr = resultJsonData.RESULT_DATASET.VALUE.split("|");
+
+			authMethodLayerPopup.setCustNo(infoArr[0]);
+			CERT_METHOD_LOGIN = infoArr[0];
+		}
+	}
+
+	isRegistrationFido(CERT_METHOD_LOGIN);
+};
+
+/**
+ * 원패스 가능단말여부 확인 결과
+ */
+function isRegistrationFidoCallback(jsonData) {
+	console.log("isRegistrationFidoCallback : " + toJsonString(jsonData));
+
+	/**
+	  { "RESULT_CODE" : "0000",
+   		"RESULT_MSG" : "성공",
+    	"RESULT_DATASET" : {
+      			"RESULT" :   {// 전문결과데이터 ByPass
+					"resultData": {
+						"regYn": "Y",
+						"regMsg": "이미 가입된 사용자입니다.",
+						"aaidList": {
+							"accepted": [
+								{"aaid": "0012#0022", "verificationType": "2", "verificationNm": "Fingerprint", "vendorNm": "SAMSUNG", "vendorId": "", "keyId" : ""},
+								{"aaid": "0012#0070", "verificationType": "2", "verificationNm": "Fingerprint", "vendorNm": "SAMSUNG", "vendorId": "", "keyId" : ""}
+							],
+							"registered": [
+								{"aaid": "0012#0022", "verificationType": "2", "verificationNm": "Fingerprint", "vendorNm": "SAMSUNG", "vendorId": "", "keyId" : ""},
+								{"aaid": "0012#0070", "verificationType": "2", "verificationNm": "Fingerprint", "vendorNm": "SAMSUNG", "vendorId": "", "keyId" : ""}
+							]
+						}
+				}
+			}
+		}
+	*/
+	var content = '<ul>';
+	if(jsonData != null && jsonData != 'undefined' && USE_SIMPLE_AUTH_YN == "Y") {
+		var resultData = getJsonData(toJsonString(jsonData));
+		if (resultData.RESULT_CODE == "0000" && resultData.RESULT_DATASET.RESULT.resultData.regYn == "Y") {
+
+			if (!(typeof resultData.RESULT_DATASET.RESULT.resultData.aaidList.registered === 'undefined'))  {
+				var registeredList  = resultData.RESULT_DATASET.RESULT.resultData.aaidList.registered;
+
+				if (registeredList.length > 0) {
+
+					$.each(registeredList, function(key, value){
+						//verificationType -> 2: FingerPrint,  4: PIN, 16: FacePrint, 512: Slient
+						if (value.verificationType == "2") {
+							content += '	<li>';
+							content += '		<a id="authTypeBio" href="#none">';
+							content += '			<span><img src="/static/web/img/ico_fingerprint.png" alt="지문 인증"></span>';
+							content += '			지문 인증';
+							content += '		</a>';
+							content += '	</li>';
+						}
+						else if (value.verificationType == "4") {
+							content += '	<li>';
+							content += '		<a id="authTypeSimplePwd" href="#none">';
+							content += '			<span><img src="/static/web/img/ico_password.png" alt="간편비밀번호"></span>';
+							content += '				간편비밀번호';
+							content += '		</a>';
+							content += '	</li>';
+						}
+						else if (value.verificationType == "16") {
+							content += '	<li>';
+							content += '		<a id="authTypeFaceId" href="#none">';
+							content += '			<span><img src="/static/web/img/ico_face.png" alt="Face ID"></span>';
+							content += '			Face ID';
+							content += '		</a>';
+							content += '	</li>';
+
+						}
+					});
+				}
+			}
+		}
+	}
+
+	if (AUTH_POPUP_TYPE == "Y") {
+		content += '	<li>';
+		content += '		<a id="authTypeMobile" href="#none">';
+		content += '			<span><img src="/static/web/img/ui_common/ico_cellphone.png" alt="휴대폰 인증"></span>';
+		content += '			휴대폰 인증';
+		content += '		</a>';
+		content += '	</li>';
+	}
+
+	content += '	<li>';
+	content += '		<a id="authTypeCert" href="#none">';
+	content += '			<span><img src="/static/web/img/ui_common/ico_shieldcheck1.png" alt="공동인증서 인증"></span>';
+	content += '			공동인증서';
+	content += '		</a>';
+	content += '	</li>';
+	content += '	<li>';
+	content += '		<a id="authTypeCert2" href="#none">';
+	content += '			<span><img src="/static/web/img/ui_common/ico_shieldcheck.png" alt="금융인증서 인증"></span>';
+	content += '			금융인증서';
+	content += '		</a>';
+	content += '	</li>';
+	content += '	<li>';
+	content += '		<a id="authTypeKakao" href="#none">';
+	content += '			<span><img src="/static/web/img/ui_common/ico_kakao.png" alt="카카오 인증"></span>';
+	content += '				카카오';
+	content += '		</a>';
+	content += '	</li>';
+	if(PHONE_PASS_AUTH_YN == "Y"){
+		content += '	<li>';
+		content += '		<a id="authTypePass" href="#none">';
+		content += '			<span><img src="/static/web/img/ui_common/ico_pass.png" alt="PASS"></span>';
+		content += '				PASS';
+		content += '		</a>';
+		content += '	</li>';
+	}
+
+	content += '</ul>';
+
+	$("#certify-list").html(content);
+
+	// 팝업 불러오기 및 초기화
+	authMethodLayerPopup.initAuthMethod();
+
+}
+
+/**
+ *
+ * 공통 - 인증수단 선택 팝업 (for jQuery Selector Methods)
+ *
+ * @param callback 함수
+ *
+ * 조회 팝업을 띄워야할 버튼을 셀렉터로 선택 ex : $(셀렉터).authMethodLayerPopup(function(result){});
+ *
+ * result 리턴값 : { }
+ */
+$.fn.authMethodLayerPopup = function(callback) {
+
+	return this.each(function(i, item) {
+		$(item).off('click');
+		$(item).click(function(e) {
+			e.preventDefault();
+
+			// 팝업 열기
+			authMethodLayerPopup.open(callback);
+
+			return false;
+		});
+	});
+};
+
+//  (P: 휴대폰본인인증, F:금융인증서, A:공동인증서, K:카카오, O:간편인증)
+function convertAuthDvcd(popId) {
+	if(popId == "authTypeMobile" || popId == "P") return "P";
+	if(popId == "authTypePass" || popId == "M") return "M";
+	else if(popId == "authTypeCert2" || popId == "F") return "F";
+	else if(popId == "authTypeCert" || popId == "A") return "A";
+	else if(popId == "authTypeKakao" || popId == "K") return "K";
+	else if(popId == "authTypeBio" || popId == "authTypeSimplePwd" || popId == "authTypeFaceId" || popId == "O") return "O";
+}
+
+/**
+ * [공통]
+ * 인증 팝업
+ *
+ * 본인인증방식 (P: 휴대폰본인인증, F:금융인증서, A:공동인증서, K:카카오, O:간편인증)
+ * AUTH_POPUP_TYPE (Y: 본인인증, N: 전자서명)
+ */
+var authMethodLayerPopup = (function(authMethodLayerPopup) {
+	var popupVo = {};
+	var $layer = null;
+	var searchVo = null; // 검색 조건
+	var fnCallback = null;
+
+	/**
+	 *  팝업 표시
+	 **/
+	authMethodLayerPopup.open = function(opt, type, useSimpleAuth) {
+
+		AUTH_POPUP_TYPE = "Y"; // Y: 본인인증(Default), N: 전자서명
+		if(type != null && type != undefined && type != "") {
+			AUTH_POPUP_TYPE = type;
+		}
+
+		opt.isAuth = AUTH_POPUP_TYPE;
+		popupVo = opt;
+
+		if(opt.passYn != null && opt.passYn != undefined && opt.passYn != "") {
+			PHONE_PASS_AUTH_YN = opt.passYn;
+		}
+
+		// 간편인증 사용 여부에 따른 선택버튼 노출
+		USE_SIMPLE_AUTH_YN = (AUTH_POPUP_TYPE === "N") ? "N" : "Y"; // 전자서명 타입일 경우 기본적으로 간편인증 비활성화 -- 사용시 구분값 명시
+		if(useSimpleAuth != null && useSimpleAuth != undefined && useSimpleAuth != "") {
+			USE_SIMPLE_AUTH_YN = useSimpleAuth;
+		}
+		if(IS_APP) {
+			// 간편인증 등록 여부 조회
+			cmmGetFileData("info");
+		} else {
+			isRegistrationFidoCallback();
+		}
+	};
+
+	/**
+	 *  팝업 닫기
+	 */
+	authMethodLayerPopup.close = function() {
+		// 팝업 닫기 버튼 클릭
+		$layer.find(".popup-close").find('a').trigger("click");
+	};
+
+	/**
+	 *  팝업 닫기
+	 */
+	 authMethodLayerPopup.setCustNo = function(loginId) {
+		// 팝업 닫기 버튼 클릭
+		popupVo.custNo = loginId;
+	};
+
+	/**
+	 * 팝업 초기화
+	 */
+	 authMethodLayerPopup.initAuthMethod = function() {
+		searchVo = {};
+
+		// 타이틀 설정
+		if (AUTH_POPUP_TYPE == "N") {	// 전자서명
+			$("#certify-title").text("전자서명 수단 선택");
+		} else {			// 본인인증
+			$("#certify-title").text("본인인증 수단 선택");
+		}
+
+		var targetID = "#" + "authMethodLayerPopup";
+
+		// 팝업 호출
+		uiCommon.openPopup(targetID);
+		$layer = $(targetID);
+
+		// 인증 방식 선택
+		$layer.find(".cert-list > ul > li").on("click", "a", function(e) {
+			e.preventDefault();
+
+			var item = $(this)[0].id;
+
+			// 간편인증 verificationType 설정
+			if(item == "authTypeBio") popupVo.verificationType = ONEPASS_TYPE_FINGER;
+			else if(item == "authTypeSimplePwd") popupVo.verificationType = ONEPASS_TYPE_PIN;
+			else if(item == "authTypeFaceId") popupVo.verificationType = ONEPASS_TYPE_FACE;
+
+			authMethodLayerPopup.close(); // 팝업 닫음.
+			callIntgAuthFunc(convertAuthDvcd(item), popupVo); // 콜백 함수를 통해 결과 전달
+		});
+
+		// 닫기 버튼 클릭 이벤트
+		$layer.find(".popup-close").find('a').click(function() {
+			// 레이어 요소 제거
+		});
+	}
+
+	return authMethodLayerPopup;
+
+})(window.authMethodLayerPopup || {});
+
+
+/**
+ * [공통]
+ * 인증 방식에 따라, 이벤트 처리
+ *
+ * 본인인증방식 (P: 휴대폰본인인증, M: 휴대폰PASS인증, F:금융인증서, A:공동인증서, K:카카오, O:간편인증)
+ */
+function callIntgAuthFunc(dvcd, opt) {
+	//만나이 19세 미만 체크
+	chkAge(opt, function(result) {
+		if(!result) {
+			return false;
+		} else {
+			// 간편인증을 통한 본인인증 (simpleAuthYn == "Y")
+			if(IS_APP && opt.simpleAuthYn != null && opt.simpleAuthYn != undefined && opt.simpleAuthYn != "" && opt.simpleAuthYn != "N") {
+				// opt 설정
+				OPT_VAL = opt;
+				OPT_VAL.dvcd = dvcd;
+				Native.getFileData('info', 'appAuthWithLoginCallback');
+			}
+
+			else {
+				var type = "Y" // default
+				if(opt.isAuth == null || opt.isAuth == undefined || opt.isAuth == "") {
+					opt.isAuth = type;
+				}
+				// 서명할 데이터 "#signSrcData" 요소에 설정
+				if(opt.isAuth == "N") {
+					$("#signSrcData").val(chkEmpty(opt.signSrcData) ? $("#signSrcData").val() : opt.signSrcData);
+					AUTH_POPUP_TYPE = opt.isAuth;
+				}
+
+				// KCB 휴대폰 본인인증
+				if(dvcd == "P" || dvcd == "PLA32") {
+
+					// 휴대폰 본인인증 팝업 설정
+					$authKcbPhoneLayerPopup = $("#authKcbPhoneLayerPopup");
+
+					var custNm = chkEmpty(opt.custNm) ? $("#custNm").val() : opt.custNm;							// 고객명
+					var clphCmpDvcd = chkEmpty(opt.clphCmpDvcd) ? $("clphCmpDvcd").val() : opt.clphCmpDvcd;		// 휴대전화통신사
+					var cpno = chkEmpty(opt.cpno) ? $("#cpno").val() : opt.cpno;								// 전화번호
+					var rrn1 = chkEmpty(opt.rrn1) ? $("#rrn1").val() : opt.rrn1;								// 주민등록번호 앞자리(생년월일)
+					var rrn2 = chkEmpty(opt.rrn2) ? $("#rrn2").val() : opt.rrn2;								// 주민등록번호 뒷자리
+                    var rrn3 = chkEmpty(opt.rrn3) ? $("#rrn3").val() : opt.rrn3;                                // 주민등록번호 뒷번호 1자리(성별)
+		            var ntvFrnrCd = chkEmpty(opt.ntvFrnrCd) ? "L" : opt.ntvFrnrCd;                              // 내외국인 구분 (내국인:L, 외국인:F)
+
+					// 재설정
+					opt.custNm = custNm;
+					opt.clphCmpDvcd = clphCmpDvcd;
+					opt.cpno = cpno;
+					opt.rrn1 = rrn1;
+					opt.rrn2 = rrn2;
+                    opt.rrn3 = rrn3;
+		            opt.ntvFrnrCd = ntvFrnrCd;
+
+					// 인증정보 기본 설정
+					authKcbPhoneLayerPopup.setAuthData(opt);
+
+					// 휴대폰 본인인증 팝업 노출
+					authKcbPhoneLayerPopup.open(function(result) {
+
+						result.type = "phone";
+
+						if(opt.isAuth == "Y") {
+							result.authType = "PLA32";
+						}
+
+						forwardSendForm(result);
+					});
+				}
+
+				// KCB 휴대폰 PASS 인증서
+				if(dvcd == "M" || dvcd == "PLA36") {
+
+					// 휴대폰 PASS 인증서 팝업 설정
+					$authKcbPassLayerPopup = $("#authKcbPassLayerPopup");
+
+					var REQ_TITLE = chkEmpty(opt.title) ? $("#title").val() : opt.title;							// 인증요청알림제목
+					var NM = chkEmpty(opt.custNm) ? $("#custNm").val() : opt.custNm;						// 이용자 성명
+					var clphCmpDvcd = chkEmpty(opt.clphCmpDvcd) ? $("#clphCmpDvcd").val() : opt.clphCmpDvcd;	// 이용자 통신사코드
+					var SIGN_TRGT = chkEmpty(opt.signSrcData) ? $("#signSrcData").val() : opt.signSrcData; // 서명대상
+					var TEL_COM_CD = "";
+
+					if(clphCmpDvcd){
+						switch (clphCmpDvcd){
+							case "PL0510" :
+								TEL_COM_CD = "S";
+								break;
+							case "PL0550" :
+								TEL_COM_CD = "S";
+								break;
+							case "PL0520" :
+								TEL_COM_CD = "K";
+								break;
+							case "PL0560" :
+								TEL_COM_CD = "K";
+								break;
+							case "PL0530" :
+								TEL_COM_CD = "L";
+								break;
+							case "PL0570" :
+								TEL_COM_CD = "L";
+								break;
+						}
+					}
+					var PHN_NO = chkEmpty(opt.cpno) ? $("#cpno").val() : opt.cpno;								// 이용자 휴대폰번호
+					var rrn1 = chkEmpty(opt.rrn1) ? $("#rrn1").val() : opt.rrn1;								// 주민등록번호 앞자리(생년월일)
+					var rrn2 = chkEmpty(opt.rrn2) ? $("#rrn2").val() : opt.rrn2;								// 주민등록번호 뒷자리
+
+					// 재설정
+					opt.REQ_TITLE = REQ_TITLE;
+					opt.REQ_CTNT = REQ_TITLE;
+					opt.REQ_CS_PHN_NO = "1566-0050";
+					opt.NM = NM;
+					opt.TEL_COM_CD = TEL_COM_CD;
+					opt.PHN_NO = PHN_NO;
+					opt.rrn1 = rrn1;
+					opt.rrn2 = rrn2;
+					opt.SIGN_TRGT = SIGN_TRGT;
+					if(dvcd == "PLA36") { // 본인인증 여부
+						opt.simpleYn = "Y";
+					}
+
+					// 중고상용 연대보증인 전자약정 처리 -> PASS인증 일 때 -> dim값 제거.
+					// PASS인증 dim처리 진행
+					// passAuthExc() 실행 전 dim 제거. -> ui_common.js -> dimdFn() -> dim.length 부분으로 인한 remove 처리.
+					// 법인
+					if(SIGN_TRGT && SIGN_TRGT.indexOf("중고상용SMS URL 연대보증인 전자약정") > 0){
+						$("body").find(".dim").remove();
+					}
+					// 개인
+					if(SIGN_TRGT && SIGN_TRGT.indexOf("중고차오토론_상용 전자약정") > 0){
+						$("body").find(".dim").remove();
+					}
+
+					authKcbPassLayerPopup.setAuthData(opt);
+					passAuthExc();
+				}
+
+				// 금융인증서
+				else if(dvcd == "F" || dvcd == "PLA35") {
+					if(!IS_APP) {
+
+
+						var rrn1 = chkEmpty(opt.rrn1) ? $("#rrn1").val() : opt.rrn1;
+						var rrn2 = chkEmpty(opt.rrn2) ? $("#rrn2").val() : opt.rrn2;
+
+						if ($util.isEmpty(rrn1) || $util.isEmpty(rrn2)) {
+							finCertOpen({});
+						} else {
+							// 금융인증서 본인인증 정보 설정 후 전자서명 실행
+							getBirthday({
+								"rrn1": chkEmpty(opt.rrn1) ? $("#rrn1").val() : opt.rrn1,
+								"rrn2": chkEmpty(opt.rrn2) ? $("#rrn2").val() : opt.rrn2,
+								"success": function(data) {
+									finCertOpen({
+										"name": chkEmpty(opt.custNm) ? $("#custNm").val() : opt.custNm,
+										"phoneNum": chkEmpty(opt.cpno) ? $("#cpno").val() : opt.cpno,
+										"birthday": data.birthday
+									});
+								}
+							});
+						}
+
+
+					} else {
+
+						// 휴대전화번호가 있는경우 phoneNum 필드 정보 세팅 (cert_common.js #mlCallBack 내에서 참조) ====
+						opt.phoneNum = chkEmpty(opt.cpno) ? $("#cpno").val() : opt.cpno;
+						jQuery.extend(CertificationProcessor.reqData, opt);
+
+						var reqParam = { callBackFunc : "FinCertGetSignCallback"}
+						reqParam.ssn = "dummy";
+						reqParam.signData = $("#signSrcData").val();
+						reqParam.includeR = "Y";
+						reqParam.useSigningTime = "Y";
+
+						Native.FinCertGetSign(reqParam);
+					}
+				}
+
+				// 공동인증서
+				else if(dvcd == "A" || dvcd == "PLA39") {
+					// 휴대전화번호가 있는경우 phoneNum 필드 정보 세팅 (cert_common.js #mlCallBack 내에서 참조)
+					opt.phoneNum = chkEmpty(opt.cpno) ? $("#cpno").val() : opt.cpno
+					if(!IS_APP) {
+						// certOpen({phoneNum:chkEmpty(opt.cpno) ? $("#cpno").val() : opt.cpno});
+						certOpen(opt);
+					} else {
+						GETCERT_TYPE = TYPE_GETCERT_VERIFY;
+						getCertList(opt);
+					}
+				}
+
+				// 카카오
+				else if(dvcd == "K" || dvcd == "PLA311") {
+					// isAuth 에따라 분기
+					if(opt.isAuth =="Y") {
+						kakaoSimpleAuthExc({
+							"#title": chkEmpty(opt.title) ? $("#title").val() : opt.title,
+							"name": chkEmpty(opt.custNm) ? $("#custNm").val() : opt.custNm,
+							"phone_no": chkEmpty(opt.cpno) ? $("#cpno").val() : opt.cpno
+						});
+					} else {
+						kakaoSignExc({
+							"#title": chkEmpty(opt.title) ? $("#title").val() : opt.title,
+							"name": chkEmpty(opt.custNm) ? $("#custNm").val() : opt.custNm,
+							"phone_no": chkEmpty(opt.cpno) ? $("#cpno").val() : opt.cpno,
+							"birthday": chkEmpty(opt.rrn1) ? $("#rrn1").val() : opt.rrn1,
+							"token": chkEmpty(opt.signSrcData) ? $("#signSrcData").val() : opt.signSrcData,
+							"idnCertFlag": chkEmpty(opt.idnCertFlag) ? "N" : opt.idnCertFlag
+						});
+					}
+				}
+
+				// 간편인증(원패스)
+				else if(dvcd == "O" || dvcd == "PLA310") {
+
+					if(opt.verificationType == ONEPASS_TYPE_PIN) {
+					} else if(opt.verificationType == ONEPASS_TYPE_FACE) {
+						uiCommon.openPopup("#faceIdStep02");
+					} else if(opt.verificationType == ONEPASS_TYPE_FINGER) {
+						uiCommon.openPopup("#fpStep02");
+					}
+
+					ONEPASS_FIDO_LOGIN_INFO.VERIFY_TYPE = opt.verificationType;
+					ONEPASS_FIDO_LOGIN_INFO.IS_AUTH = opt.isAuth;
+					ONEPASS_FIDO_LOGIN_INFO.TRANS_DATA = opt.transData;
+
+					if(opt.custNo == null || opt.custNo == undefined || opt.custNo == "") {
+						Native.getFileData("info", "getCustNoCallback");
+					} else {
+						ONEPASS_FIDO_LOGIN_INFO.CUST_NO = opt.custNo;
+
+						if(ONEPASS_FIDO_LOGIN_INFO.TRANS_DATA == null || ONEPASS_FIDO_LOGIN_INFO.TRANS_DATA == undefined || ONEPASS_FIDO_LOGIN_INFO.TRANS_DATA == "") {
+							ONEPASS_FIDO_LOGIN_INFO.TRANS_DATA = "";
+						}
+//						Native.callFidoLogin(opt.custNo, opt.verificationType, opt.isAuth, opt.transData, "callIntgAuthFuncCallback");
+						Native.callFidoLogin(opt.custNo, opt.verificationType, opt.isAuth, ONEPASS_FIDO_LOGIN_INFO.TRANS_DATA, "callIntgAuthFuncCallback");
+					}
+				}
+			}
+		}
+	}); //만나이 체크 END
+}
+
+function chkEmpty(val) {
+	return (typeof val === "undefined") || val == null || val == "" || val == "undefined";
+}
+
+/**
+ * [공통] - 19세 미만 만나이 체크
+ * */
+function chkAge(opt, callback) {
+
+	// 재설정
+	var rrn2 = chkEmpty(opt.rrn2) ? $("#rrn2").val() : opt.rrn2; // 주민등록번호 뒷자리
+	opt.rrn2 = rrn2;
+
+    var reqData = {}
+
+	if(!$util.isEmpty(opt.rrn2)){
+
+	    if ($util.isEmpty(opt.rrn1) || $util.isEmpty(opt.rrn2)) {
+	        callback(false);
+	    }
+
+	    // 요청데이터 생성
+	    var reqData = {}
+	    reqData.rrn1 = opt.rrn1;
+	    reqData.rrn2 = opt.rrn2;
+
+	    if ($util.isNum(reqData.rrn2) && reqData.rrn2.length == 7) {
+	        // 가상키패드 사용 여부 (useVitualKeyPad) 비활성화
+	        reqData.useVitualKeyPad = false;
+	    } else {
+	        // 가상키패드
+	        if(!(typeof keypadFlag === 'undefined') && keypadFlag == true) {
+	            reqData.encData = nFilterEncrypted();   // 암호화된 데이터 (encData)
+	            reqData.useVitualKeyPad = true;         // 가상키패드 사용 여부 (useVitualKeyPad)
+	        }
+	    }
+	}else if(!$util.isEmpty(opt.rrn3)){
+	    var rrn3 = chkEmpty(opt.rrn3) ? $("#rrn3").val() : opt.rrn3; // 주민등록번호 뒷자리
+	    opt.rrn3 = rrn3;
+
+        reqData.rrn1 = opt.rrn1;
+        reqData.rrn3 = opt.rrn3;
+        reqData.authType = '02';
+    }else {
+        callback(false);
+    }
+
+	$.ajax({
+		url : '/common/chkAge.do',
+		data: reqData,
+		global: false,
+		async: false,
+		type : 'POST',
+		dataType : 'json',
+		success : function(data) {
+
+			if (data.RSPCD === "0000") {
+				callback(true);
+			} else if (data.RSPCD === "1000") {
+				alert(data.RTMSG);
+				callback(false);
+			} else if (data.RSPCD === "8005") {
+				alert(data.RTMSG);
+				callback(false);
+			} else {
+				alert("요청 처리 중 오류가 발생했습니다. [" + data.RSPCD + "]");
+				callback(false);
+			}
+		},
+		error : function(request, status, error) {
+			alert("요청 처리 중 에러가 발생했습니다");
+			console.log("code : " + request.status + "\nmessage : " + request.responseText + "\nerror : " + error);
+			callback(false);
+		}
+	});
+}

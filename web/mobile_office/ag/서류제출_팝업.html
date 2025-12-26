@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서류제출 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>서류제출</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt pb32">
+
+                    <!-- Start : 안내문구 -->
+                    <div class="box-green">
+                        <div class="p-tit">서류제출 방법 안내</div>
+                        <ul class="list-dot">
+                            <li>기 제출된 서류도 재 첨부하여 제출 가능합니다.</li>
+                            <li>새로운 파일을 첨부하여 제출 시 최종서류로 등록됩니다.</li>
+                        </ul>
+                    </div>
+                    <!-- //End : 안내문구 -->
+
+                    <!-- Start : 폼 -->
+                    <div class="attachfile-box mt32">
+                        <div class="attachfile-list">
+                            <div class="attachfile-item">
+                                <span class="attachfile-tit">(제출확인서)하드코딩아님 내용 뿌려주는값 주민등록등본증명서 내용이 길어질때 다표시다표시다표시다표시</span>
+                                <a href="#" class="attachfile-link">
+                                    <input type="text" id="" placeholder="첨부해주세요" value="2024_주민등록등본주민등록번호주민등록번호주민등록번호.jpg 외 2개" readonly="readonly">
+                                </a>
+                            </div>
+                            <div class="attachfile-item">
+                                <span class="attachfile-tit">주민등록등본</span>
+                                <a href="#" class="attachfile-link">
+                                    <input type="text" id="" placeholder="첨부해주세요" value="2024_주민등록등본주민등록번호주민등록번호주민등록번호.jpg 외 2개" readonly="readonly">
+                                </a> 
+                            </div>
+                            <div class="attachfile-item">
+                                <span class="attachfile-tit">재직증명서</span>
+                                <a href="#" class="attachfile-link">
+                                    <input type="text" id="" placeholder="첨부해주세요" value="재직증명서.jpg 외 2개" readonly="readonly">
+                                </a>  
+                            </div>
+                            <div class="attachfile-item">
+                                <span class="attachfile-tit">건강보험자격 득실확인서</span>
+                                <a href="#" class="attachfile-link">
+                                    <input type="text" id="" placeholder="첨부해주세요" value="" readonly="readonly">
+                                </a>
+                            </div>
+                            <div class="attachfile-item">
+                                <span class="attachfile-tit">근로소득원천징수영수증</span>
+                                <a href="#" class="attachfile-link">
+                                    <input type="text" id="" placeholder="첨부해주세요" value="" readonly="readonly">
+                                </a>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- //End : 폼 -->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray01"><button type="button" id="">취소</button></span>
+                        <span class="btn"><button type="button" id="">제출하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

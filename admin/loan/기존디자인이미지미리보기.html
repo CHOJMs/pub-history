@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>미리보기 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+    <script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+    <link rel="stylesheet" href="/static/web/js/lib/slick.css">
+    <script src="/static/web/js/slick.js"></script>
+    <script type="text/javascript" src="/static/web/js/lib/slick.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-full"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>미리보기</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                 <div class="col-cnt-type04 bg-gray "><!-- [D]블루배경일 때 : bg-blue / 흰색배경일 때 : bg-white -->
+                        <!-- Start : 이미지 영역 -->
+                        <div class="agreement-wrap">
+
+                            <div class="swiper-box">
+                                <div id="slide-paging" class="slide-paging mail_paging"></div>
+                                <div class="agreefix">
+                                    <ul id="slide" class="slide">
+                                        <li>
+                                            <!-- 아이프레임1 영역// -->
+                                            <div class="ifr-box">
+                                                <div class="slide-iframe">
+                                                    <img src="/static/admin/img/new_common/img_priview_sample.png">
+                                                </div>
+                                            </div>
+                                            <!-- //아이프레임1 영역 -->
+                                        </li>
+                                        <li>
+                                            <!-- 아이프레임1 영역// -->
+                                            <div class="ifr-box">
+                                                <div class="slide-iframe">
+                                                    <img src="/static/admin/img/new_common/car_thumb_sample.png">
+                                                </div>
+                                            </div>
+                                            <!-- //아이프레임1 영역 -->
+                                        </li>
+                                        <li>
+                                            <!-- 아이프레임1 영역// -->
+                                            <div class="ifr-box">
+                                                <div class="slide-iframe">
+                                                    <img src="/static/web/img/bg_map.png">
+                                                </div>
+                                            </div>
+                                            <!-- //아이프레임1 영역 -->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- //End : 약관 영역 -->
+                    </div>
+                <!-- //End : content -->                
+            </div>
+            <!-- Start : 버튼 -->
+             <!-- Start : 버튼 //-->
+                <!-- <div class="fixed-btn-area">
+                    <div class="btn">
+                        <a href="#" class="gray">취소</a><a href="#">저장</a>
+                    </div>
+                </div> -->
+                <!-- //End : 버튼 -->
+            <div class="btn-area w160_fixed">
+                <a href="#" class="gray">취소</a><a href="#">저장</a><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+            </div>
+            <!-- //End : 버튼 -->
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

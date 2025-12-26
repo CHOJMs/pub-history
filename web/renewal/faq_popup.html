@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트 FAQ 안내사항 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>스마트 FAQ 안내사항</h1>
+            </div>
+            <div class="popup-contents flex-col pad-small"><!-- 2022-10-11 : pad-small 추가 -->
+                <div class="box-gray type">
+                        <ul class="list-dot type">
+                            <li>스마트FAQ는 인공지능 aI 기반 상담 서비스에요.</li>
+                            <li>고객님의 질문에 대해 AI가 자동으로 응답합니다.</li>
+                            <li class="f600">일부 정확하지 않은 정보가 포함될 수 있으니, 확실한 정보가 필요하신 경우 고객센터를 이용해주세요.</li>
+                        </ul>
+                    </div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <!--<div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>-->
+    </div>
+
+</div>
+</body>
+</html>

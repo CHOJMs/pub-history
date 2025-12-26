@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>부동산 시세조회 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+    <script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02 active"></div>
+
+<div class="popup-layer active" id="addrPopup">
+    <div class="popup popup-01 popup-full-1"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>부동산 시세조회</h1>
+            </div>
+            <div class="popup-contents flex-col-btm"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : 홈큐, 나이스 선택 버튼 -->
+                <div class="radio-btn-wrap">
+                    <div class="radio-btn">
+                        <input type="radio" id="radioTab01" name="radioTab" checked>
+                        <label for="radioTab01">홈큐</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" id="radioTab02" name="radioTab">
+                        <label for="radioTab02">나이스</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" id="radioTab03" name="radioTab" disabled>
+                        <label for="radioTab03">나이스</label>
+                    </div>
+                </div>
+                <!-- //End : 홈큐, 나이스 선택 버튼 -->
+
+                <!-- Start : content //-->
+                <div class="tab-box">
+                    <div class="radio-tab1">
+                        <div class="com-inp">
+                            <input type="radio" id="r02" name="r02" checked>
+                            <label for="r02">주소</label>
+                        </div>
+                        <div class="com-inp">
+                            <input type="radio" id="r02-1" name="r02">
+                            <label for="r02-1">대장번호</label>
+                        </div>
+                        <div class="com-inp">
+                            <input type="radio" id="r02-2" name="r02">
+                            <label for="r02-2">등기번호</label>
+                        </div>
+                    </div>
+
+                    <div class="radio-tab-list">
+                        <!-- Start : 주소 -->
+                        <div id="CASE1">
+                            <table class="data-tbl">
+                                <colgroup>
+                                    <col width="100%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="com-inp">
+                                                <p class="tit">주소</p>
+                                                <input type="text" placeholder="입력" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //End : 주소 -->
+
+                        <!-- Start : 대장번호 -->
+                        <div id="CASE2" style="display: none;">
+                            <table class="data-tbl">
+                                <colgroup>
+                                    <col width="100%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">대장번호</p>
+                                                <input type="tel" placeholder="입력" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //End : 대장번호 -->
+
+                        <!-- Start : 등기번호 -->
+                        <div id="CASE3" style="display: none;">
+                            <table class="data-tbl">
+                                <colgroup>
+                                    <col width="100%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="com-inp">
+                                                <p class="tit">등기번호</p>
+                                                <input type="tel" placeholder="입력" value="">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- //End : 등기번호 -->
+
+                        <!-- Start : 버튼 -->
+                        <div class="btn">
+                            <a href="#">조회</a><a href="#">결과등록</a><a href="#" class="line a-r">초기화</a><!-- 오른쪽정렬 버튼인 경우 : a-r 추가-->
+                        </div>
+                        <!-- //End : 버튼 -->
+                    </div>
+
+                <div class="tab-box2 flex-item-btm">
+                    <ul class="mt-32">
+                        <li class="active"><a href="javascript:;" rel="tab-21">부동산등기</a></li>
+                        <li><a href="javascript:;" rel="tab-22">부동산시세</a></li>
+                        <li><a href="javascript:;" rel="tab-23">레이다시세</a></li>
+                        <li><a href="javascript:;" rel="tab-24">간편보기</a></li>
+                    </ul>
+                    <div class="tab-list2">
+                        <div id="tab-21">
+                            <!-- Start : 부동산등기 목록1 -->
+                            <div class="x-scrollBox">
+                                <table class="bbs-table" style="min-width: 2100px;">
+                                    <colgroup>
+                                        <col width="70px">
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="180px">
+                                        <col width="180px">
+                                        <col width="%">
+                                        <col width="110px">
+                                        <col width="110px">
+                                        <col width="160px">
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="130px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">선택</th>
+                                            <th scope="col">부동산구분</th>
+                                            <th scope="col">조회구분</th>
+                                            <th scope="col">부동산고유번호</th>
+                                            <th scope="col">부동산소재지</th>
+                                            <th scope="col">부동산도로명소재지</th>
+                                            <th scope="col">소유자</th>
+                                            <th scope="col">상태</th>
+                                            <th scope="col">PDF최종발급일</th>
+                                            <th scope="col">공동담보/전세</th>
+                                            <th scope="col">매매목록조회</th>
+                                            <th scope="col">전산폐쇄조회</th>
+                                            <th scope="col">말소사항제외</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="radiobox single">
+                                                    <input type="radio" checked="checked" id="radio1-1">
+                                                    <label for="radio1-1"></label>
+                                                </div>
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <div class="checkbox single">
+                                                    <input type="checkbox" checked="checked" id="chk1-1">
+                                                    <label for="chk1-1"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox single">
+                                                    <input type="checkbox" id="chk1-2">
+                                                    <label for="chk1-2"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox single">
+                                                    <input type="checkbox" id="chk1-3">
+                                                    <label for="chk1-3"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox single">
+                                                    <input type="checkbox" id="chk1-4">
+                                                    <label for="chk1-4"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="bor-line">
+                                            <td colspan="13" class="nodata"><span>정보가 없습니다.</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="btn">
+                                <a href="#">신청</a>
+                            </div>
+                            <!-- //End : 부동산등기 목록1 -->
+                            <!-- Start : 부동산등기 목록2 -->
+                            <div class="x-scrollBox">
+                                <table class="bbs-table" style="min-width: 2100px;">
+                                    <colgroup>
+                                        <col width="70px">
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="180px">
+                                        <col width="180px">
+                                        <col width="%">
+                                        <col width="110px">
+                                        <col width="110px">
+                                        <col width="160px">
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="130px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">선택</th>
+                                            <th scope="col">부동산구분</th>
+                                            <th scope="col">조회구분</th>
+                                            <th scope="col">부동산고유번호</th>
+                                            <th scope="col">부동산소재지</th>
+                                            <th scope="col">부동산도로명소재지</th>
+                                            <th scope="col">소유자</th>
+                                            <th scope="col">상태</th>
+                                            <th scope="col">PDF최종발급일</th>
+                                            <th scope="col">공동담보/전세</th>
+                                            <th scope="col">매매목록조회</th>
+                                            <th scope="col">전산폐쇄조회</th>
+                                            <th scope="col">말소사항제외</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="radiobox single">
+                                                    <input type="radio" checked="checked" id="radio2-1">
+                                                    <label for="radio2-1"></label>
+                                                </div>
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>
+                                                <div class="checkbox single">
+                                                    <input type="checkbox" checked="checked" id="chk2-1">
+                                                    <label for="chk2-1"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox single">
+                                                    <input type="checkbox" id="chk2-2">
+                                                    <label for="chk2-2"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox single">
+                                                    <input type="checkbox" id="chk2-3">
+                                                    <label for="chk2-3"></label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="checkbox single">
+                                                    <input type="checkbox" id="chk2-4">
+                                                    <label for="chk2-4"></label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="bor-line">
+                                            <td colspan="13" class="nodata"><span>정보가 없습니다.</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="btn">
+                                <a href="#">등기상세조회</a><a href="#" class="line a-r">PDF다운</a>
+                            </div>
+                            <!-- //End : 부동산등기 목록2 -->
+
+                            <div class="tab-box3">
+                                <ul>
+                                    <li class="active"><a href="javascript:;" rel="tab-31">요약-소유지분현황 갑구</a></li>
+                                    <li><a href="javascript:;" rel="tab-32">요약-소유지분 제외한 소유권 갑구</a></li>
+                                    <li><a href="javascript:;" rel="tab-33">요약-근저당권 및 전세권 을구</a></li>
+                                    <li><a href="javascript:;" rel="tab-34">갑구</a></li>
+                                    <li><a href="javascript:;" rel="tab-35">갑구 당사자</a></li>
+                                    <li><a href="javascript:;" rel="tab-36">을구</a></li>
+                                    <li><a href="javascript:;" rel="tab-37">을구 당사자</a></li>
+                                    <li><a href="javascript:;" rel="tab-38">표제부</a></li>
+                                    <li><a href="javascript:;" rel="tab-39">표제부-층별내역</a></li>
+                                    <li><a href="javascript:;" rel="tab-40">표제부-토지정보</a></li>
+                                </ul>
+                                <div class="tab-list3">
+                                    <div id="tab-31">
+                                        <!-- Start : 요약-소유지분현황 갑구 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1500px;">
+                                                <colgroup>
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">일련번호</th>
+                                                        <th scope="col">순위번호</th>
+                                                        <th scope="col">등기명의인</th>
+                                                        <th scope="col">소유구분</th>
+                                                        <th scope="col">주민</th>
+                                                        <th scope="col">최종지분</th>
+                                                        <th scope="col">주소</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="7" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 요약-소유지분현황 갑구 -->
+                                    </div>
+                                    <div id="tab-32">
+                                        <!-- Start : 요약-소유지분 제외한 소유권 갑구 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1800px;">
+                                                <colgroup>
+                                                    <col width="8%">
+                                                    <col width="8%">
+                                                    <col width="8%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="9%">
+                                                    <col width="9%">
+                                                    <col width="7%">
+                                                    <col width="7%">
+                                                    <col width="9%">
+                                                    <col width="%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">일련번호</th>
+                                                        <th scope="col">등기분류</th>
+                                                        <th scope="col">순위번호</th>
+                                                        <th scope="col">등기목적</th>
+                                                        <th scope="col">등기목적코드</th>
+                                                        <th scope="col">접수일자</th>
+                                                        <th scope="col">접수번호</th>
+                                                        <th scope="col">대상소유자</th>
+                                                        <th scope="col">관리자</th>
+                                                        <th scope="col">당사자금액</th>
+                                                        <th scope="col">화폐구분</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="11" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 요약-소유지분 제외한 소유권 갑구 -->
+                                    </div>
+                                    <div id="tab-33">
+                                        <!-- Start : 요약-근저당권 및 전세권 을구 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1800px;">
+                                                <colgroup>
+                                                    <col width="8%">
+                                                    <col width="8%">
+                                                    <col width="8%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="9%">
+                                                    <col width="9%">
+                                                    <col width="7%">
+                                                    <col width="7%">
+                                                    <col width="9%">
+                                                    <col width="%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">일련번호</th>
+                                                        <th scope="col">등기분류</th>
+                                                        <th scope="col">순위번호</th>
+                                                        <th scope="col">등기목적</th>
+                                                        <th scope="col">등기목적코드</th>
+                                                        <th scope="col">접수일자</th>
+                                                        <th scope="col">접수번호</th>
+                                                        <th scope="col">대상소유자</th>
+                                                        <th scope="col">관리자</th>
+                                                        <th scope="col">당사자금액</th>
+                                                        <th scope="col">화폐구분</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="11" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 요약-근저당권 및 전세권 을구 -->
+                                    </div>
+                                    <div id="tab-34">
+                                        <!-- Start : 갑구 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1200px;">
+                                                <colgroup>
+                                                    <col width="12%">
+                                                    <col width="12%">
+                                                    <col width="12%">
+                                                    <col width="12%">
+                                                    <col width="12%">
+                                                    <col>
+                                                    <col width="12%">
+                                                    <col width="12%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">등기추출번호</th>
+                                                        <th scope="col">순위번호</th>
+                                                        <th scope="col">등기목적</th>
+                                                        <th scope="col">접수일자</th>
+                                                        <th scope="col">접수번호</th>
+                                                        <th scope="col">등기원인</th>
+                                                        <th scope="col">요약부제공여부</th>
+                                                        <th scope="col">등기원인일자</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="8" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 갑구 -->
+                                    </div>
+                                    <div id="tab-35">
+                                        <!-- Start : 갑구 당사자 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1580px;">
+                                                <colgroup>
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="8%">
+                                                    <col width="10%">
+                                                    <col>
+                                                    <col width="8%">
+                                                    <col width="8%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">등기추출번호</th>
+                                                        <th scope="col">일련번호</th>
+                                                        <th scope="col">당사자구분</th>
+                                                        <th scope="col">당사자명</th>
+                                                        <th scope="col">변경당사자명</th>
+                                                        <th scope="col">주민</th>
+                                                        <th scope="col">당사자금액</th>
+                                                        <th scope="col">당사자주소</th>
+                                                        <th scope="col">지점명</th>
+                                                        <th scope="col">화폐구분</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="10" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 갑구 당사자 -->
+                                    </div>
+                                    <div id="tab-36">
+                                        <!-- Start : 을구 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1200px;">
+                                                <colgroup>
+                                                    <col width="12%">
+                                                    <col width="12%">
+                                                    <col width="12%">
+                                                    <col width="12%">
+                                                    <col width="12%">
+                                                    <col>
+                                                    <col width="12%">
+                                                    <col width="12%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">등기추출번호</th>
+                                                        <th scope="col">순위번호</th>
+                                                        <th scope="col">등기목적</th>
+                                                        <th scope="col">접수일자</th>
+                                                        <th scope="col">접수번호</th>
+                                                        <th scope="col">등기원인</th>
+                                                        <th scope="col">요약부제공여부</th>
+                                                        <th scope="col">등기원인일자</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="8" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 을구 -->
+                                    </div>
+                                    <div id="tab-37">
+                                        <!-- Start : 을구 당사자 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1580px;">
+                                                <colgroup>
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="8%">
+                                                    <col width="10%">
+                                                    <col>
+                                                    <col width="8%">
+                                                    <col width="8%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">등기추출번호</th>
+                                                        <th scope="col">일련번호</th>
+                                                        <th scope="col">당사자구분</th>
+                                                        <th scope="col">당사자명</th>
+                                                        <th scope="col">변경당사자명</th>
+                                                        <th scope="col">주민</th>
+                                                        <th scope="col">당사자금액</th>
+                                                        <th scope="col">당사자주소</th>
+                                                        <th scope="col">지점명</th>
+                                                        <th scope="col">화폐구분</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="10" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 을구 당사자 -->
+                                    </div>
+                                    <div id="tab-38">
+                                        <!-- Start : 표제부 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1200px;">
+                                                <colgroup>
+                                                    <col width="12%">
+                                                    <col width="12%">
+                                                    <col width="21%">
+                                                    <col width="12%">
+                                                    <col width="180px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">표시번호</th>
+                                                        <th scope="col">접수일자</th>
+                                                        <th scope="col">표제부상세코드</th>
+                                                        <th scope="col">표제부일련번호</th>
+                                                        <th scope="col">표제부내용</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="5" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 표제부 -->
+                                    </div>
+                                    <div id="tab-39">
+                                        <!-- Start : 표제부-층별내역 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1200px;">
+                                                <colgroup>
+                                                    <col width="13%">
+                                                    <col width="13%">
+                                                    <col>
+                                                    <col width="13%">
+                                                    <col width="13%">
+                                                    <col width="13%">
+                                                    <col width="13%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">표시번호</th>
+                                                        <th scope="col">접수일자</th>
+                                                        <th scope="col">표제부상세</th>
+                                                        <th scope="col">표제부일련번호</th>
+                                                        <th scope="col">층</th>
+                                                        <th scope="col">층면적</th>
+                                                        <th scope="col">층용도</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="7" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 표제부-층별내역 -->
+                                    </div>
+                                    <div id="tab-40">
+                                        <!-- Start : 표제부-토지정보 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1200px;">
+                                                <colgroup>
+                                                    <col width="13%">
+                                                    <col width="13%">
+                                                    <col>
+                                                    <col width="13%">
+                                                    <col width="13%">
+                                                    <col>
+                                                    <col width="10%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">표시번호</th>
+                                                        <th scope="col">접수일자</th>
+                                                        <th scope="col">표제부상세</th>
+                                                        <th scope="col">표제부일련번호</th>
+                                                        <th scope="col">대지권토지소재지번</th>
+                                                        <th scope="col">지목</th>
+                                                        <th scope="col">면적</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="7" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 표제부-토지정보 -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="tab-22">
+                            <!-- Start : 부동산시세 목록1 -->
+                            <div class="x-scrollBox">
+                                <table class="bbs-table" style="min-width: 1800px;">
+                                    <colgroup>
+                                        <col width="70px">
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="180px">
+                                        <col width="180px">
+                                        <col width="%">
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="160px">
+                                        <col width="150px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">선택</th>
+                                            <th scope="col">부동산구분</th>
+                                            <th scope="col">조회구분</th>
+                                            <th scope="col">부동산고유번호</th>
+                                            <th scope="col">부동산소재지</th>
+                                            <th scope="col">부동산도로명소재지</th>
+                                            <th scope="col">소유자</th>
+                                            <th scope="col">상태</th>
+                                            <th scope="col">조회기준일</th>
+                                            <th scope="col">실거래가검색</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="radiobox single">
+                                                    <input type="radio">
+                                                    <label></label>
+                                                </div>
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="cal">
+                                                <div class="calendar">
+                                                    <input type="tel" value=""><img src="/static/admin/img/new_common/ico_cal.png">
+                                                </div>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="bor-line">
+                                            <td colspan="10" class="nodata"><span>정보가 없습니다.</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="btn">
+                                <a href="#">조회</a>
+                            </div>
+                            <!-- //End : 부동산시세 목록1 -->
+                            <!-- Start : 부동산시세 목록2 -->
+                            <div class="x-scrollBox">
+                                <table class="bbs-table" style="min-width: 1800px;">
+                                    <colgroup>
+                                        <col width="70px">
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="180px">
+                                        <col width="180px">
+                                        <col width="%">
+                                        <col width="130px">
+                                        <col width="130px">
+                                        <col width="160px">
+                                        <col width="150px">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">선택</th>
+                                            <th scope="col">부동산구분</th>
+                                            <th scope="col">조회구분</th>
+                                            <th scope="col">부동산고유번호</th>
+                                            <th scope="col">부동산소재지</th>
+                                            <th scope="col">부동산도로명소재지</th>
+                                            <th scope="col">소유자</th>
+                                            <th scope="col">상태</th>
+                                            <th scope="col">조회기준일</th>
+                                            <th scope="col">실거래가검색</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="radiobox single">
+                                                    <input type="radio">
+                                                    <label></label>
+                                                </div>
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="bor-line">
+                                            <td colspan="10" class="nodata"><span>정보가 없습니다.</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="btn">
+                                <a href="#">조회</a>
+                            </div>
+                            <!-- //End : 부동산시세 목록2 -->
+
+                            <div class="tab-box4">
+                                <ul>
+                                    <li class="active"><a href="javascript:;" rel="tab-41">기본정보</a></li>
+                                    <li><a href="javascript:;" rel="tab-42">단독주택 공시가격</a></li>
+                                    <li><a href="javascript:;" rel="tab-43">단독주택 실거래가</a></li>
+                                    <li><a href="javascript:;" rel="tab-44">공동주택 공시가격</a></li>
+                                    <li><a href="javascript:;" rel="tab-45">KB아파트시세</a></li>
+                                    <li><a href="javascript:;" rel="tab-46">아파트실거래가</a></li>
+                                    <li><a href="javascript:;" rel="tab-47">연립/다세대 실거래가</a></li>
+                                    <li><a href="javascript:;" rel="tab-48">KB 아파트단지</a></li>
+                                    <li><a href="javascript:;" rel="tab-49">네이버시세</a></li>
+                                </ul>
+                                <div class="tab-list4">
+                                    <div id="tab-41">
+                                        <!-- Start : 기본정보 -->
+                                        <table class="bbs-table">
+                                            <colgroup>
+                                                <col width="200px">
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">부동산구분</th>
+                                                    <th scope="col">소재지주소</th>
+                                                    <th scope="col">법정동코드</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3" class="nodata"><span>정보가 없습니다.</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- //End : 기본정보 -->
+                                    </div>
+                                    <div id="tab-42">
+                                        <!-- Start : 단독주택 공시가격 -->
+                                        <table class="bbs-table">
+                                            <colgroup>
+                                                <col width="180px">
+                                                <col width="180px">
+                                                <col>
+                                                <col>
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">기준연도</th>
+                                                    <th scope="col">면적</th>
+                                                    <th scope="col">단독주택가격</th>
+                                                    <th scope="col">1년전단독주택가격</th>
+                                                    <th scope="col">2년전단독주택가격</th>
+                                                    <th scope="col">3년전단독주택가격</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="6" class="nodata"><span>정보가 없습니다.</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- //End : 단독주택 공시가격 -->
+                                    </div>
+                                    <div id="tab-43">
+                                        <!-- Start : 단독주택 실거래가 -->
+                                        <table class="bbs-table">
+                                            <colgroup>
+                                                <col width="130px">
+                                                <col width="130px">
+                                                <col width="150px">
+                                                <col width="130px">
+                                                <col width="130px">
+                                                <col>
+                                                <col width="150px">
+                                                <col width="150px">
+                                                <col width="130px">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">기준일자</th>
+                                                    <th scope="col">거래구분</th>
+                                                    <th scope="col">주택유형</th>
+                                                    <th scope="col">연면적</th>
+                                                    <th scope="col">대지면적</th>
+                                                    <th scope="col">거래금액</th>
+                                                    <th scope="col">월세</th>
+                                                    <th scope="col">건축연도</th>
+                                                    <th scope="col">거래건수</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="9" class="nodata"><span>정보가 없습니다.</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- //End : 단독주택 실거래가 -->
+                                    </div>
+                                    <div id="tab-44">
+                                        <!-- Start : 공동주택 공시가격 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1500px;">
+                                                <colgroup>
+                                                    <col width="7%">
+                                                    <col width="11%">
+                                                    <col width="7%">
+                                                    <col width="7%">
+                                                    <col width="9%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                    <col width="10%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">기준연도</th>
+                                                        <th scope="col">아파트명</th>
+                                                        <th scope="col">동</th>
+                                                        <th scope="col">호</th>
+                                                        <th scope="col">면적</th>
+                                                        <th scope="col">공동주택가격(만원)</th>
+                                                        <th scope="col">1년전공동주택가격(만원)</th>
+                                                        <th scope="col">2년전공동주택가격(만원)</th>
+                                                        <th scope="col">3년전공동주택가격(만원)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="9" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 공동주택 공시가격 -->
+                                    </div>
+                                    <div id="tab-45">
+                                        <!-- Start : KB아파트시세 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 2000px;">
+                                                <colgroup>
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">기준일자</th>
+                                                        <th scope="col">평형</th>
+                                                        <th scope="col">평형구분</th>
+                                                        <th scope="col">매매하위평균가</th>
+                                                        <th scope="col">매매일반평균가</th>
+                                                        <th scope="col">매매상위평균가</th>
+                                                        <th scope="col">전세하위평균가</th>
+                                                        <th scope="col">전세일반평균가</th>
+                                                        <th scope="col">전세상위평균가</th>
+                                                        <th scope="col">세대수</th>
+                                                        <th scope="col">주상복합여부</th>
+                                                        <th scope="col">방개수</th>
+                                                        <th scope="col">총동수</th>
+                                                        <th scope="col">입주년월</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="14" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : KB아파트시세 -->
+                                    </div>
+                                    <div id="tab-46">
+                                        <!-- Start : 아파트실거래가 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1800px;">
+                                                <colgroup>
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">기준일자</th>
+                                                        <th scope="col">아파트명</th>
+                                                        <th scope="col">거래구분코드</th>
+                                                        <th scope="col">전용면적</th>
+                                                        <th scope="col">층</th>
+                                                        <th scope="col">거래가격(만원)</th>
+                                                        <th scope="col">월세(만원)</th>
+                                                        <th scope="col">건축연도</th>
+                                                        <th scope="col">거래건수</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="9" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 아파트실거래가 -->
+                                    </div>
+                                    <div id="tab-47">
+                                        <!-- Start : 연립/다세대 실거래가 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1800px;">
+                                                <colgroup>
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">기준일자</th>
+                                                        <th scope="col">연립/다세대명</th>
+                                                        <th scope="col">거래구분코드</th>
+                                                        <th scope="col">전용면적</th>
+                                                        <th scope="col">층</th>
+                                                        <th scope="col">거래가격(만원)</th>
+                                                        <th scope="col">월세(만원)</th>
+                                                        <th scope="col">건축연도</th>
+                                                        <th scope="col">거래건수</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="9" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 연립/다세대 실거래가 -->
+                                    </div>
+                                    <div id="tab-48">
+                                        <!-- Start : KB 아파트단지 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 2730px;">
+                                                <colgroup>
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="130px">
+                                                    <col width="130px">
+                                                    <col width="150px">
+                                                    <col width="150px">
+                                                    <col width="150px">
+                                                    <col width="150px">
+                                                    <col width="150px">
+                                                    <col width="150px">
+                                                    <col width="130px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                    <col width="180px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">KB아파트코드</th>
+                                                        <th scope="col">아파트명</th>
+                                                        <th scope="col">단지내최고층수</th>
+                                                        <th scope="col">단지내최저층수</th>
+                                                        <th scope="col">준공년월</th>
+                                                        <th scope="col">입주년월</th>
+                                                        <th scope="col">난방방식구분</th>
+                                                        <th scope="col">난방연료구분</th>
+                                                        <th scope="col">총세대수</th>
+                                                        <th scope="col">총동수</th>
+                                                        <th scope="col">주차대수</th>
+                                                        <th scope="col">아파트시세상태구분</th>
+                                                        <th scope="col">주상복합구분</th>
+                                                        <th scope="col">빌라연립여부</th>
+                                                        <th scope="col">시세건축구분</th>
+                                                        <th scope="col">우편번호</th>
+                                                        <th scope="col">관리사무소전화번호</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="17" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : KB 아파트단지 -->
+                                    </div>
+                                    <div id="tab-49">
+                                        <!-- Start : 네이버시세 -->
+                                        <table class="bbs-table">
+                                            <colgroup>
+                                                <col width="200px">
+                                                <col>
+                                                <col>
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">기준일자</th>
+                                                    <th scope="col">최저매매호가(만원)</th>
+                                                    <th scope="col">최고매매호가(만원)</th>
+                                                    <th scope="col">최저전세호가(만원)</th>
+                                                    <th scope="col">최고전세호가(만원)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="5" class="nodata"><span>정보가 없습니다.</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- //End : 네이버시세 -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="tab-23">
+                            <!-- Start : 레이다시세 목록1 -->
+                            <table class="bbs-table">
+                                <colgroup>
+                                    <col width="70px">
+                                    <col width="180px">
+                                    <col width="150px">
+                                    <col width="220px">
+                                    <col width="220px">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">선택</th>
+                                        <th scope="col">AVM관리번호</th>
+                                        <th scope="col">물건종류</th>
+                                        <th scope="col">지번주소</th>
+                                        <th scope="col">도로명주소</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="radiobox single">
+                                                <input type="radio">
+                                                <label></label>
+                                            </div>
+                                        </td>
+                                        <td>&nbsp;</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr class="bor-line">
+                                        <td colspan="5" class="nodata"><span>정보가 없습니다.</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="btn">
+                                <a href="#">조회</a>
+                            </div>
+                            <!-- //End : 레이다시세 목록1 -->
+
+                            <div class="tab-box5">
+                                <ul>
+                                    <li class="active"><a href="javascript:;" rel="tab-51">기본정보</a></li>
+                                    <li><a href="javascript:;" rel="tab-52">거래시세</a></li>
+                                    <li><a href="javascript:;" rel="tab-53">전월세시세</a></li>
+                                </ul>
+                                <div class="tab-list5">
+                                    <div id="tab-51">
+                                        <!-- Start : 기본정보 -->
+                                        <table class="bbs-table" ">
+                                            <colgroup>
+                                                <col width="150px">
+                                                <col>
+                                                <col>
+                                                <col width="100px">
+                                                <col width="120px">
+                                                <col width="130px">
+                                                <col width="120px">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">물건종류</th>
+                                                    <th scope="col">지번주소</th>
+                                                    <th scope="col">도로명주소</th>
+                                                    <th scope="col">멸실여부</th>
+                                                    <th scope="col">멸실일자</th>
+                                                    <th scope="col">사용승인일자</th>
+                                                    <th scope="col">엘리베이터유무</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>&nbsp;</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="7" class="nodata"><span>정보가 없습니다.</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- //End : 기본정보 -->
+                                    </div>
+                                    <div id="tab-52">
+                                        <!-- Start : 거래시세 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1500px;">
+                                                <colgroup>
+                                                    <col width="120px">
+                                                    <col width="120px">
+                                                    <col width="120px">
+                                                    <col width="120px">
+                                                    <col width="150px">
+                                                    <col width="120px">
+                                                    <col width="300px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">거래기준일자</th>
+                                                        <th scope="col">일반거래시세(만원)</th>
+                                                        <th scope="col">상위거래시세(만원)</th>
+                                                        <th scope="col">하위거래시세(만원)</th>
+                                                        <th scope="col">거래시세서비스불가사유</th>
+                                                        <th scope="col">거래시세신뢰등급</th>
+                                                        <th scope="col">거래시세등급의견</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="7" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 거래시세 -->
+                                    </div>
+                                    <div id="tab-53">
+                                        <!-- Start : 전월세시세 -->
+                                        <div class="x-scrollBox">
+                                            <table class="bbs-table" style="min-width: 1800px;">
+                                                <colgroup>
+                                                    <col width="120px">
+                                                    <col width="120px">
+                                                    <col width="120px">
+                                                    <col width="120px">
+                                                    <col width="120px">
+                                                    <col width="250px">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">전월세기준일자</th>
+                                                        <th scope="col">전세시세(만원)</th>
+                                                        <th scope="col">보증금(만원)</th>
+                                                        <th scope="col">임차료(만원)</th>
+                                                        <th scope="col">전월세신뢰등급</th>
+                                                        <th scope="col">거래월세등급의견</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="6" class="nodata"><span>정보가 없습니다.</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- //End : 전월세시세 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tab-24">
+                            <!-- Start : 간편보기 -->
+                            <div class="summary-box">
+                                <table>
+                                    <colgroup>
+                                        <col width="50%">
+                                        <col width="50%">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                <!-- Start : 주소 -->
+                                                <div class="com-inp">
+                                                    <p class="tit">주소</p>
+                                                    <div class="cnt-box">
+                                                        <ul class="file-sel">
+                                                            <li>
+                                                                <p class="cnt-tx">경기도 의정부시 동일로416번길</p>
+                                                                <div class="c-btn">
+                                                                    <a href="#" class="btn-white">상세보기</a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <!-- Start : 상세보기 버튼 클릭 시 노출되는 영역 -->
+                                                        <div class="summary-tbl">
+                                                            <table class="bbs-table">
+                                                                <colgroup>
+                                                                    <col width="80px">
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">순번</th>
+                                                                        <th scope="col">소유자</th>
+                                                                        <th scope="col">소유자번호</th>
+                                                                        <th scope="col">소유형태</th>
+                                                                        <th scope="col">지분율</th>
+                                                                        <th scope="col">지분율(%)</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td>홍길동</td>
+                                                                        <td>801010-*******</td>
+                                                                        <td>소유자</td>
+                                                                        <td>공동소유</td>
+                                                                        <td>50%</td>
+                                                                    </tr>
+                                                                    <tr class="bor-line">
+                                                                        <td colspan="6" class="nodata"><span>정보가 없습니다.</span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <!-- //End : 상세보기 버튼 클릭 시 노출되는 영역 -->
+                                                    </div>
+                                                </div>
+                                                <!-- //End : 주소 -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <!-- Start : 소유권 -->
+                                                <div class="com-inp">
+                                                    <p class="tit">소유권</p>
+                                                    <div class="cnt-box">
+                                                        <div class="inp-radio">
+                                                            <div class="radiobox">
+                                                                <input type="radio" id="sum1-1" name="sum1" checked="checked">
+                                                                <label for="sum1-1">소유</label>
+                                                            </div>
+                                                            <div class="radiobox">
+                                                                <input type="radio" id="sum1-2" name="sum1" disabled class="disabled"><!-- [D]비활성화인 경우 : 'disabled' 클래스 추가 -->
+                                                                <label for="sum1-2">공유</label>
+                                                            </div>
+                                                            <div class="radiobox">
+                                                                <input type="radio" id="sum1-3" name="sum1" disabled class="disabled"><!-- [D]비활성화인 경우 : 'disabled' 클래스 추가 -->
+                                                                <label for="sum1-3">그 외</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //End : 소유권 -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <!-- Start : 주거형태 -->
+                                                <div class="com-inp">
+                                                    <p class="tit">주거형태</p>
+                                                    <div class="cnt-box">
+                                                        <ul class="file-sel">
+                                                            <li>
+                                                                <p class="cnt-tx">아파트</p>
+                                                                <div class="c-btn">
+                                                                    <a href="#" class="btn-white">상세보기</a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <!-- Start : 상세보기 버튼 클릭 시 노출되는 영역 -->
+                                                        <div class="summary-tbl">
+                                                            <table class="bbs-table">
+                                                                <colgroup>
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">취득일자</th>
+                                                                        <th scope="col">주거형태</th>
+                                                                        <th scope="col">총세대수</th>
+                                                                        <th scope="col">해당층</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>2024-03-11</td>
+                                                                        <td>아파트</td>
+                                                                        <td>332</td>
+                                                                        <td>1</td>
+                                                                    </tr>
+                                                                    <tr class="bor-line">
+                                                                        <td colspan="4" class="nodata"><span>정보가 없습니다.</span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <!-- //End : 상세보기 버튼 클릭 시 노출되는 영역 -->
+                                                    </div>
+                                                </div>
+                                                <!-- //End : 주거형태 -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <!-- Start : 권리침해여부 -->
+                                                <div class="com-inp">
+                                                    <p class="tit">권리침해여부</p>
+                                                    <div class="cnt-box">
+                                                        <ul class="file-sel">
+                                                            <li>
+                                                                <div class="inp-radio">
+                                                                    <div class="radiobox">
+                                                                        <input type="radio" id="sum2-1" name="sum2" disabled class="disabled"><!-- [D]비활성화인 경우 : 'disabled' 클래스 추가 -->
+                                                                        <label for="sum2-1">Y</label>
+                                                                    </div>
+                                                                    <div class="radiobox">
+                                                                        <input type="radio" id="sum2-2" name="sum2" checked="checked">
+                                                                        <label for="sum2-2">N</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="c-btn">
+                                                                    <a href="#" class="btn-white">상세보기</a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <!-- Start : 상세보기 버튼 클릭 시 노출되는 영역 -->
+                                                        <div class="summary-tbl">
+                                                            <table class="bbs-table">
+                                                                <colgroup>
+                                                                    <col width="80px">
+                                                                    <col>
+                                                                    <col>
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">순번</th>
+                                                                        <th scope="col">등기목적</th>
+                                                                        <th scope="col">등기일자</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="bor-line">
+                                                                        <td colspan="3" class="nodata"><span>정보가 없습니다.</span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <!-- //End : 상세보기 버튼 클릭 시 노출되는 영역 -->
+                                                    </div>
+                                                </div>
+                                                <!-- //End : 권리침해여부 -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <!-- Start : 근저당권여부 -->
+                                                <div class="com-inp">
+                                                    <p class="tit">근저당권여부</p>
+                                                    <div class="cnt-box">
+                                                        <ul class="file-sel">
+                                                            <li>
+                                                                <div class="inp-radio">
+                                                                    <div class="radiobox">
+                                                                        <input type="radio" id="sum3-1" name="sum3" checked="checked">
+                                                                        <label for="sum3-1">Y</label>
+                                                                    </div>
+                                                                    <div class="radiobox">
+                                                                        <input type="radio" id="sum3-2" name="sum3" disabled class="disabled"><!-- [D]비활성화인 경우 : 'disabled' 클래스 추가 -->
+                                                                        <label for="sum3-2">N</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="c-btn">
+                                                                    <a href="#" class="btn-white">상세보기</a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <!-- Start : 상세보기 버튼 클릭 시 노출되는 영역 -->
+                                                        <div class="summary-tbl">
+                                                            <table class="bbs-table">
+                                                                <colgroup>
+                                                                    <col width="80px">
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                    <col>
+                                                                </colgroup>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">순번</th>
+                                                                        <th scope="col">채무자</th>
+                                                                        <th scope="col">채무자번호</th>
+                                                                        <th scope="col">등기목적</th>
+                                                                        <th scope="col">접수일자</th>
+                                                                        <th scope="col">권리자</th>
+                                                                        <th scope="col">채권최고액</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>1</td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                    <tr class="bor-line">
+                                                                        <td colspan="7" class="nodata"><span>정보가 없습니다.</span></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <!-- //End : 상세보기 버튼 클릭 시 노출되는 영역 -->
+                                                    </div>
+                                                </div>
+                                                <!-- //End : 근저당권여부 -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <!-- Start : 대부업 설정 -->
+                                                <div class="com-inp">
+                                                    <p class="tit">대부업 설정</p>
+                                                    <div class="cnt-box">
+                                                        <div class="inp-radio">
+                                                            <div class="radiobox">
+                                                                <input type="radio" id="sum4-1" name="sum4" checked="checked">
+                                                                <label for="sum4-1">Y</label>
+                                                            </div>
+                                                            <div class="radiobox">
+                                                                <input type="radio" id="sum4-2" name="sum4" disabled class="disabled"><!-- [D]비활성화인 경우 : 'disabled' 클래스 추가 -->
+                                                                <label for="sum4-2">N</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //End : 대부업 설정 -->
+                                            </td>
+                                            <td>
+                                                <!-- Start : 대부업 설정건수 -->
+                                                <div class="com-inp">
+                                                    <p class="tit">대부업 설정건수</p>
+                                                    <div class="cnt-box">
+                                                        <p class="cnt-tx2">1</p>
+                                                    </div>
+                                                </div>
+                                                <!-- //End : 대부업 설정건수 -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <!-- Start : 권리자수 제한 -->
+                                                <div class="com-inp">
+                                                    <p class="tit">권리자수 제한</p>
+                                                    <div class="cnt-box">
+                                                        <div class="inp-radio">
+                                                            <div class="radiobox">
+                                                                <input type="radio" id="sum5-1" name="sum5" checked="checked">
+                                                                <label for="sum5-1">Y</label>
+                                                            </div>
+                                                            <div class="radiobox">
+                                                                <input type="radio" id="sum5-2" name="sum5" disabled class="disabled"><!-- [D]비활성화인 경우 : 'disabled' 클래스 추가 -->
+                                                                <label for="sum5-2">N</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //End : 권리자수 제한 -->
+                                            </td>
+                                            <td>
+                                                <!-- Start : 권리자수 -->
+                                                <div class="com-inp">
+                                                    <p class="tit">권리자수</p>
+                                                    <div class="cnt-box">
+                                                        <p class="cnt-tx2">3</p>
+                                                    </div>
+                                                </div>
+                                                <!-- //End : 권리자수 -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <!-- Start : 당사설정여부 -->
+                                                <div class="com-inp">
+                                                    <p class="tit">당사설정여부</p>
+                                                    <div class="cnt-box">
+                                                        <div class="inp-radio">
+                                                            <div class="radiobox">
+                                                                <input type="radio" id="sum6-1" name="sum6" disabled class="disabled"><!-- [D]비활성화인 경우 : 'disabled' 클래스 추가 -->
+                                                                <label for="sum6-1">Y</label>
+                                                            </div>
+                                                            <div class="radiobox">
+                                                                <input type="radio" id="sum6-2" name="sum6" checked="checked">
+                                                                <label for="sum6-2">N</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //End : 당사설정여부 -->
+                                            </td>
+                                            <td>
+                                                <!-- Start : 최종 적중 여부 -->
+                                                <div class="com-inp">
+                                                    <p class="tit">최종 적중 여부</p>
+                                                    <div class="cnt-box">
+                                                        <div class="inp-radio">
+                                                            <div class="radiobox">
+                                                                <input type="radio" id="sum7-1" name="sum7" checked="checked">
+                                                                <label for="sum7-1">Y</label>
+                                                            </div>
+                                                            <div class="radiobox">
+                                                                <input type="radio" id="sum7-2" name="sum7" disabled class="disabled"><!-- [D]비활성화인 경우 : 'disabled' 클래스 추가 -->
+                                                                <label for="sum7-2">N</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- //End : 최종 적중 여부 -->
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- //End : 간편보기 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

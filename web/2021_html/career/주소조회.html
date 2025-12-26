@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주소조회</title>
+
+    <link rel="stylesheet" href="/static/web/css/career/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>주소조회</h1>
+            </div>
+            <div class="popup-contents no_btn">
+                <!-- content 시작 //-->
+                <div class="bg_graybox">
+                    <div class="bg_top">
+                        <div class="radio_box">
+                            <ul class="inline_rchk">
+                                <li>
+                                    <input type="radio" name="r011" value="" id="r011" checked="checked" class="rchk" aria-hidden="true" title="도로명주소 체크">
+                                    <label for="r011" class="rchk-label" role="radio" aria-checked="false"><span>도로명주소</span></label>
+                                </li>
+                                <li>
+                                    <input type="radio" name="r011" value="" id="r012" class="rchk" aria-hidden="true" title="지번주소 체크">
+                                    <label for="r012" class="rchk-label" role="radio" aria-checked="false"><span>지번주소</span></label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="text_data block">
+                            <span class="form">
+                                <input type="text" id="" placeholder="지역명을 입력해주세요" title="주소 입력">
+                            </span>
+                            <div class="btn_cont">
+                                <button id="">조회</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_bottom">
+                        <div class="addresswrap">
+                            <div class="address_box">
+                                <p class="nodata">검색할 지역명을 입력해 조회해 주세요.<br><br>
+                                    [입력예시]<br>
+                                    "서울시 강남구 언주로30길 39" 주소의 경우<br>
+                                    "언주로30길" 입력
+                                </p>
+                                <ul>
+                                    <li><a href="#"><span>(04528)</span>서울특별시 중구 남대문로 2-5 구두수선대147</a></li>
+                                    <li><a href="#"><span>(04528)</span>서울특별시 중구 남대문로 2</a></li>
+                                    <li><a href="#"><span>(04528)</span>서울특별시 중구 남대문로 2-5 구두수선대147</a></li>
+                                    <li><a href="#"><span>(04528)</span>서울특별시 중구 남대문로 2</a></li>
+                                    <li><a href="#"><span>(04528)</span>서울특별시 중구 남대문로 2-5 구두수선대147</a></li>
+                                    <li><a href="#"><span>(04528)</span>서울특별시 중구 남대문로 2</a></li>
+                                    <li><a href="#"><span>(04528)</span>서울특별시 중구 남대문로 2-5 구두수선대147</a></li>
+                                    <li><a href="#"><span>(04528)</span>서울특별시 중구 남대문로 2</a></li>
+                                    <li><a href="#"><span>(04528)</span>서울특별시 중구 남대문로 2-5 구두수선대147</a></li>
+                                    <li><a href="#"><span>(04528)</span>서울특별시 중구 남대문로 2</a></li>
+                                    <li><a href="#"><span>(04528)</span>서울특별시 중구 남대문로 2-5 구두수선대147</a></li>
+                                    <li><a href="#"><span>(04528)</span>서울특별시 중구 남대문로 2</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn_more">
+                                <a href="#" class="more_btn"><i class="more"></i>더보기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// content 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

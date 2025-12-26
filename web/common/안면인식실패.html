@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>얼굴촬영 및 안면인식 실패 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+    window.addEventListener('load', addrPopupAll);
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half popup-360"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <!--<div class="popup-text">
+                <h1>휴대폰 본인인증</h1>
+            </div>-->
+            <div class="popup-contents flex-col pad-small"><!-- 2022-10-11 : pad-small 추가 -->
+                <!-- Start : content -->
+                <div class="popup-text type">
+                    <h1>얼굴 인증에 실패했어요<br>다시 진행해주세요<span class="num">1/10</span></h1>
+                </div>
+                <div class="pop-cont-txt a_l">10회 실패할 경우, 추가인증이 필요해요</div>
+                <div class="box-gray05 mt32">
+                    <p class="tx-tip type"><span class="tx-tip-ico">안내</span>계속 실패한다면 확인해주세요</p>
+                    <ul class="list-dot mt16">
+                        <li>신분증이 발급된 지 5년 이상 경과된 경우</li>
+                        <li>조명, 카메라 화질, 얼굴 각도, 배경 등 촬영시 환경이 불안정한 경우</li>
+                    </ul>
+                </div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button">확인</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

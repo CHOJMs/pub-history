@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차량정보 확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>차량정보 확인</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+
+                    <!-- Start : 차량 정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">차량 정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">구입차량</span>
+                                    <span class="p-txt">현대 더 뉴 그랜저 IG 2022</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차량가젹</span>
+                                    <span class="p-txt">40,160,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차량번호</span>
+                                    <span class="p-txt">41주4859</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 차량 정보 -->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none">
+                    <div class="btn-box">
+                        <span class="btn gray"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

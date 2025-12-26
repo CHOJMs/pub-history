@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차량 사진 번호판이 대출 신청정보와 상이 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half popup-360"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <!--<div class="popup-text">
+                <h1>휴대폰 본인인증</h1>
+            </div>-->
+            <div class="popup-contents flex-col pad-small"><!-- 2022-10-11 : pad-small 추가 -->
+                <!-- Start : content -->
+                <div class="popup-text type">
+                    <h1>차량 사진의 번호판이<br>신청 차량과 달라요<span class="num">3/3</span></h1>
+                </div>
+                <div class="pop-cont-txt a_l">신청하신 대출 정보를 다시 한번 확인하시고 사진을 첨부해주세요. 사진 첨부는 3회까지 다시 시도 가능해요.</div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray01 w-94"><button type="button">닫기</button></span>
+                        <span class="btn"><button type="button">다시 첨부하기</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

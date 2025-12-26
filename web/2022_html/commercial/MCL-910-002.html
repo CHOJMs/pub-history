@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>물건내역 상세확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>물건내역 상세확인</h1>
+            </div>
+            <div class="popup-contents flex-col division-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt ">
+
+                    <div class="col-cnt">
+                        <!-- Start : 상품 신청내역 -->
+                        <div class="box-navy">
+                            <ul class="list-3">
+                                <li>
+                                    <div class="p-tit">물건명텍스트</div>
+                                    <div class="p-txt"><span>20212년식</span><span>1대(개)</span><span>공급사명가나다</span></div>
+                                    <div class="p-total">10,000,000원</div>
+                                </li>
+                                <li class="line-plus"><img src="/static/web/img/ui_common/ico_plus.png" alt="더하기"></li>
+                                <li>
+                                    <div class="p-tit">물건명텍스트</div>
+                                    <div class="p-txt"><span>20212년식</span><span>1대(개)</span><span>공급사명가나다</span></div>
+                                    <div class="p-total">10,000,000원</div>
+                                </li>
+                                <li class="total-box">
+                                    <div class="p-tit">합계</div>
+                                    <div class="p-num-total">20,000,000원</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //End : 상품 신청내역 -->
+                        <p class="dot">모든 금액은 VAT 별도입니다.</p>
+                    </div>
+
+                    <div class="col-cnt division-box">
+                        <div class="flex-tit">
+                            <h2>양도양수 계약내용 확인</h2>
+                            <a href="#" class="btn-line">계약서확인</a>
+                        </div>
+
+                        <div class="box-gray mb16">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">양수인(갑)</span>
+                                    <span class="p-txt">(주)디지비캐피탈</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">양수인주소</span>
+                                    <span class="p-txt">서울 중구 남대문로 124 디지비캐피탈</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">양도인(을)</span>
+                                    <span class="p-txt">김영희 / (주)일이삼</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">양수인주소</span>
+                                    <span class="p-txt">서울 중구 텍스트 두줄이상의 예시입니다.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none">
+                    <div class="btn-box">
+                        <span class="btn gray"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

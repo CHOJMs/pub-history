@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="nav">
+        <h1>[ iM캐피탈 ] <a target="_blank" href="/web/pub_html/index.html">History</a><a target="_blank" href="/web/pub_html/index_mob_office.html">모바일오피스</a></h1>
+        <div class="top-area">
+            <ul>
+                <li class="tit"><a href="#none">메뉴</a></li>
+                <li><a class="on" href="/web/pub_html/history_1_1.html">개인금융</a></li>
+                <li><a href="/web/pub_html/history_1_2.html">자동차금융</a></li>
+                <li><a href="/web/pub_html/history_2_5.html">커머셜</a></li>
+                <li><a href="/web/pub_html/history_1_4.html">스탁론</a></li>
+                <li><a href="/web/pub_html/history_1_5.html">금융센터</a></li>
+                <li><a href="/web/pub_html/history_1_6.html">마이</a></li>
+                <li><a href="/web/pub_html/history_1_7.html">회사소개</a></li>
+                <li><a href="/web/pub_html/history_1_8.html">고객센터</a></li>
+                <li><a href="/web/pub_html/history_1_9.html">금융소비자보호</a></li>
+                <li><a href="/web/pub_html/history_1_10.html">클린센터</a></li>
+                <li><a href="/web/pub_html/history_1_11.html">외국인대출</a></li>
+                <li><a href="/web/pub_html/history_1_12.html">인증센터</a></li>
+                <li><a href="/web/pub_html/history_1_13.html">Etc.</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <iframe src="history_1_1.html" width="100%" frameborder="0" name="main" scrolling="yes"></iframe>
+        </div>
+    </div>
+
+    <script>
+
+    	$(function(){
+
+    		$('.top-area ul li a').on('click', function(e){
+
+    			if ( $(this).hasClass('index') ){
+
+    			}else{
+    				e.preventDefault();
+    				var target = $(this).attr('href')
+    				$('.dashboard').hide()
+    				$('#page-wrapper iframe').show().attr('src',target)
+    			}
+
+    			$(this).addClass('on')
+    			$(this).parent().siblings().find('a').removeClass('on')
+    		})
+    	})
+
+    </script>
+</body>
+</html>

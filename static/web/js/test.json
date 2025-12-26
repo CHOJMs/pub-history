@@ -1,0 +1,133 @@
+TestAuthFile = {
+"init" : [
+  {
+    "0": "id",
+    "1": "sNm",
+    "2": "custNm",
+    "3": "rrn1",
+    "4": "rrn2",
+    "5": "clphCmpDvcd",
+    "6": "cpno",
+    "7": "athnMthDvcd",
+    "8": "brno"
+  }
+],
+"persons" : [
+  {
+	"id" : "myDgbP1",
+	"sNm" : "MYDGB-차량관리-오토리스-개인",
+	"custNm": "조건길",
+	"rrn1": 641110,
+	"rrn2": 1105529,
+	"clphCmpDvcd": "01",
+	"cpno": "01089153868",
+	"athnMthDvcd": "PLA32"
+  },
+    {
+    "id" : "myDgbP2",
+	"sNm" : "MYDGB-차량관리-오토리스-개인",
+	"custNm": "기권구",
+	"rrn1": 830106,
+	"rrn2": 1363720,
+	"clphCmpDvcd": "01",
+	"cpno": "01089153868",
+	"athnMthDvcd": "PLA32",
+
+  },
+  {
+    "id" : "myDgbB1",
+    "sNm" : "MYDGB-차량관리-오토리스-법인",
+    "brno": "1308192469"
+  },
+  {
+	"id" : "myDgbP3",
+	"sNm" : "MYDGB-차량관리-오토렌탈-개인",
+	"custNm": "곽두태",
+	"rrn1": 841129,
+	"rrn2": 1200421,
+	"clphCmpDvcd": "01",
+	"cpno": "01089153868",
+	"athnMthDvcd": "PLA32"
+  },
+    {
+    "id" : "myDgbP4",
+	"sNm" : "MYDGB-차량관리-오토렌탈-개인",
+	"custNm": "나규휘",
+	"rrn1": 790301,
+	"rrn2": 1273730,
+	"clphCmpDvcd": "01",
+	"cpno": "01089153868",
+	"athnMthDvcd": "PLA32",
+
+  },
+  {
+    "id" : "myDgbB2",
+    "sNm" : "MYDGB-차량관리-오토렌탈-법인",
+    "brno": "5768673571"
+  },
+  {
+    "id" : "myDgbB3",
+    "sNm" : "MYDGB-차량관리-오토리스2+렌탈1-법인",
+    "brno": "6098167850"
+  },
+  {
+    "id" : "myDgbB4",
+    "sNm" : "MYDGB-차량관리-오토리스1+렌탈15-법인",
+    "brno": "6048165482"
+  },
+  {
+    "id" : "autoP1",
+    "sNm" : "auto 오토맨-개인",
+    "custNm": "오토맨",
+    "rrn1": 950211,
+    "rrn2": 1041728,
+    "clphCmpDvcd": "01",
+    "cpno": "01089153868",
+    "athnMthDvcd": "PLA32"
+
+  },
+  {
+    "id" : "autoP2",
+    "sNm" : "auto 오토걸-개인",
+    "custNm": "오토걸",
+    "rrn1": 631206,
+    "rrn2": 1234567,
+    "clphCmpDvcd": "01",
+    "cpno": "01089153868",
+    "athnMthDvcd": "PLA32"
+
+  },
+  {
+    "id" : "autoB1",
+    "sNm" : "auto 오토로퓨처-법인",
+    "brno": "0269251234"
+  },
+    {
+    "id" : "personalP1",
+    "sNm" : "personal 개인맨-개인",
+    "custNm": "개인맨",
+    "rrn1": 950211,
+    "rrn2": 1041728,
+    "clphCmpDvcd": "01",
+    "cpno": "01089153868",
+    "athnMthDvcd": "PLA32"
+
+  },
+  {
+    "id" : "personalP2",
+    "sNm" : "personal 개인걸-개인",
+    "custNm": "개인걸",
+    "rrn1": 631206,
+    "rrn2": 1234567,
+    "clphCmpDvcd": "01",
+    "cpno": "01089153868",
+    "athnMthDvcd": "PLA32"
+
+  },
+  {
+    "id" : "personalB1",
+    "sNm" : "auto 개인로퓨처-법인",
+    "brno": "0269251234"
+  },
+ ]
+}

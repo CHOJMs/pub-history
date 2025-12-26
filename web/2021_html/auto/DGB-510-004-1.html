@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중요약정사항 확인</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>중고차 인수증 등록</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+
+                <h2 class="pb0">인수자(구매자)</h2>
+                <p class="line1"></p>
+                <div class="form_box">
+                    <ul class="list_3">
+                        <li>
+                            <span class="tit">성명</span>
+                            <span>박정은</span>
+                        </li>
+                        <li>
+                            <span class="tit">생년월일</span>
+                            <span>841127</span>
+                        </li>
+                        <li>
+                            <span class="tit">주소</span>
+                            <span>서울시 강남구 언주로 30길 39, 15층</span>
+                        </li>
+                        <li>
+                            <span class="tit">전화번호</span>
+                            <span>010-1234-5678</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <h2 class="pb0">인수차량(구매차량)</h2>
+                <p class="line1"></p>
+                <div class="form_box pb8">
+                    <ul class="list_3">
+                        <li>
+                            <span class="tit">차량번호</span>
+                            <span>45바 1234</span>
+                        </li>
+                        <li>
+                            <span class="tit">모델연도</span>
+                            <span>2015</span>
+                        </li>
+                        <li>
+                            <span class="tit">차종</span>
+                            <span>중고승용</span>
+                        </li>
+                        <li>
+                            <span class="tit">차명</span>
+                            <span>아반떼 모던</span>
+                        </li>
+                        <li>
+                            <span class="tit">인수년월</span>
+                            <span>2018-05-01</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="blue_box mt40">
+                    <p class="txt2">본인은(강남매매상사)로부터 중고 자동차 매매계약에
+                        따라 상기 차량을 이상 없이 인수하였으며, 중고 자동차
+                        대출 표준약관 제4조에 따라 중고 자동차 구입자금
+                        대출을 위해 주식회사 디지비캐피탈에 동 인수증을
+                        제출하는 것에 동의합니다.</p>
+                </div>
+                <div class="checkbox mt16">
+                    <input type="checkbox" id="ch02" name="ch02" class="chk" aria-hidden="false" title="동의함 체크">
+                    <label for="ch02" class="label" role="checkbox">동의함</label>
+                </div>
+                
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

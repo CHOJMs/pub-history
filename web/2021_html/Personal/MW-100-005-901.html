@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+
+<title>고객정보 입력 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap" style="background-size: 20% auto;"><!--bg이미지 진행 width값-->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header>
+			<div class="gnb">
+				<!--// 모바일용 GNB 메뉴 -->
+				<p class="menu_icon">
+                    <a href="#" class="mobile_back_btn" title="뒤로가기"></a>
+                    <a href="#" class="mobile_menu_btn" title="모바일 메뉴"></a>
+                </p>
+				<!-- 모바일용 GNB 메뉴// -->
+
+				<!-- //웹용 GNB 메뉴 -->
+				<div id="nav">
+				</div>
+				<!-- 웹용 GNB 메뉴// -->
+			</div>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_process">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+                <!-- 내용 시작 -->
+                <div class="process_wrap">
+					<div class="pro_box">
+
+						<div class="pro_txt_box">
+							<div class="tit_info">직장 및 소득 정보를<br>입력해주세요
+								<p class="txt_num"><span>1</span>/ 7</p>
+							</div>
+						</div>
+
+						<p class="h_tit">소득구분 및 직군</p>
+						<div class="income">
+							<div class="income-sidebar">
+								<li><a href="#" data-target="pay">급여소득자</a></li>
+								<li><a href="#" data-target="personal">개인사업자</a></li>
+								<li><a href="#" data-target="free">프리랜서</a></li>
+								<li><a href="#" data-target="etc">기타소득자</a></li>
+							</div>
+
+							<div class="income-sidebar-sub">
+								<div class="" id="income-sidebar_pay">
+									<li>
+										<input type="radio" name="pay" value="" id="p1" aria-hidden="true" title="대&middot;중소기업/공공기관 체크" checked="checked" >
+										<label for="p1" role="radio" aria-checked="true"><span>대&middot;중소기업/공공기관</span></label>
+									</li>
+									<li>
+										<input type="radio" name="pay" value="" id="p2" aria-hidden="true" title="공무원 및 법조계 체크" role="radio">
+										<label for="p2" role="radio" aria-checked="false"><span>공무원 및 법조계</span></label>
+									</li>
+									<li>
+										<input type="radio" name="pay" value="" id="p3" aria-hidden="true" title="교수/교사/교직원 체크" role="radio">
+										<label for="p3" role="radio" aria-checked="false"><span>교수/교사/교직원</span></label>
+									</li>
+								</div>
+								<div class="d-none" id="income-sidebar_personal">
+									<li>
+										<input type="radio" name="personal" value="" id="s1" aria-hidden="true" title="자영업자 체크" role="radio" checked="checked">
+										<label for="s1" role="radio" aria-checked="false"><span>자영업자</span></label>
+									</li>
+								</div>
+								<div class="d-none" id="income-sidebar_free">
+									<li>
+										<input type="radio" name="free" value="" id="f1" aria-hidden="true" title="대&middot;중소기업/공공기관 체크" role="radio" checked="checked">
+										<label for="f1" role="radio" aria-checked="true"><span>대&middot;중소기업/공공기관</span></label>
+									</li>
+									<li>
+										<input type="radio" name="free" value="" id="f2" aria-hidden="true" title="기타소득자/무직자 체크" role="radio">
+										<label for="f2" role="radio" aria-checked="false"><span>기타소득자/무직자</span></label>
+									</li>
+								</div>
+								<div class="d-none" id="income-sidebar_etc">
+									<li>
+										<input type="radio" name="etc" value="" id="e1" aria-hidden="true" title="기타소득자/무직자 체크" role="radio" checked="checked">
+										<label for="e1" role="radio" aria-checked="false"><span>기타소득자/무직자</span></label>
+									</li>
+								</div>
+							</div>
+						</div>
+						<!-- end of 소득구분 및 직군-->
+
+						<p class="icon_bullet mt16 mb32">프리랜서=인적용역제공자</p>
+
+						<div class="information">
+							<div class="d-non" id="info_pay_free" style="position: relative;">
+								<div class="">
+									<p class="h_tit">직장명</p>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" class="btn_cont" id="" placeholder="" title="iM캐피탈">
+										</span>
+									</div>
+
+								</div>
+
+								<div class="">
+									<p class="h_tit">입사년월</p>
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="년도 선택">
+												<option>년 선택</option>
+											</select>
+										</div>
+										<div class="selectbox">
+											<select class="select" title="월 선택">
+												<option>월 선택</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="">
+									<p class="h_tit">고용형태</p>
+									<div class="text_data radio-box-type-rect">
+										<li>
+											<input type="radio" name="r31" value="" id="r31" checked="checked" aria-hidden="true" title="">
+											<label for="r31" role="radio" aria-checked="true"><span>정규직</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r31" value="" id="r32" aria-hidden="true" title="" role="radio">
+											<label for="r32" role="radio" aria-checked="false"><span>계약직</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r31" value="" id="r33" aria-hidden="true" title="" role="radio">
+											<label for="r33" role="radio" aria-checked="false"><span>파견직</span></label>
+										</li>
+										<li>
+											<input type="radio" name="r31" value="" id="r34" aria-hidden="true" title="" role="radio">
+											<label for="r34" role="radio" aria-checked="false"><span>기타직</span></label>
+										</li>
+									</div>
+									<div class="radio_box text_data">
+										<ul class="inline_rchk">
+											<li style="width: 50%;">
+												<input type="radio" name="r013" value="" id="r013" checked="checked" class="rchk" aria-hidden="true" title="">
+												<label for="r013" class="rchk-label" role="radio" aria-checked="false"><span>4대보험 가입</span></label>
+											</li>
+											<li>
+												<input type="radio" name="r013" value="" id="r014" class="rchk" aria-hidden="true" title="">
+												<label for="r014" class="rchk-label" role="radio" aria-checked="false"><span>4대보험 미가입</span></label>
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="">
+									<p class="h_tit">연소득</p>
+									<div class="text_data">
+										<span class="form app_text">
+											<input type="tel" name="" id="" class="a_r" placeholder="0" title="입력">
+											<span class="txt">만원</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<!-- end of 급여소득자, 프리랜서 경우 -->
+
+							<div class="d-none" id="info_personal" style="position: relative;">
+								<div class="">
+									<p class="h_tit">사업자명</p>
+									<div class="text_data">
+										<span class="form">
+											<input type="text" class="btn_cont" id="" placeholder="" title="iM캐피탈">
+										</span>
+									</div>
+
+								</div>
+
+								<div class="">
+									<p class="h_tit">개업일</p>
+									<div class="text_data">
+										<div class="selectbox">
+											<select class="select" title="년도 선택">
+												<option>년 선택</option>
+											</select>
+										</div>
+										<div class="selectbox">
+											<select class="select" title="월 선택">
+												<option>월 선택</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="">
+									<p class="h_tit">사업소득</p>
+									<div class="text_data">
+										<span class="form app_text">
+											<input type="tel" name="" id="" class="a_r" placeholder="0" title="입력">
+											<span class="txt">만원</span>
+										</span>
+									</div>
+								</div>
+							</div>
+							<!-- end of 개인사업자 경우 -->
+						</div>
+					</div>
+                </div>
+                <!-- 내용 끝 -->
+
+                <!-- 버튼 시작 -->
+                <div class="btn_fixed">
+                    <div class="btn_box">
+                        <span class="btn_step btn_pre">
+							<button id="">이전</button>
+						</span>
+                        <span class="btn_step bnt_next disabled"><!-- 활성버튼: class="black" / 비활성버튼: class="disabled" / 기본버튼: class="black" 삭제 -->
+							<p class="txt_num"><span>1</span>/ 7</p>
+							<button id="">다음</button>
+							<p class="btn_skip a_r mb21 pr20"><a href="#" class="p0">건너뛰기</a></p>
+						</span>
+                    </div>
+                </div>
+             <!-- 버튼 끝 -->
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+		<script type="text/javascript" src="/static/admin/js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript">
+
+			let debug = 1;
+			// 급여소득자 active 상태로
+			$('.income-sidebar li a:first').addClass('active');
+
+			$('.income-sidebar li a').on('focus mouseover click', '', function(e) {
+				e.preventDefault();
+
+				$('.income-sidebar li a.active').removeClass('active');
+				$(this).addClass('active');
+				let target = $(this).data('target');
+				if (debug) console.log(`target = ${target}`);
+
+				$('.income-sidebar-sub div').addClass('d-none');
+				$('#info_pay_free').addClass('d-none');
+				$('#info_personal').addClass('d-none');
+				// 급여소득자
+				if (target === "pay") {
+					if (debug) console.log('#income-sidebar_pay');
+					$('#income-sidebar_pay').removeClass('d-none');
+					$('#info_pay_free').removeClass('d-none');
+				}
+				// 개인사업자
+				else if (target === "personal") {
+					if (debug) console.log('#income-sidebar_personal');
+					$('#income-sidebar_personal').removeClass('d-none');
+					$('#info_personal').removeClass('d-none');
+				}
+				// 프리랜서
+				else if (target === "free") {
+					if (debug) console.log('#income-sidebar_free');
+					$('#income-sidebar_free').removeClass('d-none');
+					$('#info_pay_free').removeClass('d-none');
+				}
+				// 기타소득자, etc
+				else {
+					if (debug) console.log('#income-sidebar_etc');
+					$('#income-sidebar_etc').removeClass('d-none');
+					$('#info_pay_free').addClass('d-none');
+					$('#info_personal').addClass('d-none');
+				}
+			});
+		</script>
+	</div>
+</body>
+</html>

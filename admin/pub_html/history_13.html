@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="contents">
+        <div class="ux-cont">
+            <table>
+                <colgroup>
+                    <col style="width:35px">
+                    <col style="width:100px">
+                    <col style="width:100px">
+                    <col style="width:10%">
+                    <col>
+                    <col style="width:80px">
+                    <col style="width:100px">
+                    <col style="width:14%">
+                    <col style="width:8%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>최초작성일</th>
+                        <th>최종수정일</th>
+                        <th>화면유형</th>
+                        <th>화면명</th>
+                        <th>화면참고</th>
+                        <th>화면설계</th>
+                        <th>파일명</th>
+                        <th>작업내역</th>
+                        <th>비고</th>
+                    </tr>
+                    <tr>
+                        <td id="sub1" class="subtit" colspan="10">▣ 잔가보장사관리 ▣</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>잔가보장확약서</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/gua/잔가보장확약서.html">잔가보장확약서.html</a></td>
+                        <td class="workMemoWrap">
+                            <!--<button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2023-03-30 : 수정</li>
+                            </ul>-->
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>잔가보장확약서 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/gua/잔가보장확약서상세.html">잔가보장확약서상세.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>잔가수수료확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/gua/잔가수수료확인.html">잔가수수료확인.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-11-12 : 실행기간 -> 실행월</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>잔가수수료확인 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/gua/잔가수수료확인상세.html">잔가수수료확인상세.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-11-12 : 실행기간 -> 실행월</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>잔가수수료정산 확인</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/gua/잔가수수료정산.html">잔가수수료정산.html</a></td>
+                        <td class="workMemoWrap">
+                            <button type="button" class="modify">작업내역</button>
+                            <ul>
+                                <li>2024-11-12 : 실행기간 -> 실행월</li>
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>브랜드별 고잔가 현황</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/gua/브랜드별고잔가.html">브랜드별고잔가.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>브랜드별 고잔가 현황 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/gua/브랜드별고잔가상세.html">브랜드별고잔가상세.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>상품별 잔가 테이블</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/gua/상품별잔가테이블.html">상품별잔가테이블.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>2024-10-18</td>
+                        <td></td>
+                        <td>page</td>
+                        <td>상품별 잔가 테이블 상세</td>
+                        <td></td>
+                        <td></td>
+                        <td><a target="_blank" href="/admin/gua/상품별잔가테이블상세.html">상품별잔가테이블상세.html</a></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

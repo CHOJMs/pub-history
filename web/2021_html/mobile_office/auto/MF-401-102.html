@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>재고현황 상세 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+            
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+				
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>					
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">오토 재고금융</a>
+							<ul>
+								<li><a href="">재고금융 신청</a></li>
+								<li><a href="">재고금융 현황</a></li>
+                                <li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+						<li class=""><a href="">중고차 제휴</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">한도조회 신청</a></li>
+                                <li><a href="">한도조회 신청(유선녹취)</a></li>
+                                <li><a href="">한도조회 상담이력</a></li>
+								<li><a href="">자동차 시세확인</a></li>
+								<li><a href="">차량정보 확인</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+				<h2 class="tl">재고현황 상세</h2>
+                <div class="box_form scoll mob_nobtn">
+					<h3 class="txt">기본정보</h3>
+					<div class="box_viewType">
+						<dl>
+							<dt>고객명</dt>
+							<dd>홍길동(길동모터스)</dd>
+							<dt>대출신청일자</dt>
+							<dd>2020-01-01 00:00:00</dd>
+							<dt>진행상태</dt>
+							<dd>대출중</dd>
+							<dt>실행번호</dt>
+							<dd>2020000000000</dd>
+							<dt>대출구분</dt>
+							<dd>신규</dd>
+						</dl>
+					</div>
+
+					<h3 class="txt">차량정보</h3>
+					<div class="box_viewType">
+						<dl>
+							<dt>차량번호</dt>
+							<dd>43도0000</dd>
+							<dt>차명</dt>
+							<dd>QM5 디젤 4WD</dd>
+							<dt>연식</dt>
+							<dd>2021</dd>
+						</dl>
+					</div>
+
+					<h3 class="txt">대출조건</h3>
+					<div class="box_viewType">
+						<dl>
+							<dt>대출금액(원)</dt>
+							<dd>25,000,000</dd>
+							<dt>대출잔액(원)</dt>
+							<dd>25,000,000</dd>
+							<dt>대출기간</dt>
+							<dd>3개월</dd>
+							<dt>상환방법</dt>
+							<dd>만기일시상황</dd>
+							<dt>금리</dt>
+							<dd>6.4%</dd>
+							<dt>연체이자율</dt>
+							<dd>25%</dd>
+							<dt>중도상환 수수료</dt>
+							<dd>0%</dd>
+						</dl>
+					</div>
+
+					<h3 class="txt">결제정보</h3>
+					<div class="box_viewType">
+						<dl>
+							<dt>결제일자</dt>
+							<dd>1일</dd>
+							<dt>최초결제일</dt>
+							<dd>20210501</dd>
+						</dl>
+					</div>
+
+					<h3 class="txt">첨부파일</h3>
+					<div class="box_viewType">
+						<dl>
+							<dt>자동차등록증</dt>
+							<dd>
+								<a href="#">abcde.jpg</a>
+							</dd>
+							<dt>자동차사진 (전면)</dt>
+							<dd>
+								<a href="#">abcde.jpg</a>
+							</dd>
+							<dt>자동차사진 (후면)</dt>
+							<dd>
+								<a href="#">abcde.jpg</a>
+							</dd>
+							<dt>자동차사진 (차대번호)</dt>
+							<dd>
+								<a href="#">abcde.jpg</a>
+							</dd>
+						</dl>
+					</div>				
+
+					<h3 class="txt">메모</h3>
+					<div class="opi mb30">
+						메모 내용입니다.
+					</div>
+
+					<!-- 버튼 시작 -->
+					<div class="btn_box">
+						<span class="btn"><a href="#">대출상환(전액상환)</a></span>
+					</div>
+					<!-- 버튼 끝 -->
+
+				</div>
+                <!-- 내용 끝 -->
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+	<footer class="footerwrap">
+        <!-- PC_footer -->
+		<div class="pc_footer">
+			<div class="pc_f_logo"><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></div>
+			<div class="pc_f_address">
+				<ul>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">약관 및 금융관련 법규</a></li>
+					<li><a href="#">계열사간 고객정보 제공내역조회</a></li>
+				</ul>
+				<ul class="address">
+					<li>서울특별시 중구 남대문로 125, 8층 (다동)</li>
+					<li>ⓒ iM CAPITAL Corp. All Rights Reserved.</li>
+				</ul>
+				<p class="mark">
+					<img src="/static/web/img/m_wa.png" alt="WA 미래창조과학부 WEB ACCESSIBILITY">
+				</p>
+				<!--<div class="sbHolder familySite2">
+					<a href="javascript:;" class="sbToggle btnFamily2" title="사이트 보기/닫기">DGB 패밀리 사이트</a>
+				</div>-->
+			</div>
+		</div>
+		<!-- //PC_footer -->
+    </footer>
+</body>
+</html>

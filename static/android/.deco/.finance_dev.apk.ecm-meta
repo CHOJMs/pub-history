@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<deco> 
+    <fileData filename="finance_dev.apk" filepath="/src/main/webapp/static/android" ischanged="0" lastversion="8" tstversion="0" realversion="0" dotversion="8" itemid="000000939275" ecmMd5sum="825157ffe7d68a684a838f91f1762e0e" ecmTstmd5sum="" lastChangedDate="1672121762000" editor="정현석:16440" lastUser="정현석:16440" filestatus="체크인완료:B" islock="1" isAuthority="1" rsrccd="A2" rsrccdcodename="static" rsrcinfo="0100000000110000000000010000010000000000100000001000000001000000000" jobcd="HP" jobname="홈페이지" syscd="00102" sysmsg="홈페이지" srid="R202111-0094"/> 
+</deco>

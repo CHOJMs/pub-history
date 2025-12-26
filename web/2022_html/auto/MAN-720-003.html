@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>적합성 체크 신청정보 확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>신청정보 확인</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+
+                    <!-- Start : 상품 신청내역 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">상품 신청 내역</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">진행상품</span>
+                                    <span class="p-txt">자동차 구입자금대출</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">등록명의</span>
+                                    <span class="p-txt">123456-11-123456</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 상품 신청내역 -->
+
+                    <!-- Start : 견적 정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">견적 정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">브랜드</span>
+                                    <span class="p-txt">제네시스</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">구입차량</span>
+                                    <span class="p-txt">G90_3.5T(RS4)2WD(2022)</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">차량가격</span>
+                                    <span class="p-txt">49,500,000원</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 견적 정보 -->
+
+                    <!-- Start : 대출 내역 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">대출 내역</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">대출금액</span>
+                                    <span class="p-txt">50,000,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">대출기간</span>
+                                    <span class="p-txt">60개월</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">약정금리</span>
+                                    <span class="p-txt">(연)7%</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">월납부금</span>
+                                    <span class="p-txt">234,234원
+                                        <p class="s-txt">1회차는 결제일에 따라 변동</p>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">상환방법</span>
+                                    <span class="p-txt">원리금균등분할상환</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">연체이자율</span>
+                                    <span class="p-txt">(연)10%
+                                        <p class="s-txt">약정금리 + 3%p(법정 최고금리 이내)</p>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">중도상환수수료</span>
+                                    <span class="p-txt">2%
+                                        <p class="s-txt">중도상환원금 × 1%(부대비용) + 중도상환원금 × (중도상환수수료율% - 1%) × 잔존기간 ÷ (대출기간-30일)</p>
+                                        <p class="s-txt font-green">30일 미만 상환시에는 ‘대출사용기간’을 30일로 간주합니다.</p>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">인지대</span>
+                                    <span class="p-txt">
+                                        당사(50%) 200,000원<br>
+                                        고객(50%) 200,000원
+                                        <p class="s-txt font-green">인지세는 채무자 50%, 금융회사 50% 부담입니다.</p>
+                                        <p class="s-txt font-green">* 인지세 기준<br>
+                                            5천만원 이하 : 면제 / 1억원 이하 : 7만원 / 10억원 이하 : 15만원 / 10억원 초과 : 35만원
+                                        </p>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 대출 내역 -->
+
+                    <!-- Start : 추가 계약 정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">추가 계약 정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">장기선납금</span>
+                                    <span class="p-txt">0원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">상계방법</span>
+                                    <span class="p-txt">0원
+                                        <p class="s-txt font-green">상세 납부내용은 상환스케줄 서류를 통해 참고바랍니다.</p>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">이손금</span>
+                                    <span class="p-txt">없음</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 추가 계약 정보 -->
+
+                    <!-- Start : 연대 보증정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-tit">연대 보증정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">채무자명</span>
+                                    <span class="p-txt">홍길동</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">연대보증인명</span>
+                                    <span class="p-txt">김길동</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">입보자격</span>
+                                    <span class="p-txt">대표이사</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">보증종류</span>
+                                    <span class="p-txt">특정근보증</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">보증내용</span>
+                                    <span class="p-txt"></span>
+                                    <ul class="list-dash">
+                                        <li>
+                                            <span class="p-tit">보증종류</span>
+                                            <span class="p-txt">신청인(차주)의 채무금액과 동일</span>
+                                        </li>
+                                        <li>
+                                            <span class="p-tit">보증기간</span>
+                                            <span class="p-txt">신청인(차주)의 채무종료일과 동일</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 연대 보증정보 -->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none">
+                    <div class="btn-box">
+                        <span class="btn gray"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

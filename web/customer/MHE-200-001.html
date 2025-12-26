@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>상담문의 | iM캐피탈</title>
+<script>
+    $(document).ready(function(){
+        $('header').load('/web/renewal/header_sub_inc.html');
+        $('footer').load('/web/renewal/footer_inc.html');
+    }); 
+</script>
+</head>
+<body>
+    <header></header>
+    <div class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-contents">
+            <!-- Start : 페이지 인디케이터 -->
+            <div class="indicator">
+                <ul>
+                    <li>홈</li>
+                    <li>고객센터</li>
+                    <li>상담 및 문의</li>
+                    <li aria-label="현재 화면">상담문의 접수</li>
+                </ul>
+            </div>
+            <!-- //End : 페이지 인디케이터 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+                <h1>상담문의 접수</h1>
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap"><!-- 하단버튼이 있는 경우 클래스 추가 : s-conBtn -->
+
+                    <div class="pro-box">
+                        <div class="counsel-box type">
+                            <div class="coun-txt">다음과 같은&nbsp; <span class="font-green">일반 상담문의</span>에<br class="mob"> 해당하시는 경우 접수해주세요</div>
+                            <ul class="coun-list">
+                                <li>상품 관련 단순 상담</li>
+                                <li>상품 관련 계약사항 문의</li>
+                                <li>기타 상담문의</li>
+                            </ul>
+                        </div>
+                        <!-- Start : 버튼 -->
+                        <div class="fixed-btn-area">
+                            <div class="btn-box mt24">
+                                <span class="btn w-160"><button type="button" id="">접수하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                            </div>
+                        </div>
+                        <!-- //End : 버튼 -->
+                    </div>
+                    <div class="pro-box division-box">
+                        <!-- Start : 안내사항 -->
+                        <div class="accordion-info-box accordion-fine">
+                            <ul>
+                                <li class="show"><!-- 2023-10-20 : 클래스 show 추가-->
+                                    <div class="q">
+                                        <a href="#" class="f-btn">
+                                            <p class="f-tit">안내사항</p>
+                                            <span class="ico-arrow">내용 닫기</span>
+                                        </a>
+                                    </div>
+                                    <div class="a" style="display: block;">
+                                        <ul class="list-dot">
+                                            <li><a href="#">자주하는 질문</a> 또는 <a href="#">마이,</a> <a href="#">챗봇</a>을 이용하시면 보다 빠르게 확인하실 수 있습니다.</li>
+                                            <li>서류발급을 원하시는 경우 <a href="#">마이> 서류발급</a></li>
+                                            <li>정보변경을 원하시는 경우 <a href="#">마이> 고객정보 변경</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //End : 안내사항 -->
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <footer></footer>
+    <!---------- //End : footer ---------->
+
+    <!-- //Start : 퍼블확인용 -->
+    <script>
+        $(document).ready(function(){
+            //모바일 사이즈에서 푸터 숨김
+            $(window).on("resize", function() {
+                footerHide();
+            });
+            footerHide();
+            function footerHide() {
+                var screenWidth = $(window).width();
+                if (screenWidth < 1024) {
+                    // 화면 너비가 1024px보다 작을 때 실행할 코드
+                    $("footer").hide();
+                }else{
+                    $("footer").show();
+                }
+            }
+
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

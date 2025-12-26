@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>발주현황 업데이트 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>발주현황 업데이트</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+                        <div class="form_box">
+                            <h2 class="h2_line">고객정보</h2>
+                            <ul class="titcaption-list widtit120"><!-- [D] 타이틀이 글자수가 긴경우 클래스 추가 widtit120 -->
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">사업자</div>
+                                    <div class="titcaption-txt">개인</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">계약자</div>
+                                    <div class="titcaption-txt">홍*동</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">계약자 연락처</div>
+                                    <div class="titcaption-txt">010-1234-5678</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">연대보증인</div>
+                                    <div class="titcaption-txt"></div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">연대보증인 연락처</div>
+                                    <div class="titcaption-txt"></div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">차량계약번호</div>
+                                    <div class="titcaption-txt"></div>
+                                </li>
+                            </ul>
+                            
+                            <h2 class="h2_line">발주정보</h2>
+
+                            <ul class="titcaption-list widtit120"><!-- [D] 타이틀이 글자수가 긴경우 클래스 추가 widtit120 -->
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">브랜드</div>
+                                    <div class="titcaption-txt">외산</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">출고지점</div>
+                                    <div class="titcaption-txt">당사</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">발주구분</div>
+                                    <div class="titcaption-txt">특판발주</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">발주일</div>
+                                    <div class="titcaption-txt">2024-07-25</div>
+                                </li>
+                            </ul>
+                            
+                            <p class="h_tit">발주상태</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="발주상태 선택">
+                                        <option>선택</option>
+                                        <option>발주요청</option>
+                                        <option>발주완료</option>
+                                        <option>예시</option>
+                                        <option>배정</option>
+                                        <option>출문요청</option>
+                                        <option>입고예정</option>
+                                        <option>입고완료</option>
+                                        <option>인도예정</option>
+                                        <option>인도완료</option>
+                                        <option>실행</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <p class="h_tit">출고요청일자</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="tel" id="" placeholder="2024-01-25" title="출고요청일자 선택">
+                                    <button id="" class="calender">달력보기</button>
+                                </span>					
+                            </div>
+                            <p class="h_tit">입고완료일자</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="tel" id="" placeholder="2024-01-25" title="입고완료일자 선택">
+                                    <button id="" class="calender">달력보기</button>
+                                </span>					
+                            </div>
+                            <p class="h_tit">인도(예정)일자</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="tel" id="" placeholder="2024-01-25" title="인도(예정)일자 선택">
+                                    <button id="" class="calender">달력보기</button>
+                                </span>					
+                            </div>
+
+                            <p class="h_tit">차량상태</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="차량상태 선택">
+                                        <option>선택</option>
+                                        <option>준비</option>
+                                        <option>배정</option>
+                                        <option>출고</option>
+                                        <option>인도</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <p class="h_tit">발주 등록 직원</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" placeholder="" title="발주 등록 직원 입력">
+                                </span>
+                            </div>
+
+                            <p class="h_tit">영업담당자</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" placeholder="" title="영업담당자 입력">
+                                </span>
+                            </div>
+
+                            <p class="h_tit">영업담당자 연락처</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="tel" id="" placeholder="" title="영업담당자 연락처 입력">
+                                </span>
+                            </div>
+
+                            <p class="h_tit">문제/점검 차량</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="문제/점검 차량 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <p class="h_tit">발생일자</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="tel" id="" placeholder="2024-01-25" title="발생일자 선택">
+                                    <button id="" class="calender">달력보기</button>
+                                </span>					
+                            </div>
+
+                            <h2 class="h2_line">차량정보</h2>
+                            <ul class="titcaption-list"><!-- [D] 타이틀이 글자수가 긴경우 클래스 추가 widtit120 -->
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">차종</div>
+                                    <div class="titcaption-txt">현대 팰리세이드 2024형 가솔린</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">유종</div>
+                                    <div class="titcaption-txt">가솔린</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">옵션명</div>
+                                    <div class="titcaption-txt">파킹 어시스트 플러스 현대스마트 센트</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">외부색상</div>
+                                    <div class="titcaption-txt">크리미 화이트 펄</div>
+                                </li>
+                                <li class="titcaption-item">
+                                    <div class="titcaption-tit">내부색상</div>
+                                    <div class="titcaption-txt">블랙원톤</div>
+                                </li>
+                            </ul>
+
+                            <p class="h_tit">판매사 탁송료</p>
+                            <div class="text_data">
+                                <span class="form form_text">
+                                    <input type="tel" title="판매사 탁송료 입력" value="0">
+                                </span>
+                                <span class="txt">원</span>
+                            </div>
+                            
+                            <p class="h_tit">용품신청비용</p>
+                            <div class="text_data">
+                                <span class="form form_text">
+                                    <input type="tel" title="용품신청비용 입력" value="232,000">
+                                </span>
+                                <span class="txt">원</span>
+                            </div>
+
+                            
+                            
+                            <p class="h_tit">세차비</p>
+                            <div class="text_data">
+                                <span class="form form_text">
+                                    <input type="tel" title="세차비 입력" value="0">
+                                </span>
+                                <span class="txt">원</span>
+                            </div>
+
+                            <p class="h_tit">합계</p>
+                            <div class="text_data">
+                                <span class="form form_text">
+                                    <input type="tel" title="합계 입력" value="44,260,000">
+                                </span>
+                                <span class="txt">원</span>
+                            </div>
+
+                            <h2 class="h2_line">배송정보</h2>
+                            <p class="h_tit">탁송방법<em>*</em></p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" title="탁송방법 입력">
+                                </span>
+                            </div>
+                            <p class="h_tit">탁송지<em>*</em></p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" class="disabled" disabled="disabled" placeholder="" title="주소 입력">
+                                </span>
+                                <div class="btn_cont">
+                                    <button id="">검색</button>
+                                </div>
+                            </div>
+                            <div class="text_data">
+                                <input type="text" name="" id="" placeholder="" title="상세주소 입력">
+                            </div>
+
+
+                            <p class="h_tit">인수자<em>*</em></p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" title="인수자 입력">
+                                </span>
+                            </div>
+                            <p class="h_tit">연락처(1)<em>*</em></p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" title="연락처(1) 입력">
+                                </span>
+                            </div>
+                            <p class="h_tit">연락처(2)</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" title="연락처(2) 입력">
+                                </span>
+                            </div>
+
+                            
+                            <h2 class="h2_line">용품신청정보</h2>
+                            <p class="h_tit">측/후면 썬팅 농도<em>*</em></p>
+                            <div class="inp-inline">
+                                <div class="text_data widPer"><!-- 퍼센트 일경우 위드값 .widPer -->
+                                    <span class="form form_text">
+                                        <input type="text" title="측/후면썬팅 농도 입력" value="15">
+                                    </span>
+                                    <span class="txt">%</span>
+                                </div>
+                                <div class="text_data">
+                                    <span class="form">
+                                        <input type="text" title="용품이름 입력" value="버텍스 300">
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="text_data">
+                                <span class="form form_text">
+                                    <input type="text" placeholder="" title="용품비용 입력" value="232,000">
+                                </span>
+                                <span class="txt">원</span>
+                            </div>
+                            
+                            <p class="h_tit">전면 썬팅 농도<em>*</em></p>
+                            <div class="inp-inline">
+                                <div class="text_data widPer"><!-- 퍼센트 일경우 위드값 .widPer -->
+                                    <span class="form form_text">
+                                        <input type="text" title="전면 썬팅 농도 입력" value="15">
+                                    </span>
+                                    <span class="txt">%</span>
+                                </div>
+                                <div class="text_data">
+                                    <span class="form">
+                                        <input type="text" title="용품이름 입력" value="버텍스 300">
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="text_data">
+                                <span class="form form_text">
+                                    <input type="text" placeholder="" title="용품비용 입력" value="232,000">
+                                </span>
+                                <span class="txt">원</span>
+                            </div>
+                            
+                            <p class="h_tit">블랙박스<em>*</em></p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" title="블랙박스 입력" value="딥플라이 DF9">
+                                </span>
+                            </div>
+                            <div class="text_data">
+                                <span class="form form_text">
+                                    <input type="text" placeholder="" title="용품비용 입력" value="232,000">
+                                </span>
+                                <span class="txt">원</span>
+                            </div>
+
+                            <p class="h_tit">추가비용<em>*</em></p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" title="추가용품 입력" value="해당없음">
+                                </span>
+                            </div>
+                            <div class="text_data">
+                                <span class="form form_text">
+                                    <input type="text" placeholder="" title="용품비용 입력" value="0">
+                                </span>
+                                <span class="txt">원</span>
+                            </div>
+
+                            <p class="h_tit">용품비용 총합계</p>
+                            <div class="text_data">
+                                <span class="form form_text">
+                                    <input type="text" placeholder="" title="용품비용 총합계" value="386,000">
+                                </span>
+                                <span class="txt">원</span>
+                            </div>
+                            <p class="caution mt10">용품비용 : 기존 용품비용 신청액 이상 입력시 업데이트 가능합니다.</p>
+                            
+                            <h2 class="h2_line">인수확인증</h2>
+                            <div class="flex-btn mt32">
+                                <p class="h_tit">파일첨부<em>*</em></p>
+                                <span class="btn btn-blk">
+                                    <a href="#" type="button">파일첨부</a>
+                                </span>
+                            </div>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" class="disabled" disabled="disabled" placeholder="" title="">
+                                </span>					
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn gray"><button id="">취소</button></span>
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

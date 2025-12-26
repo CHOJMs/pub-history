@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>서류제출 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>서류제출</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <h2>기 제출된 서류도 재 첨부하여 제출 가능합니다.<br>새로운 파일을 첨부하여 제출 시 최종 서류로 등록됩니다.</h2>
+                
+
+                <table class="data-tbl type01">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    
+                                    <!-- Start: 첨부파일리스트 -->
+                                    <div class="cntattach-box">
+                                        <div class="cntattach-tit">서류명이 하드코딩 아니고 값을 뿌려와서 가져오는 서류명임 서류명은 다보이게 표시 되어야함 최대글자수 최소글자수 알수없음</div>
+                                        
+                                        <div class="attachfile-list">
+                                            <!-- <div class="attachfile-none">선택된 파일없음</div> -->
+                                            <div class="attachfile-fileWrap">
+                                                <div class="attachfile-file">
+                                                    <a href="#none" class="attachfile-name">첨부파일.png</a>
+                                                    <a href="#none" class="attachfile-del"><img src="/static/admin/img/new_common/ico_delete.png"></a>                                                            
+                                                </div>
+                                                <div class="attachfile-file">
+                                                    <a href="#none" class="attachfile-name">dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.png</a>
+                                                    <a href="#none" class="attachfile-del"><img src="/static/admin/img/new_common/ico_delete.png"></a>                                                            
+                                                </div>
+                                                <div class="attachfile-file">
+                                                    <a href="#none" class="attachfile-name">파일명이 길때 말줄임표파일명이 길때 말줄임표파일명이 길때 말줄임표파일명이 길때 말줄임표파일명이 길때 말줄임표.pdf</a>
+                                                    <a href="#none" class="attachfile-del"><img src="/static/admin/img/new_common/ico_delete.png"></a>                                                            
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attachfile-btnwrap">
+                                            <label for="file">파일 선택</label>
+                                            <input type="file" id="file" class="btn-file">
+                                        </div>
+                                    </div>
+                                    <!-- End: 첨부파일리스트 -->
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    
+                                    <!-- Start: 첨부파일리스트 -->
+                                    <div class="cntattach-box">
+                                        <div class="cntattach-tit">주민등록등본</div>
+                                        
+                                        <div class="attachfile-list">
+                                            <!-- <div class="attachfile-none">선택된 파일없음</div> -->
+                                            <div class="attachfile-fileWrap">
+                                                <div class="attachfile-file">
+                                                    <a href="#none" class="attachfile-name">첨부파일.png</a>
+                                                    <a href="#none" class="attachfile-del"><img src="/static/admin/img/new_common/ico_delete.png"></a>                                                            
+                                                </div>
+                                                <div class="attachfile-file">
+                                                    <a href="#none" class="attachfile-name">파일명이 길때 말줄임표파일명이 길때 말줄임표파일명이 길때 말줄임표파일명이 길때 말줄임표파일명이 길때 말줄임표.pdf</a>
+                                                    <a href="#none" class="attachfile-del"><img src="/static/admin/img/new_common/ico_delete.png"></a>                                                            
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attachfile-btnwrap">
+                                            <label for="file">파일 선택</label>
+                                            <input type="file" id="file" class="btn-file">
+                                        </div>
+                                    </div>
+                                    <!-- End: 첨부파일리스트 -->
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    
+                                    <!-- Start: 첨부파일리스트 -->
+                                    <div class="cntattach-box">
+                                        <div class="cntattach-tit">주민등록등본</div>
+
+                                        <div class="attachfile-list">
+                                            <div class="attachfile-none">선택된 파일없음</div>
+                                            <!--
+                                            <div class="attachfile-fileWrap">
+                                                <div class="attachfile-file">
+                                                    <a href="#none" class="attachfile-name">첨부파일.png</a>
+                                                    <a href="#none" class="attachfile-del"><img src="/static/admin/img/new_common/ico_delete.png"></a>                                                            
+                                                </div>
+                                                <div class="attachfile-file">
+                                                    <a href="#none" class="attachfile-name">dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.png</a>
+                                                    <a href="#none" class="attachfile-del"><img src="/static/admin/img/new_common/ico_delete.png"></a>                                                            
+                                                </div>
+                                                <div class="attachfile-file">
+                                                    <a href="#none" class="attachfile-name">파일명이 길때 말줄임표파일명이 길때 말줄임표파일명이 길때 말줄임표파일명이 길때 말줄임표파일명이 길때 말줄임표.pdf</a>
+                                                    <a href="#none" class="attachfile-del"><img src="/static/admin/img/new_common/ico_delete.png"></a>                                                            
+                                                </div>
+                                            </div>
+                                            -->
+                                        </div>
+
+                                        <div class="attachfile-btnwrap">
+                                            <label for="file">파일 선택</label>
+                                            <input type="file" id="file" class="btn-file">
+                                        </div>
+                                    </div>
+                                    <!-- End: 첨부파일리스트 -->
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    
+                                    <!-- Start: 첨부파일리스트 -->
+                                    <div class="cntattach-box">
+                                        <div class="cntattach-tit">재직증명서</div>
+
+                                        <div class="attachfile-list">
+                                            <!--
+                                            <div class="attachfile-none">선택된 파일없음</div>
+                                            -->
+
+                                            <div class="attachfile-fileWrap">
+                                                <div class="attachfile-file">
+                                                    <a href="#none" class="attachfile-name">첨부파일.png</a>
+                                                    <a href="#none" class="attachfile-del"><img src="/static/admin/img/new_common/ico_delete.png"></a>                                                            
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attachfile-btnwrap">
+                                            <label for="file">파일 선택</label>
+                                            <input type="file" id="file" class="btn-file">
+                                        </div>
+                                    </div>
+                                    <!-- End: 첨부파일리스트 -->
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    
+                                    <!-- Start: 첨부파일리스트 -->
+                                    <div class="cntattach-box">
+                                        <div class="cntattach-tit">건강보험득실확인서</div>
+
+                                        <div class="attachfile-list">
+                                            <!--
+                                            <div class="attachfile-none">선택된 파일없음</div>
+                                            -->
+
+                                            <div class="attachfile-fileWrap">
+                                                <div class="attachfile-file">
+                                                    <a href="#none" class="attachfile-name">첨부파일.png</a>
+                                                    <a href="#none" class="attachfile-del"><img src="/static/admin/img/new_common/ico_delete.png"></a>                                                            
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attachfile-btnwrap">
+                                            <label for="file">파일 선택</label>
+                                            <input type="file" id="file" class="btn-file">
+                                        </div>
+                                    </div>
+                                    <!-- End: 첨부파일리스트 -->
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    
+                                    <!-- Start: 첨부파일리스트 -->
+                                    <div class="cntattach-box">
+                                        <div class="cntattach-tit"><span class="intxt">근로소득원천징수영수증</span></div>
+
+                                        <div class="attachfile-list">
+                                            <!--
+                                            <div class="attachfile-none">선택된 파일없음</div>
+                                            -->
+
+                                            <div class="attachfile-fileWrap">
+                                                <div class="attachfile-file">
+                                                    <a href="#none" class="attachfile-name">첨부파일.png</a>
+                                                    <a href="#none" class="attachfile-del"><img src="/static/admin/img/new_common/ico_delete.png"></a>                                                            
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attachfile-btnwrap">
+                                            <label for="file">파일 선택</label>
+                                            <input type="file" id="file" class="btn-file">
+                                        </div>
+                                    </div>
+                                    <!-- End: 첨부파일리스트 -->
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="com-inp">
+                                    
+                                    <!-- Start: 첨부파일리스트 -->
+                                    <div class="cntattach-box">
+                                        <div class="cntattach-tit">건강보험료 납부확인서</div>
+
+                                        <div class="attachfile-list">
+                                            <!--
+                                            <div class="attachfile-none">선택된 파일없음</div>
+                                            -->
+
+                                            <div class="attachfile-fileWrap">
+                                                <div class="attachfile-file">
+                                                    <a href="#none" class="attachfile-name">첨부파일.png</a>
+                                                    <a href="#none" class="attachfile-del"><img src="/static/admin/img/new_common/ico_delete.png"></a>                                                            
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="attachfile-btnwrap">
+                                            <label for="file">파일 선택</label>
+                                            <input type="file" id="file" class="btn-file">
+                                        </div>
+                                    </div>
+                                    <!-- End: 첨부파일리스트 -->
+
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                
+                <!-- Start : 버튼 //-->
+                <div class="btn-area">
+                    <a href="#" class="gray">취소</a><a href="#">제출하기</a><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                </div>
+                <!-- //End : 버튼 -->
+
+                <!-- //End : content -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

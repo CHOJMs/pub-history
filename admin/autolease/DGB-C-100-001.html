@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>오토리스관리 - 목록 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#" class="on">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#" class="on">오토리스관리</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <h2>오토리스 관리</h2>
+                </div>
+
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <!-- Start : 검색 -->
+                    <div class="search-wrap">
+                        <div class="inp-area">
+                            <div class="selectbox w-180">
+                                <select class="select">
+                                    <option value="">일자기준 선택</option>
+                                    <option value="">접수일자</option>
+                                    <option value="">상담완료일자</option>
+                                </select>
+                            </div>
+                            <div class="calendar">
+                                <input type="tel" value="2022-11-15"><img src="/static/admin/img/new_common/ico_cal.png">
+                                <span class="dash">-</span>
+                                <input type="tel" value="2022-12-15"><img src="/static/admin/img/new_common/ico_cal.png">
+                            </div>
+                            <a href="#" class="btn-search">조회</a>
+                        </div>
+                    </div>
+                    <!-- //End : 검색 -->
+
+                    <!-- Start : 리스트 -->
+                    <div class="x-scrollBox">
+                        <table class="bbs-table tbl-hover" style="min-width: 2800px;"><!-- 행이 hover인 경우 : tbl-hover 추가 -->
+                            <colgroup>
+                                <col width="70px">
+                                <col width="180px">
+                                <col width="150px">
+                                <col width="180px">
+                                <col width="130px">
+                                <col width="%">
+                                <col width="180px">
+                                <col width="180px">
+                                <col width="180px">
+                                <col width="180px">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="130px">
+                                <col width="110px">
+                                <col width="130px">
+                                <col width="150px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">번호</th>
+                                    <th scope="col">접수일자</th>
+                                    <th scope="col">접수방법</th>
+                                    <th scope="col">상담완료일자</th>
+                                    <th scope="col">국산/수입차</th>
+                                    <th scope="col">차종(배기량)</th>
+                                    <th scope="col">보증금</th>
+                                    <th scope="col">선납금(수입차만)</th>
+                                    <th scope="col">총구매비용</th>
+                                    <th scope="col">승인요청액</th>
+                                    <th scope="col">자동차세</th>
+                                    <th scope="col">리스기간(개월)</th>
+                                    <th scope="col">월 리스료</th>
+                                    <th scope="col">고객명</th>
+                                    <th scope="col">생년월일</th>
+                                    <th scope="col">상담사</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20221115 10:16</td>
+                                    <td>인터넷 (PC)</td>
+                                    <td></td>
+                                    <td>외산</td>
+                                    <td>BMW 3 Series 330e iPerformance M Sport Pack
+                                        (배기량 | 1,998cc)</td>
+                                    <td>0(0%)</td>
+                                    <td>4,321,500(7%)</td>
+                                    <td>55,562,853</td>
+                                    <td>55,562,853</td>
+                                    <td>미포함</td>
+                                    <td>38</td>
+                                    <td>910,800</td>
+                                    <td>최재호</td>
+                                    <td>780501</td>
+                                    <td></td>
+                                </tr>
+                                <tr><!-- [D]마지막 합계가 있는 경우 클래스 : bor-none 추가로 라인 삭제함 -->
+                                    <td colspan="16" class="nodata"><span>정보가 없습니다.</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- //End : 리스트 -->
+                    <!-- Start : 페이징 -->
+                    <div class="paging-box">
+                        <a href="#none" class="first">맨처음</a>
+                        <a href="#none" class="prev">이전</a>
+                        <a href="#none" class="current">1</a>
+                        <a href="#none">2</a>
+                        <a href="#none">3</a>
+                        <a href="#none">4</a>
+                        <a href="#none">5</a>
+                        <a href="#none" class="next">다음</a>
+                        <a href="#none" class="end">맨마지막</a>
+                    </div>
+                    <!-- //End : 페이징 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일 신분증 인증 안내 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn js-open-popup" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half popup-mob-id"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>모바일 신분증 인증 안내</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- Start : content //-->
+
+                <!-- Start : 설명글 -->
+                <div class="step-id-box">
+                    <ul class="id-pc">
+                        <li>
+                            <span>1</span>
+                            <div>'모바일신분증' 앱을 실행하세요.</div>
+                        </li>
+                        <li>
+                            <span>2</span>
+                            <div>QR촬영 버튼을 선택하고 하단의 QR코드를 스캔하세요.
+                                <p class="qr-box"><img src="/static/web/img/ui_common/img_id_qr.png" alt="QR코드 이미지"></p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>3</span>
+                            <div>모바일신분증 인증 진행 후, '인증 완료' 버튼을 눌러주세요.
+                                <p class="id-box"><img src="/static/web/img/ui_common/img_id.png" alt="모바일신분증 이미지"></p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="id-mob">
+                        <li>
+                            <span>1</span>
+                            <div>'모바일신분증' 앱을 실행하여 인증을 진행해주세요.
+                                <p class="id-box"><img src="/static/web/img/ui_common/img_id.png" alt="모바일신분증 이미지"></p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>2</span>
+                            <div>인증이 완료되면 하단 '인증완료' 버튼을 눌러주세요.</div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //End : 설명글 -->
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn gray01 mob-btn wid120"><button type="button" id="">취소</button></span>
+                        <span class="btn"><button type="button" id="">인증완료</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

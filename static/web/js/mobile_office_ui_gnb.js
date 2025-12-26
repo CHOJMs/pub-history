@@ -1,0 +1,105 @@
+$(function(){
+    //header
+    if($(window).scrollTop() == 0){
+        $('.header').removeClass('fixed');
+    }else{
+        $('.header').addClass('fixed');
+    }
+
+	$(window).scroll(function(){
+		if($(this).scrollTop() == 0){
+			$('.header').removeClass('fixed');
+		}else{
+			$('.header').addClass('fixed');
+		}
+	});
+
+	//******Start: 전체메뉴
+	$('.header-all-btn').on('click', function(e) {
+		$('.total-menu-open').addClass('open');
+		$('body').addClass('scroll-off');
+
+		$('.total-menu-close').click(function(){
+			$('.total-menu-open').removeClass('open');
+//			if($(".navi-list").length > 0){
+//				$('.navi-item').removeClass('active');
+//			}
+			$('body').removeClass('scroll-off');
+		});
+	})
+	//******End: 전체메뉴
+
+
+  	//******Start: 메뉴 아코디언
+  	// 페이지 로드 시 active 상태인 항목의 내용을 표시
+	$('.menu-item').each(function() {
+		if ($(this).hasClass('active')) {
+			$(this).children('.menu-item-inner').show(); // active 클래스가 있으면 자식을 보이게 함
+		} else {
+			$(this).children('.menu-item-inner').hide(); // active 클래스가 없으면 자식을 숨김
+		}
+	});
+
+	$('.menu-toggle-cover').on('click', function(e) {
+		e.preventDefault();
+
+		const $menuItem = $(this).closest('.menu-item');
+		const $menuItemInner = $menuItem.find('.menu-item-inner');
+
+		// 클릭된 항목이 active인 경우
+		if (!$menuItem.hasClass('active')) {
+			// 다른 모든 항목 닫기
+			$('.menu-item').removeClass('active');
+			$('.menu-item-inner').slideUp();
+
+			// 클릭된 항목 열기
+			$menuItemInner.slideDown();
+			$menuItem.addClass('active');
+		} else {
+			$menuItem.removeClass('active');
+			$menuItemInner.slideUp();
+		}
+	});
+  	//******End: 메뉴 아코디언
+
+
+	//******Start: 위로가기 버튼 클릭
+	const offSetTop = 100;
+	const $scrollToTopButton = $('.scrollTop');
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > offSetTop) {
+			$scrollToTopButton.fadeIn();
+		} else {
+			$scrollToTopButton.fadeOut();
+		}
+	});
+	$scrollToTopButton.on('click', function(e) {
+		e.preventDefault();
+		$('html, body').animate({scrollTop: 0}, 0);
+	});
+	//******End: 위로가기 버튼 클릭
+
+	//******Start: 업무메뉴 탭
+	// 페이지 로드 시 첫번째 탭 활성화
+	$('.menu-quick-list .menu-quick-item').eq(0).addClass('active');
+	$('.menu-item-tab-cont').eq(0).addClass('active');
+
+	$('.menu-quick-list .menu-quick-item').on('click', function(e) {
+		e.preventDefault();
+		const $tabId = $(this).attr('href');
+		const target = $(this).data('target');
+        const scrollPosition = $(this).offset().left - $('.menu-quick-box').offset().left;;
+
+		$('.menu-quick-item').removeClass('active');
+		$(this).addClass('active');
+		$('.menu-item-tab-cont').removeClass('active');
+		$($tabId + '.menu-item-tab-cont').addClass('active');
+
+		// 가로 스크롤 애니메이션
+        $('.menu-quick-box').animate({
+            scrollLeft: scrollPosition
+        }, 500);
+	});
+	//******End: 업무메뉴 탭
+
+});

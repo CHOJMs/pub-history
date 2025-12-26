@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표준산업분류</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>표준산업분류</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+                <div class="bg_graybox">
+                    <div class="bg_top">
+                        <div class="form_box">
+                            <p class="h_tit">분류명</p>
+                            <div class="text_data block">
+                                <span class="form">
+                                    <input type="text" id="" placeholder="" title="분류명 입력">
+                                </span>
+                                <div class="btn_cont">
+                                    <button id="">조회</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_bottom">
+                        <div class="scroll_table2">
+                            <div class="nodata">데이터가 없습니다.</div>
+                            <table class="dataType">
+                                <caption>
+                                    대분류, 대분류명, 중분류, 중분류명, 소분류, 소분류명, 표준산업분류, 표준산업분류명, 은행산업분류, 은행산업분류명 등으로 나타낸 표
+                                </caption>
+                                <colgroup>
+                                    <col width="6%">
+                                    <col width="10%">
+                                    <col width="6%">
+                                    <col width="%">
+                                    <col width="6%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">대분류</th>
+                                        <th scope="col">대분류명</th>
+                                        <th scope="col">중분류</th>
+                                        <th scope="col">중분류명</th>
+                                        <th scope="col">소분류</th>
+                                        <th scope="col">소분류명</th>
+                                        <th scope="col">표준산업분류</th>
+                                        <th scope="col">표준산업분류명</th>
+                                        <th scope="col">은행산업분류</th>
+                                        <th scope="col">은행산업분류명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="active">
+                                        <td>S94</td>
+                                        <td>협회 및 단체</td>
+                                        <td>S94</td>
+                                        <td>산업 및 전문가 단체</td>
+                                        <td>S9411</td>
+                                        <td>산업단체</td>
+                                        <td>S9411</td>
+                                        <td>산업단체</td>
+                                        <td>O84</td>
+                                        <td>공공/교육/보건</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="10" class="noData"><p>조회 결과가 없습니다.</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="btn_more">
+                            <a href="#" class="more_btn"><i class="more"></i>더보기</a>
+                        </div>
+                        <div class="white_box">
+                            선택한 항목에 비고 내용이 있는 경우 노출되는 영역입니다.
+                        </div>
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

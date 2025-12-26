@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>조달금리 조회 | iM캐피탈</title>
+<script>
+    $(document).ready(function(){
+        $('header').load('/web/renewal/header_sub_inc.html');
+        $('footer').load('/web/renewal/footer_inc.html');
+    }); 
+</script>
+</head>
+<body>
+    <header></header>
+    <div class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-contents">
+            <!-- Start : 페이지 인디케이터 -->
+            <div class="indicator">
+                <ul>
+                    <li>홈</li>
+                    <li>고객센터</li>
+                    <li>이용안내</li>
+                    <li aria-label="현재 화면">조달금리 조회</li>
+                </ul>
+            </div>
+            <!-- //End : 페이지 인디케이터 -->
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <h1>조달금리 조회</h1>
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+                    <div class="pro-box">
+                        <div class="history-check-box">
+                            <div class="com-inp">
+                                <a href="#" id="" class="ico-select alink none-label"><!--[D] : 비활성화인 경우 : 클래스 disabled 추가 -->
+                                    <span class="placeholder" id="settDdNm" name="settDdNm">년도</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                                </a>
+                            </div>
+                            <div class="com-inp">
+                                <a href="#" id="" class="ico-select alink none-label"><!--[D] : 비활성화인 경우 : 클래스 disabled 추가 -->
+                                    <span class="placeholder" id="settDdNm" name="settDdNm">월</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                                </a>
+                            </div>
+                            <div class="btn-box">
+                                <span class="btn w-160"><button type="button" id="">조회하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pro-box division-box">
+                        <h3 class="s-tl06">조회 여신 듀레이션</h3>
+                        <table class="tbl-type">
+                            <colgroup>
+                            <col width="25%">
+                            <col width="25%">
+                            <col width="25%">
+                            <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>조회기준 월</th>
+                                    <th>1년</th>
+                                    <th>3년</th>
+                                    <th>5년</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-gray">2023-10</td>
+                                    <td>5.15%</td>
+                                    <td>5.38%</td>
+                                    <td>5.64%</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-gray">2023-09</td>
+                                    <td>5.15%</td>
+                                    <td>5.38%</td>
+                                    <td>5.64%</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-gray">2023-08</td>
+                                    <td>5.15%</td>
+                                    <td>5.38%</td>
+                                    <td>5.64%</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="none"><span>내용이 없습니다</span></td><!-- 내용이 없는 경우 none 클래스 추가 -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pro-box division-box">
+                        <!-- Start : 안내사항 -->
+                        <div class="accordion-info-box accordion-fine">
+                            <ul>
+                                <li>
+                                    <div class="q">
+                                        <a href="#" class="f-btn">
+                                            <p class="f-tit">안내사항</p>
+                                            <span class="ico-arrow">내용 닫기</span>
+                                        </a>
+                                    </div>
+                                    <div class="a" style="display: block;">
+                                        <ul class="list-dot">
+                                            <li>고시되는 금리는 당사가 실제 차입한 비용 또는 민평사(EX: 한국자산평가, KIS자산평가 등)의 당사 수익률 종가에 조달비용을 가산한 비용입니다.</li>
+                                            <li>위 기준금리 적용대상에 해당되지 않는 경우는 MOR(Market Opportunity Rate : 시장조달금리)에 따릅니다. MOR은 금융투자협회 또는 채권평가회사 등에서 매일 고시하는 CD, 금융채 등의 최종호가 수익율을 적용하며 자세한 사항은 담당영업부서를 통하여 확인하여 주시길 바랍니다.</li>
+                                            <li>여신금리는 기준금리에 리스크프리미엄, 판매관리비, 법적비용, 최소이익율, 조정금리 등을 감안하여 최종 결정됩니다.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //End : 안내사항 -->
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <footer></footer>
+    <!---------- //End : footer ---------->
+
+    <!-- //Start : 퍼블확인용 -->
+    <script>
+        $(document).ready(function(){
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

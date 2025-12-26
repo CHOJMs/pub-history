@@ -1,0 +1,11 @@
+﻿@charset "utf-8";
+/* for styles */
+@import url("../common.css?v=20210602001");
+@import url("layout.css?v=20210602001");
+@import url("../popup.css?v=20210602001");
+
+/* @import url("../ui_contents.css?v=20230419001"); */
+/* @import url("../ui_popup.css?v=20230209001"); */
+
+@import url("contents.css?v=20230615002");
+@import url("table.css?v=20210602001")

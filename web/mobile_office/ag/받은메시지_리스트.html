@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>게시판 | iM캐피탈</title>
+</head>
+<body>
+    <div class="wrap mo_office_wap"><!-- 20210823수정 : class="mo_office_wap" PC에서 display:none -->
+		<!-- Start : skip_navigation -->
+        <div id="tab_skip">
+            <a href="#common_body">
+                <span>본문 바로가기</span>
+            </a>
+        </div>
+        <!-- //End : skip_navigation -->
+
+		<!----------- Start : 모바일 메뉴 ----------->
+		<header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>						
+						<li class="home"><a href="">home</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">AG영업관리포털</a>
+							<ul>
+								<li><a href="">견적내기</a></li>
+								<li><a href="">진행현황</a></li>
+								<li><a href="">발주현황</a></li>
+								<li><a href="">즉시출고/선구매</a></li>
+								<li><a href="">게시판</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+        <!----------- //End : 모바일 메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <!-- Start : 컨텐츠 영역 -->
+                <h2 class="tl">게시판</h2>
+                <div class="box_form scoll mob_nobtn"><!-- 하단에 버튼이 없는경우 : no_btn 클래스명 추가-->
+					
+					<!-- Start : 탭 -->
+					<div class="tabwrap">
+						<div class="tab_navi">
+							<ul>
+								<li><a href="#" class="on" aria-label="받은메세지 선택됨">받은 메시지</a></li>
+								<li><a href="#" aria-label="보낸메세지 선택안됨">보낸 메시지</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //End : 탭 -->
+					
+					<!-- Start : 검색 -->
+					<div class="text_data mb30">
+						<span class="form">
+							<input type="text" title="" value="" placeholder="검색어 입력">
+						</span>
+						<div class="btn_cont">
+							<button>검색</button>
+						</div>
+					</div>
+					<!-- //End : 검색 -->
+
+					<!-- Start : 게시판 목록 -->
+					<div class="notice_box">
+						<ul class="notice_list">
+							<li>
+								<a href="#" class="cover">
+									<div class="title">
+										<span class="tit">
+											<span class="state request">요청</span><!-- [D] 상태 요청 .request 완료 .finish -->
+											[전체공지] 버전 업데이트안내입니다 두줄말줄임표 두줄말줄임표  두줄말줄임표 두줄말줄임표 두줄말줄임표 두줄말줄임표두줄말줄임표 두줄말줄임표 두줄말줄임표 두줄말줄임표두줄말줄임표 두줄말줄임표 두줄말줄임표 두줄말줄임표
+										</span>
+									</div>
+									<span class="date">2024-05-29</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="cover">
+									<div class="title">
+										<span class="state finish">완료</span><!-- [D] 상태 요청 .request 완료 .finish -->
+										<span class="tit">[전체공지] 버전 업데이트안내입니다</span>
+									</div>
+									<span class="date">2024-05-29</span>
+								</a>
+							</li>
+						</ul>
+						<div class="nodata">받은 메시지가 없습니다.</div>
+					</div>
+					<!-- //End : 게시판 목록 -->
+
+					<!-- Start : 더보기 버튼 -->
+					<div class="btn_more">
+						<a href="#" class="more_btn"><i class="more"></i>더보기</a>
+					</div>
+					<!-- //End : 더보기 버튼 -->
+
+				</div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+</body>
+</html>

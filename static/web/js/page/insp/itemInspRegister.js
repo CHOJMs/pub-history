@@ -1,0 +1,1076 @@
+/**************************
+ ******* INIT *******
+ ************************ */
+var gdListData	= null;
+var tempGdIdx 	= null;
+var __FILER_FORM_DATA_KEY  = "__filerFormData";
+var __FILER_FILES_DATA_KEY = "__filerFiles";
+var __FILER_FILES_TEMP_DATA_KEY = "__filerTempFiles";
+var fileLimitCnt = 10;
+
+$(document).ready(function() {
+	// datepicker setting
+	$("#gdInspDt").datepicker({
+		changeMonth: true,
+		changeYear: true,
+		dateFormat: 'yy-mm-dd',
+		showOn: 'button',
+		beforeShow: function(input, inst) { $(input).prop('readonly', true); },			// datepicker 열린상태에서는 날짜를 직접입력 입력하지 못하도록 상태 변경
+		onClose: function(dateText, inst) { $("#" + inst.id).prop('readonly', false); }
+	});
+	// 물건검수명세 수정
+	if(regiType == 'ML_MODIFY') {
+		var paramData = {
+			'lonNo' : paramLonNo
+			, 'lonCnsnNo' : paramLonCnsnNo
+			, 'gdInspSrno' : paramGdInspSrno
+		};
+
+		fn_getItemRegisterInfo(paramData);
+	}
+	// 물건검수명세 등록
+	else {
+		// 타팀 등록시
+		if(regiType == 'ANOTHER') {
+
+		}
+		// 검수팀 등록시
+		else if(regiType == 'ML') {
+			var paramData = {
+				'lonNo' : paramLonNo
+				, 'lonCnsnNo' : paramLonCnsnNo
+			};
+
+			fn_getItemRegisterInfo(paramData);
+		}
+	}
+
+	// 물건검수 등록 이벤트
+	$('.itemInspRegisterBtn').on('click', function() {
+		if(regiType == 'ML_MODIFY') {
+			fn_itemInspModify($(this), "Y");
+		} else {
+			fn_itemInspRegister($(this));
+		}
+	});
+
+	// 물건검수 결재 이벤트
+	$('.itemInspApprovalBtn').on('click', function() {
+		fn_itemInspApproval($(this));
+	});
+
+	// 물건검수 결재 이벤트
+	$('.itemInspCancelBtn').on('click', function() {
+		fn_itemInspCancel($(this));
+	});
+});
+/***************************
+ ***** FUNCTION SCRIPT *****
+ ************************* */
+
+// 물건검수등록정보 조회
+function fn_getItemRegisterInfo(dataObj) {
+	console.log(dataObj);
+	$('#lonInfoArea').css('display', 'none');
+
+	$.ajax({
+		url : '/insp/item/ajaxItemInspRegisterInfo.do'
+		, data : dataObj
+		, type : 'post'
+		, dataType : 'json'
+		, success : function(data) {
+			var resultSuccess = data.resultSuccess;
+
+			if(resultSuccess) {
+				fn_itemInspRegiInfoDraw(data.itemRegiInfo);
+			}
+			else {
+				commonAlert('조회결과가 없습니다. 여신번호 또는 신청번호를 확인해주세요.');
+			}
+		}
+		, error : function() {
+			commonAlert('에러가 발생하였습니다. 관리자에게 문의하세요.');
+		}
+	});
+}
+
+// 물건검수등록 정보 View화면 그리기
+function fn_itemInspRegiInfoDraw(infoData) {
+	var lonNo				= infoData.lonNo;				// 여신번호
+	var lonNoFmt			= setLoanNumber(lonNo);			// 여신번호 포맷팅
+
+	var gdInspSrno			= infoData.gdInspSrno;			// 물건검수일련번호
+
+	var lonCnsnNo			= infoData.lonCnsnNo;			// 여신품의번호
+	var lonCnsnNoFmt		= setLoanNumber(lonCnsnNo);		// 여신품의번호 포맷팅
+
+	var custKrnNm			= infoData.custKrnNm;			// 고객한글명
+	var addr				= infoData.addr;				// 주소
+	var prodNm				= infoData.prodNm;				// 상품명
+
+	var lonAmt				= infoData.lonAmt;				// 여신금액
+	var lonAmtFmt			= addComma(removeComma(lonAmt));
+
+	var emno				= infoData.emno;				// 직원번호
+	var empNm				= infoData.empNm;				// 직원명
+	var chgrTlno			= infoData.chgrTlno;			// 담당자전화번호
+	var chgrTlnoFmt			= setPhoneNumberFormat(chgrTlno);
+
+	var gdInspDt			= infoData.gdInspDt;			// 물건검수일자
+	gdInspDt				= gdInspDt.length > 0 ? gdInspDt : nowDate;
+	var gdInspDtFmt			= $util.dateFormat(gdInspDt, "yyyy-MM-dd");
+
+	var gdInspDvcd			= infoData.gdInspDvcd;			// 물건검수구분코드
+	var gdInspPrpsCd		= infoData.gdInspPrpsCd;		// 물건검수목적코드
+
+	var gdInspDtlCntn		= infoData.gdInspDtlCntn;		// 물건검수상세내용
+	var gdInspAbvYn			= infoData.gdInspAbvYn;			// 물건검수이상여부
+
+	var gdInspOptrEmpNm		= infoData.gdInspOptrEmpNm;		// 물건검수작업자직원명
+	gdInspOptrEmpNm			= gdInspOptrEmpNm.length > 0 ? gdInspOptrEmpNm : $('#sessUserName').val();
+
+	var gdInspChgrEmno		= infoData.gdInspChgrEmno;		// 물건검수담당자직원번호
+	var gdInspChgrEmpNm		= infoData.gdInspChgrEmpNm;		// 물건검수담당자직원명
+	gdInspChgrEmpNm			= gdInspChgrEmpNm.length > 0 ? gdInspChgrEmpNm : $('#sessUserName').val();
+
+	var gdTotlCnt			= infoData.gdTotlCnt;			// 실행물건 내역 수
+	var gdList				= infoData.gdList;				// 실행물건 내역
+	gdListData = gdList;
+	var mlList				= infoData.mlList;				// 물건검수답변 검수내용 내역
+	var lsList				= infoData.lsList;				// 물건검수답변 리스물건 내역
+
+	var aprlMngNo			= infoData.aprlMngNo;			//결재관리번호
+
+	// 여신번호 & 신청번호 그리기
+	if(regiType == 'ML') {
+		$('#lonNoTxt').html(lonNoFmt);
+		$('#lonCnsnNoTxt').html(lonCnsnNoFmt);
+	}
+
+	// 여신번호 & 신청번호 & 풀건검수일련번호 그리기
+	if(regiType == 'ML_MODIFY') {
+		$('#lonNoTxt').html(lonNoFmt);
+		$('#lonCnsnNoTxt').html(lonCnsnNoFmt);
+		$('#gdInspSrnoTxt').html(gdInspSrno);
+		$('#gdInspSrno').val(gdInspSrno);
+	}
+
+	// 여신내역 정보 그리기
+	var lonInfoHtml = '';
+
+	lonInfoHtml += '<li>';
+	lonInfoHtml += '<span>여신번호</span>';
+	lonInfoHtml += '<p>' + lonNoFmt + '</p>';
+	lonInfoHtml += '</li>';
+	lonInfoHtml += '<li>';
+	lonInfoHtml += '<span>고객명</span>';
+	lonInfoHtml += '<p>' + custKrnNm + '</p>';
+	lonInfoHtml += '</li>';
+	lonInfoHtml += '<li>';
+	lonInfoHtml += '<span>주소</span>';
+	lonInfoHtml += '<p>' + addr + '</p>';
+	lonInfoHtml += '</li>';
+	lonInfoHtml += '<li>';
+	lonInfoHtml += '<span>상품명</span>';
+	lonInfoHtml += '<p>' + prodNm + '</p>';
+	lonInfoHtml += '</li>';
+	lonInfoHtml += '<li>';
+	lonInfoHtml += '<span>실행금액</span>';
+	lonInfoHtml += '<p>' + lonAmtFmt + '</p>';
+	lonInfoHtml += '</li>';
+	lonInfoHtml += '<li>';
+	lonInfoHtml += '<span>담당자</span>';
+	lonInfoHtml += '<p>' + emno + ' ' + empNm + '</p>';
+	lonInfoHtml += '</li>';
+	lonInfoHtml += '<li>';
+	lonInfoHtml += '<span>담당자연락처</span>';
+	lonInfoHtml += '<p><a href="tel:' + chgrTlno + '">' + chgrTlnoFmt + '</p>';
+	lonInfoHtml += '</li>';
+
+	$('#lonInfoArea').css('display', 'block');
+	$('#lonInfoResultArea').html(lonInfoHtml);
+
+	// 검수일자 그리기
+//	$('#gdInspDtTxt').html(gdInspDtFmt);
+	$('#gdInspDt').val(gdInspDtFmt);
+	// 검수구분 선택
+	$('#gdInspDvcd').val(gdInspDvcd);
+
+	// 검수목적 선택
+	$('#gdInspPrpsCd').val(gdInspPrpsCd);
+
+	// 검수자 그리기
+	$('#gdInspOptrEmpNmTxt').html(gdInspOptrEmpNm);
+
+	// 검수담당자 그리기
+	$('#gdInspChgrEmpNmTxt').html(gdInspChgrEmpNm);
+
+	// 검수이상여부 선택
+	$('#gdInspAbvYn').val(gdInspAbvYn);
+
+	// 기타실사내역
+	$('#gdInspDtlCntn').val(gdInspDtlCntn);
+
+	// 물건 내역 그리기
+	var gdInfoHtml = '';
+	if(gdList != null) {
+		$.each(gdList, function(gdIdx, gdItem) {
+			var no					= gdIdx + 1;
+			var gdSrno				= gdItem.gdSrno;			// 물건일련번호
+			var vedrCustNo			= gdItem.vedrCustNo;		// 판매사고객번호
+			var vedrCustNm			= gdItem.vedrCustNm;		// 판매사고객명
+			var dtlGdNm				= gdItem.dtlGdNm;			// 상세물건명
+			var gdUnqNo				= gdItem.gdUnqNo;			// 물건고유번호
+			var vhclMdym			= gdItem.vhclMdym;			// 차량연식
+			var inslPlcDvcd			= gdItem.inslPlcDvcd;		// 설치장소구분코드
+			var gdInslAddrDeliCd	= gdItem.gdInslAddrDeliCd;	// 물건설치주소구분자코드
+			var inslPlcZpcd			= gdItem.inslPlcZpcd;		// 설치장소우편번호
+			var inslPlcPostSrno		= gdItem.inslPlcPostSrno;	// 설치장소우편일련번호
+			var inslPlcAddr			= gdItem.inslPlcAddr;		// 설치장소주소
+			var inslPlcDtad			= gdItem.inslPlcDtad;		// 설치장소상세주소
+			var mfcyNm				= gdItem.mfcyNm;			// 제조사명
+			var gdCd				= gdItem.gdCd;				// 물건명
+			var fileMngNo			= gdItem.fileMngNo;			// 파일관리번호
+
+			var fileCnt				= gdItem.fileCnt;			// 등록된 파일 개수
+			fileCnt					= (fileCnt != '' ? parseInt(fileCnt) : parseInt('0'));
+			var fileCntFmt			= fileCnt > 0 ? (fileCnt + '개') : '파일추가';
+
+			gdInfoHtml += '<tr onclick="fn_gdDetailInfo(\'' + gdIdx + '\');">';
+			gdInfoHtml += '<td>' + no + '</td>';
+			gdInfoHtml += '    <td>' + vedrCustNm + '</td>';
+			gdInfoHtml += '	<td class="a_l">' + dtlGdNm + '</td>';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].gdSrno" name="gdList[' + gdIdx + '].gdSrno" value="' + gdSrno + '" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].gdUnqNo" name="gdList[' + gdIdx + '].gdUnqNo" value="' + gdUnqNo + '" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].inslPlcDvcd" name="gdList[' + gdIdx + '].inslPlcDvcd" value="LF290020" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].gdInslAddrDeliCd" name="gdList[' + gdIdx + '].gdInslAddrDeliCd" value="' + gdInslAddrDeliCd + '" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].inslPlcZpcd" name="gdList[' + gdIdx + '].inslPlcZpcd" value="' + inslPlcZpcd + '" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].inslPlcPostSrno" name="gdList[' + gdIdx + '].inslPlcPostSrno" value="' + inslPlcPostSrno + '" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].inslPlcAddr" name="gdList[' + gdIdx + '].inslPlcAddr" value="' + inslPlcAddr + '" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].inslPlcDtad" name="gdList[' + gdIdx + '].inslPlcDtad" value="' + inslPlcDtad + '" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].vedrCustNm" name="gdList[' + gdIdx + '].vedrCustNm" value="' + vedrCustNm + '" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].dtlGdNm" name="gdList[' + gdIdx + '].dtlGdNm" value="' + dtlGdNm + '" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].vhclMdym" name="gdList[' + gdIdx + '].vhclMdym" value="' + vhclMdym + '" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList_' + gdIdx + '_fileMngNo" name="gdList[' + gdIdx + '].fileMngNo" value="' + fileMngNo + '" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].fileCnt" name="gdList[' + gdIdx + '].fileCnt" value="' + fileCnt + '" />';
+			gdInfoHtml += '		<input type="hidden" id="gdList[' + gdIdx + '].tempFileCnt" name="gdList[' + gdIdx + '].tempFileCnt" value="0" />';
+			gdInfoHtml += '	<td>';
+			gdInfoHtml += '		<div class="btn_table">';
+			gdInfoHtml += '			<a href="javascript://" class="file" id="gdList_' + gdIdx + '_fileCntTxt">' + fileCntFmt + '</a>';
+			gdInfoHtml += '		</div>';
+			gdInfoHtml += '	</td>';
+			gdInfoHtml += '</tr>';
+		});
+	} else {
+		gdInfoHtml += '<tr><td colspan="4">조회결과가 없습니다.</td></tr>';
+	}
+	$('#gdListResultArea').html(gdInfoHtml);
+
+	// 검수 내용 그리기
+	var mlInfoHtml = '';
+	if(mlList != null) {
+		$.each(mlList, function(mlIdx, mlItem) {
+			var mlGdInspDtlCntn		= mlItem.mlGdInspDtlCntn;	// 물건검수항목코드
+			var mlGdInspItemCd		= mlItem.mlGdInspItemCd;	// 물건검수항목코드
+			var mlGdInspItemSrno	= mlItem.mlGdInspItemSrno;	// 물건검수항목일련번호
+			var mlGdInspRplyCd		= mlItem.mlGdInspRplyCd;	// 물건검수답변코드
+			var mlGdInspRplyCdNm	= mlItem.mlGdInspRplyCdNm;	// 물건검수답변내용
+			var mlGdInspRplyCntn	= mlItem.mlGdInspRplyCntn;	// 물건검수답변코드명
+
+			mlInfoHtml += '<li>';
+			mlInfoHtml += '	<span>' + mlGdInspDtlCntn + '</span>';
+			mlInfoHtml += '		<input type="hidden" id="mlList[' + mlIdx + '].mlGdInspItemCd" name="mlList[' + mlIdx + '].mlGdInspItemCd" value="' + mlGdInspItemCd + '" />';
+			mlInfoHtml += '		<input type="hidden" id="mlList[' + mlIdx + '].mlGdInspItemSrno" name="mlList[' + mlIdx + '].mlGdInspItemSrno" value="' + mlGdInspItemSrno + '" />';
+			if (mlGdInspRplyCd == '') {
+				mlInfoHtml += '		<input type="hidden" id="mlList[' + mlIdx + '].mlGdInspRplyCntn" name="mlList[' + mlIdx + '].mlGdInspRplyCntn" value="Y" />';
+			}
+			else {
+				mlInfoHtml += '		<input type="hidden" id="mlList[' + mlIdx + '].mlGdInspRplyCntn" name="mlList[' + mlIdx + '].mlGdInspRplyCntn" value="' + mlGdInspRplyCntn + '" />';
+			}
+			mlInfoHtml += '	<div class="radiobox">';
+			mlInfoHtml += '		<ul class="inline_rchk">';
+
+
+			$.each(replyYnCodeList, function(codeIdx, codeItem) {
+				var smplSccd	= codeItem.smplSccd;
+				var smplSccdNm	= codeItem.smplSccdNm;
+
+				if (smplSccdNm == '네') smplSccdNm = 'Y';
+				else smplSccdNm = 'N';
+				mlInfoHtml += '			<li>';
+				mlInfoHtml += '			<input type="radio" class="rchk" id="mlGdInspRplyCd_' + mlIdx + '_' + smplSccd + '" name="mlList[' + mlIdx + '].mlGdInspRplyCd" title="' + smplSccdNm + '" value="' + smplSccd + '"';
+
+				if(mlGdInspRplyCd == smplSccd) {
+					mlInfoHtml += ' checked ';
+				} else {
+					if(smplSccd == 'ML5201') {	//입력값이 없는경우 "Y"로 세팅
+						mlInfoHtml += ' checked ';
+					}
+				}
+				mlInfoHtml += '/>';
+				mlInfoHtml += '			<label for="mlGdInspRplyCd_' + mlIdx + '_' + smplSccd + '" class="rchk-label" role="radio"><span>' + smplSccdNm + '</span></label>';
+				mlInfoHtml += '			</li>';
+			});
+
+			mlInfoHtml += '		</ul>';
+			mlInfoHtml += '	</div>';
+			mlInfoHtml += '</li>';
+
+
+		});
+	} else {
+		mlInfoHtml += '<tr><td colspan="3">조회결과가 없습니다.</td></tr>';
+	}
+	$('#mlListResultArea').html(mlInfoHtml);
+
+	// 물건 상태 그리기
+	var lsInfoHtml = '';
+	if(lsList != null) {
+		$.each(lsList, function(lsIdx, lsItem) {
+			var lsGdInspItemCd		= lsItem.lsGdInspItemCd;		// 물건검수항목코드
+			var lsGdInspItemSrno	= lsItem.lsGdInspItemSrno;		// 물건검수항목일련번호
+			var lsGdInspDtlCntn		= lsItem.lsGdInspDtlCntn;		// 물건검수상세내용
+			var lsGdInspRplyCd		= lsItem.lsGdInspRplyCd;		// 물건검수답변코드
+			var lsGdInspRplyCntn	= lsItem.lsGdInspRplyCntn;		// 물건검수답변내용
+			var lsGdInspRplyCdNm	= lsItem.lsGdInspRplyCdNm;		// 물건검수답변코드명
+
+			lsInfoHtml += '<li>';
+			lsInfoHtml += '	<span>' + lsGdInspDtlCntn + '</span>';
+			lsInfoHtml += '		<input type="hidden" id="lsList[' + lsIdx + '].lsGdInspItemCd" name="lsList[' + lsIdx + '].lsGdInspItemCd" value="' + lsGdInspItemCd + '" />';
+			lsInfoHtml += '		<input type="hidden" id="lsList[' + lsIdx + '].lsGdInspItemSrno" name="lsList[' + lsIdx + '].lsGdInspItemSrno" value="' + lsGdInspItemSrno + '" />';
+			lsInfoHtml += '		<input type="hidden" id="lsList[' + lsIdx + '].lsGdInspRplyCntn" name="lsList[' + lsIdx + '].lsGdInspRplyCntn" value="' + lsGdInspRplyCntn + '" />';
+			lsInfoHtml += '	<div class="radiobox">';
+			lsInfoHtml += '		<ul class="inline_rchk">';
+
+			$.each(replyStatCodeList, function(codeIdx, codeItem) {
+				var smplSccd	= codeItem.smplSccd;
+				var smplSccdNm	= codeItem.smplSccdNm;
+
+				lsInfoHtml += '			<input type="radio" class="rchk" id="lsGdInspRplyCd_' + lsIdx + '_' + smplSccd + '" name="lsList[' + lsIdx + '].lsGdInspRplyCd" title="' + smplSccdNm + '" value="' + smplSccd + '"';
+				if(lsGdInspRplyCd == smplSccd) {
+					lsInfoHtml += ' checked ';
+				} else {
+					if(smplSccd == 'ML5211') {	//입력값이 없는 경우 "양호"로 세팅
+						lsInfoHtml += ' checked ';
+					}
+				}
+				lsInfoHtml += '/>';
+				lsInfoHtml += '			<label for="lsGdInspRplyCd_' + lsIdx + '_' + smplSccd + '"  class="rchk-label" role="radio">' + smplSccdNm + '</label>';
+				lsInfoHtml += '		</li>';
+			});
+
+			lsInfoHtml += '		</ul>';
+			lsInfoHtml += '	</div>';
+			lsInfoHtml += '</li>';
+		});
+	} else {
+		lsInfoHtml += '<tr><td colspan="4">조회결과가 없습니다.</td></tr>';
+	}
+	$('#lsListResultArea').html(lsInfoHtml);
+
+	// 기타 고정 정보 설정
+	fn_etcFixInfoSetting(infoData);
+
+	selectLabelSetting();
+
+	// 실행물건 내역 수 0일때 등록 불가 처리
+	if(gdTotlCnt <= 0) {
+		commonAlert('물건이 있는 내역만 등록 가능 합니다.');
+		if(regiType == 'ML') {
+			fn_movePage('request', '/insp/insp/inspRequestList.do');
+		} else if(regiType == 'ANOTHER') {
+			fn_movePage(null, '/insp/item/itemInspRegister.do');
+		}
+
+	}
+
+	//결재관리번호 유무에 따라 버튼 이벤트 처리
+	if (aprlMngNo == '') {
+		$('#aprlMngNoN').css('display', 'block');
+		$('#aprlMngNoY').css('display', 'none');
+	}
+	else {
+		$('#aprlMngNoN').css('display', 'none');
+		$('#aprlMngNoY').css('display', 'block');
+	}
+}
+
+//물건 상세정보 Pop
+function fn_gdDetailInfo(gdIdx) {
+	tempGdIdx = gdIdx;
+	var gdListRowName = 'gdList[' + gdIdx + ']';
+	var gdListData = $('form[name="itemInspRegiModiFrm"] input[name*="' + gdListRowName + '"]')
+	var dataObj = {};
+
+	if(tempGdIdx == null) {
+		commonAlert('물건정보가 존재하지 않습니다.');
+	} else {
+		$.each(gdListData, function(idx, item) {
+			var name	= $(item).attr('name').replace((gdListRowName + '.'), '');
+			var val		= $(item).val();
+
+			if(name == 'fileCnt' || name == 'tempFileCnt') {
+				dataObj[name] = parseInt(val);
+			} else {
+				dataObj[name] = val;
+			}
+		});
+		var gdInspSrno = $('#gdInspSrno').val();
+		dataObj['fileLimitCnt'] = fileLimitCnt;
+		dataObj.lonNo = $('#lonNo').val();				//여신번호
+		dataObj.gdInspSrno = $('#gdInspSrno').val();	//물건검수일련번호
+		dataObj.gdIdx = gdIdx;
+
+		var actionUrl = '';
+		if (gdInspSrno == 0) {
+			var actionUrl = '/insp/item/itemInspRegisterInfoPop.do';
+		}
+		else {
+			actionUrl = '/insp/item/itemInspRegisterModifyInfoPop.do';
+		}
+
+		$.ajax({
+			url : actionUrl
+			, dataType : 'html'
+			, type : 'post'
+			, data : dataObj
+			, success : function(data) {
+				$('#layerPop').html(data);
+				uiCommon.openPopup("layerPop");
+			}
+		});
+	}
+}
+
+async function convertURLtoFile (url) {
+    const response = await fetch(url);
+    const data = await response.blob();
+    const ext = url.split(".").pop(); // url 구조에 맞게 수정할 것
+    const filename = url.split("/").pop(); // url 구조에 맞게 수정할 것
+    const metadata = { type: 'image/jpeg' };
+
+    return new File([data], filename, metadata);
+}
+
+const resize = (file) => {
+
+    return new Promise(resolve => {
+        const reader = new FileReader();
+
+        reader.readAsDataURL(file);
+
+        reader.onload = (event) => {
+           const img = new Image();
+           img.src = event.target.result;
+           img.onload = function() {
+               const canvas = document.createElement('canvas');
+               const ctx = canvas.getContext('2d');
+               const maxSize = 320;
+
+               let width = img.width;
+               let height = img.height;
+               if (width > height) {
+                   if(width > maxSize){
+                       height *= maxSize / width;
+                       width = maxSize;
+                   }else {
+                       maxSize = width * 0.5;
+                       height *= maxSize / width;
+                       width = maxSize;
+
+                   }
+               } else if (width == height){
+                   if(height > maxSize){
+                       width = maxSize;
+                       height = maxSize;
+                   }else {
+                       maxSize = width * 0.5;
+                       width = maxSize;
+                       height = maxSize;
+                   }
+               } else {
+                   if(height > maxSize){
+                       width *= maxSize / height;
+                       height = maxSize;
+                   }else {
+                       maxSize = height * 0.5;
+                       width *= maxSize / height;
+                       height = maxSize;
+
+                   }
+               }
+
+               canvas.width = width;
+               canvas.height = height;
+
+               ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+               // 이미지를 JPEG 형식으로 변환
+               const resizedDataURL = canvas.toDataURL('image/jpeg', 0.7);
+
+               resolve(resizedDataURL);
+
+           };
+       };
+
+    });
+}
+
+// 물건검수 등록
+async function fn_itemInspRegister(thisObj) {
+    const disabledCheck = $(thisObj).hasClass('disabled');
+
+    if(!disabledCheck) {
+        if(itemInspRegisterModifyValidation()) {
+            try{
+                uiCommon.showLoading();
+                // Get form
+                const form = $('form[name="itemInspRegiModiFrm"]')[0];
+
+                // Create an FormData object
+                const data = new FormData(form);
+
+                // Add File Data
+                var filerFormData = window[__FILER_FORM_DATA_KEY];
+                for(let _name in filerFormData) {
+                    const files = filerFormData[_name];
+
+                    for(let fileIdx in files) {
+                        let file;
+                        if(files[fileIdx].file.size >= 1 * 1024 * 1024){ //1MB 이상 리사이징
+                            const resizeImg = await resize(files[fileIdx].file);
+                            file = await convertURLtoFile(resizeImg);
+                        }else {
+                            file = files[fileIdx].file;
+                        }
+                        data.append(files[fileIdx].name, file, files[fileIdx].filename);
+                    }
+                }
+
+                setTimeout(() => {
+                    fn_resistSvae(data);
+                });
+            }catch (e){
+                console.log(e);
+            }finally{
+                uiCommon.hideLoading();
+            }
+        }
+    }
+}
+
+function fn_resistSvae(data) {
+
+    $.ajax({
+        url : '/insp/item/ajaxItemInspRegistSave.do'
+        , data : data
+        , type : 'post'
+        , enctype : 'multipart/form-data'
+        , processData : false
+        , contentType : false
+        , cache : false
+        , timeout: 5 * 60 * 1000    // ms
+        , success : function(data) {
+            var resultSuccess = data.resultSuccess;
+
+            var resultVo = data.resultVo;
+
+
+            if(resultSuccess) {
+                if(resultVo.recvCode == "0000"){
+                    var gdInspSrno = resultVo.gdInspSrno;
+                    $('form[name="itemInspRegiModiFrm"] input[name="gdInspSrno"]').val(gdInspSrno);
+
+                    commonAlert('저장되었습니다.');
+                    fn_movePage('modify', '/insp/item/itemInspRegister.do')
+                }else if(resultVo.recvCode == "2601"){
+                    commonAlert('S/N(시리얼번호)중복됩니다.');
+                }
+            } else {
+                commonAlert('에러가 발생하였습니다. 관리자에게 문의하세요.');
+            }
+        }
+        , error : function() {
+            commonAlert('에러가 발생하였습니다. 관리자에게 문의하세요.');
+        }
+    });
+
+}
+
+// 물건검수 수정
+function fn_itemInspModify(thisObj, isMent) {
+	var disabledCheck = $(thisObj).hasClass('disabled');
+	if(!disabledCheck) {
+		if(itemInspRegisterModifyValidation()) {
+			// Get form
+			var form = $('form[name="itemInspRegiModiFrm"]')[0];
+
+			// Create an FormData object
+			var data = new FormData(form);
+
+			// Add File Data
+			var filerFormData = window[__FILER_FORM_DATA_KEY];
+			for(var _name in filerFormData) {
+				var files = filerFormData[_name];
+				for(var fileIdx in files) {
+					data.append(files[fileIdx].name, files[fileIdx].file, files[fileIdx].filename);
+				}
+			}
+
+			$.ajax({
+				url : '/insp/item/ajaxItemInspModifySave.do'
+				, data : data
+				, type : 'post'
+				, enctype : 'multipart/form-data'
+				, processData : false
+				, contentType : false
+				, cache : false
+				, timeout: 5 * 60 * 1000	// ms
+				, success : function(data) {
+					var resultSuccess = data.resultSuccess;
+					console.log(resultSuccess);
+					if(resultSuccess) {
+						if (isMent == 'Y') {
+							commonAlert('저장되었습니다.');
+							fn_movePage('modify', '/insp/item/itemInspRegister.do');
+						}
+						else {
+							fn_callbackApproval();	//저장 후 콜백으로 결재요청
+						}
+					}
+					else {
+						commonAlert('에러가 발생하였습니다. 관리자에게 문의하세요.');
+					}
+				}
+				, error : function() {
+					commonAlert('에러가 발생하였습니다. 관리자에게 문의하세요.');
+				}
+			});
+		}
+	}
+}
+
+// 결재요청
+function fn_itemInspApproval(thisObj) {
+	var disabledCheck	= $(thisObj).hasClass('disabled');
+
+	if(!disabledCheck) {
+		fn_itemInspModify(thisObj, "N");
+	}
+}
+
+// 결재요청 콜백
+function fn_callbackApproval() {
+	if(confirm('현재 화면이 저장되고, 결재가 진행됩니다. 계속 진행하시겠습니까?')) {
+
+		var lonNo			= $('form[name="itemInspRegiModiFrm"] input[name="lonNo"]').val();
+		var lonCnsnNo		= $('form[name="itemInspRegiModiFrm"] input[name="lonCnsnNo"]').val();
+		var gdInspSrno		= $('form[name="itemInspRegiModiFrm"] input[name="gdInspSrno"]').val();
+
+		if(itemInspApprovalValidation()) {
+			$.ajax({
+				url : '/insp/item/ajaxItemInspApproval.do'
+				, data : {
+					'lonNo' : lonNo
+					, 'lonCnsnNo' : lonCnsnNo
+					, 'gdInspSrno' : gdInspSrno
+				}
+				, type : 'post'
+				, dataType : 'json'
+				, success : function(data) {
+					var resultSuccess = data.resultSuccess;
+					var recvCode = data.recvCode;
+					if(resultSuccess) {
+
+						var resultMessage = data.resultMessage;
+
+						if(recvCode == '0000') {
+							commonAlert('결재요청이 완료되었습니다.');
+							fn_movePage('modify', '/insp/item/itemInspRegister.do');
+						}
+						else if(recvCode == '2000'){
+							commonAlert('결재권자가 존재하지 않습니다.');
+						}
+					}
+					else if(recvCode == '2000'){
+						commonAlert('결재권자가 존재하지 않습니다.');
+					}
+					else {
+						commonAlert('에러가 발생하였습니다. 관리자에게 문의하세요.');
+					}
+				}
+				, error : function() {
+					commonAlert('에러가 발생하였습니다. 관리자에게 문의하세요.');
+				}
+			});
+		}
+	}
+}
+
+//결재취소
+function fn_itemInspCancel(thisObj) {
+	var disabledCheck	= $(thisObj).hasClass('disabled');
+	var lonNo			= $('form[name="itemInspRegiModiFrm"] input[name="lonNo"]').val();
+	var lonCnsnNo		= $('form[name="itemInspRegiModiFrm"] input[name="lonCnsnNo"]').val();
+	var gdInspSrno		= $('form[name="itemInspRegiModiFrm"] input[name="gdInspSrno"]').val();
+
+	if(!disabledCheck) {
+		if(confirm('결재취소 하시겠습니까?')) {
+				$.ajax({
+					url : '/insp/item/ajaxItemInspCancel.do'
+					, data : {
+						'lonNo' : lonNo
+						, 'lonCnsnNo' : lonCnsnNo
+						, 'gdInspSrno' : gdInspSrno
+					}
+					, type : 'post'
+					, dataType : 'json'
+					, success : function(data) {
+						var resultSuccess = data.resultSuccess;
+						var recvCode = data.recvCode;
+						var resultMessage = data.resultMessage;
+
+						if(recvCode == '0000') {
+							commonAlert('결재가 취소되었습니다.');
+							fn_movePage('modify', '/insp/item/itemInspRegister.do');
+						} else if (recvCode == '9999') {
+							commonAlert('본인 결재건이 아닙니다.');
+						} else {
+							commonAlert('에러가 발생하였습니다. 관리자에게 문의하세요.');
+						}
+					}
+					, error : function() {
+						commonAlert('에러가 발생하였습니다. 관리자에게 문의하세요.');
+					}
+				});
+
+		}
+	}
+}
+
+// 검색화면으로 이동
+function fn_movePage(searchType, pageUrl) {
+	// 사전검수요청명세 화면
+	var moveFrm = document.createElement("form");
+	moveFrm.setAttribute('method', 'post');
+	moveFrm.setAttribute('action', pageUrl);
+	document.body.appendChild(moveFrm);
+
+	if(searchType == 'request') {
+		var s_dtGubun = setHiddenData('dtGubun', request_dtGubun);
+		moveFrm.appendChild(s_dtGubun);
+
+		var s_inspDemdDtFrom = setHiddenData('inspDemdDtFrom', request_inspDemdDtFrom);
+		moveFrm.appendChild(s_inspDemdDtFrom);
+
+		var s_inspDemdDtTo = setHiddenData('inspDemdDtTo', request_inspDemdDtTo);
+		moveFrm.appendChild(s_inspDemdDtTo);
+	}
+	// 실행물건검수명세 화면
+	else if(searchType == 'excution') {
+		var s_reqGdInspDtFrom = setHiddenData('reqGdInspDtFrom', excution_reqGdInspDtFrom);
+		moveFrm.appendChild(s_reqGdInspDtFrom);
+
+		var s_reqGdInspDtTo = setHiddenData('reqGdInspDtTo', excution_reqGdInspDtTo);
+		moveFrm.appendChild(s_reqGdInspDtTo);
+
+		var s_srchDvcd = setHiddenData('srchDvcd', excution_srchDvcd);
+		moveFrm.appendChild(s_srchDvcd);
+
+		var s_srchVal = setHiddenData('srchVal', excution_srchVal);
+		moveFrm.appendChild(s_srchVal);
+	}
+	// 실행물건검수 수정화면
+	else if(searchType == 'modify') {
+		var itemInspFrm = $('form[name="itemInspRegiModiFrm"]');
+
+		var m_lonCnsnNo = setHiddenData('lonCnsnNo', $(itemInspFrm).find('input[name="lonCnsnNo"]').val());
+		moveFrm.appendChild(m_lonCnsnNo);
+
+		var m_lonNo = setHiddenData('lonNo', $(itemInspFrm).find('input[name="lonNo"]').val());
+		moveFrm.appendChild(m_lonNo);
+
+		var m_gdInspSrno = setHiddenData('gdInspSrno', $(itemInspFrm).find('input[name="gdInspSrno"]').val());
+		moveFrm.appendChild(m_gdInspSrno);
+
+		var m_aprlYn = setHiddenData('filler2', 'N');
+		moveFrm.appendChild(m_aprlYn);
+	}
+
+	// 로딩바
+	if(isMobile.IOS()) {
+		//showLoading(true);
+		$("#loding").addClass("inAjax").closest(".layer").show();
+	} else {
+		$(window).on("beforeunload", function(){setTimeout("showLoading(true)", 0);});
+	}
+
+	setTimeout(function(){
+		moveFrm.submit();
+	}, 10);
+}
+/**************************
+ ******* ETC SCRIPT *******
+ ************************ */
+0
+// selectbox Label setting
+function selectLabelSetting() {
+	var select = $("select.color");
+	$.each(select, function() {
+		var select_name = $(this).children("option:selected").text();
+		$(this).siblings("span.sel_text").text(select_name);
+	});
+}
+
+//검수이상여부에 따른 글자 변경 이벤트
+$('#gdInspAbvYn').change(function() {
+	var gdInspAbvYn = $('#gdInspAbvYn').val();
+	var gdInspDtlCntn = $('#gdInspDtlCntn').val();
+	console.log(gdInspDtlCntn);
+	if (gdInspDtlCntn == '' || gdInspDtlCntn == '1)재검수 사유: \n2)재검수 예상일자(규정상 30일 이내 재검수 등록):') {
+		if (gdInspAbvYn == 'R' || gdInspAbvYn == '6' || gdInspAbvYn == '9') {
+			$('#gdInspDtlCntn').val('1)재검수 사유: \n2)재검수 예상일자(규정상 30일 이내 재검수 등록):');
+		}
+		else {
+			$('#gdInspDtlCntn').val('');
+		}
+	}
+})
+
+//등록시 고정 데이터 설정
+function fn_etcFixInfoSetting(infoData) {
+	var inputKey = [
+		'lonNo', 'lonCnsnNo', 'gdInspDstcEtcCntn'
+		, 'gdInspOptrEmno', 'gdInspOptrEmpNm'
+		, 'gdInspChgrEmno', 'gdInspChgrEmpNm', 'gdInspMngTmmnEmno', 'gdInspMngTmmnEmpNm'
+		, 'lonAmt', 'custKrnNm', 'addr', 'prodNm', 'empEtno', 'emno', 'empNm', 'gdInspDvcdNm'
+		, 'gdInspPrpsCdNm', 'blngDtbrNm', 'preCustNm', 'chgrTlno', 'custNo', 'busiCustNm'
+		, 'aprlMngNo', 'inspLdgrStcd', 'aprlEmpNm', 'aprlDttm', 'gdTotlCnt', 'mlTotlCnt'
+		, 'lsTotlCnt', 'useGdInspItemCd', 'useGdInspItemSrno', 'useGdInspDtlCntn'
+		, 'useGdInspRplyCd', 'useGdInspRplyCntn', 'useGdInspRplyCdNm'
+	];
+
+	var frm = $('form[name="itemInspRegiModiFrm"]');
+
+	$.each(inputKey, function(inputIdx, inputVal) {
+		frm.find('input[name="' + inputVal  + '"]').remove();
+	});
+
+	$.each(infoData, function(key, value) {
+		$.each(inputKey, function(inputIdx, inputVal) {
+			if(inputVal == key) {
+//				if(key == 'gdInspDt') {
+//					value = value.length > 0 ? value : nowDate;
+//				}
+				if(key == 'gdInspOptrEmpNm') {
+					value = value.length > 0 ? value : loginName;
+				}
+				if(key == 'gdInspOptrEmno') {
+					value = value.length > 0 ? value : loginEmno;
+				}
+				var fixInfoTag = $('<input></input>');
+				fixInfoTag.attr('type', 'hidden');
+				fixInfoTag.attr('id', key);
+				fixInfoTag.attr('name', key);
+				fixInfoTag.attr('value', value);
+				frm.append(fixInfoTag);
+			}
+		});
+	});
+}
+
+// 물건 정보 Pop 저장 callback함수
+function callbackGdInfoSave(gdSrno, gdUnqNo, gdInslAddrDeliCd, inslPlcZpcd, inslPlcPostSrno, inslPlcAddr, inslPlcDtad, fileCnt) {
+	$('form[name="itemInspRegiModiFrm"] input[name="gdList[' + tempGdIdx + '].gdUnqNo"]').val(gdUnqNo);
+	$('form[name="itemInspRegiModiFrm"] input[name="gdList[' + tempGdIdx + '].gdInslAddrDeliCd"]').val(gdInslAddrDeliCd);
+	$('form[name="itemInspRegiModiFrm"] input[name="gdList[' + tempGdIdx + '].inslPlcZpcd"]').val(inslPlcZpcd);
+	$('form[name="itemInspRegiModiFrm"] input[name="gdList[' + tempGdIdx + '].inslPlcPostSrno"]').val(inslPlcPostSrno);
+	$('form[name="itemInspRegiModiFrm"] input[name="gdList[' + tempGdIdx + '].inslPlcAddr"]').val(inslPlcAddr);
+	$('form[name="itemInspRegiModiFrm"] input[name="gdList[' + tempGdIdx + '].inslPlcDtad"]').val(inslPlcDtad);
+
+	if(parseInt(fileCnt) > 0) {
+		var originFileCnt = $('form[name="itemInspRegiModiFrm"] input[name="gdList[' + tempGdIdx + '].fileCnt"]').val();
+		$('form[name="itemInspRegiModiFrm"] input[name="gdList[' + tempGdIdx + '].tempFileCnt"]').val((parseInt(fileCnt) - parseInt(originFileCnt)));
+		$('form[name="itemInspRegiModiFrm"] a[id="gdList_' + tempGdIdx + '_fileCntTxt"]').html(fileCnt + ' 개');
+	} else {
+		$('form[name="itemInspRegiModiFrm"] input[name="gdList[' + tempGdIdx + '].tempFileCnt"]').val('0');
+		$('form[name="itemInspRegiModiFrm"] a[id="gdList_' + tempGdIdx + '_fileCntTxt"]').html('파일추가');
+	}
+
+	if(tempGdIdx != null) {
+		tempGdIdx = null;
+	}
+}
+
+// 물건검수 등록시 Validation
+function itemInspRegisterModifyValidation() {
+
+	var result			= false;
+	var lonNo			= $('form[name="itemInspRegiModiFrm"] input[name="lonNo"]').val();
+	var gdInspDvcd		= $('form[name="itemInspRegiModiFrm"] select[name="gdInspDvcd"]');
+	var gdInspPrpsCd	= $('form[name="itemInspRegiModiFrm"] select[name="gdInspPrpsCd"]');
+
+	if(!lonNo) {
+		commonAlert('물건검수대상이 존재하지 않습니다.');
+		$('html').scrollTop(0);
+		return result;
+	} else if(!gdInspDvcd.val()) {
+		commonAlert('검수구분을 선택해주세요.');
+		gdInspDvcd.focus();
+		return result;
+	} else if(!gdInspPrpsCd.val()) {
+		commonAlert('검수목적을 선택해주세요.');
+		gdInspPrpsCd.focus();
+		return result;
+	} else {
+		if(fileCntValidation()) {
+			result = true;
+		} else {
+			return result;
+		}
+	}
+
+	return result;
+}
+
+//물건검수 결재요청시 Validation
+function itemInspApprovalValidation() {
+	var result = false;
+	var frm = $('form[name="itemInspRegiModiFrm"]');
+
+	var gdInspDvcd			= $('form[name="itemInspRegiModiFrm"] select[name="gdInspDvcd"]');
+	var gdInspPrpsCd		= $('form[name="itemInspRegiModiFrm"] select[name="gdInspPrpsCd"]');
+	var gdInspAbvYn			= $('form[name="itemInspRegiModiFrm"] select[name="gdInspAbvYn"]');
+	var gdTotlCnt			= $('form[name="itemInspRegiModiFrm"] input[name="gdTotlCnt"]').val();
+	var mlTotlCnt			= $('form[name="itemInspRegiModiFrm"] input[name="mlTotlCnt"]').val();
+	var lsTotlCnt			= $('form[name="itemInspRegiModiFrm"] input[name="lsTotlCnt"]').val();
+	var mlGdInspRplyCdArray	= $('form[name="itemInspRegiModiFrm"] input[name*="].mlGdInspRplyCd"]');
+	var lsGdInspRplyCdArray	= $('form[name="itemInspRegiModiFrm"] input[name*="].lsGdInspRplyCd"]');
+
+	if(!gdInspDvcd.val()) {
+		commonAlert('검수구분을 선택해주세요.');
+		gdInspDvcd.focus();
+		return result;
+	} else if(!gdInspPrpsCd.val()) {
+		commonAlert('검수목적을 선택해주세요.');
+		gdInspPrpsCd.focus();
+		return result;
+	} else if(!gdInspAbvYn.val()) {
+		commonAlert('검수이상여부를 선택해주세요.');
+		gdInspAbvYn.focus();
+		return result;
+	}
+
+	else {
+		/* 현업(차권희 주임) 요청으로 물건에 대한 검증로직 제거*/
+		/*
+		if(parseInt(gdTotlCnt) > 0) {
+			for(var i = 0 ; i < parseInt(gdTotlCnt) ; i++) {
+				var el_idx		= i + 1;
+				var gdUnqNo		= $('form[name="itemInspRegiModiFrm"] input[name="gdList[' + i + '].gdUnqNo"]').val();
+				var inslPlcAddr	= $('form[name="itemInspRegiModiFrm"] input[name="gdList[' + i + '].inslPlcAddr"]').val();
+				var tempFileCnt	= $('form[name="itemInspRegiModiFrm"] input[name="gdList[' + i + '].tempFileCnt"]').val();
+				var fileMngNo	= $('form[name="itemInspRegiModiFrm"] input[name="gdList[' + i + '].fileMngNo"]').val();
+
+				if(!gdUnqNo || gdUnqNo.length <= 0) {
+					commonAlert(el_idx + '번째 물건정보의 물건고유번호가 등록되지 않았습니다.');
+					fn_gdDetailInfo(i);
+					return result;
+				} else if(!inslPlcAddr || inslPlcAddr.length <= 0) {
+					commonAlert(el_idx + '번째 물건정보의 설치장소주소가 등록되지 않았습니다.');
+					fn_gdDetailInfo(i);
+					return result;
+				}
+
+				else if(!tempFileCnt || parseInt(tempFileCnt) <= 0) {
+					if(!fileMngNo) {
+						commonAlert(el_idx + '번째 물건정보의 파일이 등록되지 않았습니다.');
+						fn_gdDetailInfo(i);
+						return result;
+					}
+				}
+
+			}
+		}
+		*/
+
+		if(parseInt(mlTotlCnt) > 0) {
+			$.each(mlGdInspRplyCdArray, function(idx, item) {
+				var el_idx		= idx + 1;
+				var el_value	= item.value;
+
+				if(el_value == '' || el_value.length <= 0) {
+					commonAlert(el_idx + '번째 검수내용 항목이 선택되지 않았습니다.');
+					$(this).focus();
+					return result;
+				}
+			});
+		}
+
+		if(parseInt(lsTotlCnt) > 0) {
+			$.each(lsGdInspRplyCdArray, function(idx, item) {
+				var el_idx		= idx + 1;
+				var el_value	= item.value;
+
+				if(el_value == '' || el_value.length <= 0) {
+					commonAlert(el_idx + '번째 물건상태 항목이 선택되지 않았습니다.');
+					$(this).focus();
+					return result;
+				}
+			});
+		}
+
+		if(fileCntValidation()) {
+			result = true;
+		} else {
+			return result;
+		}
+	}
+
+	return result;
+}
+
+// 파일 업로드 체크 validation
+function fileCntValidation() {
+	var result				= false;
+	var gdTotlCnt			= $('form[name="itemInspRegiModiFrm"] input[name="gdTotlCnt"]').val();
+	var totlFileLimitCnt	= parseInt(gdTotlCnt) * parseInt(fileLimitCnt);
+	var tempTotlFileCnt		= 0;
+
+	if(parseInt(gdTotlCnt) > 0) {
+		for(var i = 0 ; i < parseInt(gdTotlCnt) ; i++) {
+			var el_idx		= i + 1;
+			var gdUnqNo		= $('form[name="itemInspRegiModiFrm"] input[name="gdList[' + i + '].gdUnqNo"]').val();
+			var inslPlcAddr	= $('form[name="itemInspRegiModiFrm"] input[name="gdList[' + i + '].inslPlcAddr"]').val();
+			var tempFileCnt	= $('form[name="itemInspRegiModiFrm"] input[name="gdList[' + i + '].tempFileCnt"]').val();
+
+			tempTotlFileCnt += parseInt(tempFileCnt);
+		}
+
+		if(totlFileLimitCnt < tempTotlFileCnt) {
+			//commonAlert('업로드 파일 제한갯수를 초과하였습니다.');
+			result = true;
+		} else {
+			result = true;
+		}
+	}
+
+	return result;
+}
+function setHiddenData(nameObj, valObj) {
+	var hiddenData = document.createElement("input");
+	hiddenData.setAttribute('type', 'hidden');
+	hiddenData.setAttribute('name', nameObj);
+	hiddenData.setAttribute('id', nameObj);
+	hiddenData.setAttribute('value', valObj);
+
+	return hiddenData;
+}
+
+function showCalendar(id) {
+	$("#"+id).datepicker("show");
+}
+/**************************
+ ********** KAKAO *********
+ ************************ */
+

@@ -1,0 +1,7 @@
+﻿@charset "utf-8";
+/* for styles */
+@import url("common.css?v=20201228001");
+@import url("layout.css?v=20210107001");
+@import url("contents.css?v=20210730001");
+@import url("jquery-ui-1.10.4.custom.css");
+@import url("new_contents.css?v=20210817001");

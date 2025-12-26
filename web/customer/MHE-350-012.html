@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>마케팅활용동의 조회/변경 | iM캐피탈</title>
+<script>
+    $(document).ready(function(){
+        $('header').load('/web/renewal/header_sub_inc.html');
+        $('footer').load('/web/renewal/footer_inc.html');
+    }); 
+</script>
+</head>
+<body>
+    <header></header>
+    <div class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
+        <!-- Start : 페이지 인디케이터 -->
+        <div class="indicator">
+            <ul>
+                <li>홈</li>
+                <li>고객센터</li>
+                <li>고객정보관리</li>
+                <li aria-label="현재 화면">마케팅활용동의 조회/변경</li>
+            </ul>
+        </div>
+        <!-- //End : 페이지 인디케이터 -->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-contents">
+            <!-- Start : centents -->
+            <div class="contents">
+                <h1>마케팅활용동의 조회/변경</h1>
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap s-conBtn">
+                    <div class="pro-box">
+                        <div class="box-line">
+                            <p class="p-txt">iM캐피탈의 금융상품과 관련된 신상품(서비스)소개, 편의 제공(경품 판촉활동 등), 안내, 금융그룹 자회사의 신상품 소개 등의 수신동의 여부를 선택하실 수 있는 화면입니다.</p>
+                        </div>
+
+                        <h2 class="mt48">약관동의</h2>
+                        <!-- Start : 약관동의 -->
+                        <div class="agree-box">
+                            <div class="agree-total-box">
+                                <div class="checkbox">
+                                    <input type="checkbox" id="ch01" name="ch01" class="chk">
+                                    <label for="ch01" class="label"><span class="c-blue">(필수)</span> 개인(신용)정보 수집·이용 동의서</label>
+                                    <a href="#" class="wa-arrow"><img src="/static/web/img/ui_common/ico_arrow_mob.png" alt="동의서 보기" class="agr-mob"><img src="/static/web/img/ui_common/ico_arrow.png" alt="동의서 보기" class="agr-pc"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fixed-btn-area">
+                            <div class="btn-box mgt-type">
+                                <span class="btn w-160"><button type="button" id="">조회/변경하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                            </div>
+                        </div>
+                        <!-- //End : 약관동의 -->
+                    </div>
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <footer class="footerwrap">
+        <!-- Mobile_footer -->
+        <div class="mo_footer">
+            <p class="chatbot-btn"><a href="#" target="_blank" title="카카오 새창이동">챗봇</a></p>
+            <div class="footer-inner">
+                <div class="right">
+                    <figure><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+                    <div>
+                        <p>고객센터 : <a href="tel:1566-0050"><strong>1566-0050</strong></a></p>
+                        <span>(평일 오전 9시 ~ 오후6시)</span>
+
+                            <div class="mark-list">
+                                <p class="mark">
+                                    <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=10913" target="_blank" title="웹어워드코리아 평가내역 새창이동">
+                                        <img src="/static/web/img/common/wa2_mb.png" alt="웹어워드코리아 2021 금융분야 최우수상 수상인증마크">
+                                    </a>
+                                </p>
+                                <p class="mark">
+                                    <a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="한국웹접근성인증평가원 새창이동">
+                                        <img src="/static/web/img/common/wa_mb.png?v=20211116001" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)">
+                                    </a>
+                                </p>
+                            </div>
+                    </div>
+                </div>
+                <div class="left">
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a href="#none" class="policy" onclick="goPage('/customer/termsList.do?termId=terms14');">개인정보처리방침</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do');">이용약관</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/customerInfoStep01.do');">고객정보 제공내역 조회</a></li>
+                        </ul>
+                        <ul>
+                            <li>서울특별시 중구 남대문로 125, 8층 (다동), iM금융센터</li>
+                            <li>사업자등록번호 : 220-87-87408</li>
+                        </ul>
+                        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Mobile_footer -->
+
+        <!-- PC_footer -->
+        <div class="pc_footer">
+
+            <p class="home-btn"><a href="#none" class="pc-chatbot-btn" target="_blank" title="챗봇 새창이동">챗봇</a><a href="#none" onclick="goPage('/main.do');">홈</a></p>
+            <div class="footer-inner">
+                <div class="left">
+                    <figure><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do?termId=terms14');" class="policy">개인정보처리방침</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do');">이용약관</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/customerInfoStep01.do');">고객정보 제공내역 조회</a></li>
+                        </ul>
+
+                        <ul>
+                            <li>서울특별시 중구 남대문로 125, 8층(iM금융센터)</li>
+                            <li>사업자등록번호 : 220-87-87408</li>
+                        </ul>
+
+                        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="footer-familysite">
+                        <button>패밀리사이트</button>
+                        <ul>
+                            <li><a href="http://www.dgbfg.co.kr" title="DGB금융지주 사이트 새창열림" target="_blank">DGB금융지주</a></li>
+                            <li><a href="https://www.dgb.co.kr" title="iM뱅크 사이트 새창열림" target="_blank">iM뱅크</a></li>
+                            <li><a href="https://www.hi-ib.com" title="iM증권 사이트 새창열림" target="_blank">iM증권</a></li>
+                            <li><a href="https://www.dgbfnlife.com" title="iM라이프 사이트 새창열림" target="_blank">iM라이프</a></li>
+                            <li><a href="http://www.hi-asset.com" title="iM에셋자산운용 사이트 새창열림" target="_blank">iM에셋자산운용</a></li>
+                            <li><a href="https://www.dgbupay.com" title="iM유페이 사이트 새창열림" target="_blank">iM유페이</a></li>
+                            <li><a href="http://www.dgbds.co.kr" title="iM데이터시스템 사이트 새창열림" target="_blank">iM데이터시스템</a></li>
+                            <li><a href="http://www.dgbci.co.kr" title="iM신용정보 사이트 새창열림" target="_blank">iM신용정보</a></li>
+                            <li><a href="https://www.hi-investment.com" title="iM투자파트너스 사이트 새창열림" target="_blank">iM투자파트너스</a></li>
+                            <li><a href="https://intro.newsystock.com" title="뉴지스탁 사이트 새창열림" target="_blank">뉴지스탁</a></li>
+                            <li><a href="http://www.dgbscf.or.kr" title="DGB사회공헌재단 사이트 새창열림" target="_blank">DGB사회공헌재단</a></li>
+                        </ul>
+                    </div>
+                    <div class="mark-wrap">
+                        <a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="한국웹접근성인증평가원 새창이동">
+                            <img src="/static/web/img/common/wa_pc2.png" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)">
+                        </a>
+                        <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=10913" target="_blank" title="웹어워드코리아 평가내역 새창이동">
+                            <img src="/static/web/img/common/wa2_pc2.png" alt="웹어워드코리아 2021 금융분야 최우수상 수상인증마크">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //PC_footer -->
+    </footer>
+    <!---------- //End : footer ---------->
+    <script type="text/javascript">
+        $(function(){
+            $("div .ka-accordion ul li a").on("click", function(){
+
+                setTimeout(() => {
+                    var offset = $(this).offset(); // 선택한 태그의 위치를 반환
+                    $("html, body").stop().animate({scrollTop : offset.top - 100}, 300);
+                }, "400");
+            });
+        });
+    </script>
+</body>
+</html>
+

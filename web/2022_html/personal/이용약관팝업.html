@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이용약관 전체 동의서 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+
+    <!-- 20221104 : 추가-->
+    <link rel="stylesheet" href="/static/web/js/lib/slick.css">
+    <script src="/static/web/js/slick.js"></script>
+    <script type="text/javascript" src="/static/web/js/lib/slick.min.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>이용약관 전체 동의서</h1>
+            </div>
+            <div class="popup-contents flex-col no-scroll"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+                    <div class="col-cnt-type04 bg-gray "><!-- [D]블루배경일 때 : bg-blue / 흰색배경일 때 : bg-white -->
+
+                        <!-- Start : 약관 영역 -->
+                        <div class="agreement-wrap">
+
+                            <div class="swiper-box">
+                                <div id="slide-paging" class="slide-paging mail_paging"></div>
+                                <div class="agreefix">
+                                    <ul id="slide" class="slide">
+                                        <li>
+                                            <!-- 아이프레임1 영역// -->
+                                            <div class="ifr-box">
+                                                <div class="slide-iframe">약관 아이프레임1</div>
+                                            </div>
+                                            <!-- //아이프레임1 영역 -->
+                                        </li>
+                                        <li>
+                                            <!-- 아이프레임2 영역// -->
+                                            <div class="ifr-box">
+                                            약관 아이프레임2
+                                            </div>
+                                            <!-- //아이프레임2 영역 -->
+                                        </li>
+                                        <li>
+                                            <!-- 아이프레임3 영역// -->
+                                            <div class="ifr-box">
+                                            약관 아이프레임3
+                                            </div>
+                                            <!-- //아이프레임3 영역 -->
+                                        </li>
+                                        <li>
+                                            <!-- 아이프레임4 영역// -->
+                                            <div class="ifr-box">
+                                            약관 아이프레임4
+                                            </div>
+                                            <!-- //아이프레임4 영역 -->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- //End : 약관 영역 -->
+
+                    </div>
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">확인하고 전체동의하기</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

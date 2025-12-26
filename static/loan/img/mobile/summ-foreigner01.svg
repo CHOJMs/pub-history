@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <path style="fill:none" d="M0 0h32v32H0z"/>
+    <g data-name="그룹 3203">
+        <g data-name="합치기 2" style="fill:#fff">
+            <path d="M691.5-2459.055a.248.248 0 0 1-.161-.059l-12.751-10.694a.234.234 0 0 1-.075-.277.234.234 0 0 1 .236-.165H682.75V-2483c0-.69.56-1.25 1.25-1.25h15c.69 0 1.25.56 1.25 1.25v12.75h4.002c.144 0 .207.09.235.165a.234.234 0 0 1-.075.277l-12.752 10.694a.248.248 0 0 1-.16.059z" style="stroke:none" transform="translate(-675.746 2488)"/>
+            <path d="m691.5-2459.958 11.377-9.542H699.5v-13.5a.5.5 0 0 0-.5-.5h-15a.5.5 0 0 0-.5.5v13.5h-3.377l11.377 9.542m0 1.653a.998.998 0 0 1-.643-.234l-12.751-10.695c-.716-.6-.292-1.766.643-1.766H682v-12a2 2 0 0 1 2-2h15a2 2 0 0 1 2 2v12h3.252c.933 0 1.358 1.166.642 1.766l-12.752 10.695a.999.999 0 0 1-.642.234z" style="fill:#222426;stroke:none" transform="translate(-675.746 2488)"/>
+        </g>
+        <g data-name="그룹 3201">
+            <g data-name="타원 239" transform="translate(10 7)" style="stroke:#222426;stroke-width:1.5px;fill:#fff">
+                <circle cx="2.5" cy="2.5" r="2.5" style="stroke:none"/>
+                <circle cx="2.5" cy="2.5" r="1.75" style="fill:none"/>
+            </g>
+            <g data-name="타원 240" transform="translate(16 12)" style="stroke:#222426;stroke-width:1.5px;fill:#fff">
+                <circle cx="2.5" cy="2.5" r="2.5" style="stroke:none"/>
+                <circle cx="2.5" cy="2.5" r="1.75" style="fill:none"/>
+            </g>
+            <path data-name="패스 6507" d="M-485.657 2784.535v10.836" transform="rotate(30 4948.754 2336.031)" style="stroke-linecap:round;stroke:#222426;stroke-width:1.5px;fill:none"/>
+        </g>
+    </g>
+</svg>

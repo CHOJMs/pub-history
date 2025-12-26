@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>물건등록</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/lib/spin.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>물건등록</h1>
+            </div>
+            <div class="popup-contents"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+                        
+                        <div class="form_box">
+                            <p class="h_tit">공급자</p>
+						    <p class="cn_txt">홍길동</p>
+                            <p class="h_tit">물건명</p>
+						    <p class="cn_txt">자율신경검사기</p>
+                            <p class="h_tit">제작년도</p>
+						    <p class="cn_txt">2018</p>
+                            <p class="h_tit">S/N 입력</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" placeholder="" title="S/N 입력">
+                                </span>
+                            </div>
+                            <p class="h_tit">주소</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" placeholder="" title="주소 입력">
+                                </span>
+                                <div class="btn_cont">
+                                    <button id="">우편번호 선택</button>
+                                </div>
+                            </div>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" placeholder="" title="상세주소 입력">
+                                </span>
+                            </div>
+                            <p class="h_tit">파일첨부</p>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" placeholder="파일 첨부 개수 표시(ex. 3개)" title="상세주소 입력">
+                                </span>
+                            </div>
+                            <div class="btn_box mt16 pt0">
+                                <span class="btn"><a href="#">파일 관리</a></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

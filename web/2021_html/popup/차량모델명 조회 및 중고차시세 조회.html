@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차량모델명 조회 및 중고차시세 조회</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">   
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>차량모델명 조회 및 중고차시세 조회</h1>
+            </div>
+            <div class="popup-contents">
+                <!-- content 시작 //-->
+                <div class="bg_graybox">
+                    <div class="bg_top">
+                        <div class="form_box">
+                            <p class="h_tit">대표차명</p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" class="" placeholder="" title="대표차명 입력">
+                            </div>
+                            <p class="h_tit">연식</p>
+                            <div class="text_data">
+                                <input type="text" name="" id="" class="" placeholder="" title="연식 입력">
+                            </div>
+                            <div class="btn_box mgin">
+                                <span class="btn gray"><button id="">조회</button></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg_bottom">
+                        <div class="scroll_table2">
+                            <table class="dataType">
+                                <caption>
+                                    선택, 국산/수입, 차종, 차명, 모델명, 연식, 시세 등으로 나타낸 표
+                                </caption>
+                                <colgroup>
+                                    <col width="10%">
+                                    <col width="15%">
+                                    <col width="15%">
+                                    <col width="15%">
+                                    <col width="15%">
+                                    <col width="15%">
+                                    <col width="15%">
+                                    </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">선택</th>
+                                        <th scope="col">국산/수입</th>
+                                        <th scope="col">차종</th>
+                                        <th scope="col">차명</th>
+                                        <th scope="col">모델명</th>
+                                        <th scope="col">연식</th>
+                                        <th scope="col">시세</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="radiobox">
+                                                <input type="radio" name="r01" value="" id="r01" class="rchk" aria-hidden="true" title="선택 체크">
+                                                <label for="r01" class="rchk-label pl28" role="radio" aria-checked="false"></label>
+                                            </div>
+                                        </td>
+                                        <td>국산</td>
+                                        <td>승용</td>
+                                        <td>스파크</td>
+                                        <td>L</td>
+                                        <td>2016</td>
+                                        <td>536</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="7" class="noData">조회 결과가 없습니다.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="btn_more">
+                            <a href="#" class="more_btn"><i class="more"></i>더보기</a>
+                        </div>
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+                <!-- 버튼 시작//-->
+                <div class="btn-area">
+                    <div class="btn_box">
+                        <span class="btn"><button id="">확인</button></span>
+                    </div>
+                </div>
+                <!-- //버튼 끝-->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <link rel="stylesheet" href="pub.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.modify').click(function() {
+                $(this).next().show();
+            });
+            $('.modify+ul').click(function() {
+                $(this).hide();
+            });
+        });
+    </script>
+
+    <title>iM캐피탈 :: 퍼블리싱 History</title>
+</head>
+<body>
+
+    <div id="nav">
+        <h1>[ iM캐피탈 - 모바일오피스 ] <a target="_blank" href="/web/pub_html/index.html">History</a></h1>
+        <div class="top-area">
+            <ul>
+                <li class="tit"><a href="#none">메뉴</a></li>
+                <li><a href="/web/pub_html/mob_office_10.html">리뉴얼</a></li>
+                <li><a class="on" href="/web/pub_html/mob_office_1.html">메인</a></li>
+                <li><a href="/web/pub_html/mob_office_2.html">여신</a></li>
+                <li><a href="/web/pub_html/mob_office_3.html">검수</a></li>
+                <li><a href="/web/pub_html/mob_office_4.html">오토</a></li>
+                <li><a href="/web/pub_html/mob_office_5.html">기업금융</a></li>
+                <li><a href="/web/pub_html/mob_office_6.html">전세자금</a></li>
+                <li><a href="/web/pub_html/mob_office_7.html">결재</a></li>
+                <li><a href="/web/pub_html/mob_office_8.html">인증센터</a></li>
+                <li><a href="/web/pub_html/mob_office_9.html">AG영업관리</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="row">
+            <iframe src="mob_office_1.html" width="100%" frameborder="0" name="main" scrolling="yes"></iframe>
+        </div>
+    </div>
+
+    <script>
+
+    	$(function(){
+
+    		$('.top-area ul li a').on('click', function(e){
+
+    			if ( $(this).hasClass('index') ){
+
+    			}else{
+    				e.preventDefault();
+    				var target = $(this).attr('href')
+    				$('.dashboard').hide()
+    				$('#page-wrapper iframe').show().attr('src',target)
+    			}
+
+    			$(this).addClass('on')
+    			$(this).parent().siblings().find('a').removeClass('on')
+    		})
+    	})
+
+    </script>
+</body>
+</html>

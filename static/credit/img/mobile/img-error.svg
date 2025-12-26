@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+    <defs>
+        <clipPath id="cwwe7z2uwa">
+            <path data-name="다각형 7" d="M47.031 6.046a4 4 0 0 1 6.939 0l43.592 75.963A4 4 0 0 1 94.093 88H6.907a4 4 0 0 1-3.469-5.991z" style="fill:none"/>
+        </clipPath>
+    </defs>
+    <path data-name="사각형 1927" style="fill:none" d="M0 0h120v120H0z"/>
+    <g data-name="그룹 2533">
+        <path data-name="다각형 8" d="M47.031 6.046a4 4 0 0 1 6.939 0l43.592 75.963A4 4 0 0 1 94.093 88H6.907a4 4 0 0 1-3.469-5.991z" transform="translate(10 19)" style="fill:#222426"/>
+        <g data-name="다각형 3" style="fill:#fff">
+            <path d="M94.093 88.25H6.907a4.207 4.207 0 0 1-3.678-2.12 4.207 4.207 0 0 1-.008-4.245L46.814 5.92A4.205 4.205 0 0 1 50.5 3.786c1.541 0 2.92.798 3.686 2.135L97.78 81.885a4.207 4.207 0 0 1-.008 4.245 4.207 4.207 0 0 1-3.678 2.12z" style="stroke:none" transform="translate(10 15)"/>
+            <path d="M50.5 4.036c-1.35 0-2.7.67-3.47 2.01L3.439 82.009C1.908 84.676 3.833 88 6.908 88h87.185c3.074 0 5-3.324 3.469-5.99L53.969 6.045a3.962 3.962 0 0 0-3.469-2.01m0-.5c1.632 0 3.09.845 3.903 2.26L97.996 81.76a4.455 4.455 0 0 1-.01 4.495 4.455 4.455 0 0 1-3.893 2.245H6.907c-1.624 0-3.08-.84-3.894-2.245a4.455 4.455 0 0 1-.009-4.495L46.597 5.797a4.453 4.453 0 0 1 3.903-2.26z" style="fill:#222426;stroke:none" transform="translate(10 15)"/>
+        </g>
+        <g data-name="마스크 그룹 2" transform="translate(10 15)" style="clip-path:url(#cwwe7z2uwa)">
+            <path data-name="다각형 6" d="M38.5 0 77 67H0z" transform="translate(24 21)" style="fill:#f5f5f5"/>
+        </g>
+        <g data-name="그룹 2532">
+            <path data-name="패스 1895" d="m508.161 419.945.841 33.12h3.017l1.052-33.12z" transform="translate(-451.333 -372.069)" style="fill:#fff3a5;stroke:#000;stroke-miterlimit:10;stroke-width:.5px"/>
+            <g data-name="그룹 1032">
+                <path data-name="패스 1896" d="M512.532 489.334a2.6 2.6 0 1 1-2.6-2.6 2.6 2.6 0 0 1 2.6 2.6z" transform="translate(-450.981 -400.424)" style="fill:#fff3a5;stroke:#000;stroke-miterlimit:10;stroke-width:.5px"/>
+            </g>
+        </g>
+    </g>
+</svg>

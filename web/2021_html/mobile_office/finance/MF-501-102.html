@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>물건 평가 조회</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<a href="#addrPopup" class="popup-btn js-open-popup">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">   
+    <div class="popup popup-01">
+        <div class="inner">
+            <div class="popup-text">
+                <h1>물건 평가 조회</h1>
+            </div>
+            <div class="popup-contents no_btn"><!-- 하단고정 버튼이 아닐 경우 class="no_btn" 추가 -->
+                <!-- content 시작 //-->
+                <div class="bg_graybox bg_none">
+                    <div class="bg_top">
+                        
+                        <div class="form_box">
+                            <p class="h_tit">평가상태</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="평가상태 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <p class="h_tit">검색조건</p>
+                            <div class="text_data">
+                                <div class="selectbox">
+                                    <select class="select" title="검색조건 선택">
+                                        <option>선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="text_data">
+                                <span class="form">
+                                    <input type="text" id="" name="" title="직원번호 입력">
+                                </span>
+                            </div>
+
+                            <p class="h_tit">신청일자</p>
+                            <div class="text_data">
+                                <span class="form">
+                                  <input type="tel" id="" placeholder="1981-01-25" title="신청일자 시작일 입력">
+                                  <button id="" class="calender">달력보기</button>
+                                </span>
+                                <span class="dash">-</span>
+                                <span class="form">
+                                  <input type="tel" id="" placeholder="1981-01-25" title="신청일자 종료일 입력">
+                                  <button id="" class="calender">달력보기</button>
+                                </span>							
+                            </div>
+                            <div class="btn_box pt24">
+								<span class="btn"><a href="#">조회</a></span>
+							</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg_bottom">
+                        <div class="scroll_table">
+                            <table class="dataType" style="min-width: 1300px;">
+                                <caption>물건평가조회 - 신청일자, 평가번호, 평가진행상태, 1차가격적정성, FMV, OLV(%), 이용자, 공급자, 물건명, 제조사, 모델명, 연식, 중고구분, 평가일자, option and spec, 1차특이사항내용 등으로 나타낸 표</caption>
+                                <colgroup>
+                                    <col width="5%">
+                                    <col width="8%">
+                                    <col width="8%">
+                                    <col width="9%">
+                                    <col width="9%">
+                                    <col width="9%">
+                                    <col width="6%">
+                                    <col width="7%">
+                                    <col width="7%">
+                                    <col width="10%">
+                                    <col width="10%">
+                                    <col width="8%">
+                                    <col width="6%">
+                                    <col width="6%">
+                                    <col width="8%">
+                                    <col width="8%">
+                                    <col width="8%">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">신청일자</th>
+                                        <th scope="col">평가번호</th>
+                                        <th scope="col">평가진행상태</th>
+                                        <th scope="col">1차가격적정성</th>
+                                        <th scope="col">FMV</th>
+                                        <th scope="col">OLV(%)</th>
+                                        <th scope="col">이용자</th>
+                                        <th scope="col">공급자</th>
+                                        <th scope="col">물건명</th>
+                                        <th scope="col">제조사</th>
+                                        <th scope="col">모델명</th>
+                                        <th scope="col">연식</th>
+                                        <th scope="col">중고구분</th>
+                                        <th scope="col">평가일자</th>
+                                        <th scope="col">option and spec</th>
+                                        <th scope="col">1차특이사항내용</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="radiobox">
+                                                <input type="radio" name="r01" value="" id="r01" class="rchk" aria-hidden="true" title="선택">
+                                                <label for="r01" class="rchk-label pl28" role="radio" aria-checked="false"></label>
+                                            </div>
+                                        </td>
+                                        <td>2021-11-11</td>
+                                        <td>11000000</td>
+                                        <td>1차평가완료</td>
+                                        <td></td>
+                                        <td class="a_r">180,000,000</td>
+                                        <td class="a_r">0</td>
+                                        <td>홍길돌</td>
+                                        <td>김길수</td>
+                                        <td>머시닝센터</td>
+                                        <td>화천기계공업</td>
+                                        <td>P000000</td>
+                                        <td>2021</td>
+                                        <td>신품</td>
+                                        <td>2021-01-01</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td  colspan="17" class="noData"><p>조회결과가 없습니다.</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- 버튼 시작//-->
+                        <div class="btn_box mt30">
+                            <span class="btn"><button id="">선택</button></span>
+                        </div>
+                        <!-- //버튼 끝-->
+                    </div>
+                </div>
+                <!--// content 끝-->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+    <script src="/static/web/js/ui_common.js"></script>
+</div>
+</body>
+</html>

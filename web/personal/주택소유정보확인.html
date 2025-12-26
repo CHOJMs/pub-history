@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주택소유 정보확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half pop-img"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1 class="a_l">소유하신 부동산에 대한 아래의 정보가<br class="mob"> 맞으신가요?</h1>
+            </div>
+            <div class="popup-contents flex-col pad-small">
+                <!-- Start : content //-->
+
+                <div class="img-1">
+                    <div class="list-line-box2">
+                        <ul class="list-2">
+                            <li>
+                                <span class="p-tit">개인 및 대부업 설정 여부</span>
+                                <span class="p-txt">아니오</span>
+                            </li>
+                            <li>
+                                <span class="p-tit">근저당 4개사 이상 설정 여부</span>
+                                <span class="p-txt">아니오</span>
+                            </li>
+                            <li>
+                                <span class="p-tit">신탁 설정 여부</span>
+                                <span class="p-txt">아니오</span>
+                            </li>
+                            <li>
+                                <span class="p-tit">2세 이상의 세대주 등재 여부</span>
+                                <span class="p-txt">아니오</span>
+                            </li>
+                            <li>
+                                <span class="p-tit">전국 시단위 이상의 행정구역 소재 여부</span>
+                                <span class="p-txt">예</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="ico-info mt16">위 내용과 다를 경우 여신거래기본약관 제8조(기한전의 채무 변제의무) 1항 8호에 따라 법적 책임이 발생할 수 있습니다.</p>
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none">
+                    <div class="btn-box">
+                        <span class="btn gray01"><button type="button" id="">아니요</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                        <span class="btn"><button type="button" id="">네, 맞아요</button></span>
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <!--<div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>-->
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

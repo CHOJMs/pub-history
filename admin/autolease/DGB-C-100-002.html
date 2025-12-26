@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+<script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+<script src="/static/admin/js/admin_popup.js"></script>
+
+<title>오토리스 관리 상세 | iM캐피탈 관리자</title>
+
+</head>
+<body>
+    <div class="wrap">
+
+        <!----------- Start : GNB_메뉴 ----------->
+        <header class="headerwrap">
+            <h1><img src="/static/web/img/imlogo/ci_darkcolor_color.png" alt="iM캐피탈"></h1>
+            <div class="gnb-menu">
+                <ul>
+                    <li><a href="#">DSR상담관리</a></li>
+                    <li><a href="#">오토론관리</a></li>
+                    <li><a href="#" class="on">오토리스관리</a></li>
+                    <li><a href="#">게시판관리</a></li>
+                    <li><a href="#">채용</a></li>
+                    <li><a href="#">앱관리</a></li>
+                    <li><a href="#">설정</a></li>
+                    <li><a href="#">약관관리</a></li>
+                    <li><a href="#">즉시출고차량</a></li>
+                </ul>
+                <p class="logout"><a href="#">홍길동님<img src="/static/admin/img/new_common/ico_logout.png"></a></p>
+            </div>
+        </header>
+        <!----------- //End : GNB_메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div class="sub-contents">
+
+            <!-- Start : left_메뉴 -->
+            <div class="left-wrap">
+                <div class="left-menu">
+                    <ul>
+                        <li><a href="#" class="on">오토리스관리</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //End : left_메뉴 -->
+
+            <!-- Start : centents -->
+            <div class="contents">
+
+                <div class="head-tit">
+                    <div class="flex-wrap"><!-- [D]오른쪽 버튼이 있는 경우 : flex-wrap 추가 -->
+                        <h2>오토리스 관리</h2>
+                        <div class="btn">
+                            <a href="#" class="blue">상담완료</a><a href="#" class="black">목록</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap">
+
+                    <!-- Start : 고객정보 -->
+                    <h3>고객정보</h3>
+                    <table class="bbs-table-view">
+                        <colgroup>
+                            <col width="240px">
+                            <col width="%">
+                            <col width="240px">
+                            <col width="%">
+                        </colgroup>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>고객명</th>
+                                <td></td>
+                                <th>생년월일</th>
+                                <td>840215</td>
+                            </tr>
+                            <tr>
+                                <th>휴대전화번호</th>
+                                <td>010-5779-7471</td>
+                                <th>접수일시 | 접수방법</th>
+                                <td class="row-line"><span>20220609 13:09</span><span>모바일 (모바일)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 고객정보 -->
+
+                    <!-- Start : 견적상세 -->
+                    <h3>견적상세</h3>
+                    <table class="bbs-table-view">
+                        <colgroup>
+                            <col width="240px">
+                            <col width="%">
+                            <col width="240px">
+                            <col width="%">
+                        </colgroup>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>리스 차종</th>
+                                <td>외산 BMW 5 Series 520i Luxury</td>
+                                <th>배기량</th>
+                                <td>1,998cc</td>
+                            </tr>
+                            <tr>
+                                <th>하이브리드 유무</th>
+                                <td>N</td>
+                                <th>차세분</th>
+                                <td class="row-line"><span>0원</span><span>미포함</span></td>
+                            </tr>
+                            <tr>
+                                <th>차량가격(고객입력항목)</th>
+                                <td>60,737,626원</td>
+                                <th>등록비용</th>
+                                <td>0원</td>
+                            </tr>
+                            <tr>
+                                <th>총구매비용</th>
+                                <td>60,737,626원</td>
+                                <th>리스기간</th>
+                                <td>43개월</td>
+                            </tr>
+                            <tr>
+                                <th>보증금 | %</th>
+                                <td class="row-line"><span>0원</span><span>0%</span></td>
+                                <th>잔존가치 | %</th>
+                                <td class="row-line"><span>32,340,000원</span><span>54%</span></td>
+                            </tr>
+                            <tr>
+                                <th>선납금(수입차만) | %</th>
+                                <td class="row-line"><span>0원</span><span>0%</span></td>
+                                <th>승인요청액</th>
+                                <td>60,737,626원</td>
+                            </tr>
+                            <tr>
+                                <th>연간주행거리</th>
+                                <td>20,000km</td>
+                                <th>월 리스료</th>
+                                <td>871,200원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="bbs-table mt20">
+                        <colgroup>
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">원리금</th>
+                                <th scope="col">차세</th>
+                                <th scope="col">월 리스료</th>
+                                <th scope="col">장기선납금</th>
+                                <th scope="col">실납입액</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>871,200원</td>
+                                <td>0원</td>
+                                <td>871,200원</td>
+                                <td>0원</td>
+                                <td>871,200원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 견적상세 -->
+
+                    <!-- Start : 상담완료 유무 -->
+                    <h3>상담완료 유무</h3>
+                    <table class="data-tbl type01">
+                        <colgroup>
+                            <col width="50%">
+                            <col width="50%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="com-inp">
+                                        <p class="tit">상담사 이름</p>
+                                        <input type="text" placeholder="" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="com-inp">
+                                        <p class="tit">상담완료 체크</p>
+                                        <div class="cnt-box">
+                                            <div class="inp-radio">
+                                                <div class="radiobox">
+                                                    <input type="radio" id="r01" name="r01" checked="checked">
+                                                    <label for="r01">완료</label>
+                                                </div>
+                                                <div class="radiobox">
+                                                    <input type="radio" id="r02" name="r01">
+                                                    <label for="r02">미완료</label>
+                                                </div>
+                                            </div>
+                                            <span class="txt-right">* 고객과 상담이 완료되었을 경우에 ‘완료’에 체크해 주시고, 상담완료 버튼을 누르셔야 현재시각 기준으로 상담완료일에 기록됩니다.</span>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="com-inp">
+                                        <p class="tit">상담완료 일시</p>
+                                        <input type="tel" placeholder="" value="2023-10-16 15:54">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //End : 상담완료 유무 -->
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <div class="footerwrap">
+        <div class="company_info">
+            <address><span>서울특별시 중구 남대문로 125, 8층</span>사업자번호 : 220-87-87408</address>
+            <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+        </div>
+    </div>
+    <!---------- //End : footer ---------->
+</body>
+</html>
+

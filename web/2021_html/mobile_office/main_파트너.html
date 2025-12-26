@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Office | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+    <link rel="stylesheet" href="/static/web/css/mobile_office/main.css">
+	<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/ui_gnb.js"></script>
+
+</head>
+<body>
+
+    <div class="wrap bg_1 mo_office_wap">
+        <!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+        <!----------- //모바일 메뉴 시작 ----------->
+        <header id="header" class="sub"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+            
+			<div class="mobile-btn">
+				<ul>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>					
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알람"></a></li>
+					<li class="home"><a href=""><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+				</ul>
+			</div>
+
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+
+			<nav class="header-inner">
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+				
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="setting"><a href="">설정</a></li>						
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+						<li class="home"><a href="">home</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>					
+				</div>
+
+				<div class="right">
+					<ul>
+						<li class=""><a href="">여신</a>
+							<ul>
+								<li><a href="">연체현황/명세</a></li>
+								<li><a href="">관리채권 내역조회</a></li>
+                                <li><a href="">외부활동 내역관리</a></li>
+                                <li><a href="">외부활동 경로관리</a></li>
+							</ul>
+						</li>
+						<li class=""><a href="">검수</a>
+							<ul>
+								<li><a href="">사전검수 요청명세</a></li>
+								<li><a href="">실행물건 검수명세</a></li>
+                                <li><a href="">물건검수 등록</a></li>
+                                <li><a href="">관리채권 내역조회</a></li>
+							</ul>
+						</li>
+                        <li class=""><a href="">오토</a>
+							<ul>
+								<li><a href="">재고금융현황(차량실사)</a></li>
+								<li><a href="">신규 딜러/모집인 등록안내(SMS) 발송</a></li>
+                                <li><a href="">중고차 제휴 공지사항</a></li>
+							</ul>
+						</li>
+                        <li class=""><a href="">기업금융</a>
+							<div class="flex-list">
+								<div>
+									<p>물건평가</p>
+									<ul>
+										<li><a href="">물건평가 등록</a></li>
+										<li><a href="">물건평가 조회/수정</a></li>
+									</ul>
+								</div>	
+								<div>
+									<p>상담신청</p>
+									<ul>
+										<li><a href="">신규 고객 본인인증 SMS 발송</a></li>
+										<li><a href="">기본 고객등록</a></li>
+										<li><a href="">고객별 정보조회</a></li>
+										<li><a href="">한도조회 (여신통합조회)</a></li>
+										<li><a href="">정보제공 (NICE정보)</a></li>
+										<li><a href="">부동산 등기부등본 조회</a></li>
+									</ul>
+								</div>
+								<div>
+									<p>결재 현황</p>
+									<ul>
+										<li><a href="">결재 진행 현황</a></li>
+									</ul>
+								</div>
+								<div>
+									<p>웹팩스 수신현황</p>
+									<ul>
+										<li><a href="">웹팩스 수신현황 조회</a></li>
+									</ul>
+								</div>							
+							</div>
+						</li>
+                        <li class=""><a href="">전세자금(개인)</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">신용조회</a></li>
+								<li><a href="">신청관리</a></li>
+								<li><a href="">만기관리</a></li>
+							</ul>
+						</li>
+						<li><a href="">전세자금(공공)</a>
+                            <ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">신용조회</a></li>
+								<li><a href="">신청관리</a></li>
+								<li><a href="">만기관리</a></li>
+							</ul>
+                        </li>
+                        <li><a href="">결재</a>
+                            <ul>
+								<li><a href="">결재 요청 현황</a></li>
+							</ul>
+                        </li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+        <!----------- //모바일 메뉴 끝 ----------->  
+        
+        <!---------- 메인 컨텐츠 시작 ---------->
+        <div id="common_body" class="main_wrap">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <p class="tag1">Partenership</p>
+                <p class="name"><span>홍길동</span>님, 반갑습니다.</p>
+                <div class="main_box img1">                    
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <p class="tit">매매상사 딜러</p>
+                                <p class="txt">재고금융 신청 및 현황 확인</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <p class="tit">중고차 제휴</p>
+                                <p class="txt">한도조회 신청 및 상담이력 확인</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- centents 끝 -->
+
+        </div>
+        <!---------- 메인 컨텐츠 끝 ---------->
+    </div>    
+
+    <footer id="footer">
+        <figure class="footer-logo"><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+        <address>서울특별시 중구 남대문로 125, 8층 (다동)</address>
+        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

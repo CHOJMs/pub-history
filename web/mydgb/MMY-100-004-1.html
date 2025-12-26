@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>납입내역 | iM캐피탈</title>
+
+</head>
+<body>
+    <div class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
+        <!-- Start : skip_navigation -->
+        <div id="tab_skip">
+            <a href="#common_body">
+                <span>본문 바로가기</span>
+            </a>
+        </div>
+        <!-- //End : skip_navigation -->
+
+        <!----------- Start : 모바일 메뉴 ----------->
+        <header id="header" class="sub"> <!-- main -->
+            <div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+            <div class="mobile-btn">
+                <ul>
+                    <li class="back"><a href="#none"><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+                    <li class="home"><a href="#none"><img src="/static/web/img/ico_home.png" alt="home"></a></li>
+                </ul>
+            </div>
+
+            <nav class="header-inner">
+                <div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+
+                <div class="mobile-menu">
+                    <!-- <p tabindex="0"><a href="">본인인증</a></p>-->
+                    <p tabindex="0">홍길동님 반갑습니다.</p>
+                    <ul>
+                        <li><a href="">공지사항</a></li>
+                        <li><a href="">인증센터</a></li>
+                        <li class="setting"><a href="">설정</a></li>
+                    </ul>
+                    <div class="mobile-logout"><a href="">로그아웃</a></div>
+                </div>
+
+                <div class="left left-pc">
+					<ul>
+						<li><a href="">회사소개</a>
+							<ul>
+                                <li class="dep2"><a href="">기업정보</a>
+                                   <ul>
+                                        <li><a href="">회사개요</a></li>
+                                        <li><a href="">CEO 인사말</a></li>
+                                        <li><a href="">영업점 안내</a></li>
+                                        <li><a href="">조직도</a></li>
+                                        <li><a href="">그룹경영이념</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">투자정보</a>
+                                    <ul>
+                                        <li><a href="">경영공시</a></li>
+                                        <li><a href="">결산공고</a></li>
+                                        <li><a href="">재무정보</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">윤리경영</a>
+                                    <ul>
+                                        <li><a href="">윤리경영비전</a></li>
+                                        <li><a href="">윤리경영헌장</a></li>
+                                        <li><a href="">윤리강령</a></li>
+                                        <li><a href="">윤리경영 Q&A</a></li>
+                                    </ul>
+                                    </li>
+                                <li><a href="#none" class="ico_openwindow" onclick="goPage('/career/hrSystem/hrSystem01.do', '_blank'); return false;" title="인재채용 새창이동">인재채용</a></li>
+                            </ul>
+						</li>
+						<li><a href="">고객센터</a>
+							<div class="flex-list">
+								<div>
+									<p class="mt0">상담ㆍ문의</p>
+									<ul>
+										<li><a href="">상담문의/민원접수</a></li>
+										<li><a href="">자주하는 질문 FAQ</a></li>
+									</ul>
+								</div>
+								<div>
+									<p>이용안내</p>
+									<ul>
+										<li><a href="">약관 및 규정</a></li>
+                                        <li class="dep2"><a href="">본인인증안내</a>
+											<ul>
+												<li><a href="">카카오페이</a></li>
+												<li><a href="">금융인증서</a></li>
+												<li><a href="">모바일 웹 공동인증서</a></li>
+												<li><a href="">공동인증서 내보내기<br>(PC → 모바일앱)</a></li>
+												<li><a href="">공동인증서 가져오기<br>(모바일앱 → PC)</a></li>
+											</ul>
+										</li>
+                                        <li><a href="">공지사항</a></li>
+                                        <li><a href="">고객확인의무 안내</a></li>
+                                        <li><a href="">대출인 모집 지급<br>수수료 현황</a></li>
+                                        <li><a href="">금리조회</a></li>
+										<li class="dep2"><a href="">고객정보관리</a>
+											<ul>
+												<li><a href="">고객(신용)정보 수집,<br>이용 및 제공 관련<br> 고객 권리 안내문</a></li>
+												<li><a href="">계열사간 고객정보<br>제공 내역 조회</a></li>
+                                                <li><a href="">개인정보 열람신청</a></li>
+												<li><a href="">개인(신용)정보<br>이용 및 제공내역</a></li>
+												<li><a href="">마케팅목적제공 현황</a></li>
+												<li><a href="">신용정보조회 동의</a></li>
+												<li><a href="">위탁업체 현황</a></li>
+                                                <li><a href="">개인신용평가 결과에<br>대한 설명 및 이의제기<br>신청</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</li>
+                        <li><a href="">금융소비자보호</a>
+							<ul>
+                                <li><a href="">금융소비자보호체계</a></li>
+                                <li><a href="">금융소비자보호공시</a></li>
+                                <li><a href="">금융소비자 참고판례</a></li>
+                                <li><a href="">금융소비자 유익정보</a></li>
+                                <li><a href="">금융감독원금융정보</a></li>
+                                <li><a href="">금융소비자권리</a></li>
+                                <li><a href="">적합성적정성원칙확인서</a></li>
+                            </ul>
+						</li>
+                        <li><a href="">클린센터</a></li>
+					</ul>
+				</div>
+
+				<div class="right">
+					<ul>
+						<li class=""><a href="javascript:;">개인금융</a>
+							<ul>
+								<li class="tit"><h2>개인금융</h2></li>
+								<li><a href="">상품소개</a></li>
+								<li><a href="">즉시대출</a></li>
+								<li><a href="">한도조회</a></li>
+								<li><a href="">전자약정</a></li>
+								<li class="dep2"><a href="">온라인서류제출</a>
+									<ul>
+										<li><a href="">소득 서류제출</a></li>
+										<li><a href="">신분증 제출</a></li>
+										<li><a href="">FIND 서류제출</a></li>
+									</ul>
+								</li>
+								<li><a href="">대출계산기</a></li>
+                                <li class="dep2"><a href="">인증서안내</a>
+									<ul>
+										<li><a href="">공동인증서 내보내기<br>(PC → 모바일웹)</a></li>
+										<li><a href="">공동인증서 가져오기<br>(모바일웹 → PC)</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">자동차금융</a>
+							<ul>
+								<li class="tit"><h2>자동차금융</h2></li>
+                                <li><a href="">상품소개</a></li>
+								<li><a href="">신차오토론</a></li>
+								<li><a href="">오토리스</a></li>
+								<li><a href="">중고차오토론</a></li>
+								<li><a href="">장기렌터카</a></li>
+								<li><a href="">전자약정</a></li>
+								<li class="dep2"><a href="">온라인서류제출</a>
+									<ul>
+										<li><a href="">소득 서류제출</a></li>
+										<li><a href="">FIND 서류제출</a></li>
+									</ul>
+								</li>
+                                <li><a href="">내차승계</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">스탁론</a>
+							<ul>
+								<li class="tit"><h2>스탁론</h2></li>
+                                <li><a href="">상품소개</a></li>
+								<li><a href="">대출신청</a></li>
+								<li><a href="">한도변경</a></li>
+								<li><a href="">추가대출</a></li>
+                                <li><a href="">대출상환</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">금융센터</a>
+							<ul>
+								<li class="tit"><h2>금융센터</h2></li>
+								<li><a href="">리스금융</a></li>
+								<li><a href="">할부금융</a></li>
+								<li><a href="">기업금융</a></li>
+								<li><a href="">신기술금융</a></li>
+							</ul>
+						</li>
+						<li><a href="javascript:;">마이</a>
+							<ul>
+								<li class="tit"><h2>마이</h2></li>
+								<li><a href="">신청/이용내역</a></li>
+								<li><a href="">고객정보 변경</a></li>
+								<li><a href="">서류변경</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+
+                <div class="left left-mob">
+					<ul>
+						<li>
+							<a href="">회사소개</a>
+							<ul>
+								<li class="tit"><h2>회사소개</h2></li>
+                                <li class="dep2"><a href="">기업정보</a>
+                                    <ul>
+                                        <li><a href="">회사개요</a></li>
+                                        <li><a href="">CEO 인사말</a></li>
+                                        <li><a href="">영업점 안내</a></li>
+                                        <li><a href="">조직도</a></li>
+                                        <li><a href="">그룹경영이념</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">투자정보</a>
+                                    <ul>
+                                        <li><a href="">경영공시</a></li>
+                                        <li><a href="">결산공고</a></li>
+                                        <li><a href="">재무정보</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dep2"><a href="">윤리경영</a>
+                                    <ul>
+                                        <li><a href="">윤리경영비전</a></li>
+                                        <li><a href="">윤리경영헌장</a></li>
+                                        <li><a href="">윤리강령</a></li>
+                                        <li><a href="">윤리경영 Q&A</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#none" class="ico_openwindow" onclick="goPage('/career/hrSystem/hrSystem01.do', '_blank'); return false;" title="인재채용 새창이동">인재채용</a></li>
+							</ul>
+						</li>
+						<li><a href="">고객센터</a>
+							<div class="flex-list">
+								<div>
+									<h2 class="tit">고객센터</h2>
+                                    <p>상담ㆍ문의</p>
+									<ul>
+										<li><a href="">상담문의/민원접수</a></li>
+										<li><a href="">자주하는 질문</a></li>
+									</ul>
+								</div>
+								<div>
+									<p>이용안내</p>
+									<ul>
+										<li><a href="">약관 및 규정</a></li>
+                                        <li class="dep2"><a href="">본인인증안내</a>
+											<ul>
+												<li><a href="">카카오페이</a></li>
+												<li><a href="">금융인증서</a></li>
+												<li><a href="">모바일 웹 공동인증서</a></li>
+												<li><a href="">공동인증서 내보내기<br>(PC → 모바일앱)</a></li>
+												<li><a href="">공동인증서 가져오기<br>(모바일앱 → PC)</a></li>
+											</ul>
+										</li>
+                                        <li><a href="">공지사항</a></li>
+										<li><a href="">고객확인의무 안내</a></li>
+										<li><a href="">대출인모집 지급수수료<br>현황</a></li>
+									</ul>
+								</div>
+							</div>
+						</li>
+                        <li>
+							<a href="">금융소비자보호</a>
+							<ul>
+								<li class="tit"><h2>금융소비자보호</h2></li>
+                                <li><a href="">금융소비자보호체계</a></li>
+                                <li><a href="">금융소비자보호공시</a></li>
+                                <li><a href="">금융소비자 참고판례</a></li>
+                                <li><a href="">금융소비자 유익정보</a></li>
+                                <li><a href="">금융감독원금융정보</a></li>
+                                <li><a href="">금융소비자권리</a></li>
+                                <li><a href="">적합성적정성원칙확인서</a></li>
+							</ul>
+						</li>
+                        <li><a href="">클린센터</a></li>
+					</ul>
+					<div class="mobile-btn-wrap">
+						<div class="btn-half">
+							<a href="">한도조회</a>
+							<a href="">대출계산기</a>
+						</div>
+						<div class="btn-full"><a href="">iM캐피탈 APP 경험하기<span>다운로드</span></a></div>
+						<div class="btn-full_app"><a href="">쉽고 편리한 간편인증 등록하기<span>등록하기</span></a></div><!--앱일 경우 노츨-->
+
+						<!-- <div class="btn-full btn-color"><a href="">쉽고 편리한 간편인증</a></div> -->
+					</div>
+				</div>
+            </nav>
+        </header>
+        <!----------- //End : 모바일 메뉴 ----------->
+
+        <!---------- Start : 서브 컨텐츠 ---------->
+        <div id="common_body" class="sub-contents">
+
+            <!-- Start : centents -->
+            <div class="contents per-100"><!-- pc 가로사이즈 100%인 경우 : 클래스 per-100 추가 -->
+
+                <h1>납입내역</h1>
+                <!-- Start : 컨텐츠 영역 -->
+                <div class="s-contWrap flex-col bak-blue">
+
+                    <div class="pro-box">
+                        <h2>이용상품</h2>
+                        <!-- Start : 상품선택 셀렉트박스 -->
+                        <div class="form-iem">
+                            <div class="com-inp">
+                                <a href="#" id="" class="ico-select alink none-label"><!--[D] : 비활성화인 경우 : 클래스 disabled 추가 -->
+                                    <span class="disabled" id="settDdNm" name="settDdNm">선택하세요</span><!--[D] : 데이터값이 있는 경우 : 클래스 placeholder 삭제 -->
+                                </a>
+                            </div>
+                        </div>
+                        <!-- //End : 상품선택 셀렉트박스 -->
+                        
+                        <div class="my-box">
+                            <div class="in-box type01">
+                                <div class="in-cnt none-bar">
+                                    <!-- [D] Start : nodata// -->
+                                    <div class="nodata-box">
+                                        조회된 정보가 없습니다.
+                                    </div>
+                                    <!-- //[D] End : nodata-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pro-box division-box division-white-box">
+                        <!-- Start : 안내사항 -->
+                        <div class="accordion-info-box accordion-fine">
+                            <ul>
+                                <li class="show"><!-- 2023-10-20 : 클래스 show 추가-->
+                                    <div class="q">
+                                        <a href="#" class="f-btn">
+                                            <p class="f-tit">안내사항</p>
+                                            <span class="ico-arrow">내용 닫기</span>
+                                        </a>
+                                    </div>
+                                    <div class="a" style="display: block;">
+                                        <ul class="list-dot">
+                                            <li>일자별 상세 입금유형은 마이> 서류발급에서 ‘납입내역서’ 또는 ‘납입영수증’을 발급하시기 바랍니다.</li>
+                                            <li>결제대금을 미리 선납하신 경우에는 결제일에 맞추어 수납됩니다.</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- //End : 안내사항 -->
+                    </div>
+
+                </div>
+                <!-- //End : 컨텐츠 영역 -->
+
+            </div>
+            <!-- //End : centents -->
+
+        </div>
+        <!---------- //End : 서브 컨텐츠 ---------->
+	</div>
+
+    <!---------- Start : footer ---------->
+    <footer class="footerwrap">
+        <!-- Mobile_footer -->
+        <div class="mo_footer">
+            <p class="chatbot-btn"><a href="#" target="_blank" title="카카오 새창이동">챗봇</a></p>
+            <div class="footer-inner">
+                <div class="right">
+                    <figure><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+                    <div>
+                        <p>고객센터 : <a href="tel:1566-0050"><strong>1566-0050</strong></a></p>
+                        <span>(평일 오전 9시 ~ 오후6시)</span>
+
+                            <div class="mark-list">
+                                <p class="mark">
+                                    <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=10913" target="_blank" title="웹어워드코리아 평가내역 새창이동">
+                                        <img src="/static/web/img/common/wa2_mb.png" alt="웹어워드코리아 2021 금융분야 최우수상 수상인증마크">
+                                    </a>
+                                </p>
+                                <p class="mark">
+                                    <a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="한국웹접근성인증평가원 새창이동">
+                                        <img src="/static/web/img/common/wa_mb.png?v=20211116001" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)">
+                                    </a>
+                                </p>
+                            </div>
+                    </div>
+                </div>
+                <div class="left">
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a href="#none" class="policy" onclick="goPage('/customer/termsList.do?termId=terms14');">개인정보처리방침</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do');">이용약관</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/customerInfoStep01.do');">고객정보 제공내역 조회</a></li>
+                        </ul>
+                        <ul>
+                            <li>서울특별시 중구 남대문로 125, 8층 (다동), iM금융센터</li>
+                            <li>사업자등록번호 : 220-87-87408</li>
+                        </ul>
+                        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Mobile_footer -->
+
+        <!-- PC_footer -->
+        <div class="pc_footer">
+
+            <p class="home-btn"><a href="#none" class="pc-chatbot-btn" target="_blank" title="챗봇 새창이동">챗봇</a><a href="#none" onclick="goPage('/main.do');">홈</a></p>
+            <div class="footer-inner">
+                <div class="left">
+                    <figure><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></figure>
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do?termId=terms14');" class="policy">개인정보처리방침</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/termsList.do');">이용약관</a></li>
+                            <li><a href="#none" onclick="goPage('/customer/customerInfoStep01.do');">고객정보 제공내역 조회</a></li>
+                        </ul>
+
+                        <ul>
+                            <li>서울특별시 중구 남대문로 125, 8층(iM금융센터)</li>
+                            <li>사업자등록번호 : 220-87-87408</li>
+                        </ul>
+
+                        <p class="copyright">ⓒ iM CAPITAL Corp. All Rights Reserved.</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="footer-familysite">
+                        <button>패밀리사이트</button>
+                        <ul>
+                            <li><a href="http://www.dgbfg.co.kr" title="DGB금융지주 사이트 새창열림" target="_blank">DGB금융지주</a></li>
+                            <li><a href="https://www.dgb.co.kr" title="iM뱅크 사이트 새창열림" target="_blank">iM뱅크</a></li>
+                            <li><a href="https://www.hi-ib.com" title="iM증권 사이트 새창열림" target="_blank">iM증권</a></li>
+                            <li><a href="https://www.dgbfnlife.com" title="iM라이프 사이트 새창열림" target="_blank">iM라이프</a></li>
+                            <li><a href="http://www.hi-asset.com" title="iM에셋자산운용 사이트 새창열림" target="_blank">iM에셋자산운용</a></li>
+                            <li><a href="https://www.dgbupay.com" title="iM유페이 사이트 새창열림" target="_blank">iM유페이</a></li>
+                            <li><a href="http://www.dgbds.co.kr" title="iM데이터시스템 사이트 새창열림" target="_blank">iM데이터시스템</a></li>
+                            <li><a href="http://www.dgbci.co.kr" title="iM신용정보 사이트 새창열림" target="_blank">iM신용정보</a></li>
+                            <li><a href="https://www.hi-investment.com" title="iM투자파트너스 사이트 새창열림" target="_blank">iM투자파트너스</a></li>
+                            <li><a href="https://intro.newsystock.com" title="뉴지스탁 사이트 새창열림" target="_blank">뉴지스탁</a></li>
+                            <li><a href="http://www.dgbscf.or.kr" title="DGB사회공헌재단 사이트 새창열림" target="_blank">DGB사회공헌재단</a></li>
+                        </ul>
+                    </div>
+                    <div class="mark-wrap">
+                        <a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="한국웹접근성인증평가원 새창이동">
+                            <img src="/static/web/img/common/wa_pc2.png" alt="(사)한국장애인단체총연합회 한국웹접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)">
+                        </a>
+                        <a href="http://www.i-award.or.kr/Web/Assess/FinalCandidateView.aspx?REG_SEQNO=10913" target="_blank" title="웹어워드코리아 평가내역 새창이동">
+                            <img src="/static/web/img/common/wa2_pc2.png" alt="웹어워드코리아 2021 금융분야 최우수상 수상인증마크">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //PC_footer -->
+    </footer>
+    <!---------- //End : footer ---------->
+
+    <!-- //Start : 퍼블확인용 -->
+    <script>
+        $(document).ready(function(){
+            // 프로세스 화면에서 푸터 제거
+            var isSubProcess = $("#common_body").hasClass("sub-process");
+            if (isSubProcess) {
+                // 푸터 비노출
+                // $("footer").remove();
+                $("footer").hide();
+
+                // 모바일 헤더 메뉴 버튼 "메인으로 이동" 버튼으로 변경
+                // $("#header").find("div.gnb-menu").remove();
+                $("#header").find("div.gnb-menu").hide();
+                $homeBtn = $('<div class="gnb-home"><a href="javascript:;"><img src="/static/web/img/ico_home.png" alt="home"></a></div>');
+                $homeBtn.click(function(e) {
+                    e.preventDefault();
+                    if (confirm("메인으로 이동 하시겠습니까?")) {
+                        post_to_url("/main.do", null, "GET");
+                    }
+                });
+                $("#header").find("div.gnb-menu").replaceWith($homeBtn);
+
+                // 프로세스 완료 화면에서 모바일 헤더 뒤로가기 버튼 비노출 처리
+                if ($("#common_body").find(".process-wrap.fin_cen_box, .process-wrap.fin_cen_box1, .process-wrap.fin_cen_box2").length > 0) {
+                    hideMobileHeaderBackBtn();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

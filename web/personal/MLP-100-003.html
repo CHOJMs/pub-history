@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상담 전 확인사항 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+    <script src="/static/web/js/ui_gnb.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;" aira-haspopup="dialog">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc popup-640"><!-- [D] 작은 팝업인 경우 : 클래스 popup-small 추가 -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>상담 전 확인사항</h1>
+            </div>
+            <div class="popup-contents flex-col">
+
+                <!-- Start : content -->
+                <div class="pop-cnt-wrap">
+                    <div class="sub-list-wrap qna-list">
+                        <div>
+                            <h2 class="txt-hidden">상담 전 확인사항 Q&A</h2>
+                            <ul id="tab-1" class="active">
+                                <li class="">
+                                    <a href="javascript:;" title="내용 열기"><span>Q</span>임대차 계약서 작성시 3자(임대인, 임차인, 공인중개소) 계약하셨나요?</a>
+                                    <div>
+                                        임대인과 임차인간 쌍방 계약은 대출이 불가하며 임대차계약의 연장 계약은 최초 계약한 공인중개소 확인 시 신청 가능합니다.
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" title="내용 열기"><span>Q</span>임대차 계약서에 확정일자 받으셨나요?</a>
+                                    <div>
+                                        임대차 계약서에 확정일자는 필수사항입니다.
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" title="내용 열기"><span>Q</span>임대인과 임차인간 특수관계(채권 · 채무관계, 친인척) 이신가요?</a>
+                                    <div>
+                                        임대인과 임차인이 특수관계인 경우 대출이 불가합니다.
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" title="내용 열기"><span>Q</span>대출신청 시 임대인의 동의를 받으셨나요?</a>
+                                    <div>
+                                        대출신청 시 임대인이 질권설정 승낙이 필요하며, 거부 또는 임대차계약서 상 금지조항이 있으면 대출이 불가합니다.
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" title="내용 열기"><span>Q</span>현재 타 금융에 전세자금대출을 이용중 이신가요?</a>
+                                    <div>
+                                        전세자금대출은 중복으로 신청 불가합니다.
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" title="내용 열기"><span>Q</span>대출 신청 금액이 5억원 초과인가요?</a>
+                                    <div>
+                                        대출 신청 금액이 5억원 초과인 경우는 전세권부 근저당 설정으로 진행 가능합니다.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area">
+                    <div class="btn-box">
+                        <span class="btn"><button type="button" id="">확인</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>

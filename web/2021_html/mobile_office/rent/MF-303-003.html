@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="/static/web/css/common.css">
+<link rel="stylesheet" href="/static/web/css/mobile_office/styles.css">
+
+<script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+<script src="/static/web/js/ui_common.js"></script>
+<script src="/static/web/js/lib/spin.js"></script>
+<script src="/static/web/js/ui_gnb.js"></script>
+
+<title>[공공/민간] 신청관리 수정 | iM캐피탈</title>
+
+</head>
+<body>
+	<div class="wrap">
+		<!-- skip_navigation -->
+		<div id="tab_skip">
+			<a href="#common_body">
+				<span>본문 바로가기</span>
+			</a>
+		</div>
+		<!-- skip_navigation -->
+
+		<!----------- //모바일 메뉴 시작 ----------->
+		<header id="header" class="sub rent_gnb"> <!-- main -->
+			<h1 class="logo">Mobile Office</h1>
+			<div class="gnb-menu"><a href="javascript:;"><img src="/static/web/img/ico_category.png" alt="모바일 메뉴 버튼"></a></div>
+			<div class="mobile-btn">
+				<ul>
+					<li class="alram"><a href=""><i></i><img src="/static/web/img/ico_alram.png" alt="알림"></a></li>
+					<li class="back"><a href=""><img src="/static/web/img/btn_back.png" alt="뒤로가기"></a></li>
+				</ul>
+			</div>
+
+			<nav class="header-inner">
+				<div class="mobile-logo"><a href=""><img src="/static/web/img/mobile_office/logo_pc_rent.png" alt="iM캐피탈 에이전트시스템"></a></div>
+				<div class="gnb-close"><a href="javascript:;"><img src="/static/web/img/ico_category_close.png" alt="모바일 닫기 버튼"></a></div>
+				
+				<div class="mobile-menu">
+					<p tabindex="0"><span>홍길동</span>님 반갑습니다.</p>
+					<ul>
+						<li><a href="">인증센터</a></li>
+						<li><a href="">설정</a></li>
+						<li class="home"><a href="">home</a></li>
+                        <li class="alram"><a href=""><i></i>알람</a></li>
+					</ul>
+					<div class="mobile-logout"><a href="">로그아웃</a></div>					
+				</div>
+
+				<div class="left">
+					<ul>
+						<li class=""><a href="">전세자금(개인)</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">신용조회</a></li>
+								<li><a href="">신청관리</a></li>
+								<li><a href="">만기관리</a></li>
+							</ul>
+						</li>
+						<li><a href="">전세자금(공공)</a>
+							<ul>
+								<li><a href="">공지사항</a></li>
+								<li><a href="">신용조회</a></li>
+								<li><a href="">신청관리</a></li>
+								<li><a href="">만기관리</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="right">
+					<div class="pc_user_wrap">
+						<div class="selectbox">
+							<select class="select" title="권한 선택">
+								<option>공공/민간임대</option>
+							</select>
+						</div>
+						<div class="user_box">
+							<span class="font_blue">이영희</span>님<a href="#">로그아웃</a>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!----------- //모바일 메뉴 끝 ----------->
+
+		<!---------- 서브 컨텐츠 시작 ---------->
+        <div id="common_body" class="sub_contaier">
+
+            <!-- centents 시작 -->
+			<div class="contents">
+
+                <!-- 내용 시작 -->
+				<h2 class="tl">[공공/민간] 신청관리 수정</h2>
+                <div class="box_form scoll">
+					<h3 class="txt">고객 정보</h3>
+					<div class="box_viewType">
+						<ul>
+							<li class="row">
+								<span>고객명</span>
+								<span>홍길동</span>
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="txt">작성 정보</h3>
+					<div class="box_viewType">
+						<ul>
+							<li>
+								<span>작성자성명</span>
+								<span>이길동</span>
+							</li>
+							<li>
+								<span>실사여부</span>
+								<span>N</span>
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="txt">신청인 정보</h3>
+					<div class="box_viewType">
+						<ul>
+							<li>
+								<span>대출용도</span>
+								<span>
+									<div class="text_data">
+										<div class="selectbox">
+											<select id="" name="" class="select" title="대출용도구분 선택">
+												<option value="">선택</option>
+											</select>
+										</div>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>실행예정일자</span>
+								<span>
+									<div class="text_data">
+									<span class="form">
+										<input type="tel" id="" placeholder="1981-01-25" title="실행예정일자 입력">
+										<button id="" class="calender">달력보기</button>
+									</span>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>생년월일</span>
+								<span>1988-05-20</span>
+							</li>
+							<li>
+								<span>연락처</span>
+								<span>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="‘-’ 제외하고 입력" title="연락처 입력">
+										</span>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>NICE등급</span>
+								<span>8등급</span>
+							</li>
+							<li>
+								<span>대출신청금액</span>
+								<span>
+									<div class="text_data">
+									<span class="form form_text">
+										<input type="tel" id="" placeholder="0" class="a_r" title="대출신청금액 입력">
+									</span>
+									<span class="txt">만원</span>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>대출금리</span>
+								<span>
+									<div class="text_data">
+									<span class="form form_text">
+										<input type="tel" id="" placeholder="0" class="a_r" title="대출금리 입력">
+									</span>
+									<span class="txt">%</span>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>전세보증금</span>
+								<span>
+									<div class="text_data">
+									<span class="form form_text">
+										<input type="tel" id="" placeholder="0" class="a_r" title="전세보증금 입력">
+									</span>
+									<span class="txt">만원</span>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>담보방법</span>
+								<span class="row">
+									<div class="text_data">
+										<div class="selectbox">
+											<select id="" name="" class="select" title="담보방법 선택">
+												<option value="">선택</option>
+											</select>
+										</div>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span></span>
+								<span></span>
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="txt">임대현황</h3>
+					<div class="box_viewType">
+						<ul>
+							<li>
+								<span>물건소재지</span>
+								<span>
+									<ul class="inline">
+										<li>
+											<div class="text_data">
+												<div class="selectbox">
+													<select id="" name="" class="select" title="물건소재지 선택">
+														<option value="">선택</option>
+													</select>
+												</div>
+											</div>
+											<div class="rent_filebox">					
+												<button type="button" class="btn">주소검색</button>
+											</div>											
+										</li>
+										<li>
+											<div class="text_data">
+												<span class="form">
+													<input type="text" id="" placeholder="" disabled="disabled" class="disabled" title="물건소재지 조회결과 입력">
+												</span>
+											</div>
+											<div class="text_data">
+												<span class="form">
+													<input type="text" id="" placeholder="" title="물건소재지 입력">
+												</span>
+											</div>
+										</li>
+									</ul>
+								</span>	
+							</li>
+							<li>
+								<span>시세조사</span>						
+								<span>
+									<div class="text_data">
+										<div class="selectbox">
+											<select id="" name="" class="select" title="시세조사 선택">
+												<option value="">선택</option>
+											</select>
+										</div>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>일반거래가</span>
+								<span>
+									<div class="text_data">
+									<span class="form form_text">
+										<input type="tel" id="" placeholder="0" class="a_r" title="일반거래가 입력">
+									</span>
+									<span class="txt">만원</span>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>전세시작일</span>
+								<span>
+									<div class="text_data">
+									<span class="form">
+										<input type="tel" id="" placeholder="1981-01-25" title="전세시작일 입력">
+										<button id="" class="calender">달력보기</button>
+									</span>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>선설정금액</span>
+								<span>
+									<div class="text_data">
+									<span class="form form_text">
+										<input type="tel" id="" placeholder="0" class="a_r" title="선설정금액 입력">
+									</span>
+									<span class="txt">만원</span>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>전세만기일</span>
+								<span>
+									<div class="text_data">
+									<span class="form">
+										<input type="tel" id="" placeholder="1981-01-25" title="전세만기일 입력">
+										<button id="" class="calender">달력보기</button>
+									</span>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>LTV</span>
+								<span>
+									<div class="text_data">
+									<span class="form form_text">
+										<input type="text" id="" placeholder="" title="LTV 입력">
+									</span>
+									<span class="txt">%</span>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>매매가대비<br>전세가율</span>
+								<span>
+									<div class="text_data">
+									<span class="form form_text">
+										<input type="text" id="" placeholder="" title="매매가대비전세가율 입력">
+									</span>
+									<span class="txt">%</span>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span></span>
+								<span></span>
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="txt">직장 정보</h3>
+					<div class="box_viewType">
+						<ul>
+							<li>
+								<span>직장명</span>
+								<span>
+									<div class="text_data">
+									<span class="form">
+										<input type="text" id="" placeholder="" title="직장명 입력">
+									</span>
+								</div>
+								</span>
+							</li>
+							<li>
+								<span>증빙자료</span>
+								<span>
+									<div class="text_data">
+										<div class="selectbox">
+											<select id="" name="" class="select" title="증빙자료 선택">
+												<option value="">선택</option>
+											</select>
+										</div>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>직장연락처</span>
+								<span>
+									<div class="text_data">
+										<span class="form">
+											<input type="tel" id="" placeholder="‘-’ 제외하고 입력" title="직장연락처 입력">
+										</span>
+									</div>
+								</span>
+							</li>
+							<li>
+								<span>소득금액</span>
+								<span>
+									<div class="text_data">
+										<span class="txt mr8">연</span>
+										<span class="form form_text">
+										<input type="tel" id="" placeholder="0" class="a_r" title="소득금액 입력">
+									</span>
+									<span class="txt">만원</span>
+									</div>
+								</span>
+							</li>
+							<li class="row">
+								<span class="mobile_hei4">직장주소</span>
+								<span class="row mobile_hei4">
+									<ul class="inline">
+										<li>
+											<div class="rent_filebox">					
+											<button type="button" class="btn">주소검색</button>
+											</div>
+										</li>
+										<li>
+											<div class="text_data">
+											<span class="form">
+												<input type="text" id="" placeholder="" disabled="disabled" class="disabled" title="직장주소 입력">
+											</span>
+											</div>
+										</li>
+										<li>
+											<div class="text_data">
+											<span class="form">
+												<input type="text" id="" placeholder="" title="상세주소 입력">
+											</span>
+											</div>
+										</li>
+									</ul>
+								</span>
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="txt">고객 파일</h3>
+					<div class="box_viewType">
+						<ul>
+							<li>
+								<span class="mobile_hei5">스캔파일</span>
+								<span class="mobile_hei5">
+									<ul class="inline">
+										<li>
+											<div class="text_data">
+												<span class="form">
+													<input type="text" id="" placeholder="" title="스캔파일명 입력 ">
+												</span>
+											</div>
+										</li>
+										<li>
+											<div class="rent_filebox">					
+												<input type="file" id="" name="" class="ui_photo"> 
+												<button type="button" class="btn">파일 선택</button>
+											</div>
+										</li>								    
+									</ul>
+								</span>
+							</li>
+							<li>
+								<span class="mobile_hei5">전입세대</span>
+								<span class="mobile_hei5">
+									<ul class="inline">
+										<li>
+											<div class="text_data">
+												<span class="form">
+													<input type="text" id="" placeholder="" title="전입세대 파일명 입력">
+												</span>
+											</div>
+										</li>
+										<li>
+											<div class="rent_filebox">					
+												<input type="file" id="" name="" class="ui_photo"> 
+												<button type="button" class="btn">파일 선택</button>
+											</div>
+										</li>								    
+									</ul>
+								</span>
+							</li>
+							<li>
+								<span class="mobile_hei5">보완파일</span>
+								<span class="mobile_hei5">
+									<ul class="inline">
+										<li>
+											<div class="text_data">
+												<span class="form">
+												<input type="text" id="" placeholder="" title="보완파일명 입력">
+												</span>
+											</div>
+										</li>
+										<li>
+										<div class="rent_filebox">					
+												<input type="file" id="" name="" class="ui_photo"> 
+												<button type="button" class="btn">파일 선택</button>
+											</div>
+										</li>								    
+									</ul>
+								</span>
+							</li>
+							<li>
+								<span class="mobile_hei5">추가파일</span>
+								<span class="mobile_hei5">
+									<ul class="inline">
+										<li>
+										<div class="text_data">
+											<span class="form">
+												<input type="text" id="" placeholder="" title="추가파일명 입력">
+											</span>
+											</div>
+									</li>
+									<li>
+											<div class="rent_filebox">					
+												<input type="file" id="" name="" class="ui_photo"> 
+												<button type="button" class="btn">파일 선택</button>
+										</div>
+										</li>
+									</ul>
+								</span>
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="txt">녹음 파일</h3>
+					<div class="box_viewType">
+						<ul>
+							<li>
+								<span class="mobile_hei5">중개업소</span>
+								<span class="mobile_hei5">
+									<ul class="inline">
+										<li>
+											<div class="text_data">
+												<span class="form">
+													<input type="text" id="" placeholder="" title="중개업소 파일명 입력">
+												</span>
+											</div>
+										</li>
+										<li>
+											<div class="rent_filebox">					
+												<input type="file" id="" name="" class="ui_photo"> 
+												<button type="button" class="btn">파일 선택</button>
+											</div>
+										</li>
+									</ul>
+								</span>
+							</li>
+							<li>
+								<span class="mobile_hei5">임차인</span>
+								<span class="mobile_hei5">
+									<ul class="inline">
+										<li>
+											<div class="text_data">
+												<span class="form">
+													<input type="text" id="" placeholder="" title="임차인 파일명 입력">
+												</span>
+											</div>
+										</li>
+										<li>
+											<div class="rent_filebox">					
+												<input type="file" id="" name="" class="ui_photo"> 
+												<button type="button" class="btn">파일 선택</button>
+											</div>
+										</li>								    
+									</ul>
+								</span>
+							</li>
+							<li>
+								<span class="mobile_hei5">임대인</span>
+								<span class="mobile_hei5">
+									<ul class="inline">
+										<li>
+											<div class="text_data">
+												<span class="form">
+													<input type="text" id="" placeholder="" title="임대인 파일명 입력">
+												</span>
+											</div>
+										</li>
+										<li>
+											<div class="rent_filebox">					
+												<input type="file" id="" name="" class="ui_photo"> 
+												<button type="button" class="btn">파일 선택</button>
+											</div>
+										</li>								    
+									</ul>
+								</span>
+							</li>
+							<li>
+								<span class="mobile_hei5">기타파일</span>
+								<span class="mobile_hei5">
+									<ul class="inline">
+										<li>
+											<div class="text_data">
+												<span class="form">
+													<input type="text" id="" placeholder="" title="기타파일명 입력">
+												</span>
+											</div>
+										</li>
+										<li>
+											<div class="rent_filebox">					
+												<input type="file" id="" name="" class="ui_photo"> 
+												<button type="button" class="btn">파일 선택</button>
+											</div>
+										</li>								    
+									</ul>
+								</span>
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="txt">메모</h3>
+					<span class="textarea_box">
+						<textarea id="" placeholder="" title="내용 입력" style="height:100px;"></textarea>
+					</span>
+
+					<h3 class="txt">실사사진
+						<div class="rent_filebox">					
+							<input type="file" id="" name="" class="ui_photo"> 
+							<button type="button" class="btn">파일 추가</button>
+						</div>
+					</h3>					
+					<div class="bg_photo_box">
+						<ul>
+							<li><p class="noData">등록된 파일이 없습니다.</p></li>
+							<li>20201019_1.jpg <a href="#" class="file_delete"><img src="/static/web/img/mobile_office/icon_delete.png" alt="파일삭제"></a></li>
+							<li>20201019_2.jpg <a href="#" class="file_delete"><img src="/static/web/img/mobile_office/icon_delete.png" alt="파일삭제"></a></li>
+						</ul>
+					</div>
+
+				</div>
+                <!-- 내용 끝 -->
+				<!-- 버튼 시작 -->
+				<div class="btn_bbs_box btn_fixed_box">				
+					<div class="a_l"><a href="#" class="btn gray">취소</a></div>
+					<div class="a_r"><a href="#" class="btn">저장</a></div>					
+				</div>
+				<!-- 버튼 끝 -->
+
+            </div>
+			<!-- centents 끝 -->
+
+        </div>
+		<!---------- 서브 컨텐츠 끝 ---------->
+	</div>
+	<footer class="footerwrap">
+        <!-- PC_footer -->
+		<div class="pc_footer">
+			<div class="pc_f_logo"><img src="/static/web/img/imlogo/ci_darkcolor_black.png" alt="iM캐피탈"></div>
+			<div class="pc_f_address">
+				<ul>
+					<li><a href="#">개인정보처리방침</a></li>
+					<li><a href="#">약관 및 금융관련 법규</a></li>
+					<li><a href="#">계열사간 고객정보 제공내역조회</a></li>
+				</ul>
+				<ul class="address">
+					<li>서울특별시 중구 남대문로 125, 8층 (다동)</li>
+					<li>ⓒ iM CAPITAL Corp. All Rights Reserved.</li>
+				</ul>
+				<p class="mark">
+					<img src="/static/web/img/m_wa.png" alt="WA 미래창조과학부 WEB ACCESSIBILITY">
+				</p>
+				<!--<div class="sbHolder familySite2">
+					<a href="javascript:;" class="sbToggle btnFamily2" title="사이트 보기/닫기">DGB 패밀리 사이트</a>
+				</div>-->
+			</div>
+		</div>
+		<!-- //PC_footer -->
+    </footer>
+</body>
+</html>

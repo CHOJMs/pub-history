@@ -1,0 +1,331 @@
+@charset "utf-8";
+
+/* noto-sans-kr-Light */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../font/NotoSansKR-Light.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../font/NotoSansKR-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../font/NotoSansKR-Light.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../font/NotoSansKR-Light.woff') format('woff'), /* Modern Browsers */
+       url('../font/NotoSansKR-Light.ttf') format('truetype') /* Safari, Android, iOS */
+}
+
+/* noto-sans-kr-regular */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../font/NotoSansKR-Regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../font/NotoSansKR-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../font/NotoSansKR-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../font/NotoSansKR-Regular.woff') format('woff'), /* Modern Browsers */
+       url('../font/NotoSansKR-Regular.ttf') format('truetype') /* Safari, Android, iOS */
+}
+
+/* noto-sans-kr-500 */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../font/NotoSansKR-Medium.eot'); /* IE9 Compat Modes */
+  src: local(''),
+  url('../font/NotoSansKR-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/NotoSansKR-Medium.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../font/NotoSansKR-Medium.woff') format('woff'), /* Modern Browsers */
+  url('../font/NotoSansKR-Medium.ttf') format('truetype') /* Safari, Android, iOS */
+}
+
+/* noto-sans-kr-700 */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../font/NotoSansKR-Bold.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../font/NotoSansKR-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../font/NotoSansKR-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../font/NotoSansKR-Bold.woff') format('woff'), /* Modern Browsers */
+       url('../font/NotoSansKR-Bold.ttf') format('truetype') /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Koho';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../font/koho-regular.eot?#iefix) format('embedded-opentype'),
+       url(../font/koho-regular.woff) format('woff'),
+       url(../font/koho-regular.woff2) format('woff'),
+       url(../font/koho-regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Koho';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../font/koho-500.eot?#iefix) format('embedded-opentype'),
+       url(../font/koho-500.woff) format('woff'),
+       url(../font/koho-500.woff2) format('woff'),
+       url(../font/koho-500.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Koho';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../font/koho-700.eot?#iefix) format('embedded-opentype'),
+       url(../font/koho-700.woff) format('woff'),
+       url(../font/koho-700.woff2) format('woff'),
+       url(../font/koho-700.ttf) format('truetype');
+}
+
+/* 공통 */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:after,
+:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "KOHO", "Noto Sans KR", "SemiBold", "나눔 고딕", Dotum,
+    "droid sans fallback", "AppleSDGothicNeo", sans-serif;
+  font-size: 10px;
+  letter-spacing: -0.05em;
+  color: rgb(34, 36, 38);
+  min-width: 320px;
+  background: transparent;
+  line-height: 1.5;
+} /* 20180710 : color:#666; -> #333으로 변경 */
+
+body {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-family: "KOHO", "Noto Sans KR", "SemiBold", "droid sans fallback",
+    "AppleSDGothicNeo", sans-serif, "돋움", Dotum;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  word-break: keep-all;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+select {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: none;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* 링크 */
+a:link {
+  color: rgb(112, 116, 120);
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(112, 116, 120);
+  text-decoration: none;
+}
+a:active {
+  color: rgb(112, 116, 120);
+  text-decoration: none;
+}
+a:focus {
+  color: rgb(112, 116, 120);
+  text-decoration: none;
+}
+a:hover {
+  color: #008dd6;
+  text-decoration: none;
+}
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* hidden */
+.hidden {
+  visibility: hidden;
+  position: absolute;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+/* caption */
+caption {
+  position: relative;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  line-height: 0;
+  text-indent: -5000px;
+}
+
+/* 테이블 */
+table,
+th,
+td {
+  border: none;
+  border-spacing: 0;
+  border-collapse: collapse;
+  word-break: keep-all;
+}
+td img {
+  vertical-align: middle;
+}
+
+/* margin */
+.mr10 {
+  margin-right: 10px;
+}
+
+/*header*/
+header {
+  position: fixed;
+}
+/*header .mobile_menu_btn {
+  position: absolute;
+  top: 17px;
+  right: 20px;
+  display: block;
+  width: 22px;
+  height: 17px;
+  background: url("../images/btn_mobile_menu_open.gif") no-repeat;
+  background-size: 22px 17px;
+}*/
+.mobile_menu_on .mobile_menu_btn {
+  display: none; /*width:23px; height:21px; background-size:22px 21px !important; background:url('../images/btn_mobile_menu_close.gif') no-repeat;*/
+}
+
+textarea:-ms-input-placeholder {
+  color: #666;
+} /*Internet Explorer 10 이상에 적용*/
+textarea::-webkit-input-placeholder {
+  color: #666;
+} /* Webkit, Blink, Edge에 적용*/
+textarea::-moz-placeholder {
+  color: #666;
+} /* Mozilla Firefox 4 부터 18에 적용*/
+textarea::-moz-placeholder {
+  color: #666;
+} /* Mozilla Firefox 19 이상에 적용*/
+
+input:-ms-input-placeholder {
+  color: #666;
+} /*Internet Explorer 10 이상에 적용*/
+input::-webkit-input-placeholder {
+  color: #666;
+} /* Webkit, Blink, Edge에 적용*/
+input::-moz-placeholder {
+  color: #666;
+} /* Mozilla Firefox 4 부터 18에 적용*/
+input::-moz-placeholder {
+  color: #666;
+} /* Mozilla Firefox 19 이상에 적용*/
+
+/* Hide HTML5 number type Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/*2016-09-30 접근성 관련 수정*/
+input[type="radio"]:focus + label {
+  outline: 1px dotted #333;
+}
+input[type="checkbox"]:focus + label {
+  outline: 1px dotted #333;
+}
+
+input[type="radio"] + label {outline: 1px dotted transparent;}
+input[type="checkbox"] + label {outline: 1px dotted transparent;}
+
+.focus {
+  border-color: #77a9fc;
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7),
+    0 0 3px rgba(0, 144, 255, 0.9);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.7), 0 0 3px rgba(0, 144, 255, 0.9);
+}
+
+button {
+  border-radius: 4px; border: none;
+}
+
+em { font-style: normal;}
+
+/* =====================================================================================================================
+	2019년 css 추가
+======================================================================================================================== */
+
+/* loading_bar */
+#tk_overtopDiv img {
+  width: 20% !important;
+}
+
+/*html, body {
+  padding:
+    env(safe-area-inset-top)
+    env(safe-area-inset-right)
+    env(safe-area-inset-bottom)
+    env(safe-area-inset-left)
+}*/
+
+/* #flicking {
+  padding: calc(constant(safe-area-inset-top) + 5px) 0 calc(constant(safe-area-inset-bottom));
+  padding: calc(env(safe-area-inset-top) + 5px) 0 calc(constant(safe-area-inset-bottom));
+} */

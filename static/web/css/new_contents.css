@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+@media screen and (max-width: 1280px){
+}
+
+@media screen and (max-width: 1024px){
+	.sub_process.more .scroll-arrow {display: none;}
+	/* 다음 버튼 */
+	.sub_process .process_wrap + .btn_fixed {display: block; margin: 0; position: fixed; bottom: 0;}
+	.btn_box .btn_step.bnt_next {position: fixed; bottom: 0;}
+	.btn_box .btn_step.bnt_next button {width: 100%; border-radius: 0; height: 5.6rem;}
+	.btn_box .btn_step.bnt_next.black button {color: rgb(255, 243, 165); background: rgb(34, 36, 38); box-shadow: none;}
+	.btn_box .btn_step.bnt_next.gray button {color: rgb(145, 145, 145); background: rgb(235, 236, 238); box-shadow: none;}
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 414px) {
+}
+
+@media screen and (max-width: 1280px) and (min-width: 1024px) {
+
+}
+
+@media only screen and (max-width:320px) {
+}
+

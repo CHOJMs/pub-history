@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>휴대폰 본인인증 | iM캐피탈 관리자</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/admin/css/admin.css">
+    <script src="/static/admin/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/admin/js/admin_popup.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-half"><!-- [D]작은 팝업인 경우 : popup-half(가로 560px) / 큰인 팝업인 경우 : popup-full(가로 1020px) -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>휴대폰 본인인증</h1>
+            </div>
+            <div class="popup-contents"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+
+                <!-- Start : content //-->
+                <div class="popup-cnt">
+
+                    <!-- Start : 전체동의 -->
+                    <div class="agree-box">
+                        <div class="agree-total-box">
+                            <div class="checkbox">
+                                <input type="checkbox">
+                                <label>전체 유의사항 및 약관 동의</label>
+                                <a href="#" class="arrow">동의서 보기</a>
+                            </div>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="chk_1">
+                            <label>개인정보 수집 및 이용제공 동의 </label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="chk_1">
+                            <label>고유식별정보 처리 동의</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="chk_1">
+                            <label>서비스 이용 약관 동의</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" class="chk_1">
+                            <label>통신사 이용 약관 동의</label>
+                        </div>
+                    </div>
+                    <!-- //End : 전체동의 -->
+
+                    <!-- Start : 인증번호 -->
+                    <div class="time-box">
+                        <div class="com-inp">
+                            <p>인증번호 6자리</p>
+                            <input type="text" value="123456">
+                        </div>
+                        <div class="btn-cont">
+                            <span class="time">02:59</span>
+                            <button type="button" id="">인증 요청</button>
+                        </div>
+                    </div>
+                    <!-- //End : 인증번호 -->
+
+                </div>
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="btn-area">
+                    <a href="#" class="gray">취소</a><a href="#">확인</a><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/admin/img/new_common/ico_close.png"></a></div>
+    </div>
+
+</div>
+</body>
+</html>

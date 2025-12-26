@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>저당설정정보 확인 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>저당설정정보 확인</h1>
+            </div>
+            <div class="popup-contents flex-col"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt">
+
+                    <!-- Start : 저당설정정보 -->
+                    <div class="grp-cont">
+                        <h2 class="head-txt">저당설정정보</h2>
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">저당설정금액</span>
+                                    <span class="p-txt">40,160,000원</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">저당설정순위</span>
+                                    <span class="p-txt">1순위</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //End : 저당설정정보 -->
+
+                    <!-- Start : 대출 동의 -->
+                    <div class="grp-cont">
+                        <p class="head-txt">공동인증서를 통한 저당설정 신청과 아래 내용에 동의하셔야 대출이 진행됩니다.</p>
+                        <ul class="list-dot">
+                            <li>고객님의 소유의 차량에 저당설정금액을 채권가액으로하여 저당권자 iM캐피탈의 1순위 저당권 설정등록에 동의합니다.</li>
+                            <li>저당설정 진행을 위해 고객님의 개인정보(성명/생년월일/성별/차량번호)를 저당설정대행사인 (주)다코스에 제공하는 것에 동의합니다. * 제공된 개인정보는 이용목적 달성 후 즉시 파기됩</li>
+                            <li>대출기간중 당사외 저당설정이 있는 경우 약정해지 및 대출금 일시 청구가 진행됩니다.</li>
+                            <li>저당설정비용은 당사가 부담합니다. 단, 해지비용은 고객님 부담입니다.</li>
+                            <li>공동명의로 등록하는 경우 ‘인감증명서’를 등기발송 하셔야 합니다.</li>
+                        </ul>
+                    </div>
+                    <!-- //End : 대출 동의 -->
+
+                </div>
+
+                <!-- //End : content -->
+
+                <!-- Start : 버튼 -->
+                <div class="fixed-btn-area btn-bg-none">
+                    <div class="btn-box">
+                        <span class="btn gray"><button type="button" id="">동의합니다</button></span><!-- [D] 버튼 비활성화인 경우 : 클래스 gray 추가 -->
+                    </div>
+                </div>
+                <!-- //End : 버튼 -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+<div id="spin"></div>
+
+<script type="module" src="/static/web/js/lib/spin.min.js"></script>
+<script type="module" src="/static/web/js/lib/spin.js"></script>
+
+</body>
+</html>

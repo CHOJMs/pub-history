@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko" style="font-size: 10px;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과태료/범칙금 상세내역 | iM캐피탈</title>
+
+    <link rel="stylesheet" href="/static/web/css/styles.css">
+    <link rel="stylesheet" href="/static/web/js/lib/spin.css">
+
+    <script src="/static/web/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="/static/web/js/ui_common.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+    function addrPopupAll() {
+        uiCommon.openPopup("addrPopup");
+    }
+</script>
+
+<a href="javascript:;" class="popup-btn" onclick="addrPopupAll();return false;">팝업 버튼</a>
+
+<div class="dim dim-02"></div>
+
+<div class="popup-layer" id="addrPopup">
+    <div class="popup popup-01 popup-calc"><!-- [D]작은 팝업인 경우 : popup-half / alert인 경우 : popup-small / 셀렉트박스 팝업 : popup-select -->
+        <div class="inner">
+            <div class="popup-text">
+                <h1>과태료/범칙금 상세내역</h1>
+            </div>
+            <div class="popup-contents flex-col division-col pb0"><!-- 부모창 스크롤 없는 경우 클래스 추가 : no-scroll -->
+                <!-- Start : content //-->
+
+                <div class="popup-cnt ">
+
+                    <div class="col-cnt">
+                        <!-- Start : 상품 신청내역 -->
+                        <div class="box-gray">
+                            <ul class="list-2">
+                                <li>
+                                    <span class="p-tit">위반일자</span>
+                                    <span class="p-txt">2023-03-07 10:58</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">위반유형</span>
+                                    <span class="p-txt">속도위반</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">위반장소</span>
+                                    <span class="p-txt">창원시 의창구 북면동 전리산 30-3 동전사거리</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">발행청</span>
+                                    <span class="p-txt">경찰청</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">고지서종류</span>
+                                    <span class="p-txt">사전통지서</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">발행처</span>
+                                    <span class="p-txt">대구달서경찰서</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">가상계좌번호</span>
+                                    <span class="p-txt">국민 002-492-6015605</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">납부기한</span>
+                                    <span class="p-txt">2023-04-17까지</span>
+                                </li>
+                                <li>
+                                    <span class="p-tit">등록일</span>
+                                    <span class="p-txt">2023-03-21</span>
+                                </li>
+                            </ul>
+                            <p class="dott-line"></p>
+                            <div class="fine-total-box">
+                                <span class="p-tit">금액</span>
+                                <span class="p-txt">32,000원</span>
+                            </div>
+                        </div>
+                        <!-- //End : 상품 신청내역 -->
+                    </div>
+
+                    <div class="col-cnt division-box">
+                        <!-- Start : 버튼 -->
+                        <div class="btn-box">
+                            <span class="btn line"><button type="button" id="">고지서 이미지 확인하기</button></span>
+                        </div>
+                        <!-- //End : 버튼 -->
+                    </div>
+
+                </div>
+
+                <!-- //End : content -->
+            </div>
+        </div>
+        <div class="popup-close"><a href="javascript:;"><img src="/static/web/img/ico_close.png" alt="닫기"></a></div>
+    </div>
+
+</div>
+
+</body>
+</html>
