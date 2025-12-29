@@ -19,10 +19,16 @@
 <script>
 $(document).ready(function(){
     $('footer').load('/web/renewal/footer_inc.html');
+    $('.btn-copy').click('on', function(){
+        $('.fixed-guide-area').show();
+    });
 }); 
 </script>
 </head>
 <body>
+    <div class="fixed-guide-area toast" style="display:none">
+        <div class="toast-msg"><p>클립보드에 복사되었어요</p></div><!-- [D] 에러인 경우 : 클래스 ico-error 추가 -->
+    </div>
     <div class="m-bottom-pad">
         <div class="wrap s-wrap"><!-- 프로세스외 서브화면에서 푸터가 보여지는 경우 클래스 : s-wrap 추가-->
             <!-- Start : skip_navigation -->
@@ -1120,7 +1126,7 @@ $(document).ready(function(){
                                                 </li>
                                                 <li>
                                                     <span class="p-tit">가상계좌</span>
-                                                    <span class="p-txt">대구은행 123-456-7895</span>
+                                                    <span class="p-txt">대구은행 123-456-7895<button class="btn-copy">계좌복사</button></span>
                                                 </li>
                                             </ul>
                                             <ul class="list-2 bar">
@@ -1157,7 +1163,7 @@ $(document).ready(function(){
                                                 </li>
                                                 <li>
                                                     <span class="p-tit">가상계좌</span>
-                                                    <span class="p-txt">대구은행 123-456-7895</span>
+                                                    <span class="p-txt">대구은행 123-456-7895<button class="btn-copy">계좌복사</button></span>
                                                 </li>
                                             </ul>
                                             <div class="btn">
@@ -1179,7 +1185,7 @@ $(document).ready(function(){
                                                 </li>
                                                 <li>
                                                     <span class="p-tit">가상계좌</span>
-                                                    <span class="p-txt">대구은행 123-456-7895</span>
+                                                    <span class="p-txt">대구은행 123-456-7895<button class="btn-copy">계좌복사</button></span>
                                                 </li>
                                             </ul>
                                             <ul class="list-2 bar">

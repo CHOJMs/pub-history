@@ -824,12 +824,12 @@ header .btn-log-m{display:inline-block;padding:0 10px;border:1px solid #dfe3e8;b
 .m-digi-all-wrap .recent-list .btn-remove{position:absolute;top:0;right:0;width:32px;height:32px;background:url('../img/ico_close.png') center no-repeat;background-size:16px auto;text-indent:-9999px}
 .m-digi-all-wrap .none-tx{text-align:center;font-size:14px;color:#5c6773}
 .m-digi-all-wrap .common-line{margin:32px 0}
-.m-digi-all-wrap .all-menu-list h2{display:block;margin:24px 0 20px;padding:0;font-size:16px;font-weight:700}
+.m-digi-all-wrap .all-menu-list h2{display:block;margin:24px 0 12px;padding:0;font-size:14px;font-weight:500;color:#5c6773;line-height:22px}
 .m-digi-all-wrap .all-menu-list h2:first-child{margin-top:0}
 .m-digi-all-wrap .all-menu-list ul{display:flex;gap:8px;padding-bottom:16px;border-bottom:1px solid #ebeef2}
 .m-digi-all-wrap .all-menu-list ul:last-child{border-bottom:0}
 .m-digi-all-wrap .all-menu-list ul li{width:50%;}
-.m-digi-all-wrap .all-menu-list ul li a{display:block;font-size:16px;font-weight:400;color:#222426}
+.m-digi-all-wrap .all-menu-list ul li a{display:block;font-size:16px;font-weight:600;color:#222426;line-height:32px}
 
 /****** Start : 태블릿 전용 디자인 20250917 추가 ******/
 @media (min-width: 1023px) and (max-width: 1279px) {
