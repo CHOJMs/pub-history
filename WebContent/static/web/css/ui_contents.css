@@ -3582,7 +3582,7 @@ a.btn-car-select .ico{display:block;margin-left:4px;width:24px;height:24px;backg
 .mycar-menu-layer .menu.remove:after{background-image:url('../img/digital_branch/ico_remove.png');}
 
 /* 내차사기 */
-.car-config{background-color:#f4f5f7}
+.car-config{background-color:#f4f5f7;box-shadow:0 300px 0px 0 #f4f5f7;}
 .sub-contents .contents.car-config{width:100%;padding:88px 0 0;}
 .car-configurator{padding-top:24px;max-width:1200px;margin:0 auto}
 .config-steps{position:relative;z-index:1;display:flex;gap:24px;justify-content:space-between}
