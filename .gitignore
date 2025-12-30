@@ -5,6 +5,7 @@ build/
 src/
 tags/
 trunk/
+.svn/
 
 # ❌ 서버 파일
 *.jsp
