@@ -50,6 +50,10 @@ em span{opacity: 0; width: 10px; height: 10px; position: absolute; top: 5px; lef
 .text_data .form .txt {align-items: center; padding:0; display: flex; font-size: 1.8rem; position: absolute; right: 10px; top:4px; height: 3.2rem;}
 .text_data .form.app_text input {padding-right: 35px; text-align: right;}
 .text_data .form.app_text input::placeholder {padding-right: 1px;}
+.text_data .type{border:1px solid #bcc3ce;border-radius:4px;}
+.text_data .type input{width:15px;padding:0;margin-left:10px;border:0}
+.text_data .type span{display:inline-block;margin-left:-4px;height:40px;line-height:40px}
+
 
 /* 셀렉박스 */
 .selectbox {position: relative; flex: 1; margin-left: 2.4rem;}
