@@ -775,14 +775,14 @@ header .mo-menu-sub .tag2{display: -webkit-box;margin: 4px 0 0 0;padding: 0 8px;
 .float-area .float-tx4{display:none;position:absolute;top:0;left:0;right:0;text-align:center;font-size:18px;font-weight:700;color:#222426;line-height:60px}
 .main-content.easy .float-area .float-tx4{display:block;}
 
-/* PC 서비스데스크 플로팅 */
+/* PC 서비스메이트 플로팅 */
 .service-desk-float{position:fixed;bottom:40px;right:40px;z-index:100}
 .service-desk-float .btn-service-desk{width:97px;height:90px;background:url('../img/servicedesk/img_service_desk_float.png');background-size:97px auto;text-indent:-9999px;}
 .service-desk-float .btn-service-desk-close{position:absolute;top:-5px;right:-5px;width:26px;height:26px;background:url('../img/ui_common/ico_close.svg') center no-repeat;background-size:16px auto;text-indent:-9999px;}
 .service-desk-float .ser-desk-pop{display:none;position:absolute;bottom:0;right:121px;}
 .service-desk-float .ser-desk-pop > .inner{overflow:hidden;width:375px;border-radius:16px;box-shadow: -4px 8px 16px 0 rgba(0, 0, 0, 0.16);}
 .ser-desk-pop .ser-top{position:relative;display:flex;align-items:center;justify-content:space-between;height:48px;padding:0 50px 0 20px;background:#222426}
-.ser-desk-pop .ser-top .tit{width:84px;height:13px;background:url('../img/common/bg_service_desk_tit.png') no-repeat;background-size:84px auto;text-indent:-9999px;}
+.ser-desk-pop .ser-top .tit{width:88px;height:12px;background:url('../img/common/bg_service_desk_tit.png') no-repeat;background-size:88px auto;text-indent:-9999px;}
 .ser-desk-pop .ser-top .date{font-size:13px;font-weight:600;color:#fff}
 .ser-desk-pop .ser-top .date span{display:inline-block;margin-left:4px;color:#bfbfbf;font-weight:500}
 .ser-desk-pop .ser-top .btn-close{position:absolute;top:50%;right:20px;transform:translateY(-50%);width:24px;height:24px;background:url('../img/common/ico_close03.png') no-repeat;background-size:24px auto;text-indent:-9999px;}
@@ -790,9 +790,9 @@ header .mo-menu-sub .tag2{display: -webkit-box;margin: 4px 0 0 0;padding: 0 8px;
 .ser-desk-pop .ser-cont{-ms-overflow-style: none;}
 .ser-desk-pop .ser-cont::-webkit-scrollbar{display:none;}
 
-/* mobile 서비스데스크 플로팅 */
+/* mobile 서비스메이트 플로팅 */
 .m-service-desk-float{display:none;position:fixed;bottom:80px;right:20px;z-index:9990}
-.m-service-desk-float .m-btn-service-desk{display:block;width:77px;height:72px;background:url('../img/servicedesk/img_m_service_desk_float.png') no-repeat;background-size:77px auto;text-indent:-9999px;}
+.m-service-desk-float .m-btn-service-desk{display:block;width:80px;height:84px;background:url('../img/servicedesk/img_m_service_desk_float.png') no-repeat;background-size:80px auto;text-indent:-9999px;}
 .m-service-desk-float .btn-close-float{position:absolute;top:-11px;right:-11px;width:30px;height:30px;background:url('../img/ui_common/ico_close.svg') center no-repeat;background-size:16px auto;text-indent:-9999px}
 
 /* 모바일 전용 페이지인 경우 pc 사이즈에서 dim 처리용 - 퍼블 가이드를 위한 css */
@@ -1317,10 +1317,10 @@ header .btn-log-m{display:inline-block;padding:0 10px;border:1px solid #dfe3e8;b
         100%{transform:rotate(0)}
     }
 
-    /* PC 서비스데스크 플로팅 */
+    /* PC 서비스메이트 플로팅 */
     .service-desk-float{display:none}
 
-    /* mobile 서비스데스크 플로팅 */
+    /* mobile 서비스메이트 플로팅 */
     .m-service-desk-float{display:block}
 }
 

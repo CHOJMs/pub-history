@@ -3029,7 +3029,7 @@ ul.com-list-box01 .btn-box .btn button{height:40px;font-size:14px;border-radius:
 .bridge-page .tx{margin-top:32px;font-size:22px;line-height:32px;color:#5c6773;font-weight:600}
 
 /* ----------------------------------------------------------
-    서비스데스크 :  2025-09 신규추가
+    서비스메이트 :  2025-09 신규추가
 ---------------------------------------------------------- */
 /* .fixed-ai .service-desk-main{overflow-y:auto;height:calc(100vh - 48px)} */
 .service-desk-main .sd-top-banner{position:relative;margin-bottom:24px;height:160px;padding:32px 20px 0;background:url('../img/servicedesk/top_info_bg.png') center / cover no-repeat}
@@ -3081,7 +3081,7 @@ ul.com-list-box01 .btn-box .btn button{height:40px;font-size:14px;border-radius:
   inherits: false;
 }
 
-/* 서비스 데스크 :: 신청중인 서비스 - 로그인 후 보여지는 영역 */
+/* 서비스 메이트 :: 신청중인 서비스 - 로그인 후 보여지는 영역 */
 .myinfo-area{padding:32px 20px 0}
 .myinfo-area .myinfo-tit{display:flex;justify-content:space-between;}
 .myinfo-area .myinfo-tit .tit{font-size:16px;font-weight:600;color:#222426}
@@ -3123,7 +3123,7 @@ ul.com-list-box01 .btn-box .btn button{height:40px;font-size:14px;border-radius:
 .service-slide-wrap .slick-prev{left:-4px;transform:translateY(-50%) scaleX(-1);}
 .service-slide-wrap .slick-next{right:-4px}
 
-/* 서비스 데스크 :: 바로가기 메뉴 */
+/* 서비스 메이트 :: 바로가기 메뉴 */
 .service-desk-main .quick-menu-area{padding:32px 0}
 .quick-menu-area ul{display:flex;flex-wrap:wrap;width:320px;margin:-8px auto 0}
 .quick-menu-area ul > li{display:flex;justify-content:center;margin-top:8px;padding:0 12px}
@@ -3138,7 +3138,7 @@ ul.com-list-box01 .btn-box .btn button{height:40px;font-size:14px;border-radius:
 .quick-menu-area ul > li.m7 > a:before{background-image:url('../img/servicedesk/menu_ico_07.png');}
 .quick-menu-area ul > li.m8 > a:before{background-image:url('../img/servicedesk/menu_ico_08.png');}
 
-/* 서비스 데스크 :: 찾아가는 서비스 */
+/* 서비스 메이트 :: 찾아가는 서비스 */
 .service-personal-area{padding:32px 20px;background-color:#f4f5f7}
 .personal-box{position:relative;border-radius:12px;background-color:#fff}
 .personal-box:before{position:absolute;top:-16px;left:30px;width:2px;height:16px;background-color:#dfdfdf;content:''}
@@ -3175,18 +3175,18 @@ ul.com-list-box01 .btn-box .btn button{height:40px;font-size:14px;border-radius:
 .personal-box.step03 .personal-list > a{padding-right:82px;}
 .tag-type01{display:inline-block;padding:0 4px;min-width:fit-content;border-radius:4px;background-color:#e5f0fd;font-size:10px;font-weight:500;color:#1571eb;line-height:20px;}
 
-/* 서비스 데스크 :: 다시 선택하기 버튼 */
+/* 서비스 메이트 :: 다시 선택하기 버튼 */
 .service-personal-area .btn-reset{display:flex;align-items:center;justify-content:center;margin:16px auto 0;padding:0 12px;height:36px;color:#5c6773;font-size:13px;font-weight:500;background-color:#fff;border:1px solid #dfe3e8;border-radius:50px;}
 .service-personal-area .btn-reset:after{display:inline-block;width:16px;height:16px;background:url('../img/servicedesk/ico_reset.svg') no-repeat;background-size:16px auto;content:''}
 
-/* 서비스 데스크 :: 하단 바로가기 */
+/* 서비스 메이트 :: 하단 바로가기 */
 .sd-bottom-area{padding:32px 20px}
 .sd-bottom-area .btm-link-box{display:flex;gap:10px}
 .sd-bottom-area .btm-link-box > a{display:block;width:calc(100% / 2);height:96px;padding:20px;font-size:15px;font-weight:500;color:#222426;background-repeat:no-repeat;background-position:bottom 20px right 20px;background-size:24px auto;border-radius:12px;}
 .btm-link-box > .btn-chat{background-color:#fff8db;background-image:url('../img/servicedesk/ico_kakao.png');}
 .btm-link-box > .btn-inquiry{background-color:#e7fded;background-image:url('../img/servicedesk/ico_balloon.png');}
 
-/* 서비스데스크 :: 내역 */
+/* 서비스메이트 :: 내역 */
 /* bg 100%인 경우 */
 .contents.bak-gray{width:100%;padding:88px 0 0 0;}
 .contents.bak-gray h1{padding-top:80px}
@@ -3236,7 +3236,7 @@ ul.com-list-box01 .btn-box .btn button{height:40px;font-size:14px;border-radius:
 .no-databox02{position: relative;text-align:center;margin-top:142px;padding-bottom:142px;}
 .no-databox02:before{display:block;width:68px;height:96px;margin:0 auto;background: url('../img/ui_common/img_char_nodata.png') no-repeat; background-size:68px auto; transition:.3s;content:''}
 
-/* 서비스 데스크 :: 직접문의 */
+/* 서비스 메이트 :: 직접문의 */
 .box-gray03 + .box-gray04{margin-top:8px}
 .box-gray03{display:flex;padding:16px 24px;background-color:#f5f5f5;border-radius:16px;}
 .box-gray03 .p-tit{display:flex;align-items:center;padding-right:16px;min-width:112px;font-size:16px;color:#222426;font-weight:600}
@@ -3257,7 +3257,7 @@ ul.com-list-box01 .btn-box .btn button{height:40px;font-size:14px;border-radius:
 .box-gray04 .list-2 li span.p-tit,
 .box-gray04 .list-2 li span.p-txt{line-height:initial}
 
-/* 서비스 데스크 :: 신청완료 */
+/* 서비스 메이트 :: 신청완료 */
 .btn-line02{display:flex;justify-content:center;margin-top:24px;}
 .btn-line02 a{display:flex;align-items:center;max-width:fit-content;padding:0 16px;color:#00a88b;border:1px solid #00a88b;border-radius:50px;font-weight:500;font-size:14px;line-height:34px;}
 .btn-line02 .arrow{display:inline-block;width:16px;height:16px;background:url('../img/ui_common/ico_arrow12.png') no-repeat;background-size:16px auto;}
@@ -3360,7 +3360,7 @@ ul.com-list-box01 .btn-box .btn button{height:40px;font-size:14px;border-radius:
 .ai-toast-area{display:flex;justify-content:center;position:absolute;bottom:120px;left:50%;z-index:9992;transform:translateX(-50%);width:100%;}
 .ai-toast-area.type{bottom:116px}
 
-/* 서비스데스크, AI검색 :: pc 플로팅 팝업에서 노출되는 경우 가이드 변경(폰트 크기 등) */
+/* 서비스메이트, AI검색 :: pc 플로팅 팝업에서 노출되는 경우 가이드 변경(폰트 크기 등) */
 .large-text .service-desk-main .sd-top-banner .btn-link{font-size:16px}
 .large-text .myinfo-area .myinfo-tit .btn-list-all{font-size:13px}
 .large-text .service-cont .tit{font-size:16px}
@@ -4741,7 +4741,7 @@ a.btn-car-select .ico{display:block;margin-left:4px;width:24px;height:24px;backg
     .toss-web-txt-mob{display: block;}
     .toss-web-txt-pc{display: none;}
 
-    /* 서비스데스크 */
+    /* 서비스메이트 */
     .contents.bak-gray .s-contWrap{padding-bottom:76px}
 
     /* 내 차 사기 */
@@ -5730,7 +5730,7 @@ a.btn-car-select .ico{display:block;margin-left:4px;width:24px;height:24px;backg
     .tab-info-cont .tx.type.pc-txt{display: none;}
     .tab-info-cont .tx.type.mob-txt{display: block;}
 
-    /* 서비스 데스크 */
+    /* 서비스 메이트 */
     .box-gray03 .p-tit,.box-gray03 .p-txt{font-size:14px;}
     .list-top-info .tx{font-size:13px}
     .tab-box6{overflow-x:auto;margin-bottom:16px;white-space:nowrap;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;}
@@ -5743,7 +5743,7 @@ a.btn-car-select .ico{display:block;margin-left:4px;width:24px;height:24px;backg
     .btn-service-area{margin-top:16px}
     .btn_more02 a{font-size:14px}
     
-    /* 서비스데스크 :: 내역 */
+    /* 서비스메이트 :: 내역 */
     /* bg 100%인 경우 */
     .contents.bak-gray h1{padding-top:0}
     .contents.bak-gray{padding-top:50px}

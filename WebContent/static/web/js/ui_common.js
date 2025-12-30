@@ -1153,7 +1153,7 @@ $(function(){
 		$(this).toggleClass('on');
 	});
 
-	//서비스 데스크 메인 홈 :: 신청중인 서비스 slide
+	//서비스 메이트 메인 홈 :: 신청중인 서비스 slide
 	$('.service-slide-wrap').each(function(index, element){
 		var $slider = $(element).find('.service-slide');
 		var $dots = $(element).find('.dotbox');
@@ -1167,7 +1167,7 @@ $(function(){
 		});
 	});
 
-	//서비스 데스크 메인 홈 :: 찾아가는 서비스 step 선택
+	//서비스 메이트 메인 홈 :: 찾아가는 서비스 step 선택
 	$('.personal-list > button, .personal-list > a').on('click', function(e){
 		if($(this).is('a')) e.preventDefault();
 
@@ -1264,7 +1264,7 @@ $(function(){
         $('.personal-box.step01 .personal-list').show();
     });
 
-	//서비스데스크 내역 progress bar
+	//서비스메이트 내역 progress bar
 	$(".progress-bar-wrap").each(function(){
 		var $wrap = $(this);
 		var $steps = $wrap.find(".progress-bar li");
@@ -1325,7 +1325,7 @@ $(function(){
 		$(".char-count .current").text(text.length);
 	});
 
-	// PC 서비스 데스크 팝업 토글
+	// PC 서비스 메이트 팝업 토글
 	$('.btn-service-desk,.h-servicedesk').click(function() {
 		$('.ser-desk-pop').fadeIn(200);
 		$('.service-slide').slick('setPosition');	
@@ -1334,17 +1334,17 @@ $(function(){
 		$('.ser-desk-pop').fadeOut(200);
 	});
 
-	// PC 서비스 데스크 아이콘 삭제
+	// PC 서비스 메이트 아이콘 삭제
 	$('.service-desk-float .btn-service-desk-close').click(function() {
 		$('.service-desk-float').fadeOut(200);
 	});
 
-	// mobile 서비스 데스크 플로팅 닫기
+	// mobile 서비스 메이트 플로팅 닫기
 	$('.m-service-desk-float .btn-close-float').click(function() {
 		$('.m-service-desk-float').fadeOut(200);
 	});
 
-	//서비스데스크 아이콘과 top 버튼이 같이 있는 경우
+	//서비스메이트 아이콘과 top 버튼이 같이 있는 경우
 	function updateDeskPosition() {
 		const $topBtn = $('.btn-top-area');
 		if ($topBtn.length === 0) return; // top 버튼 없으면 종료
